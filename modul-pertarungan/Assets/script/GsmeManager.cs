@@ -29,26 +29,7 @@ namespace GsmeManager
 
             }
         }
-        public void SelectCard()
-        { 
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (hit.collider != null)
-                {
-                    if (hit.collider.gameObject.name.ToLower().Contains("fire"))
-                    {
-                        GameObject obj = GameObject.Find("monster1");
-                        GameObject animation = Instantiate(GameObject.Find("Small explosion"),new Vector3(obj.transform.position.x,obj.transform.position.y,-10f), Quaternion.identity) as GameObject;
-                        animation.particleEmitter.emit = true;
-                        Debug.Log("fire");
-                        
-                    }
-
-                }
-            }
-            
-        }
+        
         public void loadEnemy()
         {
         }
@@ -63,7 +44,7 @@ namespace GsmeManager
         // Update is called once per frame
         void Update()
         {
-            SelectCard();
+            
         }
 
 
