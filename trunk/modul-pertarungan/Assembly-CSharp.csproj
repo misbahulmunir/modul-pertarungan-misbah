@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CardManager.cs" />
+     <Compile Include="Assets\SplitFireCard.cs" />
+     <Compile Include="Assets\WindStorm.cs" />
+     <Compile Include="Assets\script\CardManager.cs" />
      <Compile Include="Assets\script\CardsEffect.cs" />
      <Compile Include="Assets\script\GsmeManager.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
