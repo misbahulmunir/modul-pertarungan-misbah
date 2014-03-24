@@ -44,6 +44,7 @@ namespace ServiceGameTa
             set { stringValue = value; }
         }
     };
+
     [DataContract]
     public class card
     {
@@ -89,6 +90,7 @@ namespace ServiceGameTa
         private string playerEnergy;
         private string playerName;
 
+        [DataMember]
         public string PlayerName
         {
             get { return playerName; }
@@ -96,13 +98,17 @@ namespace ServiceGameTa
         }
         private string playerMoney;
 
+        [DataMember]
         public string PlayerMoney
         {
             get { return playerMoney; }
             set { playerMoney = value; }
         }
+
+        
         private string playerClass;
 
+        [DataMember]
         public string PlayerClass
         {
             get { return playerClass; }
@@ -110,6 +116,7 @@ namespace ServiceGameTa
         }
         private List<card> playerCards;
 
+        [DataMember]
         public List<card> PlayerCards
         {
             get { return playerCards; }
