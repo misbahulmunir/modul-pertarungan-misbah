@@ -1,15 +1,34 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CardsEffect : MonoBehaviour {
+namespace Cardseffect
+{
+    public abstract class CardsEffect : MonoBehaviour
+    {
+        private string cardName;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	 
-	}
+        public string CardName
+        {
+            get { return cardName; }
+            set { cardName = value; }
+        }
+        private string cardCode;
+
+        public string CardCode
+        {
+            get { return cardCode; }
+            set { cardCode = value; }
+        }
+        private int cardCost;
+
+        public int CardCost
+        {
+            get { return cardCost; }
+            set { cardCost = value; }
+        }
+        public virtual void Effect()
+        {
+        }
+
+    }
 }
