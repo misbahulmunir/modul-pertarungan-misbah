@@ -1,0 +1,12 @@
+E:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
+E:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+E:\ta\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+E:\ta\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+E:\ta\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+E:\ta\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+E:\ta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+E:\ta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+E:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+E:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+E:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
+E:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
