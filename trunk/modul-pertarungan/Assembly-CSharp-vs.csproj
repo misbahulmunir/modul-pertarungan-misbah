@@ -46,11 +46,14 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Deck.cs" />
+     <Compile Include="Assets\GameMenager.cs" />
+     <Compile Include="Assets\Pawn1Action.cs" />
      <Compile Include="Assets\SplitFireCard.cs" />
      <Compile Include="Assets\WindStorm.cs" />
      <Compile Include="Assets\script\CardManager.cs" />
      <Compile Include="Assets\script\CardsEffect.cs" />
-     <Compile Include="Assets\script\GsmeManager.cs" />
+     <Compile Include="Assets\script\ObjectLoader.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>

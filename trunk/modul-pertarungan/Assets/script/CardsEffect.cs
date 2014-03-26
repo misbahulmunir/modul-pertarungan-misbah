@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace Cardseffect
+namespace ModulPertarungan
 {
     public abstract class CardsEffect : MonoBehaviour
     {

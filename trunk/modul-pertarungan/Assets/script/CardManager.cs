@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Cardseffect;
-using Splitfirecard;
-namespace CardManager
+namespace ModulPertarungan
 {
     public class CardManager : MonoBehaviour
     {

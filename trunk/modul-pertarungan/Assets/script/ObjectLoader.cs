@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using System.Collections;
 
-namespace GsmeManager
+namespace ModulPertarungan
 {
-    public class GsmeManager : MonoBehaviour
+    public class ObjectLoader : MonoBehaviour
     {
 
         // Use this for initialization
-        public List<GameObject> players;
+        private int pawnsnumber;
         public List<GameObject> pawns;
+        public List<GameObject> pawnsPosisition;
         public List<GameObject> cards;
         public List<GameObject> cardpawns;
         public void loadPlayer()
         {
             for (int c = 0; c < 3; c++)
             {
-                Instantiate(players[c], pawns[c].transform.position, Quaternion.identity);
+                Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity);
 
             }
         }
-        public void loadCards()
+        public void loadCards(GameObject pawn)
         {
             for (int c = 0; c < 3; c++)
             {
-                GameObject obj = Instantiate(cards[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
+                GameObject obj = Instantiate(pawn.GetComponent<Pawn1Action>().Hand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
                 obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
 
             }
@@ -36,15 +37,16 @@ namespace GsmeManager
 
         void Start()
         {
-            loadCards();
+            GameMenager.Instance().CurrentPawn = pawns[pawnsnumber];
+            loadCards(GameMenager.Instance().CurrentPawn);
             loadPlayer();
-
+            GameMenager.Instance().BattlePhase = "drawphase";
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+            //State Pattern untuk battle
         }
 
 
