@@ -7,35 +7,35 @@ namespace ModulPertarungan
     {
         // Use this for initialization
         private Deck deck;
-        private int pawnName;
+        public int pawnName;
 
         public int PawnName
         {
             get { return pawnName; }
             set { pawnName = value; }
         }
-        private int maxPawnHealth;
+        public int maxPawnHealth;
 
         public int MaxPawnHealth
         {
             get { return maxPawnHealth; }
             set { maxPawnHealth = value; }
         }
-        private int maxPawnSouls;
+        public int maxPawnSouls;
 
         public int MaxPawnSouls
         {
             get { return maxPawnSouls; }
             set { maxPawnSouls = value; }
         }
-        private int currentPawnHealth;
+        public int currentPawnHealth;
 
         public int CurrentPawnHealth
         {
             get { return currentPawnHealth; }
             set { currentPawnHealth = value; }
         }
-        private int currentPawnSouls;
+        public int currentPawnSouls;
 
         public int CurrentPawnSouls
         {
@@ -44,7 +44,7 @@ namespace ModulPertarungan
         }
         
         
-        private int handSize;
+        public int handSize;
 
         public int HandSize
         {
@@ -59,7 +59,7 @@ namespace ModulPertarungan
             get { return hand; }
             set { hand = value; }
         }
-        private List<GameObject> cards;
+        public List<GameObject> cards;
 
         public List<GameObject> Cards
         {
@@ -75,13 +75,21 @@ namespace ModulPertarungan
         {
             for (int c = 0; c < handSize; c++)
             {
-                Hand.Add(deck.Draw());
+                if (deck.Card.Count > 0)
+                {
+                    Hand.Add(deck.Draw());
+                  
+                }
             }
+          
+            GameObject.Find("Objcetloader").GetComponent<ObjectLoader>().loadCards(this.gameObject);
         }
         
         void Start()
         {
+            hand = new List<GameObject>();
             deck = new Deck(cards);
+            //deck.Shuffle();
             FirstPawnHand();
         }
 
