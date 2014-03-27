@@ -11,13 +11,13 @@ namespace ModulPertarungan
         private int pawnsnumber;
         public List<GameObject> pawns;
         public List<GameObject> pawnsPosisition;
-        public List<GameObject> cards;
         public List<GameObject> cardpawns;
+        private int currentPawnNumber;
         public void loadPlayer()
         {
-            for (int c = 0; c < 1; c++)
+            for (int c = 0; c < pawns.Count; c++)
             {
-                Instantiate(pawns[1], pawnsPosisition[1].transform.position, Quaternion.identity);
+                Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity);
 
             }
         }
@@ -37,16 +37,15 @@ namespace ModulPertarungan
 
         void Start()
         {
-            GameMenager.Instance().CurrentPawn = pawns[pawnsnumber];
-           
+            GameMenager.Instance().CurrentPawn = pawns[currentPawnNumber];
+            Screen.orientation = ScreenOrientation.LandscapeLeft;
             loadPlayer();
         //    GameMenager.Instance().BattlePhase = "drawphase";
         }
 
         // Update is called once per frame
         void Update()
-        {
-
+        {  
             //State Pattern untuk battle
         }
 

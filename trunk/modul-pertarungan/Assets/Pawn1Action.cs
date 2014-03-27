@@ -89,7 +89,7 @@ namespace ModulPertarungan
         {
             hand = new List<GameObject>();
             deck = new Deck(cards);
-            //deck.Shuffle();
+            deck.Shuffle();
             FirstPawnHand();
         }
 

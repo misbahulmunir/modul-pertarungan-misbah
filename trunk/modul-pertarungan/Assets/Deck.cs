@@ -27,7 +27,7 @@ namespace ModulPertarungan
         {
             
             GameObject drawedcard = card[0];
-          //  card.RemoveAt(0);
+            card.RemoveAt(0);
             return drawedcard;
         }
         public Deck(List<GameObject> card)
