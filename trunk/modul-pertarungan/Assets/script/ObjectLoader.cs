@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using ModelModulPertarungan;
 
 namespace ModulPertarungan
 {
@@ -16,14 +17,17 @@ namespace ModulPertarungan
         private int currentPawnNumber;
         public void LoadPlayer()
         {
-            GameMenager.Instance().CurrentPawn = "pawn0";
-            Debug.Log(GameMenager.Instance().CurrentPawn);
+            
+            
             for (int c = 0; c < pawns.Count; c++)
             {
                GameObject obj=Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity) as GameObject;
-               obj.GetComponent<Pawn1Action>().PawnName = "pawn" + c;
-
+               obj.GetComponent<Pawn1Action>().Warlock = new Warlock(200, 200, "player" + c);
+               pawns[c] = obj;
+          
             }
+            GameMenager.Instance().CurrentPawn = pawns[0];
+            Debug.Log(GameMenager.Instance().CurrentPawn);
         }
         public void LoadDisplayedCards(GameObject pawn)
         {
@@ -55,7 +59,8 @@ namespace ModulPertarungan
 
         // Update is called once per frame
         void Update()
-        {  
+        {
+            
             //State Pattern untuk battle
         }
 
