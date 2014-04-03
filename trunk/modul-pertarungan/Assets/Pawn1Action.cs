@@ -8,7 +8,7 @@ namespace ModulPertarungan
     {
         // Use this for initialization
         private Deck deck;
-
+      
         private Warlock warlock;
 
         public Warlock Warlock
@@ -65,7 +65,7 @@ namespace ModulPertarungan
         {
             this.Hand.Add(deck.Draw());
         }
-
+       
         void Start()
         {
 
@@ -79,7 +79,7 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-
+           
         }
     }
 }
