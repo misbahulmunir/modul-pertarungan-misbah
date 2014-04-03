@@ -7,9 +7,9 @@ namespace ModulPertarungan
     {
 
         private string battlePhase;
-        private string currentPawn;
+        private GameObject currentPawn;
 
-        public string CurrentPawn
+        public GameObject CurrentPawn
         {
             get { return currentPawn; }
             set { currentPawn = value; }

@@ -1,49 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using ModelModulPertarungan;
 namespace ModulPertarungan
 {
     public class Pawn1Action : MonoBehaviour
     {
         // Use this for initialization
         private Deck deck;
-        public string pawnName;
 
-        public string PawnName
-        {
-            get { return pawnName; }
-            set { pawnName = value; }
-        }
-        public int maxPawnHealth;
+        private Warlock warlock;
 
-        public int MaxPawnHealth
+        public Warlock Warlock
         {
-            get { return maxPawnHealth; }
-            set { maxPawnHealth = value; }
+            get { return warlock; }
+            set { warlock = value; }
         }
-        public int maxPawnSouls;
-
-        public int MaxPawnSouls
-        {
-            get { return maxPawnSouls; }
-            set { maxPawnSouls = value; }
-        }
-        public int currentPawnHealth;
-
-        public int CurrentPawnHealth
-        {
-            get { return currentPawnHealth; }
-            set { currentPawnHealth = value; }
-        }
-        public int currentPawnSouls;
-
-        public int CurrentPawnSouls
-        {
-            get { return currentPawnSouls; }
-            set { currentPawnSouls = value; }
-        }
-        
-        
         public int handSize;
 
         public int HandSize
@@ -51,7 +23,7 @@ namespace ModulPertarungan
             get { return handSize; }
             set { handSize = value; }
         }
-        
+
         private List<GameObject> hand;
 
         public List<GameObject> Hand
@@ -73,19 +45,19 @@ namespace ModulPertarungan
         }
         public void FirstPawnHand()
         {
-            Debug.Log(GameMenager.Instance().CurrentPawn);
-            if (GameMenager.Instance().CurrentPawn == this.pawnName)
+            Debug.Log(GameMenager.Instance().CurrentPawn.GetComponent<Pawn1Action>().warlock.Name);
+
+            for (int c = 0; c < handSize; c++)
             {
-                for (int c = 0; c < handSize; c++)
+                if (deck.Card.Count > 0)
                 {
-                    if (deck.Card.Count > 0)
-                    {
-                        Hand.Add(deck.Draw());
+                    Hand.Add(deck.Draw());
 
-                    }
                 }
+            }
 
-
+            if (GameMenager.Instance().CurrentPawn.GetComponent<Pawn1Action>().Warlock.Name == this.Warlock.Name)
+            {
                 GameObject.Find("Objcetloader").GetComponent<ObjectLoader>().LoadDisplayedCards(this.gameObject);
             }
         }
@@ -93,9 +65,10 @@ namespace ModulPertarungan
         {
             this.Hand.Add(deck.Draw());
         }
-        
+
         void Start()
         {
+
             hand = new List<GameObject>();
             deck = new Deck(cards);
             deck.Shuffle();
@@ -106,7 +79,7 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-    
+
         }
     }
 }
