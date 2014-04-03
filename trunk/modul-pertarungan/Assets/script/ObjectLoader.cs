@@ -12,35 +12,45 @@ namespace ModulPertarungan
         public List<GameObject> pawns;
         public List<GameObject> pawnsPosisition;
         public List<GameObject> cardpawns;
+        private List<GameObject> DisplayedCards;
         private int currentPawnNumber;
-        public void loadPlayer()
+        public void LoadPlayer()
         {
+            GameMenager.Instance().CurrentPawn = "pawn0";
+            Debug.Log(GameMenager.Instance().CurrentPawn);
             for (int c = 0; c < pawns.Count; c++)
             {
-                Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity);
+               GameObject obj=Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity) as GameObject;
+               obj.GetComponent<Pawn1Action>().PawnName = "pawn" + c;
 
             }
         }
-        public void loadCards(GameObject pawn)
+        public void LoadDisplayedCards(GameObject pawn)
         {
-            for (int c = 0; c < 3; c++)
+            for (int c = 0; c < pawn.GetComponent<Pawn1Action>().HandSize; c++)
             {
                 GameObject obj = Instantiate(pawn.GetComponent<Pawn1Action>().Hand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
                 obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
-
+                DisplayedCards.Add(obj);
+            }
+        }
+        public void DestroyDisplayedCards()
+        {
+            foreach (GameObject obj in DisplayedCards)
+            {
+                Destroy(obj);
             }
         }
         
-        public void loadEnemy()
+        public void LoadEnemy()
         {
         }
-
         void Start()
         {
-            GameMenager.Instance().CurrentPawn = pawns[currentPawnNumber];
+            DisplayedCards = new List<GameObject>();
             Screen.orientation = ScreenOrientation.LandscapeLeft;
-            loadPlayer();
-        //    GameMenager.Instance().BattlePhase = "drawphase";
+            LoadPlayer();
+             
         }
 
         // Update is called once per frame

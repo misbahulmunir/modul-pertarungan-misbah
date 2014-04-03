@@ -7,9 +7,9 @@ namespace ModulPertarungan
     {
         // Use this for initialization
         private Deck deck;
-        public int pawnName;
+        public string pawnName;
 
-        public int PawnName
+        public string PawnName
         {
             get { return pawnName; }
             set { pawnName = value; }
@@ -73,16 +73,25 @@ namespace ModulPertarungan
         }
         public void FirstPawnHand()
         {
-            for (int c = 0; c < handSize; c++)
+            Debug.Log(GameMenager.Instance().CurrentPawn);
+            if (GameMenager.Instance().CurrentPawn == this.pawnName)
             {
-                if (deck.Card.Count > 0)
+                for (int c = 0; c < handSize; c++)
                 {
-                    Hand.Add(deck.Draw());
-                  
+                    if (deck.Card.Count > 0)
+                    {
+                        Hand.Add(deck.Draw());
+
+                    }
                 }
+
+
+                GameObject.Find("Objcetloader").GetComponent<ObjectLoader>().LoadDisplayedCards(this.gameObject);
             }
-          
-            GameObject.Find("Objcetloader").GetComponent<ObjectLoader>().loadCards(this.gameObject);
+        }
+        public void Draw()
+        {
+            this.Hand.Add(deck.Draw());
         }
         
         void Start()

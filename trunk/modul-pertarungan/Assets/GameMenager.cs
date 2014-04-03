@@ -3,13 +3,13 @@ using System.Collections;
 
 namespace ModulPertarungan
 {
-    public class GameMenager :MonoBehaviour
+    public class GameMenager
     {
 
         private string battlePhase;
-        private GameObject currentPawn;
+        private string currentPawn;
 
-        public GameObject CurrentPawn
+        public string CurrentPawn
         {
             get { return currentPawn; }
             set { currentPawn = value; }
