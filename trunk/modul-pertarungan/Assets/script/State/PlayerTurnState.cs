@@ -5,15 +5,15 @@ using System.Text;
 using UnityEngine;
 namespace ModulPertarungan
 {
-    public class EnemyState:BattleState
+	public class PlayerTurnState:BattleState
 	{
-
-
-        public EnemyState(GameObject CurrentPlayer, List<GameObject> Enemy)
-            : base(CurrentPlayer, Enemy)
+        public PlayerTurnState(GameObject CurrentPlayer, BattleStateManager BattleManager)
+            : base(CurrentPlayer, BattleManager)
         {
- 
+
         }
+
+       
         public override void Action()
         {
             throw new NotImplementedException();

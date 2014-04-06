@@ -1,11 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 namespace ModulPertarungan
 {
     public class GameMenager
     {
 
+        private List<GameObject> enemies;
+
+        public List<GameObject> Enemies
+        {
+            get { return enemies; }
+            set { enemies = value; }
+        }
+        private List<GameObject> players;
+
+        public List<GameObject> Players
+        {
+            get { return players; }
+            set { players = value; }
+        }
         private string battlePhase;
         private GameObject currentPawn;
 

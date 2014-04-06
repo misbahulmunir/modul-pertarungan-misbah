@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_STANDALONE_WIN;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;UNITY_STANDALONE;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_MOVIES;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_DUCK_TYPING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_1;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_1;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -48,20 +48,18 @@
   <ItemGroup>
      <Compile Include="Assets\BattleStateManager.cs" />
      <Compile Include="Assets\Deck.cs" />
-     <Compile Include="Assets\EnemyAction.cs" />
+     <Compile Include="Assets\FireDragonScript.cs" />
      <Compile Include="Assets\GameMenager.cs" />
-     <Compile Include="Assets\Pawn1Action.cs" />
-     <Compile Include="Assets\SplitFireCard.cs" />
-     <Compile Include="Assets\WindStorm.cs" />
-     <Compile Include="Assets\script\BattleState.cs" />
+     <Compile Include="Assets\GuiHandler.cs" />
+     <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
+     <Compile Include="Assets\script\ActionScript\WarlockAction.cs" />
+     <Compile Include="Assets\script\CardAction\CardEffect.cs" />
+     <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
+     <Compile Include="Assets\script\CardAction\WindStorm.cs" />
      <Compile Include="Assets\script\CardManager.cs" />
-     <Compile Include="Assets\script\CardsEffect.cs" />
-     <Compile Include="Assets\script\ChangePlayerState.cs" />
-     <Compile Include="Assets\script\DrawState.cs" />
-     <Compile Include="Assets\script\EnemyState.cs" />
-     <Compile Include="Assets\script\FirstHandState.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />
+     <Compile Include="Assets\script\Model\FireDragon.cs" />
      <Compile Include="Assets\script\Model\FireMonster.cs" />
      <Compile Include="Assets\script\Model\Magician.cs" />
      <Compile Include="Assets\script\Model\Player.cs" />
@@ -70,6 +68,12 @@
      <Compile Include="Assets\script\Model\WaterMonster.cs" />
      <Compile Include="Assets\script\Model\WindMonster.cs" />
      <Compile Include="Assets\script\ObjectLoader.cs" />
+     <Compile Include="Assets\script\State\BattleState.cs" />
+     <Compile Include="Assets\script\State\ChangePlayerState.cs" />
+     <Compile Include="Assets\script\State\DrawState.cs" />
+     <Compile Include="Assets\script\State\EnemyState.cs" />
+     <Compile Include="Assets\script\State\FirstHandState.cs" />
+     <Compile Include="Assets\script\State\PlayerTurnState.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
   <ItemGroup>

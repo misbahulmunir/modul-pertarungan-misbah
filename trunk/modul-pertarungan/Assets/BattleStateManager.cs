@@ -18,15 +18,32 @@ namespace ModulPertarungan
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.gameObject.name.ToLower().Contains("pawn"))
+                    if (hit.collider.gameObject.name.ToLower().Contains("warlock"))
                     {
                        
                         GameObject obj= GameMenager.Instance().CurrentPawn = hit.collider.gameObject as GameObject;
-                        currentstate = new ChangePlayerState(obj,objectLoader );
+                        currentstate = new ChangePlayerState(obj,objectLoader,this );
                         currentstate.Action();
-                        Debug.Log(GameMenager.Instance().CurrentPawn.GetComponent<Pawn1Action>().Warlock.Name);
+                        Debug.Log(GameMenager.Instance().CurrentPawn.GetComponent<WarlockAction>().Warlock.Name);
                     }
 
+                }
+            }
+        }
+        public void EndPlayerTurn()
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (hit.collider != null)
+                {
+                    if (hit.collider.gameObject.name.ToLower().Contains("endbutton"))
+                    {
+
+                        GameObject obj = GameMenager.Instance().CurrentPawn = hit.collider.gameObject as GameObject;
+                        Cursor.renderer.enabled = false;
+                        obj.renderer.enabled = false;
+                    }
                 }
             }
         }
@@ -46,6 +63,7 @@ namespace ModulPertarungan
         void Update()
         {
             DrawCursor();
+            EndPlayerTurn();
             SelectPawn();
         }
     }

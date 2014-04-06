@@ -10,10 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
-  - 61: {fileID: 6100000}
-  - 50: {fileID: 5000000}
   m_Layer: 0
-  m_Name: warlockpawn
+  m_Name: FireDragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,37 +23,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: .999305129, z: 0, w: -.0372742228}
-  m_LocalPosition: {x: 5.02516985, y: 6.12355375, z: -.125937462}
-  m_LocalScale: {x: .335017174, y: .335007757, z: 1.0000267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.1654892, y: -.636876047, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!50 &5000000
-Rigidbody2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
---- !u!61 &6100000
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Size: {x: 7.5, y: 7.5}
-  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,15 +36,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f661556b45c9a54eb1ef9c9d139325e, type: 3}
+  m_Script: {fileID: 11500000, guid: 69f3f5a204011ed4f8c8c075eef46234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterName: 
-  handSize: 3
-  cards:
-  - {fileID: 100000, guid: 46755184040f27448a97033d1f5e5eb3, type: 2}
-  - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
-  - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
+  name: 
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -92,9 +59,9 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 1
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: f0cca8325a5405b44af91b537d0024c4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25237ecaf859dcb46a86334e1a59ef51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
