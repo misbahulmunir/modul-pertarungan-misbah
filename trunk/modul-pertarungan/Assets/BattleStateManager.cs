@@ -9,8 +9,21 @@ namespace ModulPertarungan
 
         // Use this for initialization
         private BattleState currentstate;
+
+        public BattleState Currentstate
+        {
+            get { return currentstate; }
+            set { currentstate = value; }
+        }
         public GameObject objectLoader;
         public GameObject Cursor;
+        private GameObject endButton;
+
+        public GameObject EndButton
+        {
+            get { return endButton; }
+            set { endButton = value; }
+        }
         public void SelectPawn()
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -39,10 +52,12 @@ namespace ModulPertarungan
                 {
                     if (hit.collider.gameObject.name.ToLower().Contains("endbutton"))
                     {
-
                         GameObject obj = GameMenager.Instance().CurrentPawn = hit.collider.gameObject as GameObject;
+                        EndButton = obj;
                         Cursor.renderer.enabled = false;
                         obj.renderer.enabled = false;
+                        currentstate = new EnemyState(GameMenager.Instance().Players, GameMenager.Instance().Enemies, this);
+                        currentstate.Action();
                     }
                 }
             }
