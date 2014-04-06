@@ -22,3 +22,15 @@ E:\AStarPathfinding\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\IC
 E:\AStarPathfinding\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 E:\AStarPathfinding\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 E:\AStarPathfinding\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+E:\Ta2\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+E:\Ta2\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+E:\Ta2\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+E:\Ta2\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb

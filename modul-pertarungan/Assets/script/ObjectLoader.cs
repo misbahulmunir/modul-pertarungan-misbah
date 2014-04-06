@@ -49,11 +49,20 @@ namespace ModulPertarungan
 
         public void LoadEnemy()
         {
+            for (int c = 0; c < enemies.Count; c++)
+            {
+                GameObject obj = Instantiate(enemies[c], enemiesplace[c].transform.position, Quaternion.identity) as GameObject;
+                enemies[c] = obj;
+
+            }
+            Debug.Log(enemies.Count);
+            GameMenager.Instance().Enemies = enemies;
         }
         void Start()
         {
             DisplayedCards = new List<GameObject>();
             Screen.orientation = ScreenOrientation.LandscapeLeft;
+            LoadEnemy();
             LoadPlayer();
 
         }

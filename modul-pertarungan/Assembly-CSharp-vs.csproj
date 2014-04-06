@@ -48,10 +48,11 @@
   <ItemGroup>
      <Compile Include="Assets\BattleStateManager.cs" />
      <Compile Include="Assets\Deck.cs" />
-     <Compile Include="Assets\FireDragonScript.cs" />
      <Compile Include="Assets\GameMenager.cs" />
      <Compile Include="Assets\GuiHandler.cs" />
+     <Compile Include="Assets\Pawn1Action.cs" />
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
+     <Compile Include="Assets\script\ActionScript\FireDragonScript.cs" />
      <Compile Include="Assets\script\ActionScript\WarlockAction.cs" />
      <Compile Include="Assets\script\CardAction\CardEffect.cs" />
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />

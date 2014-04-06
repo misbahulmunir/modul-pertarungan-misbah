@@ -11,9 +11,12 @@ namespace ModulPertarungan
         // Use this for initialization
         public override void AttackAction()
         {
-            foreach (GameObject player in GameMenager.Instance().Enemies)
+            foreach (GameObject player in GameMenager.Instance().Players)
             {
-
+                GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(player.transform.position.x, player.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                animation.renderer.sortingLayerName = "foreground";
+                animation.particleEmitter.emit = true;
+         
             }
         }
         void Start()
