@@ -10,30 +10,31 @@ namespace ModulPertarungan
 
         // Use this for initialization
         private int pawnsnumber;
+        public List<GameObject> enemies;
+        public List<GameObject> enemiesplace;
         public List<GameObject> pawns;
         public List<GameObject> pawnsPosisition;
         public List<GameObject> cardpawns;
         private List<GameObject> DisplayedCards;
         private int currentPawnNumber;
+
         public void LoadPlayer()
         {
-            
-            
             for (int c = 0; c < pawns.Count; c++)
             {
-               GameObject obj=Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity) as GameObject;
-               obj.GetComponent<Pawn1Action>().Warlock = new Warlock(200, 200, "player" + c);
-               pawns[c] = obj;
-          
+                GameObject obj = Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity) as GameObject;
+                pawns[c] = obj;
+
             }
             GameMenager.Instance().CurrentPawn = pawns[0];
-            Debug.Log(GameMenager.Instance().CurrentPawn);
+            GameMenager.Instance().Players = pawns;
+    
         }
         public void LoadDisplayedCards(GameObject pawn)
         {
-            for (int c = 0; c < pawn.GetComponent<Pawn1Action>().HandSize; c++)
+            for (int c = 0; c < pawn.GetComponent<WarlockAction>().HandSize; c++)
             {
-                GameObject obj = Instantiate(pawn.GetComponent<Pawn1Action>().Hand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
+                GameObject obj = Instantiate(pawn.GetComponent<WarlockAction>().Hand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
                 obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
                 DisplayedCards.Add(obj);
             }
@@ -45,7 +46,7 @@ namespace ModulPertarungan
                 Destroy(obj);
             }
         }
-        
+
         public void LoadEnemy()
         {
         }
@@ -54,13 +55,13 @@ namespace ModulPertarungan
             DisplayedCards = new List<GameObject>();
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             LoadPlayer();
-             
+
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+
             //State Pattern untuk battle
         }
 

@@ -13,7 +13,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   m_Layer: 0
-  m_Name: warlockpawn
+  m_Name: ThirdWarlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: .999305129, z: 0, w: -.0372742228}
-  m_LocalPosition: {x: 5.02516985, y: 6.12355375, z: -.125937462}
+  m_LocalPosition: {x: -16.9737682, y: -8.45205402, z: -.521434128}
   m_LocalScale: {x: .335017174, y: .335007757, z: 1.0000267}
   m_Children: []
   m_Father: {fileID: 0}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f661556b45c9a54eb1ef9c9d139325e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterName: 
+  monsterName: ThirdWarlock
   handSize: 3
   cards:
   - {fileID: 100000, guid: 46755184040f27448a97033d1f5e5eb3, type: 2}
