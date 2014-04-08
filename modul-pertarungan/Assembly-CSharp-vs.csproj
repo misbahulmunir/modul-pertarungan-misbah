@@ -58,7 +58,11 @@
      <Compile Include="Assets\script\ActionScript\PlayerAction.cs" />
      <Compile Include="Assets\script\ActionScript\WarlockAction.cs" />
      <Compile Include="Assets\script\CardAction\CardEffect.cs" />
+     <Compile Include="Assets\script\CardAction\FireStorm.cs" />
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
+     <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
+     <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
+     <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
      <Compile Include="Assets\script\CardAction\WindStorm.cs" />
      <Compile Include="Assets\script\CardManager.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />

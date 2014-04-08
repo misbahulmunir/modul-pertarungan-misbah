@@ -18,7 +18,6 @@ namespace ModulPertarungan
         private float maxHP; // maximum HP
         void Start()
         {
-            Debug.Log("healthpost =" + this.transform.position);
            // curHP -= 0; // drain the current HP to test the health (Assign a value to drain the health)
             maxHP = this.GetComponent<DamageReceiverAction>().Character.MaxHealth;
             previousHealth = maxHP; // assign the empty value to store the value of max health 
