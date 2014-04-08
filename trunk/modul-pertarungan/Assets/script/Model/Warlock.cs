@@ -6,8 +6,8 @@ namespace ModelModulPertarungan
 {
     public class Warlock : Player
     {
-        public Warlock(int MaxHealth, int CurrentHealth, string Name)
-            : base(MaxHealth, CurrentHealth, Name)
+        public Warlock(int MaxHealth, int CurrentHealth, string Name, int HandCapacity)
+            : base(MaxHealth, CurrentHealth,Name ,HandCapacity)
         {
         }
     }

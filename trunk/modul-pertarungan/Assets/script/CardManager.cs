@@ -4,6 +4,7 @@ namespace ModulPertarungan
 {
     public class CardManager : MonoBehaviour
     {
+        public GameObject gui;
         public void SelectCard()
         {
 
@@ -15,6 +16,7 @@ namespace ModulPertarungan
                     if (hit.collider.gameObject.name.ToLower().Contains("card"))
                     {
                         CardsEffect card = hit.collider.gameObject.GetComponent<CardsEffect>();
+                        GameMenager.Instance().CurrentCard = card ;
                         card.Effect();
                     }
 

@@ -5,6 +5,14 @@ namespace ModulPertarungan
 {
     public abstract class CardsEffect : MonoBehaviour
     {
+        private string cardEffect;
+
+        public string CardEffect
+        {
+            get { return cardEffect; }
+            set { cardEffect = value; }
+        }
+
         private string cardName;
 
         public string CardName

@@ -29,9 +29,10 @@ namespace ModelModulPertarungan
             get { return handCapacity; }
             set { handCapacity = value; }
         }
-        public Player(int MaxHealth, int CurrentHealth, string Name)
+        public Player(int MaxHealth, int CurrentHealth, string Name, int HandCapacity)
             : base(MaxHealth, CurrentHealth, Name)
         {
+            this.HandCapacity = HandCapacity;
         }
     }
 }

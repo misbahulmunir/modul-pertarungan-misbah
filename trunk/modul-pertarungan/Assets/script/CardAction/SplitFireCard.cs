@@ -11,6 +11,7 @@ namespace ModulPertarungan
             this.CardName = "SplitFire";
             this.CardCost = 2;
             this.CardCode = " ";
+            this.CardEffect = " Deal 10 fire damage to single enemy";
         }
 
         // Update is called once per frame
@@ -21,10 +22,11 @@ namespace ModulPertarungan
 
         public override void Effect()
         {
-            GameObject obj = GameObject.Find("MonsterPlace");
+            GameObject obj = GameMenager.Instance().Enemies[0];
             GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
             animation.renderer.sortingLayerName = "foreground";
             animation.particleEmitter.emit = true;
+            obj.GetComponent<DamageReceiverAction>().ReceiveDamage(10);
             Debug.Log("fire");
         }
     }
