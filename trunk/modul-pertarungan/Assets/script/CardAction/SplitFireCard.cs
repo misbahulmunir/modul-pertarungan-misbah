@@ -27,7 +27,7 @@ namespace ModulPertarungan
             animation.renderer.sortingLayerName = "foreground";
             animation.particleEmitter.emit = true;
             obj.GetComponent<DamageReceiverAction>().ReceiveDamage(10);
-            Debug.Log("fire");
+        
         }
     }
 }
