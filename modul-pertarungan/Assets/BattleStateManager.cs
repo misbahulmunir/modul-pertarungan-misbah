@@ -8,6 +8,8 @@ namespace ModulPertarungan
     {
 
         // Use this for initialization
+        
+
         private BattleState currentstate;
 
         public BattleState Currentstate
@@ -46,7 +48,7 @@ namespace ModulPertarungan
         public void EndPlayerTurn()
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0) )
             {
                 if (hit.collider != null)
                 {

@@ -6,8 +6,8 @@ namespace ModelModulPertarungan
 {
     public class Magician : Player
     {
-        public Magician(int MaxHealth, int CurrentHealth, string Name)
-            : base(MaxHealth, CurrentHealth, Name)
+        public Magician(int MaxHealth, int CurrentHealth, string Name, int HandCapacity)
+            : base(MaxHealth, CurrentHealth, Name, HandCapacity )
         {
         }
     }

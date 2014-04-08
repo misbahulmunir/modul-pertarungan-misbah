@@ -7,7 +7,15 @@ namespace ModulPertarungan
     {
 
         private List<GameObject> enemies;
+        private CardsEffect currentCard;
 
+        public CardsEffect CurrentCard
+        {
+            get { return currentCard; }
+            set { currentCard = value; }
+        }
+
+      
         public List<GameObject> Enemies
         {
             get { return enemies; }

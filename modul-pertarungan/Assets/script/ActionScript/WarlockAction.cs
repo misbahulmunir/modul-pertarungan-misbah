@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using ModelModulPertarungan;
 namespace ModulPertarungan
 {
-    public class WarlockAction : MonoBehaviour
+    public class WarlockAction : PlayerAction
     {
         // Use this for initialization
         public string monsterName;
@@ -72,7 +72,8 @@ namespace ModulPertarungan
 
             hand = new List<GameObject>();
             deck = new Deck(cards);
-            this.Warlock = new Warlock(200, 200, this.name);
+            this.Warlock = new Warlock(200, 200, this.name, this.HandSize);
+            this.Character = Warlock;
             deck.Shuffle();
             FirstPawnHand();
         }
@@ -82,6 +83,11 @@ namespace ModulPertarungan
         void Update()
         {
            
+        }
+
+        public override void ReceiveDamage(int damage)
+        {
+            this.Warlock.ReceiveDamage(Warlock.MaxHealth, damage);
         }
     }
 }

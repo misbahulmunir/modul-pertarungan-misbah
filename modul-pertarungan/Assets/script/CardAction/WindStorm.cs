@@ -11,6 +11,7 @@ namespace ModulPertarungan
             this.CardName = "Windstorm";
             this.CardCost = 2;
             this.CardCode = " ";
+            this.CardEffect = "Deal 50 damage to single enemy";
 
         }
 
@@ -22,12 +23,13 @@ namespace ModulPertarungan
 
         public override void Effect()
         {
-            GameObject obj = GameObject.Find("MonsterPlace");
+            GameObject obj = GameMenager.Instance().Enemies[0];
             GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
             animation.renderer.sortingLayerName = "foreground";
             animation.particleEmitter.emit = true;
-            new WaitForSeconds(4);
-            Debug.Log("fire");
+            obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
+
+            Debug.Log(obj.GetComponent<DamageReceiverAction>().Character.CurrentHealth);
         }
     }
 }

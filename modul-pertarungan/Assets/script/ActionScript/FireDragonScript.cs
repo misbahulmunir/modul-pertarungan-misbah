@@ -22,13 +22,26 @@ namespace ModulPertarungan
         void Start()
         {
             firedragon = new FireDragon(200, 200, name);
+            this.Character = firedragon;
+            Debug.Log("dragon pos=" + this.transform.position);
         }
 
 
         // Update is called once per frame
         void Update()
         {
-
+            
+        }
+        public override void ReceiveDamage(int damage)
+        {
+            if (firedragon.CurrentHealth <= 0)
+            {
+                firedragon.CurrentHealth = 0;
+            }
+            else
+            {
+                firedragon.CurrentHealth -= damage;
+            }
         }
     }
 }

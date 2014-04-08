@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using ModelModulPertarungan;
 namespace ModulPertarungan
 {
-	public  abstract class EnemyAction:DamageReceiverAction
+	public abstract class PlayerAction:DamageReceiverAction
 	{
-        public virtual void AttackAction()
-        {
-        }
-        
+       
+       
 	}
 }
