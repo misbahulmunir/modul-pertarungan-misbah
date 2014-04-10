@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 namespace ModulPertarungan
 {
-    public class GameMenager
+    public class GameManager
     {
 
         private List<GameObject> enemies;
@@ -41,16 +41,16 @@ namespace ModulPertarungan
             get { return battlePhase; }
             set { battlePhase = value; }
         }
-        public static GameMenager instance;
-        public GameMenager()
+        public static GameManager instance;
+        public GameManager()
         {
             
         }
-        public static GameMenager Instance()
+        public static GameManager Instance()
         {
             if (instance == null)
             {
-                instance = new GameMenager();
+                instance = new GameManager();
             }
             return instance;
         }

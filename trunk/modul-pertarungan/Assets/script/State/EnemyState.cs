@@ -23,7 +23,7 @@ namespace ModulPertarungan
 
             BattleManager.EndButton.renderer.enabled = true;
             BattleManager.Cursor.renderer.enabled = true;
-            BattleManager.Currentstate = new ChangePlayerState(GameMenager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
+            BattleManager.Currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
 
         }
     }

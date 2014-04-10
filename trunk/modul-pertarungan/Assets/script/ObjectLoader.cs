@@ -26,15 +26,15 @@ namespace ModulPertarungan
                 pawns[c] = obj;
 
             }
-            GameMenager.Instance().CurrentPawn = pawns[0];
-            GameMenager.Instance().Players = pawns;
+            GameManager.Instance().CurrentPawn = pawns[0];
+            GameManager.Instance().Players = pawns;
     
         }
         public void LoadDisplayedCards(GameObject pawn)
         {
-            for (int c = 0; c < pawn.GetComponent<WarlockAction>().HandSize; c++)
+            for (int c = 0; c < pawn.GetComponent<WarlockAction>().CurrentHand.Count; c++)
             {
-                GameObject obj = Instantiate(pawn.GetComponent<WarlockAction>().Hand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
+                GameObject obj = Instantiate(pawn.GetComponent<WarlockAction>().CurrentHand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
                 obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
                 DisplayedCards.Add(obj);
             }
@@ -55,8 +55,7 @@ namespace ModulPertarungan
                 enemies[c] = obj;
 
             }
-            Debug.Log(enemies.Count);
-            GameMenager.Instance().Enemies = enemies;
+            GameManager.Instance().Enemies = enemies;
         }
         void Start()
         {
