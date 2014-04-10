@@ -23,7 +23,7 @@ namespace ModulPertarungan
 
         public override void Effect()
         {
-            foreach (GameObject obj in GameMenager.Instance().Enemies)
+            foreach (GameObject obj in GameManager.Instance().Enemies)
             {
                 GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.renderer.sortingLayerName = "foreground";

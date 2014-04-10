@@ -67,12 +67,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f661556b45c9a54eb1ef9c9d139325e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterName: SecondWarlock
+  Name: SecondWarlock
   handSize: 3
   cards:
   - {fileID: 100000, guid: 46755184040f27448a97033d1f5e5eb3, type: 2}
   - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
   - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
+  - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

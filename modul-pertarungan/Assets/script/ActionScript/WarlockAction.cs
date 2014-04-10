@@ -7,7 +7,7 @@ namespace ModulPertarungan
     public class WarlockAction : PlayerAction
     {
         // Use this for initialization
-        public string monsterName;
+        public string Name;
         private Deck deck;
        
         private Warlock warlock;
@@ -46,31 +46,29 @@ namespace ModulPertarungan
         }
         public void FirstPawnHand()
         {
-            Debug.Log(GameMenager.Instance().CurrentPawn.GetComponent<WarlockAction>().warlock.Name);
-
             for (int c = 0; c < handSize; c++)
             {
                 if (deck.Card.Count > 0)
                 {
-                    Hand.Add(deck.Draw());
+                    this.CurrentHand.Add(deck.Draw());
 
                 }
             }
 
-            if (GameMenager.Instance().CurrentPawn.GetComponent<WarlockAction>().warlock.Name == this.Warlock.Name)
+            if (GameManager.Instance().CurrentPawn.GetComponent<WarlockAction>().warlock.Name == this.Warlock.Name)
             {
                 GameObject.Find("Objcetloader").GetComponent<ObjectLoader>().LoadDisplayedCards(this.gameObject);
             }
         }
         public void Draw()
         {
-            this.Hand.Add(deck.Draw());
+            this.CurrentHand.Add(deck.Draw());
         }
        
         void Start()
         {
 
-            hand = new List<GameObject>();
+            this.CurrentHand = new List<GameObject>();
             deck = new Deck(cards);
             this.Warlock = new Warlock(200, 200, this.name, this.HandSize);
             this.Character = Warlock;

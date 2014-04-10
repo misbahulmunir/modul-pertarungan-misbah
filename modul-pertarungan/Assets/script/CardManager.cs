@@ -5,6 +5,7 @@ namespace ModulPertarungan
     public class CardManager : MonoBehaviour
     {
         public GameObject gui;
+        public GameObject Objectloader;
         public void SelectCard()
         {
 
@@ -15,9 +16,24 @@ namespace ModulPertarungan
                 {
                     if (hit.collider.gameObject.name.ToLower().Contains("card"))
                     {
+                        GameObject gobj=null;
                         CardsEffect card = hit.collider.gameObject.GetComponent<CardsEffect>();
-                        GameMenager.Instance().CurrentCard = card ;
+                        GameManager.Instance().CurrentCard = card;
                         card.Effect();
+                        
+                        
+                        foreach (GameObject obj in GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand)
+                        {
+                            if (hit.collider.name == obj.name+"(Clone)")
+                            {
+                                gobj = obj;
+                                break;
+                            }
+                        }
+                        GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand.Remove(gobj);
+                        Destroy(hit.collider.gameObject);
+                        Objectloader.GetComponent<ObjectLoader>().LoadDisplayedCards(GameManager.Instance().CurrentPawn);
+
                     }
 
                 }

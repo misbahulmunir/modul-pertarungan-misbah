@@ -16,9 +16,9 @@ namespace ModulPertarungan
 
             // Make four buttons - one in each corner. The coordinate system is defined
             // by the last parameter to BeginScrollView.
-            if (GameMenager.Instance().CurrentCard != null)
+            if (GameManager.Instance().CurrentCard != null)
             {
-                GUI.Label(new Rect(0, 0, 100, 20), GameMenager.Instance().CurrentCard.CardEffect, style);
+                GUI.Label(new Rect(0, 0, 100, 20), GameManager.Instance().CurrentCard.CardEffect, style);
             }
             //GUI.Button(new Rect(120, 0, 100, 20), "Top-right");
             //GUI.Button(new Rect(0,280, 100, 20), "Bottom-left");

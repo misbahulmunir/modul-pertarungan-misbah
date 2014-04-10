@@ -8,7 +8,13 @@ namespace ModulPertarungan
 {
 	public abstract class PlayerAction:DamageReceiverAction
 	{
-       
-       
+
+        private List<GameObject> currentHand;
+
+        public List<GameObject> CurrentHand
+        {
+            get { return currentHand; }
+            set { currentHand = value; }
+        }
 	}
 }

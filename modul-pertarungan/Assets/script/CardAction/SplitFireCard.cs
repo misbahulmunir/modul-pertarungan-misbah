@@ -22,7 +22,7 @@ namespace ModulPertarungan
 
         public override void Effect()
         {
-            GameObject obj = GameMenager.Instance().Enemies[0];
+            GameObject obj = GameManager.Instance().Enemies[0];
             GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
             animation.renderer.sortingLayerName = "foreground";
             animation.particleEmitter.emit = true;

@@ -11,6 +11,7 @@ namespace ModulPertarungan
         public DrawState(GameObject CurrentPlayer)
             : base(CurrentPlayer)
         {
+
         }
 
         public override void Action()
