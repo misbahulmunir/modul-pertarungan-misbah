@@ -6,7 +6,7 @@ namespace ModulPertarungan
     public class FireDragonScript : EnemyAction
     {
 
-        public string name;
+
         private FireDragon firedragon;
         // Use this for initialization
         public override void AttackAction()

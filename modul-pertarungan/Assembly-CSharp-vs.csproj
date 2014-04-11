@@ -49,6 +49,7 @@
      <Compile Include="Assets\BattleStateManager.cs" />
      <Compile Include="Assets\Deck.cs" />
      <Compile Include="Assets\GameMenager.cs" />
+     <Compile Include="Assets\GuiDeckSize.cs" />
      <Compile Include="Assets\GuiHandler.cs" />
      <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />

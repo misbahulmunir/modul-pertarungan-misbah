@@ -5,7 +5,13 @@ namespace ModulPertarungan
 {
     public class GameManager
     {
+        private int currentPlayerDeckSize;
 
+        public int CurrentPlayerDeckSize
+        {
+            get { return currentPlayerDeckSize; }
+            set { currentPlayerDeckSize = value; }
+        }
         private List<GameObject> enemies;
         private CardsEffect currentCard;
 
