@@ -16,6 +16,7 @@ namespace ModulPertarungan
                 GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(player.transform.position.x, player.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.renderer.sortingLayerName = "foreground";
                 animation.particleEmitter.emit = true;
+                player.GetComponent<DamageReceiverAction>().ReceiveDamage(100);
          
             }
         }
@@ -33,14 +34,7 @@ namespace ModulPertarungan
         }
         public override void ReceiveDamage(int damage)
         {
-            if (firedragon.CurrentHealth <= 0)
-            {
-                firedragon.CurrentHealth = 0;
-            }
-            else
-            {
-                firedragon.CurrentHealth -= damage;
-            }
+            base.ReceiveDamage( damage);
         }
     }
 }
