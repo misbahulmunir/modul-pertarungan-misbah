@@ -18,6 +18,11 @@ namespace ModulPertarungan
         }
         void Update()
         {
+          
+           
+        }
+        public override void Effect()
+        {
             foreach (GameObject obj in GameManager.Instance().Enemies)
             {
                 GameObject animation = Instantiate(GameObject.Find("WaterFall"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
@@ -25,7 +30,6 @@ namespace ModulPertarungan
                 animation.particleEmitter.emit = true;
                 obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
             }
-           
         }
 	}
 }
