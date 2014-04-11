@@ -7,7 +7,7 @@ namespace ModulPertarungan
 {
     public class HealthBarAction : MonoBehaviour
     {
-        public Texture2D healthBackground; // back segment
+        //public Texture2D healthBackground; // back segment
         public Texture2D healthForeground; // front segment
         public Texture2D healthDamage;
         public GUIStyle HUDSkin; // Styles up the health integer
@@ -95,12 +95,12 @@ namespace ModulPertarungan
         void OnGUI()
         {
             var wantedPos = Camera.main.WorldToScreenPoint(this.transform.position);
-            float posX = wantedPos.x;
+            float posX = wantedPos.x-60;
             float posY = wantedPos.y;
             int height = 15;
             float previousAdjustValue = (previousHealth * healthBarWidth) / maxHP;
             float percentage = healthBarWidth * (curHP / maxHP);
-            GUI.DrawTexture(new Rect(posX, posY, (healthBarWidth * 2), height), healthBackground);
+            //GUI.DrawTexture(new Rect(posX, posY, (healthBarWidth * 2), height), healthBackground);
             GUI.DrawTexture(new Rect(posX, posY, (previousAdjustValue * 2), height), healthDamage);
             GUI.DrawTexture(new Rect(posX, posY, (percentage * 2), height), healthForeground);
             HUDSkin = new GUIStyle();

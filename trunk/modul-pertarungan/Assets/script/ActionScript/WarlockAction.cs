@@ -44,11 +44,11 @@ namespace ModulPertarungan
         {
             
         }
-       
+
 
         public override void ReceiveDamage(int damage)
         {
-            this.Warlock.ReceiveDamage(Warlock.MaxHealth, damage);
+            base.ReceiveDamage(damage);
         }
     }
 }

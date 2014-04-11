@@ -17,7 +17,14 @@ namespace ModulPertarungan
         }
         public virtual void ReceiveDamage(int damage)
         {
-            
+            if (character.CurrentHealth <= 0)
+            {
+                character.CurrentHealth = 0;
+            }
+            else
+            {
+                character.CurrentHealth -= damage;
+            }
         }
 	}
 }
