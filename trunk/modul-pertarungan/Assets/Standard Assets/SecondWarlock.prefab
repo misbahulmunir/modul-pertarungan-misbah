@@ -70,9 +70,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handSize: 3
   cards:
-  - {fileID: 100000, guid: 46755184040f27448a97033d1f5e5eb3, type: 2}
+  - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
   - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
   - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
+  - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
+  - {fileID: 100000, guid: 2a8417fdabef07e42bbc995835e4ad23, type: 2}
+  - {fileID: 100000, guid: 2a8417fdabef07e42bbc995835e4ad23, type: 2}
+  - {fileID: 100000, guid: 53bd33c8a8f61a04c9c662ca4578dfaf, type: 2}
+  - {fileID: 100000, guid: b204fd76009ef454e9d7f14f317e4211, type: 2}
+  - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
   - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -85,7 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ff229978892c54096ba9f11e5ec05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBackground: {fileID: 2800000, guid: c2583caf782d15242b495bcbea8f4662, type: 3}
   healthForeground: {fileID: 2800000, guid: 8a5aa70af8050d248b2f55b3510f7917, type: 3}
   healthDamage: {fileID: 2800000, guid: e6b720270a686a9489ac686eeba91480, type: 3}
   HUDSkin:
