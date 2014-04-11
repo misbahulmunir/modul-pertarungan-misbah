@@ -25,7 +25,6 @@ namespace ModulPertarungan
         }
         public GameObject Draw()
         {
-            
             GameObject drawedcard = card[0];
             card.RemoveAt(0);
             return drawedcard;

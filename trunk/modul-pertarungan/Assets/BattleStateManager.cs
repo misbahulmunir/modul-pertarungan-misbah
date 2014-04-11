@@ -87,7 +87,7 @@ namespace ModulPertarungan
                 {
                     if (hit.collider.gameObject.name.ToLower().Contains("endbutton"))
                     {
-                        GameObject obj = GameManager.Instance().CurrentPawn = hit.collider.gameObject as GameObject;
+                        GameObject obj =  hit.collider.gameObject as GameObject;
                         EndButton = obj;
                         Cursor.renderer.enabled = false;
                         obj.renderer.enabled = false;

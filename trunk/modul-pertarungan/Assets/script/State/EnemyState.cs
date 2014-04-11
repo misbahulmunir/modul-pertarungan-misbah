@@ -16,6 +16,7 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
+            Debug.Log(GameManager.Instance().CurrentPawn.name);
             foreach (GameObject obj in this.Enemy)
             {
                 obj.GetComponent<EnemyAction>().AttackAction();
@@ -23,7 +24,8 @@ namespace ModulPertarungan
 
             BattleManager.EndButton.renderer.enabled = true;
             BattleManager.Cursor.renderer.enabled = true;
-            BattleManager.Currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
+            BattleManager.Currentstate = new DrawState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
+            BattleManager.Currentstate.Action();
 
         }
     }
