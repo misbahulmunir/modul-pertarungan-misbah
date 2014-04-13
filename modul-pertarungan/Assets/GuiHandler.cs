@@ -11,9 +11,11 @@ namespace ModulPertarungan
         public void OnGUI()
         {
             style.normal.textColor = Color.black;
+             /// GUI.Button(new Rect(Screen.height/2, Screen.width/2, 100, 30), "Hi. I'm a plain box.");
             scrollPosition = GUI.BeginScrollView(new Rect(10, 300, 150, 170),
             scrollPosition, new Rect(0, 0, 220, 300));
-
+          
+            
             // Make four buttons - one in each corner. The coordinate system is defined
             // by the last parameter to BeginScrollView.
             if (GameManager.Instance().CurrentCard != null)

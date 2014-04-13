@@ -9,7 +9,13 @@ namespace ModulPertarungan
     public abstract class BattleState : MonoBehaviour
     {
         private GameObject objectLoader;
+        private GameObject selectedCard;
 
+        public GameObject SelectedCard
+        {
+            get { return selectedCard; }
+            set { selectedCard = value; }
+        }
         private List<GameObject> players;
 
         public List<GameObject> Players
@@ -68,6 +74,11 @@ namespace ModulPertarungan
             : this(CurrentPlayer)
         {
             this.BattleManager = BattleManager;
+        }
+        public BattleState(GameObject CurrentPlayer, BattleStateManager BattleManager, GameObject SelectedCard)
+            : this(CurrentPlayer, BattleManager)
+        {
+            this.SelectedCard = SelectedCard;
         }
 
     }
