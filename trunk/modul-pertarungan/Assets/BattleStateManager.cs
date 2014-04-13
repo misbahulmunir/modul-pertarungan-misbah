@@ -8,8 +8,8 @@ namespace ModulPertarungan
     {
 
         // Use this for initialization
-        
 
+        private GUIStyle style;
         private BattleState currentstate;
 
         public BattleState Currentstate
@@ -36,24 +36,11 @@ namespace ModulPertarungan
                 {
                     if (hit.collider.gameObject.name.ToLower().Contains("card"))
                     {
-                        GameObject gobj = null;
+                        
                         CardsEffect card = hit.collider.gameObject.GetComponent<CardsEffect>();
                         GameManager.Instance().CurrentCard = card;
-                        card.Effect();
-
-
-                        foreach (GameObject obj in GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand)
-                        {
-                            if (hit.collider.name == obj.name + "(Clone)")
-                            {
-                                gobj = obj;
-                                break;
-                            }
-                        }
-                        GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand.Remove(gobj);
-                        Destroy(hit.collider.gameObject);
-                        currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, objectLoader, this);
-                        currentstate.Action();
+                        currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, this, hit.collider.gameObject);
+                       
 
                     }
 
@@ -61,23 +48,28 @@ namespace ModulPertarungan
             }
 
         }
+
         public void SelectPawn()
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (Input.GetMouseButtonUp(0))
+            if (!(this.currentstate is CardExcutionState))
             {
-                if (hit.collider != null)
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+                if (Input.GetMouseButtonUp(0))
                 {
-                    if (hit.collider.gameObject.name.ToLower().Contains("warlock"))
-                    { 
-                        GameObject obj= GameManager.Instance().CurrentPawn = hit.collider.gameObject as GameObject;
-                        currentstate = new ChangePlayerState(obj,objectLoader,this );
-                        currentstate.Action();
-                    }
+                    if (hit.collider != null)
+                    {
+                        if (hit.collider.gameObject.name.ToLower().Contains("warlock"))
+                        {
+                            GameObject obj = GameManager.Instance().CurrentPawn = hit.collider.gameObject as GameObject;
+                            currentstate = new ChangePlayerState(obj, objectLoader, this);
+                            currentstate.Action();
+                        }
 
+                    }
                 }
             }
         }
+
         public void EndPlayerTurn()
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -116,6 +108,17 @@ namespace ModulPertarungan
             EndPlayerTurn();
             SelectPawn();
             SelectCard();
+        }
+        void OnGUI()
+        {
+            
+            if (currentstate is CardExcutionState)
+            {
+                if (GUI.Button(new Rect((Screen.width/2) -50, (Screen.height/2) -25, 100, 50), "Execute Card"))
+                {
+                    currentstate.Action();
+                }
+            }
         }
     }
 }

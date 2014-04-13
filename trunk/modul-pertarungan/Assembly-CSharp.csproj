@@ -64,6 +64,8 @@
      <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
      <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
      <Compile Include="Assets\script\CardAction\WindStorm.cs" />
+     <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
+     <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />
      <Compile Include="Assets\script\Model\FireDragon.cs" />
@@ -76,6 +78,7 @@
      <Compile Include="Assets\script\Model\WindMonster.cs" />
      <Compile Include="Assets\script\ObjectLoader.cs" />
      <Compile Include="Assets\script\State\BattleState.cs" />
+     <Compile Include="Assets\script\State\CardExcutionState.cs" />
      <Compile Include="Assets\script\State\ChangePlayerState.cs" />
      <Compile Include="Assets\script\State\DrawState.cs" />
      <Compile Include="Assets\script\State\EnemyState.cs" />
