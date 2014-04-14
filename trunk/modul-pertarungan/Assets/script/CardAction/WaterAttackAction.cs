@@ -5,6 +5,11 @@ namespace ModulPertarungan
 {
     public class WaterAttackAction : CardsEffect
     {
+        public string cardName;
+        public string cardCost;
+        public string cardCode;
+        public string cardEffect;
+       
         
         // Use this for initialization
         void Start()

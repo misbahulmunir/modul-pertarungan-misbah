@@ -36,11 +36,11 @@ namespace ModulPertarungan
                 {
                     if (hit.collider.gameObject.name.ToLower().Contains("card"))
                     {
-                        
+
                         CardsEffect card = hit.collider.gameObject.GetComponent<CardsEffect>();
                         GameManager.Instance().CurrentCard = card;
                         currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, this, hit.collider.gameObject);
-                       
+
 
                     }
 
@@ -73,13 +73,13 @@ namespace ModulPertarungan
         public void EndPlayerTurn()
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (Input.GetMouseButtonUp(0) )
+            if (Input.GetMouseButtonUp(0))
             {
                 if (hit.collider != null)
                 {
                     if (hit.collider.gameObject.name.ToLower().Contains("endbutton"))
                     {
-                        GameObject obj =  hit.collider.gameObject as GameObject;
+                        GameObject obj = hit.collider.gameObject as GameObject;
                         EndButton = obj;
                         Cursor.renderer.enabled = false;
                         obj.renderer.enabled = false;
@@ -91,14 +91,14 @@ namespace ModulPertarungan
         }
         public void DrawCursor()
         {
-          
-                Cursor.transform.position = new Vector3(GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.x, GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.y +
-                    (GameManager.Instance().CurrentPawn.gameObject.renderer.bounds.size.y / 2), 0f);
-            
+
+            Cursor.transform.position = new Vector3(GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.x, GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.y +
+                (GameManager.Instance().CurrentPawn.gameObject.renderer.bounds.size.y / 2), 0f);
+
         }
         void Start()
         {
-           // currentstate = new FirstHandState(GameMenager.Instance().CurrentPawn);
+            // currentstate = new FirstHandState(GameMenager.Instance().CurrentPawn);
         }
 
         // Update is called once per frame
@@ -111,11 +111,19 @@ namespace ModulPertarungan
         }
         void OnGUI()
         {
-            
+
             if (currentstate is CardExcutionState)
             {
-                if (GUI.Button(new Rect((Screen.width/2) -50, (Screen.height/2) -25, 100, 50), "Execute Card"))
+                GUI.Box(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 75, 100, 150), "Execute Effect");
+                if (GUI.Button(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 25, 100, 50), "Yes"))
                 {
+                    currentstate.Action();
+                }
+
+                if (GUI.Button(new Rect((Screen.width / 2) - 50, ((Screen.height / 2) - 25)+50, 100, 50), "No"))
+                {
+                    GameObject obj = GameManager.Instance().CurrentPawn;
+                    currentstate = new ChangePlayerState(obj, objectLoader, this);
                     currentstate.Action();
                 }
             }
