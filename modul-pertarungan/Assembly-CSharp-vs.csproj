@@ -1,93 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-	<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-	<ProductVersion>10.0.20506</ProductVersion>
-	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{C6D8D4BB-CF31-96BC-191A-204E9AF01FD9}</ProjectGuid>
-	<OutputType>Library</OutputType>
-	<AppDesignerFolder>Properties</AppDesignerFolder>
-	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
-	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-	<FileAlignment>512</FileAlignment>
-	<BaseDirectory>Assets</BaseDirectory>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C6D8D4BB-CF31-96BC-191A-204E9AF01FD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-	<DebugSymbols>true</DebugSymbols>
-	<DebugType>full</DebugType>
-	<Optimize>false</Optimize>
-	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_1;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_1;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-	<DebugType>pdbonly</DebugType>
-	<Optimize>true</Optimize>
-	<OutputPath>Temp\bin\Release\</OutputPath>
-	<DefineConstants>TRACE</DefineConstants>
-	<ErrorReport>prompt</ErrorReport>
-	<WarningLevel>4</WarningLevel>
-	<NoWarn>0169</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="System" />
+    <Reference Include="System" />
     <Reference Include="System.XML" />
-	<Reference Include="System.Core" />
-	<Reference Include="System.Xml.Linq" />
-	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
-	</Reference>
-	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
-	</Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\BattleStateManager.cs" />
-     <Compile Include="Assets\Deck.cs" />
-     <Compile Include="Assets\GameMenager.cs" />
-     <Compile Include="Assets\GuiDeckSize.cs" />
-     <Compile Include="Assets\GuiHandler.cs" />
-     <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
-     <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
-     <Compile Include="Assets\script\ActionScript\FireDragonScript.cs" />
-     <Compile Include="Assets\script\ActionScript\HealthBarAction.cs" />
-     <Compile Include="Assets\script\ActionScript\PlayerAction.cs" />
-     <Compile Include="Assets\script\ActionScript\WarlockAction.cs" />
-     <Compile Include="Assets\script\CardAction\CardEffect.cs" />
-     <Compile Include="Assets\script\CardAction\FireStorm.cs" />
-     <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
-     <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
-     <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
-     <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
-     <Compile Include="Assets\script\CardAction\WindStorm.cs" />
-     <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
-     <Compile Include="Assets\script\Factory\CardFactory.cs" />
-     <Compile Include="Assets\script\Model\DamageReciver.cs" />
-     <Compile Include="Assets\script\Model\Enemy.cs" />
-     <Compile Include="Assets\script\Model\FireDragon.cs" />
-     <Compile Include="Assets\script\Model\FireMonster.cs" />
-     <Compile Include="Assets\script\Model\Magician.cs" />
-     <Compile Include="Assets\script\Model\Player.cs" />
-     <Compile Include="Assets\script\Model\Socerer.cs" />
-     <Compile Include="Assets\script\Model\Warlock.cs" />
-     <Compile Include="Assets\script\Model\WaterMonster.cs" />
-     <Compile Include="Assets\script\Model\WindMonster.cs" />
-     <Compile Include="Assets\script\ObjectLoader.cs" />
-     <Compile Include="Assets\script\State\BattleState.cs" />
-     <Compile Include="Assets\script\State\CardExcutionState.cs" />
-     <Compile Include="Assets\script\State\ChangePlayerState.cs" />
-     <Compile Include="Assets\script\State\DrawState.cs" />
-     <Compile Include="Assets\script\State\EnemyState.cs" />
-     <Compile Include="Assets\script\State\FirstHandState.cs" />
-     <Compile Include="Assets\script\State\PlayerTurnState.cs" />
-     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
+    <Compile Include="Assets\BattleStateManager.cs" />
+    <Compile Include="Assets\Deck.cs" />
+    <Compile Include="Assets\GameMenager.cs" />
+    <Compile Include="Assets\GuiDeckSize.cs" />
+    <Compile Include="Assets\GuiHandler.cs" />
+    <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
+    <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
+    <Compile Include="Assets\script\ActionScript\FireDragonScript.cs" />
+    <Compile Include="Assets\script\ActionScript\HealthBarAction.cs" />
+    <Compile Include="Assets\script\ActionScript\PlayerAction.cs" />
+    <Compile Include="Assets\script\ActionScript\WarlockAction.cs" />
+    <Compile Include="Assets\script\CardAction\CardEffect.cs" />
+    <Compile Include="Assets\script\CardAction\FireStorm.cs" />
+    <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
+    <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
+    <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
+    <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
+    <Compile Include="Assets\script\CardAction\WindStorm.cs" />
+    <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
+    <Compile Include="Assets\script\Factory\CardFactory.cs" />
+    <Compile Include="Assets\script\Model\DamageReciver.cs" />
+    <Compile Include="Assets\script\Model\Enemy.cs" />
+    <Compile Include="Assets\script\Model\FireDragon.cs" />
+    <Compile Include="Assets\script\Model\FireMonster.cs" />
+    <Compile Include="Assets\script\Model\Magician.cs" />
+    <Compile Include="Assets\script\Model\Player.cs" />
+    <Compile Include="Assets\script\Model\Socerer.cs" />
+    <Compile Include="Assets\script\Model\Warlock.cs" />
+    <Compile Include="Assets\script\Model\WaterMonster.cs" />
+    <Compile Include="Assets\script\Model\WindMonster.cs" />
+    <Compile Include="Assets\script\ObjectLoader.cs" />
+    <Compile Include="Assets\script\State\BattleState.cs" />
+    <Compile Include="Assets\script\State\CardExcutionState.cs" />
+    <Compile Include="Assets\script\State\ChangePlayerState.cs" />
+    <Compile Include="Assets\script\State\DrawState.cs" />
+    <Compile Include="Assets\script\State\EnemyState.cs" />
+    <Compile Include="Assets\script\State\FirstHandState.cs" />
+    <Compile Include="Assets\script\State\PlayerTurnState.cs" />
+    <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+    <Reference Include="Assembly-UnityScript-firstpass">
+      <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -97,5 +101,4 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-  
 </Project>

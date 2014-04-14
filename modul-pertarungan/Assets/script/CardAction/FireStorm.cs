@@ -7,6 +7,11 @@ namespace ModulPertarungan
 {
     public class FireStorm : CardsEffect
     {
+        public string cardName;
+        public string cardCost;
+        public string cardCode;
+        public string cardEffect;
+       
         // Use this for initialization
         void Start()
         {

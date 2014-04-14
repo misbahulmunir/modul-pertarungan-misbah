@@ -4,14 +4,18 @@ namespace ModulPertarungan
 {
     public class SplitFireCard :CardsEffect
     {
-
+        public string cardName;
+        public string cardCost;
+        public string cardCode;
+        public string cardEffect;
+       
         // Use this for initialization
         void Start()
         {
             this.CardName = "SplitFire";
             this.CardCost = 2;
             this.CardCode = " ";
-            this.CardEffect = " Deal 10 fire damage to single enemy";
+            this.CardEffect = " Deal 10 fire damage /n to single enemy";
         }
 
         // Update is called once per frame
