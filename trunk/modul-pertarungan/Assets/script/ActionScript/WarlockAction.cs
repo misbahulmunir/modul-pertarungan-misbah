@@ -28,10 +28,10 @@ namespace ModulPertarungan
        
         void Start()
         {
-
+           
             this.CurrentHand = new List<GameObject>();
             this.Deck = new Deck(cards);
-            this.Warlock = new Warlock(200, 200, this.name, this.HandSize);
+            this.Warlock = new Warlock(200, 200, this.name, this.HandSize,6,6);
             this.SceneObject = this.gameObject;
             this.Character = Warlock;
             this.Deck.Shuffle();

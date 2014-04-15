@@ -7,10 +7,7 @@ namespace ModulPertarungan
 {
 	public class TidalWaveCard:CardsEffect
 	{
-        public string cardName;
-        public string cardCost;
-        public string cardCode;
-        public string cardEffect;
+       
        
         void Start()
         {

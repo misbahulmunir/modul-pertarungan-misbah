@@ -7,11 +7,7 @@ namespace ModulPertarungan
 {
 	public class TyphoonCard:CardsEffect
 	{
-        public string cardName;
-        public string cardCost;
-        public string cardCode;
-        public string cardEffect;
-       
+      
         void Start()
         {
             this.CardName = "Typhoon";

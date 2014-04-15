@@ -34,5 +34,13 @@ namespace ModelModulPertarungan
         {
             this.HandCapacity = HandCapacity;
         }
+        public Player(int MaxHealth, int CurrentHealth, string Name, int HandCapacity, int MaxSoulPoints, int CurrentSoulPoints)
+            : this(MaxHealth, CurrentHealth, Name, HandCapacity)
+        {
+            this.maxSoulPoints = MaxSoulPoints;
+            this.currentSoulPoints = CurrentSoulPoints;
+        }
+
+
     }
 }

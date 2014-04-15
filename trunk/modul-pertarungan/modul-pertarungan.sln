@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{699303B0-1E2F-71C5-F76E-FDAFE9F39B61}") = "modul-pertarungan", "Assembly-CSharp.csproj", "{C6D8D4BB-CF31-96BC-191A-204E9AF01FD9}"
 EndProject
+Project("{699303B0-1E2F-71C5-F76E-FDAFE9F39B61}") = "modul-pertarungan", "Assembly-CSharp-Editor.csproj", "{D80A3A3B-1812-B4BC-A523-3B003FFEB7DF}"
+EndProject
 Project("{699303B0-1E2F-71C5-F76E-FDAFE9F39B61}") = "modul-pertarungan", "Assembly-UnityScript-firstpass.unityproj", "{8C5F92F7-960A-98F6-4FD9-78D1856CA243}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{C6D8D4BB-CF31-96BC-191A-204E9AF01FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6D8D4BB-CF31-96BC-191A-204E9AF01FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6D8D4BB-CF31-96BC-191A-204E9AF01FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D80A3A3B-1812-B4BC-A523-3B003FFEB7DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80A3A3B-1812-B4BC-A523-3B003FFEB7DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80A3A3B-1812-B4BC-A523-3B003FFEB7DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80A3A3B-1812-B4BC-A523-3B003FFEB7DF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C5F92F7-960A-98F6-4FD9-78D1856CA243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8C5F92F7-960A-98F6-4FD9-78D1856CA243}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C5F92F7-960A-98F6-4FD9-78D1856CA243}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																																																																GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																																																																													GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
