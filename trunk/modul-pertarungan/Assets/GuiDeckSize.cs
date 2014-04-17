@@ -16,9 +16,16 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            
-            this.gameObject.GetComponent<GUIText>().text = 
-            GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count.ToString();
+            if (GameManager.Instance().CurrentPawn != null)
+            {
+                this.gameObject.GetComponent<GUIText>().text =
+                GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count.ToString();
+            }
+            else
+            {
+                
+            }
+
         }
     }
 }
