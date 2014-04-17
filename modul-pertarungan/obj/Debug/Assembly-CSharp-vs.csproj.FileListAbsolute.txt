@@ -36,7 +36,6 @@ E:\Ta2\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 E:\Ta2\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
 C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
 C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
 C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
 C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
 C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
@@ -46,3 +45,4 @@ C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\TaTerbaru\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\TaTerbaru\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 C:\TaTerbaru\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
+C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll

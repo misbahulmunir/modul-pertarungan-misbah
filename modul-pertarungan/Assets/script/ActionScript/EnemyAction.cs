@@ -10,6 +10,7 @@ namespace ModulPertarungan
         public virtual void AttackAction()
         {
         }
-        
+         
+
 	}
 }

@@ -91,9 +91,27 @@ namespace ModulPertarungan
         }
         public void DrawCursor()
         {
-
+            if(GameManager.Instance().CurrentPawn!=null)
             Cursor.transform.position = new Vector3(GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.x, GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.y +
                 (GameManager.Instance().CurrentPawn.gameObject.renderer.bounds.size.y / 2), 0f);
+
+        }
+
+        public void CheckWinorLose()
+        {
+            if (GameManager.Instance().Enemies.Count <= 0)
+            {
+                GameManager.Instance().GameStatus = "win";
+                GameManager.Instance().PlayerExp = 100;
+                GameManager.Instance().PlayerGold = 100;
+                Application.LoadLevel("AfterBattle");
+                
+            }
+            else if (GameManager.Instance().Players.Count <=0)
+            {
+                GameManager.Instance().GameStatus="lose";
+                Application.LoadLevel("AfterBattle");
+            }
 
         }
         void Start()
@@ -104,10 +122,12 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
+            
             DrawCursor();
             EndPlayerTurn();
             SelectPawn();
             SelectCard();
+            CheckWinorLose();
         }
         void OnGUI()
         {

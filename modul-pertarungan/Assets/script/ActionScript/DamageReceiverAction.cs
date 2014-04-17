@@ -25,6 +25,7 @@ namespace ModulPertarungan
             {
                 character.CurrentHealth -= damage;
             }
+           
         }
 	}
 }

@@ -49,6 +49,15 @@ namespace ModulPertarungan
         public override void ReceiveDamage(int damage)
         {
             base.ReceiveDamage(damage);
+            if (this.warlock.CurrentHealth <= 0)
+            {
+              
+                GameManager.Instance().CurrentPawn = null;
+                
+                Destroy(this.gameObject);
+             
+            }
+           
         }
     }
 }
