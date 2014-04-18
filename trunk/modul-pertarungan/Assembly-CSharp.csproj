@@ -49,7 +49,10 @@
      <Compile Include="Assets\Asset ta\ListBoxExample.cs" />
      <Compile Include="Assets\BattleStateManager.cs" />
      <Compile Include="Assets\Cobaserver.cs" />
+     <Compile Include="Assets\CollectCard.cs" />
      <Compile Include="Assets\Deck.cs" />
+     <Compile Include="Assets\DragScript.cs" />
+     <Compile Include="Assets\ExecuteCard.cs" />
      <Compile Include="Assets\GameMenager.cs" />
      <Compile Include="Assets\GuiDeckSize.cs" />
      <Compile Include="Assets\GuiHandler.cs" />
@@ -195,6 +198,9 @@
      <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
      <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
      <Compile Include="Assets\script\CardAction\WindStorm.cs" />
+     <Compile Include="Assets\script\Command\CardExcuteEffectPerformer.cs" />
+     <Compile Include="Assets\script\Command\CardExecuteCommand.cs" />
+     <Compile Include="Assets\script\Command\Command.cs" />
      <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />

@@ -104,13 +104,13 @@ namespace ModulPertarungan
                 GameManager.Instance().GameStatus = "win";
                 GameManager.Instance().PlayerExp = 100;
                 GameManager.Instance().PlayerGold = 100;
-                Application.LoadLevel("AfterBattle");
+                //Application.LoadLevel("AfterBattle");
                 
             }
             else if (GameManager.Instance().Players.Count <=0)
             {
                 GameManager.Instance().GameStatus="lose";
-                Application.LoadLevel("AfterBattle");
+               // Application.LoadLevel("AfterBattle");
             }
 
         }

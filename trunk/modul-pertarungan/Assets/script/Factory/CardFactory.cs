@@ -29,7 +29,8 @@ namespace ModulPertarungan
         
         public override void CreateCard(string Objectname)
         {
-            base.CreateCard(Objectname);
+            CreateCardList.TryGetValue(Objectname, out card);
+            card.Effect();
         }
 	}
 }
