@@ -11,7 +11,7 @@ namespace ModulPertarungan
         {
             CardFactory cardFactory= new CardFactory();
             cardFactory.InstatiateObject();
-            cardFactory.CreateCard("SplitFireCard");
+            cardFactory.CreateObject("SplitFireCard");
         }
         void Start()
         {
