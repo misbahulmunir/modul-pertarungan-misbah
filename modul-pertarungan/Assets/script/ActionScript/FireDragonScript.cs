@@ -27,7 +27,7 @@ namespace ModulPertarungan
         {
             firedragon = new FireDragon(200, 200, name);
             this.Character = firedragon;
-            GameManager.Instance().Enemies.Add(this.gameObject);
+            
         }
 
 
