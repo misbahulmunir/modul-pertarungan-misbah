@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-
+using UnityEngine;
 namespace ModulPertarungan
 {
-    public abstract class AbstractFactory
+    public abstract class AbstractFactory:MonoBehaviour
     {
         public virtual void InstatiateObject()
         {
         }
-        public virtual void CreateCard(string Objectname)
+        public virtual void CreateObject(string Objectname)
+        {
+        }
+        public virtual void CreateEnemy(string ObjectName, int place)
         {
         }
     }

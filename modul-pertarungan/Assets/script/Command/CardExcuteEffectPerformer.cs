@@ -12,7 +12,7 @@ namespace ModulPertarungan
         {
             factory = new CardFactory();
             factory.InstatiateObject();
-            factory.CreateCard(cmd.CardName);
+            factory.CreateObject(cmd.CardName);
         }
 	}
 }

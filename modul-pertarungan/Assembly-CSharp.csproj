@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Asset ta\ListBoxExample.cs" />
      <Compile Include="Assets\BattleStateManager.cs" />
+     <Compile Include="Assets\BeforeBattleScript.cs" />
      <Compile Include="Assets\Cobaserver.cs" />
      <Compile Include="Assets\CollectCard.cs" />
      <Compile Include="Assets\Deck.cs" />
@@ -203,6 +204,7 @@
      <Compile Include="Assets\script\Command\Command.cs" />
      <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
+     <Compile Include="Assets\script\Factory\EnemyFactory.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />
      <Compile Include="Assets\script\Model\FireDragon.cs" />

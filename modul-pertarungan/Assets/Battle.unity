@@ -1744,7 +1744,7 @@ Transform:
   m_GameObject: {fileID: 1550901221}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00382409175, y: .00382409175, z: .00382409175}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 715285902}
   - {fileID: 2029164966}
@@ -2262,6 +2262,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2060525587}
   - 114: {fileID: 2060525588}
+  - 114: {fileID: 2060525589}
   m_Layer: 0
   m_Name: Objcetloader
   m_TagString: Untagged
@@ -2291,14 +2292,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fcf149a1df5a6d41af2301b6c97e2bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
-  - {fileID: 100000, guid: 9836966a3f9979f4e9760942afb1d11a, type: 2}
-  enemiesplace:
-  - {fileID: 201481166}
   pawns:
   - {fileID: 100000, guid: d41cff7ea08d0054491441ba41cee3fc, type: 2}
   - {fileID: 100000, guid: 6060dca81325f0143bc506ee80d4da6f, type: 2}
   - {fileID: 100000, guid: 06f129520f512ce48a0a1e07cf8d1fce, type: 2}
+  enemyCount: 1
   pawnsPosisition:
   - {fileID: 433662462}
   - {fileID: 175747674}
@@ -2307,3 +2305,18 @@ MonoBehaviour:
   - {fileID: 1164976108}
   - {fileID: 693167321}
   - {fileID: 1198560205}
+--- !u!114 &2060525589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2060525586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9f2e3d9f7026fc4eb5d2d2fbd042999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 100000, guid: 9836966a3f9979f4e9760942afb1d11a, type: 2}
+  enemiesplace:
+  - {fileID: 201481166}

@@ -10,13 +10,13 @@ namespace ModulPertarungan
 
         // Use this for initialization
         private int pawnsnumber;
-        public List<GameObject> enemies;
-        public List<GameObject> enemiesplace;
         public List<GameObject> pawns;
+        public int enemyCount;
         public List<GameObject> pawnsPosisition;
         public List<GameObject> cardpawns;
         private List<GameObject> DisplayedCards;
         private int currentPawnNumber;
+        private AbstractFactory factory;
 
         public void LoadPlayer()
         {
@@ -49,17 +49,19 @@ namespace ModulPertarungan
 
         public void LoadEnemy()
         {
-            for (int c = 0; c < enemies.Count; c++)
+            
+            for (int c = 0; c < enemyCount; c++)
             {
-                GameObject obj = Instantiate(enemies[c], enemiesplace[c].transform.position, Quaternion.identity) as GameObject;
-                enemies[c] = obj;
+                this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon", c);
+                
 
             }
-            GameManager.Instance().Enemies = enemies;
+            
         }
         void Start()
         {
             DisplayedCards = new List<GameObject>();
+            GameManager.Instance().Enemies = new List<GameObject>();
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             LoadEnemy();
             LoadPlayer();
