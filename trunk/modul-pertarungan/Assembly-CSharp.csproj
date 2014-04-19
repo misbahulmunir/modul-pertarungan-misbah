@@ -47,16 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Asset ta\ListBoxExample.cs" />
-     <Compile Include="Assets\BattleStateManager.cs" />
      <Compile Include="Assets\BeforeBattleScript.cs" />
      <Compile Include="Assets\Cobaserver.cs" />
      <Compile Include="Assets\CollectCard.cs" />
-     <Compile Include="Assets\Deck.cs" />
      <Compile Include="Assets\DragScript.cs" />
      <Compile Include="Assets\ExecuteCard.cs" />
-     <Compile Include="Assets\GameMenager.cs" />
-     <Compile Include="Assets\GuiDeckSize.cs" />
-     <Compile Include="Assets\GuiHandler.cs" />
      <Compile Include="Assets\ListBox\ListBox.cs" />
      <Compile Include="Assets\NGUI\ButtonOk.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
@@ -185,7 +180,6 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
-     <Compile Include="Assets\ScoreScript.cs" />
      <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\FireDragonScript.cs" />
@@ -193,6 +187,7 @@
      <Compile Include="Assets\script\ActionScript\PlayerAction.cs" />
      <Compile Include="Assets\script\ActionScript\WarlockAction.cs" />
      <Compile Include="Assets\script\CardAction\CardEffect.cs" />
+     <Compile Include="Assets\script\CardAction\Deck.cs" />
      <Compile Include="Assets\script\CardAction\FireStorm.cs" />
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
      <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
@@ -205,6 +200,12 @@
      <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Factory\EnemyFactory.cs" />
+     <Compile Include="Assets\script\GUI\GuiDeckSize.cs" />
+     <Compile Include="Assets\script\GUI\GuiHandler.cs" />
+     <Compile Include="Assets\script\GUI\ScoreScript.cs" />
+     <Compile Include="Assets\script\Manager\BattleStateManager.cs" />
+     <Compile Include="Assets\script\Manager\GameMenager.cs" />
+     <Compile Include="Assets\script\Manager\ObjectLoader.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />
      <Compile Include="Assets\script\Model\FireDragon.cs" />
@@ -215,7 +216,6 @@
      <Compile Include="Assets\script\Model\Warlock.cs" />
      <Compile Include="Assets\script\Model\WaterMonster.cs" />
      <Compile Include="Assets\script\Model\WindMonster.cs" />
-     <Compile Include="Assets\script\ObjectLoader.cs" />
      <Compile Include="Assets\script\State\BattleState.cs" />
      <Compile Include="Assets\script\State\CardExcutionState.cs" />
      <Compile Include="Assets\script\State\ChangePlayerState.cs" />

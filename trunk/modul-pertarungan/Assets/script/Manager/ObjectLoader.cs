@@ -10,7 +10,6 @@ namespace ModulPertarungan
 
         // Use this for initialization
         private int pawnsnumber;
-        public List<GameObject> pawns;
         public int enemyCount;
         public List<GameObject> pawnsPosisition;
         public List<GameObject> cardpawns;
@@ -20,14 +19,14 @@ namespace ModulPertarungan
 
         public void LoadPlayer()
         {
-            for (int c = 0; c < pawns.Count; c++)
+            for (int c = 0; c <GameManager.Instance().Players.Count; c++)
             {
-                GameObject obj = Instantiate(pawns[c], pawnsPosisition[c].transform.position, Quaternion.identity) as GameObject;
-                pawns[c] = obj;
+                GameObject obj = Instantiate(GameManager.Instance().Players[c], pawnsPosisition[c].transform.position, Quaternion.identity) as GameObject;
+                GameManager.Instance().Players[c] = obj;
 
             }
-            GameManager.Instance().CurrentPawn = pawns[0];
-            GameManager.Instance().Players = pawns;
+            GameManager.Instance().CurrentPawn = GameManager.Instance().Players[0];
+           
     
         }
         public void LoadDisplayedCards(GameObject pawn)
@@ -61,7 +60,7 @@ namespace ModulPertarungan
         void Start()
         {
             DisplayedCards = new List<GameObject>();
-            GameManager.Instance().Enemies = new List<GameObject>();
+            
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             LoadEnemy();
             LoadPlayer();

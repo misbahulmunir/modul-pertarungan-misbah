@@ -7,3 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/testNetwork.unity
+  - enabled: 1
+    path: Assets/BeforeBattle.unity
+  - enabled: 1
+    path: Assets/Battle.unity
