@@ -91,6 +91,7 @@ public class UIDragDropItem : MonoBehaviour
 		if (cloneOnDrag)
 		{
 			GameObject clone = NGUITools.AddChild(transform.parent.gameObject, gameObject);
+           // Debug.Log(clone.GetComponent<BoxCollider>().isTrigger);
 			clone.transform.localPosition = transform.localPosition;
 			clone.transform.localRotation = transform.localRotation;
 			clone.transform.localScale = transform.localScale;
