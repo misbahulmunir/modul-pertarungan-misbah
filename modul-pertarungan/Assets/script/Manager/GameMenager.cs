@@ -69,10 +69,18 @@ namespace ModulPertarungan
             get { return gameStatus; }
             set { gameStatus = value; }
         }
+        private List<GameObject> playerDeck;
+
+        public List<GameObject> PlayerDeck
+        {
+            get { return playerDeck; }
+            set { playerDeck = value; }
+        }
         public GameManager()
         {
             
         }
+        
         public static GameManager Instance()
         {
             if (instance == null)
