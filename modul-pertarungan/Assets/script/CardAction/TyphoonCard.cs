@@ -5,9 +5,9 @@ using System.Text;
 using UnityEngine;
 namespace ModulPertarungan
 {
-	public class TyphoonCard:CardsEffect
-	{
-      
+    public class TyphoonCard : CardsEffect
+    {
+
         void Start()
         {
             this.CardName = "Typhoon";
@@ -24,14 +24,16 @@ namespace ModulPertarungan
 
         public override void Effect()
         {
-            foreach (GameObject obj in GameManager.Instance().Enemies)
+            if (GameManager.Instance().Enemies.Count > 0)
             {
-                GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
-                animation.renderer.sortingLayerName = "foreground";
-                animation.particleEmitter.emit = true;
-                obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
+                foreach (GameObject obj in GameManager.Instance().Enemies)
+                {
+                    GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                    animation.renderer.sortingLayerName = "foreground";
+                    animation.particleEmitter.emit = true;
+                    obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
+                }
             }
-
         }
-	}
+    }
 }

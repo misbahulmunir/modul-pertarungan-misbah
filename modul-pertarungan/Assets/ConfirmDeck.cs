@@ -12,21 +12,21 @@ namespace ModulPertarungan
         public Vector2 center;
         public void OnClick()
         {
-            GameManager.Instance().PlayerDeck = new List<GameObject>();
+            //GameManager.Instance().PlayerDeck = new List<GameObject>();
 
-            foreach (Transform child in grid.transform)
-            {
+            //foreach (Transform child in grid.transform)
+            //{
 
-                DestroyBoxCollider(child.gameObject);
+            //    DestroyBoxCollider(child.gameObject);
 
-            }
-            foreach (Transform child in grid.transform)
-            {
+            //}
+            //foreach (Transform child in grid.transform)
+            //{
 
-                DestroyBoxCollider(Attach2DComponent(child.gameObject));
+            //    DestroyBoxCollider(Attach2DComponent(child.gameObject));
 
-            }
-            Application.LoadLevel("Battle");
+            //}
+            Application.LoadLevel("BeforeBattle");
 
         }
         public void DestroyBoxCollider(GameObject obj)

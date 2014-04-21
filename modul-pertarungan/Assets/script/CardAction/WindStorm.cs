@@ -25,11 +25,14 @@ namespace ModulPertarungan
 
         public override void Effect()
         {
-            GameObject obj = GameManager.Instance().Enemies[0];
-            GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
-            animation.renderer.sortingLayerName = "foreground";
-            animation.particleEmitter.emit = true;
-            obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
+            if (GameManager.Instance().Enemies.Count > 0)
+            {
+                GameObject obj = GameManager.Instance().Enemies[0];
+                GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                animation.renderer.sortingLayerName = "foreground";
+                animation.particleEmitter.emit = true;
+                obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
+            }
 
 
         }
