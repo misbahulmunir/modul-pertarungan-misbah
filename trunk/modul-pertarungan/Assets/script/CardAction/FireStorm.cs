@@ -26,17 +26,15 @@ namespace ModulPertarungan
 
         public override void Effect()
         {
-            foreach (GameObject obj in GameManager.Instance().Enemies)
+            if (GameManager.Instance().Enemies.Count > 0)
             {
-                GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
-                animation.renderer.sortingLayerName = "foreground";
-                animation.particleEmitter.emit = true;
-                if (obj.GetComponent<DamageReceiverAction>().Character.CurrentHealth <= 100)
+                foreach (GameObject obj in GameManager.Instance().Enemies)
                 {
-                    Destroy(obj);
+                    GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                    animation.renderer.sortingLayerName = "foreground";
+                    animation.particleEmitter.emit = true;
+                    obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
                 }
-                else
-                obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
             }
 
         }
