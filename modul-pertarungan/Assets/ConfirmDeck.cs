@@ -8,7 +8,8 @@ namespace ModulPertarungan
 
         // Use this for initialization
         public GameObject grid;
-
+        public Vector2 size;
+        public Vector2 center;
         public void OnClick()
         {
             GameManager.Instance().PlayerDeck = new List<GameObject>();
@@ -16,14 +17,28 @@ namespace ModulPertarungan
             foreach (Transform child in grid.transform)
             {
 
-                GameManager.Instance().PlayerDeck.Add(child.gameObject);
+                DestroyBoxCollider(child.gameObject);
 
             }
-            foreach (GameObject obj in GameManager.Instance().PlayerDeck)
+            foreach (Transform child in grid.transform)
             {
-                Debug.Log(obj.name);
-            }
 
+                DestroyBoxCollider(Attach2DComponent(child.gameObject));
+
+            }
+            Application.LoadLevel("Battle");
+
+        }
+        public void DestroyBoxCollider(GameObject obj)
+        {
+            Destroy(obj.collider);
+           
+        }
+        public GameObject Attach2DComponent(GameObject obj )
+        {
+            obj.AddComponent("BoxCollider2D");
+            obj.GetComponent<UITexture>().autoResizeBoxCollider = true;
+            return obj;
         }
         void Start()
         {
