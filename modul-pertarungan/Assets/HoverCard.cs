@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace ModulPertarungan
+{
 public class HoverCard : MonoBehaviour {
 
 	// Use this for initialization
@@ -10,10 +11,12 @@ public class HoverCard : MonoBehaviour {
     private Ray ray;
     private RaycastHit hit;
 
+    
     public void OnClick()
     {
 
-        Debug.Log(this.gameObject.name);
+        cardName.GetComponent<UILabel>().text = this.GetComponent<CardsEffect>().CardName;
+        cardEffect.GetComponent<UILabel>().text = " " + this.GetComponent<CardsEffect>().CardEffect;
     }
 	void Start () {
 	     
@@ -24,4 +27,5 @@ public class HoverCard : MonoBehaviour {
 	void Update () {
        
 	}
+}
 }
