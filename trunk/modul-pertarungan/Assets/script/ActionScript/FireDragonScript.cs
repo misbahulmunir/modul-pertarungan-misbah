@@ -41,8 +41,6 @@ namespace ModulPertarungan
             base.ReceiveDamage( damage);
             if (this.firedragon.CurrentHealth <= 0)
             {
-                
-                GameManager.Instance().KillObj("enemy");
                 Destroy(this.gameObject);
             }
            

@@ -31,11 +31,14 @@ namespace ModulPertarungan
         }
         public void LoadDisplayedCards(GameObject pawn)
         {
-            for (int c = 0; c < pawn.GetComponent<PlayerAction>().CurrentHand.Count; c++)
+            if (pawn != null)
             {
-                GameObject obj = Instantiate(pawn.GetComponent<PlayerAction>().CurrentHand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
-                obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
-                DisplayedCards.Add(obj);
+                for (int c = 0; c < pawn.GetComponent<PlayerAction>().CurrentHand.Count; c++)
+                {
+                    GameObject obj = Instantiate(pawn.GetComponent<PlayerAction>().CurrentHand[c], cardpawns[c].transform.position, Quaternion.identity) as GameObject;
+                    obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
+                    DisplayedCards.Add(obj);
+                }
             }
         }
         public void DestroyDisplayedCards()

@@ -34,16 +34,19 @@ namespace ModulPertarungan
             {
                 if (hit.collider != null)
                 {
-                    if (hit.collider.gameObject.name.ToLower().Contains("card"))
+                    if (GameManager.Instance().Enemies.Count > 0)
                     {
-
-                        CardsEffect card = hit.collider.gameObject.GetComponent<CardsEffect>();
-                        GameManager.Instance().CurrentCard = card;
-                        currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, this, hit.collider.gameObject);
+                        if (hit.collider.gameObject.name.ToLower().Contains("card"))
+                        {
 
 
+                            CardsEffect card = hit.collider.gameObject.GetComponent<CardsEffect>();
+                            GameManager.Instance().CurrentCard = card;
+                            currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, this, hit.collider.gameObject);
+
+
+                        }
                     }
-
                 }
             }
 

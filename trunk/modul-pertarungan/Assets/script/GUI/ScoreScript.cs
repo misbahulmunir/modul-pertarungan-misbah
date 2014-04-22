@@ -46,7 +46,7 @@ namespace ModulPertarungan
             }
             if (Input.GetMouseButtonDown(0))
             {
-                Application.LoadLevel("Battle");
+                Application.LoadLevel("BeforeBattle");
             }
         }
     }
