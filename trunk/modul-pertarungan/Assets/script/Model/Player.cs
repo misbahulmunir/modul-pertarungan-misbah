@@ -29,6 +29,29 @@ namespace ModelModulPertarungan
             get { return handCapacity; }
             set { handCapacity = value; }
         }
+        private int experience;
+
+        public int Experience
+        {
+            get { return experience; }
+            set { experience = value; }
+        }
+        private int gold;
+
+        public int Gold
+        {
+            get { return gold; }
+            set { gold = value; }
+        }
+
+        private int rank;
+
+        public int Rank
+        {
+            get { return rank; }
+            set { rank = value; }
+        }
+
         public Player(int MaxHealth, int CurrentHealth, string Name, int HandCapacity)
             : base(MaxHealth, CurrentHealth, Name)
         {
@@ -40,6 +63,16 @@ namespace ModelModulPertarungan
             this.maxSoulPoints = MaxSoulPoints;
             this.currentSoulPoints = CurrentSoulPoints;
         }
+
+        public Player(int MaxHealth, int CurrentHealth, string Name, int MaxSoulPoints, int CurrentSoulPoints, int HandCapacity, int Experience, int Gold)
+            : this
+                (MaxHealth, CurrentHealth, Name, HandCapacity, MaxSoulPoints, CurrentSoulPoints)
+        {
+            this.Experience = Experience;
+            this.Gold = Gold;
+            this.Rank = Rank;
+        }
+
 
 
     }
