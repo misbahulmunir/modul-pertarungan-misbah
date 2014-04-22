@@ -35,6 +35,7 @@ namespace ModulPertarungan
                     animation.particleEmitter.emit = true;
                     obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
                 }
+                GameManager.Instance().KillObj("enemy");
             }
 
         }
