@@ -100,7 +100,7 @@ Transform:
   m_GameObject: {fileID: 222726034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00323101785, y: .00323101785, z: .00323101785}
+  m_LocalScale: {x: .00416666688, y: .00416666688, z: .00416666688}
   m_Children:
   - {fileID: 1580606971}
   - {fileID: 319061950}
@@ -604,7 +604,7 @@ MonoBehaviour:
   bottomAnchor:
     target: {fileID: 319061950}
     relative: 0
-    absolute: 380
+    absolute: 274
   topAnchor:
     target: {fileID: 319061950}
     relative: 1
@@ -619,7 +619,7 @@ MonoBehaviour:
   startingRenderQueue: 3000
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: -68, y: 193, z: 246, w: 128}
+  mClipRange: {x: -68, y: 140, z: 246, w: 234}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 5
   mClipOffset: {x: 0, y: 0}
