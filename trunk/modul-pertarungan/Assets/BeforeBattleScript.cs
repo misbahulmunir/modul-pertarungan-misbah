@@ -13,9 +13,8 @@ namespace ModulPertarungan
 
         void OnClick()
         {
-
-            GameManager.Instance().Enemies = enemies;
             GameManager.Instance().Players = Player;
+            GameManager.Instance().Enemies = enemies;
             Application.LoadLevel("Battle");
         }
         void Start()

@@ -51,7 +51,7 @@ namespace ModulPertarungan
 
             if (GameManager.Instance().CurrentPawn.name == this.Character.Name)
             {
-                GameObject.Find("Objcetloader").GetComponent<ObjectLoader>().LoadDisplayedCards(this.sceneObject);
+                GameObject.Find("Objcetloader").GetComponent<BattleObjectLoader>().LoadDisplayedCards(this.sceneObject);
             }
         }
         public void Draw()

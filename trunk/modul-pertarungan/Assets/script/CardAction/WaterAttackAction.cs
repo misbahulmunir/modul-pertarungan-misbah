@@ -5,7 +5,15 @@ namespace ModulPertarungan
 {
     public class WaterAttackAction : CardsEffect
     {
-     
+        void OnClick()
+        {
+            if (Application.loadedLevelName == "Battle")
+            {
+                GameManager.Instance().CurrentCard = this;
+                BattleStateManager obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
+                obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
+            }
+        }
         
         // Use this for initialization
         void Start()

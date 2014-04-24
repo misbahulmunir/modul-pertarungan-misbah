@@ -19,7 +19,7 @@
 	<DebugType>full</DebugType>
 	<Optimize>false</Optimize>
 	<OutputPath>Temp\bin\Debug\</OutputPath>
-	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
+	<DefineConstants>DEBUG;TRACE;UNITY_ANDROID;ENABLE_MICROPHONE;ENABLE_TEXTUREID_MAP;ENABLE_AUDIO_FMOD;ENABLE_MONO;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_GENERICS;ENABLE_SUBSTANCE;INCLUDE_WP8SUPPORT;ENABLE_WWW;ENABLE_IMAGEEFFECTS;ENABLE_WEBCAM;INCLUDE_METROSUPPORT;RENDER_SOFTWARE_CURSOR;ENABLE_NETWORK;ENABLE_PHYSICS;ENABLE_CACHING;ENABLE_CLOTH;UNITY_ANDROID_API;ENABLE_2D_PHYSICS;ENABLE_SHADOWS;ENABLE_AUDIO;ENABLE_NAVMESH_CARVING;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;UNITY_4_3_4;UNITY_4_3;ENABLE_PROFILER;UNITY_EDITOR;UNITY_EDITOR_WIN</DefineConstants>
 	<ErrorReport>prompt</ErrorReport>
 	<WarningLevel>4</WarningLevel>
 	<NoWarn>0169</NoWarn>
@@ -53,7 +53,6 @@
      <Compile Include="Assets\CollectCard.cs" />
      <Compile Include="Assets\ConfirmDeck.cs" />
      <Compile Include="Assets\CreateCard.cs" />
-     <Compile Include="Assets\DragScript.cs" />
      <Compile Include="Assets\EditDeck.cs" />
      <Compile Include="Assets\ExecuteCard.cs" />
      <Compile Include="Assets\HoverCard.cs" />
@@ -203,14 +202,17 @@
      <Compile Include="Assets\script\Command\CardExecuteCommand.cs" />
      <Compile Include="Assets\script\Command\Command.cs" />
      <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
+     <Compile Include="Assets\script\Factory\CardEffectFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Factory\EnemyFactory.cs" />
      <Compile Include="Assets\script\GUI\GuiDeckSize.cs" />
      <Compile Include="Assets\script\GUI\GuiHandler.cs" />
      <Compile Include="Assets\script\GUI\ScoreScript.cs" />
+     <Compile Include="Assets\script\Manager\BattleObjectLoader.cs" />
      <Compile Include="Assets\script\Manager\BattleStateManager.cs" />
      <Compile Include="Assets\script\Manager\GameMenager.cs" />
      <Compile Include="Assets\script\Manager\ObjectLoader.cs" />
+     <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />
      <Compile Include="Assets\script\Model\FireDragon.cs" />

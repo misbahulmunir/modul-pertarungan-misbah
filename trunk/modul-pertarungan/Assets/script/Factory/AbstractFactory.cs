@@ -6,7 +6,8 @@ namespace ModulPertarungan
 {
     public abstract class AbstractFactory:MonoBehaviour
     {
-        public virtual void InstatiateObject()
+        
+        public virtual void InstantiateObject()
         {
         }
         public virtual void CreateObject(string Objectname)
@@ -15,5 +16,6 @@ namespace ModulPertarungan
         public virtual void CreateEnemy(string ObjectName, int place)
         {
         }
+      
     }
 }

@@ -7,7 +7,15 @@ namespace ModulPertarungan
 {
     public class TyphoonCard : CardsEffect
     {
-
+        void OnClick()
+        {
+            if (Application.loadedLevelName == "Battle")
+            {
+                GameManager.Instance().CurrentCard = this;
+                BattleStateManager obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
+                obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
+            }
+        }
         void Start()
         {
             this.CardName = "Typhoon";

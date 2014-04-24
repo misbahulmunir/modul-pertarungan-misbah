@@ -26,31 +26,8 @@ namespace ModulPertarungan
             get { return endButton; }
             set { endButton = value; }
         }
-        public void SelectCard()
-        {
-
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (Input.GetMouseButtonUp(0))
-            {
-                if (hit.collider != null)
-                {
-                    if (GameManager.Instance().Enemies.Count > 0)
-                    {
-                        if (hit.collider.gameObject.name.ToLower().Contains("card"))
-                        {
-
-
-                            CardsEffect card = hit.collider.gameObject.GetComponent<CardsEffect>();
-                            GameManager.Instance().CurrentCard = card;
-                            currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, this, hit.collider.gameObject);
-
-
-                        }
-                    }
-                }
-            }
-
-        }
+       
+       
 
         public void SelectPawn()
         {
@@ -129,7 +106,6 @@ namespace ModulPertarungan
             DrawCursor();
             EndPlayerTurn();
             SelectPawn();
-            SelectCard();
             CheckWinorLose();
         }
         void OnGUI()

@@ -15,8 +15,8 @@ namespace ModulPertarungan
         public override void Action()
         {
            
-            this.ObjectLoader.GetComponent<ObjectLoader>().DestroyDisplayedCards();
-            this.ObjectLoader.GetComponent<ObjectLoader>().LoadDisplayedCards(this.CurrentPlayer);
+            this.ObjectLoader.GetComponent<BattleObjectLoader>().DestroyDisplayedCards();
+            this.ObjectLoader.GetComponent<BattleObjectLoader>().LoadDisplayedCards(this.CurrentPlayer);
         }
     }
 }

@@ -6,8 +6,8 @@ namespace ModulPertarungan
     public class GuiDeckSize : MonoBehaviour
     {
 
-        // Use this for initialization
-        public GUIStyle style;
+        // Use this for initializatio
+        public GameObject deckCount;
         void Start()
         {
 
@@ -15,17 +15,9 @@ namespace ModulPertarungan
 
         // Update is called once per frame
         void Update()
-        {
-            if (GameManager.Instance().CurrentPawn!=null&&GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count != null)
-            {
-                this.gameObject.GetComponent<GUIText>().text =
-                GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count.ToString();
-            }
-            else
-            {
-                
-            }
-
+        {     
+                  deckCount.GetComponent<UILabel>().text=  GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count.ToString();
+      
         }
     }
 }

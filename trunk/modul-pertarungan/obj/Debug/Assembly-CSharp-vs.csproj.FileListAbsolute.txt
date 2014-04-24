@@ -46,3 +46,15 @@ C:\TaTerbaru\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssembl
 C:\TaTerbaru\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 C:\TaTerbaru\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
 C:\TaTerbaru\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Taterbaru2\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Taterbaru2\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Taterbaru2\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
