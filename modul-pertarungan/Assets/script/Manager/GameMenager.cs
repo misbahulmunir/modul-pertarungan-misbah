@@ -5,6 +5,21 @@ namespace ModulPertarungan
 {
     public class GameManager
     {
+        private List<GameObject> allCards;
+
+        public List<GameObject> AllCards
+        {
+            get { return allCards; }
+            set { allCards = value; }
+        }
+
+        private string gameStatus;
+
+        public string GameStatus
+        {
+            get { return gameStatus; }
+            set { gameStatus = value; }
+        }
         private int playerExp;
 
         public int PlayerExp
@@ -56,19 +71,6 @@ namespace ModulPertarungan
             get { return currentPawn; }
             set { currentPawn = value; }
         }
-        public string BattlePhase
-        {
-            get { return battlePhase; }
-            set { battlePhase = value; }
-        }
-        public static GameManager instance;
-        private string gameStatus;
-
-        public string GameStatus
-        {
-            get { return gameStatus; }
-            set { gameStatus = value; }
-        }
         private List<GameObject> playerDeck;
 
         public List<GameObject> PlayerDeck
@@ -76,6 +78,9 @@ namespace ModulPertarungan
             get { return playerDeck; }
             set { playerDeck = value; }
         }
+        public static GameManager instance;
+     
+      
         public GameManager()
         {
             

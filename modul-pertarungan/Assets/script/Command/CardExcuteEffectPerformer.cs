@@ -10,8 +10,8 @@ namespace ModulPertarungan
         private AbstractFactory factory;
         public void CardExecute(CardExecuteCommand cmd )
         {
-            factory = new CardFactory();
-            factory.InstatiateObject();
+            factory = new CardEffecFactory();
+            factory.InstantiateObject();
             factory.CreateObject(cmd.CardName);
         }
 	}
