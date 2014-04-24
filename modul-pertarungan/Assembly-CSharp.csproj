@@ -210,6 +210,7 @@
      <Compile Include="Assets\script\GUI\ScoreScript.cs" />
      <Compile Include="Assets\script\Manager\BattleObjectLoader.cs" />
      <Compile Include="Assets\script\Manager\BattleStateManager.cs" />
+     <Compile Include="Assets\script\Manager\CardManagerLoader.cs" />
      <Compile Include="Assets\script\Manager\GameMenager.cs" />
      <Compile Include="Assets\script\Manager\ObjectLoader.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
