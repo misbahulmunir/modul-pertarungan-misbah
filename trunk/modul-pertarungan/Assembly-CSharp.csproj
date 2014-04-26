@@ -205,6 +205,7 @@
      <Compile Include="Assets\script\Factory\CardEffectFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Factory\EnemyFactory.cs" />
+     <Compile Include="Assets\script\GUI\CardManagerGuiHandler.cs" />
      <Compile Include="Assets\script\GUI\GuiDeckSize.cs" />
      <Compile Include="Assets\script\GUI\GuiHandler.cs" />
      <Compile Include="Assets\script\GUI\ScoreScript.cs" />

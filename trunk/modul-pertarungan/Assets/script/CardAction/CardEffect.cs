@@ -37,6 +37,16 @@ namespace ModulPertarungan
         public virtual void Effect()
         {
         }
+        public void Click()
+        {
+            if (Application.loadedLevelName == "Battle")
+            {
+                GameManager.Instance().CurrentCard = this;
+                BattleStateManager obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
+                obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
+            }
+            GameManager.Instance().CurrentCard = this;
+        }
 
     }
 }
