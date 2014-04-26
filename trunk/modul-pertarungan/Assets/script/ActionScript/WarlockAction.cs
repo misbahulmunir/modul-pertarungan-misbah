@@ -22,14 +22,18 @@ namespace ModulPertarungan
             set { cards = value; }
         }
 
-       
 
-        
-       
+
+
+        void Awake()
+        {
+            GetAllCard();
+        }
         void Start()
         {
            
             this.CurrentHand = new List<GameObject>();
+            
             this.Deck = new Deck(cards);
             this.Warlock = new Warlock(200, 200, this.name, this.HandSize,6,6);
             this.SceneObject = this.gameObject;
@@ -42,6 +46,17 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
+           
+        }
+        public void GetAllCard()
+        {
+            
+            cards = new List<GameObject>();
+            foreach (string t in GameManager.Instance().AllSelectedCard)
+            {
+                Debug.Log(t);
+                Cards.Add((GameObject)Resources.Load(t,typeof(GameObject)));
+            }
             
         }
 

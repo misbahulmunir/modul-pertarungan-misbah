@@ -11,15 +11,15 @@ namespace ModulPertarungan
         GameObject card;
         public override void InstantiateObject()
         {
-            ListCard = new Dictionary<string, GameObject>();
-            foreach (GameObject obj in GameManager.Instance().AllCards)
-            {
-                ListCard.Add(obj.GetComponent<CardsEffect>().name, obj);
-            }
+            //ListCard = new Dictionary<string, GameObject>();
+            //foreach (GameObject obj in GameManager.Instance().AllCards)
+            //{
+            //    ListCard.Add(obj.GetComponent<CardsEffect>().name, obj);
+            //}
         }
         public override void CreateObject(string Objectname)
         {
-            ListCard.TryGetValue(Objectname, out card);
+            //ListCard.TryGetValue(Objectname, out card);
         }
 	}
 }

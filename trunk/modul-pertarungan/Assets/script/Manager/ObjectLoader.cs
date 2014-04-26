@@ -11,7 +11,7 @@ namespace ModulPertarungan
         private AbstractFactory factory;
         void Start()
         {
-            GameManager.Instance().AllCards = allCards;
+            
         }
         void Update()
         {

@@ -69,17 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handSize: 3
-  cards:
-  - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
-  - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
-  - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
-  - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
-  - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
-  - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
-  - {fileID: 100000, guid: 53bd33c8a8f61a04c9c662ca4578dfaf, type: 2}
-  - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
-  - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
-  - {fileID: 100000, guid: 2a8417fdabef07e42bbc995835e4ad23, type: 2}
+  cards: []
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

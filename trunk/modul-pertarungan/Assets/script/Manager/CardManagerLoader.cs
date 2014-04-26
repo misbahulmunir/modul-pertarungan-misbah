@@ -20,24 +20,19 @@ namespace ModulPertarungan
 
         void Update()
         {
-            grid.GetComponent<UIGrid>().Reposition();
+            
 
         }
         public void AddToGrid()
         {
             foreach (GameObject obj in listcard)
             {
-                GameObject attachobj= AttachComponent(obj);
-                NGUITools.AddChild(grid, attachobj);
+                
+                NGUITools.AddChild(grid, obj);
             }
+            grid.GetComponent<UIGrid>().Reposition();
         }
-        public GameObject AttachComponent(GameObject obj)
-        {
-            obj.AddComponent("UIDragScrollView");
-            obj.AddComponent("UIDragDropItem");
-            obj.GetComponent<UIDragDropItem>().restriction = UIDragDropItem.Restriction.Vertical;
-            return obj;
-        }
+       
        
     }
 }
