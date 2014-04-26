@@ -246,7 +246,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 134
   mHeight: 214
-  mDepth: 4
+  mDepth: -12
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -371,7 +371,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 318235562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43, y: 186, z: 0}
+  m_LocalPosition: {x: -58, y: 173, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2010803787}
@@ -415,13 +415,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 914
-  mHeight: 702
+  mWidth: 884
+  mHeight: 676
   mDepth: 10
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.30199432
+  aspectRatio: 1.30769229
 --- !u!1 &637273523
 GameObject:
   m_ObjectHideFlags: 0
@@ -977,7 +977,7 @@ MonoBehaviour:
   startingRenderQueue: 3003
   mAlpha: 1
   mClipping: 3
-  mClipRange: {x: -38, y: 111, z: 134, w: 212}
+  mClipRange: {x: -38.0000229, y: 110.999962, z: 134.000015, w: 212.000015}
   mClipSoftness: {x: 4, y: 4}
   mDepth: 2
   mClipOffset: {x: 1, y: -388}
@@ -1186,7 +1186,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: C
+  mText: 
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 1
@@ -1667,6 +1667,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2023610520}
   - 114: {fileID: 2023610521}
+  - 114: {fileID: 2023610522}
   m_Layer: 0
   m_Name: CardGameManager
   m_TagString: Untagged
@@ -1697,9 +1698,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listcard:
-  - {fileID: 100000, guid: 46755184040f27448a97033d1f5e5eb3, type: 2}
+  - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
   - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
   - {fileID: 100000, guid: 2a8417fdabef07e42bbc995835e4ad23, type: 2}
   - {fileID: 100000, guid: b204fd76009ef454e9d7f14f317e4211, type: 2}
   - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
   grid: {fileID: 1304444693}
+--- !u!114 &2023610522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2023610519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ed327fbb4407254ab5d70ef0e804d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: {fileID: 684398152}
+  cardCost: {fileID: 1615674852}
+  cardEffect: {fileID: 1388393884}
