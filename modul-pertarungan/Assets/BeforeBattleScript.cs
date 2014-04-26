@@ -15,19 +15,22 @@ namespace ModulPertarungan
         {
             GameManager.Instance().Players = Player;
             GameManager.Instance().Enemies = enemies;
+
+          //  Debug.Log(GameManager.Instance().AllCards.Count);
+
             Application.LoadLevel("Battle");
         }
         void Start()
         {
 
-            
-           
+
+
         }
 
         // Update is called once per frame
         void Update()
         {
-          
+
         }
     }
 }

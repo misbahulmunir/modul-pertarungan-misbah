@@ -5,14 +5,15 @@ namespace ModulPertarungan
 {
     public class GameManager
     {
-        private List<GameObject> allCards;
+        private List<string> allSelectedCard;
 
-        public List<GameObject> AllCards
+        public List<string> AllSelectedCard
         {
-            get { return allCards; }
-            set { allCards = value; }
+            get { return allSelectedCard; }
+            set { allSelectedCard = value; }
         }
 
+       
         private string gameStatus;
 
         public string GameStatus

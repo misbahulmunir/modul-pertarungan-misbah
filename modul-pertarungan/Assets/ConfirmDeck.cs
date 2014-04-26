@@ -8,47 +8,37 @@ namespace ModulPertarungan
 
         // Use this for initialization
         public GameObject grid;
-        public Vector2 size;
-        public Vector2 center;
+        public GameObject container;
+        public GameObject obj;
+        public List<GameObject> lofI;
         public void OnClick()
         {
-            //GameManager.Instance().PlayerDeck = new List<GameObject>();
+           GameManager.Instance().AllSelectedCard= new List<string>();
+            foreach (Transform t in grid.transform)
+            {
 
-            //foreach (Transform child in grid.transform)
-            //{
+                GameManager.Instance().AllSelectedCard.Add(t.name.Split('(')[0]);
+            }
 
-            //    DestroyBoxCollider(child.gameObject);
-
-            //}
-            //foreach (Transform child in grid.transform)
-            //{
-
-            //    DestroyBoxCollider(Attach2DComponent(child.gameObject));
-
-            //}
-            Application.LoadLevel("BeforeBattle");
-
-        }
-        public void DestroyBoxCollider(GameObject obj)
-        {
-            Destroy(obj.collider);
            
+            Application.LoadLevel("BeforeBattle");
+            
         }
-        public GameObject Attach2DComponent(GameObject obj )
-        {
-            obj.AddComponent("BoxCollider2D");
-            obj.GetComponent<UITexture>().autoResizeBoxCollider = true;
-            return obj;
-        }
+    
+       
         void Start()
         {
-
+          
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+        void instantiate()
+        {
+          
         }
     }
 }
