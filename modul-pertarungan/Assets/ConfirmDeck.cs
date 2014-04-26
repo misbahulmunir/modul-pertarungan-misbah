@@ -8,9 +8,6 @@ namespace ModulPertarungan
 
         // Use this for initialization
         public GameObject grid;
-        public GameObject container;
-        public GameObject obj;
-        public List<GameObject> lofI;
         public void OnClick()
         {
            GameManager.Instance().AllSelectedCard= new List<string>();

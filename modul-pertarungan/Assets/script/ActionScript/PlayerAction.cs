@@ -10,6 +10,18 @@ namespace ModulPertarungan
     {
 
         private Deck deck;
+        public Deck Deck
+        {
+            get { return deck; }
+            set { deck = value; }
+        }
+        public List<GameObject> cards;
+
+        public List<GameObject> Cards
+        {
+            get { return cards; }
+            set { cards = value; }
+        }
         private GameObject sceneObject;
 
         public GameObject SceneObject
@@ -18,11 +30,7 @@ namespace ModulPertarungan
             set { sceneObject = value; }
         }
         private List<GameObject> currentHand;
-        public Deck Deck
-        {
-            get { return deck; }
-            set { deck = value; }
-        }
+       
 
         public int handSize;
 
@@ -61,6 +69,17 @@ namespace ModulPertarungan
                 
                 currentHand.Add(Deck.Draw());
             }
+        }
+        public void GetAllCard()
+        {
+
+            cards = new List<GameObject>();
+            foreach (string t in GameManager.Instance().AllSelectedCard)
+            {
+                Debug.Log(t);
+                Cards.Add((GameObject)Resources.Load(t, typeof(GameObject)));
+            }
+
         }
     }
 }

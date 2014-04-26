@@ -14,17 +14,7 @@ namespace ModulPertarungan
             get { return warlock; }
             set { warlock = value; }
         }
-        public List<GameObject> cards;
-
-        public List<GameObject> Cards
-        {
-            get { return cards; }
-            set { cards = value; }
-        }
-
-
-
-
+        
         void Awake()
         {
             GetAllCard();
@@ -48,17 +38,7 @@ namespace ModulPertarungan
         {
            
         }
-        public void GetAllCard()
-        {
-            
-            cards = new List<GameObject>();
-            foreach (string t in GameManager.Instance().AllSelectedCard)
-            {
-                Debug.Log(t);
-                Cards.Add((GameObject)Resources.Load(t,typeof(GameObject)));
-            }
-            
-        }
+       
 
 
         public override void ReceiveDamage(int damage)
