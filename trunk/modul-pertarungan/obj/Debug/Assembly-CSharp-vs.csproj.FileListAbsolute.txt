@@ -58,3 +58,15 @@ C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
 C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
 C:\Taterbaru2\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Taterbaru2\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
+E:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
+E:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+E:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+E:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+E:\newta\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+E:\newta\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+E:\newta\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+E:\newta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+E:\newta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+E:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+E:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+E:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb

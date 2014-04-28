@@ -15,5 +15,5 @@ EditorBuildSettings:
     path: Assets/AfterBattle2.unity
   - enabled: 1
     path: Assets/CardManager.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Cardmanager2.unity
