@@ -5,7 +5,7 @@ public class EditDeck : MonoBehaviour {
 
     public void OnClick()
     {
-        Application.LoadLevel("CardManager");
+        Application.LoadLevel("DeckEditor");
     }
 	// Use this for initialization
 	void Start () {
