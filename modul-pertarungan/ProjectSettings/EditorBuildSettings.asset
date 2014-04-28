@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/CardManager.unity
   - enabled: 1
     path: Assets/DeckEditor.unity
+  - enabled: 1
+    path: Assets/AvatarCostumization.unity
