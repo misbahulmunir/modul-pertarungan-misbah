@@ -13,12 +13,15 @@ namespace ModulPertarungan
 
         void OnClick()
         {
-            GameManager.Instance().Players = Player;
-            GameManager.Instance().Enemies = enemies;
+            if (GameManager.Instance().AllSelectedCard != null)
+            {
+                GameManager.Instance().Players = Player;
+                GameManager.Instance().Enemies = enemies;
 
-          //  Debug.Log(GameManager.Instance().AllCards.Count);
+                //  Debug.Log(GameManager.Instance().AllCards.Count);
 
-            Application.LoadLevel("Battle");
+                Application.LoadLevel("Battle");
+            }
         }
         void Start()
         {
