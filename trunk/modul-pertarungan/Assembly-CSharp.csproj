@@ -39,13 +39,18 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>D:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\BackButtonScript.cs" />
+     <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\EyeAttachment.cs" />
+     <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\HairAttachment.cs" />
+     <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\MenuClick.cs" />
+     <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\MouthAttachment.cs" />
      <Compile Include="Assets\Asset ta\ListBoxExample.cs" />
      <Compile Include="Assets\BeforeBattleScript.cs" />
      <Compile Include="Assets\CameraScript.cs" />
@@ -53,6 +58,7 @@
      <Compile Include="Assets\CollectCard.cs" />
      <Compile Include="Assets\ConfirmDeck.cs" />
      <Compile Include="Assets\CreateCard.cs" />
+     <Compile Include="Assets\CustomAvatarButtonScript.cs" />
      <Compile Include="Assets\EditDeck.cs" />
      <Compile Include="Assets\ExecuteCard.cs" />
      <Compile Include="Assets\HoverCard.cs" />
