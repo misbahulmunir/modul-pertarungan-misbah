@@ -16,7 +16,7 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            if (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck != null)
+            if (GameManager.Instance().CurrentPawn!= null)
             {
                 deckCount.GetComponent<UILabel>().text = GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count.ToString();
             }
