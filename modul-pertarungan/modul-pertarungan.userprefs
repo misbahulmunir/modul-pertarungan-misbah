@@ -1,17 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\CustomAvatarButtonScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\FacebookMenuButtonScript.cs">
     <Files>
-      <File FileName="Assets\script\GUI\GuiHandler.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\Manager\BattleStateManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Asset ta\AvatarCustomization\Scripts\HairAttachment.cs" Line="1" Column="1" />
+      <File FileName="Assets\Asset ta\FBAssets\Scripts\ButtonHandler.cs" Line="23" Column="3" />
+      <File FileName="Assets\Asset ta\FBAssets\Scripts\FacebookHandler.cs" Line="1" Column="1" />
       <File FileName="Assets\Asset ta\AvatarCustomization\Scripts\MenuClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\NGUI\Examples\Scripts\InventorySystem\System\InvAttachmentPoint.cs" Line="1" Column="1" />
-      <File FileName="Assets\Asset ta\AvatarCustomization\Scripts\MouthAttachment.cs" Line="1" Column="1" />
-      <File FileName="Assets\Asset ta\AvatarCustomization\Scripts\EyeAttachment.cs" Line="1" Column="1" />
-      <File FileName="Assets\CustomAvatarButtonScript.cs" Line="18" Column="45" />
-      <File FileName="Assets\BeforeBattleScript.cs" Line="25" Column="10" />
-      <File FileName="Assets\EditDeck.cs" Line="8" Column="9" />
+      <File FileName="Assets\FacebookMenuButtonScript.cs" Line="18" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
