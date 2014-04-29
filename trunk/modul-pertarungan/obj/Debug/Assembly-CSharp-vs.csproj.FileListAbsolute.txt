@@ -70,3 +70,16 @@ E:\newta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 E:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 E:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 E:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
+J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+J:\newta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb

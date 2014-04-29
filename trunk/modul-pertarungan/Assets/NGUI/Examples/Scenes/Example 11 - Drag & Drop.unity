@@ -937,7 +937,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .217741936
+  aspectRatio: .355263144
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Window
   mType: 1
@@ -1706,7 +1706,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0272108838
+  aspectRatio: .0459770113
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
@@ -2010,7 +2010,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .180743247
+  aspectRatio: .303977281
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Stripes 1
   mType: 2
@@ -2086,7 +2086,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .180743247
+  aspectRatio: .303977281
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Stripes 1
   mType: 2
@@ -2322,7 +2322,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .174193546
+  aspectRatio: .284210533
 --- !u!114 &710038381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2894,7 +2894,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .174193546
+  aspectRatio: .284210533
 --- !u!65 &848388265
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3275,7 +3275,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: df7390d50d06a4b4b893085286142266, type: 2}
       propertyPath: aspectRatio
-      value: .0272108838
+      value: .0459770113
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: df7390d50d06a4b4b893085286142266, type: 2}
       propertyPath: aspectRatio
@@ -4011,7 +4011,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: df7390d50d06a4b4b893085286142266, type: 2}
       propertyPath: aspectRatio
-      value: .0272108838
+      value: .0459770113
       objectReference: {fileID: 0}
     - target: {fileID: 11400008, guid: df7390d50d06a4b4b893085286142266, type: 2}
       propertyPath: mValue
@@ -4563,7 +4563,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .217741936
+  aspectRatio: .355263144
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Window
   mType: 1
@@ -4939,7 +4939,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0272108838
+  aspectRatio: .0459770113
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
