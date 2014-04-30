@@ -68,13 +68,16 @@ namespace ModulPertarungan
             }
             
         }
-        void Start()
+        void Awake()
         {
             DisplayedCards = new List<GameObject>();
-            
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             LoadEnemy();
             LoadPlayer();
+        }
+        void Start()
+        {
+            
 
         }
 
