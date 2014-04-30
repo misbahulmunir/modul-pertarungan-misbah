@@ -74,6 +74,45 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &92196420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 92196422}
+  - 114: {fileID: 92196421}
+  m_Layer: 0
+  m_Name: serverfromeclipse
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &92196421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92196420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96e3f44071ece1479c9a8ac687e0c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  label: {fileID: 1859867898}
+--- !u!4 &92196422
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 92196420}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .195787221, y: .0888496041, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &318706084
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,7 +349,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 324166303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -597, y: 211, z: 0}
+  m_LocalPosition: {x: -537, y: 301, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 566138958}
@@ -355,13 +394,13 @@ Transform:
   m_LocalScale: {x: .00277777785, y: .00277777785, z: .00277777785}
   m_Children:
   - {fileID: 569921664}
+  - {fileID: 1380813824}
   - {fileID: 2137663803}
   - {fileID: 1876900251}
   - {fileID: 1859867899}
   - {fileID: 318706085}
   - {fileID: 696887774}
   - {fileID: 324166306}
-  - {fileID: 1380813824}
   m_Father: {fileID: 0}
 --- !u!54 &566138959
 Rigidbody:
@@ -640,7 +679,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696887773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -133, y: 210, z: 0}
+  m_LocalPosition: {x: -52, y: 301, z: 0}
   m_LocalScale: {x: 1.00007987, y: 1.00007987, z: 1.00007987}
   m_Children: []
   m_Father: {fileID: 566138958}
@@ -886,7 +925,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: fee46b827274e694aa251e2d36700135, type: 2}
       propertyPath: m_Name
-      value: serverfromeclipse
+      value: ConnectButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fee46b827274e694aa251e2d36700135, type: 2}
@@ -1073,7 +1112,7 @@ GameObject:
   - 114: {fileID: 1380813826}
   - 114: {fileID: 1380813825}
   m_Layer: 8
-  m_Name: serverfromeclipse
+  m_Name: ConnectButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1107,7 +1146,6 @@ MonoBehaviour:
   tcpPort: 9999
   udpPort: 9988
   protocol: 
-  label: {fileID: 1859867898}
 --- !u!114 &1380813826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1468,7 +1506,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876900250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -358.000031, y: 209.930862, z: 0}
+  m_LocalPosition: {x: -291, y: 301, z: 0}
   m_LocalScale: {x: 1.00007987, y: 1.00007987, z: 1.00007987}
   m_Children: []
   m_Father: {fileID: 566138958}
