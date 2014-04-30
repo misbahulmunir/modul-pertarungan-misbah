@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 namespace ModulPertarungan
 {
-    public class SplitFireCard :CardsEffect
+    public class SplitFireCard : CardsEffect
     {
         void OnClick()
         {
-            Click();  
+            Click();
         }
+
+
         // Use this for initialization
         void Start()
         {
@@ -15,27 +18,28 @@ namespace ModulPertarungan
             this.CardCost = 2;
             this.CardCode = " ";
             this.CardEffect = " Deal 10 fire damage /n to single enemy";
-           
+            
         }
 
         // Update is called once per frame
         void Update()
         {
-            
+
         }
 
         public override void Effect()
         {
-            if (GameManager.Instance().Enemies.Count > 0)
+            if (TargetList.Count> 0)
             {
-                GameObject obj = GameManager.Instance().Enemies[0];
+                GameObject obj = TargetList[0];
                 GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.renderer.sortingLayerName = "foreground";
                 animation.particleEmitter.emit = true;
                 obj.GetComponent<DamageReceiverAction>().ReceiveDamage(10);
 
             }
-            GameManager.Instance().KillObj("enemy");
+            GameManager.Instance().KillObj(Target);
         }
+
     }
 }
