@@ -9,10 +9,7 @@ namespace ModulPertarungan
         public string tcpPort;
         public string udpPort;
         public string protocol;
-        public GameObject label;
-        private AndroidJavaClass unityPlayer;
-        private AndroidJavaObject activity;
-        private AndroidJavaObject playerClient;
+       
 
         void OnClick()
         {
@@ -28,10 +25,7 @@ namespace ModulPertarungan
             
         }
 
-        public void ReceiveMessage(string Message)
-        {
-            label.GetComponent<UILabel>().text = Message;
-        }
+       
 
         
         // Update is called once per frame

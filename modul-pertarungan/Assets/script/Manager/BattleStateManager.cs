@@ -8,7 +8,7 @@ namespace ModulPertarungan
     {
 
         // Use this for initialization
-
+        private GameObject hitObj;
         private GUIStyle style;
         private BattleState currentstate;
 
@@ -26,54 +26,41 @@ namespace ModulPertarungan
             get { return endButton; }
             set { endButton = value; }
         }
-       
-       
+
+
 
         public void SelectPawn()
         {
-            if (!(this.currentstate is CardExcutionState))
+            if (!(this.currentstate is CardExcutionState) && !(this.currentstate is PvpEnemyState))
             {
-                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-                if (Input.GetMouseButtonUp(0))
+                hitObj = HitCollider();
+                if (hitObj != null && hitObj.name.ToLower().Contains("warlock"))
                 {
-                    if (hit.collider != null)
-                    {
-                        if (hit.collider.gameObject.name.ToLower().Contains("warlock"))
-                        {
-                            GameObject obj = GameManager.Instance().CurrentPawn = hit.collider.gameObject as GameObject;
-                            currentstate = new ChangePlayerState(obj, objectLoader, this);
-                            currentstate.Action();
-                        }
-
-                    }
+                    GameObject obj = GameManager.Instance().CurrentPawn = hitObj;
+                    currentstate = new ChangePlayerState(obj, objectLoader, this);
+                    currentstate.Action();
                 }
             }
         }
 
         public void EndPlayerTurn()
         {
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-            if (Input.GetMouseButtonUp(0))
+            hitObj = HitCollider();
+            if (hitObj != null && hitObj.name.ToLower().Contains("endbutton"))
             {
-                if (hit.collider != null)
-                {
-                    if (hit.collider.gameObject.name.ToLower().Contains("endbutton"))
-                    {
-                        GameObject obj = hit.collider.gameObject as GameObject;
-                        EndButton = obj;
-                        Cursor.renderer.enabled = false;
-                        obj.renderer.enabled = false;
-                        currentstate = new EnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
-                        currentstate.Action();
-                    }
-                }
+                EndButton = hitObj;
+                Cursor.renderer.enabled = false;
+                hitObj.renderer.enabled = false;
+                currentstate = new EnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
+                currentstate.Action();
             }
         }
+
         public void DrawCursor()
         {
-            if(GameManager.Instance().CurrentPawn!=null)
-            Cursor.transform.position = new Vector3(GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.x, GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.y +
-                (GameManager.Instance().CurrentPawn.gameObject.renderer.bounds.size.y / 2), 0f);
+            if (GameManager.Instance().CurrentPawn != null)
+                Cursor.transform.position = new Vector3(GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.x, GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.y +
+                    (GameManager.Instance().CurrentPawn.gameObject.renderer.bounds.size.y / 2), 0f);
 
         }
 
@@ -85,11 +72,11 @@ namespace ModulPertarungan
                 GameManager.Instance().PlayerExp = 100;
                 GameManager.Instance().PlayerGold = 100;
                 Application.LoadLevel("AfterBattle2");
-                
+
             }
-            else if (GameManager.Instance().Players.Count <=0)
+            else if (GameManager.Instance().Players.Count <= 0)
             {
-                GameManager.Instance().GameStatus="lose";
+                GameManager.Instance().GameStatus = "lose";
                 Application.LoadLevel("AfterBattle2");
             }
 
@@ -102,7 +89,7 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            
+
             DrawCursor();
             EndPlayerTurn();
             SelectPawn();
@@ -119,13 +106,26 @@ namespace ModulPertarungan
                     currentstate.Action();
                 }
 
-                if (GUI.Button(new Rect((Screen.width / 2) - 50, ((Screen.height / 2) - 25)+50, 100, 50), "No"))
+                if (GUI.Button(new Rect((Screen.width / 2) - 50, ((Screen.height / 2) - 25) + 50, 100, 50), "No"))
                 {
                     GameObject obj = GameManager.Instance().CurrentPawn;
                     currentstate = new ChangePlayerState(obj, objectLoader, this);
                     currentstate.Action();
                 }
             }
+        }
+        public GameObject HitCollider()
+        {
+            GameObject obj = null;
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (hit.collider != null)
+                {
+                    obj = hit.collider.gameObject;
+                }
+            }
+            return obj;
         }
     }
 }

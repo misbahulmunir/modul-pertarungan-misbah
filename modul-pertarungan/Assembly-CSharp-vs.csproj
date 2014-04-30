@@ -248,6 +248,7 @@
      <Compile Include="Assets\script\Model\Warlock.cs" />
      <Compile Include="Assets\script\Model\WaterMonster.cs" />
      <Compile Include="Assets\script\Model\WindMonster.cs" />
+     <Compile Include="Assets\script\Network\GetMessageFromServer.cs" />
      <Compile Include="Assets\script\Network\NetworkSingleton.cs" />
      <Compile Include="Assets\script\Network\SendToServer.cs" />
      <Compile Include="Assets\script\State\BattleState.cs" />
@@ -257,6 +258,7 @@
      <Compile Include="Assets\script\State\EnemyState.cs" />
      <Compile Include="Assets\script\State\FirstHandState.cs" />
      <Compile Include="Assets\script\State\PlayerTurnState.cs" />
+     <Compile Include="Assets\script\State\PvpEnemyState.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\NGUI\ReadMe - 3.5.3.txt" />

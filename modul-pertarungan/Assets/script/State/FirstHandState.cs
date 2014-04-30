@@ -5,15 +5,15 @@ using System.Text;
 using UnityEngine;
 namespace ModulPertarungan
 {
-	public class FirstHandState:BattleState
-	{
+    public class FirstHandState : BattleState
+    {
         public FirstHandState(GameObject CurrentPlayer)
             : base(CurrentPlayer)
         {
         }
         public override void Action()
         {
-            CurrentPlayer.GetComponent<WarlockAction>().FirstPawnHand(); 
+            CurrentPlayer.GetComponent<WarlockAction>().FirstPawnHand();
         }
     }
 }
