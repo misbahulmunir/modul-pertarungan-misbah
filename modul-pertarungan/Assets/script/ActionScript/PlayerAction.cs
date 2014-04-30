@@ -9,6 +9,13 @@ namespace ModulPertarungan
     public abstract class PlayerAction : DamageReceiverAction
     {
 
+        private List<string> dataBaseCard;
+
+        public List<string> DataBaseCard
+        {
+            get { return dataBaseCard; }
+            set { dataBaseCard = value; }
+        }
         private Deck deck;
         public Deck Deck
         {
