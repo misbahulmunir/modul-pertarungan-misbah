@@ -7,6 +7,27 @@ namespace ModulPertarungan
 {
 	public class NetworkSingleton
 	{
+        private string host;
+
+        public string Host
+        {
+            get { return host; }
+            set { host = value; }
+        }
+        private string udpPort;
+
+        public string UdpPort
+        {
+            get { return udpPort; }
+            set { udpPort = value; }
+        }
+        private string tcpPort;
+
+        public string TcpPort
+        {
+            get { return tcpPort; }
+            set { tcpPort = value; }
+        }
         private AndroidJavaClass unityPlayer;
 
         public AndroidJavaClass UnityPlayer
@@ -36,6 +57,20 @@ namespace ModulPertarungan
                 instance = new NetworkSingleton();
             }
             return instance;
+        }
+        public void Connect()
+        {
+            string[] args = new string[3];
+            args[0] = host;
+            args[1] = tcpPort;
+            args[2] = udpPort;
+            unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+            activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+            activity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+            {
+                playerClient = new AndroidJavaObject("com.its.warlocksaga.AndroidUnityListener", args);
+
+            }));
         }
 	}
 }
