@@ -6,6 +6,14 @@ namespace ModelModulPertarungan
 {
     public abstract class Player : DamageReceiver
     {
+        private List<string> deckList;
+
+        public List<string> DeckList
+        {
+            get { return deckList; }
+            set { deckList = value; }
+        }
+      
 
         private int currentSoulPoints;
 
@@ -73,6 +81,9 @@ namespace ModelModulPertarungan
             this.Rank = Rank;
         }
 
+        public Player()
+        {
+        }
 
 
     }

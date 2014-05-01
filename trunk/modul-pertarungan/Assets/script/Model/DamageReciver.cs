@@ -50,5 +50,8 @@ namespace ModelModulPertarungan
         {
             this.Name = Name;
         }
+        public DamageReceiver()
+        {
+        }
     }
 }
