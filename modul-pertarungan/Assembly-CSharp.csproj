@@ -228,6 +228,7 @@
      <Compile Include="Assets\script\Factory\CardEffectFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Factory\EnemyFactory.cs" />
+     <Compile Include="Assets\script\Factory\PlayerFactory.cs" />
      <Compile Include="Assets\script\GUI\CardManagerGuiHandler.cs" />
      <Compile Include="Assets\script\GUI\GuiDeckSize.cs" />
      <Compile Include="Assets\script\GUI\GuiHandler.cs" />
@@ -244,7 +245,7 @@
      <Compile Include="Assets\script\Model\FireMonster.cs" />
      <Compile Include="Assets\script\Model\Magician.cs" />
      <Compile Include="Assets\script\Model\Player.cs" />
-     <Compile Include="Assets\script\Model\Socerer.cs" />
+     <Compile Include="Assets\script\Model\Sorcerer.cs" />
      <Compile Include="Assets\script\Model\Warlock.cs" />
      <Compile Include="Assets\script\Model\WaterMonster.cs" />
      <Compile Include="Assets\script\Model\WindMonster.cs" />

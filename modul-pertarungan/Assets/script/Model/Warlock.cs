@@ -10,5 +10,8 @@ namespace ModelModulPertarungan
             : base(MaxHealth, CurrentHealth,Name ,HandCapacity,MaxSoulPoints,currentSoulPoints)
         {
         }
+        public Warlock()
+        {
+        }
     }
 }
