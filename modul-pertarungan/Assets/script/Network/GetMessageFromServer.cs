@@ -20,7 +20,8 @@ namespace ModulPertarungan
 
         public void ReceiveMessage(string Message)
         {
-            label.GetComponent<UILabel>().text = Message;
+           NetworkSingleton.Instance().ServerMessage = Message;
+           label.GetComponent<UILabel>().text = NetworkSingleton.Instance().ServerMessage;
         }
 	}
 }

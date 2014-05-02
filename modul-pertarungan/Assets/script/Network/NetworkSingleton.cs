@@ -7,6 +7,13 @@ namespace ModulPertarungan
 {
 	public class NetworkSingleton
 	{
+        private string serverMessage;
+
+        public string ServerMessage
+        {
+            get { return serverMessage; }
+            set { serverMessage = value; }
+        }
         private string host;
 
         public string Host
@@ -49,7 +56,7 @@ namespace ModulPertarungan
             get { return playerClient; }
             set { playerClient = value; }
         }
-        private static NetworkSingleton instance;
+        public  static NetworkSingleton instance;
         public static NetworkSingleton Instance()
         {
             if (instance == null)

@@ -5,6 +5,14 @@ namespace ModulPertarungan
 {
     public class GameManager
     {
+
+        private string gameMode;
+
+        public string GameMode
+        {
+            get { return gameMode; }
+            set { gameMode = value; }
+        }
         private List<string> allSelectedCard;
 
         public List<string> AllSelectedCard

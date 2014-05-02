@@ -62,6 +62,7 @@
      <Compile Include="Assets\ConfirmDeck.cs" />
      <Compile Include="Assets\CreateCard.cs" />
      <Compile Include="Assets\CustomAvatarButtonScript.cs" />
+     <Compile Include="Assets\Disconnect.cs" />
      <Compile Include="Assets\EditDeck.cs" />
      <Compile Include="Assets\Examples\Scripts\InteractiveConsole.cs" />
      <Compile Include="Assets\ExecuteCard.cs" />
@@ -225,6 +226,7 @@
      <Compile Include="Assets\script\Command\CardExcuteEffectPerformer.cs" />
      <Compile Include="Assets\script\Command\CardExecuteCommand.cs" />
      <Compile Include="Assets\script\Command\Command.cs" />
+     <Compile Include="Assets\script\Command\Invoker.cs" />
      <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
      <Compile Include="Assets\script\Factory\CardEffectFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
