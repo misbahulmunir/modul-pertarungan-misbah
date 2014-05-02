@@ -59,12 +59,14 @@ namespace ModulPertarungan
 
         public void LoadEnemy()
         {
-            
-            for (int c = 0; c < enemyCount; c++)
+            if (GameManager.Instance().GameMode != "pvp")
             {
-                this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon", c);
-                
+                for (int c = 0; c < enemyCount; c++)
+                {
+                    this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon", c);
 
+
+                }
             }
             
         }
