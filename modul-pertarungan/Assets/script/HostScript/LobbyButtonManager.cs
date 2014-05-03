@@ -7,10 +7,24 @@ namespace ModulPertarungan
 {
 	public class LobbyButtonManager:MonoBehaviour
 	{
-
+        public GameObject roomName;
+        private string rName;
         void HostRoom()
         {
             Application.LoadLevel("HostRoom");
+            
+        }
+
+        void JoinRoom()
+        {   rName = roomName.GetComponent<UILabel>().text;
+            NetworkSingleton.Instance().RoomName = rName;
+            bool succses = false;
+            succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "JoinRoom-"+rName+"-misbah");
+            if (succses)
+                Debug.Log("send succes");
+            else
+                Debug.Log("send false");
+            Application.LoadLevel("WaitingRoom");
         }
 	}
 }
