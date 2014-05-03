@@ -6,7 +6,9 @@ using UnityEngine;
 namespace ModulPertarungan
 {
 	public class NetworkSingleton
-	{
+	{   
+
+       
         private string roomName;
 
         public string RoomName
