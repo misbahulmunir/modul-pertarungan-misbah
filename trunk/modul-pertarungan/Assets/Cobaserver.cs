@@ -17,6 +17,7 @@ namespace ModulPertarungan
             NetworkSingleton.Instance().TcpPort = tcpPort;
             NetworkSingleton.Instance().UdpPort = udpPort;
             NetworkSingleton.Instance().Connect();
+            
         }
         // Use this for initialization
 
@@ -31,7 +32,10 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-
+            if (NetworkSingleton.Instance().ServerMessage.ToLower().Contains("connected"))
+            {
+                Application.LoadLevel("LobbyRoom");
+            }
         }
         //private void Connect()
         //{

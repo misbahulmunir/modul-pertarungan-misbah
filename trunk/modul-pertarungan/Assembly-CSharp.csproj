@@ -81,6 +81,7 @@
      <Compile Include="Assets\FacebookMenuButtonScript.cs" />
      <Compile Include="Assets\HoverCard.cs" />
      <Compile Include="Assets\ListBox\ListBox.cs" />
+     <Compile Include="Assets\LobbyManager.cs" />
      <Compile Include="Assets\NGUI\ButtonOk.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
@@ -208,6 +209,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\RefreshRoomList.cs" />
      <Compile Include="Assets\SearchCard.cs" />
      <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
