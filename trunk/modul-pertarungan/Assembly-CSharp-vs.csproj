@@ -246,6 +246,7 @@
      <Compile Include="Assets\script\Manager\CardManagerLoader.cs" />
      <Compile Include="Assets\script\Manager\GameMenager.cs" />
      <Compile Include="Assets\script\Manager\ObjectLoader.cs" />
+     <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />

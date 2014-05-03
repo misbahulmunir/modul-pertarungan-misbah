@@ -7,6 +7,13 @@ namespace ModulPertarungan
 {
 	public class NetworkSingleton
 	{
+        private string roomName;
+
+        public string RoomName
+        {
+            get { return roomName; }
+            set { roomName = value; }
+        }
         private string serverMessage;
 
         public string ServerMessage
