@@ -240,12 +240,13 @@
      <Compile Include="Assets\script\GUI\GuiHandler.cs" />
      <Compile Include="Assets\script\GUI\ScoreScript.cs" />
      <Compile Include="Assets\script\HostScript\CreateRoom.cs" />
-     <Compile Include="Assets\script\HostScript\LobbyButtonManager.cs" />
      <Compile Include="Assets\script\Manager\BattleObjectLoader.cs" />
      <Compile Include="Assets\script\Manager\BattleStateManager.cs" />
      <Compile Include="Assets\script\Manager\CardManagerLoader.cs" />
      <Compile Include="Assets\script\Manager\GameMenager.cs" />
+     <Compile Include="Assets\script\Manager\LobbyButtonManager.cs" />
      <Compile Include="Assets\script\Manager\ObjectLoader.cs" />
+     <Compile Include="Assets\script\Manager\WaitingRoomButtonManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />

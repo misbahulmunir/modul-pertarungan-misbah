@@ -22,20 +22,18 @@ namespace ModulPertarungan
         {
             string serverMessage = NetworkSingleton.Instance().ServerMessage;
             Debug.Log(serverMessage);
+            string[] message=serverMessage.Split('-');
             if (serverMessage.Contains("PlayerList"))
             {  
-                string[] message=serverMessage.Split('-');
                 firstPlayerName.GetComponent<UILabel>().text = message[1];
                 secondPlayerName.GetComponent<UILabel>().text = message[2];
                 NetworkSingleton.Instance().ServerMessage = "";
-
             }
             else if(serverMessage.Contains("JoinedRoom"))
-            {
-                secondPlayerName.name = serverMessage.Split('-')[2];
+            {   
+                secondPlayerName.name = message[2];
                 NetworkSingleton.Instance().ServerMessage = "";
             }
-
         }
     }
 }
