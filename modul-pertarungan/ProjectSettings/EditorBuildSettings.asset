@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/FacebookMenu.unity
   - enabled: 1
     path: Assets/CrateRoom.unity
+  - enabled: 1
+    path: Assets/LobbyRoom.unity

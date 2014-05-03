@@ -15,13 +15,14 @@ namespace ModulPertarungan
 
         void Start()
         {
-
+           
         }
 
         public void ReceiveMessage(string Message)
         {
            NetworkSingleton.Instance().ServerMessage = Message;
-           label.GetComponent<UILabel>().text = NetworkSingleton.Instance().ServerMessage;
+          // DontDestroyOnLoad(this.gameObject);
+           //label.GetComponent<UILabel>().text = NetworkSingleton.Instance().ServerMessage;
         }
 	}
 }
