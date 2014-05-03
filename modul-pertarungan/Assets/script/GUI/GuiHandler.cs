@@ -6,7 +6,7 @@ namespace ModulPertarungan
     public class GuiHandler : MonoBehaviour
     {
 
-        private Vector2 scrollPosition = Vector2.zero;
+       
         public GUIStyle style;
         public GameObject effectLabel;
         public GameObject cardNameLabel;

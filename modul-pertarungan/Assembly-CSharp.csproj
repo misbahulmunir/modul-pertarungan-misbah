@@ -211,6 +211,7 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\RefreshRoomList.cs" />
      <Compile Include="Assets\SearchCard.cs" />
+     <Compile Include="Assets\ShowRoomtoText.cs" />
      <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\FireDragonScript.cs" />
@@ -238,6 +239,8 @@
      <Compile Include="Assets\script\GUI\GuiDeckSize.cs" />
      <Compile Include="Assets\script\GUI\GuiHandler.cs" />
      <Compile Include="Assets\script\GUI\ScoreScript.cs" />
+     <Compile Include="Assets\script\HostScript\CreateRoom.cs" />
+     <Compile Include="Assets\script\HostScript\LobbyButtonManager.cs" />
      <Compile Include="Assets\script\Manager\BattleObjectLoader.cs" />
      <Compile Include="Assets\script\Manager\BattleStateManager.cs" />
      <Compile Include="Assets\script\Manager\CardManagerLoader.cs" />
