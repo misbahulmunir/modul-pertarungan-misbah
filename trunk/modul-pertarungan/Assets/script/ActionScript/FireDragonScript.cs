@@ -12,7 +12,7 @@ namespace ModulPertarungan
         // Use this for initialization
         public override void AttackAction()
         {
-            List<GameObject> death = new List<GameObject>();
+
             foreach (GameObject player in GameManager.Instance().Players)
             {
                 GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(player.transform.position.x, player.transform.position.y, -10f), Quaternion.identity) as GameObject;
