@@ -16,18 +16,17 @@ namespace ModulPertarungan
         private List<GameObject> DisplayedCards;
         private int currentPawnNumber;
         private AbstractFactory factory;
-
+        public GameObject warlock;
+     
         public void LoadPlayer()
         {
-            for (int c = 0; c <GameManager.Instance().Players.Count; c++)
+            for (int c = 0; c < GameManager.Instance().PlayerNumber; c++)
             {
-                GameObject obj = Instantiate(GameManager.Instance().Players[c], pawnsPosisition[c].transform.position, Quaternion.identity) as GameObject;
-                GameManager.Instance().Players[c] = obj;
-
+                factory = new PlayerFactory();
+                factory.InstantiateObject();
+                factory.CreatePlayer("boncu", "warlock","FirstWarlock", pawnsPosisition[c]);
+                Debug.Log("name" + GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
             }
-            GameManager.Instance().CurrentPawn = GameManager.Instance().Players[0];
-           
-    
         }
         public void LoadDisplayedCards(GameObject pawn)
         {
@@ -38,7 +37,6 @@ namespace ModulPertarungan
                     GameObject obj = NGUITools.AddChild(grid,pawn.GetComponent<PlayerAction>().CurrentHand[c]);
                   //  obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
                     DisplayedCards.Add(obj);
-                  
                 }
                
             }
@@ -49,9 +47,7 @@ namespace ModulPertarungan
         {
             foreach (GameObject obj in DisplayedCards)
             {
-                Destroy(obj);
-                
-             
+                Destroy(obj);    
             }
            
            
@@ -64,9 +60,11 @@ namespace ModulPertarungan
                 for (int c = 0; c < enemyCount; c++)
                 {
                     this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon", c);
-
-
                 }
+            }
+            else
+            { 
+ 
             }
             
         }

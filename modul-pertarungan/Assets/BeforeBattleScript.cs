@@ -8,18 +8,17 @@ namespace ModulPertarungan
     {
 
         public List<GameObject> enemies;
-        public List<GameObject> Player;
+        //public List<GameObject> Player;
         // Use this for initialization
 
         void OnClick()
         {
             if (GameManager.Instance().AllSelectedCard != null)
             {
-                GameManager.Instance().Players = Player;
+                 //  GameManager.Instance().Players = Player;
                 GameManager.Instance().Enemies = enemies;
-
                 //  Debug.Log(GameManager.Instance().AllCards.Count);
-
+                GameManager.Instance().PlayerNumber = 1;
                 Application.LoadLevel("Battle");
             }
         }

@@ -424,9 +424,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 100000, guid: 9836966a3f9979f4e9760942afb1d11a, type: 2}
-  Player:
-  - {fileID: 100000, guid: d41cff7ea08d0054491441ba41cee3fc, type: 2}
-  - {fileID: 100000, guid: 6060dca81325f0143bc506ee80d4da6f, type: 2}
 --- !u!1 &269066673
 GameObject:
   m_ObjectHideFlags: 0

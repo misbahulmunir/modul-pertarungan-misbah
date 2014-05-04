@@ -68,8 +68,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f661556b45c9a54eb1ef9c9d139325e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handSize: 3
   cards: []
+  handSize: 3
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
