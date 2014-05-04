@@ -63,8 +63,8 @@ namespace ModulPertarungan
 
                 }
             }
-
-            if (GameManager.Instance().CurrentPawn.name == this.Character.Name)
+           
+            if (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character.Name == this.Character.Name)
             {
                 GameObject.Find("Objcetloader").GetComponent<BattleObjectLoader>().LoadDisplayedCards(this.sceneObject);
             }
@@ -83,7 +83,6 @@ namespace ModulPertarungan
             cards = new List<GameObject>();
             foreach (string t in GameManager.Instance().AllSelectedCard)
             {
-                Debug.Log(t);
                 Cards.Add((GameObject)Resources.Load(t, typeof(GameObject)));
             }
 

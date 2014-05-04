@@ -16,18 +16,16 @@ namespace ModulPertarungan
         }
         
         void Awake()
-        {
+        {  
             GetAllCard();
         }
         void Start()
         {
+            
            
             this.CurrentHand = new List<GameObject>();
-            
             this.Deck = new Deck(cards);
-            this.Warlock = new Warlock(200, 200, this.name, this.HandSize,6,6);
             this.SceneObject = this.gameObject;
-            this.Character = Warlock;
             this.Deck.Shuffle();
             FirstPawnHand();
         }
@@ -44,13 +42,10 @@ namespace ModulPertarungan
         public override void ReceiveDamage(int damage)
         {
             base.ReceiveDamage(damage);
-            if (this.warlock.CurrentHealth <= 0)
+            if (this.Character.CurrentHealth <= 0)
             {
-              
                 GameManager.Instance().CurrentPawn = null;
-                
                 Destroy(this.gameObject);
-             
             }
            
         }

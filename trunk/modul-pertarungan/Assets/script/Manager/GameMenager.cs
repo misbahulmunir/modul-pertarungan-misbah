@@ -5,7 +5,13 @@ namespace ModulPertarungan
 {
     public class GameManager
     {
+        private int playerNumber;
 
+        public int PlayerNumber
+        {
+            get { return playerNumber; }
+            set { playerNumber = value; }
+        }
         private string gameMode;
 
         public string GameMode
@@ -113,6 +119,22 @@ namespace ModulPertarungan
             {
                 instance.Players.RemoveAll(item => item.GetComponent<DamageReceiverAction>().Character.CurrentHealth <= 0);
             }
+        }
+        public void AddPlayer(GameObject obj)
+        {
+            if (this.players == null)
+            {
+                this.players = new List<GameObject>();
+            }
+            players.Add(obj);
+        }
+        public void AddEnemy(GameObject obj)
+        {
+            if (this.enemies == null)
+            {
+                this.enemies = new List<GameObject>();
+            }
+            enemies.Add(obj);
         }
         
     }

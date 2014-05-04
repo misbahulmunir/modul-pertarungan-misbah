@@ -27,7 +27,6 @@ namespace ModulPertarungan
         {
             foreach (GameObject obj in listcard)
             {
-                
                 NGUITools.AddChild(grid, obj);
             }
             grid.GetComponent<UIGrid>().Reposition();
