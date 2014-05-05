@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\AvatarAttachment.cs" />
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\BackButtonScript.cs" />
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\EyeAttachment.cs" />
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\HairAttachment.cs" />
@@ -54,6 +55,17 @@
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\BackFBButtonScript.cs" />
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\FacebookHandler.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AddBuildingMenu.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AltarManagement.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\BuildingClickManagement.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\MineManagement.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\ModelAltar.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\ModelBuilding.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\ModelMine.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\ModelYggdrasil.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\PlayerData.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\TakeItemsScript.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\YggdrasilManagement.cs" />
      <Compile Include="Assets\Asset ta\ListBoxExample.cs" />
      <Compile Include="Assets\Avatar.cs" />
      <Compile Include="Assets\BeforeBattleScript.cs" />
