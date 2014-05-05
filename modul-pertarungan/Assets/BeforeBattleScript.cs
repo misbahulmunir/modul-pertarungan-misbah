@@ -15,15 +15,13 @@ namespace ModulPertarungan
                  //  GameManager.Instance().Players = Player;
                 GameManager.Instance().Enemies = enemies;
                 //  Debug.Log(GameManager.Instance().AllCards.Count);
-                GameManager.Instance().PlayerNumber = 1;
                 Application.LoadLevel("Battle");
             }
         }
         void Start()
         {
-
-
-
+            //GameManager.Instance().PlayerNumber = 1;
+            GameManager.Instance().PlayerId = "agil";
         }
 
         // Update is called once per frame

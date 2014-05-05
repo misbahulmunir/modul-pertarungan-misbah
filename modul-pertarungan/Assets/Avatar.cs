@@ -5,13 +5,12 @@ public class Avatar : MonoBehaviour {
 
 	// Use this for initialization
 
+    private string playerName;
 
-    private string name;
-
-    public string Name
+    public string PlayerName
     {
-        get { return name; }
-        set { name = value; }
+        get { return playerName; }
+        set { playerName = value; }
     }
 
     private string level;
@@ -38,12 +37,12 @@ public class Avatar : MonoBehaviour {
         set { rank = value; }
     }
 	void Start () {
-        this.name = "UUL";
+        //this.name = "UUL";
         foreach (Transform t in this.transform)
         {
             if (t.gameObject.name == "Name")
             {
-                t.GetComponent<UILabel>().text = this.name;
+                t.GetComponent<UILabel>().text = this.playerName;
             }
             else if (t.gameObject.name == "Job")
             {

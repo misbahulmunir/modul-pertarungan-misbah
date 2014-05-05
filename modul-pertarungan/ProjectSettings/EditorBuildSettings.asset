@@ -17,13 +17,15 @@ EditorBuildSettings:
     path: Assets/DeckEditor.unity
   - enabled: 1
     path: Assets/AvatarCostumization.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FacebookMenu.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/CrateRoom.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/LobbyRoom.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/HostRoom.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/WaitingRoom.unity
+  - enabled: 1
+    path: Assets/PartyEditor.unity
