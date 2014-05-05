@@ -12,7 +12,7 @@ namespace ModulPertarungan
         {
             factory = new CardEffecFactory();
             factory.InstantiateObject();
-            factory.CreateObject(cmd.CardName);
+            factory.CreateCard(cmd.CardName,"player");
         }
 	}
 }

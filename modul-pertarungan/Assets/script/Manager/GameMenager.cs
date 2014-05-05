@@ -5,6 +5,20 @@ namespace ModulPertarungan
 {
     public class GameManager
     {
+        private string playerId;
+
+        public string PlayerId
+        {
+            get { return playerId; }
+            set { playerId = value; }
+        }
+        private List<string> partyId;
+
+        public List<string> PartyId
+        {
+            get { return partyId; }
+            set { partyId = value; }
+        }
         private int playerNumber;
 
         public int PlayerNumber

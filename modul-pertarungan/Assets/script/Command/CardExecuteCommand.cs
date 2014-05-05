@@ -10,7 +10,7 @@ namespace ModulPertarungan
         public string CardName;
         public override void Initialization()
         {
-            this.CardName ="";
+            
         }
         public override void Execute()
         {

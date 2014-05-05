@@ -5,8 +5,8 @@ using System.Text;
 using UnityEngine;
 namespace ModulPertarungan
 {
-	public class CreateRoom:MonoBehaviour
-	{
+    public class CreateRoom : MonoBehaviour
+    {
         public GameObject playerName;
         public GameObject roomName;
 
@@ -20,7 +20,9 @@ namespace ModulPertarungan
             if (succses)
                 Debug.Log("send succes");
             else
-                Debug.Log("send false"); 
+                Debug.Log("send false");
+            NetworkSingleton.Instance().RoomName = rName.text;
+            Application.LoadLevel("WaitingRoom");
         }
 
         void Start()
@@ -30,5 +32,5 @@ namespace ModulPertarungan
         void Update()
         {
         }
-	}
+    }
 }

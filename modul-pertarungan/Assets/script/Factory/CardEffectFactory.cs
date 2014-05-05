@@ -27,9 +27,10 @@ namespace ModulPertarungan
             CreateCardList.Add("WaterAttack", card);    
         }
         
-        public override void CreateObject(string Objectname)
+        public override void CreateCard(string Objectname,string Target)
         {
             CreateCardList.TryGetValue(Objectname, out card);
+            card.SetTarget(Target);
             card.Effect();
         }
 	}
