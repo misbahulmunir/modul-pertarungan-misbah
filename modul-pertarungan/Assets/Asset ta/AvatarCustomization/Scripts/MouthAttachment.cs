@@ -16,7 +16,7 @@ public class MouthAttachment : MonoBehaviour {
 	public GameObject mouthStyle1, mouthStyle2, mouthStyle3;
 	Object mChild;
 	
-	public void AttachMouth (string styleChosen)
+	void AttachMouth (string styleChosen)
 	{
 		Destroy (mChild);
 		var currentPos = this.transform.position;

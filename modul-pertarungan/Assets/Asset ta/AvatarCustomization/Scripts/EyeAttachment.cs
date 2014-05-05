@@ -16,7 +16,7 @@ public class EyeAttachment : MonoBehaviour {
 	public GameObject eyeStyle1, eyeStyle2, eyeStyle3;
 	Object eChild;
 	
-	public void AttachEye (string styleChosen)
+	void AttachEye (string styleChosen)
 	{
 		Destroy (eChild);
 		var currentPos = this.transform.position;

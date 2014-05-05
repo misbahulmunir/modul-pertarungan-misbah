@@ -15,7 +15,7 @@ public class HairAttachment : MonoBehaviour {
 	public GameObject hairStyle1, hairStyle2, hairStyle3;
 	Object hChild;
 
-	public void AttachHair (string styleChosen)
+	void AttachHair (string styleChosen)
 	{
 		Destroy (hChild);
 		var currentPos = this.transform.position;

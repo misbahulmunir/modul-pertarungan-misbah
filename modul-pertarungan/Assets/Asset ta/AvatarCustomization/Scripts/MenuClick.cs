@@ -26,7 +26,7 @@ public class MenuClick : MonoBehaviour {
 		{
 			if (hit.collider != null)
 			{
-				if (hit.collider.gameObject.name.ToLower().Contains("submenurambut") && state != 0)
+				if (hit.collider.gameObject.name.ToLower().Contains("submenu_rambut") && state != 0)
 				{
 					GameObject obj = hit.collider.gameObject as GameObject;
 					Debug.Log(obj.name);
@@ -35,7 +35,7 @@ public class MenuClick : MonoBehaviour {
 					hairList.transform.Translate(0,0,-4);
 					state = 0;
 				} else
-				if (hit.collider.gameObject.name.ToLower().Contains("submenumata") && state != 1)
+				if (hit.collider.gameObject.name.ToLower().Contains("submenu_mata") && state != 1)
 				{
 					GameObject obj = hit.collider.gameObject as GameObject;
 					Debug.Log(obj.name);
@@ -44,7 +44,7 @@ public class MenuClick : MonoBehaviour {
 					eyeList.transform.Translate(0,0,-4);
 					state = 1;
 				} else
-				if (hit.collider.gameObject.name.ToLower().Contains("submenumulut") && state != 2)
+				if (hit.collider.gameObject.name.ToLower().Contains("submenu_mulut") && state != 2)
 				{
 					GameObject obj = hit.collider.gameObject as GameObject;
 					Debug.Log(obj.name);
