@@ -34,7 +34,7 @@ namespace ModulPertarungan
             if (!(this.currentstate is CardExcutionState) && !(this.currentstate is PvpEnemyState))
             {
                 hitObj = HitCollider();
-                if (hitObj != null && hitObj.name.ToLower().Contains("warlock"))
+                if (hitObj != null && hitObj.GetComponent<PlayerAction>()!=null&&hitObj.GetComponent<PlayerAction>().IsEnemy==false)
                 {
                     GameObject obj = GameManager.Instance().CurrentPawn = hitObj;
                     currentstate = new ChangePlayerState(obj, objectLoader, this);
@@ -51,8 +51,16 @@ namespace ModulPertarungan
                 EndButton = hitObj;
                 Cursor.renderer.enabled = false;
                 hitObj.renderer.enabled = false;
-                currentstate = new EnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
-                currentstate.Action();
+                if (GameManager.Instance().GameMode != "pvp")
+                {
+                    currentstate = new EnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
+                    currentstate.Action();
+                }
+                else
+                {
+                    currentstate = new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
+                    currentstate.Action();
+                }
             }
         }
 

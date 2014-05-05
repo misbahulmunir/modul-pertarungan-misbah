@@ -18,7 +18,7 @@ namespace ModulPertarungan
                  //  GameManager.Instance().Players = Player;
                 GameManager.Instance().Enemies = enemies;
                 //  Debug.Log(GameManager.Instance().AllCards.Count);
-                GameManager.Instance().PlayerNumber = 1;
+                GameManager.Instance().PlayerNumber = 2;
                 Application.LoadLevel("Battle");
             }
         }
