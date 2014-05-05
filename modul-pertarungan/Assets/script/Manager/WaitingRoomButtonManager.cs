@@ -16,5 +16,11 @@ namespace ModulPertarungan
             else
                 Debug.Log("send false");
         }
+
+        void GotoHome()
+        {
+            NetworkSingleton.Instance().Disconnect();
+            Application.LoadLevel("CrateRoom");
+        }
 	}
 }
