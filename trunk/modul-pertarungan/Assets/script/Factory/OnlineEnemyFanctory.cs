@@ -1,10 +1,11 @@
-﻿
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using ModelModulPertarungan;
+using UnityEngine;
 namespace ModulPertarungan
 {
-	public class PlayerFactory:AbstractFactory
+	public class OnlineEnemyFanctory:AbstractFactory
 	{
         private Dictionary<string, Player> instantiateObjectList;
 
@@ -21,7 +22,7 @@ namespace ModulPertarungan
             set { character = value; }
         }
         public override void InstantiateObject()
-        {  
+        {
             instantiateObjectList = new Dictionary<string, Player>();
             instantiateObjectList.Add("warlock", new Warlock());
             instantiateObjectList.Add("sorcerer", new Sorcerer());
@@ -36,12 +37,10 @@ namespace ModulPertarungan
             character.MaxSoulPoints = 99;
             character.Name = Id;
             character.Gold = 100;
-            obj.GetComponent<PlayerAction>().Character = character;
-            obj.GetComponent<PlayerAction>().IsEnemy = false;
-            GameManager.Instance().AddPlayer(obj);
-            GameManager.Instance().CurrentPawn = obj;
+            GameManager.Instance().AddEnemy(obj);
+            obj.GetComponent<PlayerAction>().IsEnemy = true;
             //Debug.Log(GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
-          
+
         }
 	}
 }

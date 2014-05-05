@@ -8,6 +8,13 @@ namespace ModulPertarungan
 {
     public abstract class PlayerAction : DamageReceiverAction
     {
+        private Boolean isEnemy;
+
+        public Boolean IsEnemy
+        {
+            get { return isEnemy; }
+            set { isEnemy = value; }
+        }
 
         private List<string> dataBaseCard;
 
