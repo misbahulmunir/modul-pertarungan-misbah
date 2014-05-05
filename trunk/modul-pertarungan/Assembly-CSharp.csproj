@@ -55,6 +55,7 @@
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\FacebookHandler.cs" />
      <Compile Include="Assets\Asset ta\ListBoxExample.cs" />
+     <Compile Include="Assets\Avatar.cs" />
      <Compile Include="Assets\BeforeBattleScript.cs" />
      <Compile Include="Assets\CameraScript.cs" />
      <Compile Include="Assets\Cobaserver.cs" />
@@ -246,6 +247,7 @@
      <Compile Include="Assets\script\Manager\GameMenager.cs" />
      <Compile Include="Assets\script\Manager\LobbyButtonManager.cs" />
      <Compile Include="Assets\script\Manager\ObjectLoader.cs" />
+     <Compile Include="Assets\script\Manager\PlayerEditorManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomButtonManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
