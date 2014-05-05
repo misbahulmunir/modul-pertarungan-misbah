@@ -75,3 +75,23 @@ J:\newta\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.BB10.Extensions.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.Graphs.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb

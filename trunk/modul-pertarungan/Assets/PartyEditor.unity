@@ -832,6 +832,8 @@ GameObject:
   - 114: {fileID: 167967492}
   - 114: {fileID: 167967491}
   - 65: {fileID: 167967490}
+  - 114: {fileID: 167967494}
+  - 114: {fileID: 167967493}
   m_Layer: 8
   m_Name: Control - Simple Button
   m_TagString: Untagged
@@ -937,6 +939,33 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &167967493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167967488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e499a80b13f5ba42baacffc4aa82180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 25}
+--- !u!114 &167967494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 167967488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78290a544588b4c498b0dad2fdc39598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: ConfirmParty
+  trigger: 0
+  includeChildren: 0
 --- !u!1001 &259100628
 Prefab:
   m_ObjectHideFlags: 0
@@ -2094,7 +2123,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: New Label
+  mText: Agil
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
@@ -2417,6 +2446,10 @@ Prefab:
     - target: {fileID: 400008, guid: cd0296cab1eeb8e4e95dba9011def148, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400012, guid: cd0296cab1eeb8e4e95dba9011def148, type: 2}
+      propertyPath: mText
+      value: Agil
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400002, guid: cd0296cab1eeb8e4e95dba9011def148, type: 2}

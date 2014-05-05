@@ -21,13 +21,30 @@ namespace ModulPertarungan
      
         public void LoadPlayer()
         {
-            for (int c = 0; c < GameManager.Instance().PlayerNumber; c++)
+        //    for (int c = 0; c < GameManager.Instance().PlayerNumber; c++)
+        //    {
+        //        factory = new PlayerFactory();
+        //        factory.InstantiateObject();
+        //        factory.CreatePlayer("boncu", "warlock","FirstWarlock", pawnsPosisition[c]);
+        //        Debug.Log("name" + GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
+        //    }
+            factory = new PlayerFactory();
+            factory.InstantiateObject();
+            factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
+            LoadParty();
+        }
+
+        public void LoadParty()
+        {
+            int temp = 1;
+            foreach (string s in GameManager.Instance().PartyId)
             {
                 factory = new PlayerFactory();
                 factory.InstantiateObject();
-                factory.CreatePlayer("boncu", "warlock","FirstWarlock", pawnsPosisition[c]);
-                Debug.Log("name" + GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
+                factory.CreatePlayer(s, "warlock", "FirstWarlock", pawnsPosisition[temp]);
+                temp++;
             }
+            temp = 0;
         }
 
         public void LoadDisplayedCards(GameObject pawn)
