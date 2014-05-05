@@ -14,7 +14,17 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
-            throw new NotImplementedException();
+            string serverMessage = NetworkSingleton.Instance().ServerMessage;
+            Debug.Log(serverMessage);
+            string[] message = serverMessage.Split('-');
+            if (serverMessage.Contains("PlayerList"))
+            {
+                BattleManager.EndButton.renderer.enabled = true;
+                BattleManager.Cursor.renderer.enabled = true;
+                BattleManager.Currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
+                BattleManager.Currentstate.Action();
+            }
+          
         }
     }
 }

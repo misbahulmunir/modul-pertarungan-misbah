@@ -60,6 +60,10 @@ namespace ModulPertarungan
                 obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
             }
             GameManager.Instance().CurrentCard = this;
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+
+            }
         }
 
         public void SetTarget(string Target)

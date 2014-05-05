@@ -9,9 +9,9 @@ namespace ModulPertarungan
     {
         void OnClick()
         {
-            CardEffecFactory cardFactory= new CardEffecFactory();
-            cardFactory.InstantiateObject();
-            cardFactory.CreateObject("SplitFireCard");
+            //CardEffecFactory cardFactory= new CardEffecFactory();
+            //cardFactory.InstantiateObject();
+            //cardFactory.CreateObject("SplitFireCard");
         }
         void Start()
         {

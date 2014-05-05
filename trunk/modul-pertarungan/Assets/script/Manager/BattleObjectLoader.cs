@@ -17,6 +17,7 @@ namespace ModulPertarungan
         private int currentPawnNumber;
         private AbstractFactory factory;
         public GameObject warlock;
+        public GameObject enemyOnlinePosisiton;
      
         public void LoadPlayer()
         {
@@ -28,6 +29,7 @@ namespace ModulPertarungan
                 Debug.Log("name" + GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
             }
         }
+
         public void LoadDisplayedCards(GameObject pawn)
         {
             if (pawn != null)
@@ -40,9 +42,8 @@ namespace ModulPertarungan
                 }
                
             }
-           
-           
         }
+
         public void DestroyDisplayedCards()
         {
             foreach (GameObject obj in DisplayedCards)
@@ -55,16 +56,19 @@ namespace ModulPertarungan
 
         public void LoadEnemy()
         {
-            if (GameManager.Instance().GameMode != "pvp")
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                factory = new PlayerFactory();
+                factory.InstantiateObject();
+                factory.CreatePlayer("boncu", "warlock", "FirstWarlock", enemyOnlinePosisiton);
+             
+            }
+            else
             {
                 for (int c = 0; c < enemyCount; c++)
                 {
                     this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon", c);
                 }
-            }
-            else
-            { 
- 
             }
             
         }

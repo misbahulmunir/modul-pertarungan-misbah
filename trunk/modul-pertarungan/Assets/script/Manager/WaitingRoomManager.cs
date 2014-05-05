@@ -9,6 +9,7 @@ namespace ModulPertarungan
     {
         public GameObject firstPlayerName;
         public GameObject secondPlayerName;
+    
         void Start()
         {
             bool succses = false;
@@ -31,7 +32,26 @@ namespace ModulPertarungan
             }
             else if(serverMessage.Contains("JoinedRoom"))
             {   
-                secondPlayerName.name = message[2];
+                if(firstPlayerName.GetComponent<UILabel>().text.Equals(""))
+                {
+                     firstPlayerName.GetComponent<UILabel>().text =message[1];
+                }
+                else if (secondPlayerName.GetComponent<UILabel>().text.Equals(""))
+                {
+                     secondPlayerName.GetComponent<UILabel>().text=message[1];
+                }
+                NetworkSingleton.Instance().ServerMessage = "";
+            }
+            else if (serverMessage.Contains("Disconnected"))
+            {
+                if(firstPlayerName.GetComponent<UILabel>().text.Equals(message[1]))
+                {
+                     firstPlayerName.GetComponent<UILabel>().text ="";
+                }
+                else if (secondPlayerName.GetComponent<UILabel>().text.Equals(message[1]))
+                {
+                     secondPlayerName.GetComponent<UILabel>().text="";
+                }
                 NetworkSingleton.Instance().ServerMessage = "";
             }
         }

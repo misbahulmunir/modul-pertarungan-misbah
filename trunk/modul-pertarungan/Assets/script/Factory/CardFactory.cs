@@ -17,9 +17,9 @@ namespace ModulPertarungan
             //    ListCard.Add(obj.GetComponent<CardsEffect>().name, obj);
             //}
         }
-        public override void CreateObject(string Objectname)
-        {
-            //ListCard.TryGetValue(Objectname, out card);
-        }
+        //public override void CreateObject(string Objectname)
+        //{
+        //    //ListCard.TryGetValue(Objectname, out card);
+        //}
 	}
 }
