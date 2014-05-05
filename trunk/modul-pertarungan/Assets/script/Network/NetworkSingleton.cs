@@ -6,9 +6,22 @@ using UnityEngine;
 namespace ModulPertarungan
 {
 	public class NetworkSingleton
-	{   
+	{
 
-       
+        private string hostPlayer;
+
+        public string HostPlayer
+        {
+            get { return hostPlayer; }
+            set { hostPlayer = value; }
+        }
+        private string joinPlayer;
+
+        public string JoinPlayer
+        {
+            get { return joinPlayer; }
+            set { joinPlayer = value; }
+        }
         private string roomName;
 
         public string RoomName
