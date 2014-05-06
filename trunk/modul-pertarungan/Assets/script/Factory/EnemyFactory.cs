@@ -11,12 +11,12 @@ namespace ModulPertarungan
         public List<GameObject> enemies;
         public List<GameObject> enemiesplace;
         private GameObject enemy;
-        public override void CreateEnemy(string ObjectName, int place)
+        public override void CreateEnemy(string objectName, int place)
         {
             enemies = GameManager.Instance().Enemies;
-            enemy = enemies.Find(item => item.name == ObjectName);
+            enemy = enemies.Find(item => item.name == objectName);
             Debug.Log(enemiesplace[place].name);
-            GameObject obj =Instantiate(enemy, enemiesplace[place].transform.position, Quaternion.identity) as GameObject;
+            var obj =Instantiate(enemy, enemiesplace[place].transform.position, Quaternion.identity) as GameObject;
             GameManager.Instance().Enemies.Remove(enemy);
             GameManager.Instance().Enemies.Add(obj);
             

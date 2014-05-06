@@ -101,26 +101,21 @@ namespace ModulPertarungan
             DrawCursor();
             EndPlayerTurn();
             SelectPawn();
-            CheckWinorLose();
+          //  CheckWinorLose();
         }
         void OnGUI()
         {
-
-            if (currentstate is CardExcutionState)
-            {
-                GUI.Box(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 75, 100, 150), "Execute Effect");
-                if (GUI.Button(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 25, 100, 50), "Yes"))
-                {
-                    currentstate.Action();
-                }
-
-                if (GUI.Button(new Rect((Screen.width / 2) - 50, ((Screen.height / 2) - 25) + 50, 100, 50), "No"))
-                {
-                    GameObject obj = GameManager.Instance().CurrentPawn;
-                    currentstate = new ChangePlayerState(obj, objectLoader, this);
-                    currentstate.Action();
-                }
+            if (!(currentstate is CardExcutionState)) return;
+            GUI.Box(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 75, 100, 150), "Execute Effect");
+            if (GUI.Button(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 25, 100, 50), "Yes"))
+            {   Debug.Log("kena");
+                currentstate.Action();
             }
+
+            if (!GUI.Button(new Rect((Screen.width/2) - 50, ((Screen.height/2) - 25) + 50, 100, 50), "No")) return;
+            var obj = GameManager.Instance().CurrentPawn;
+            currentstate = new ChangePlayerState(obj, objectLoader, this);
+            currentstate.Action();
         }
         public GameObject HitCollider()
         {

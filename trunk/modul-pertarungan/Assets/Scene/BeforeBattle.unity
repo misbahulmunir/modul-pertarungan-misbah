@@ -1255,11 +1255,11 @@ Transform:
   m_Children:
   - {fileID: 1107434146}
   - {fileID: 1135014868}
+  - {fileID: 1539276674}
   - {fileID: 588971479}
   - {fileID: 179801425}
   - {fileID: 223368275}
   - {fileID: 2055691843}
-  - {fileID: 1539276674}
   - {fileID: 919359270}
   m_Father: {fileID: 0}
 --- !u!54 &965786960
@@ -1838,6 +1838,7 @@ GameObject:
   - 114: {fileID: 1539276677}
   - 114: {fileID: 1539276676}
   - 65: {fileID: 1539276675}
+  - 114: {fileID: 1539276678}
   m_Layer: 8
   m_Name: Control - Simple Button
   m_TagString: Untagged
@@ -1943,6 +1944,17 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &1539276678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539276673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7152f73b1d812994b9c93e40c52da053, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1830315882
 GameObject:
   m_ObjectHideFlags: 0

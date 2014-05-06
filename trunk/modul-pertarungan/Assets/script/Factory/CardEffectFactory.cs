@@ -14,23 +14,23 @@ namespace ModulPertarungan
         {
             CreateCardList = new Dictionary<string, CardsEffect>();
             card= new FireStorm();
-            CreateCardList.Add("FireStormCard",card);
+            CreateCardList.Add("Fire Storm",card);
             card = new SplitFireCard();
-            CreateCardList.Add("SplitFireCard", card);
+            CreateCardList.Add("Split Fire", card);
             card = new TyphoonCard();
-            CreateCardList.Add("TyphoonCard", card);
+            CreateCardList.Add("Typhoon", card);
             card = new WindStorm();
-            CreateCardList.Add("WindStromCard", card);
+            CreateCardList.Add("WindStrom", card);
             card = new TidalWaveCard();
-            CreateCardList.Add("TidalWaveCard", card);
+            CreateCardList.Add("Tidal Wave", card);
             card = new WaterAttackAction();
-            CreateCardList.Add("WaterAttack", card);    
+            CreateCardList.Add("Water Attack", card);    
         }
         
-        public override void CreateCard(string Objectname,string Target)
+        public override void CreateCard(string objectName,string target)
         {
-            CreateCardList.TryGetValue(Objectname, out card);
-            card.SetTarget(Target);
+            CreateCardList.TryGetValue(objectName, out card);
+            card.SetTarget(target);
             card.Effect();
         }
 	}

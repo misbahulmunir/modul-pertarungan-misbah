@@ -30,8 +30,16 @@ namespace ModulPertarungan
         //    }
             factory = new PlayerFactory();
             factory.InstantiateObject();
-            factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
-            LoadParty();
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
+            }
+            else
+            {
+                factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
+                //LoadParty();
+            }
+           
         }
 
         public void LoadParty()
@@ -51,10 +59,10 @@ namespace ModulPertarungan
         {
             if (pawn != null)
             {
-                for (int c = 0; c < pawn.GetComponent<PlayerAction>().CurrentHand.Count; c++)
+                foreach (GameObject t in pawn.GetComponent<PlayerAction>().CurrentHand)
                 {
-                    GameObject obj = NGUITools.AddChild(grid,pawn.GetComponent<PlayerAction>().CurrentHand[c]);
-                  //  obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
+                    var obj = NGUITools.AddChild(grid,t);
+                    //  obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
                     DisplayedCards.Add(obj);
                 }
                
@@ -75,14 +83,14 @@ namespace ModulPertarungan
         {
             if (GameManager.Instance().GameMode == "pvp")
             {
-                factory = new PlayerFactory();
+                factory = new OnlineEnemyFanctory();
                 factory.InstantiateObject();
-                factory.CreatePlayer("boncu", "warlock", "FirstWarlock", enemyOnlinePosisiton);
+                factory.CreatePlayer(NetworkSingleton.Instance().JoinPlayer, "warlock", "FirstWarlock", enemyOnlinePosisiton);
              
             }
             else
             {
-                for (int c = 0; c < enemyCount; c++)
+                for (var c = 0; c < enemyCount; c++)
                 {
                     this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon", c);
                 }

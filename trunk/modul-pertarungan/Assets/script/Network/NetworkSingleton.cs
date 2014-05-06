@@ -89,7 +89,7 @@ namespace ModulPertarungan
         }
         public void Connect()
         {
-            string[] args = new string[3];
+            var args = new string[3];
             args[0] = host;
             args[1] = tcpPort;
             args[2] = udpPort;
@@ -106,4 +106,6 @@ namespace ModulPertarungan
             PlayerClient.Call("CloseConnection");
         }
 	}
+
+    
 }

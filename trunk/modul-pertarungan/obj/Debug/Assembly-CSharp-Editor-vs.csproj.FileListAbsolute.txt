@@ -60,7 +60,6 @@ J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
 J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
 J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
-J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.BB10.Extensions.dll
@@ -95,3 +94,4 @@ C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\As
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
+J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript.dll

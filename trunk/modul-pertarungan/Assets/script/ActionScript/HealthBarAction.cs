@@ -31,13 +31,13 @@ namespace ModulPertarungan
         void Update()
         {
             curHP = this.GetComponent<DamageReceiverAction>().Character.CurrentHealth;
-            adjustCurrentHealth();
+            AdjustCurrentHealth();
 
         }
 
 
 
-        public void adjustCurrentHealth()
+        public void AdjustCurrentHealth()
         {
 
 

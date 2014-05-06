@@ -8,6 +8,13 @@ namespace ModulPertarungan
 {
 	public  abstract class DamageReceiverAction:MonoBehaviour
 	{
+        private Boolean isEnemy;
+
+        public Boolean IsEnemy
+        {
+            get { return isEnemy; }
+            set { isEnemy = value; }
+        }
         private DamageReceiver character;
 
         public DamageReceiver Character

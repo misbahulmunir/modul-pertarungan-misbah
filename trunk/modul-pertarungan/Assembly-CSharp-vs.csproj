@@ -82,6 +82,7 @@
      <Compile Include="Assets\Component\HoverCard.cs" />
      <Compile Include="Assets\Component\LobbyManager.cs" />
      <Compile Include="Assets\Component\PartyEditorButton.cs" />
+     <Compile Include="Assets\Component\PlayerVsPlayerDummy.cs" />
      <Compile Include="Assets\Component\RefreshRoomList.cs" />
      <Compile Include="Assets\Component\SearchCard.cs" />
      <Compile Include="Assets\Component\ShowRoomtoText.cs" />
@@ -230,6 +231,7 @@
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\FireDragonScript.cs" />
      <Compile Include="Assets\script\ActionScript\HealthBarAction.cs" />
+     <Compile Include="Assets\script\ActionScript\OnlineEnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\PlayerAction.cs" />
      <Compile Include="Assets\script\ActionScript\WarlockAction.cs" />
      <Compile Include="Assets\script\ButtonManager\LobbyButtonManager.cs" />
