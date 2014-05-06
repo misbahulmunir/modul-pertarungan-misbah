@@ -39,10 +39,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: b9ea8550f14e44043861c75361ebd95c, type: 2}
-  sprites: []
-  mCoordinates: 0
+  mSprites: []
   mPixelSize: 1
   mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

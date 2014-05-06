@@ -7,19 +7,19 @@ namespace ModulPertarungan
 {
     public class Invoker
     {   
-        private Queue<Command> commandList = new Queue<Command>();
+        private readonly Queue<Command> _commandList = new Queue<Command>();
         public void RunCommand()
         {
-            while (commandList.Count > 0)
+            while (_commandList.Count > 0)
             {
-                commandList.Peek().Initialization();
-                commandList.Dequeue().Execute();
+                _commandList.Peek().Initialization();
+                _commandList.Dequeue().Execute();
             }
         }
 
         public void AddCommand(Command command)
         {
-            commandList.Enqueue(command);
+            _commandList.Enqueue(command);
         }
     }
 }

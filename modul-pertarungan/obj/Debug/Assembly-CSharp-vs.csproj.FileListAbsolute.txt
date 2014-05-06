@@ -74,7 +74,6 @@ J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyRef
 J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
-J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
 J:\newta\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll

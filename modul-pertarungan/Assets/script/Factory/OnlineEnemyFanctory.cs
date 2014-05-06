@@ -7,12 +7,12 @@ namespace ModulPertarungan
 {
 	public class OnlineEnemyFanctory:AbstractFactory
 	{
-        private Dictionary<string, Player> instantiateObjectList;
+        private Dictionary<string, Player> _instantiateObjectList;
 
         public Dictionary<string, Player> InstantiateObjectList
         {
-            get { return instantiateObjectList; }
-            set { instantiateObjectList = value; }
+            get { return _instantiateObjectList; }
+            set { _instantiateObjectList = value; }
         }
         private Player character;
 
@@ -23,20 +23,23 @@ namespace ModulPertarungan
         }
         public override void InstantiateObject()
         {
-            instantiateObjectList = new Dictionary<string, Player>();
-            instantiateObjectList.Add("warlock", new Warlock());
-            instantiateObjectList.Add("sorcerer", new Sorcerer());
-            instantiateObjectList.Add("magician", new Magician());
+            _instantiateObjectList = new Dictionary<string, Player>
+            {
+                {"warlock", new Warlock()}
+            };
         }
-        public override void CreatePlayer(string Id, string Job, string ObjectName, GameObject pawnsPosisition)
+        public override void CreatePlayer(string id, string job, string objectName, GameObject pawnsPosisition)
         {
-            instantiateObjectList.TryGetValue(Job, out character);
-            GameObject obj = Object.Instantiate((GameObject)Resources.Load(ObjectName, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
+            _instantiateObjectList.TryGetValue(job, out character);
+            var obj = Object.Instantiate((GameObject)Resources.Load(objectName, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
+            if (obj == null) return;
+            obj.transform.Rotate(new Vector3(0f,180f,0f));
             character.CurrentHealth = 200;
             character.MaxHealth = 200;
             character.MaxSoulPoints = 99;
-            character.Name = Id;
+            character.Name = id;
             character.Gold = 100;
+            obj.GetComponent<PlayerAction>().Character = character;
             GameManager.Instance().AddEnemy(obj);
             obj.GetComponent<PlayerAction>().IsEnemy = true;
             //Debug.Log(GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);

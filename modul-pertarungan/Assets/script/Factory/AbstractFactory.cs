@@ -11,13 +11,13 @@ namespace ModulPertarungan
         public virtual void InstantiateObject()
         {
         }
-        public virtual void CreateCard(string ObjectName, string Target)
+        public virtual void CreateCard(string objectName, string target)
         {
         }
-        public virtual void CreateEnemy(string ObjectName, int place)
+        public virtual void CreateEnemy(string objectName, int place)
         {
         }
-        public virtual void CreatePlayer(String Id, String Job, String ObjectName, GameObject pawnsPosisition)
+        public virtual void CreatePlayer(String id, String job, String objectName, GameObject pawnsPosisition)
         {
            
         }

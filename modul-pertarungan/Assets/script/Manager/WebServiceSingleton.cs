@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Xml;
@@ -29,22 +30,22 @@ namespace ModulPertarungan
 
         public void createXMLDocument(string parameter)
         {
-            if (dict == null) initDictionary();   
+            if (dict == null) InitDictionary();   
             string[] param = parameter.Split('|');
             string temp = "param";
             try
             {
-                string urlx = "http://localhost/MortalWorld/ClientController";
+                string urlx = "http://cws.yowanda.com/ClientController";
                 using (WebClient client = new WebClient())
                 {
                     var data = new NameValueCollection();
                     data.Add("method", param[0]);
                     for(int i=1;i<=param.Length-1;i++)
                     {
-                        data.Add(temp+i.ToString(), param[i]);
+                        data.Add(temp+i.ToString(CultureInfo.InvariantCulture), param[i]);
                     }
-                    var Bytecode = client.UploadValues(urlx, data);
-                    responseFromServer = Encoding.UTF8.GetString(Bytecode, 0, Bytecode.Length);
+                    var bytecode = client.UploadValues(urlx, data);
+                    responseFromServer = Encoding.UTF8.GetString(bytecode, 0, bytecode.Length);
                 }
             }
             catch
@@ -55,18 +56,18 @@ namespace ModulPertarungan
             if (responseFromServer == "XML File Has Been Successfully Generated")
             {
                 string value = "";
-                XmlDocument document = new XmlDocument();
-                dict.TryGetValue(param[0], out value);
+                var document = new XmlDocument();
+                if (dict != null) dict.TryGetValue(param[0], out value);
                 document.Load(value + param[1] + ".xml");
                 xmLFromServer = document;
             }
         }
 
-        private void initDictionary()
+        private void InitDictionary()
         {
             dict = new Dictionary<string, string>();
-            dict.Add("get_profile", "http://localhost/MortalWorld/files/player_profile_");
-            dict.Add("friend_list", "http://localhost/MortalWorld/files/friends_of_");
+            dict.Add("get_profile", "http://cws.yowanda.com/files/player_profile_");
+            dict.Add("friend_list", "http://cws.yowanda.com/files/friends_of_");
         }
 	}
 }

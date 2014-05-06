@@ -5,44 +5,44 @@ namespace ModulPertarungan
 {
     public abstract class CardsEffect : MonoBehaviour
     {
-        private string cardEffect;
+        private string _cardEffect;
 
         public string CardEffect
         {
-            get { return cardEffect; }
-            set { cardEffect = value; }
+            get { return _cardEffect; }
+            set { _cardEffect = value; }
         }
 
-        private string cardName;
+        private string _cardName;
 
         public string CardName
         {
-            get { return cardName; }
-            set { cardName = value; }
+            get { return _cardName; }
+            set { _cardName = value; }
         }
-        private string cardCode;
+        private string _cardCode;
 
         public string CardCode
         {
-            get { return cardCode; }
-            set { cardCode = value; }
+            get { return _cardCode; }
+            set { _cardCode = value; }
         }
-        private int cardCost;
+        private int _cardCost;
 
         public int CardCost
         {
-            get { return cardCost; }
-            set { cardCost = value; }
+            get { return _cardCost; }
+            set { _cardCost = value; }
         }
         public virtual void Effect()
         {
         }
-        private string target;
+        private string _target;
 
         public string Target
         {
-            get { return target; }
-            set { target = value; }
+            get { return _target; }
+            set { _target = value; }
         }
         private List<GameObject> targetList;
 
@@ -56,28 +56,27 @@ namespace ModulPertarungan
             if (Application.loadedLevelName == "Battle")
             {
                 GameManager.Instance().CurrentCard = this;
-                BattleStateManager obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
+                var obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
                 obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
             }
             GameManager.Instance().CurrentCard = this;
-            if (GameManager.Instance().GameMode == "pvp")
-            {
-
-            }
+            if (GameManager.Instance().GameMode != "pvp") return;
+            var invoke= new Invoker();
+            invoke.AddCommand(new CardExecuteCommand(this.CardName));
+            invoke.RunCommand();
         }
 
         public void SetTarget(string Target)
         {
-            this.Target = Target;
-            if (target.Equals("enemy"))
+            if (Target != null) this.Target = Target;
+            if (_target.Equals("enemy"))
             {
                 this.TargetList = GameManager.Instance().Enemies;
             }
-            else if(target.Equals("player"))
+            else if(_target.Equals("player"))
             {
                 this.TargetList=GameManager.Instance().Players;
             }
         }
-
     }
 }

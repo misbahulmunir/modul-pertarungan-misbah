@@ -31,11 +31,14 @@ namespace ModulPertarungan
         {
             if (TargetList.Count > 0)
             {
-                foreach (GameObject obj in TargetList)
+                foreach (var obj in TargetList)
                 {
-                    GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
-                    animation.renderer.sortingLayerName = "foreground";
-                    animation.particleEmitter.emit = true;
+                    var o = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                    if (o != null)
+                    {
+                        o.renderer.sortingLayerName = "foreground";
+                        o.particleEmitter.emit = true;
+                    }
                     obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
                 }
                 GameManager.Instance().KillObj(Target);

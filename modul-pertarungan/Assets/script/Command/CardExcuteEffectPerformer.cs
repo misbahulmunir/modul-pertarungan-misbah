@@ -7,12 +7,12 @@ namespace ModulPertarungan
 {
 	class CardExcuteEffectPerformer
 	{
-        private AbstractFactory factory;
+        private AbstractFactory _factory;
         public void CardExecute(CardExecuteCommand cmd )
         {
-            factory = new CardEffecFactory();
-            factory.InstantiateObject();
-            factory.CreateCard(cmd.CardName,"player");
+            _factory = new CardEffecFactory();
+            _factory.InstantiateObject();
+            _factory.CreateCard(cmd.CardName,"player");
         }
 	}
 }

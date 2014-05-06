@@ -6,26 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/BeforeBattle.unity
+    path: Assets/Scene/BeforeBattle.unity
   - enabled: 1
-    path: Assets/Battle.unity
+    path: Assets/Scene/Battle.unity
   - enabled: 1
-    path: Assets/AfterBattle2.unity
+    path: Assets/Scene/AfterBattle2.unity
   - enabled: 1
-    path: Assets/CardManager.unity
+    path: Assets/Scene/CardManager.unity
   - enabled: 1
-    path: Assets/DeckEditor.unity
+    path: Assets/Scene/DeckEditor.unity
   - enabled: 1
-    path: Assets/AvatarCostumization.unity
+    path: Assets/Scene/AvatarCostumization.unity
   - enabled: 1
-    path: Assets/FacebookMenu.unity
+    path: Assets/Scene/FacebookMenu.unity
   - enabled: 0
-    path: Assets/CrateRoom.unity
+    path: Assets/Scene/CrateRoom.unity
   - enabled: 0
-    path: Assets/LobbyRoom.unity
+    path: Assets/Scene/LobbyRoom.unity
   - enabled: 0
-    path: Assets/HostRoom.unity
+    path: Assets/Scene/HostRoom.unity
   - enabled: 0
-    path: Assets/WaitingRoom.unity
+    path: Assets/Scene/WaitingRoom.unity
   - enabled: 0
-    path: Assets/PartyEditor.unity
+    path: Assets/Scene/PartyEditor.unity
+  - enabled: 1
+    path: Assets/Scene/OnlineBattle.unity
