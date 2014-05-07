@@ -11,10 +11,7 @@ namespace ModulPertarungan
         {
             bool succses = false;
             succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GetPlayerList-" + NetworkSingleton.Instance().RoomName);
-            if (succses)
-                Debug.Log("send succes");
-            else
-                Debug.Log("send false");
+            Debug.Log(succses ? "send succes" : "send false");
         }
 
         void GotoHome()

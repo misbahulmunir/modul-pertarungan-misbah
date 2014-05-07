@@ -1,4 +1,5 @@
 using UnityEngine;
+using ModulPertarungan;
 
 /// <summary>
 /// Very simple example of how to use a TextList with a UIInput for chat.
@@ -45,7 +46,10 @@ public class ChatInput : MonoBehaviour
 
 			if (!string.IsNullOrEmpty(text))
 			{
-				textList.Add(text);
+				//textList.Add(text);
+                bool succses = false;
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "SendMessage-" + NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId+"-"+"Chat"+"-"+GameManager.Instance().PlayerId+"=>"+text);
+                Debug.Log(!succses ? "send false" : "send succes");
 				mInput.value = "";
 				mInput.isSelected = false;
 			}
