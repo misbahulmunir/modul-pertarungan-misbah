@@ -37,7 +37,11 @@ namespace ModulPertarungan
             else
             {
                 factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
-                //LoadParty();
+
+                if (GameManager.Instance().PartyId != null)
+                {
+                    LoadParty();
+                }
             }
            
         }
