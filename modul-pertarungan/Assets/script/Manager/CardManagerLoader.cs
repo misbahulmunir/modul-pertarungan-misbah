@@ -20,8 +20,8 @@ namespace ModulPertarungan
         {
             Debug.Log(GameManager.Instance().PlayerId);
             LoadCardFromService("player_deck");
-            LoadCardFromService("player_deck");
             AddToGrid(deckGrid);
+            LoadCardFromService("player_trunk");   
             AddToGrid(trunkGrid);
         }
 
@@ -56,8 +56,9 @@ namespace ModulPertarungan
 
             nameNodes = xmlFromServer.GetElementsByTagName("Name");
             quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
-            if (WebServiceSingleton.GetInstance().responseFromServer != "Deck is Empty")
+            if (WebServiceSingleton.GetInstance().responseFromServer != "Deck is Empty" && WebServiceSingleton.GetInstance().responseFromServer != "Trunk is Empty")
             {
+                Debug.Log("Method Name : " + method);
                 for (int i = 0; i < nameNodes.Count; i++)
                 {
                     for (int j = 0; j < int.Parse(quantityNodes[i].InnerXml); j++)
