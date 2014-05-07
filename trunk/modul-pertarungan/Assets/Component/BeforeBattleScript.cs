@@ -21,7 +21,7 @@ namespace ModulPertarungan
         void Start()
         {
             //GameManager.Instance().PlayerNumber = 1;
-            GameManager.Instance().PlayerId = "agil";
+            //GameManager.Instance().PlayerId = "agil";
         }
 
         // Update is called once per frame
