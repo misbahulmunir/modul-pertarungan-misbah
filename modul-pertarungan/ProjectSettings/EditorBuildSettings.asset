@@ -5,29 +5,29 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/BeforeBattle.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/Battle.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/AfterBattle2.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/CardManager.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/DeckEditor.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/AvatarCostumization.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/FacebookMenu.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/CrateRoom.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/LobbyRoom.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/HostRoom.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/WaitingRoom.unity
   - enabled: 1
     path: Assets/Scene/PartyEditor.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/OnlineBattle.unity
