@@ -68,6 +68,7 @@ namespace ModulPertarungan
             dict = new Dictionary<string, string>();
             dict.Add("get_profile", "http://cws.yowanda.com/files/player_profile_");
             dict.Add("friend_list", "http://cws.yowanda.com/files/friends_of_");
+            dict.Add("player_deck", "http://cws.yowanda.com/files/deck_of_");
         }
 	}
 }

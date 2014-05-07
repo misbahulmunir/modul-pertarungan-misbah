@@ -84,7 +84,6 @@ J:\newta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript-firstpass.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
