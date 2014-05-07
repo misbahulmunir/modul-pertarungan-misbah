@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 114: {fileID: 11400000}
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400002}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400000}
   m_Layer: 8
   m_Name: TidalWaveCard
   m_TagString: Untagged
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acf0a24ec5292c441897f3820fffddff, type: 3}
+  m_Script: {fileID: 11500000, guid: 35dcbe1a97c03b34fa78ee99b49e4d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11400002
@@ -90,7 +90,7 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: .826086938
-  mSprite: {fileID: 21300000, guid: f9a5cb8e8eff8b44d982be0f637bb28a, type: 3}
+  mSprite: {fileID: 21300000, guid: 21cb747a9e7a50b4a9aff31319e18288, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   nextSprite: {fileID: 0}

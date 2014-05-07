@@ -3156,7 +3156,7 @@ GameObject:
   - 114: {fileID: 1904505930}
   - 114: {fileID: 1904505932}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DeckEditorManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3182,7 +3182,9 @@ MonoBehaviour:
   - {fileID: 100000, guid: 9c5b3b34905ea4448a0a7760f53a5642, type: 2}
   - {fileID: 100000, guid: d70008a0af2c71e40a1bd4690706ddc9, type: 2}
   - {fileID: 100000, guid: d70008a0af2c71e40a1bd4690706ddc9, type: 2}
-  grid: {fileID: 830441777}
+  deckGrid: {fileID: 25}
+  trunkGrid: {fileID: 830441777}
+  cardList: []
 --- !u!4 &1904505931
 Transform:
   m_ObjectHideFlags: 0
