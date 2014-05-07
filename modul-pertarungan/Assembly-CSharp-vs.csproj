@@ -265,6 +265,7 @@
      <Compile Include="Assets\script\Manager\BattleStateManager.cs" />
      <Compile Include="Assets\script\Manager\CardManagerLoader.cs" />
      <Compile Include="Assets\script\Manager\GameMenager.cs" />
+     <Compile Include="Assets\script\Manager\LoginManager.cs" />
      <Compile Include="Assets\script\Manager\ObjectLoader.cs" />
      <Compile Include="Assets\script\Manager\PlayerEditorManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />

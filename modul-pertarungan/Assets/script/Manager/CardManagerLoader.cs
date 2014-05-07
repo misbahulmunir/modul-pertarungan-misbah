@@ -12,17 +12,21 @@ namespace ModulPertarungan
         public GameObject deckGrid;
         public GameObject trunkGrid;
         public List<string> cardList;
-        private XmlDocument xmlFromServer;
-        private XmlNodeList nameNodes;
-        private XmlNodeList quantityNodes;
-
+        private XmlDocument _xmlFromServer;
+        private XmlNodeList _nameNodes;
+        private XmlNodeList _quantityNodes;
+        private Boolean _isEmpty;
         void Start()
         {
+            _isEmpty = false;
             Debug.Log(GameManager.Instance().PlayerId);
             LoadCardFromService("player_deck");
-            AddToGrid(deckGrid);
-            LoadCardFromService("player_trunk");   
-            AddToGrid(trunkGrid);
+            LoadCardFromService("player_trunk");
+            if (!_isEmpty)
+            {
+                AddToGrid(deckGrid);
+                AddToGrid(trunkGrid);
+            }
         }
 
 
@@ -51,22 +55,23 @@ namespace ModulPertarungan
             cardList = new List<string>();
 
             WebServiceSingleton.GetInstance().createXMLDocument(method + "|" + GameManager.Instance().PlayerId);
-            xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
+            _xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
             Debug.Log("Load Card : " + WebServiceSingleton.GetInstance().responseFromServer);
 
-            nameNodes = xmlFromServer.GetElementsByTagName("Name");
-            quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
+            _nameNodes = _xmlFromServer.GetElementsByTagName("Name");
+            _quantityNodes = _xmlFromServer.GetElementsByTagName("Quantity");
             if (WebServiceSingleton.GetInstance().responseFromServer != "Deck is Empty" && WebServiceSingleton.GetInstance().responseFromServer != "Trunk is Empty")
             {
                 Debug.Log("Method Name : " + method);
-                for (int i = 0; i < nameNodes.Count; i++)
+                for (int i = 0; i < _nameNodes.Count; i++)
                 {
-                    for (int j = 0; j < int.Parse(quantityNodes[i].InnerXml); j++)
+                    for (int j = 0; j < int.Parse(_quantityNodes[i].InnerXml); j++)
                     {
-                        cardList.Add(nameNodes[i].InnerXml);
-                        Debug.Log("Card Name : " + nameNodes[i].InnerXml);
+                        cardList.Add(_nameNodes[i].InnerXml);
+                        Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
                     }
                 }
+                _isEmpty = true;
             }
             
         }

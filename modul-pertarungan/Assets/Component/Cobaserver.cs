@@ -13,7 +13,7 @@ namespace ModulPertarungan
 
         void OnClick()
         {
-            NetworkSingleton.Instance().Host = host.GetComponent<UILabel>().text;
+            NetworkSingleton.Instance().Host = host.GetComponent<UIInput>().value;
             NetworkSingleton.Instance().TcpPort = tcpPort;
             NetworkSingleton.Instance().UdpPort = udpPort;
             NetworkSingleton.Instance().Connect();
@@ -25,17 +25,12 @@ namespace ModulPertarungan
         {
             
         }
-
-       
-
-        
         // Update is called once per frame
         void Update()
         {
             if (NetworkSingleton.Instance().ServerMessage.ToLower().Contains("connected"))
             {
                 Application.LoadLevel("LobbyRoom");
-                GameManager.Instance().PlayerId = "Dio";
             }
         }
         //private void Connect()
