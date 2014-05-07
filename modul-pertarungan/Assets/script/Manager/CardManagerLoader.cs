@@ -52,7 +52,7 @@ namespace ModulPertarungan
 
             WebServiceSingleton.GetInstance().createXMLDocument(method + "|" + GameManager.Instance().PlayerId);
             xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
-            Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+            Debug.Log("Load Card : " + WebServiceSingleton.GetInstance().responseFromServer);
 
             nameNodes = xmlFromServer.GetElementsByTagName("Name");
             quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
