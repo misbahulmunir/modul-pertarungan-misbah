@@ -9,7 +9,7 @@ namespace ModulPertarungan
     {
         public GameObject firstPlayerName;
         public GameObject secondPlayerName;
-    
+        public GameObject textList;
         void Start()
         {
             bool succses = false;
@@ -54,6 +54,13 @@ namespace ModulPertarungan
                 }
                 NetworkSingleton.Instance().ServerMessage = "";
             }
+            else if(serverMessage.Contains("Chat"))
+            {
+                textList.GetComponent<UITextList>().Add(message[1]);
+                NetworkSingleton.Instance().ServerMessage = "";
+            }
         }
+
+        
     }
 }

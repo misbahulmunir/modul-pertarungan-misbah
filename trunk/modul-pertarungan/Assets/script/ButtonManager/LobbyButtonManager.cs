@@ -19,7 +19,7 @@ namespace ModulPertarungan
         {   rName = roomName.GetComponent<UILabel>().text;
             NetworkSingleton.Instance().RoomName = rName;
             bool succses = false;
-            succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "JoinRoom-"+rName+"-misbah");
+            succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "JoinRoom-" + rName +"-"+GameManager.Instance().PlayerId);
             if (succses)
                 Debug.Log("send succes");
             else

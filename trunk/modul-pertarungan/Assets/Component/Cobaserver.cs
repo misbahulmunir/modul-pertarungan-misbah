@@ -35,6 +35,7 @@ namespace ModulPertarungan
             if (NetworkSingleton.Instance().ServerMessage.ToLower().Contains("connected"))
             {
                 Application.LoadLevel("LobbyRoom");
+                GameManager.Instance().PlayerId = "Dio";
             }
         }
         //private void Connect()
