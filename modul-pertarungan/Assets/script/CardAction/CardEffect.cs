@@ -53,7 +53,7 @@ namespace ModulPertarungan
         }
         public void Click()
         {
-            if (Application.loadedLevelName == "Battle")
+            if (Application.loadedLevelName == "Battle"||Application.loadedLevelName=="OnlineBattle")
             {
                 GameManager.Instance().CurrentCard = this;
                 var obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();

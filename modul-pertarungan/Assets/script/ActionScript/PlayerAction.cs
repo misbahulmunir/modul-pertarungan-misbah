@@ -65,7 +65,7 @@ namespace ModulPertarungan
                 }
             }
            
-            if (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character.Name == this.Character.Name)
+            if (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character.Name == this.Character.Name&&GameManager.Instance().PlayerId!=null)
             {
                 GameObject.Find("Objcetloader").GetComponent<BattleObjectLoader>().LoadDisplayedCards(this.sceneObject);
             }
