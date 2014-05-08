@@ -18,22 +18,23 @@ namespace ModulPertarungan
 
         public override void Action()
         {
-            GameObject gobj = null;
-            SelectedCard.GetComponent<CardsEffect>().SetTarget("enemy");
-            SelectedCard.GetComponent<CardsEffect>().Effect();
-            foreach (GameObject obj in GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand)
+            if (GameManager.Instance().GameMode == "pvp")
             {
-                if (this.SelectedCard.name == obj.name + "(Clone)")
-                {
-                    gobj = obj;
-                    break;
-                }
+                bool succses = false;
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "SendMessage-" +GameManager.Instance().PartyId+"-"+GameManager.Instance().CurrentCard);
+                Debug.Log(succses ? "send succes" : "send false");
             }
-
-            GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand.Remove(gobj);
-            Destroy(this.SelectedCard);
-            this.BattleManager.Currentstate = new ChangePlayerState(this.CurrentPlayer, this.BattleManager.objectLoader, this.BattleManager);
-            this.BattleManager.Currentstate.Action();
+            else
+            {
+                SelectedCard.GetComponent<CardsEffect>().SetTarget("enemy");
+                SelectedCard.GetComponent<CardsEffect>().Effect();
+                var gobj = GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand.FirstOrDefault(obj => this.SelectedCard.name == obj.name + "(Clone)");
+                GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand.Remove(gobj);
+                Destroy(this.SelectedCard);
+                this.BattleManager.Currentstate = new ChangePlayerState(this.CurrentPlayer,
+                this.BattleManager.objectLoader, this.BattleManager);
+                this.BattleManager.Currentstate.Action();
+            }
         }
     }
 }

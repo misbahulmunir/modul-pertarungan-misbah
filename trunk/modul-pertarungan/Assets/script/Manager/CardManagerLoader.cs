@@ -71,6 +71,10 @@ namespace ModulPertarungan
                         Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
                     }
                 }
+               
+            }
+            else
+            {
                 _isEmpty = true;
             }
             

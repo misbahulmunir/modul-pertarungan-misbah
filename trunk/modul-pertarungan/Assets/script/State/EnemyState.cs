@@ -22,7 +22,7 @@ namespace ModulPertarungan
                 obj.GetComponent<EnemyAction>().AttackAction();
             }
 
-            BattleManager.EndButton.renderer.enabled = true;
+            BattleManager.endButton.SetActive(true);
             BattleManager.Cursor.renderer.enabled = true;
             BattleManager.Currentstate = new DrawState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
             BattleManager.Currentstate.Action();

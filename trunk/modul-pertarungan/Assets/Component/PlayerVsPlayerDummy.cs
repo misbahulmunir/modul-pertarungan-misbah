@@ -8,10 +8,11 @@ namespace ModulPertarungan
 
         public void OnClick()
         {
-            Application.LoadLevel("OnlineBattle");
-            NetworkSingleton.Instance().HostPlayer = "Boncu";
-            NetworkSingleton.Instance().JoinPlayer = "Misbah";
+            //Application.LoadLevel("OnlineBattle");
+            //NetworkSingleton.Instance().HostPlayer = "Boncu";
+            //NetworkSingleton.Instance().JoinPlayer = "Misbah";
             GameManager.Instance().GameMode = "pvp";
+            Application.LoadLevel("PVPlogin");
         }
 
         // Use this for initialization

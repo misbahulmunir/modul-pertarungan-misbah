@@ -18,16 +18,12 @@ namespace ModulPertarungan
         private AbstractFactory factory;
         public GameObject warlock;
         public GameObject enemyOnlinePosisiton;
-     
+
+       
+
+
         public void LoadPlayer()
         {
-        //    for (int c = 0; c < GameManager.Instance().PlayerNumber; c++)
-        //    {
-        //        factory = new PlayerFactory();
-        //        factory.InstantiateObject();
-        //        factory.CreatePlayer("boncu", "warlock","FirstWarlock", pawnsPosisition[c]);
-        //        Debug.Log("name" + GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
-        //    }
             factory = new PlayerFactory();
             factory.InstantiateObject();
             if (GameManager.Instance().GameMode == "pvp")
@@ -61,12 +57,12 @@ namespace ModulPertarungan
 
         public void LoadDisplayedCards(GameObject pawn)
         {
-            if (pawn != null)
+            if (pawn != null&& !(GameManager.Instance().BattleState is  PvpEnemyState))
             {
+                Debug.Log(GameManager.Instance().BattleState);
                 foreach (GameObject t in pawn.GetComponent<PlayerAction>().CurrentHand)
                 {
                     var obj = NGUITools.AddChild(grid,t);
-                    //  obj.GetComponent<SpriteRenderer>().sortingOrder = 5;
                     DisplayedCards.Add(obj);
                 }
                

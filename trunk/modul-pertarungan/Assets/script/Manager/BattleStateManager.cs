@@ -19,22 +19,14 @@ namespace ModulPertarungan
         }
         public GameObject objectLoader;
         public GameObject Cursor;
-        private GameObject endButton;
-
-        public GameObject EndButton
-        {
-            get { return endButton; }
-            set { endButton = value; }
-        }
-
-
+        public GameObject endButton;
 
         public void SelectPawn()
         {
             if (!(this.currentstate is CardExcutionState) && !(this.currentstate is PvpEnemyState))
             {
                 hitObj = HitCollider();
-                if (hitObj != null && hitObj.GetComponent<PlayerAction>()!=null&&hitObj.GetComponent<PlayerAction>().IsEnemy==false)
+                if (hitObj != null && hitObj.GetComponent<PlayerAction>() != null && hitObj.GetComponent<PlayerAction>().IsEnemy == false)
                 {
                     GameObject obj = GameManager.Instance().CurrentPawn = hitObj;
                     currentstate = new ChangePlayerState(obj, objectLoader, this);
@@ -48,17 +40,20 @@ namespace ModulPertarungan
             hitObj = HitCollider();
             if (hitObj != null && hitObj.name.ToLower().Contains("endbutton"))
             {
-                EndButton = hitObj;
-                Cursor.renderer.enabled = false;
-                hitObj.renderer.enabled = false;
-                if (GameManager.Instance().GameMode != "pvp")
+                endButton = hitObj;
+                endButton.SetActive(false);
+                if (GameManager.Instance().GameMode == "pvp")
                 {
-                    currentstate = new EnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
+                   
+                    var succses = false;
+                    succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "EndTurn-" + NetworkSingleton.Instance().RoomName);
+                    Debug.Log(succses ? "send succes" : "send false");
+                    currentstate = new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
                     currentstate.Action();
                 }
                 else
                 {
-                    currentstate = new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
+                    currentstate = new EnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
                     currentstate.Action();
                 }
             }
@@ -81,38 +76,66 @@ namespace ModulPertarungan
                 GameManager.Instance().PlayerGold = 100;
                 Application.LoadLevel("AfterBattle2");
 
+
             }
             else if (GameManager.Instance().Players.Count <= 0)
             {
                 GameManager.Instance().GameStatus = "lose";
                 Application.LoadLevel("AfterBattle2");
             }
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                string serverMessage = NetworkSingleton.Instance().ServerMessage;
+                Debug.Log(serverMessage);
+                var message = serverMessage.Split('-');
+
+                if (!serverMessage.Contains("Disconnected")) return;
+                if (GameManager.Instance().PlayerId.Equals(message[1]))
+                {
+                    GameManager.Instance().GameStatus = "lose";
+                    Application.LoadLevel("AfterBattle2");
+                }
+                else
+                {
+                    GameManager.Instance().GameStatus = "win";
+                    GameManager.Instance().PlayerExp = 100;
+                    GameManager.Instance().PlayerGold = 100;
+                    Application.LoadLevel("AfterBattle2");
+
+                }
+            }
 
         }
         void Start()
         {
             // currentstate = new FirstHandState(GameMenager.Instance().CurrentPawn);
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                ChekHost();
+            }
         }
 
         // Update is called once per frame
         void Update()
         {
-
+            
             DrawCursor();
             EndPlayerTurn();
             SelectPawn();
-          //  CheckWinorLose();
+            CheckWinorLose();
+            GameManager.Instance().BattleState = currentstate;
         }
         void OnGUI()
         {
             if (!(currentstate is CardExcutionState)) return;
             GUI.Box(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 75, 100, 150), "Execute Effect");
             if (GUI.Button(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 25, 100, 50), "Yes"))
-            {   Debug.Log("kena");
+            {
+                Debug.Log("kena");
                 currentstate.Action();
             }
 
-            if (!GUI.Button(new Rect((Screen.width/2) - 50, ((Screen.height/2) - 25) + 50, 100, 50), "No")) return;
+            if (!GUI.Button(new Rect((Screen.width / 2) - 50, ((Screen.height / 2) - 25) + 50, 100, 50), "No")) return;
             var obj = GameManager.Instance().CurrentPawn;
             currentstate = new ChangePlayerState(obj, objectLoader, this);
             currentstate.Action();
@@ -129,6 +152,16 @@ namespace ModulPertarungan
                 }
             }
             return obj;
+        }
+        public void ChekHost()
+        {
+            if (NetworkSingleton.Instance().HostPlayer!=GameManager.Instance().PlayerId)
+            {
+                currentstate= new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
+                Cursor.renderer.enabled = false;
+                endButton.SetActive(false);
+                GameManager.Instance().BattleState = currentstate; GameManager.Instance().BattleState = currentstate;
+            }
         }
     }
 }

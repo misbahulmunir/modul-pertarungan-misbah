@@ -240,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectLoader: {fileID: 2060525586}
   Cursor: {fileID: 414779251}
+  endButton: {fileID: 59653368}
 --- !u!1 &175747674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2674,6 +2675,7 @@ MonoBehaviour:
   - {fileID: 1340579541}
   grid: {fileID: 1800864956}
   warlock: {fileID: 100000, guid: d41cff7ea08d0054491441ba41cee3fc, type: 2}
+  enemyOnlinePosisiton: {fileID: 0}
 --- !u!114 &2060525589
 MonoBehaviour:
   m_ObjectHideFlags: 0
