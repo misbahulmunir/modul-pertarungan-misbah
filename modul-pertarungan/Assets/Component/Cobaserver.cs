@@ -28,9 +28,10 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            if (NetworkSingleton.Instance().ServerMessage.ToLower().Contains("connected"))
+            if (NetworkSingleton.Instance().ServerMessage.Contains("Connected-to-server"))
             {
                 Application.LoadLevel("LobbyRoom");
+                NetworkSingleton.Instance().ServerMessage = "";
             }
         }
         //private void Connect()

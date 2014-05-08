@@ -23,13 +23,15 @@ EditorBuildSettings:
     path: Assets/Scene/FacebookMenu.unity
   - enabled: 0
     path: Assets/Scene/CrateRoom.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/LobbyRoom.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/HostRoom.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/WaitingRoom.unity
   - enabled: 1
     path: Assets/Scene/PartyEditor.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scene/OnlineBattle.unity
+  - enabled: 1
+    path: Assets/PVPlogin.unity

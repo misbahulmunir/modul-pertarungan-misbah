@@ -84,7 +84,7 @@ GameObject:
   - 4: {fileID: 109141720}
   - 114: {fileID: 109141722}
   - 114: {fileID: 109141721}
-  - 114: {fileID: 109141723}
+  - 65: {fileID: 109141724}
   m_Layer: 8
   m_Name: PVPloginInput
   m_TagString: Untagged
@@ -160,7 +160,7 @@ MonoBehaviour:
   mWidth: 302
   mHeight: 86
   mDepth: 3
-  autoResizeBoxCollider: 0
+  autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 3.51162791
@@ -189,21 +189,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
---- !u!114 &109141723
-MonoBehaviour:
+--- !u!65 &109141724
+BoxCollider:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 109141719}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6f164b3b74ae0e4092e742c21199e1d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  host: {fileID: 109141719}
-  tcpPort: 9999
-  udpPort: 9988
-  protocol: 
+  serializedVersion: 2
+  m_Size: {x: 302, y: 86, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &148086398
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +291,7 @@ GameObject:
   - 4: {fileID: 264638878}
   - 20: {fileID: 264638880}
   - 114: {fileID: 264638879}
+  - 114: {fileID: 264638881}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -376,6 +374,17 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
   m_OcclusionCulling: 1
+--- !u!114 &264638881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 264638877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb38378e1c0c0ee439bb77258ea7eb9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &460476021
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,9 +640,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f164b3b74ae0e4092e742c21199e1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  host: {fileID: 0}
-  tcpPort: 
-  udpPort: 
+  host: {fileID: 109141719}
+  tcpPort: 9999
+  udpPort: 9988
   protocol: 
 --- !u!65 &716209266
 BoxCollider:
