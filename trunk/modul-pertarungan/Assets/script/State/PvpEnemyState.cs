@@ -14,18 +14,13 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
-            string serverMessage = NetworkSingleton.Instance().ServerMessage;
-            Debug.Log(serverMessage);
-            string[] message = serverMessage.Split('-');
-            if (serverMessage.Contains("EndTurn"))
-            {
-                NetworkSingleton.Instance().ServerMessage = "";
-                BattleManager.endButton.SetActive(true);
-                BattleManager.Cursor.renderer.enabled = true;
-                BattleManager.Currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
-                BattleManager.Currentstate.Action();
-            }
-          
+            BattleManager.Cursor.renderer.enabled = false;
+            BattleManager.endButton.SetActive(false);
+                //NetworkSingleton.Instance().ServerMessage = "";
+                //BattleManager.endButton.SetActive(true);
+                //BattleManager.Cursor.renderer.enabled = true;
+                //BattleManager.Currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
+                //BattleManager.Currentstate.Action();
         }
     }
 }

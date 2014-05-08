@@ -158,9 +158,7 @@ namespace ModulPertarungan
             if (NetworkSingleton.Instance().HostPlayer!=GameManager.Instance().PlayerId)
             {
                 currentstate= new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
-                Cursor.renderer.enabled = false;
-                endButton.SetActive(false);
-                GameManager.Instance().BattleState = currentstate; GameManager.Instance().BattleState = currentstate;
+                GameManager.Instance().BattleState = currentstate; 
             }
         }
     }
