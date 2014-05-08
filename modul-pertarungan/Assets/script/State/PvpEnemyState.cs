@@ -17,9 +17,10 @@ namespace ModulPertarungan
             string serverMessage = NetworkSingleton.Instance().ServerMessage;
             Debug.Log(serverMessage);
             string[] message = serverMessage.Split('-');
-            if (serverMessage.Contains("PlayerList"))
+            if (serverMessage.Contains("EndTurn"))
             {
-                BattleManager.EndButton.renderer.enabled = true;
+                NetworkSingleton.Instance().ServerMessage = "";
+                BattleManager.endButton.SetActive(true);
                 BattleManager.Cursor.renderer.enabled = true;
                 BattleManager.Currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
                 BattleManager.Currentstate.Action();

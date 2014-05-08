@@ -6,6 +6,7 @@ namespace ModelModulPertarungan
 {
     public abstract class Player : DamageReceiver
     {
+        private int deckCostPoint;
         private List<string> deckList;
 
         public List<string> DeckList
@@ -58,6 +59,12 @@ namespace ModelModulPertarungan
         {
             get { return rank; }
             set { rank = value; }
+        }
+
+        public int DeckCostPoint
+        {
+            get { return deckCostPoint; }
+            set { deckCostPoint = value; }
         }
 
         public Player(int MaxHealth, int CurrentHealth, string Name, int HandCapacity)

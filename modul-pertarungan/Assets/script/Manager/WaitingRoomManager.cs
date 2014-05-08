@@ -10,6 +10,15 @@ namespace ModulPertarungan
         public GameObject firstPlayerName;
         public GameObject secondPlayerName;
         public GameObject textList;
+        public GameObject startButton;
+        public void EnableStartGame()
+        {
+            if (GameManager.Instance().PlayerId.Equals(firstPlayerName.GetComponent<UILabel>().text))
+            {
+                startButton.SetActive(true);
+            }
+        }
+
         void Start()
         {
             bool succses = false;
@@ -58,6 +67,12 @@ namespace ModulPertarungan
             {
                 textList.GetComponent<UITextList>().Add(message[1]);
                 NetworkSingleton.Instance().ServerMessage = "";
+            }
+            else if (serverMessage.Contains("StartGame"))
+            {
+                NetworkSingleton.Instance().HostPlayer = firstPlayerName.GetComponent<UILabel>().text;
+                NetworkSingleton.Instance().JoinPlayer = secondPlayerName.GetComponent<UILabel>().text;
+                Application.LoadLevel("OnlineBattle");
             }
         }
 

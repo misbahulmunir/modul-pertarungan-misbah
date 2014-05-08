@@ -99,6 +99,7 @@
      <Compile Include="Assets\Facebook\Scripts\IOSFacebook.cs" />
      <Compile Include="Assets\Facebook\Scripts\IOSFacebookLoader.cs" />
      <Compile Include="Assets\Facebook\Scripts\NativeDialogModes.cs" />
+     <Compile Include="Assets\InvokerLister.cs" />
      <Compile Include="Assets\ListBox\ListBox.cs" />
      <Compile Include="Assets\NGUI\ButtonOk.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
@@ -289,6 +290,7 @@
      <Compile Include="Assets\script\State\DrawState.cs" />
      <Compile Include="Assets\script\State\EnemyState.cs" />
      <Compile Include="Assets\script\State\FirstHandState.cs" />
+     <Compile Include="Assets\script\State\OnlineCardExecuteState.cs" />
      <Compile Include="Assets\script\State\PlayerTurnState.cs" />
      <Compile Include="Assets\script\State\PvpEnemyState.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />

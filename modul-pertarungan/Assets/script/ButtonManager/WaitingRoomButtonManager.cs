@@ -19,5 +19,19 @@ namespace ModulPertarungan
             NetworkSingleton.Instance().Disconnect();
             Application.LoadLevel("CrateRoom");
         }
+
+	    private void Confirm()
+	    {
+            bool succses = false;
+            succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "Confirmation-" + NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId);
+            Debug.Log(succses ? "send succes" : "send false");
+	    }
+
+	    private void StartOnlineBattle()
+	    {
+            bool succses = false;
+            succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "StartGame-" + NetworkSingleton.Instance().RoomName);
+            Debug.Log(succses ? "send succes" : "send false");
+	    }
 	}
 }

@@ -9,6 +9,7 @@ namespace ModulPertarungan
 	public class CardExecuteCommand:Command
 	{
         public string CardName;
+	    public string Target;
         public override void Initialization()
         {
             
@@ -19,7 +20,7 @@ namespace ModulPertarungan
             new CardExcuteEffectPerformer().CardExecute(this);
         }
 
-	    public CardExecuteCommand(String cardName)
+	    public CardExecuteCommand(String cardName,String target)
 	    {
 	        this.CardName = cardName;
 	    }

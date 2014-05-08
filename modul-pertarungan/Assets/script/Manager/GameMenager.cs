@@ -5,6 +5,7 @@ namespace ModulPertarungan
 {
     public class GameManager
     {
+        private BattleState battleState;
         private string playerId;
 
         public string PlayerId
@@ -107,6 +108,14 @@ namespace ModulPertarungan
             get { return playerDeck; }
             set { playerDeck = value; }
         }
+
+
+        public BattleState BattleState
+        {
+            get { return battleState; }
+            set { battleState = value; }
+        }
+
         public static GameManager instance;
      
       
