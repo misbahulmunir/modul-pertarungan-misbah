@@ -15,22 +15,13 @@ namespace ModulPertarungan
         // Update is called once per frame
         private void Update()
         {
-            string serverMessage = NetworkSingleton.Instance().ServerMessage;
+            var serverMessage = NetworkSingleton.Instance().ServerMessage;
             Debug.Log(serverMessage);
             string[] message = serverMessage.Split('-');
             if (serverMessage.Contains("CardEffect"))
             {
-                Invoker invoke=new Invoker();
-                Command cmd;
-                if (message[1].Equals(GameManager.Instance().PlayerId))
-                {
-                    cmd = new CardExecuteCommand(message[2], "enemy");
-                    
-                }
-                else
-                {
-                    cmd= new CardExecuteCommand(message[2],"player");
-                }
+                var invoke=new Invoker();
+                Command cmd = message[1].Equals(GameManager.Instance().PlayerId) ? new CardExecuteCommand(message[2], "enemy") : new CardExecuteCommand(message[2],"player");
                 invoke.AddCommand(cmd);
                 invoke.RunCommand();
                 NetworkSingleton.Instance().ServerMessage = "";
