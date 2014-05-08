@@ -23,6 +23,8 @@ namespace ModulPertarungan
 	    public CardExecuteCommand(String cardName,String target)
 	    {
 	        this.CardName = cardName;
+	        this.Target=target;
+
 	    }
 
 	}

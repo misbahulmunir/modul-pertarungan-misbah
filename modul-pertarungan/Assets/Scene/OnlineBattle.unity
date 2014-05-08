@@ -2871,6 +2871,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77af90351c01f3349888e6810946485d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 1984404612}
+  battleStateManager: {fileID: 151683364}
 --- !u!4 &1446243340
 Transform:
   m_ObjectHideFlags: 0

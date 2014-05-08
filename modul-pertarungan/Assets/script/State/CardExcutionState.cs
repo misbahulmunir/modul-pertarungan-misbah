@@ -21,7 +21,7 @@ namespace ModulPertarungan
             if (GameManager.Instance().GameMode == "pvp")
             {
                 bool succses = false;
-                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "SendMessage-" +NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId+"-"+"CardEffect"+"-"+GameManager.Instance().CurrentCard.GetComponent<CardsEffect>().name.Split('(')[0]);
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "SendMessage-" +NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId+"-"+"CardEffect"+"-"+GameManager.Instance().CurrentCard.GetComponent<CardsEffect>().CardName);
                 Debug.Log(succses ? "send succes" : "send false");
                 
             }

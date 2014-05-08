@@ -85,8 +85,11 @@ namespace ModulPertarungan
             {
                 factory = new OnlineEnemyFanctory();
                 factory.InstantiateObject();
-                factory.CreatePlayer(NetworkSingleton.Instance().JoinPlayer, "warlock", "FirstWarlock", enemyOnlinePosisiton);
-             
+                factory.CreatePlayer(
+                    GameManager.Instance().PlayerId.ToLower() != NetworkSingleton.Instance().HostPlayer
+                        ? NetworkSingleton.Instance().JoinPlayer
+                        : NetworkSingleton.Instance().HostPlayer, "warlock", "FirstWarlock",
+                    enemyOnlinePosisiton);
             }
             else
             {

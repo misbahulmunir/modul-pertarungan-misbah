@@ -249,6 +249,8 @@
      <Compile Include="Assets\script\Command\CardExcuteEffectPerformer.cs" />
      <Compile Include="Assets\script\Command\CardExecuteCommand.cs" />
      <Compile Include="Assets\script\Command\Command.cs" />
+     <Compile Include="Assets\script\Command\EndPhaseCommand.cs" />
+     <Compile Include="Assets\script\Command\EndPhasePerformer.cs" />
      <Compile Include="Assets\script\Command\Invoker.cs" />
      <Compile Include="Assets\script\DownloadFile.cs" />
      <Compile Include="Assets\script\Factory\AbstractFactory.cs" />

@@ -18,7 +18,7 @@ namespace ModulPertarungan
                 GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(player.transform.position.x, player.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.renderer.sortingLayerName = "foreground";
                 animation.particleEmitter.emit = true;
-                player.GetComponent<DamageReceiverAction>().ReceiveDamage(100);
+                player.GetComponent<DamageReceiverAction>().ReceiveDamage(10);
          
             }
             GameManager.Instance().KillObj("player");

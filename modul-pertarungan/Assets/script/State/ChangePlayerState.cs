@@ -14,7 +14,8 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
-
+            BattleManager.endButton.SetActive(true);
+            BattleManager.Cursor.renderer.enabled = true;
             this.ObjectLoader.GetComponent<BattleObjectLoader>().DestroyDisplayedCards();
             this.ObjectLoader.GetComponent<BattleObjectLoader>().LoadDisplayedCards(this.CurrentPlayer);
         }
