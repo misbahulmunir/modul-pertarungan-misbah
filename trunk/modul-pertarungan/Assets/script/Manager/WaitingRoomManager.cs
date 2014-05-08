@@ -21,6 +21,7 @@ namespace ModulPertarungan
 
         void Start()
         {
+            
             bool succses = false;
             succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GetPlayerList-"+NetworkSingleton.Instance().RoomName);
             if (succses)
@@ -30,6 +31,7 @@ namespace ModulPertarungan
         }
         void Update()
         {
+            EnableStartGame();
             string serverMessage = NetworkSingleton.Instance().ServerMessage;
             Debug.Log(serverMessage);
             string[] message=serverMessage.Split('-');

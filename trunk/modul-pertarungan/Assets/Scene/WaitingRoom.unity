@@ -231,9 +231,9 @@ Transform:
   m_Children:
   - {fileID: 66}
   - {fileID: 139995899}
-  - {fileID: 868715367}
-  - {fileID: 2138979566}
   - {fileID: 620245453}
+  - {fileID: 2138979566}
+  - {fileID: 868715367}
   - {fileID: 64}
   - {fileID: 99722573}
   - {fileID: 1858453520}
@@ -629,7 +629,7 @@ MonoBehaviour:
   firstPlayerName: {fileID: 1590126721}
   secondPlayerName: {fileID: 2044782499}
   textList: {fileID: 879279042}
-  startButton: {fileID: 0}
+  startButton: {fileID: 620245452}
 --- !u!1 &99722572
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +789,10 @@ Prefab:
     - target: {fileID: 400000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_LocalPosition.y
       value: 3.81469727e-06
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
@@ -1621,7 +1625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &620245453
 Transform:
   m_ObjectHideFlags: 0
@@ -3138,6 +3142,8 @@ GameObject:
   - 114: {fileID: 2138979569}
   - 114: {fileID: 2138979568}
   - 65: {fileID: 2138979567}
+  - 114: {fileID: 2138979571}
+  - 114: {fileID: 2138979570}
   m_Layer: 8
   m_Name: Control - Simple Button
   m_TagString: Untagged
@@ -3242,3 +3248,29 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &2138979570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2138979565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa9dd95c2adcf72499913de7b1363196, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2138979571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2138979565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78290a544588b4c498b0dad2fdc39598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: Confirm
+  trigger: 0
+  includeChildren: 0

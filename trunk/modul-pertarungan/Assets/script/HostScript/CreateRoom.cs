@@ -7,15 +7,13 @@ namespace ModulPertarungan
 {
     public class CreateRoom : MonoBehaviour
     {
-        public GameObject playerName;
         public GameObject roomName;
 
         void OnClick()
         {
-            UILabel pName = playerName.GetComponent<UILabel>();
             UILabel rName = roomName.GetComponent<UILabel>();
             bool succses = false;
-            String protocol = "CreateRoom-" + rName.text + "-" + pName.text;
+            String protocol = "CreateRoom-" + rName.text + "-" + GameManager.Instance().PlayerId;
             succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", protocol);
             if (succses)
                 Debug.Log("send succes");
