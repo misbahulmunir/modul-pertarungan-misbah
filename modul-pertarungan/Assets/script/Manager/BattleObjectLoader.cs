@@ -57,7 +57,7 @@ namespace ModulPertarungan
 
         public void LoadDisplayedCards(GameObject pawn)
         {
-            if (pawn != null&& !(GameManager.Instance().BattleState is  PvpEnemyState))
+            if (pawn != null&&!(GameManager.Instance().BattleState is  PvpEnemyState))
             {
                 Debug.Log(GameManager.Instance().BattleState);
                 foreach (GameObject t in pawn.GetComponent<PlayerAction>().CurrentHand)
@@ -87,8 +87,8 @@ namespace ModulPertarungan
                 factory.InstantiateObject();
                 factory.CreatePlayer(
                     GameManager.Instance().PlayerId.ToLower() != NetworkSingleton.Instance().HostPlayer
-                        ? NetworkSingleton.Instance().JoinPlayer
-                        : NetworkSingleton.Instance().HostPlayer, "warlock", "FirstWarlock",
+                        ? NetworkSingleton.Instance().HostPlayer
+                        : NetworkSingleton.Instance().JoinPlayer, "warlock", "FirstWarlock",
                     enemyOnlinePosisiton);
             }
             else

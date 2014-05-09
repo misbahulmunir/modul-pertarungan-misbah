@@ -46,7 +46,7 @@ namespace ModulPertarungan
                 {
                    
                     var succses = false;
-                    succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "EndTurn-" + NetworkSingleton.Instance().RoomName);
+                    succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("EndTurn", "EndTurn-" + NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId);
                     Debug.Log(succses ? "send succes" : "send false");
                     currentstate = new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
                     currentstate.Action();
