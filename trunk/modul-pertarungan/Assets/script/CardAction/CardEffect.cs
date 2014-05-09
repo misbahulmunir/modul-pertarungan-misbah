@@ -55,9 +55,13 @@ namespace ModulPertarungan
         {
             if (Application.loadedLevelName == "Battle"||Application.loadedLevelName=="OnlineBattle")
             {
-                GameManager.Instance().CurrentCard = this;
-                var obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
-                obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
+                if (!(GameManager.Instance().BattleState is PvpEnemyState))
+                {
+                    GameManager.Instance().CurrentCard = this;
+                    var obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
+                    obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
+                }
+
             }
             GameManager.Instance().CurrentCard = this;
         }
