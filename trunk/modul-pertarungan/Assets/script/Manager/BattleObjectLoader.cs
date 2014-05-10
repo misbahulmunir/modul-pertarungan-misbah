@@ -57,7 +57,7 @@ namespace ModulPertarungan
 
         public void LoadDisplayedCards(GameObject pawn)
         {
-            if (pawn != null&&!(GameManager.Instance().BattleState is  PvpEnemyState))
+            if (pawn != null)
             {
                 Debug.Log(GameManager.Instance().BattleState);
                 foreach (GameObject t in pawn.GetComponent<PlayerAction>().CurrentHand)

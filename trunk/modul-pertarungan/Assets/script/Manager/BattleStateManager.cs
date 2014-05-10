@@ -41,15 +41,16 @@ namespace ModulPertarungan
             if (hitObj != null && hitObj.name.ToLower().Contains("endbutton"))
             {
                 endButton = hitObj;
-                endButton.SetActive(false);
+              //  endButton.SetActive(false);
                 if (GameManager.Instance().GameMode == "pvp")
                 {
                    
                     var succses = false;
-                    succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("EndTurn", "EndTurn-" + NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId);
+                    succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "EndTurn-" + NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId);
                     Debug.Log(succses ? "send succes" : "send false");
                     currentstate = new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
                     currentstate.Action();
+                    
                 }
                 else
                 {
@@ -159,6 +160,7 @@ namespace ModulPertarungan
             {
                 currentstate= new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
                 GameManager.Instance().BattleState = currentstate; 
+                endButton.SetActive(false);
             }
         }
     }
