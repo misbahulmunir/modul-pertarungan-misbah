@@ -34,6 +34,7 @@ namespace ModulPertarungan
             else if(serverMessage.Contains("EndTurn"))
             {
                 _invoke=new Invoker();
+                battleStateManager.GetComponent<BattleStateManager>().endButton.SetActive(true):
                 _cmd=new EndPhaseCommand(battleStateManager.GetComponent<BattleStateManager>());
                 _invoke.AddCommand(_cmd);
                 _invoke.RunCommand();
