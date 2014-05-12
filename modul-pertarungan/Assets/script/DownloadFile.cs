@@ -9,18 +9,19 @@ namespace ModulPertarungan
 {
     public class DownloadFile : MonoBehaviour
     {
-        int totalDownloadedDocuments;
-        int progress;
-        string id;
+        private int totalDownloadedDocuments;
+        private int progress;
+        private string id;
         public GameObject loadingText;
-        int counter;
-        int totalDocuments;
-        string result;
+        private int counter;
+        private int totalDocuments;
+        private string result;
         private Dictionary<string, string> dict;
-
+        private Boolean isStarted;
         // Use this for initialization
         void Start()
         {
+            isStarted = false;
             totalDownloadedDocuments = 0;
             result = "";
             loadingText.GetComponent<UILabel>().text = "Loading";
@@ -28,20 +29,25 @@ namespace ModulPertarungan
             id = GameManager.Instance().PlayerId;
             counter = 0;
             progress = 0;
-            DownloadXMLFile("get_profile");
-            DownloadXMLFile("player_deck");
-            DownloadXMLFile("player_trunk");
         }
 
         // Update is called once per frame
         void Update()
         {
+            if(!isStarted && counter>5)
+            {
+                //counter = 0;
+                isStarted = true;
+                DownloadXMLFile("get_profile");
+                DownloadXMLFile("player_deck");
+                DownloadXMLFile("player_trunk");
+            }
             if (totalDownloadedDocuments == totalDocuments)
             {
                 loadingText.GetComponent<UILabel>().text = "Loading Complete";
                 Application.LoadLevel("BeforeBattle");
             }
-            //counter++;
+            counter++;
             //if (counter % 30 == 0)
             //{
             //    loadingText.GetComponent<UILabel>().text += " .";
