@@ -14,9 +14,11 @@ public class MineManagement : MonoBehaviour {
 	}
 	
 	ModelMine myMine = new ModelMine();
+	QuantityManagement quantity = new QuantityManagement();
 	bool haveMine;
 	public GameObject Mine;
 	public GameObject MineExp;
+	public GameObject gemQuantity;
 	
 	void OnClick()
 	{
@@ -38,6 +40,7 @@ public class MineManagement : MonoBehaviour {
 				else
 				if (hit.collider.gameObject.name.ToLower().Contains("mine_"))
 				{
+					quantity.TotalGem++;
 					myMine.ExpMine += 30;					
 					Debug.Log(myMine.ExpMine);
 					if(myMine.ExpMine>myMine.MaxMineExp) 
@@ -47,6 +50,7 @@ public class MineManagement : MonoBehaviour {
 						myMine.MaxMineExp = myMine.Level * 100;
 					}
 					MineExp.GetComponent<GUIText>().text = "Level " + myMine.Level + "\n" + myMine.ExpMine + "/" + myMine.MaxMineExp;
+					gemQuantity.GetComponent<GUIText>().text = "x "+ quantity.TotalGem;
 				} 
 			}
 		}

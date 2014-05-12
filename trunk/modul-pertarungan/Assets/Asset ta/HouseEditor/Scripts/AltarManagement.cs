@@ -5,7 +5,7 @@ public class AltarManagement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		haveAltar = false;
+		//getDatabaseAltar;
 	}
 	
 	// Update is called once per frame
@@ -14,9 +14,11 @@ public class AltarManagement : MonoBehaviour {
 	}
 
 	ModelAltar myAltar = new ModelAltar();
-	bool haveAltar;
+	QuantityManagement quantity = new QuantityManagement();
+	bool haveAltar = false;
 	public GameObject Altar;
 	public GameObject AltarExp;
+	public GameObject magicdustQuantity;
 
 	void OnClick()
 	{
@@ -38,6 +40,7 @@ public class AltarManagement : MonoBehaviour {
 				else
 				if (hit.collider.gameObject.name.ToLower().Contains("altar_"))
 				{
+					quantity.TotalMagicDust++;
 					myAltar.ExpAltar += 30;					
 					Debug.Log(myAltar.ExpAltar);
 					if(myAltar.ExpAltar>myAltar.MaxAltarExp)
@@ -47,8 +50,14 @@ public class AltarManagement : MonoBehaviour {
 						myAltar.MaxAltarExp = myAltar.Level * 100;
 					}
 					AltarExp.GetComponent<GUIText>().text = "Level " + myAltar.Level + "\n" + myAltar.ExpAltar + "/" + myAltar.MaxAltarExp;
+					magicdustQuantity.GetComponent<GUIText>().text = "x "+ quantity.TotalMagicDust;
 				} 
 			}
 		}
+	}
+
+	private void getDatabaseAltar()
+	{
+		//haveAltar = haveAltar;
 	}
 }
