@@ -17,18 +17,16 @@ namespace ModulPertarungan
         
         void Awake()
         {  
-            GetAllCard();
+            
         }
         void Start()
         {
-
-           
-                this.CurrentHand = new List<GameObject>();
-                this.Deck = new Deck(cards);
-                this.SceneObject = this.gameObject;
-                this.Deck.Shuffle();
-                FirstPawnHand();
-            
+            GetAllCard();
+            this.CurrentHand = new List<GameObject>();
+            this.Deck = new Deck(cards);
+            this.SceneObject = this.gameObject;
+            this.Deck.Shuffle();
+            FirstPawnHand();  
         }
 
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using System.Xml;
+using System.IO;
 namespace ModulPertarungan
 {
     public class PlayerEditorManager : MonoBehaviour
@@ -35,8 +36,9 @@ namespace ModulPertarungan
         public void GetFriendList(string id)
         {
             friendList = new List<string>();
-            WebServiceSingleton.GetInstance().processRequest("friend_list|" + id);
-            xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
+            xmlFromServer = new XmlDocument();
+            TextReader textReader = new StreamReader(Application.dataPath + "/XMLFiles/friends_of_" + GameManager.Instance().PlayerId + ".xml");
+            xmlFromServer.Load(textReader);
             attributeNodes = xmlFromServer.GetElementsByTagName("Name");
 
             for (int i = 0; i < attributeNodes.Count; i++)

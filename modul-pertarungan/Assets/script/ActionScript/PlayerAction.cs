@@ -74,8 +74,8 @@ namespace ModulPertarungan
         }
         public void GetAllCard()
         {
-
             cards = new List<GameObject>();
+            Debug.Log(this.Character.Name);
             foreach (string t in (this.Character as Player).DeckList)
             {
                 Cards.Add((GameObject)Resources.Load(t, typeof(GameObject)));

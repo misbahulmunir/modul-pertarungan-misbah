@@ -1,10 +1,6 @@
 <?xml version="1.0"?>
 <Data>
   <Card>
-    <Name>SpliteFire</Name>
-    <Quantity>2</Quantity>
-  </Card>
-  <Card>
     <Name>TidalWaveCard</Name>
     <Quantity>2</Quantity>
   </Card>
