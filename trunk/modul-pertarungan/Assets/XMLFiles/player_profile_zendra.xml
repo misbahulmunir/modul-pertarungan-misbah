@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<PlayerFromService>
+  <Name>zendra</Name>
+  <Pass>zendraa</Pass>
+  <Gold>100</Gold>
+  <MaxHP>50</MaxHP>
+  <MaxDP>1000</MaxDP>
+  <DPLeft>900</DPLeft>
+  <MaxSP>3</MaxSP>
+  <Energy>0</Energy>
+  <XP>0</XP>
+  <Job>Sorcerer</Job>
+  <Rank>C</Rank>
+  <BattleWon>3</BattleWon>
+  <BattleLost>5</BattleLost>
+</PlayerFromService>

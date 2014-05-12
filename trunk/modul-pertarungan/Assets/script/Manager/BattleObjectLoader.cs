@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections;
 using ModelModulPertarungan;
+using System.Net;
+using System;
 
 namespace ModulPertarungan
 {
