@@ -20,7 +20,7 @@ namespace ModulPertarungan
         private void Update()
         {
             var serverMessage = NetworkSingleton.Instance().ServerMessage;
-            Debug.Log(serverMessage);
+            //Debug.Log(serverMessage);
             string[] message = serverMessage.Split('-');
             if (serverMessage.Contains("CardEffect"))
             {

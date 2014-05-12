@@ -22,7 +22,7 @@ namespace CardWarlockSaga
         public void ConfirmId()
         {
             GameManager.Instance().PlayerId = Input.GetComponent<UIInput>().value;
-            Application.LoadLevel("BeforeBattle");
+            Application.LoadLevel("Loading");
         }
     }
 }

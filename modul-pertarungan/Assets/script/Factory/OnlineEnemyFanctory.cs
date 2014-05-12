@@ -35,7 +35,7 @@ namespace ModulPertarungan
         {
             _instantiateObjectList.TryGetValue(job, out character);
 
-            WebServiceSingleton.GetInstance().createXMLDocument("get_profile|" + id);
+            WebServiceSingleton.GetInstance().processRequest("get_profile|" + id);
             xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
             var obj = Object.Instantiate((GameObject)Resources.Load(objectName, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
             if (obj == null) return;

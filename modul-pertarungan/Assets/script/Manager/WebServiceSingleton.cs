@@ -28,7 +28,7 @@ namespace ModulPertarungan
             return _instance;
         }
 
-        public void createXMLDocument(string parameter)
+        public void processRequest(string parameter)
         {
             if (dict == null) InitDictionary();   
             string[] param = parameter.Split('|');
@@ -55,11 +55,12 @@ namespace ModulPertarungan
 
             if (responseFromServer == "XML File Has Been Successfully Generated")
             {
-                string value = "";
-                var document = new XmlDocument();
-                if (dict != null) dict.TryGetValue(param[0], out value);
-                document.Load(value + param[1] + ".xml");
-                xmLFromServer = document;
+                responseFromServer = "OK";
+                //string value = "";
+                //var document = new XmlDocument();
+                //if (dict != null) dict.TryGetValue(param[0], out value);
+                //document.Load(value + param[1] + ".xml");
+                //xmLFromServer = document;
             }
         }
 

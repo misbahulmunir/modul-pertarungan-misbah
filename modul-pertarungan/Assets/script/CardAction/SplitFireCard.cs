@@ -15,7 +15,7 @@ namespace ModulPertarungan
         void Start()
         {
             this.CardName = "Split Fire";
-            this.CardCost = 2;
+            this.CardCost = 25;
             this.CardCode = " ";
             this.CardEffect = " Deal 10 fire damage /n to single enemy";
             

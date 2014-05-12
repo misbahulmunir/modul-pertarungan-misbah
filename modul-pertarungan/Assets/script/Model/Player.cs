@@ -15,7 +15,6 @@ namespace ModelModulPertarungan
             set { deckList = value; }
         }
       
-
         private int currentSoulPoints;
 
         public int CurrentSoulPoints
@@ -53,9 +52,9 @@ namespace ModelModulPertarungan
             set { gold = value; }
         }
 
-        private int rank;
+        private string rank;
 
-        public int Rank
+        public string Rank
         {
             get { return rank; }
             set { rank = value; }

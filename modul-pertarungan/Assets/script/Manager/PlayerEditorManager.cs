@@ -35,7 +35,7 @@ namespace ModulPertarungan
         public void GetFriendList(string id)
         {
             friendList = new List<string>();
-            WebServiceSingleton.GetInstance().createXMLDocument("friend_list|" + id);
+            WebServiceSingleton.GetInstance().processRequest("friend_list|" + id);
             xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
             attributeNodes = xmlFromServer.GetElementsByTagName("Name");
 
