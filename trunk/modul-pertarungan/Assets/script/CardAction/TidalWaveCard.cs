@@ -15,7 +15,7 @@ namespace ModulPertarungan
         void Start()
         {
             this.CardName = "Tidal Wave";
-            this.CardCost = 2;
+            this.CardCost = 10;
             this.CardCode = "";
             this.CardEffect = "Give 50 Water Attack To all enemies";
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using System.Xml;
+using System.IO;
 namespace ModulPertarungan
 {
     public class CardManagerLoader : MonoBehaviour
@@ -11,73 +12,69 @@ namespace ModulPertarungan
         public List<GameObject> listcard;
         public GameObject deckGrid;
         public GameObject trunkGrid;
-        public List<string> cardList;
+        public List<string> deckList;
+        public List<string> trunkList;
         private XmlDocument _xmlFromServer;
         private XmlNodeList _nameNodes;
         private XmlNodeList _quantityNodes;
-        private Boolean _isEmpty;
+        private Boolean _isDeckEmpty;
+        private Boolean _isTrunkEmpty;
+
         void Start()
         {
-            _isEmpty = false;
+            deckList = new List<string>();
+            trunkList = new List<string>();
+            _xmlFromServer = new XmlDocument();
+            _isDeckEmpty = false;
+            _isTrunkEmpty = false;
             Debug.Log(GameManager.Instance().PlayerId);
-            LoadCardFromService("player_deck");
-            LoadCardFromService("player_trunk");
-            if (!_isEmpty)
-            {
-                AddToGrid(deckGrid);
-                AddToGrid(trunkGrid);
-            }
+            LoadCardFromService("deck_of_", deckGrid);
+            LoadCardFromService("trunk_of_", trunkGrid);
         }
-
 
         void Update()
         {
             
 
         }
-        public void AddToGrid(GameObject grid)
+
+        public void AddToGrid(GameObject grid, List<string> list)
         {
-            foreach (string s in cardList)
+            foreach (string s in list)
             {
                 NGUITools.AddChild(grid,(GameObject)Resources.Load("DisplayCards/"+s, typeof(GameObject)));
             }
-
-
-            //foreach (GameObject obj in listcard)
-            //{
-            //    NGUITools.AddChild(grid, obj);
-            //}
             grid.GetComponent<UIGrid>().Reposition();
         }
 
-        public void LoadCardFromService(string method)
+        public void LoadCardFromService(string method, GameObject grid)
         {
-            cardList = new List<string>();
-
-            WebServiceSingleton.GetInstance().createXMLDocument(method + "|" + GameManager.Instance().PlayerId);
-            _xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
-            Debug.Log("Load Card : " + WebServiceSingleton.GetInstance().responseFromServer);
-
-            _nameNodes = _xmlFromServer.GetElementsByTagName("Name");
-            _quantityNodes = _xmlFromServer.GetElementsByTagName("Quantity");
-            if (WebServiceSingleton.GetInstance().responseFromServer != "Deck is Empty" && WebServiceSingleton.GetInstance().responseFromServer != "Trunk is Empty")
+            List<string> list = new List<string>();
+            Boolean _isEmpty = false;
+            try
             {
+                Debug.Log(Application.dataPath + "/XMLFiles/" + method + GameManager.Instance().PlayerId + ".xml");
+                TextReader textReader = new StreamReader(Application.dataPath + "/XMLFiles/" + method + GameManager.Instance().PlayerId + ".xml");
+                _xmlFromServer.Load(textReader);
+                _nameNodes = _xmlFromServer.GetElementsByTagName("Name");
+                _quantityNodes = _xmlFromServer.GetElementsByTagName("Quantity");
+
                 Debug.Log("Method Name : " + method);
                 for (int i = 0; i < _nameNodes.Count; i++)
                 {
                     for (int j = 0; j < int.Parse(_quantityNodes[i].InnerXml); j++)
                     {
-                        cardList.Add(_nameNodes[i].InnerXml);
+                        list.Add(_nameNodes[i].InnerXml);
                         Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
                     }
                 }
-               
             }
-            else
+            catch
             {
                 _isEmpty = true;
             }
-            
+
+            if(!_isEmpty) AddToGrid(grid, list);
         }
        
     }

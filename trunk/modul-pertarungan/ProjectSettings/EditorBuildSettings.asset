@@ -35,3 +35,5 @@ EditorBuildSettings:
     path: Assets/Scene/OnlineBattle.unity
   - enabled: 1
     path: Assets/PVPlogin.unity
+  - enabled: 1
+    path: Assets/Scene/Loading.unity

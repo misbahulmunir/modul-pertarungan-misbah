@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -273,6 +273,7 @@
      <Compile Include="Assets\script\Manager\PlayerEditorManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
+     <Compile Include="Assets\script\Model From Service\PlayerFromService.cs" />
      <Compile Include="Assets\script\Model\DamageReciver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />
      <Compile Include="Assets\script\Model\FireDragon.cs" />
@@ -328,6 +329,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (AlphaClip).shader" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
+     <None Include="Assets\XMLFiles\deck_of_agil.xml" />
      <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\values-hdpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\facebook\build.xml" />
@@ -351,6 +353,7 @@
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment.xml" />
+     <None Include="Assets\XMLFiles\player_profile_agil.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment_list_row.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values\drawables.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Additive Colored.shader" />
@@ -371,6 +374,7 @@
      <None Include="Assets\NGUI\Examples\Resources\Localization.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\values\styles.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-xhdpi\dimens.xml" />
+     <None Include="Assets\XMLFiles\trunk_of_agil.xml" />
  <Reference Include="IFacebook">
  <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
  </Reference>
