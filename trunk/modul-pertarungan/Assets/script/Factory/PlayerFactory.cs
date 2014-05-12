@@ -12,6 +12,10 @@ namespace ModulPertarungan
 	{
         private XmlDocument xmlFromServer;
         private XmlNodeList attributeNodes;
+
+        private XmlNodeList nameNodes;
+        private XmlNodeList quantityNodes;
+
         private Dictionary<string, Player> instantiateObjectList;
       
         public Dictionary<string, Player> InstantiateObjectList
@@ -59,6 +63,19 @@ namespace ModulPertarungan
                 character.Experience = playerFromService.XP;
                 character.DeckCostPoint = playerFromService.DPLeft;
                 character.Rank = playerFromService.Rank;
+
+                textReader = new StreamReader(Application.dataPath + "/XMLFiles/deck_of_" + id + ".xml");
+                xmlFromServer.Load(textReader);
+                nameNodes = xmlFromServer.GetElementsByTagName("Name");
+                quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
+
+                for(int i=0;i<nameNodes.Count;i++)
+                {
+                    for (int j = 0; j < int.Parse(quantityNodes[i].InnerXml); j++)
+                    {
+                        character.DeckList.Add(nameNodes[i].InnerXml);
+                    }
+                }
 
                 textReader.Close();
             }
