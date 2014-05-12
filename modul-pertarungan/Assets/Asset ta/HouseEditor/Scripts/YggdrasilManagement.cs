@@ -14,9 +14,11 @@ public class YggdrasilManagement : MonoBehaviour {
 	}
 	
 	ModelYggdrasil myYgg = new ModelYggdrasil();
+	QuantityManagement quantity = new QuantityManagement();
 	bool haveYggdrasil = false;
 	public GameObject Yggdrasil;
 	public GameObject YggdrasilExp;
+	public GameObject berryQuantity;
 	
 	void OnClick()
 	{
@@ -38,6 +40,7 @@ public class YggdrasilManagement : MonoBehaviour {
 				else
 				if (hit.collider.gameObject.name.ToLower().Contains("yggdrasil_"))
 				{
+					quantity.TotalBerry++;
 					myYgg.ExpYggdrasil += 30;					
 					Debug.Log(myYgg.ExpYggdrasil);
 					if(myYgg.ExpYggdrasil>myYgg.MaxYggdrasilExp) 
@@ -47,6 +50,7 @@ public class YggdrasilManagement : MonoBehaviour {
 						myYgg.MaxYggdrasilExp = myYgg.Level * 100;
 					}
 					YggdrasilExp.GetComponent<GUIText>().text = "Level " + myYgg.Level + "\n" + myYgg.ExpYggdrasil + "/" + myYgg.MaxYggdrasilExp;
+					berryQuantity.GetComponent<GUIText>().text = "x "+ quantity.TotalBerry;
 				} 
 			}
 		}

@@ -40,7 +40,11 @@ public class BuildingClickManagement : MonoBehaviour {
 					var subMenuList =  Instantiate(SubMenuHouse, currentPos, Quaternion.identity);
 					menuList = subMenuList;
 					clickedBuildingName = obj.name;
-				} //else
+				} else
+				if (hit.collider.gameObject.name.ToLower().Contains("colosseum"))
+				{
+					Application.LoadLevel("CrateRoom");
+				}
 //				if (hit.collider.gameObject.name.ToLower().Contains("altar_"))
 //				{
 //					GameObject obj = hit.collider.gameObject as GameObject;

@@ -15,6 +15,6 @@ public class CustomAvatarButtonScript : MonoBehaviour {
 
 	void OnClick()
 	{
-		Application.LoadLevel("AvatarCostumization");
+		Application.LoadLevel("HouseEditor");
 	}
 }
