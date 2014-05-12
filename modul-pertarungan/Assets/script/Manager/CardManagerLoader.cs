@@ -9,10 +9,10 @@ namespace ModulPertarungan
 {
     public class CardManagerLoader : MonoBehaviour
     {
-       
         public GameObject deckGrid;
         public GameObject trunkGrid;
         public GameObject deckCountSize;
+        public GameObject playerDeckPoint;
         private int totalDeckCostSize;
         private XmlDocument _xmlFromServer;
         private XmlNodeList _nameNodes;
@@ -29,7 +29,7 @@ namespace ModulPertarungan
 
         void Update()
         {
-            
+            ShowPlayerDP();
             CheckDeckCountSize();
         }
 
@@ -82,6 +82,13 @@ namespace ModulPertarungan
 
             if(!_isEmpty) AddToGrid(grid, list);
         }
-       
+
+        public void ShowPlayerDP()
+        {
+            TextReader textReader = new StreamReader(Application.dataPath + "/XMLFiles/player_profile_" + GameManager.Instance().PlayerId + ".xml");
+            _xmlFromServer.Load(textReader);
+            _nameNodes = _xmlFromServer.GetElementsByTagName("MaxDP");
+            playerDeckPoint.GetComponent<UILabel>().text = _nameNodes[0].InnerXml;
+        }
     }
 }

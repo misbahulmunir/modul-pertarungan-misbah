@@ -36,7 +36,7 @@ namespace ModulPertarungan
         {
             if(!isStarted && counter>5)
             {
-                //counter = 0;
+                //Application.LoadLevel("BeforeBattle");
                 isStarted = true;
                 DownloadXMLFile("get_profile");
                 DownloadXMLFile("player_deck");
@@ -48,20 +48,6 @@ namespace ModulPertarungan
                 Application.LoadLevel("BeforeBattle");
             }
             counter++;
-            //if (counter % 30 == 0)
-            //{
-            //    loadingText.GetComponent<UILabel>().text += " .";
-            //}
-            //if (counter >= 150)
-            //{
-            //    loadingText.GetComponent<UILabel>().text = "Downloading Deck Data";
-            //    counter = 0;
-            //}
-            //if (progress == 100 && totalDocuments == 1)
-            //{
-            //    loadingText.GetComponent<UILabel>().text = result;
-            //    totalDocuments = 2;
-            //}
         }
 
         private void DownloadXMLFile(string fileName)

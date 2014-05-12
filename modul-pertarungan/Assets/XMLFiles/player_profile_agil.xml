@@ -4,8 +4,8 @@
   <Pass>agil</Pass>
   <Gold>500</Gold>
   <MaxHP>100</MaxHP>
-  <MaxDP>1000</MaxDP>
-  <DPLeft>932</DPLeft>
+  <MaxDP>40</MaxDP>
+  <DPLeft>10</DPLeft>
   <MaxSP>10</MaxSP>
   <Energy>6</Energy>
   <XP>0</XP>

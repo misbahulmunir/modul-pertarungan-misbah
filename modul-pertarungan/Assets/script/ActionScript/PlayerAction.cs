@@ -10,13 +10,7 @@ namespace ModulPertarungan
     {
       
 
-        private List<string> dataBaseCard;
-
-        public List<string> DataBaseCard
-        {
-            get { return dataBaseCard; }
-            set { dataBaseCard = value; }
-        }
+        
         private Deck deck;
         public Deck Deck
         {
@@ -82,7 +76,7 @@ namespace ModulPertarungan
         {
 
             cards = new List<GameObject>();
-            foreach (string t in GameManager.Instance().AllSelectedCard)
+            foreach (string t in (this.Character as Player).DeckList)
             {
                 Cards.Add((GameObject)Resources.Load(t, typeof(GameObject)));
             }
