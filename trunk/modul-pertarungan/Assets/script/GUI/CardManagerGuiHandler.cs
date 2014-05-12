@@ -11,6 +11,7 @@ namespace ModulPertarungan
         public GameObject cardCost;
         public GameObject cardEffect;
         private CardsEffect currentCard;
+	    public GameObject deckCost;
         void Start()
         {
             
@@ -23,6 +24,7 @@ namespace ModulPertarungan
                 cardName.GetComponent<UILabel>().text = currentCard.CardName;
                 cardCost.GetComponent<UILabel>().text = currentCard.CardCost.ToString();
                 cardEffect.GetComponent<UILabel>().text = currentCard.CardEffect;
+                deckCost.GetComponent<UILabel>().text = currentCard.DeckCost.ToString();
             }
         }
 	}

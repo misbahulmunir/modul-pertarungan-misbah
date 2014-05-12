@@ -9,32 +9,38 @@ namespace ModulPertarungan
 {
     public class CardManagerLoader : MonoBehaviour
     {
-        public List<GameObject> listcard;
+       
         public GameObject deckGrid;
         public GameObject trunkGrid;
-        public List<string> deckList;
-        public List<string> trunkList;
+        public GameObject deckCountSize;
+        private int totalDeckCostSize;
         private XmlDocument _xmlFromServer;
         private XmlNodeList _nameNodes;
         private XmlNodeList _quantityNodes;
-        private Boolean _isDeckEmpty;
-        private Boolean _isTrunkEmpty;
 
         void Start()
         {
-            deckList = new List<string>();
-            trunkList = new List<string>();
             _xmlFromServer = new XmlDocument();
-            _isDeckEmpty = false;
-            _isTrunkEmpty = false;
             Debug.Log(GameManager.Instance().PlayerId);
             LoadCardFromService("deck_of_", deckGrid);
             LoadCardFromService("trunk_of_", trunkGrid);
+            
         }
 
         void Update()
         {
             
+            CheckDeckCountSize();
+        }
+
+        public void CheckDeckCountSize()
+        {
+            totalDeckCostSize = 0;
+            foreach (Transform t in deckGrid.transform)
+            {
+                totalDeckCostSize += t.gameObject.GetComponent<CardsEffect>().DeckCost;
+            }
+            deckCountSize.GetComponent<UILabel>().text = totalDeckCostSize.ToString();
 
         }
 

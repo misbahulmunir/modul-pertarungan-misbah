@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 namespace ModulPertarungan
 {
-	public class TidalWaveCard:CardsEffect
+	public class TidalWaveCard:WaterCard
 	{
 
         void OnClick()
@@ -18,6 +18,7 @@ namespace ModulPertarungan
             this.CardCost = 10;
             this.CardCode = "";
             this.CardEffect = "Give 50 Water Attack To all enemies";
+            this.DeckCost = 10;
         }
         void Update()
         {
@@ -31,8 +32,11 @@ namespace ModulPertarungan
                 foreach (GameObject obj in TargetList)
                 {
                     GameObject animation = Instantiate(GameObject.Find("WaterFall"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
-                    animation.renderer.sortingLayerName = "foreground";
-                    animation.particleEmitter.emit = true;
+                    if (animation != null)
+                    {
+                        animation.renderer.sortingLayerName = "foreground";
+                        animation.particleEmitter.emit = true;
+                    }
                     obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
                 }
                 GameManager.Instance().KillObj(Target);
