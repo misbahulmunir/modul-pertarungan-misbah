@@ -25,7 +25,7 @@ namespace ModulPertarungan
             totalDownloadedDocuments = 0;
             result = "";
             loadingText.GetComponent<UILabel>().text = "Loading";
-            totalDocuments = 3;
+            totalDocuments = 5;
             id = GameManager.Instance().PlayerId;
             counter = 0;
             progress = 0;
@@ -36,11 +36,13 @@ namespace ModulPertarungan
         {
             if(!isStarted && counter>5)
             {
-                //Application.LoadLevel("BeforeBattle");
-                isStarted = true;
-                DownloadXMLFile("get_profile");
-                DownloadXMLFile("player_deck");
-                DownloadXMLFile("player_trunk");
+                Application.LoadLevel("BeforeBattle");
+                //isStarted = true;
+                //DownloadXMLFile("get_profile");
+                //DownloadXMLFile("player_deck");
+                //DownloadXMLFile("player_trunk");
+                //DownloadXMLFile("friend_list");
+                //DownloadXMLFile("get_party_member");
             }
             if (totalDownloadedDocuments == totalDocuments)
             {
@@ -94,9 +96,10 @@ namespace ModulPertarungan
         {
             dict = new Dictionary<string, string>();
             dict.Add("get_profile", "player_profile_" + id);
-            dict.Add("friend_list", "http://cws.yowanda.com/files/friends_of_");
+            dict.Add("friend_list", "friends_of_" + id);
             dict.Add("player_deck", "deck_of_" + id);
             dict.Add("player_trunk", "trunk_of_" + id);
+            dict.Add("get_party_member", "party_of_" + id);
         }
     }
 }
