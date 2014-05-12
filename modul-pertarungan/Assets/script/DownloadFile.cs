@@ -36,13 +36,13 @@ namespace ModulPertarungan
         {
             if(!isStarted && counter>5)
             {
-                Application.LoadLevel("BeforeBattle");
-                //isStarted = true;
-                //DownloadXMLFile("get_profile");
-                //DownloadXMLFile("player_deck");
-                //DownloadXMLFile("player_trunk");
-                //DownloadXMLFile("friend_list");
-                //DownloadXMLFile("get_party_member");
+                //Application.LoadLevel("BeforeBattle");
+                isStarted = true;
+                DownloadXMLFile("get_profile");
+                DownloadXMLFile("player_deck");
+                DownloadXMLFile("player_trunk");
+                DownloadXMLFile("friend_list");
+                DownloadXMLFile("get_party_member");
             }
             if (totalDownloadedDocuments == totalDocuments)
             {
