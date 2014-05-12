@@ -104,6 +104,9 @@ namespace ModulPertarungan
                     Application.LoadLevel("AfterBattle2");
 
                 }
+                var succses = false;
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
+                Debug.Log(succses ? "send succes" : "send false");
             }
 
         }

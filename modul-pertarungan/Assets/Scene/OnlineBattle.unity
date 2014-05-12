@@ -3342,7 +3342,7 @@ MonoBehaviour:
   animateSmoothly: 0
   sorted: 0
   hideInactive: 0
-  keepWithinPanel: 1
+  keepWithinPanel: 0
 --- !u!1 &1806196151
 GameObject:
   m_ObjectHideFlags: 0

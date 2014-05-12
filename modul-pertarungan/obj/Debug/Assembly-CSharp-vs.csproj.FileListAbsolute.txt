@@ -94,3 +94,15 @@ C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\IC
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
+G:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+G:\newta\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+G:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+G:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+G:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb

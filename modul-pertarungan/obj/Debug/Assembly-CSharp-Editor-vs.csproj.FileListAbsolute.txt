@@ -95,3 +95,23 @@ C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembl
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
 J:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+G:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.BB10.Extensions.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.Graphs.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+G:\newta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+G:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
+G:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
+G:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
