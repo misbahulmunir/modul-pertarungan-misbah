@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 namespace ModulPertarungan
 {
-    public class WaterAttackAction : CardsEffect
+    public class WaterAttackAction : WaterCard
     {
         void OnClick()
         {
@@ -17,6 +17,7 @@ namespace ModulPertarungan
             this.CardCost = 2;
             this.CardCode = "";
             this.CardEffect = "Give 10 watter damage to single enemy";
+            this.DeckCost = 2;
 
         }
 

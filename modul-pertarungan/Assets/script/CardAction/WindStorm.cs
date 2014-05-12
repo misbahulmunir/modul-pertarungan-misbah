@@ -2,7 +2,7 @@
 using System.Collections;
 namespace ModulPertarungan
 {
-    public class WindStorm : CardsEffect
+    public class WindStorm : WindCard
     {
 
         void OnClick()
@@ -17,6 +17,7 @@ namespace ModulPertarungan
             this.CardCost = 2;
             this.CardCode = " ";
             this.CardEffect = "Deal 50 damage to single enemy";
+            this.DeckCost = 2;
 
         }
 
@@ -32,8 +33,11 @@ namespace ModulPertarungan
             {
                 GameObject obj = TargetList[0];
                 GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
-                animation.renderer.sortingLayerName = "foreground";
-                animation.particleEmitter.emit = true;
+                if (animation != null)
+                {
+                    animation.renderer.sortingLayerName = "foreground";
+                    animation.particleEmitter.emit = true;
+                }
                 obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
             }
             GameManager.Instance().KillObj(Target);

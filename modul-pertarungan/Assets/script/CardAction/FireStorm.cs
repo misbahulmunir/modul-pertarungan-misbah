@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ModelModulPertarungan;
 using UnityEngine;
 namespace ModulPertarungan
 {
-    public class FireStorm : CardsEffect
+    public class FireStorm : FireCard
     {
 
         void OnClick()
@@ -19,6 +20,7 @@ namespace ModulPertarungan
             this.CardCost = 5;
             this.CardCode = " ";
             this.CardEffect = " Deal 50 fire damage to All enemy";
+            this.DeckCost = 5;
         }
 
         // Update is called once per frame

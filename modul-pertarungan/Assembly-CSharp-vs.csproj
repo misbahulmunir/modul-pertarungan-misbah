@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -240,11 +240,14 @@
      <Compile Include="Assets\script\ButtonManager\WaitingRoomButtonManager.cs" />
      <Compile Include="Assets\script\CardAction\CardEffect.cs" />
      <Compile Include="Assets\script\CardAction\Deck.cs" />
+     <Compile Include="Assets\script\CardAction\FireCard.cs" />
      <Compile Include="Assets\script\CardAction\FireStorm.cs" />
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
      <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
      <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
      <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
+     <Compile Include="Assets\script\CardAction\WaterCard.cs" />
+     <Compile Include="Assets\script\CardAction\WindCard.cs" />
      <Compile Include="Assets\script\CardAction\WindStorm.cs" />
      <Compile Include="Assets\script\Command\CardExcuteEffectPerformer.cs" />
      <Compile Include="Assets\script\Command\CardExecuteCommand.cs" />

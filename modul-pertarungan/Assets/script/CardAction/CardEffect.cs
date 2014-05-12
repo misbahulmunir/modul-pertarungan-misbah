@@ -5,6 +5,7 @@ namespace ModulPertarungan
 {
     public abstract class CardsEffect : MonoBehaviour
     {
+        private int _deckCost;
         private string _cardEffect;
 
         public string CardEffect
@@ -44,13 +45,20 @@ namespace ModulPertarungan
             get { return _target; }
             set { _target = value; }
         }
-        private List<GameObject> targetList;
+        private List<GameObject> _targetList;
 
         public List<GameObject> TargetList
         {
-            get { return targetList; }
-            set { targetList = value; }
+            get { return _targetList; }
+            set { _targetList = value; }
         }
+
+        public int DeckCost
+        {
+            get { return _deckCost; }
+            set { _deckCost = value; }
+        }
+
         public void Click()
         {
             if (Application.loadedLevelName == "Battle"||Application.loadedLevelName=="OnlineBattle")
@@ -66,9 +74,9 @@ namespace ModulPertarungan
             GameManager.Instance().CurrentCard = this;
         }
 
-        public void SetTarget(string Target)
+        public void SetTarget(string targetEffect)
         {
-            if (Target != null) this.Target = Target;
+            if (targetEffect != null) this.Target = targetEffect;
             if (_target.Equals("enemy"))
             {
                 this.TargetList = GameManager.Instance().Enemies;
