@@ -39,9 +39,14 @@ namespace ModulPertarungan
                         NGUITools.AddChild(grid, roomButton);
                     }
                 }
-                grid.GetComponent<UIGrid>().Reposition();
+                
                 NetworkSingleton.Instance().ServerMessage = "";
                
+            }
+            else if (serverMessage.Contains("JoinedRoom"))
+            {
+                Application.LoadLevel("WaitingRoom");
+                NetworkSingleton.Instance().ServerMessage = "";
             }
         }
         public void RefreshGrid()
@@ -50,6 +55,7 @@ namespace ModulPertarungan
             {
                 Destroy(t.gameObject);
             }
+            grid.GetComponent<UIGrid>().Reposition();
         }
     }
 }

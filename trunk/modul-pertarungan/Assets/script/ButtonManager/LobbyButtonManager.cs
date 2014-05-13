@@ -24,7 +24,9 @@ namespace ModulPertarungan
                 Debug.Log("send succes");
             else
                 Debug.Log("send false");
-            Application.LoadLevel("WaitingRoom");
+            
         }
+
+	    
 	}
 }

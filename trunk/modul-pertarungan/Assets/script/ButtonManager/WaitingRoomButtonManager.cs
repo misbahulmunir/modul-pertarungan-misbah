@@ -17,7 +17,7 @@ namespace ModulPertarungan
         void GotoHome()
         {
             NetworkSingleton.Instance().Disconnect();
-            Application.LoadLevel("CrateRoom");
+            Application.LoadLevel("BeforeBattle");
         }
 
 	    private void Confirm()
