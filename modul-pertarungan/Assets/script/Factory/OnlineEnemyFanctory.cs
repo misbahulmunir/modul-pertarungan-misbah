@@ -37,20 +37,16 @@ namespace ModulPertarungan
         {
             _instantiateObjectList.TryGetValue(job, out character);
 
-            WebServiceSingleton.GetInstance().processRequest("get_profile|" + id);
-            xmlFromServer = WebServiceSingleton.GetInstance().xmLFromServer;
+         
             var obj = Object.Instantiate((GameObject)Resources.Load(objectName, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
             if (obj == null) return;
             obj.transform.Rotate(new Vector3(0f,180f,0f));
 
-
-            var deserializer = new XmlSerializer(typeof(PlayerFromService));
+            XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
             TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
 
-            var playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
-
-            Debug.Log("Nama Player : " + playerFromService.Name);
-            Debug.Log("Gold : " + playerFromService.Gold);
+            PlayerFromService playerFromService;
+            playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
 
             character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
             character.MaxSoulPoints = playerFromService.MaxSP;
@@ -59,12 +55,6 @@ namespace ModulPertarungan
             character.Experience = playerFromService.XP;
             character.DeckCostPoint = playerFromService.DPLeft;
             character.Rank = playerFromService.Rank;
-
-            //character.CurrentHealth = 200;
-            //character.MaxHealth = 200;
-            //character.MaxSoulPoints = 99;
-            character.Name = id;
-            //character.Gold = 100;
             obj.GetComponent<PlayerAction>().Character = character;
             GameManager.Instance().AddEnemy(obj);
             obj.GetComponent<PlayerAction>().IsEnemy = true;

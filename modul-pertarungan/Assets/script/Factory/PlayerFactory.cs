@@ -41,6 +41,7 @@ namespace ModulPertarungan
         }
         public override void CreatePlayer(string id, string job, string objectName, GameObject pawnsPosisition)
         {
+
             instantiateObjectList.TryGetValue(job, out character);
 
             var obj = Object.Instantiate((GameObject)Resources.Load(objectName, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
@@ -52,9 +53,6 @@ namespace ModulPertarungan
 
                 PlayerFromService playerFromService;
                 playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
-
-                Debug.Log("Nama Player : " + playerFromService.Name);
-                Debug.Log("Gold : " + playerFromService.Gold);
 
                 character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
                 character.MaxSoulPoints = playerFromService.MaxSP;
