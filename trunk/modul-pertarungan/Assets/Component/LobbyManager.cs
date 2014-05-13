@@ -38,6 +38,7 @@ namespace ModulPertarungan
                         roomButton.name = m;
                         NGUITools.AddChild(grid, roomButton);
                     }
+                    grid.GetComponent<UIGrid>().Reposition();
                 }
                 
                 NetworkSingleton.Instance().ServerMessage = "";
