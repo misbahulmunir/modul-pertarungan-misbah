@@ -59,6 +59,7 @@ namespace ModulPertarungan
             if (dict != null) dict.TryGetValue(fileName, out value);
 
             WebServiceSingleton.GetInstance().processRequest(fileName + "|" + id);
+            Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
             if (WebServiceSingleton.GetInstance().responseFromServer == "OK")
             {
                 try

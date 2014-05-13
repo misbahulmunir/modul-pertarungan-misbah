@@ -40,13 +40,13 @@ namespace ModulPertarungan
                 {
                     WebServiceSingleton.GetInstance().processRequest("get_profile|" + s);
                     Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                    string path = Application.dataPath + "/XMLFiles/player_profile_" + s + ".xml";
+                    string path = Application.persistentDataPath + "/player_profile_" + s + ".xml";
                     WebClient webClient = new WebClient();
                     webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/player_profile_" + s + ".xml"), path);
 
                     WebServiceSingleton.GetInstance().processRequest("player_deck|" + s);
                     Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                    path = Application.dataPath + "/XMLFiles/deck_of_" + s + ".xml";
+                    path = Application.persistentDataPath + "/deck_of_" + s + ".xml";
                     webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + s + ".xml"), path);
                 }
                 catch
