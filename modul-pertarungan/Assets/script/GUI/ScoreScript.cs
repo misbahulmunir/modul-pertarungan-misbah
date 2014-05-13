@@ -48,6 +48,12 @@ namespace ModulPertarungan
             {
                 Application.LoadLevel("BeforeBattle");
             }
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                var succses = false;
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
+                Debug.Log(succses ? "send succes" : "send false");
+            }
         }
     }
 }

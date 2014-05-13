@@ -70,8 +70,21 @@ namespace ModulPertarungan
 
         public void CheckWinorLose()
         {
-           
-          
+
+            if (GameManager.Instance().Enemies.Count <= 0)
+            {
+                GameManager.Instance().GameStatus = "win";
+                GameManager.Instance().PlayerExp = 100;
+                GameManager.Instance().PlayerGold = 100;
+                Application.LoadLevel("AfterBattle2");
+
+
+            }
+            else if (GameManager.Instance().Players.Count <= 0)
+            {
+                GameManager.Instance().GameStatus = "lose";
+                Application.LoadLevel("AfterBattle2");
+            }
             if (GameManager.Instance().GameMode == "pvp")
             {
                 string serverMessage = NetworkSingleton.Instance().ServerMessage;
@@ -92,30 +105,10 @@ namespace ModulPertarungan
                     
 
                 }
-                var succses = false;
-                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
-                Debug.Log(succses ? "send succes" : "send false");
                 Application.LoadLevel("AfterBattle2");
                
             }
-            else
-            {
-
-                if (GameManager.Instance().Enemies.Count <= 0)
-                {
-                    GameManager.Instance().GameStatus = "win";
-                    GameManager.Instance().PlayerExp = 100;
-                    GameManager.Instance().PlayerGold = 100;
-                    Application.LoadLevel("AfterBattle2");
-
-
-                }
-                else if (GameManager.Instance().Players.Count <= 0)
-                {
-                    GameManager.Instance().GameStatus = "lose";
-                    Application.LoadLevel("AfterBattle2");
-                }
-            }
+           
 
         }
         void Start()
