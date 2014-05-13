@@ -63,7 +63,7 @@ namespace ModulPertarungan
             {
                 try
                 {
-                    string path = Application.dataPath + "/XMLFiles/" + value + ".xml";
+                    string path = Application.persistentDataPath + "/" + value + ".xml";
                     WebClient webClient = new WebClient();
                     webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/" + value + ".xml"), path);
                     progress = 100;

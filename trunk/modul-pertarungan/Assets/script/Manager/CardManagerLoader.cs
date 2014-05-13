@@ -59,8 +59,8 @@ namespace ModulPertarungan
             Boolean _isEmpty = false;
             try
             {
-                Debug.Log(Application.dataPath + "/XMLFiles/" + method + GameManager.Instance().PlayerId + ".xml");
-                TextReader textReader = new StreamReader(Application.dataPath + "/XMLFiles/" + method + GameManager.Instance().PlayerId + ".xml");
+                Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
+                TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
                 _xmlFromServer.Load(textReader);
                 _nameNodes = _xmlFromServer.GetElementsByTagName("Name");
                 _quantityNodes = _xmlFromServer.GetElementsByTagName("Quantity");
@@ -85,7 +85,7 @@ namespace ModulPertarungan
 
         public void ShowPlayerDP()
         {
-            TextReader textReader = new StreamReader(Application.dataPath + "/XMLFiles/player_profile_" + GameManager.Instance().PlayerId + ".xml");
+            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + GameManager.Instance().PlayerId + ".xml");
             _xmlFromServer.Load(textReader);
             _nameNodes = _xmlFromServer.GetElementsByTagName("MaxDP");
             playerDeckPoint.GetComponent<UILabel>().text = _nameNodes[0].InnerXml;
