@@ -65,13 +65,15 @@ namespace ModulPertarungan
                 {
                     WebServiceSingleton.GetInstance().processRequest("player_deck|" + GameManager.Instance().PlayerId);
                     Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                    string path = Application.persistentDataPath + "/" + GameManager.Instance().PlayerId + ".xml";
+                    string path = Application.persistentDataPath + "/deck_of_" + GameManager.Instance().PlayerId + ".xml";
+                    Debug.Log(path);
                     WebClient webClient = new WebClient();
                     webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + GameManager.Instance().PlayerId + ".xml"), path);
 
                     WebServiceSingleton.GetInstance().processRequest("player_trunk|" + GameManager.Instance().PlayerId);
                     Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
                     path = Application.persistentDataPath + "/trunk_of_" + GameManager.Instance().PlayerId + ".xml";
+                    Debug.Log(path);
                     webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/trunk_of_" + GameManager.Instance().PlayerId + ".xml"), path);
 
                     Application.LoadLevel("BeforeBattle");
