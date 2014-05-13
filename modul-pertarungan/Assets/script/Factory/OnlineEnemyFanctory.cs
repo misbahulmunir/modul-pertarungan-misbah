@@ -4,6 +4,8 @@ using System.Text;
 using ModelModulPertarungan;
 using UnityEngine;
 using System.Xml;
+using System.Xml.Serialization;
+using System.IO;
 namespace ModulPertarungan
 {
 	public class OnlineEnemyFanctory:AbstractFactory
@@ -41,14 +43,22 @@ namespace ModulPertarungan
             if (obj == null) return;
             obj.transform.Rotate(new Vector3(0f,180f,0f));
 
-            attributeNodes = xmlFromServer.GetElementsByTagName("MaxHP");
-            character.CurrentHealth = character.MaxHealth = int.Parse(attributeNodes[0].InnerXml);
-            attributeNodes = xmlFromServer.GetElementsByTagName("MaxSP");
-            character.MaxSoulPoints = int.Parse(attributeNodes[0].InnerXml);
-            attributeNodes = xmlFromServer.GetElementsByTagName("Name");
-            character.Name = attributeNodes[0].InnerXml;
-            attributeNodes = xmlFromServer.GetElementsByTagName("Gold");
-            character.Gold = int.Parse(attributeNodes[0].InnerXml);
+
+            var deserializer = new XmlSerializer(typeof(PlayerFromService));
+            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
+
+            var playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
+
+            Debug.Log("Nama Player : " + playerFromService.Name);
+            Debug.Log("Gold : " + playerFromService.Gold);
+
+            character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
+            character.MaxSoulPoints = playerFromService.MaxSP;
+            character.Name = playerFromService.Name;
+            character.Gold = playerFromService.Gold;
+            character.Experience = playerFromService.XP;
+            character.DeckCostPoint = playerFromService.DPLeft;
+            character.Rank = playerFromService.Rank;
 
             //character.CurrentHealth = 200;
             //character.MaxHealth = 200;

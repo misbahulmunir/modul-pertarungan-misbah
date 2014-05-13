@@ -48,7 +48,7 @@ namespace ModulPertarungan
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
-                TextReader textReader = new StreamReader(Application.dataPath + "/XMLFiles/player_profile_" + id + ".xml");
+                TextReader textReader = new StreamReader(Application.persistentDataPath+ "/player_profile_" + id + ".xml");
 
                 PlayerFromService playerFromService;
                 playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
@@ -64,7 +64,7 @@ namespace ModulPertarungan
                 character.DeckCostPoint = playerFromService.DPLeft;
                 character.Rank = playerFromService.Rank;
 
-                textReader = new StreamReader(Application.dataPath + "/XMLFiles/deck_of_" + id + ".xml");
+                textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
                 xmlFromServer = new XmlDocument();
                 xmlFromServer.Load(textReader);
                 nameNodes = xmlFromServer.GetElementsByTagName("Name");

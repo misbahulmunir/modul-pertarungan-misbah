@@ -37,7 +37,7 @@ namespace ModulPertarungan
         {
             friendList = new List<string>();
             xmlFromServer = new XmlDocument();
-            TextReader textReader = new StreamReader(Application.dataPath + "/XMLFiles/friends_of_" + GameManager.Instance().PlayerId + ".xml");
+            TextReader textReader = new StreamReader(Application.persistentDataPath + "/friends_of_" + GameManager.Instance().PlayerId + ".xml");
             xmlFromServer.Load(textReader);
             attributeNodes = xmlFromServer.GetElementsByTagName("Name");
 

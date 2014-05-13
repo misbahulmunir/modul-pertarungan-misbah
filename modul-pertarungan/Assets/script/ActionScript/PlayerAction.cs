@@ -76,9 +76,13 @@ namespace ModulPertarungan
         {
             cards = new List<GameObject>();
             Debug.Log(this.Character.Name);
-            foreach (string t in (this.Character as Player).DeckList)
+            var player = this.Character as Player;
+            if (player != null && player.DeckList != null)
             {
-                Cards.Add((GameObject)Resources.Load(t, typeof(GameObject)));
+                foreach (string t in (this.Character as Player).DeckList)
+                {
+                    Cards.Add((GameObject) Resources.Load(t, typeof (GameObject)));
+                }
             }
 
         }
