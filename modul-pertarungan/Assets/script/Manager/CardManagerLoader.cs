@@ -14,14 +14,14 @@ namespace ModulPertarungan
         public GameObject deckCountSize;
         public GameObject playerDeckPoint;
         private int totalDeckCostSize;
-        private XmlDocument _xmlFromServer;
+        private XmlDocument _xmlDoc;
         private XmlNodeList _nameNodes;
         private XmlNodeList _quantityNodes;
 
         void Start()
         {
-            _xmlFromServer = new XmlDocument();
-            Debug.Log(GameManager.Instance().PlayerId);
+            _xmlDoc = new XmlDocument();
+            //Debug.Log(GameManager.Instance().PlayerId);
             LoadCardFromService("deck_of_", deckGrid);
             LoadCardFromService("trunk_of_", trunkGrid);
             
@@ -59,19 +59,19 @@ namespace ModulPertarungan
             Boolean _isEmpty = false;
             try
             {
-                Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
+                //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
                 TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
-                _xmlFromServer.Load(textReader);
-                _nameNodes = _xmlFromServer.GetElementsByTagName("Name");
-                _quantityNodes = _xmlFromServer.GetElementsByTagName("Quantity");
+                _xmlDoc.Load(textReader);
+                _nameNodes = _xmlDoc.GetElementsByTagName("Name");
+                _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");
 
-                Debug.Log("Method Name : " + method);
+                //Debug.Log("Method Name : " + method);
                 for (int i = 0; i < _nameNodes.Count; i++)
                 {
                     for (int j = 0; j < int.Parse(_quantityNodes[i].InnerXml); j++)
                     {
                         list.Add(_nameNodes[i].InnerXml);
-                        Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
+                        //Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
                     }
                 }
             }
@@ -86,8 +86,8 @@ namespace ModulPertarungan
         public void ShowPlayerDP()
         {
             TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + GameManager.Instance().PlayerId + ".xml");
-            _xmlFromServer.Load(textReader);
-            _nameNodes = _xmlFromServer.GetElementsByTagName("MaxDP");
+            _xmlDoc.Load(textReader);
+            _nameNodes = _xmlDoc.GetElementsByTagName("MaxDP");
             playerDeckPoint.GetComponent<UILabel>().text = _nameNodes[0].InnerXml;
         }
     }

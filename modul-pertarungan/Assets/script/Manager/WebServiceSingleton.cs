@@ -7,15 +7,17 @@ using System.Xml;
 using System.IO;
 using System.Net;
 using System.Collections.Specialized;
+using UnityEngine;
 
 namespace ModulPertarungan
 {
 	public class WebServiceSingleton
 	{
         private static WebServiceSingleton _instance;
-        public XmlDocument xmLFromServer;
         public string responseFromServer = "";
-        private Dictionary<string, string> dict;
+        public string queryInfo = "";
+        public int queryResult = 0;
+        private Dictionary<string, string> serverDict;
       
         public WebServiceSingleton()
         {
@@ -28,9 +30,9 @@ namespace ModulPertarungan
             return _instance;
         }
 
-        public void processRequest(string parameter)
+        public void ProcessRequest(string parameter)
         {
-            if (dict == null) InitDictionary();   
+            if (serverDict == null) InitServerDictionary();   
             string[] param = parameter.Split('|');
             string temp = "param";
             try
@@ -50,27 +52,47 @@ namespace ModulPertarungan
             }
             catch
             {
-                responseFromServer = "Error reading stream";
+                responseFromServer = "-3|Error reading stream";
             }
+            Debug.Log(responseFromServer);
+            string[] response = responseFromServer.Split('|');
+            queryResult = int.Parse(response[0]);
+            queryInfo = response[1];
 
-            if (responseFromServer == "XML File Has Been Successfully Generated")
-            {
-                responseFromServer = "OK";
+            //if (responseFromServer == "XML File Has Been Successfully Generated")
+            //{
+            //    responseFromServer = "OK";
                 //string value = "";
                 //var document = new XmlDocument();
                 //if (dict != null) dict.TryGetValue(param[0], out value);
                 //document.Load(value + param[1] + ".xml");
                 //xmLFromServer = document;
-            }
+            //}
         }
 
-        private void InitDictionary()
+        public string DownloadFile(string url, string path)
         {
-            dict = new Dictionary<string, string>();
-            dict.Add("get_profile", "http://cws.yowanda.com/files/player_profile_");
-            dict.Add("friend_list", "http://cws.yowanda.com/files/friends_of_");
-            dict.Add("player_deck", "http://cws.yowanda.com/files/deck_of_");
-            dict.Add("player_trunk", "http://cws.yowanda.com/files/trunk_of_");
+            WebClient webClient = new WebClient();
+            string downloadStatus = "";
+            try
+            {
+                webClient.DownloadFile(new Uri(url), path);
+                downloadStatus = "Download Complete";
+            }
+            catch
+            {
+                downloadStatus = "Download Failed";
+            }
+            return downloadStatus;
+        }
+
+        private void InitServerDictionary()
+        {
+            serverDict = new Dictionary<string, string>();
+            serverDict.Add("get_profile", "http://cws.yowanda.com/files/player_profile_");
+            serverDict.Add("friend_list", "http://cws.yowanda.com/files/friends_of_");
+            serverDict.Add("player_deck", "http://cws.yowanda.com/files/deck_of_");
+            serverDict.Add("player_trunk", "http://cws.yowanda.com/files/trunk_of_");
         }
 	}
 }
