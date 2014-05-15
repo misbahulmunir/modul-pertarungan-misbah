@@ -18,7 +18,7 @@ namespace ModulPertarungan
         private string result;
         private Dictionary<string, string> dict;
         private Boolean isStarted;
-        // Use this for initialization
+
         void Start()
         {
             isStarted = false;
@@ -31,7 +31,6 @@ namespace ModulPertarungan
             progress = 0;
         }
 
-        // Update is called once per frame
         void Update()
         {
             if(!isStarted && counter>5)
@@ -58,28 +57,35 @@ namespace ModulPertarungan
             if (dict == null) InitDictionary();
             if (dict != null) dict.TryGetValue(fileName, out value);
 
-            WebServiceSingleton.GetInstance().processRequest(fileName + "|" + id);
+            WebServiceSingleton.GetInstance().ProcessRequest(fileName + "|" + id);
             Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-            if (WebServiceSingleton.GetInstance().responseFromServer == "OK")
+            if (WebServiceSingleton.GetInstance().queryResult>0)
             {
-                try
-                {
-                    string path = Application.persistentDataPath + "/" + value + ".xml";
-                    Debug.Log(path);
-                    WebClient webClient = new WebClient();
-                    webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/" + value + ".xml"), path);
-                    progress = 100;
-                    result = "Loading Complete";
-                    totalDownloadedDocuments++;
-                }
-                catch
-                {
-                    result = "Download Failed";
-                }
+                string url = "http://cws.yowanda.com/files/" + value + ".xml";
+                string path = Application.persistentDataPath + "/" + value + ".xml";
+                result = WebServiceSingleton.GetInstance().DownloadFile(url, path);
+
+                if (result == "Download Complete") totalDownloadedDocuments++;
+
+                //try
+                //{
+                //    string path = Application.persistentDataPath + "/" + value + ".xml";
+                //    Debug.Log(path);
+                //    WebClient webClient = new WebClient();
+                //    webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/" + value + ".xml"), path);
+                //    progress = 100;
+                //    result = "Loading Complete";
+                //    totalDownloadedDocuments++;
+                //}
+                //catch
+                //{
+                //    result = "Download Failed";
+                //}
             }
             else
             {
-                result = "Unable to connect to CWS server";
+                if (WebServiceSingleton.GetInstance().queryInfo == "Empty Data") totalDownloadedDocuments++;
+                result = WebServiceSingleton.GetInstance().queryInfo;
             }
             Debug.Log(result);
         }

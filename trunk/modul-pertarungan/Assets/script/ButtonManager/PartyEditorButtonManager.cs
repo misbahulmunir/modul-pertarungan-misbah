@@ -38,13 +38,13 @@ namespace ModulPertarungan
             {
                 try
                 {
-                    WebServiceSingleton.GetInstance().processRequest("get_profile|" + s);
+                    WebServiceSingleton.GetInstance().ProcessRequest("get_profile|" + s);
                     Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
                     string path = Application.persistentDataPath + "/player_profile_" + s + ".xml";
                     WebClient webClient = new WebClient();
                     webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/player_profile_" + s + ".xml"), path);
 
-                    WebServiceSingleton.GetInstance().processRequest("player_deck|" + s);
+                    WebServiceSingleton.GetInstance().ProcessRequest("player_deck|" + s);
                     Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
                     path = Application.persistentDataPath + "/deck_of_" + s + ".xml";
                     webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + s + ".xml"), path);
