@@ -9,7 +9,7 @@ namespace ModulPertarungan
         public string tcpPort;
         public string udpPort;
         public string protocol;
-       
+
 
         void OnClick()
         {
@@ -17,23 +17,25 @@ namespace ModulPertarungan
             NetworkSingleton.Instance().TcpPort = tcpPort;
             NetworkSingleton.Instance().UdpPort = udpPort;
             NetworkSingleton.Instance().Connect();
-            
+
         }
         // Use this for initialization
 
         void Start()
         {
-            
+
         }
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
+            if (NetworkSingleton.Instance().ServerMessage == null) return;
             if (NetworkSingleton.Instance().ServerMessage.Contains("Connected-to-server"))
             {
                 Application.LoadLevel("LobbyRoom");
                 NetworkSingleton.Instance().ServerMessage = "";
             }
         }
+
         //private void Connect()
         //{
         //    string[] args = new string[3];
