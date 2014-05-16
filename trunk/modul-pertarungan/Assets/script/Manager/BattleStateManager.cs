@@ -127,7 +127,7 @@ namespace ModulPertarungan
             DrawCursor();
             EndPlayerTurn();
             SelectPawn();
-            CheckWinorLose();
+            //CheckWinorLose();
             GameManager.Instance().BattleState = currentstate;
         }
         void OnGUI()

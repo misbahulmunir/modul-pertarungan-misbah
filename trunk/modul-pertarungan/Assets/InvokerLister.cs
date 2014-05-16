@@ -9,6 +9,7 @@ namespace ModulPertarungan
         public GameObject battleStateManager;
         private Invoker _invoke;
         private Command _cmd;
+        public GameObject textList;
         // Use this for initialization
         private void Start()
         {
@@ -25,19 +26,28 @@ namespace ModulPertarungan
             if (serverMessage.Contains("CardEffect"))
             {
                 //text.GetComponent<UILabel>().text = NetworkSingleton.Instance().ServerMessage;
+                text.GetComponent<UILabel>().text = serverMessage;
                 _invoke= new Invoker();
                 _cmd = message[1].ToLower().Equals(GameManager.Instance().PlayerId.ToLower()) ? new CardExecuteCommand(message[2], "enemy") : new CardExecuteCommand(message[2],"player");
                 _invoke.AddCommand(_cmd);
                 _invoke.RunCommand();
+               
                 NetworkSingleton.Instance().ServerMessage = "";
             }
             else if(serverMessage.Contains("EndTurn"))
             {
+                text.GetComponent<UILabel>().text = serverMessage;
                 _invoke=new Invoker();
                 battleStateManager.GetComponent<BattleStateManager>().endButton.SetActive(true);
                 _cmd=new EndPhaseCommand(battleStateManager.GetComponent<BattleStateManager>());
                 _invoke.AddCommand(_cmd);
                 _invoke.RunCommand();
+                NetworkSingleton.Instance().ServerMessage = "";
+            }
+            else if (serverMessage.Contains("Chat"))
+            {
+                text.GetComponent<UILabel>().text = serverMessage;
+                textList.GetComponent<UITextList>().Add(message[1]);
                 NetworkSingleton.Instance().ServerMessage = "";
             }
         }
