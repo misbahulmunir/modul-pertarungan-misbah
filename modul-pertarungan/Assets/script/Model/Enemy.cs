@@ -11,5 +11,20 @@ namespace ModelModulPertarungan
             : base(MaxHealth, CurrentHealth, Name)
         {
         }
+
+        private int _expForPlayer;
+        private int _goldForPlayer;
+
+        public int ExpForPlayer
+        {
+            get { return _expForPlayer; }
+            set { _expForPlayer = value; }
+        }
+
+        public int GoldForPlayer
+        {
+            get { return _goldForPlayer; }
+            set { _goldForPlayer = value; }
+        }
     }
 }
