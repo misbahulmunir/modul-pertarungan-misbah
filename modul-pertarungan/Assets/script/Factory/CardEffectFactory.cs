@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
+using UnityEngine;
 namespace ModulPertarungan
 {
 	public class CardEffecFactory:AbstractFactory
@@ -29,9 +27,18 @@ namespace ModulPertarungan
         
         public override void CreateCard(string objectName,string target)
         {
-            CreateCardList.TryGetValue(objectName, out card);
-            card.SetTarget(target);
-            card.Effect();
+            try
+            {
+                CreateCardList.TryGetValue(objectName, out card);
+                card.SetTarget(target);
+                card.Effect();
+            }
+            catch
+            {
+               
+                Debug.Log("card Execution effect error");
+            }
+            
         }
 	}
 }

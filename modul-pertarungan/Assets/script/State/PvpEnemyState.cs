@@ -7,20 +7,21 @@ namespace ModulPertarungan
 {
     public class PvpEnemyState : BattleState
     {
-        public PvpEnemyState(List<GameObject> Players, List<GameObject> Enemy, BattleStateManager BattleManager)
-            : base(Players, Enemy, BattleManager)
+        public PvpEnemyState(BattleStateManager battleStateManager) : base(battleStateManager)
         {
 
         }
+
         public override void Action()
         {
-            BattleManager.Cursor.renderer.enabled = false;
-            BattleManager.endButton.SetActive(false);
-                //NetworkSingleton.Instance().ServerMessage = "";
-                //BattleManager.endButton.SetActive(true);
-                //BattleManager.Cursor.renderer.enabled = true;
-                //BattleManager.Currentstate = new ChangePlayerState(GameManager.Instance().CurrentPawn, BattleManager.objectLoader, BattleManager);
-                //BattleManager.Currentstate.Action();
+            try
+            {
+                BattleManager.endButton.SetActive(false);
+            }
+            catch (Exception e)
+            {
+                Debug.Log("errorpvpstate" + e.Message);
+            }
         }
     }
 }

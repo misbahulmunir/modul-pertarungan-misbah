@@ -13,9 +13,9 @@ namespace ModulPertarungan
            new EndPhasePerformer().EndPhaseExecute(this);
         }
 
-	    public EndPhaseCommand(BattleStateManager BStateManager)
+	    public EndPhaseCommand(BattleStateManager bStateManager)
 	    {
-	        this.BStateManager = BStateManager;
+	        this.BStateManager = bStateManager;
 
 	    }
 

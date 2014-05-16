@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 
@@ -41,16 +42,24 @@ namespace ModulPertarungan
             if (hitObj != null && hitObj.name.ToLower().Contains("endbutton"))
             {
                 endButton = hitObj;
-              //  endButton.SetActive(false);
+                //  endButton.SetActive(false);
                 if (GameManager.Instance().GameMode == "pvp")
                 {
-                   
-                    var succses = false;
-                    succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "EndTurn-" + NetworkSingleton.Instance().RoomName+"-"+GameManager.Instance().PlayerId);
-                    Debug.Log(succses ? "send succes" : "send false");
-                    currentstate = new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
-                    currentstate.Action();
-                    
+                    try
+                    {
+                        var succses = false;
+                        succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "EndTurn-" + NetworkSingleton.Instance().RoomName + "-" + GameManager.Instance().PlayerId);
+                        Debug.Log(succses ? "send succes" : "send false");
+                        currentstate = new PvpEnemyState(this);
+                        currentstate.Action();
+                    }
+
+                    catch (Exception e)
+                    {
+                        Debug.Log("errorstate" + e.Message);
+                    }
+
+
                 }
                 else
                 {
@@ -95,20 +104,19 @@ namespace ModulPertarungan
                 if (GameManager.Instance().PlayerId.Equals(message[1]))
                 {
                     GameManager.Instance().GameStatus = "lose";
-                   
+                    NetworkSingleton.Instance().ServerMessage = "";
                 }
                 else
                 {
                     GameManager.Instance().GameStatus = "win";
                     GameManager.Instance().PlayerExp = 100;
                     GameManager.Instance().PlayerGold = 100;
-                    
-
+                    NetworkSingleton.Instance().ServerMessage = "";
                 }
                 Application.LoadLevel("AfterBattle2");
-               
+
             }
-           
+
 
         }
         void Start()
@@ -123,11 +131,11 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            
+
             DrawCursor();
             EndPlayerTurn();
             SelectPawn();
-            //CheckWinorLose();
+            CheckWinorLose();
             GameManager.Instance().BattleState = currentstate;
         }
         void OnGUI()
@@ -160,11 +168,19 @@ namespace ModulPertarungan
         }
         public void ChekHost()
         {
-            if (NetworkSingleton.Instance().HostPlayer!=GameManager.Instance().PlayerId)
+            if (NetworkSingleton.Instance().HostPlayer != GameManager.Instance().PlayerId)
             {
-                currentstate= new PvpEnemyState(GameManager.Instance().Players, GameManager.Instance().Enemies, this);
-                GameManager.Instance().BattleState = currentstate; 
-                endButton.SetActive(false);
+                try
+                {
+                    currentstate = new PvpEnemyState(this);
+                    GameManager.Instance().BattleState = currentstate;
+                    currentstate.Action();
+                }
+                catch (Exception e)
+                {
+                    Debug.Log("errorcheckhoststate" + e.Message);
+                }
+
             }
         }
     }

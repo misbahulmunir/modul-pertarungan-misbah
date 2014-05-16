@@ -14,7 +14,17 @@ namespace ModulPertarungan
         // Use this for initialization
         void Start()
         {
-
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                var succses = false;
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
+                Debug.Log(succses ? "send succes" : "send false");
+                NetworkSingleton.instance = null;
+                GameManager.Instance().Enemies = null;
+                GameManager.Instance().Players = null;
+                GameManager.Instance().CurrentPawn = null;
+                GameManager.Instance().GameMode = "";
+            }
         }
 
         // Update is called once per frame
@@ -48,13 +58,7 @@ namespace ModulPertarungan
             {
                 Application.LoadLevel("BeforeBattle");
             }
-            if (GameManager.Instance().GameMode == "pvp")
-            {
-                var succses = false;
-                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
-                Debug.Log(succses ? "send succes" : "send false");
-                NetworkSingleton.Instance().Disconnect();
-            }
+          
         }
     }
 }
