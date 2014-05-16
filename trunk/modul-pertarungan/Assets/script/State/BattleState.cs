@@ -23,12 +23,12 @@ namespace ModulPertarungan
             get { return players; }
             set { players = value; }
         }
-        private BattleStateManager battleManager;
+        private BattleStateManager _battleManager;
 
         public BattleStateManager BattleManager
         {
-            get { return battleManager; }
-            set { battleManager = value; }
+            get { return _battleManager; }
+            set { _battleManager = value; }
         }
 
 
@@ -81,5 +81,9 @@ namespace ModulPertarungan
             this.SelectedCard = SelectedCard;
         }
 
+        public BattleState(BattleStateManager battleStateManager)
+        {
+           BattleManager= battleStateManager;
+        }
     }
 }
