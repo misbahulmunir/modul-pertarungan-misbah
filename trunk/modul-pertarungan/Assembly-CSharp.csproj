@@ -293,6 +293,8 @@
      <Compile Include="Assets\script\Network\NetworkSingleton.cs" />
      <Compile Include="Assets\script\Network\SendToServer.cs" />
      <Compile Include="Assets\script\State\BattleState.cs" />
+     <Compile Include="Assets\script\State\BuffState\BuffState.cs" />
+     <Compile Include="Assets\script\State\BuffState\NoBuffState.cs" />
      <Compile Include="Assets\script\State\CardExcutionState.cs" />
      <Compile Include="Assets\script\State\ChangePlayerState.cs" />
      <Compile Include="Assets\script\State\DrawState.cs" />
