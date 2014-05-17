@@ -20,11 +20,11 @@ namespace ModulPertarungan
                 succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
                 Debug.Log(succses ? "send succes" : "send false");
                 NetworkSingleton.instance = null;
-                GameManager.Instance().Enemies = null;
-                GameManager.Instance().Players = null;
-                GameManager.Instance().CurrentPawn = null;
                 GameManager.Instance().GameMode = "";
             }
+            GameManager.Instance().Enemies = null;
+            GameManager.Instance().Players = null;
+            GameManager.Instance().CurrentPawn = null;
         }
 
         // Update is called once per frame
