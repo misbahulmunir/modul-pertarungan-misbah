@@ -8,6 +8,7 @@ namespace ModulPertarungan
 {
 	public  abstract class DamageReceiverAction:MonoBehaviour
 	{
+	    private BattleState _currenState;
         private Boolean isEnemy;
 
         public Boolean IsEnemy
@@ -22,7 +23,14 @@ namespace ModulPertarungan
             get { return character; }
             set { character = value; }
         }
-        public virtual void ReceiveDamage(int damage)
+
+	    public BattleState CurrenState
+	    {
+	        get { return _currenState; }
+	        set { _currenState = value; }
+	    }
+
+	    public virtual void ReceiveDamage(int damage)
         {
             if ((character.CurrentHealth - damage)<=0)
             {
