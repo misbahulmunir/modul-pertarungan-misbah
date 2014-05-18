@@ -49,6 +49,7 @@ namespace ModulPertarungan
                 Application.LoadLevel("WaitingRoom");
                 NetworkSingleton.Instance().ServerMessage = "";
             }
+            grid.GetComponent<UIGrid>().Reposition();
         }
         public void RefreshGrid()
         {
@@ -56,7 +57,7 @@ namespace ModulPertarungan
             {
                 Destroy(t.gameObject);
             }
-            grid.GetComponent<UIGrid>().Reposition();
+            
         }
     }
 }
