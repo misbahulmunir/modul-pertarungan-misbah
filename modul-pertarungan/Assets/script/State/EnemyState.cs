@@ -16,7 +16,6 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
-            Debug.Log(GameManager.Instance().CurrentPawn.name);
             foreach (GameObject obj in this.Enemy)
             {
                 obj.GetComponent<EnemyAction>().AttackAction();
