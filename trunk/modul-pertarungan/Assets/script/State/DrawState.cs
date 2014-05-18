@@ -19,7 +19,6 @@ namespace ModulPertarungan
             foreach (GameObject obj in GameManager.Instance().Players)
             {
                 var emptyhand = obj.GetComponent<PlayerAction>().HandSize - obj.GetComponent<PlayerAction>().CurrentHand.Count();
-                Debug.Log(this.CurrentPlayer.GetComponent<PlayerAction>().Deck.Card.Count);
                 for (int c = 0; c < emptyhand; c++)
                 {
                     obj.GetComponent<PlayerAction>().Draw();

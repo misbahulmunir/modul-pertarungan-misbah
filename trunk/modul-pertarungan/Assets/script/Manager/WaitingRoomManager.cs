@@ -38,19 +38,26 @@ namespace ModulPertarungan
             if (serverMessage.Contains("PlayerList"))
             {  
                 firstPlayerName.GetComponent<UILabel>().text = message[1];
+                if(message.Count()>2)
                 secondPlayerName.GetComponent<UILabel>().text = message[2];
                 NetworkSingleton.Instance().ServerMessage = "";
             }
             else if(serverMessage.Contains("JoinedRoom"))
             {   
-                if(firstPlayerName.GetComponent<UILabel>().text.Equals(""))
-                {
-                     firstPlayerName.GetComponent<UILabel>().text =message[1];
-                }
-                else if (secondPlayerName.GetComponent<UILabel>().text.Equals(""))
-                {
-                     secondPlayerName.GetComponent<UILabel>().text=message[1];
-                }
+                //if(firstPlayerName.GetComponent<UILabel>().text.Equals(""))
+                //{
+                //     firstPlayerName.GetComponent<UILabel>().text =message[1];
+                //}
+                //else if (secondPlayerName.GetComponent<UILabel>().text.Equals(""))
+                //{
+                //     secondPlayerName.GetComponent<UILabel>().text=message[1];
+                //}
+                bool succses = false;
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GetPlayerList-" + NetworkSingleton.Instance().RoomName);
+                if (succses)
+                    Debug.Log("send succes");
+                else
+                    Debug.Log("send false");
                 NetworkSingleton.Instance().ServerMessage = "";
             }
             else if (serverMessage.Contains("Disconnected"))
