@@ -14,7 +14,7 @@ namespace ModulPertarungan
         public virtual void CreateCard(string objectName, string target)
         {
         }
-        public virtual void CreateEnemy(string objectName, int place)
+        public virtual void CreateEnemy(string objectName, GameObject place)
         {
         }
         public virtual void CreatePlayer(String id, String job, String objectName, GameObject pawnsPosisition)

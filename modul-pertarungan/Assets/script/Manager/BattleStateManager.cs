@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
@@ -29,6 +30,7 @@ namespace ModulPertarungan
                 hitObj = HitCollider();
                 if (hitObj != null && hitObj.GetComponent<PlayerAction>() != null && hitObj.GetComponent<PlayerAction>().IsEnemy == false)
                 {
+                    Cursor.transform.position = new Vector3(hitObj.rigidbody2D.transform.position.x, hitObj.rigidbody2D.transform.position.y + (hitObj.renderer.bounds.size.y / 2), 0f);
                     GameObject obj = GameManager.Instance().CurrentPawn = hitObj;
                     currentstate = new ChangePlayerState(obj, objectLoader, this);
                     currentstate.Action();
@@ -36,6 +38,19 @@ namespace ModulPertarungan
             }
         }
 
+        public void SelectEnemy()
+        {
+            if (!(this.currentstate is CardExcutionState) && !(this.currentstate is PvpEnemyState))
+            {
+                hitObj = HitCollider();
+                if (hitObj != null && hitObj.GetComponent<EnemyAction>() != null)
+                {
+                    Cursor.transform.position = new Vector3(hitObj.rigidbody2D.transform.position.x, hitObj.rigidbody2D.transform.position.y + (hitObj.renderer.bounds.size.y/ 2), 0f);
+                    Debug.Log(hitObj.name);
+                    GameManager.Instance().CurrentEnemy = hitObj;
+                }
+            }
+        }
         public void EndPlayerTurn()
         {
             hitObj = HitCollider();
@@ -132,9 +147,10 @@ namespace ModulPertarungan
         void Update()
         {
 
-            DrawCursor();
+           // DrawCursor();
             EndPlayerTurn();
             SelectPawn();
+            SelectEnemy();
             CheckWinorLose();
             GameManager.Instance().BattleState = currentstate;
         }
