@@ -30,6 +30,15 @@ namespace ModulPertarungan
             get { return character; }
             set { character = value; }
         }
+
+	    public Dictionary<string, string> ObjectNamePath
+	    {
+	        get { return objectNamePath; }
+	        set { objectNamePath = value; }
+	    }
+
+
+	    private Dictionary<string, string> objectNamePath; 
         public override void InstantiateObject()
         {  
             instantiateObjectList = new Dictionary<string, Player>
@@ -38,7 +47,13 @@ namespace ModulPertarungan
                 {"sorcerer", new Sorcerer()},
                 {"magician", new Magician()}
             };
+            //objectNamePath= new Dictionary<string, string>
+            //{
+            //  //  {"sorcerer",s}
+            //};
         }
+
+	   
         public override void CreatePlayer(string id, string job, string objectName, GameObject pawnsPosisition)
         {
 
