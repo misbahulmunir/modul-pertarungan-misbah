@@ -18,7 +18,7 @@ namespace ModulPertarungan
         private List<GameObject> DisplayedCards;
         private int currentPawnNumber;
         private AbstractFactory factory;
-        public GameObject warlock;
+        public List<GameObject> enemyPosition; 
         public GameObject enemyOnlinePosisiton;
 
        
@@ -95,9 +95,9 @@ namespace ModulPertarungan
             }
             else
             {
-                for (var c = 0; c < enemyCount; c++)
+                foreach (GameObject t in enemyPosition)
                 {
-                    this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon", c);
+                    this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon",t);
                 }
             }
             

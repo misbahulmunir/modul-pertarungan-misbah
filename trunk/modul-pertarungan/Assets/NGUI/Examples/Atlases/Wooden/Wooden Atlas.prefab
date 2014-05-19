@@ -5,7 +5,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 3
+  serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1002 &100001
 EditorExtensionImpl:
   serializedVersion: 6
@@ -41,8 +41,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 1}
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ec268c3ea1baceb4abb2168daed86f68, type: 2}
   mSprites:
   - name: Arimo14
@@ -85,7 +86,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 140
   - name: Button
-    x: 206
+    x: 188
     y: 56
     width: 17
     height: 17
@@ -98,6 +99,19 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Button A
+    x: 488
+    y: 258
+    width: 20
+    height: 20
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: Button B
     x: 50
     y: 3
     width: 20
@@ -110,21 +124,8 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
-  - name: Button B
-    x: 79
-    y: 32
-    width: 20
-    height: 20
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 0
-    paddingRight: 0
-    paddingTop: 0
-    paddingBottom: 0
   - name: Button X
-    x: 100
+    x: 79
     y: 32
     width: 20
     height: 20
@@ -137,8 +138,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Button Y
-    x: 79
-    y: 11
+    x: 100
+    y: 32
     width: 20
     height: 20
     borderLeft: 0
@@ -163,7 +164,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 5
   - name: Emoticon - Angry
-    x: 100
+    x: 79
     y: 11
     width: 20
     height: 20
@@ -176,8 +177,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Emoticon - Annoyed
-    x: 208
-    y: 159
+    x: 100
+    y: 11
     width: 20
     height: 20
     borderLeft: 0
@@ -189,7 +190,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Emoticon - Dead
-    x: 229
+    x: 208
     y: 159
     width: 20
     height: 20
@@ -202,8 +203,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Emoticon - Frown
-    x: 208
-    y: 138
+    x: 229
+    y: 159
     width: 20
     height: 20
     borderLeft: 0
@@ -215,7 +216,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Emoticon - Laugh
-    x: 229
+    x: 208
     y: 138
     width: 20
     height: 20
@@ -228,8 +229,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Emoticon - Rambo
-    x: 208
-    y: 106
+    x: 229
+    y: 138
     width: 20
     height: 20
     borderLeft: 0
@@ -241,7 +242,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Emoticon - Skull
-    x: 229
+    x: 208
     y: 106
     width: 20
     height: 20
@@ -267,8 +268,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Emoticon - Smirk
-    x: 488
-    y: 258
+    x: 229
+    y: 106
     width: 20
     height: 20
     borderLeft: 0
@@ -281,7 +282,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Flag-FR
     x: 127
-    y: 127
+    y: 74
     width: 80
     height: 52
     borderLeft: 0
@@ -294,7 +295,7 @@ MonoBehaviour:
     paddingBottom: 9
   - name: Flag-US
     x: 127
-    y: 74
+    y: 127
     width: 80
     height: 52
     borderLeft: 0
@@ -306,7 +307,7 @@ MonoBehaviour:
     paddingTop: 19
     paddingBottom: 9
   - name: Flat
-    x: 188
+    x: 206
     y: 56
     width: 17
     height: 17

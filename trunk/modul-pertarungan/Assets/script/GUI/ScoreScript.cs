@@ -23,8 +23,10 @@ namespace ModulPertarungan
                 GameManager.Instance().GameMode = "";
             }
             GameManager.Instance().Enemies = null;
+            GameManager.Instance().CurrentEnemy = null;
             GameManager.Instance().Players = null;
             GameManager.Instance().CurrentPawn = null;
+            GameManager.Instance().GameMode = "";
         }
 
         // Update is called once per frame

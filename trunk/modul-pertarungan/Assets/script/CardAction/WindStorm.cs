@@ -31,8 +31,8 @@ namespace ModulPertarungan
         {
             if (TargetList.Count > 0)
             {
-                GameObject obj = TargetList[0];
-                GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                GameObject obj = GameManager.Instance().GameMode == "pvp" ? TargetList[0] : TargetList.Find(GameManager.Instance().CurrentEnemy.Equals);
+                var animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 if (animation != null)
                 {
                     animation.renderer.sortingLayerName = "foreground";

@@ -57,8 +57,9 @@ namespace ModulPertarungan
             character.Rank = playerFromService.Rank;
             obj.GetComponent<PlayerAction>().Character = character;
             GameManager.Instance().AddEnemy(obj);
-
+            GameManager.Instance().CurrentEnemy = obj;
             obj.GetComponent<PlayerAction>().IsEnemy = true;
+            
             //Debug.Log(GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
 
         }

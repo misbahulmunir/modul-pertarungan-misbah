@@ -6,6 +6,7 @@ namespace ModulPertarungan
     public class GameManager
     {
         private BattleState battleState;
+        private GameObject currentEnemy;
         private string playerId;
 
         public string PlayerId
@@ -34,13 +35,7 @@ namespace ModulPertarungan
             get { return gameMode; }
             set { gameMode = value; }
         }
-        private List<string> allSelectedCard;
-
-        public List<string> AllSelectedCard
-        {
-            get { return allSelectedCard; }
-            set { allSelectedCard = value; }
-        }
+      
 
        
         private string gameStatus;
@@ -114,6 +109,12 @@ namespace ModulPertarungan
         {
             get { return battleState; }
             set { battleState = value; }
+        }
+
+        public GameObject CurrentEnemy
+        {
+            get { return currentEnemy; }
+            set { currentEnemy = value; }
         }
 
         public static GameManager instance;

@@ -16,7 +16,7 @@ namespace ModulPertarungan
         private int totalDeckCost;
 
         public void OnClick()
-        {
+        { 
             totalDeckCost = 0;
             cardList = new List<string>();
             cardQuantity = new List<int>();
@@ -24,11 +24,11 @@ namespace ModulPertarungan
             int DPCost = int.Parse(deckPointCost.GetComponent<UILabel>().text);
             int DPLeft = int.Parse(playerDP.GetComponent<UILabel>().text);
 
-            GameManager.Instance().AllSelectedCard= new List<string>();
+          
             foreach (Transform t in grid.transform)
             {
                 string s = t.name.Split('(')[0];
-                GameManager.Instance().AllSelectedCard.Add(s);   
+                
 
                 bool is_distinguish = true;
                 for(int i=0;i<cardList.Count;i++)
