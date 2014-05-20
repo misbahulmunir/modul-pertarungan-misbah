@@ -283,12 +283,14 @@
      <Compile Include="Assets\script\Model\Enemy.cs" />
      <Compile Include="Assets\script\Model\FireDragon.cs" />
      <Compile Include="Assets\script\Model\FireMonster.cs" />
+     <Compile Include="Assets\script\Model\GrandMagus.cs" />
      <Compile Include="Assets\script\Model\Magician.cs" />
      <Compile Include="Assets\script\Model\Player.cs" />
      <Compile Include="Assets\script\Model\Sorcerer.cs" />
      <Compile Include="Assets\script\Model\Warlock.cs" />
      <Compile Include="Assets\script\Model\WaterMonster.cs" />
      <Compile Include="Assets\script\Model\WindMonster.cs" />
+     <Compile Include="Assets\script\Model\Wizard.cs" />
      <Compile Include="Assets\script\Network\GetMessageFromServer.cs" />
      <Compile Include="Assets\script\Network\NetworkSingleton.cs" />
      <Compile Include="Assets\script\Network\SendToServer.cs" />
