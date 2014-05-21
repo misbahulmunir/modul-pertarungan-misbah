@@ -39,3 +39,7 @@ EditorBuildSettings:
     path: Assets/Scene/Loading.unity
   - enabled: 1
     path: Assets/Scene/HouseEditor.unity
+  - enabled: 1
+    path: Assets/Scene/ContinentDungeon.unity
+  - enabled: 1
+    path: Assets/Scene/MapDungeon.unity
