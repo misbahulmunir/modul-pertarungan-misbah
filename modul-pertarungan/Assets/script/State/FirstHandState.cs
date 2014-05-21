@@ -13,7 +13,7 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
-            CurrentPlayer.GetComponent<WarlockAction>().FirstPawnHand();
+            CurrentPlayer.GetComponent<WarlockAction>().FirstHand();
         }
     }
 }
