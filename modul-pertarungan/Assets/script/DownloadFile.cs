@@ -29,26 +29,14 @@ namespace ModulPertarungan
             id = GameManager.Instance().PlayerId;
             counter = 0;
             progress = 0;
+
+            DownloadXMLFile("get_profile");
+            Application.LoadLevel("BeforeBattle");
         }
 
         void Update()
         {
-            if(!isStarted && counter>5)
-            {
-                //Application.LoadLevel("BeforeBattle");
-                isStarted = true;
-                DownloadXMLFile("get_profile");
-                DownloadXMLFile("player_deck");
-                DownloadXMLFile("player_trunk");
-                DownloadXMLFile("friend_list");
-                DownloadXMLFile("get_party_member");
-            }
-            if (totalDownloadedDocuments == totalDocuments)
-            {
-                loadingText.GetComponent<UILabel>().text = "Loading Complete";
-                Application.LoadLevel("BeforeBattle");
-            }
-            counter++;
+            
         }
 
         private void DownloadXMLFile(string fileName)
@@ -57,36 +45,11 @@ namespace ModulPertarungan
             if (dict == null) InitDictionary();
             if (dict != null) dict.TryGetValue(fileName, out value);
 
-            WebServiceSingleton.GetInstance().ProcessRequest(fileName + "|" + id);
-            Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-            if (WebServiceSingleton.GetInstance().queryResult>0)
-            {
-                string url = "http://cws.yowanda.com/files/" + value + ".xml";
-                string path = Application.persistentDataPath + "/" + value + ".xml";
-                result = WebServiceSingleton.GetInstance().DownloadFile(url, path);
+            string path = Application.persistentDataPath + "/" + value + ".xml";
 
-                if (result == "Download Complete") totalDownloadedDocuments++;
-
-                //try
-                //{
-                //    string path = Application.persistentDataPath + "/" + value + ".xml";
-                //    Debug.Log(path);
-                //    WebClient webClient = new WebClient();
-                //    webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/" + value + ".xml"), path);
-                //    progress = 100;
-                //    result = "Loading Complete";
-                //    totalDownloadedDocuments++;
-                //}
-                //catch
-                //{
-                //    result = "Download Failed";
-                //}
-            }
-            else
-            {
-                if (WebServiceSingleton.GetInstance().queryInfo == "Empty Data") totalDownloadedDocuments++;
-                result = WebServiceSingleton.GetInstance().queryInfo;
-            }
+            WebClient client = new WebClient();
+            string result = client.DownloadString("http://cws.yowanda.com/ClientController/1/player/get_profile/agil");
+            client.DownloadFile(new Uri("http://cws.yowanda.com/files/" + value + ".xml"), path);
             Debug.Log(result);
         }
 
