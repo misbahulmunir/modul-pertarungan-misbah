@@ -122,7 +122,7 @@ MeshCollider:
   serializedVersion: 2
   m_SmoothSphereCollisions: 0
   m_Convex: 0
-  m_Mesh: {fileID: 355653493}
+  m_Mesh: {fileID: 159269971}
 --- !u!23 &65228025
 Renderer:
   m_ObjectHideFlags: 0
@@ -152,7 +152,7 @@ MeshFilter:
     type: 2}
   m_PrefabInternal: {fileID: 1220690890}
   m_GameObject: {fileID: 65228022}
-  m_Mesh: {fileID: 355653493}
+  m_Mesh: {fileID: 159269971}
 --- !u!4 &65228027
 Transform:
   m_ObjectHideFlags: 0
@@ -164,7 +164,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!43 &355653493
+--- !u!43 &159269971
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -425,11 +425,11 @@ Prefab:
     - target: {fileID: 6400000, guid: ddd4032a9f26430498542ed975385f3d, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 355653493}
+      objectReference: {fileID: 159269971}
     - target: {fileID: 3300000, guid: ddd4032a9f26430498542ed975385f3d, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 355653493}
+      objectReference: {fileID: 159269971}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddd4032a9f26430498542ed975385f3d, type: 2}
   m_RootGameObject: {fileID: 65228022}
