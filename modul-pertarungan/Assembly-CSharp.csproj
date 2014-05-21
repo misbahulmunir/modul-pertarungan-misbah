@@ -309,6 +309,9 @@
      <Compile Include="Assets\script\State\OnlineCardExecuteState.cs" />
      <Compile Include="Assets\script\State\PlayerTurnState.cs" />
      <Compile Include="Assets\script\State\PvpEnemyState.cs" />
+     <Compile Include="Assets\script\TileMap\ButtonQuest.cs" />
+     <Compile Include="Assets\script\TileMap\Map.cs" />
+     <Compile Include="Assets\script\TileMap\TileMap.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\NGUI\ReadMe - 3.5.3.txt" />
