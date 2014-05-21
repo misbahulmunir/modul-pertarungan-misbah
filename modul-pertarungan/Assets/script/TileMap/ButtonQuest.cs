@@ -24,8 +24,8 @@ public class ButtonQuest : MonoBehaviour
             {
                 if (hit.collider.gameObject.name.ToLower().Contains("questbutton"))
                 {
-                    //Application.LoadLevel("Quest");
-                    Debug.Log("goto Quest");
+                    Application.LoadLevel("Battle");
+                    //Debug.Log("goto Quest");
                 }
             }
         }
