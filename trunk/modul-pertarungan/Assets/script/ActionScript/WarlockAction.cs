@@ -21,12 +21,12 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            GetAllCard();
+            InstanceCard();
             this.CurrentHand = new List<GameObject>();
             this.Deck = new Deck(cards);
             this.SceneObject = this.gameObject;
             this.Deck.Shuffle();
-            FirstPawnHand();  
+            FirstHand();  
         }
 
 

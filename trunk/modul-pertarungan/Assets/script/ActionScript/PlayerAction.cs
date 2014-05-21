@@ -48,7 +48,7 @@ namespace ModulPertarungan
             get { return currentHand; }
             set { currentHand = value; }
         }
-        public void FirstPawnHand()
+        public void FirstHand()
         {
             for (int c = 0; c < handSize; c++)
             {
@@ -72,7 +72,7 @@ namespace ModulPertarungan
                 currentHand.Add(Deck.Draw());
             }
         }
-        public void GetAllCard()
+        public void InstanceCard()
         {
             cards = new List<GameObject>();
             Debug.Log(this.Character.Name);
