@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -266,6 +266,7 @@
      <Compile Include="Assets\script\Factory\CardEffectFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Factory\EnemyFactory.cs" />
+     <Compile Include="Assets\script\Factory\OnlineEnemyFactory.cs" />
      <Compile Include="Assets\script\Factory\OnlineEnemyFanctory.cs" />
      <Compile Include="Assets\script\Factory\PlayerFactory.cs" />
      <Compile Include="Assets\script\GUI\CardManagerGuiHandler.cs" />
