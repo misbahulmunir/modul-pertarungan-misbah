@@ -36,23 +36,23 @@ namespace ModulPertarungan
 
             foreach (string s in GameManager.Instance().PartyId)
             {
-                try
-                {
-                    WebServiceSingleton.GetInstance().ProcessRequest("get_profile|" + s);
-                    Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                    string path = Application.persistentDataPath + "/player_profile_" + s + ".xml";
-                    WebClient webClient = new WebClient();
-                    webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/player_profile_" + s + ".xml"), path);
+                //try
+                //{
+                //    WebServiceSingleton.GetInstance().ProcessRequest("get_profile|" + s);
+                //    Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+                //    string path = Application.persistentDataPath + "/player_profile_" + s + ".xml";
+                //    WebClient webClient = new WebClient();
+                //    webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/player_profile_" + s + ".xml"), path);
 
-                    WebServiceSingleton.GetInstance().ProcessRequest("player_deck|" + s);
-                    Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                    path = Application.persistentDataPath + "/deck_of_" + s + ".xml";
-                    webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + s + ".xml"), path);
-                }
-                catch
-                {
-                    Debug.Log("Error Reading Player Data");
-                }
+                //    WebServiceSingleton.GetInstance().ProcessRequest("player_deck|" + s);
+                //    Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+                //    path = Application.persistentDataPath + "/deck_of_" + s + ".xml";
+                //    webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + s + ".xml"), path);
+                //}
+                //catch
+                //{
+                //    Debug.Log("Error Reading Player Data");
+                //}
             }
 
             Application.LoadLevel("BeforeBattle");
