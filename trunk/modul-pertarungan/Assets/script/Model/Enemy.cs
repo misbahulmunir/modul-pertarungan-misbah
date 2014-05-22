@@ -12,6 +12,11 @@ namespace ModelModulPertarungan
         {
         }
 
+        public Enemy()
+        {
+
+        }
+
         private int _expForPlayer;
         private int _goldForPlayer;
         private List<String> _playerGetItem;

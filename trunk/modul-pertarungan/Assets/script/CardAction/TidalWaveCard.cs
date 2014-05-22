@@ -28,10 +28,10 @@ namespace ModulPertarungan
         public override void Effect()
         {
             if (TargetList.Count > 0)
-            {
+            {   Debug.Log(TargetList.Count);
                 foreach (GameObject obj in TargetList)
                 {
-                    GameObject animation = Instantiate(GameObject.Find("WaterFall"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                    var animation = Instantiate(GameObject.Find("WaterFall"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
                     if (animation != null)
                     {
                         animation.renderer.sortingLayerName = "foreground";

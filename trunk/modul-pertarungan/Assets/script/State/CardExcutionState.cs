@@ -18,6 +18,7 @@ namespace ModulPertarungan
 
         public override void Action()
         {
+           
             if (GameManager.Instance().GameMode == "pvp")
             {
                 bool succses = false;
@@ -31,6 +32,7 @@ namespace ModulPertarungan
                 SelectedCard.GetComponent<CardsEffect>().Effect();        
                
             }
+            
             var gobj = GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand.FirstOrDefault(obj => this.SelectedCard.name == obj.name + "(Clone)");
             GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().CurrentHand.Remove(gobj);
             Destroy(this.SelectedCard);
