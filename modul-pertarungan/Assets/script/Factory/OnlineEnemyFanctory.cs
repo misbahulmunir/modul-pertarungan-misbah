@@ -53,7 +53,7 @@ namespace ModulPertarungan
             character.Name = playerFromService.Name;
             character.Gold = playerFromService.Gold;
             character.Experience = playerFromService.XP;
-            character.DeckCostPoint = playerFromService.DPLeft;
+            character.DeckCostPoint = playerFromService.MaxDP;
             character.Rank = playerFromService.Rank;
             obj.GetComponent<PlayerAction>().Character = character;
             GameManager.Instance().AddEnemy(obj);
