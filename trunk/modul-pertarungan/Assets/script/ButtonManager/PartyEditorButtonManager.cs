@@ -34,14 +34,10 @@ namespace ModulPertarungan
                 }
             }
 
-            WebServiceSingleton.GetInstance().ProcessRequest("clear_party", GameManager.Instance().PlayerId);
             foreach (string s in GameManager.Instance().PartyId)
             {
                 try
                 {
-                    WebServiceSingleton.GetInstance().ProcessRequest("insert_to_party", GameManager.Instance().PlayerId + "|" + s);
-                    Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-
                     WebServiceSingleton.GetInstance().ProcessRequest("get_profile", s);
                     //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
                     Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_profile", s));

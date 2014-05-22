@@ -90,7 +90,7 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_friend_list", "http://cws.yowanda.com/files/friends_of_");
             fileLocationDictionary.Add("get_player_deck", "http://cws.yowanda.com/files/deck_of_");
             fileLocationDictionary.Add("get_player_trunk", "http://cws.yowanda.com/files/trunk_of_");
-            fileLocationDictionary.Add("get_party_member", "http://cws.yowanda.com/files/party_of_");
+            fileLocationDictionary.Add("get_list_avatar", "http://cws.yowanda.com/files/list_avatar_of_");
         }
 
         private void InitUrlDictionary()
@@ -100,11 +100,9 @@ namespace ModulPertarungan
             urlDictionary.Add("get_friend_list", "http://cws.yowanda.com/ClientController/1/player/get_friend_list");
             urlDictionary.Add("get_player_deck", "http://cws.yowanda.com/ClientController/2/card/get_cards/deck");
             urlDictionary.Add("get_player_trunk", "http://cws.yowanda.com/ClientController/2/card/get_cards/trunk");
-            urlDictionary.Add("get_party_member", "http://cws.yowanda.com/ClientController/1/player/get_party_member");
             urlDictionary.Add("clear_deck", "http://cws.yowanda.com/ClientController/1/card/clear_deck");
             urlDictionary.Add("insert_to_deck", "http://cws.yowanda.com/ClientController/3/card/insert_to_deck");
-            urlDictionary.Add("clear_party", "http://cws.yowanda.com/ClientController/1/player/clear_party");
-            urlDictionary.Add("insert_to_party", "http://cws.yowanda.com/ClientController/2/player/insert_to_party");
+            urlDictionary.Add("get_list_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/list");
         }
 
         private void InitPathDictionary()
@@ -114,7 +112,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_friend_list", "friends_of_");
             clientPathDictionary.Add("get_player_deck", "deck_of_");
             clientPathDictionary.Add("get_player_trunk", "trunk_of_");
-            clientPathDictionary.Add("get_party_member", "party_of_");
+            clientPathDictionary.Add("get_list_avatar", "list_avatar_of_");
         }
 	}
 }

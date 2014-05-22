@@ -35,7 +35,7 @@ namespace ModulPertarungan
             DownloadXMLFile("get_player_deck");
             DownloadXMLFile("get_player_trunk");
             DownloadXMLFile("get_friend_list");
-            DownloadXMLFile("get_party_member");
+            DownloadXMLFile("get_list_avatar");
             Application.LoadLevel("BeforeBattle");
         }
 
@@ -117,7 +117,7 @@ namespace ModulPertarungan
             pathDictionary.Add("get_friend_list", "friends_of_" + id);
             pathDictionary.Add("get_player_deck", "deck_of_" + id);
             pathDictionary.Add("get_player_trunk", "trunk_of_" + id);
-            pathDictionary.Add("get_party_member", "party_of_" + id);
+            pathDictionary.Add("get_list_avatar", "list_avatar_of_" + id);
         }
 
         private void InitUrlDictionary()
@@ -127,7 +127,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_friend_list", "http://cws.yowanda.com/ClientController/1/player/get_friend_list/" + id);
             urlDictionary.Add("get_player_deck", "http://cws.yowanda.com/ClientController/2/card/get_cards/deck/" + id);
             urlDictionary.Add("get_player_trunk", "http://cws.yowanda.com/ClientController/2/card/get_cards/trunk/" + id);
-            urlDictionary.Add("get_party_member", "http://cws.yowanda.com/ClientController/1/player/get_party_member/" + id);
+            urlDictionary.Add("get_list_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/list/" + id);
         }
     }
 }
