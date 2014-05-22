@@ -309,6 +309,8 @@
      <Compile Include="Assets\script\State\OnlineCardExecuteState.cs" />
      <Compile Include="Assets\script\State\PlayerTurnState.cs" />
      <Compile Include="Assets\script\State\PvpEnemyState.cs" />
+     <Compile Include="Assets\script\TileMap\Button.cs" />
+     <Compile Include="Assets\script\TileMap\ButtonManager.cs" />
      <Compile Include="Assets\script\TileMap\ButtonMap.cs" />
      <Compile Include="Assets\script\TileMap\ButtonQuest.cs" />
      <Compile Include="Assets\script\TileMap\Map.cs" />
