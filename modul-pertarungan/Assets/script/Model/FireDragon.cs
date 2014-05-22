@@ -12,5 +12,10 @@ namespace ModelModulPertarungan
         {
 
         }
+
+        public FireDragon()
+        {
+
+        }
     }
 }

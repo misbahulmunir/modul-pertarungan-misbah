@@ -61,7 +61,7 @@ namespace ModulPertarungan
         {
             if (pawn != null)
             {
-                Debug.Log(GameManager.Instance().BattleState);
+                
                 foreach (GameObject t in pawn.GetComponent<PlayerAction>().CurrentHand)
                 {
                     var obj = NGUITools.AddChild(grid,t);

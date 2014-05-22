@@ -25,8 +25,6 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            firedragon = new FireDragon(200, 200, name);
-            this.Character = firedragon;
             
         }
 
