@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using UnityEngine;
 using System.Xml;
 using System.IO;
+using Avatar = UnityEngine.Avatar;
+
 namespace ModulPertarungan
 {
     public class PlayerEditorManager : MonoBehaviour
     {
         public GameObject grid;
         public GameObject avatar;
-
+        public GameObject playerAvatar;
         private XmlDocument xmlFromServer;
         private XmlNodeList attributeNodes;
         private List<string> friendList;
@@ -23,6 +23,7 @@ namespace ModulPertarungan
 
         void Start()
         {
+            playerAvatar.GetComponent<Avatar>().PlayerName = GameManager.Instance().PlayerId;
             GetFriendList(GameManager.Instance().PlayerId);
             foreach (string s in friendList)
             {
