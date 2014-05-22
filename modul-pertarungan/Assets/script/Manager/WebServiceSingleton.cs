@@ -17,8 +17,11 @@ namespace ModulPertarungan
         public string responseFromServer = "";
         public string queryInfo = "";
         public int queryResult = 0;
-        private Dictionary<string, string> serverDict;
-      
+        private Dictionary<string, string> fileLocationDictionary;
+        private Dictionary<string, string> urlDictionary;
+        private Dictionary<string, string> clientPathDictionary;
+        private string id = GameManager.Instance().PlayerId;
+
         public WebServiceSingleton()
         {
         }
@@ -30,53 +33,48 @@ namespace ModulPertarungan
             return _instance;
         }
 
-        public void ProcessRequest(string parameter)
+        public void ProcessRequest(string methodName, string parameter)
         {
-            if (serverDict == null) InitServerDictionary();   
+            string urlTarget = "";
+            if (urlDictionary == null) InitUrlDictionary();
+            if (urlDictionary != null) urlDictionary.TryGetValue(methodName, out urlTarget);
             string[] param = parameter.Split('|');
-            string temp = "param";
+            foreach (string s in param)
+            {
+                urlTarget += "/" + s;
+            }
+
             try
             {
-                string urlx = "http://cws.yowanda.com/ClientController";
-                using (WebClient client = new WebClient())
-                {
-                    var data = new NameValueCollection();
-                    data.Add("method", param[0]);
-                    for(int i=1;i<=param.Length-1;i++)
-                    {
-                        data.Add(temp+i.ToString(CultureInfo.InvariantCulture), param[i]);
-                    }
-                    var bytecode = client.UploadValues(urlx, data);
-                    responseFromServer = Encoding.UTF8.GetString(bytecode, 0, bytecode.Length);
-                }
+                WebClient client = new WebClient();
+                responseFromServer = client.DownloadString(urlTarget);
             }
             catch
             {
-                responseFromServer = "-3|Error reading stream";
+                responseFromServer = urlTarget;//"-3|Error reading stream";
             }
-            Debug.Log(responseFromServer);
+            //Debug.Log(responseFromServer);
             string[] response = responseFromServer.Split('|');
             queryResult = int.Parse(response[0]);
             queryInfo = response[1];
-
-            //if (responseFromServer == "XML File Has Been Successfully Generated")
-            //{
-            //    responseFromServer = "OK";
-                //string value = "";
-                //var document = new XmlDocument();
-                //if (dict != null) dict.TryGetValue(param[0], out value);
-                //document.Load(value + param[1] + ".xml");
-                //xmLFromServer = document;
-            //}
         }
 
-        public string DownloadFile(string url, string path)
+        public string DownloadFile(string methodName, string parameter)
         {
+            string fileLocation = "";
+            string clientPath = "";
+            if (fileLocationDictionary == null) InitFileLocationDictionary();
+            if (clientPathDictionary == null) InitPathDictionary();
+
+            if (fileLocationDictionary != null) fileLocationDictionary.TryGetValue(methodName, out fileLocation);
+            if (clientPathDictionary != null) clientPathDictionary.TryGetValue(methodName, out clientPath);
+
             WebClient webClient = new WebClient();
             string downloadStatus = "";
+            string path = Application.persistentDataPath + "/" + clientPath + ".xml";
             try
             {
-                webClient.DownloadFile(new Uri(url), path);
+                webClient.DownloadFileAsync(new Uri(fileLocation + parameter + ".xml"), path);
                 downloadStatus = "Download Complete";
             }
             catch
@@ -86,13 +84,36 @@ namespace ModulPertarungan
             return downloadStatus;
         }
 
-        private void InitServerDictionary()
+        private void InitFileLocationDictionary()
         {
-            serverDict = new Dictionary<string, string>();
-            serverDict.Add("get_profile", "http://cws.yowanda.com/files/player_profile_");
-            serverDict.Add("friend_list", "http://cws.yowanda.com/files/friends_of_");
-            serverDict.Add("player_deck", "http://cws.yowanda.com/files/deck_of_");
-            serverDict.Add("player_trunk", "http://cws.yowanda.com/files/trunk_of_");
+            fileLocationDictionary = new Dictionary<string, string>();
+            fileLocationDictionary.Add("get_profile", "http://cws.yowanda.com/files/player_profile_");
+            fileLocationDictionary.Add("get_friend_list", "http://cws.yowanda.com/files/friends_of_");
+            fileLocationDictionary.Add("get_player_deck", "http://cws.yowanda.com/files/deck_of_");
+            fileLocationDictionary.Add("get_player_trunk", "http://cws.yowanda.com/files/trunk_of_");
+            fileLocationDictionary.Add("get_party_member", "http://cws.yowanda.com/files/party_of_");
+        }
+
+        private void InitUrlDictionary()
+        {
+            urlDictionary = new Dictionary<string, string>();
+            urlDictionary.Add("get_profile", "http://cws.yowanda.com/ClientController/1/player/get_profile");
+            urlDictionary.Add("get_friend_list", "http://cws.yowanda.com/ClientController/1/player/get_friend_list");
+            urlDictionary.Add("get_player_deck", "http://cws.yowanda.com/ClientController/2/card/get_cards/deck");
+            urlDictionary.Add("get_player_trunk", "http://cws.yowanda.com/ClientController/2/card/get_cards/trunk");
+            urlDictionary.Add("get_party_member", "http://cws.yowanda.com/ClientController/1/player/get_party_member");
+            urlDictionary.Add("clear_deck", "http://cws.yowanda.com/ClientController/1/card/clear_deck");
+            urlDictionary.Add("insert_to_deck", "http://cws.yowanda.com/ClientController/3/card/insert_to_deck");
+        }
+
+        private void InitPathDictionary()
+        {
+            clientPathDictionary = new Dictionary<string, string>();
+            clientPathDictionary.Add("get_profile", "player_profile_" + id);
+            clientPathDictionary.Add("get_friend_list", "friends_of_" + id);
+            clientPathDictionary.Add("get_player_deck", "deck_of_" + id);
+            clientPathDictionary.Add("get_player_trunk", "trunk_of_" + id);
+            clientPathDictionary.Add("get_party_member", "party_of_" + id);
         }
 	}
 }

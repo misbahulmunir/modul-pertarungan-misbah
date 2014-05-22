@@ -16,7 +16,8 @@ namespace ModulPertarungan
         private int counter;
         private int totalDocuments;
         private string result;
-        private Dictionary<string, string> dict;
+        private Dictionary<string, string> pathDictionary;
+        private Dictionary<string, string> urlDictionary;
         private Boolean isStarted;
 
         void Start()
@@ -31,26 +32,72 @@ namespace ModulPertarungan
             progress = 0;
 
             DownloadXMLFile("get_profile");
+            DownloadXMLFile("get_player_deck");
+            DownloadXMLFile("get_player_trunk");
+            DownloadXMLFile("get_friend_list");
+            DownloadXMLFile("get_party_member");
             Application.LoadLevel("BeforeBattle");
         }
 
         void Update()
         {
-            
+            //if (!isStarted && counter > 0)
+            //{
+            //    isStarted = true;
+                
+            //}
+            //if (totalDownloadedDocuments == totalDocuments)
+            //{
+            //    loadingText.GetComponent<UILabel>().text = "Loading Complete";
+            //    Debug.Log("Total Time in Frame : " + counter);
+            //    Application.LoadLevel("BeforeBattle");
+            //}
+            //counter++;
+            //Debug.Log("counter : " + counter);
         }
 
-        private void DownloadXMLFile(string fileName)
+        private void DownloadXMLFile(string methodName)
         {
-            string value = "";
-            if (dict == null) InitDictionary();
-            if (dict != null) dict.TryGetValue(fileName, out value);
+            WebServiceSingleton.GetInstance().ProcessRequest(methodName, id);
+            Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+            if (WebServiceSingleton.GetInstance().queryInfo == "Empty Data")
+            {
+                totalDownloadedDocuments++;
+            }
 
-            string path = Application.persistentDataPath + "/" + value + ".xml";
+            if (WebServiceSingleton.GetInstance().queryResult > 0)
+            { 
+                Debug.Log(WebServiceSingleton.GetInstance().DownloadFile(methodName, id));
+                totalDownloadedDocuments++;
+            }
+            //string pathValue = "";
+            //string urlValue = "";
+            //string downloadStatus = "";
+            //if (pathDictionary == null) InitPathDictionary();
+            //if (urlDictionary == null) InitUrlDictionary();
+            //if (pathDictionary != null) pathDictionary.TryGetValue(fileName, out pathValue);
+            //if (urlDictionary != null) urlDictionary.TryGetValue(fileName, out urlValue);
 
-            WebClient client = new WebClient();
-            string result = client.DownloadString("http://cws.yowanda.com/ClientController/1/player/get_profile/agil");
-            client.DownloadFile(new Uri("http://cws.yowanda.com/files/" + value + ".xml"), path);
-            Debug.Log(result);
+            //string path = Application.persistentDataPath + "/" + pathValue + ".xml";
+
+            //try
+            //{
+            //    WebClient client = new WebClient();
+            //    string result = client.DownloadString(urlValue);
+            //    string[] queryResult = result.Split('|');
+            //    if (queryResult[1] == "XML File Has Been Successfully Generated")
+            //    {
+            //        client.DownloadFileAsync(new Uri("http://cws.yowanda.com/files/" + pathValue + ".xml"), path);
+            //    }
+            //    downloadStatus = "Download Complete";
+            //    totalDownloadedDocuments++;
+            //    //Debug.Log(result);
+            //}
+            //catch
+            //{
+            //    downloadStatus = "Download Failed";
+            //}
+            //Debug.Log(downloadStatus);
         }
 
         private void ProgressChanged(object sender, DownloadProgressChangedEventArgs e)
@@ -63,14 +110,24 @@ namespace ModulPertarungan
 
         }
 
-        private void InitDictionary()
+        private void InitPathDictionary()
         {
-            dict = new Dictionary<string, string>();
-            dict.Add("get_profile", "player_profile_" + id);
-            dict.Add("friend_list", "friends_of_" + id);
-            dict.Add("player_deck", "deck_of_" + id);
-            dict.Add("player_trunk", "trunk_of_" + id);
-            dict.Add("get_party_member", "party_of_" + id);
+            pathDictionary = new Dictionary<string, string>();
+            pathDictionary.Add("get_profile", "player_profile_" + id);
+            pathDictionary.Add("get_friend_list", "friends_of_" + id);
+            pathDictionary.Add("get_player_deck", "deck_of_" + id);
+            pathDictionary.Add("get_player_trunk", "trunk_of_" + id);
+            pathDictionary.Add("get_party_member", "party_of_" + id);
+        }
+
+        private void InitUrlDictionary()
+        {
+            urlDictionary = new Dictionary<string, string>();
+            urlDictionary.Add("get_profile", "http://cws.yowanda.com/ClientController/1/player/get_profile/" + id);
+            urlDictionary.Add("get_friend_list", "http://cws.yowanda.com/ClientController/1/player/get_friend_list/" + id);
+            urlDictionary.Add("get_player_deck", "http://cws.yowanda.com/ClientController/2/card/get_cards/deck/" + id);
+            urlDictionary.Add("get_player_trunk", "http://cws.yowanda.com/ClientController/2/card/get_cards/trunk/" + id);
+            urlDictionary.Add("get_party_member", "http://cws.yowanda.com/ClientController/1/player/get_party_member/" + id);
         }
     }
 }

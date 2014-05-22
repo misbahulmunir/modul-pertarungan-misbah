@@ -14,6 +14,7 @@ namespace ModulPertarungan
         private List<string> cardList;
         private List<int> cardQuantity;
         private int totalDeckCost;
+        private string id = GameManager.Instance().PlayerId;
 
         public void OnClick()
         { 
@@ -51,49 +52,48 @@ namespace ModulPertarungan
 
             if (DPCost <= DPLeft)
             {
-                WebServiceSingleton.GetInstance().ProcessRequest("clear_deck|" + GameManager.Instance().PlayerId);
-
+                WebServiceSingleton.GetInstance().ProcessRequest("clear_deck", id);
+                Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
                 for (int i = 0; i < cardList.Count; i++)
                 {
-                    WebServiceSingleton.GetInstance().ProcessRequest("insert_to_deck|" + GameManager.Instance().PlayerId + "|" + cardList[i] + "|" + cardQuantity[i]);
+                    WebServiceSingleton.GetInstance().ProcessRequest("insert_to_deck", id + "|" + cardList[i] + "|" + cardQuantity[i]);
                     Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
                 }
-                
-                //for (int i = 1; i <= 2; i++)
-                //{
-                    //try
-                    //{
-                    //    //string param = "";
-                    //    //if (i == 1) param = "deck";
-                    //    //else param = "trunk";
 
-                WebClient webClient = new WebClient();
-                WebServiceSingleton.GetInstance().ProcessRequest("player_deck|" + GameManager.Instance().PlayerId);
-                Debug.Log("query result : " + WebServiceSingleton.GetInstance().responseFromServer);
-                WebServiceSingleton.GetInstance().ProcessRequest("player_trunk|" + GameManager.Instance().PlayerId);
-                Debug.Log("query result : " + WebServiceSingleton.GetInstance().responseFromServer);
+                for (int i = 1; i <= 2; i++)
+                {
+                    try
+                    {
+                        string param = "";
+                        if (i == 1) param = "deck";
+                        else param = "trunk";
 
-                string path = Application.persistentDataPath + "/deck_of_" + GameManager.Instance().PlayerId + ".xml";
+                        WebClient webClient = new WebClient();
+                        WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + param, id);
+                        Debug.Log("response : " + WebServiceSingleton.GetInstance().responseFromServer);
 
-                webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-                //webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-                //webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-                //webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-
-                path = Application.persistentDataPath + "/trunk_of_" + GameManager.Instance().PlayerId + ".xml";
+                        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_" + param, id));
 
 
-                webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/trunk_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-                webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/trunk_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-                webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/trunk_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-                webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/trunk_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-                    //}
-                    //catch
-                    //{
-                    //    Debug.Log("Error connecting to CWS server");
-                    //}
-                    
-                //}
+                        //WebServiceSingleton.GetInstance().ProcessRequest("player_trunk|" + GameManager.Instance().PlayerId);
+                        //Debug.Log("query result : " + WebServiceSingleton.GetInstance().responseFromServer);
+
+                        //string path = Application.persistentDataPath + "/deck_of_" + GameManager.Instance().PlayerId + ".xml";
+
+                        //webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + GameManager.Instance().PlayerId + ".xml"), path);
+
+
+                        //path = Application.persistentDataPath + "/trunk_of_" + GameManager.Instance().PlayerId + ".xml";
+
+
+                        //webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/trunk_of_" + GameManager.Instance().PlayerId + ".xml"), path);
+                    }
+                    catch
+                    {
+                        Debug.Log("Error connecting to CWS server");
+                    }
+
+                }
 
 
                 //WebServiceSingleton.GetInstance().ProcessRequest("player_deck|agil");
