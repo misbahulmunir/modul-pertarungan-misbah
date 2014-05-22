@@ -14,7 +14,7 @@ namespace ModulPertarungan
         {
             enemyDictionary = new Dictionary<string, Enemy>()
             {
-                {"FireDragon",new FireDragon()}
+                {"FireDragon",new FireDragon(200,200,"firedragon")}
             };
         }
 
@@ -26,9 +26,8 @@ namespace ModulPertarungan
             //
             if (obj != null)
             {
-                obj.GetComponent<DamageReceiverAction>().Character = enemy;
+                //obj.GetComponent<DamageReceiverAction>().Character = enemy;
                 GameManager.Instance().AddEnemy(obj);
-
                 GameManager.Instance().CurrentEnemy = obj;
             }
         }

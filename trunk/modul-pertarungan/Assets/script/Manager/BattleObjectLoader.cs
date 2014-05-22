@@ -96,8 +96,10 @@ namespace ModulPertarungan
             else
             {
                 foreach (GameObject t in enemyPosition)
-                {
-                    this.GetComponent<EnemyFactory>().CreateEnemy("FireDragon",t);
+                { 
+                    factory= new EnemyFactory();
+                    factory.InstantiateObject();
+                    factory.CreateEnemy("FireDragon",t);
                 }
             }
             

@@ -7,6 +7,8 @@ namespace ModelModulPertarungan
     public abstract class Player : DamageReceiver
     {
         private int deckCostPoint;
+        private int level;
+        private string gender;
         private List<string> deckList;
 
         public List<string> DeckList
@@ -64,6 +66,18 @@ namespace ModelModulPertarungan
         {
             get { return deckCostPoint; }
             set { deckCostPoint = value; }
+        }
+
+        public int Level
+        {
+            get { return level; }
+            set { level = value; }
+        }
+
+        public string Gender
+        {
+            get { return gender; }
+            set { gender = value; }
         }
 
         public Player(int MaxHealth, int CurrentHealth, string Name, int HandCapacity)
