@@ -12,8 +12,8 @@ namespace ModulPertarungan
         {
           
                
-                Application.LoadLevel("Battle");
-            
+                //Application.LoadLevel("Battle");
+                Application.LoadLevel("ContinentDungeon");
         }
         void Start()
         {
