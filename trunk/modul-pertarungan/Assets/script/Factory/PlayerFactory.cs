@@ -74,7 +74,7 @@ namespace ModulPertarungan
                 character.Name = playerFromService.Name;
                 character.Gold = playerFromService.Gold;
                 character.Experience = playerFromService.XP;
-                character.DeckCostPoint = playerFromService.DPLeft;
+                character.DeckCostPoint = playerFromService.MaxDP;
                 character.Rank = playerFromService.Rank;
 
                 textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
