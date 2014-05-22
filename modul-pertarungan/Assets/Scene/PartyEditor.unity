@@ -1143,7 +1143,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0473372787
+  aspectRatio: .0784313753
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
@@ -2656,7 +2656,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0614657216
+  aspectRatio: .0509803928
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Highlight - Shadowed
   mType: 1
@@ -2822,7 +2822,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0614657216
+  aspectRatio: .121495329
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Highlight - Shadowed
   mType: 1
@@ -2968,6 +2968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grid: {fileID: 830441777}
   avatar: {fileID: 100008, guid: cd0296cab1eeb8e4e95dba9011def148, type: 2}
+  playerAvatar: {fileID: 1654004889}
 --- !u!4 &2047587645
 Transform:
   m_ObjectHideFlags: 0
@@ -3057,7 +3058,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0264900662
+  aspectRatio: .0320000015
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1

@@ -12,13 +12,12 @@ namespace ModulPertarungan
         {
           
                
-                Application.LoadLevel("ContinentDungeon");
+                Application.LoadLevel("Battle");
             
         }
         void Start()
         {
-            //GameManager.Instance().PlayerNumber = 1;
-            //GameManager.Instance().PlayerId = "agil";
+        
         }
 
         // Update is called once per frame
