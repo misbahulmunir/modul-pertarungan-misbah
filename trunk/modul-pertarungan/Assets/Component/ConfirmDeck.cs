@@ -67,26 +67,10 @@ namespace ModulPertarungan
                         string param = "";
                         if (i == 1) param = "deck";
                         else param = "trunk";
-
                         WebClient webClient = new WebClient();
                         WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + param, id);
                         Debug.Log("response : " + WebServiceSingleton.GetInstance().responseFromServer);
-
                         Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_" + param, id));
-
-
-                        //WebServiceSingleton.GetInstance().ProcessRequest("player_trunk|" + GameManager.Instance().PlayerId);
-                        //Debug.Log("query result : " + WebServiceSingleton.GetInstance().responseFromServer);
-
-                        //string path = Application.persistentDataPath + "/deck_of_" + GameManager.Instance().PlayerId + ".xml";
-
-                        //webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/deck_of_" + GameManager.Instance().PlayerId + ".xml"), path);
-
-
-                        //path = Application.persistentDataPath + "/trunk_of_" + GameManager.Instance().PlayerId + ".xml";
-
-
-                        //webClient.DownloadFile(new Uri("http://cws.yowanda.com/files/trunk_of_" + GameManager.Instance().PlayerId + ".xml"), path);
                     }
                     catch
                     {
@@ -94,13 +78,6 @@ namespace ModulPertarungan
                     }
 
                 }
-
-
-                //WebServiceSingleton.GetInstance().ProcessRequest("player_deck|agil");
-                //string url = "http://cws.yowanda.com/files/deck_of_agil.xml";
-                //string path = Application.persistentDataPath + "/deck_of_agil.xml";
-                //Debug.Log("result : " + WebServiceSingleton.GetInstance().DownloadFile(url, path));
-
                 Application.LoadLevel("BeforeBattle");
             }
             else
