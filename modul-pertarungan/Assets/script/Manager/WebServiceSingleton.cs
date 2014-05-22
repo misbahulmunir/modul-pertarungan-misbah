@@ -20,7 +20,6 @@ namespace ModulPertarungan
         private Dictionary<string, string> fileLocationDictionary;
         private Dictionary<string, string> urlDictionary;
         private Dictionary<string, string> clientPathDictionary;
-        private string id = GameManager.Instance().PlayerId;
 
         public WebServiceSingleton()
         {
@@ -71,7 +70,7 @@ namespace ModulPertarungan
 
             WebClient webClient = new WebClient();
             string downloadStatus = "";
-            string path = Application.persistentDataPath + "/" + clientPath + ".xml";
+            string path = Application.persistentDataPath + "/" + clientPath + parameter + ".xml";
             try
             {
                 webClient.DownloadFileAsync(new Uri(fileLocation + parameter + ".xml"), path);
@@ -104,16 +103,18 @@ namespace ModulPertarungan
             urlDictionary.Add("get_party_member", "http://cws.yowanda.com/ClientController/1/player/get_party_member");
             urlDictionary.Add("clear_deck", "http://cws.yowanda.com/ClientController/1/card/clear_deck");
             urlDictionary.Add("insert_to_deck", "http://cws.yowanda.com/ClientController/3/card/insert_to_deck");
+            urlDictionary.Add("clear_party", "http://cws.yowanda.com/ClientController/1/player/clear_party");
+            urlDictionary.Add("insert_to_party", "http://cws.yowanda.com/ClientController/2/player/insert_to_party");
         }
 
         private void InitPathDictionary()
         {
             clientPathDictionary = new Dictionary<string, string>();
-            clientPathDictionary.Add("get_profile", "player_profile_" + id);
-            clientPathDictionary.Add("get_friend_list", "friends_of_" + id);
-            clientPathDictionary.Add("get_player_deck", "deck_of_" + id);
-            clientPathDictionary.Add("get_player_trunk", "trunk_of_" + id);
-            clientPathDictionary.Add("get_party_member", "party_of_" + id);
+            clientPathDictionary.Add("get_profile", "player_profile_");
+            clientPathDictionary.Add("get_friend_list", "friends_of_");
+            clientPathDictionary.Add("get_player_deck", "deck_of_");
+            clientPathDictionary.Add("get_player_trunk", "trunk_of_");
+            clientPathDictionary.Add("get_party_member", "party_of_");
         }
 	}
 }
