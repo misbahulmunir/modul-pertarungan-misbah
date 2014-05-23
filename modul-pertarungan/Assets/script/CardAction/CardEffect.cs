@@ -59,6 +59,14 @@ namespace ModulPertarungan
             set { _deckCost = value; }
         }
 
+        private int _cardPower;
+
+        public int CardPower
+        {
+            get { return _cardPower; }
+            set { _cardPower = value; }
+        }
+
         public void Click()
         {
             if (Application.loadedLevelName == "Battle"||Application.loadedLevelName=="OnlineBattle")

@@ -92,6 +92,7 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_player_trunk", "http://cws.yowanda.com/files/trunk_of_");
             fileLocationDictionary.Add("get_list_avatar", "http://cws.yowanda.com/files/list_avatar_of_");
             fileLocationDictionary.Add("get_player_avatar", "http://cws.yowanda.com/files/player_avatar_of_");
+            fileLocationDictionary.Add("get_building", "http://cws.yowanda.com/files/building_of_");
         }
 
         private void InitUrlDictionary()
@@ -105,6 +106,7 @@ namespace ModulPertarungan
             urlDictionary.Add("insert_to_deck", "http://cws.yowanda.com/ClientController/3/card/insert_to_deck");
             urlDictionary.Add("get_list_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/list");
             urlDictionary.Add("get_player_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/player");
+            urlDictionary.Add("get_building", "http://cws.yowanda.com/ClientController/1/building/get_building");
         }
 
         private void InitPathDictionary()
@@ -116,6 +118,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_player_trunk", "trunk_of_");
             clientPathDictionary.Add("get_list_avatar", "list_avatar_of_");
             clientPathDictionary.Add("get_player_avatar", "player_avatar_of_");
+            clientPathDictionary.Add("get_building", "building_of_");
         }
 	}
 }

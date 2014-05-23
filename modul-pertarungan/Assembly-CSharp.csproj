@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\AvatarAttachment.cs" />
+     <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\AvatarButtonScript.cs" />
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\BackButtonScript.cs" />
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\EyeAttachment.cs" />
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\HairAttachment.cs" />
@@ -248,6 +249,14 @@
      <Compile Include="Assets\script\CardAction\Deck.cs" />
      <Compile Include="Assets\script\CardAction\FireCard.cs" />
      <Compile Include="Assets\script\CardAction\FireStorm.cs" />
+     <Compile Include="Assets\script\CardAction\HealingCard.cs" />
+     <Compile Include="Assets\script\CardAction\HealingLight100.cs" />
+     <Compile Include="Assets\script\CardAction\HealingLight150.cs" />
+     <Compile Include="Assets\script\CardAction\HealingLight75.cs" />
+     <Compile Include="Assets\script\CardAction\HealingWave10.cs" />
+     <Compile Include="Assets\script\CardAction\HealingWave25.cs" />
+     <Compile Include="Assets\script\CardAction\HealingWave50.cs" />
+     <Compile Include="Assets\script\CardAction\NormalCard.cs" />
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
      <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
      <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />

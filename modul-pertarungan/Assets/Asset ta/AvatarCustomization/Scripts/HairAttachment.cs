@@ -4,14 +4,18 @@ using System.Collections;
 public class HairAttachment : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+    void Start()
+    {
+        AttachHair(aa.getHairType());
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+    {
 		OnClick ();
 	}
 
+    AvatarAttachment aa = new AvatarAttachment();
 	public GameObject hairStyle1, hairStyle2, hairStyle3;
 	Object hChild;
 

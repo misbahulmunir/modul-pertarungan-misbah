@@ -4,8 +4,9 @@ using System.Collections;
 public class MouthAttachment : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
-	
+    void Start()
+    {
+        AttachMouth(aa.getMouthType());
 	}
 	
 	// Update is called once per frame
@@ -13,6 +14,7 @@ public class MouthAttachment : MonoBehaviour {
 		OnClick();
 	}
 
+    AvatarAttachment aa = new AvatarAttachment();
 	public GameObject mouthStyle1, mouthStyle2, mouthStyle3;
 	Object mChild;
 	

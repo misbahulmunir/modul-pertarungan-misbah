@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
+namespace ModulPertarungan
+{
 public class FacebookHandler : MonoBehaviour {
 
 	#region FB.Init
@@ -50,7 +52,7 @@ public class FacebookHandler : MonoBehaviour {
 		{
 			lastResponse = "Login was successful!";
 			//BH.boolGetName = true;
-			FB.API("/me?fields=first_name", Facebook.HttpMethod.GET, Callback);
+			FB.API("/me?fields=id", Facebook.HttpMethod.GET, Callback);
 		}
 		Debug.Log(lastResponse);
 	}
@@ -140,4 +142,5 @@ public class FacebookHandler : MonoBehaviour {
 	void Update () {
 	
 	}
+}
 }
