@@ -292,6 +292,8 @@
      <Compile Include="Assets\script\Manager\PlayerEditorManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
+     <Compile Include="Assets\script\Model From Service\BuildingFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\PlayerBuildingFromService.cs" />
      <Compile Include="Assets\script\Model From Service\PlayerFromService.cs" />
      <Compile Include="Assets\script\Model\DamageReceiver.cs" />
      <Compile Include="Assets\script\Model\Enemy.cs" />
