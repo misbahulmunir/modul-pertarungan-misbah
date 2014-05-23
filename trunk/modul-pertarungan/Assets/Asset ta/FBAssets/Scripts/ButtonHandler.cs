@@ -1,6 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Net;
+using System.Linq;
+using System.Text;
+using System.ComponentModel;
+using System;
+using System.Collections.Generic;
+using System.Xml;
+using System.IO;
 
+namespace ModulPertarungan
+{
 public class ButtonHandler : MonoBehaviour {
 
 	FacebookHandler FH = new FacebookHandler();
@@ -12,9 +22,13 @@ public class ButtonHandler : MonoBehaviour {
 	string [] dummy;
 	public bool boolGetName = false;
 	string headerText;
+	string result, FBID;
+	private XmlDocument _xmlDoc;
+	private XmlNodeList _nameNodes;
 	// Use this for initialization
 	void Start () {
 		FH.CallFBInit ();
+		_xmlDoc = new XmlDocument();
 	}
 	
 	// Update is called once per frame
@@ -52,10 +66,28 @@ public class ButtonHandler : MonoBehaviour {
 	{
 		if (FB.IsLoggedIn) 
 		{
+			FBID = splitTextName(FH.responseText);
 			label1.GetComponent<UILabel> ().text = FH.lastResponse;
-			label.GetComponent<UILabel> ().text = headerText + splitTextName(FH.responseText);
+			//label.GetComponent<UILabel> ().text = headerText + splitTextName(FH.responseText);
 			FH.boolShow = false;
 			boolGetName = false;
+			WebServiceSingleton.GetInstance().ProcessRequest("get_profile", FBID);
+			Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+			if (WebServiceSingleton.GetInstance().queryResult>0)
+			{
+					string url = "http://cws.yowanda.com/files/" + "/player_profile_" + FBID + ".xml";
+					string path = Application.persistentDataPath + "/player_profile_" + FBID + ".xml";
+					result = WebServiceSingleton.GetInstance().DownloadFile(url, path);
+					Debug.Log (result);
+					TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + FBID + ".xml");
+					_xmlDoc.Load(textReader);
+					_nameNodes = _xmlDoc.GetElementsByTagName("Name");
+					Debug.Log(_nameNodes[0].InnerXml);
+			}
+			else
+			{
+					Debug.Log ("FB belum terdaftar");
+			}
 		} else 
 		{
 			FH.CallFBLogin ();
@@ -84,4 +116,5 @@ public class ButtonHandler : MonoBehaviour {
 		Debug.Log ("FB Api");
 	}
 
+}
 }

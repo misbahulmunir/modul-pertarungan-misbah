@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ModulPertarungan;
+
 
 public class BuildingClickManagement : MonoBehaviour {
 
@@ -43,7 +45,8 @@ public class BuildingClickManagement : MonoBehaviour {
 				} else
 				if (hit.collider.gameObject.name.ToLower().Contains("colosseum"))
 				{
-					Application.LoadLevel("CrateRoom");
+                    GameManager.Instance().GameMode = "pvp";
+					Application.LoadLevel("PVPlogin");
 				}
 //				if (hit.collider.gameObject.name.ToLower().Contains("altar_"))
 //				{

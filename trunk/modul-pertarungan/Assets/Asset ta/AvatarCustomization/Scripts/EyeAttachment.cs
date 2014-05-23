@@ -5,14 +5,15 @@ public class EyeAttachment : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        AttachEye(aa.getEyesType());
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		OnClick();
 	}
-	
+
+    AvatarAttachment aa = new AvatarAttachment();
 	public GameObject eyeStyle1, eyeStyle2, eyeStyle3;
 	Object eChild;
 	

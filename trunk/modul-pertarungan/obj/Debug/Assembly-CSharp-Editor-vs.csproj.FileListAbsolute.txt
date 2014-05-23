@@ -135,3 +135,23 @@ C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Un
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp-Editor.pdb
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEditor.BB10.Extensions.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEditor.Graphs.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\[~~TA]\!!!New TA\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
+D:\[~~TA]\!!!New TA\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
