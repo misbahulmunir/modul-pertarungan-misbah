@@ -3,22 +3,32 @@ using System.Collections;
 
 public class YggdrasilManagement : MonoBehaviour {
 
+    ModelYggdrasil myYgg = new ModelYggdrasil();
+    QuantityManagement quantity = new QuantityManagement();
+    bool haveYggdrasil = false;
+    public GameObject Yggdrasil;
+    public GameObject YggdrasilExp;
+    public GameObject berryQuantity;
+
 	// Use this for initialization
 	void Start () {
-		haveYggdrasil = false;
+        myYgg = new ModelYggdrasil();
+        myYgg.getDatabaseBuilding();
+        myYgg.getYggdrasilData();
+        quantity = new QuantityManagement();
+        if (myYgg.Level > 0)
+        {
+            haveYggdrasil = true;
+            var currentPos = this.transform.position;
+            var yggdrasil = Instantiate(Yggdrasil, currentPos, Quaternion.identity);
+            YggdrasilExp.GetComponent<GUIText>().text = "Level " + myYgg.Level + "\n" + myYgg.ExpYggdrasil + "/" + myYgg.MaxYggdrasilExp;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		OnClick ();
 	}
-	
-	ModelYggdrasil myYgg = new ModelYggdrasil();
-	QuantityManagement quantity = new QuantityManagement();
-	bool haveYggdrasil = false;
-	public GameObject Yggdrasil;
-	public GameObject YggdrasilExp;
-	public GameObject berryQuantity;
 	
 	void OnClick()
 	{

@@ -3,9 +3,26 @@ using System.Collections;
 
 public class MineManagement : MonoBehaviour {
 
+    ModelMine myMine = new ModelMine();
+    QuantityManagement quantity = new QuantityManagement();
+    bool haveMine;
+    public GameObject Mine;
+    public GameObject MineExp;
+    public GameObject gemQuantity;
+
 	// Use this for initialization
 	void Start () {
-		haveMine = false;
+        myMine = new ModelMine();
+        myMine.getDatabaseBuilding();
+        myMine.getMineData();
+        quantity = new QuantityManagement();
+        if (myMine.Level > 0)
+        {
+            haveMine = true;
+            var currentPos = this.transform.position;
+            var mine = Instantiate(Mine, currentPos, Quaternion.identity);
+            MineExp.GetComponent<GUIText>().text = "Level " + myMine.Level + "\n" + myMine.ExpMine + "/" + myMine.MaxMineExp;
+        }
 	}
 	
 	// Update is called once per frame
@@ -13,12 +30,6 @@ public class MineManagement : MonoBehaviour {
 		OnClick ();
 	}
 	
-	ModelMine myMine = new ModelMine();
-	QuantityManagement quantity = new QuantityManagement();
-	bool haveMine;
-	public GameObject Mine;
-	public GameObject MineExp;
-	public GameObject gemQuantity;
 	
 	void OnClick()
 	{

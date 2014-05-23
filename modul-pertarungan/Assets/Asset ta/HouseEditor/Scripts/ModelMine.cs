@@ -13,21 +13,42 @@ public class ModelMine :  ModelBuilding {
 	
 	}
 
-	int charLevel;
-	int dropRate, level;
-	string name, about;
-	string playerID;
-	int expMine = 0;
-	int maxMineExp = 100;
+    int charLevel;
+    int productClaimed, productMax, level;
+    string name, about;
+    string playerID;
+    int expMine = 0;
+    int maxMineExp = 100;
 	
 	public ModelMine()
 	{
-		name = "Mine";
-		about = "A Dwarf's Mine that not used again, but still produce some Oridecon";
-		level = getBuildingData (playerID, "Mine");
-		dropRate = level;
-		charLevel = getCharLevel (playerID);
 	}
+
+    public void getMineData()
+    {
+        name = "Mine";
+        about = "A Dwarf's Mine that not used again, but still produce some Oridecon";
+        level = Building.buildings[1].Level;
+        productClaimed = Building.buildings[1].ProductClaimed;
+        productMax = Building.buildings[1].ProductionQuantity;
+        expMine = Building.buildings[1].CurrentXP;
+        maxMineExp = Building.buildings[1].MaxXP;
+
+        charLevel = getCharLevel(playerID);
+    }
+
+    public int ProductMax
+    {
+        get { return productMax; }
+        set { productMax = value; }
+    }
+
+    public int ProductClaimed
+    {
+        get { return productClaimed; }
+        set { productClaimed = value; }
+    }
+
 
 	public int ExpMine {
 		get {

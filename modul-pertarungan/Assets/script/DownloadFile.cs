@@ -41,24 +41,6 @@ namespace ModulPertarungan
             DownloadXMLFile("get_player_avatar");
             DownloadXMLFile("get_building");
 
-            //try
-            //{
-            //    //XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
-            //    //TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
-
-            //    XmlSerializer deserializer = new XmlSerializer(typeof(PlayerBuildingFromService));
-            //    TextReader textReader = new StreamReader(Application.persistentDataPath + "/building_of_" + id + ".xml");
-            //    textReader.Close();
-            //    Debug.Log("bisa");
-            //    //object obj = deserializer.Deserialize(textReader);
-            //    //PlayerBuildingFromService building = (PlayerBuildingFromService) obj;
-            //    //Debug.Log(building.buildings[0].Name);
-
-            //}
-            //catch (Exception e)
-            //{
-            //    Debug.Log(e);
-            //}
             Application.LoadLevel("BeforeBattle");
         }
 
