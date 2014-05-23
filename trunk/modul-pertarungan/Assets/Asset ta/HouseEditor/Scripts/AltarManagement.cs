@@ -3,22 +3,33 @@ using System.Collections;
 
 public class AltarManagement : MonoBehaviour {
 
+    ModelAltar myAltar;
+    QuantityManagement quantity;
+    bool haveAltar = false;
+    public GameObject Altar;
+    public GameObject AltarExp;
+    public GameObject magicdustQuantity;
+
 	// Use this for initialization
-	void Start () {
-		//getDatabaseAltar;
+    void Start()
+    {
+        myAltar = new ModelAltar();
+        myAltar.getDatabaseBuilding();
+        myAltar.getAltarData();
+        quantity = new QuantityManagement();
+        if (myAltar.Level > 0)
+        {
+            haveAltar = true;
+            var currentPos = this.transform.position;
+            var altar = Instantiate(Altar, currentPos, Quaternion.identity);
+            AltarExp.GetComponent<GUIText>().text = "Level " + myAltar.Level + "\n" + myAltar.ExpAltar + "/" + myAltar.MaxAltarExp;
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		OnClick ();
 	}
-
-	ModelAltar myAltar = new ModelAltar();
-	QuantityManagement quantity = new QuantityManagement();
-	bool haveAltar = false;
-	public GameObject Altar;
-	public GameObject AltarExp;
-	public GameObject magicdustQuantity;
 
 	void OnClick()
 	{
