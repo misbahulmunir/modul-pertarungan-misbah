@@ -26,7 +26,7 @@ namespace ModulPertarungan
             totalDownloadedDocuments = 0;
             result = "";
             loadingText.GetComponent<UILabel>().text = "Loading";
-            totalDocuments = 5;
+            totalDocuments = 6;
             id = GameManager.Instance().PlayerId;
             counter = 0;
             progress = 0;
@@ -36,6 +36,7 @@ namespace ModulPertarungan
             DownloadXMLFile("get_player_trunk");
             DownloadXMLFile("get_friend_list");
             DownloadXMLFile("get_list_avatar");
+            DownloadXMLFile("get_player_avatar");
             Application.LoadLevel("BeforeBattle");
         }
 
@@ -118,6 +119,7 @@ namespace ModulPertarungan
             pathDictionary.Add("get_player_deck", "deck_of_" + id);
             pathDictionary.Add("get_player_trunk", "trunk_of_" + id);
             pathDictionary.Add("get_list_avatar", "list_avatar_of_" + id);
+            pathDictionary.Add("get_player_avatar", "player_avatar_of_" + id);
         }
 
         private void InitUrlDictionary()
@@ -128,6 +130,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_player_deck", "http://cws.yowanda.com/ClientController/2/card/get_cards/deck/" + id);
             urlDictionary.Add("get_player_trunk", "http://cws.yowanda.com/ClientController/2/card/get_cards/trunk/" + id);
             urlDictionary.Add("get_list_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/list/" + id);
+            urlDictionary.Add("get_player_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/player/" + id);
         }
     }
 }
