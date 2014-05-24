@@ -21,9 +21,12 @@ namespace ModulPertarungan
         public List<GameObject> enemyPosition; 
         public GameObject enemyOnlinePosisiton;
 
-       
-
-
+        public void LoadBackground()
+        {
+            factory=new BackgroundFactory();
+            factory.InstantiateObject();
+            factory.CreateBackground("GrassLand");
+        }
         public void LoadPlayer()
         {
             factory = new PlayerFactory();
@@ -35,7 +38,6 @@ namespace ModulPertarungan
             else
             {
                 factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
-
                 if (GameManager.Instance().PartyId != null)
                 {
                     LoadParty();
@@ -105,7 +107,7 @@ namespace ModulPertarungan
             
         }
         void Awake()
-        {
+        {   LoadBackground();
             DisplayedCards = new List<GameObject>();
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             LoadEnemy();

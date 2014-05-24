@@ -273,6 +273,7 @@
      <Compile Include="Assets\script\Command\Invoker.cs" />
      <Compile Include="Assets\script\DownloadFile.cs" />
      <Compile Include="Assets\script\Factory\AbstractFactory.cs" />
+     <Compile Include="Assets\script\Factory\BackgroundFactory.cs" />
      <Compile Include="Assets\script\Factory\CardEffectFactory.cs" />
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Factory\EnemyFactory.cs" />

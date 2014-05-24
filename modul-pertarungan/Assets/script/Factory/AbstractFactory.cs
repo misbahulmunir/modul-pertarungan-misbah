@@ -21,6 +21,11 @@ namespace ModulPertarungan
         {
            
         }
-      
+
+        public virtual void CreateBackground(string backgroundName)
+        {
+
+        }
+
     }
 }
