@@ -39,7 +39,7 @@ namespace ModulPertarungan
             {
                 factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
                 if (GameManager.Instance().PartyId != null)
-                {
+                { 
                     LoadParty();
                 }
             }
@@ -87,7 +87,7 @@ namespace ModulPertarungan
         {
             if (GameManager.Instance().GameMode == "pvp")
             {
-                factory = new OnlineEnemyFanctory();
+                factory = new OnlineEnemyFactory();
                 factory.InstantiateObject();
                 factory.CreatePlayer(
                     GameManager.Instance().PlayerId.ToLower() != NetworkSingleton.Instance().HostPlayer

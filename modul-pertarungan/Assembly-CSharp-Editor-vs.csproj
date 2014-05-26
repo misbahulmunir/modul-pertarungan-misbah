@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -141,31 +141,78 @@
      <Compile Include="Assets\NGUI\Scripts\Editor\UITweenerEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetContainerEditor.cs" />
      <Compile Include="Assets\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionComponentEditor.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionExplorerWindow.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionListRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\AssertionStripper.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\DropDownControl.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByComparerRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByExecutionMethodRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByGORenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByNothingRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\GroupByTestsRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\PropertyPathSelector.cs" />
+     <Compile Include="Assets\UnityTestTools\Assertions\Editor\PropertyResolver.cs" />
+     <Compile Include="Assets\UnityTestTools\Common\Editor\Icons.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\UnitTestExamples\Editor\InheritedTests.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\UnitTestExamples\Editor\NSubstituteDemo.cs" />
+     <Compile Include="Assets\UnityTestTools\Examples\UnitTestExamples\Editor\SampleTests.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\Batch.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\IntegrationTestRunnerRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\IntegrationTestsRunnerWindow.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunner.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\PlatformRunnerSettingsWindow.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\TestComponentEditor.cs" />
+     <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestRunner\Editor\TestManager.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\Batch.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\BackgroundRunner.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\GroupedByHierarchyRenderer.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\GuiHelper.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\ITestRunnerCallback.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\IUnitTestEngine.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\Menus.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\NUnitExtensions.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\NUnitTestEngine.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\TestRunner.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\TestRunnerCallbackList.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\UnitTestInfo.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\UnitTestResult.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\TestRunner\UnitTestView.cs" />
+     <Compile Include="Assets\UnityTestTools\UnitTesting\Editor\UnityUnitTest.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\NGUI\ReadMe - 3.5.3.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_activity_circle_row.xml" />
      <None Include="Assets\NGUI\Examples\Models\Orc\Orc Skin.shader" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Cursor.shader" />
+     <None Include="Assets\UnityTestTools\LICENSE.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditiveBlend.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_top_button.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_search_box.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (SoftClip).shader" />
      <None Include="Assets\Plugins\Android\facebook\res\values-ldpi\dimens.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Additive.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\values\colors.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_friendpickerfragment.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (AlphaClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Masked Colored.shader" />
      <None Include="Assets\Plugins\Android\facebook\bin\proguard.txt" />
+     <None Include="Assets\HOTween\readme.txt" />
      <None Include="Assets\NGUI\Examples\Atlases\Wooden\Arimo18.txt" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Resources\HeightDepthOfField.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_button.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Resources\BlurPassesForDof.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (AlphaClip) .shader" />
      <None Include="Assets\script\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\Fallback.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Header.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (AlphaClip).shader" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_checkbox.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\Multiply.shader" />
      <None Include="Assets\Plugins\Android\facebook\bin\R.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar_stub.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values\strings.xml" />
@@ -173,16 +220,24 @@
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_image.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (AlphaClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text (AlphaClip).shader" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\CharacterSelfIlluminationReflective.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_top_background.xml" />
      <None Include="Assets\XMLFiles\deck_of_agil.xml" />
      <None Include="Assets\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\values-hdpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\facebook\build.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Resources\ColoredNoise.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\PlanarRealtimeReflection.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font (SoftClip).shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\ReflectiveBackgroundPlanar.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_blue.xml" />
      <None Include="Assets\XMLFiles\deck_of_zendra.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\EnemySelfIlluminationReflective.shader" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\AngryInclude.cginc" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Resources\MobileBloom.shader" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleAdditive.shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (SoftClip).shader" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (SoftClip).shader" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector.xml" />
@@ -190,6 +245,7 @@
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_search_bar_layout.xml" />
      <None Include="Assets\Plugins\Android\facebook\bin\AndroidManifest.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Dynamic Font.shader" />
+     <None Include="Assets\UnityTestTools\changelog.txt" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_login_activity_layout.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Text.shader" />
@@ -199,6 +255,8 @@
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_usersettingsfragment_background_gradient.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed).shader" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\LaserScope.shader" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\BackgroundAndCharacters\SuperSimpleSelfIllumination.shader" />
      <None Include="Assets\XMLFiles\player_profile_agil.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment_list_row.xml" />
      <None Include="Assets\XMLFiles\player_profile_zendra.xml" />
@@ -214,6 +272,7 @@
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth.shader" />
      <None Include="Assets\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\values-he\strings.xml" />
+     <None Include="Assets\UnityTestTools\Examples\IntegrationTestsFrameworkExamples\AngryBotsTests\Shaders\Fx\ParticleBlend.shader" />
      <None Include="Assets\Plugins\Android\facebook\AndroidManifest.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-es\strings.xml" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Transparent Colored (SoftClip).shader" />
@@ -230,23 +289,47 @@
  <Reference Include="IFacebook">
  <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
  </Reference>
+ <Reference Include="NSubstitute">
+ <HintPath>Assets\UnityTestTools\UnitTesting\Editor\NSubstitute\NSubstitute.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil">
+ <HintPath>Assets\UnityTestTools\UnitTesting\Editor\NUnit\Libs\Mono.Cecil.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Cecil.Mdb">
+ <HintPath>Assets\UnityTestTools\UnitTesting\Editor\NUnit\Libs\Mono.Cecil.Mdb.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.core">
+ <HintPath>Assets\UnityTestTools\UnitTesting\Editor\NUnit\Libs\nunit.core.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.core.interfaces">
+ <HintPath>Assets\UnityTestTools\UnitTesting\Editor\NUnit\Libs\nunit.core.interfaces.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>Assets\UnityTestTools\UnitTesting\Editor\NUnit\Libs\nunit.framework.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>C:\Program Files\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.iOS.Extensions">
- <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions.dll</HintPath>
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\iPhonePlayer\EditorExtensions\UnityEditor.iOS.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.WP8.Extensions">
- <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\WP8Support\EditorExtensions\UnityEditor.WP8.Extensions.dll</HintPath>
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\WP8Support\EditorExtensions\UnityEditor.WP8.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Metro.Extensions">
- <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\MetroSupport\EditorExtensions\UnityEditor.Metro.Extensions.dll</HintPath>
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\MetroSupport\EditorExtensions\UnityEditor.Metro.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.BB10.Extensions">
- <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions.dll</HintPath>
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\BB10Player\EditorExtensions\UnityEditor.BB10.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Android.Extensions">
- <HintPath>C:\Program Files\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
+ <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="HOTweenV1_Editor">
+ <HintPath>Assets\HOTween\Plugins\Editor\HOTweenV1_Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="HOTween">
+ <HintPath>Assets\HOTween\Plugins\HOTween.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
