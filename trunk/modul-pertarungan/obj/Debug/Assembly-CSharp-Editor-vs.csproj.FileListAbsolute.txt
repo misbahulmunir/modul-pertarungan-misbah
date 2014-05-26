@@ -155,3 +155,10 @@ D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
 D:\[~~TA]\!!!New TA\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
 D:\[~~TA]\!!!New TA\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
 D:\[~~TA]\!!!New TA\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
+D:\ta\modul-pertarungan\Temp\bin\Debug\HOTween.dll
+D:\ta\modul-pertarungan\Temp\bin\Debug\HOTweenV1_Editor.dll
+D:\ta\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+D:\ta\modul-pertarungan\Temp\bin\Debug\NSubstitute.dll
+D:\ta\modul-pertarungan\Temp\bin\Debug\nunit.core.dll
+D:\ta\modul-pertarungan\Temp\bin\Debug\nunit.core.interfaces.dll
+D:\ta\modul-pertarungan\Temp\bin\Debug\HOTween.xml
