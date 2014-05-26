@@ -347,6 +347,8 @@
      <Compile Include="Assets\script\Model From Service\Player Profile\PlayerFromService.cs" />
      <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerRankingFromService.cs" />
      <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerStatsFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Request\PartialProfileFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Request\RequestFromService.cs" />
      <Compile Include="Assets\script\Model\DamageReceiver.cs" />
      <Compile Include="Assets\script\Model\Earth\EarthMonster.cs" />
      <Compile Include="Assets\script\Model\Earth\EarthSlime.cs" />

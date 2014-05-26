@@ -42,6 +42,7 @@ namespace ModulPertarungan
             DownloadXMLFile("get_building");
             DownloadXMLFile("get_battle_rank");
             DownloadXMLFile("get_player_ranking");
+            DownloadXMLFile("get_friend_request");
 
             Application.LoadLevel("BeforeBattle");
         }
