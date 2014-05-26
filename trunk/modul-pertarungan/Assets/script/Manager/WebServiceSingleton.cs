@@ -108,6 +108,7 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_battle_rank", "http://cws.yowanda.com/files/battle_rank_of_");
             fileLocationDictionary.Add("get_player_ranking", "http://cws.yowanda.com/files/player_rank");
             fileLocationDictionary.Add("get_friend_request", "http://cws.yowanda.com/files/friend_request_of_");
+            fileLocationDictionary.Add("get_partial_profile", "http://cws.yowanda.com/files/partial_profile_of_");
         }
 
         private void InitUrlDictionary()
@@ -125,6 +126,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_battle_rank", "http://cws.yowanda.com/ClientController/1/battle/show_battle_rank");
             urlDictionary.Add("get_player_ranking", "http://cws.yowanda.com/ClientController/0/battle/show_player_ranking");
             urlDictionary.Add("get_friend_request", "http://cws.yowanda.com/ClientController/2/request/get_request_list/friend");
+            urlDictionary.Add("get_partial_profile", "http://cws.yowanda.com/ClientController/1/player/get_partial_profile");
         }
 
         private void InitPathDictionary()
@@ -140,6 +142,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_battle_rank", "battle_rank_of_");
             clientPathDictionary.Add("get_player_ranking", "player_rank");
             clientPathDictionary.Add("get_friend_request", "friend_request_of_");
+            clientPathDictionary.Add("get_partial_profile", "partial_profile_of_");
         }
 	}
 }
