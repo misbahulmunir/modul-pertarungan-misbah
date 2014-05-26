@@ -286,6 +286,12 @@
  <Reference Include="IFacebook">
  <HintPath>Assets\Facebook\Scripts\IFacebook.dll</HintPath>
  </Reference>
+ <Reference Include="HOTween">
+ <HintPath>Assets\HOTween\Plugins\HOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="HOTweenV1_Editor">
+ <HintPath>Assets\HOTween\Plugins\Editor\HOTweenV1_Editor.dll</HintPath>
+ </Reference>
  <Reference Include="NSubstitute">
  <HintPath>Assets\UnityTestTools\UnitTesting\Editor\NSubstitute\NSubstitute.dll</HintPath>
  </Reference>
@@ -321,12 +327,6 @@
  </Reference>
  <Reference Include="UnityEditor.Android.Extensions">
  <HintPath>C:\Program Files (x86)\Unity\Editor\Data\PlaybackEngines\AndroidPlayer\EditorExtensions\UnityEditor.Android.Extensions.dll</HintPath>
- </Reference>
- <Reference Include="HOTweenV1_Editor">
- <HintPath>Assets\HOTween\Plugins\Editor\HOTweenV1_Editor.dll</HintPath>
- </Reference>
- <Reference Include="HOTween">
- <HintPath>Assets\HOTween\Plugins\HOTween.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
