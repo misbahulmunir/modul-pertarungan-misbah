@@ -9,6 +9,7 @@ namespace ModulPertarungan
         // Use this for initialization
         private void OnClick()
         {
+            
             Application.LoadLevel("BeforeBattle");
         }
 

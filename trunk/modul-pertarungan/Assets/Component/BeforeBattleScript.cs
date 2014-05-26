@@ -17,7 +17,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-        
+            GameManager.Instance().GameMode = "";
         }
 
         // Update is called once per frame
