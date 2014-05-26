@@ -70,10 +70,22 @@ namespace ModulPertarungan
 
             WebClient webClient = new WebClient();
             string downloadStatus = "";
-            string path = Application.persistentDataPath + "/" + clientPath + parameter + ".xml";
+            string pathOnClient = "";
+
+            if (methodName == "get_player_ranking")
+            {
+                pathOnClient = Application.persistentDataPath + "/" + clientPath + ".xml";
+                fileLocation = fileLocation + ".xml";
+            }
+            else
+            {
+                pathOnClient = Application.persistentDataPath + "/" + clientPath + parameter + ".xml";
+                fileLocation = fileLocation + parameter + ".xml";
+            }
+
             try
             {
-                webClient.DownloadFileAsync(new Uri(fileLocation + parameter + ".xml"), path);
+                webClient.DownloadFileAsync(new Uri(fileLocation), pathOnClient);
                 downloadStatus = "Download Complete";
             }
             catch
@@ -94,6 +106,7 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_player_avatar", "http://cws.yowanda.com/files/player_avatar_of_");
             fileLocationDictionary.Add("get_building", "http://cws.yowanda.com/files/building_of_");
             fileLocationDictionary.Add("get_battle_rank", "http://cws.yowanda.com/files/battle_rank_of_");
+            fileLocationDictionary.Add("get_player_ranking", "http://cws.yowanda.com/files/player_rank");
         }
 
         private void InitUrlDictionary()
@@ -109,6 +122,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_player_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/player");
             urlDictionary.Add("get_building", "http://cws.yowanda.com/ClientController/1/building/get_building");
             urlDictionary.Add("get_battle_rank", "http://cws.yowanda.com/ClientController/1/battle/show_battle_rank");
+            urlDictionary.Add("get_player_ranking", "http://cws.yowanda.com/ClientController/0/battle/show_player_ranking");
         }
 
         private void InitPathDictionary()
@@ -122,6 +136,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_player_avatar", "player_avatar_of_");
             clientPathDictionary.Add("get_building", "building_of_");
             clientPathDictionary.Add("get_battle_rank", "battle_rank_of_");
+            clientPathDictionary.Add("get_player_ranking", "player_rank");
         }
 	}
 }

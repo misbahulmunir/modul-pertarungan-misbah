@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using System.Xml.Serialization;
+using System.IO;
+using System;
 
 namespace ModulPertarungan
 {
@@ -9,9 +12,7 @@ namespace ModulPertarungan
 
         public List<GameObject> enemies;
         void OnClick()
-        {
-          
-               
+        {             
               Application.LoadLevel("Battle");
                 //Application.LoadLevel("ContinentDungeon");
         }

@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -340,11 +340,13 @@
      <Compile Include="Assets\script\Manager\PlayerEditorManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
-     <Compile Include="Assets\script\Model From Service\BattleRankFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\BuildingFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\EnemyPlayerFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\PlayerBuildingFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\PlayerFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Battle Rank\BattleRankFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Battle Rank\EnemyPlayerFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Building\BuildingFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Building\PlayerBuildingFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Player Profile\PlayerFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerRankingFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerStatsFromService.cs" />
      <Compile Include="Assets\script\Model\DamageReceiver.cs" />
      <Compile Include="Assets\script\Model\Earth\EarthMonster.cs" />
      <Compile Include="Assets\script\Model\Earth\EarthSlime.cs" />

@@ -162,3 +162,10 @@ D:\ta\modul-pertarungan\Temp\bin\Debug\NSubstitute.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\nunit.core.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\nunit.core.interfaces.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\HOTween.xml
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\HOTween.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\HOTweenV1_Editor.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\NSubstitute.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\nunit.core.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\nunit.core.interfaces.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\HOTween.xml
