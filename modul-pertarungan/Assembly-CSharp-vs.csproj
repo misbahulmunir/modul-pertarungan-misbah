@@ -324,7 +324,6 @@
      <Compile Include="Assets\script\Factory\CardFactory.cs" />
      <Compile Include="Assets\script\Factory\EnemyFactory.cs" />
      <Compile Include="Assets\script\Factory\OnlineEnemyFactory.cs" />
-     <Compile Include="Assets\script\Factory\OnlineEnemyFanctory.cs" />
      <Compile Include="Assets\script\Factory\PlayerFactory.cs" />
      <Compile Include="Assets\script\GUI\CardManagerGuiHandler.cs" />
      <Compile Include="Assets\script\GUI\GuiDeckSize.cs" />
