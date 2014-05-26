@@ -40,6 +40,7 @@ namespace ModulPertarungan
             DownloadXMLFile("get_list_avatar");
             DownloadXMLFile("get_player_avatar");
             DownloadXMLFile("get_building");
+            DownloadXMLFile("get_battle_rank");
 
             Application.LoadLevel("BeforeBattle");
         }
@@ -125,6 +126,7 @@ namespace ModulPertarungan
             pathDictionary.Add("get_list_avatar", "list_avatar_of_" + id);
             pathDictionary.Add("get_player_avatar", "player_avatar_of_" + id);
             pathDictionary.Add("get_building", "building_of_" + id);
+            pathDictionary.Add("get_battle_rank", "battle_rank_of_" + id);
         }
 
         private void InitUrlDictionary()
@@ -137,6 +139,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_list_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/list/" + id);
             urlDictionary.Add("get_player_avatar", "http://cws.yowanda.com/ClientController/2/avatar/get_avatar/player/" + id);
             urlDictionary.Add("get_building", "http://cws.yowanda.com/ClientController/1/building/get_building/" + id);
+            urlDictionary.Add("get_battle_rank", "http://cws.yowanda.com/ClientController/1/battle/show_battle_rank/" + id);
         }
     }
 }
