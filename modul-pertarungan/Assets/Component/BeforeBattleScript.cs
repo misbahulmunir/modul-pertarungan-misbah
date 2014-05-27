@@ -30,8 +30,8 @@ namespace ModulPertarungan
             //{
             //    Debug.Log(e);
             //}
-              Application.LoadLevel("Battle");
-                //Application.LoadLevel("ContinentDungeon");
+              //Application.LoadLevel("Battle");
+            Application.LoadLevel("ContinentDungeon");
         }
         void Start()
         {
