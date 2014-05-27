@@ -134,3 +134,5 @@ D:\ta\modul-pertarungan\Temp\bin\Debug\HOTween.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\HOTween.xml
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\HOTween.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\HOTween.xml
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\HOTween.dll
+D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\HOTween.xml

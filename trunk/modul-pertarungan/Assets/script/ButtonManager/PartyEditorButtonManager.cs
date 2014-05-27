@@ -53,5 +53,18 @@ namespace ModulPertarungan
             }
             Application.LoadLevel("BeforeBattle");
         }
+
+        void OnClick()
+        {
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (hit.collider != null)
+                {
+                    GameObject obj = hit.collider.gameObject as GameObject;
+                    Debug.Log(obj.name);
+                }
+            }
+        }
     }
 }
