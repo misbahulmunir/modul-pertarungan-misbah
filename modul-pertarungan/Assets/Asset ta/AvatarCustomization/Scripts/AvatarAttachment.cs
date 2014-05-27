@@ -194,11 +194,9 @@ public class AvatarAttachment : MonoBehaviour {
                 }
                 else if (hit.collider.gameObject.name.ToLower().Contains("savebutton"))
                 {
-                    WebClient client = new WebClient();
-                    string result = client.DownloadString("http://cws.yowanda.com/ClientController/4/avatar/edit_avatar/" + playerName + "/" + avatarList[0] + "/" + avatarList[1] + "/" + avatarList[2]);
-                    Debug.Log(result);
+                    WebServiceSingleton.GetInstance().ProcessRequest("edit_avatar", playerName + "|" + avatarList[0] + "-" + avatarList[1] + "-" + avatarList[2]);
+                    Debug.Log(WebServiceSingleton.GetInstance().queryInfo);
                     WebServiceSingleton.GetInstance().ProcessRequest("get_player_avatar", playerName);
-                    //WebServiceSingleton.GetInstance().DownloadFile("get_player_avatar", playerName);
                     Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_avatar", playerName));
                 }
             }
