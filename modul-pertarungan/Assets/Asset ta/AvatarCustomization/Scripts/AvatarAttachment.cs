@@ -6,6 +6,7 @@ using System;
 using System.IO;
 using System.Xml;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 public class AvatarAttachment : MonoBehaviour {
 
@@ -43,18 +44,22 @@ public class AvatarAttachment : MonoBehaviour {
 
     void getDatabaseAvatar()
     {
-        string path = Application.persistentDataPath + "/" + "player_avatar_of_" + playerName + ".xml";
-
-        TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + "player_avatar_of_" + playerName + ".xml");
-        Debug.Log(Application.persistentDataPath + "/" + "player_avatar_of_" + playerName + ".xml");
-        _xmlDoc.Load(textReader);
-        _nameNodes = _xmlDoc.GetElementsByTagName("Name");
-
-        //Debug.Log("Method Name : " + method);
-        for (int i = 0; i < _nameNodes.Count; i++)
+        try
         {
-            avatarList.Add(_nameNodes[i].InnerXml);
-            Debug.Log("type : " + _nameNodes[i].InnerXml);
+            XmlSerializer deserializer = new XmlSerializer(typeof(AvatarFromService));
+            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_avatar_of_" + GameManager.Instance().PlayerId + ".xml");
+            object obj = deserializer.Deserialize(textReader);
+            var avi = (AvatarFromService)obj;
+            foreach (var s in avi.aviDetail)
+            {
+                avatarList.Add(s.Name);
+                Debug.Log(s.Name);
+            }
+            textReader.Close();
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
         }
     }
 
