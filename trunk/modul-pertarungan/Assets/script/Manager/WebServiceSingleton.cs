@@ -127,7 +127,9 @@ namespace ModulPertarungan
             urlDictionary.Add("get_player_ranking", "http://cws.yowanda.com/ClientController/0/battle/show_player_ranking");
             urlDictionary.Add("get_friend_request", "http://cws.yowanda.com/ClientController/2/request/get_request_list/friend");
             urlDictionary.Add("get_partial_profile", "http://cws.yowanda.com/ClientController/1/player/get_partial_profile");
-            urlDictionary.Add("send_friend_request", "http://cws.yowanda.com/ClientController/4/request/do_request/send/friend");
+            urlDictionary.Add("send_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/send-friend");
+            urlDictionary.Add("edit_avatar", "http://cws.yowanda.com/ClientController/2/avatar/edit_avatar");
+            urlDictionary.Add("update_building", "http://cws.yowanda.com/ClientController/3/building/update_building");
         }
 
         private void InitPathDictionary()
