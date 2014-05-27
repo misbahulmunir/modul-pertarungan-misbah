@@ -12,22 +12,26 @@ namespace ModulPertarungan
         public UIPopupList current;
         public UILabel win;
         public UILabel lose;
+        public GameObject grid;
+        public GameObject label;
         // Use this for initialization
         private List<EnemyPlayerFromService> opponentList;
+       
         private void Start()
         {
+            GenerateRooster();
             GetOpponentsName();
         }
 
         // Update is called once per frame
         private void Update()
         {
-
+            grid.GetComponent<UIGrid>().Reposition();
         }
 
         public void NotifyManager()
         {
-            if (current != null&&current.value!=null)
+            if (current != null&&opponentList!=null)
             {
                 var op= opponentList.Find(item => item.Name.Equals(current.value));
                 win.text = op.Win.ToString();
@@ -57,6 +61,30 @@ namespace ModulPertarungan
             {
                 Debug.Log(e);
             }
+        }
+
+        public void GenerateRooster()
+        {
+            try
+            {
+                XmlSerializer deserializer = new XmlSerializer(typeof(PlayerRankingFromService));
+                TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_rank.xml");
+                object obj = deserializer.Deserialize(textReader);
+                var Opponents = (PlayerRankingFromService)obj;
+                textReader.Close();
+                current.items = new List<string>();
+                opponentList = new List<EnemyPlayerFromService>();
+                foreach (var op in Opponents.playerDetail)
+                {
+                    label.GetComponent<UILabel>().text = op.Name + " Battle Won =" + op.BattleWon;
+                    NGUITools.AddChild(grid, label);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
+            
         }
     }
 }
