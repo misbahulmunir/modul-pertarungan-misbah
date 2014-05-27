@@ -97,12 +97,14 @@ namespace ModulPertarungan
             }
             else
             {
-                foreach (GameObject t in enemyPosition)
-                { 
+                //foreach (GameObject t in enemyPosition)
+                //{ 
                     factory= new EnemyFactory();
                     factory.InstantiateObject();
-                    factory.CreateEnemy("FireDragon",t);
-                }
+                    factory.CreateEnemy("EarthSlime", enemyPosition[0]);
+                    factory.CreateEnemy("FireDragon", enemyPosition[1]);
+                    
+                //}
             }
             
         }
