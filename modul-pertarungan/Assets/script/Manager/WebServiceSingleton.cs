@@ -128,6 +128,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_friend_request", "http://cws.yowanda.com/ClientController/2/request/get_request_list/friend");
             urlDictionary.Add("get_partial_profile", "http://cws.yowanda.com/ClientController/1/player/get_partial_profile");
             urlDictionary.Add("send_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/send-friend");
+            urlDictionary.Add("accept_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/accept-friend");
             urlDictionary.Add("edit_avatar", "http://cws.yowanda.com/ClientController/2/avatar/edit_avatar");
             urlDictionary.Add("update_building", "http://cws.yowanda.com/ClientController/3/building/update_building");
         }
