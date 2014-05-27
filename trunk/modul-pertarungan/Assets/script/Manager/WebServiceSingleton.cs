@@ -17,6 +17,7 @@ namespace ModulPertarungan
         public string responseFromServer = "";
         public string queryInfo = "";
         public int queryResult = 0;
+        public bool isLoadingScreen = false;
         private Dictionary<string, string> fileLocationDictionary;
         private Dictionary<string, string> urlDictionary;
         private Dictionary<string, string> clientPathDictionary;
@@ -85,7 +86,14 @@ namespace ModulPertarungan
 
             try
             {
-                webClient.DownloadFileAsync(new Uri(fileLocation), pathOnClient);
+                if (isLoadingScreen)
+                {
+                    webClient.DownloadFileAsync(new Uri(fileLocation), pathOnClient);
+                }
+                else
+                {
+                    webClient.DownloadFile(new Uri(fileLocation), pathOnClient);
+                }
                 downloadStatus = "Download Complete";
             }
             catch
@@ -132,6 +140,7 @@ namespace ModulPertarungan
             urlDictionary.Add("edit_avatar", "http://cws.yowanda.com/ClientController/2/avatar/edit_avatar");
             urlDictionary.Add("update_building", "http://cws.yowanda.com/ClientController/3/building/update_building");
             urlDictionary.Add("ignore_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/ignore-friend");
+            urlDictionary.Add("remove_friend", "http://cws.yowanda.com/ClientController/2/player/remove_friend");
         }
 
         private void InitPathDictionary()
