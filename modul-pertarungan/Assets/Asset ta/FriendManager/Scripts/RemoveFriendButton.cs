@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IgnoreFriendButton : MonoBehaviour {
+public class RemoveFriendButton : MonoBehaviour {
 
     string[] nama;
     public GameObject manager;
@@ -13,13 +13,13 @@ public class IgnoreFriendButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	
 	}
 
     void OnClick()
     {
 
-        nama = gameObject.transform.parent.name.Split('_');
-        //WebServiceSingleton.GetInstance().ProcessRequest("accept_friend_request", GameManager.Instance().PlayerId + "|" + nama[0]);
+        nama = gameObject.name.Split('_');
 
         manager = GameObject.Find("FriendManagementClickManager");
         manager.SendMessage(this.methodName, nama[0]);

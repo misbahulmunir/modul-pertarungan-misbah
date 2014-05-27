@@ -59,6 +59,7 @@
      <Compile Include="Assets\Asset ta\FriendManager\Scripts\AcceptFriendButton.cs" />
      <Compile Include="Assets\Asset ta\FriendManager\Scripts\FriendClickManager.cs" />
      <Compile Include="Assets\Asset ta\FriendManager\Scripts\IgnoreFriendButton.cs" />
+     <Compile Include="Assets\Asset ta\FriendManager\Scripts\RemoveFriendButton.cs" />
      <Compile Include="Assets\Asset ta\FriendManager\Scripts\ViewRequestButton.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AddBuildingMenu.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AltarManagement.cs" />

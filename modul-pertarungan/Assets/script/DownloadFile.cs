@@ -33,6 +33,8 @@ namespace ModulPertarungan
             counter = 0;
             progress = 0;
 
+            WebServiceSingleton.GetInstance().isLoadingScreen = true;
+
             DownloadXMLFile("get_profile");
             DownloadXMLFile("get_player_deck");
             DownloadXMLFile("get_player_trunk");
@@ -44,6 +46,7 @@ namespace ModulPertarungan
             DownloadXMLFile("get_player_ranking");
             DownloadXMLFile("get_friend_request");
 
+            WebServiceSingleton.GetInstance().isLoadingScreen = true;
             Application.LoadLevel("BeforeBattle");
         }
 
