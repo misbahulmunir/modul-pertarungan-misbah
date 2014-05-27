@@ -35,7 +35,11 @@ public class AddBuildingMenu : MonoBehaviour {
 				if (hit.collider.gameObject.name.ToLower().Contains("buttonavatar"))
 				{
 					Application.LoadLevel("AvatarCostumization");
-				}
+				}else
+                    if (hit.collider.gameObject.name.ToLower().Contains("buttonmyfriend"))
+                {
+                    Application.LoadLevel("FriendManagementNew");
+                }
 				if (!hit.collider.gameObject.name.ToLower().Contains("buttonadd"))
 				{
 					Destroy(subMenu);
