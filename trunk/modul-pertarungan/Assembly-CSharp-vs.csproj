@@ -347,6 +347,7 @@
      <Compile Include="Assets\script\Model From Service\Battle Rank\EnemyPlayerFromService.cs" />
      <Compile Include="Assets\script\Model From Service\Building\BuildingFromService.cs" />
      <Compile Include="Assets\script\Model From Service\Building\PlayerBuildingFromService.cs" />
+     <Compile Include="Assets\script\Model From Service\Friends\FriendListFromService.cs" />
      <Compile Include="Assets\script\Model From Service\Player Profile\PlayerFromService.cs" />
      <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerRankingFromService.cs" />
      <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerStatsFromService.cs" />
