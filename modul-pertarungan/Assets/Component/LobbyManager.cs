@@ -29,7 +29,7 @@ namespace ModulPertarungan
                 string[] message = serverMessage.Split('-');
                 foreach (string m in message)
                 {
-                    if (m != "RoomList")
+                    if (m != "RoomList"&&m!="")
                     {
                         foreach (Transform t in roomButton.transform)
                         {
@@ -46,8 +46,9 @@ namespace ModulPertarungan
             }
             else if (serverMessage.Contains("JoinedRoom"))
             {
-                Application.LoadLevel("WaitingRoom");
                 NetworkSingleton.Instance().ServerMessage = "";
+                Application.LoadLevel("WaitingRoom");
+               
             }
             grid.GetComponent<UIGrid>().Reposition();
         }
