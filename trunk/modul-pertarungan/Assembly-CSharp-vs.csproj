@@ -56,7 +56,10 @@
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\BackFBButtonScript.cs" />
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\ButtonHandler.cs" />
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\FacebookHandler.cs" />
+     <Compile Include="Assets\Asset ta\FriendManager\Scripts\AcceptFriendButton.cs" />
      <Compile Include="Assets\Asset ta\FriendManager\Scripts\FriendClickManager.cs" />
+     <Compile Include="Assets\Asset ta\FriendManager\Scripts\IgnoreFriendButton.cs" />
+     <Compile Include="Assets\Asset ta\FriendManager\Scripts\ViewRequestButton.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AddBuildingMenu.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AltarManagement.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\BuildingClickManagement.cs" />

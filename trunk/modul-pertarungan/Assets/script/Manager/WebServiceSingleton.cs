@@ -131,6 +131,7 @@ namespace ModulPertarungan
             urlDictionary.Add("accept_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/accept-friend");
             urlDictionary.Add("edit_avatar", "http://cws.yowanda.com/ClientController/2/avatar/edit_avatar");
             urlDictionary.Add("update_building", "http://cws.yowanda.com/ClientController/3/building/update_building");
+            urlDictionary.Add("ignore_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/ignore-friend");
         }
 
         private void InitPathDictionary()
@@ -147,6 +148,14 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_player_ranking", "player_rank");
             clientPathDictionary.Add("get_friend_request", "friend_request_of_");
             clientPathDictionary.Add("get_partial_profile", "partial_profile_of_");
+        }
+
+        public void clearData(string path)
+        {
+            if(Directory.Exists(Path.GetDirectoryName(path)))
+            {
+                File.Delete(path);
+            }
         }
 	}
 }

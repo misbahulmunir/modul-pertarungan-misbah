@@ -45,3 +45,5 @@ EditorBuildSettings:
     path: Assets/Scene/MapDungeon.unity
   - enabled: 1
     path: Assets/Scene/PVPRecord.unity
+  - enabled: 1
+    path: Assets/Scene/FriendManagementNew.unity
