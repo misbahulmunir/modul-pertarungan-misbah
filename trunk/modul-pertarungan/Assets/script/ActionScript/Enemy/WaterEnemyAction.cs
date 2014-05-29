@@ -8,9 +8,6 @@ namespace ModelModulPertarungan
 {
 	public class WaterEnemyAction:EnemyAction
 	{
-	    public override void ReceiveDamage(int damage)
-	    {
-	        base.ReceiveDamage(damage);
-	    }
+	   
 	}
 }

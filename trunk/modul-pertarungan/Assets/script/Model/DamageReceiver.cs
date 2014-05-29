@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ModulPertarungan;
+
 namespace ModelModulPertarungan
 {
-    public abstract class DamageReceiver
+    public abstract class DamageReceiver:VisitableObject
     {
         private int maxHealth;
-
+       
         public int MaxHealth
         {
             get { return maxHealth; }
@@ -21,10 +23,11 @@ namespace ModelModulPertarungan
             set { currentHealth = value; }
         }
 
+        private string element;
 
         public void ReceiveDamage(int MaxHealth, int Damage)
         {
-
+            
 
         }
 
@@ -34,6 +37,12 @@ namespace ModelModulPertarungan
         {
             get { return name; }
             set { name = value; }
+        }
+
+        public string Element
+        {
+            get { return element; }
+            set { element = value; }
         }
 
         public DamageReceiver(int MaxHealth)

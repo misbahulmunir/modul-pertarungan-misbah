@@ -8,5 +8,6 @@ namespace ModelModulPertarungan
 {
 	public class  FireCard:CardsEffect
 	{
+
 	}
 }

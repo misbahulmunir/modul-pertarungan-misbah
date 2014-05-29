@@ -16,7 +16,7 @@ namespace ModulPertarungan
                 GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(player.transform.position.x, player.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.renderer.sortingLayerName = "foreground";
                 animation.particleEmitter.emit = true;
-                player.GetComponent<DamageReceiverAction>().ReceiveDamage(10);
+                player.GetComponent<DamageReceiverAction>().ReceiveDamage(player.GetComponent<DamageReceiverAction>().Character,new FireCard(), 10);
          
             }
             GameManager.Instance().KillObj("player");
@@ -33,14 +33,14 @@ namespace ModulPertarungan
         {
             
         }
-        public override void ReceiveDamage(int damage)
+        public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
-            base.ReceiveDamage( damage);
+            base.ReceiveDamage(damageReceiver, damageGiver, damage);
             if (this.firedragon.CurrentHealth <= 0)
             {
                 Destroy(this.gameObject);
             }
-           
+
             Debug.Log(GameManager.Instance().Enemies.Count);
         }
     }

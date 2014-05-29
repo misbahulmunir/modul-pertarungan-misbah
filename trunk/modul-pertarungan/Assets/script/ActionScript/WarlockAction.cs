@@ -35,18 +35,18 @@ namespace ModulPertarungan
         {
            
         }
-       
 
 
-        public override void ReceiveDamage(int damage)
+
+        public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
-            base.ReceiveDamage(damage);
+            base.ReceiveDamage(damageReceiver, damageGiver, damage);
             if (this.Character.CurrentHealth <= 0)
             {
                 GameManager.Instance().CurrentPawn = null;
                 Destroy(this.gameObject);
             }
-           
+
         }
     }
 }
