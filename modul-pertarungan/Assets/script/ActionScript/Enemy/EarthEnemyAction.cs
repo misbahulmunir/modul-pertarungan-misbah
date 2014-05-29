@@ -7,9 +7,6 @@ namespace ModulPertarungan
 {
 	public class EarthEnemyAction:EnemyAction
 	{
-	    public override void ReceiveDamage(int damage)
-	    {
-	        base.ReceiveDamage(damage);
-	    }
+	    
 	}
 }

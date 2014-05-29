@@ -37,7 +37,7 @@ namespace ModulPertarungan
                         animation.renderer.sortingLayerName = "foreground";
                         animation.particleEmitter.emit = true;
                     }
-                    obj.GetComponent<DamageReceiverAction>().ReceiveDamage(50);
+                    obj.GetComponent<DamageReceiverAction>().ReceiveDamage(obj.GetComponent<DamageReceiverAction>().Character,this,50);
                 }
                 GameManager.Instance().KillObj(Target);
             }

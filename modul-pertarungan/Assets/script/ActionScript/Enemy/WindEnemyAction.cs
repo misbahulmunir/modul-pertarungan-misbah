@@ -7,9 +7,6 @@ namespace ModulPertarungan
 {
 	public class WindEnemyAction:EnemyAction
 	{
-	    public override void ReceiveDamage(int damage)
-	    {
-	        base.ReceiveDamage(damage);
-	    }
+	    
 	}
 }

@@ -284,8 +284,12 @@
      <Compile Include="Assets\UnityTestTools\IntegrationTestsFramework\TestingAssets\CallTesting.cs" />
      <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Earth\EarthSlimeScript.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\EarthEnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Fire\FireDragonScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\FireEnemyAction.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\ThunderEnemyAction.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\WaterEnemyAction.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\WindEnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\GrandMagusAction.cs" />
      <Compile Include="Assets\script\ActionScript\HealthBarAction.cs" />
@@ -300,6 +304,7 @@
      <Compile Include="Assets\script\ButtonManager\WaitingRoomButtonManager.cs" />
      <Compile Include="Assets\script\CardAction\CardEffect.cs" />
      <Compile Include="Assets\script\CardAction\Deck.cs" />
+     <Compile Include="Assets\script\CardAction\EarthCard.cs" />
      <Compile Include="Assets\script\CardAction\FireCard.cs" />
      <Compile Include="Assets\script\CardAction\FireStorm.cs" />
      <Compile Include="Assets\script\CardAction\HealingCard.cs" />
@@ -311,6 +316,7 @@
      <Compile Include="Assets\script\CardAction\HealingWave50.cs" />
      <Compile Include="Assets\script\CardAction\NormalCard.cs" />
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
+     <Compile Include="Assets\script\CardAction\ThunderCard.cs" />
      <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
      <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
      <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
@@ -371,6 +377,7 @@
      <Compile Include="Assets\script\Model\Player\Warlock.cs" />
      <Compile Include="Assets\script\Model\Player\Wizard.cs" />
      <Compile Include="Assets\script\Model\Thunder\ThunderMonster.cs" />
+     <Compile Include="Assets\script\Model\VisitableObject.cs" />
      <Compile Include="Assets\script\Model\Water\WaterMonster.cs" />
      <Compile Include="Assets\script\Model\Wind\WindMonster.cs" />
      <Compile Include="Assets\script\Network\GetMessageFromServer.cs" />
@@ -393,6 +400,12 @@
      <Compile Include="Assets\script\TileMap\ButtonQuest.cs" />
      <Compile Include="Assets\script\TileMap\Map.cs" />
      <Compile Include="Assets\script\TileMap\TileMap.cs" />
+     <Compile Include="Assets\script\visitor\VisitEarthElement.cs" />
+     <Compile Include="Assets\script\visitor\VisitFireElement.cs" />
+     <Compile Include="Assets\script\visitor\VisitThunderElement.cs" />
+     <Compile Include="Assets\script\visitor\VisitWIndElement.cs" />
+     <Compile Include="Assets\script\visitor\VisitWaterElement.cs" />
+     <Compile Include="Assets\script\visitor\Visitor.cs" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\Plugins\Android\facebook\res\values\attrs.xml" />
      <None Include="Assets\NGUI\ReadMe - 3.5.3.txt" />

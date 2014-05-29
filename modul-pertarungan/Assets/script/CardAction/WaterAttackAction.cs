@@ -36,7 +36,7 @@ namespace ModulPertarungan
                 GameObject animation = Instantiate(GameObject.Find("WaterFall"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.renderer.sortingLayerName = "foreground";
                 animation.particleEmitter.emit = true;
-                obj.GetComponent<DamageReceiverAction>().ReceiveDamage(10);
+                obj.GetComponent<DamageReceiverAction>().ReceiveDamage(obj.GetComponent<DamageReceiverAction>().Character, this, 10);
             }
             GameManager.Instance().KillObj(Target);
         }

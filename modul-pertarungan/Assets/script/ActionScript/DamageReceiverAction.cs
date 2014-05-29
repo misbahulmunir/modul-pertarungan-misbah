@@ -30,17 +30,35 @@ namespace ModulPertarungan
             set { _currenState = value; }
         }
 
-	    public virtual void ReceiveDamage(int damage)
-        {
-            if ((character.CurrentHealth - damage)<=0)
-            {
-                character.CurrentHealth = 0;
-            }
-            else
-            {
-                character.CurrentHealth -= damage;
-            }
-           
-        }
+	    private List<Visitor> visitors;
+	    private List<DamageReceiver> damageReceivers;
+
+	    public void Instantiate()
+	    {
+	        visitors= new List<Visitor>();
+            visitors.Add(new visitWaterElement());
+            visitors.Add(new VisitEarthElement());
+            visitors.Add(new VisitThunderElement());
+            visitors.Add(new VisitFireElement());
+            visitors.Add(new VisitFireElement());
+            damageReceivers= new List<DamageReceiver>();
+	    }
+	    public virtual void ReceiveDamage(DamageReceiver damageReceiver,CardsEffect damageGiver,int damage)
+	    {
+	        Instantiate();
+	        foreach (var visit in visitors)
+	        {
+	            damageReceiver.AcceptVisitor(visit,damageGiver,damage);
+	        }
+	        //if ((character.CurrentHealth - damage)<=0)
+	        //{
+	        //    character.CurrentHealth = 0;
+	        //}
+	        //else
+	        //{
+	        //    character.CurrentHealth -= damage;
+	        //}
+
+	    }
 	}
 }
