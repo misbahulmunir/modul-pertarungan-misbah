@@ -5,7 +5,7 @@ using ModelModulPertarungan;
 
 namespace ModulPertarungan
 {
-    public class EarthSlimeScript : EnemyAction
+    public class EarthSlimeScript : EarthEnemyAction
     {
         private EarthSlime earthslime;
         // Use this for initialization
