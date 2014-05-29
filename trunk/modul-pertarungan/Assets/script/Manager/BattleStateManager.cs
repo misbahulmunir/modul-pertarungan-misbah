@@ -143,17 +143,22 @@ namespace ModulPertarungan
             }
         }
 
-        // Update is called once per frame
-        void Update()
-        {
 
-           // DrawCursor();
-            EndPlayerTurn();
-            SelectPawn();
-            SelectEnemy();
-            CheckWinorLose();
-            GameManager.Instance().BattleState = currentstate;
+        // Update is called once per frame
+        private void Update()
+        {
+            // DrawCursor();
+            if (!GameManager.Instance().PauseGame)
+            {
+                EndPlayerTurn();
+                SelectPawn();
+                SelectEnemy();
+                CheckWinorLose();
+                GameManager.Instance().BattleState = currentstate;
+            }
+
         }
+    
         void OnGUI()
         {
             if (!(currentstate is CardExcutionState)) return;

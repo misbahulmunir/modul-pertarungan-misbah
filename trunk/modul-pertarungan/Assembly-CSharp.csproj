@@ -285,6 +285,7 @@
      <Compile Include="Assets\script\ActionScript\DamageReceiverAction.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Earth\EarthSlimeScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Fire\FireDragonScript.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\FireEnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\EnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\GrandMagusAction.cs" />
      <Compile Include="Assets\script\ActionScript\HealthBarAction.cs" />

@@ -117,8 +117,15 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            
 
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                GameManager.Instance().PauseGame = false;
+            }
+            else
+            {
+                GameManager.instance.PauseGame = false;
+            }
         }
 
         // Update is called once per frame
@@ -128,6 +135,6 @@ namespace ModulPertarungan
             //State Pattern untuk battle
         }
 
-
+       
     }
 }

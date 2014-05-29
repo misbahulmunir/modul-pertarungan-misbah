@@ -35,6 +35,8 @@ namespace ModulPertarungan
             get { return gameMode; }
             set { gameMode = value; }
         }
+
+        private bool pauseGame;
       
 
        
@@ -115,6 +117,12 @@ namespace ModulPertarungan
         {
             get { return currentEnemy; }
             set { currentEnemy = value; }
+        }
+
+        public bool PauseGame
+        {
+            get { return pauseGame; }
+            set { pauseGame = value; }
         }
 
         public static GameManager instance;
