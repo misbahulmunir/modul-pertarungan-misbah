@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using ModelModulPertarungan;
 namespace ModulPertarungan
 {
-    public class FireDragonScript : EnemyAction
+    public class FireDragonScript : FireEnemyAction
     {
         private FireDragon firedragon;
         // Use this for initialization

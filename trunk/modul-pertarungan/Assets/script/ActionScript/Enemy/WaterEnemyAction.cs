@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using  UnityEngine;
-namespace ModulPertarungan
+using ModulPertarungan;
+
+namespace ModelModulPertarungan
 {
-	public class FireEnemyAction:EnemyAction
+	public class WaterEnemyAction:EnemyAction
 	{
 	    public override void ReceiveDamage(int damage)
 	    {
