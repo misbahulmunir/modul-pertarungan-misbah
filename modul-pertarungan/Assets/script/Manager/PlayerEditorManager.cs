@@ -24,7 +24,7 @@ namespace ModulPertarungan
         void Start()
         {
             playerAvatar.GetComponent<Avatar>().PlayerName = GameManager.Instance().PlayerId;
-            GetFriendList(GameManager.Instance().PlayerId);
+            GetAvatarList(GameManager.Instance().PlayerId);
             foreach (string s in friendList)
             {
                 Debug.Log("nama : " + s);
@@ -34,7 +34,7 @@ namespace ModulPertarungan
 
         }
 
-        public void GetFriendList(string id)
+        public void GetAvatarList(string id)
         {
             friendList = new List<string>();
             xmlFromServer = new XmlDocument();
