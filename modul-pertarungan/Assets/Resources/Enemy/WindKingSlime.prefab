@@ -14,7 +14,7 @@ GameObject:
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   m_Layer: 0
-  m_Name: WindKingScript
+  m_Name: WindKingSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
