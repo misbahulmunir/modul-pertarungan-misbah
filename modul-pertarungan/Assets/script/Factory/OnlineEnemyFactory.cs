@@ -54,11 +54,15 @@ namespace ModulPertarungan
             character.Rank = playerFromService.Rank;
             character.Job = playerFromService.Job;
             var obj = Object.Instantiate((GameObject)Resources.Load("Character/" + character.Job + "/" + "GameObject" + "/" + character.Rank, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
-            obj.GetComponent<PlayerAction>().Character = character;
-            GameManager.Instance().AddEnemy(obj);
-            GameManager.Instance().CurrentEnemy = obj;
-            obj.GetComponent<PlayerAction>().IsEnemy = true;
-            
+            if (obj != null)
+            {
+                obj.transform.Rotate(new Vector3(0f, 180f, 0f));
+                obj.GetComponent<PlayerAction>().Character = character;
+                GameManager.Instance().AddEnemy(obj);
+                GameManager.Instance().CurrentEnemy = obj;
+                obj.GetComponent<PlayerAction>().IsEnemy = true;
+            }
+
             //Debug.Log(GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
 
         }

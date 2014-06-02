@@ -7,6 +7,7 @@ namespace ModulPertarungan
 {
 	public class NetworkSingleton
 	{
+	    private int chance;
 
         private string hostPlayer;
 
@@ -78,7 +79,14 @@ namespace ModulPertarungan
             get { return playerClient; }
             set { playerClient = value; }
         }
-        public  static NetworkSingleton instance;
+
+	    public int Chance
+	    {
+	        get { return chance; }
+	        set { chance = value; }
+	    }
+
+	    public  static NetworkSingleton instance;
         public static NetworkSingleton Instance()
         {
             if (instance == null)

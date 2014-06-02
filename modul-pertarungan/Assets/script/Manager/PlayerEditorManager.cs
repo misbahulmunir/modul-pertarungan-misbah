@@ -17,7 +17,7 @@ namespace ModulPertarungan
         private List<string> friendList;
         void Update()
         {
-
+           
         }
 
 
@@ -31,7 +31,7 @@ namespace ModulPertarungan
                 GameObject obj = NGUITools.AddChild(grid, avatar);
                 obj.GetComponent<Avatar>().PlayerName = s;
             }
-
+            grid.GetComponent<UIGrid>().Reposition();
         }
 
         public void GetAvatarList(string id)
@@ -45,7 +45,9 @@ namespace ModulPertarungan
             for (int i = 0; i < attributeNodes.Count; i++)
             {
                 friendList.Add(attributeNodes[i].InnerXml);
+               
             }
+            
         }
     }
 }

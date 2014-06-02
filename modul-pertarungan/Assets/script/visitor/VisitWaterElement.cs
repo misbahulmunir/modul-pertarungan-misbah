@@ -7,8 +7,8 @@ using Random = UnityEngine.Random;
 
 namespace ModulPertarungan
 {
-	public class visitWaterElement:Visitor
-	{
+    public class visitWaterElement : Visitor
+    {
         public override void ReceiveDamage(VisitableObject visitableObject, CardsEffect damageGiver, int damage)
         {
             if (visitableObject is WaterMonster || visitableObject is Warlock)
@@ -17,8 +17,14 @@ namespace ModulPertarungan
                 var value = Random.Range(1, 3);
                 if (damageGiver is WindCard)
                 {
-                    
-                    damage *= value;
+                    if (GameManager.Instance().GameMode == "pvp")
+                    {
+                        damage *= NetworkSingleton.Instance().Chance;
+                    }
+                    else
+                    {
+                        damage *= value;
+                    }
                 }
                 else
                 {
@@ -33,9 +39,9 @@ namespace ModulPertarungan
                 {
                     character.CurrentHealth -= damage;
                 }
-               
+
             }
-            
+
         }
-	}
+    }
 }

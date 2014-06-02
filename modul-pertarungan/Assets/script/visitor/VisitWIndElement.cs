@@ -18,7 +18,14 @@ namespace ModulPertarungan
                 var value = Random.Range(1, 3);
                 if (damageGiver is FireCard )
                 {
-                    damage *= value;
+                    if (GameManager.Instance().GameMode == "pvp")
+                    {
+                        damage *= NetworkSingleton.Instance().Chance;
+                    }
+                    else
+                    {
+                        damage *= value;
+                    };
 
                 }
                 else if (damageGiver is EarthCard)
