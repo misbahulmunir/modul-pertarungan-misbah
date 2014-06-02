@@ -148,14 +148,14 @@ namespace ModulPertarungan
         private void Update()
         {
             // DrawCursor();
-            if (!GameManager.Instance().PauseGame)
-            {
+            //if (!GameManager.Instance().PauseGame)
+            //{
                 EndPlayerTurn();
                 SelectPawn();
                 SelectEnemy();
                 CheckWinorLose();
                 GameManager.Instance().BattleState = currentstate;
-            }
+            //}
 
         }
     

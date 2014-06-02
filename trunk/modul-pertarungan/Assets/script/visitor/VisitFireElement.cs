@@ -18,8 +18,14 @@ namespace ModulPertarungan
                 var value = Random.Range(1, 3);
                 if (damageGiver is WaterCard)
                 {
-                    damage *= value;
-                    Debug.Log(value);
+                    if (GameManager.Instance().GameMode == "pvp")
+                    {
+                        damage *= NetworkSingleton.Instance().Chance;
+                    }
+                    else
+                    {
+                        damage *= value;
+                    }
                 }
                 else if(damageGiver is WindCard)
                 {

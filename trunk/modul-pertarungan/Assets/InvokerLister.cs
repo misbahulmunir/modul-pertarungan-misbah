@@ -31,6 +31,7 @@ namespace ModulPertarungan
                     string[] message = serverMessage.Split('-');
                     if (serverMessage.Contains("CardEffect"))
                     {
+                        NetworkSingleton.Instance().Chance = Int32.Parse(message[3]);
                         //text.GetComponent<UILabel>().text = NetworkSingleton.Instance().ServerMessage;
                         text.GetComponent<UILabel>().text = serverMessage;
                         _invoke = new Invoker();
@@ -39,7 +40,7 @@ namespace ModulPertarungan
                             : new CardExecuteCommand(message[2], "player");
                         _invoke.AddCommand(_cmd);
                         _invoke.RunCommand();
-
+                       
                         NetworkSingleton.Instance().ServerMessage = "";
                     }
                     else if (serverMessage.Contains("EndTurn"))
