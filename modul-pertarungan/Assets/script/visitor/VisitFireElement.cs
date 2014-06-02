@@ -11,7 +11,7 @@ namespace ModulPertarungan
 	{
         public override void ReceiveDamage(VisitableObject visitableObject, CardsEffect damageGiver, int damage)
         {
-            if (visitableObject is FireMonster|| visitableObject is Warlock)
+            if (visitableObject is FireMonster|| visitableObject is Sorcerer)
             {
                 var character = (DamageReceiver)visitableObject;
                 Debug.Log(character.Name);
@@ -19,6 +19,7 @@ namespace ModulPertarungan
                 if (damageGiver is WaterCard)
                 {
                     damage *= value;
+                    Debug.Log(value);
                 }
                 else if(damageGiver is WindCard)
                 {

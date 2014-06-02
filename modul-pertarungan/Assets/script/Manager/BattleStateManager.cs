@@ -30,7 +30,7 @@ namespace ModulPertarungan
                 hitObj = HitCollider();
                 if (hitObj != null && hitObj.GetComponent<PlayerAction>() != null && hitObj.GetComponent<PlayerAction>().IsEnemy == false)
                 {
-                    Cursor.transform.position = new Vector3(hitObj.rigidbody2D.transform.position.x, hitObj.rigidbody2D.transform.position.y + (hitObj.renderer.bounds.size.y / 2), 0f);
+                    Cursor.transform.position = new Vector3(hitObj.rigidbody2D.transform.position.x, hitObj.rigidbody2D.transform.position.y + (hitObj.transform.GetChild(0).renderer.bounds.size.y / 2), 0f);
                     GameObject obj = GameManager.Instance().CurrentPawn = hitObj;
                     currentstate = new ChangePlayerState(obj, objectLoader, this);
                     currentstate.Action();

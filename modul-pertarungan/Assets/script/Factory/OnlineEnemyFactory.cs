@@ -30,24 +30,21 @@ namespace ModulPertarungan
         {
             _instantiateObjectList = new Dictionary<string, Player>
             {
-                {"warlock", new Warlock()}
+               {"Warlock", new Warlock()},
+                {"Sorcerer", new Sorcerer()},
+                {"Magician", new Magician()},
+                {"Grand Magus", new GrandMagus()},
+                {"Wizard",new Wizard()}
             };
         }
-        public override void CreatePlayer(string id, string job, string objectName, GameObject pawnsPosisition)
+        public override void CreatePlayer(string id, GameObject pawnsPosisition)
         {
-            _instantiateObjectList.TryGetValue(job, out character);
-
-         
-            var obj = Object.Instantiate((GameObject)Resources.Load(objectName, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
-            if (obj == null) return;
-            obj.transform.Rotate(new Vector3(0f,180f,0f));
-
             XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
             TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
 
             PlayerFromService playerFromService;
             playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
-
+            _instantiateObjectList.TryGetValue(playerFromService.Job, out character);
             character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
             character.MaxSoulPoints = playerFromService.MaxSP;
             character.Name = playerFromService.Name;
@@ -55,6 +52,8 @@ namespace ModulPertarungan
             character.Experience = playerFromService.XP;
             character.DeckCostPoint = playerFromService.MaxDP;
             character.Rank = playerFromService.Rank;
+            character.Job = playerFromService.Job;
+            var obj = Object.Instantiate((GameObject)Resources.Load("Character/" + character.Job + "/" + "GameObject" + "/" + character.Rank, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
             obj.GetComponent<PlayerAction>().Character = character;
             GameManager.Instance().AddEnemy(obj);
             GameManager.Instance().CurrentEnemy = obj;

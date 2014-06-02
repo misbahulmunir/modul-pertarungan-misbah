@@ -9,7 +9,7 @@ namespace ModulPertarungan
     {
         public override void ReceiveDamage(VisitableObject visitableObject, CardsEffect damageGiver, int damage)
         {
-            if (visitableObject is EarthMonster)
+            if (visitableObject is EarthMonster|| visitableObject is Magician)
             {
                 
                 var character = (DamageReceiver)visitableObject;

@@ -8,8 +8,8 @@ using System.IO;
 
 namespace ModulPertarungan
 {
-	public class PlayerFactory:AbstractFactory
-	{
+    public class PlayerFactory : AbstractFactory
+    {
         private XmlDocument xmlFromServer;
         private XmlNodeList attributeNodes;
 
@@ -17,7 +17,7 @@ namespace ModulPertarungan
         private XmlNodeList quantityNodes;
 
         private Dictionary<string, Player> instantiateObjectList;
-      
+
         public Dictionary<string, Player> InstantiateObjectList
         {
             get { return instantiateObjectList; }
@@ -31,21 +31,23 @@ namespace ModulPertarungan
             set { character = value; }
         }
 
-	    public Dictionary<string, string> ObjectNamePath
-	    {
-	        get { return objectNamePath; }
-	        set { objectNamePath = value; }
-	    }
+        public Dictionary<string, string> ObjectNamePath
+        {
+            get { return objectNamePath; }
+            set { objectNamePath = value; }
+        }
 
 
-	    private Dictionary<string, string> objectNamePath; 
+        private Dictionary<string, string> objectNamePath;
         public override void InstantiateObject()
-        {  
+        {
             instantiateObjectList = new Dictionary<string, Player>
             {
-                {"warlock", new Warlock()},
-                {"sorcerer", new Sorcerer()},
-                {"magician", new Magician()}
+                {"Warlock", new Warlock()},
+                {"Sorcerer", new Sorcerer()},
+                {"Magician", new Magician()},
+                {"Grand Magus", new GrandMagus()},
+                {"Wizard",new Wizard()}
             };
             //objectNamePath= new Dictionary<string, string>
             //{
@@ -53,51 +55,43 @@ namespace ModulPertarungan
             //};
         }
 
-	   
-        public override void CreatePlayer(string id, string job, string objectName, GameObject pawnsPosisition)
+
+        public override void CreatePlayer(string id, GameObject pawnsPosisition)
         {
 
-            instantiateObjectList.TryGetValue(job, out character);
+           
 
-            var obj = Object.Instantiate((GameObject)Resources.Load(objectName, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
 
-            try
+            XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
+            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
+
+            PlayerFromService playerFromService;
+            playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
+            instantiateObjectList.TryGetValue(playerFromService.Job, out character);
+            character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
+            character.MaxSoulPoints = playerFromService.MaxSP;
+            character.Name = playerFromService.Name;
+            character.Gold = playerFromService.Gold;
+            character.Experience = playerFromService.XP;
+            character.DeckCostPoint = playerFromService.MaxDP;
+            character.Rank = playerFromService.Rank;
+            character.Job = playerFromService.Job;
+            textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
+            xmlFromServer = new XmlDocument();
+            xmlFromServer.Load(textReader);
+            nameNodes = xmlFromServer.GetElementsByTagName("Name");
+            quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
+            character.DeckList = new List<string>();
+
+            for (int i = 0; i < nameNodes.Count; i++)
             {
-                XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
-                TextReader textReader = new StreamReader(Application.persistentDataPath+ "/player_profile_" + id + ".xml");
-
-                PlayerFromService playerFromService;
-                playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
-
-                character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
-                character.MaxSoulPoints = playerFromService.MaxSP;
-                character.Name = playerFromService.Name;
-                character.Gold = playerFromService.Gold;
-                character.Experience = playerFromService.XP;
-                character.DeckCostPoint = playerFromService.MaxDP;
-                character.Rank = playerFromService.Rank;
-
-                textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
-                xmlFromServer = new XmlDocument();
-                xmlFromServer.Load(textReader);
-                nameNodes = xmlFromServer.GetElementsByTagName("Name");
-                quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
-                character.DeckList = new List<string>();
-                
-                for(int i=0;i<nameNodes.Count;i++)
+                for (int j = 0; j < int.Parse(quantityNodes[i].InnerXml); j++)
                 {
-                    for (int j = 0; j < int.Parse(quantityNodes[i].InnerXml); j++)
-                    {
-                        character.DeckList.Add(nameNodes[i].InnerXml);
-                    }
+                    character.DeckList.Add(nameNodes[i].InnerXml);
                 }
-                textReader.Close();
             }
-            catch
-            {
-                Debug.Log("Error Reading Player Data");
-            }
-
+            textReader.Close();
+            var obj = Object.Instantiate((GameObject)Resources.Load("Character/" + character.Job+"/"+"GameObject"+"/"+character.Rank, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
             if (obj != null)
             {
                 obj.GetComponent<PlayerAction>().Character = character;
@@ -107,5 +101,5 @@ namespace ModulPertarungan
             }
             //Debug.Log(GameManager.Instance().Players[0].GetComponent<PlayerAction>().Character.Name);
         }
-	}
+    }
 }

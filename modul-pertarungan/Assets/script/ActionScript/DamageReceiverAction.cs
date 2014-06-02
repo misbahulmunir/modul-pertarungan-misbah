@@ -40,7 +40,7 @@ namespace ModulPertarungan
             visitors.Add(new VisitEarthElement());
             visitors.Add(new VisitThunderElement());
             visitors.Add(new VisitFireElement());
-            visitors.Add(new VisitFireElement());
+            visitors.Add(new VisitWIndElement());
             damageReceivers= new List<DamageReceiver>();
 	    }
 	    public virtual void ReceiveDamage(DamageReceiver damageReceiver,CardsEffect damageGiver,int damage)

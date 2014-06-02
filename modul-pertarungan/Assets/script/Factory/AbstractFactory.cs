@@ -17,7 +17,7 @@ namespace ModulPertarungan
         public virtual void CreateEnemy(string objectName, GameObject place)
         {
         }
-        public virtual void CreatePlayer(String id, String job, String objectName, GameObject pawnsPosisition)
+        public virtual void CreatePlayer(String id, GameObject pawnsPosisition)
         {
            
         }

@@ -33,11 +33,11 @@ namespace ModulPertarungan
             factory.InstantiateObject();
             if (GameManager.Instance().GameMode == "pvp")
             {
-                factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
+                factory.CreatePlayer(GameManager.Instance().PlayerId,pawnsPosisition[0]);
             }
             else
             {
-                factory.CreatePlayer(GameManager.Instance().PlayerId, "warlock", "FirstWarlock", pawnsPosisition[0]);
+                factory.CreatePlayer(GameManager.Instance().PlayerId,pawnsPosisition[0]);
                 if (GameManager.Instance().PartyId != null)
                 { 
                     LoadParty();
@@ -49,12 +49,13 @@ namespace ModulPertarungan
         public void LoadParty()
         {
             int temp = 1;
-            foreach (string s in GameManager.Instance().PartyId)
+            foreach (string party in GameManager.Instance().PartyId)
             {
                 factory = new PlayerFactory();
                 factory.InstantiateObject();
-                factory.CreatePlayer(s, "warlock", "FirstWarlock", pawnsPosisition[temp]);
+                factory.CreatePlayer(party, pawnsPosisition[temp]);
                 temp++;
+                Debug.Log(party);
             }
             temp = 0;
         }
@@ -92,7 +93,7 @@ namespace ModulPertarungan
                 factory.CreatePlayer(
                     GameManager.Instance().PlayerId.ToLower() != NetworkSingleton.Instance().HostPlayer
                         ? NetworkSingleton.Instance().HostPlayer
-                        : NetworkSingleton.Instance().JoinPlayer, "warlock", "FirstWarlock",
+                        : NetworkSingleton.Instance().JoinPlayer,
                     enemyOnlinePosisiton);
             }
             else

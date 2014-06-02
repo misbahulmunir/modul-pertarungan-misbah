@@ -12,7 +12,7 @@ namespace ModulPertarungan
         public override void ReceiveDamage(VisitableObject visitableObject, CardsEffect damageGiver, int damage)
         {
 
-            if (visitableObject is WindMonster)
+            if (visitableObject is WindMonster|| visitableObject is GrandMagus)
             {
                 var character = (DamageReceiver)visitableObject;
                 var value = Random.Range(1, 3);
