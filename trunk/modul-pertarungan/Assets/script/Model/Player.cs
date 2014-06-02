@@ -9,6 +9,7 @@ namespace ModelModulPertarungan
         private int deckCostPoint;
         private int level;
         private string gender;
+        private string job;
         private List<string> deckList;
 
         public List<string> DeckList
@@ -78,6 +79,12 @@ namespace ModelModulPertarungan
         {
             get { return gender; }
             set { gender = value; }
+        }
+
+        public string Job
+        {
+            get { return job; }
+            set { job = value; }
         }
 
         public Player(int MaxHealth, int CurrentHealth, string Name, int HandCapacity)
