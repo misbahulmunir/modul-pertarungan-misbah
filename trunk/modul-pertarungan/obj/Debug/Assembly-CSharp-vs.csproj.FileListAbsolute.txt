@@ -136,3 +136,17 @@ C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\HO
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\HOTween.xml
 D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\HOTween.dll
 D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\HOTween.xml
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\HOTween.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\Temp\bin\Debug\HOTween.xml
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb

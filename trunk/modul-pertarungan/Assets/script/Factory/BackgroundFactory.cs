@@ -11,14 +11,19 @@ namespace ModulPertarungan
         {
             backgroundPathList = new Dictionary<string, string>()
             {
-             {"GrassLand","Background/Grassland"}
+             {"Greenland","Background/Greenland"},
+             {"Lavaland", "Background/Lavaland"},
+             {"Iceland", "Background/Iceland"},
+             {"Wetland", "Background/Wetland"},
+             {"Windyhill", "Background/Windyhill"}
             };
         }
 
         public override void CreateBackground(string backgroundName)
         {
+            Debug.Log(backgroundName);
             backgroundPathList.TryGetValue(backgroundName, out bgpath);
-            var bg= Object.Instantiate(Resources.Load(bgpath, typeof (GameObject)), Vector2.zero, Quaternion.identity) as GameObject;
+            var bg = Object.Instantiate(Resources.Load(bgpath, typeof(GameObject)), Vector2.zero, Quaternion.identity) as GameObject;
             bg.transform.localScale= new Vector3(3f,3f,0f);
             bg.GetComponent<SpriteRenderer>().sortingOrder = -1;
         }

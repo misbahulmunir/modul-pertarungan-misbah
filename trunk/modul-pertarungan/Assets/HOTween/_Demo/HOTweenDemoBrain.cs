@@ -30,7 +30,7 @@ public class HOTweenDemoBrain : MonoBehaviour
 
         // Tween the first transform using fast writing mode,
         // and applying an animation that will last 4 seconds
-        HOTween.To(CubeTrans1, 4, "position", new Vector3(-3, 6, 0));
+        HOTween.To(CubeTrans1, 2, "position", new Vector3(-3, 0, 0));
 
         // Tween the second transform using full mode with parameters and linebreaks,
         // applying a yoyo loop with custom ease,
