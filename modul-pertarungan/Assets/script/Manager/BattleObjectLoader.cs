@@ -25,7 +25,7 @@ namespace ModulPertarungan
         {
             factory=new BackgroundFactory();
             factory.InstantiateObject();
-            factory.CreateBackground("GrassLand");
+            factory.CreateBackground(TextureSingleton.Instance().TextureTiles);
         }
         public void LoadPlayer()
         {
@@ -97,15 +97,42 @@ namespace ModulPertarungan
                     enemyOnlinePosisiton);
             }
             else
-            {
-                //foreach (GameObject t in enemyPosition)
-                //{ 
-                    factory= new EnemyFactory();
+            { 
+                if (TextureSingleton.Instance().TextureTiles == "Lavaland")
+                {
+                    factory = new EnemyFactory();
+                    factory.InstantiateObject();
+                    factory.CreateEnemy("FireSlime", enemyPosition[0]);
+                    factory.CreateEnemy("FireDragon", enemyPosition[1]);
+                }
+                else if (TextureSingleton.Instance().TextureTiles == "Greenland")
+                {
+                    factory = new EnemyFactory();
                     factory.InstantiateObject();
                     factory.CreateEnemy("EarthSlime", enemyPosition[0]);
-                    factory.CreateEnemy("FireDragon", enemyPosition[1]);
-                    
-                //}
+                    factory.CreateEnemy("EarthKingSlime", enemyPosition[1]);
+                }
+                else if (TextureSingleton.Instance().TextureTiles == "Iceland")
+                {
+                    factory = new EnemyFactory();
+                    factory.InstantiateObject();
+                    factory.CreateEnemy("WaterSlime", enemyPosition[0]);
+                    factory.CreateEnemy("WaterKingSlime", enemyPosition[1]);
+                }
+                else if (TextureSingleton.Instance().TextureTiles == "Wetland")
+                {
+                    factory = new EnemyFactory();
+                    factory.InstantiateObject();
+                    factory.CreateEnemy("ThunderSlime", enemyPosition[0]);
+                    factory.CreateEnemy("ThunderKingSlime", enemyPosition[1]);
+                }
+                else if (TextureSingleton.Instance().TextureTiles == "Windyhill")
+                {
+                    factory = new EnemyFactory();
+                    factory.InstantiateObject();
+                    factory.CreateEnemy("WindSlime", enemyPosition[0]);
+                    factory.CreateEnemy("WindKingSlime", enemyPosition[1]);
+                }
             }
             
         }

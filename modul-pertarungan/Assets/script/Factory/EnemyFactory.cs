@@ -15,7 +15,14 @@ namespace ModulPertarungan
             enemyDictionary = new Dictionary<string, Enemy>()
             {
                 {"FireDragon",new FireDragon(200,200,"firedragon")},
-                {"EarthSlime", new EarthSlime(200,200, "earthslime")}
+                {"FireSlime", new FireSlime(200,200, "fireslime")},
+                {"FireKingSlime", new FireKingSlime(200,200, "firekingslime")},
+                {"EarthSlime", new EarthSlime(200,200, "earthslime")},
+                {"EarthKingSlime", new EarthKingSlime(200,200, "earthkingslime")},
+                {"ThunderSlime", new ThunderSlime(200,200, "thunderslime")},
+                {"ThunderKingSlime", new ThunderKingSlime(200,200, "thunderkingslime")},
+                {"WindSlime", new WindSlime(200,200, "windslime")},
+                {"WindKingSlime", new WindKingSlime(200,200, "windkingslime")}
             };
         }
 
