@@ -8,8 +8,7 @@ public class ButtonManagerContinent : MonoBehaviour
 {    
     private string sceneLoader;
     private string buttonNameLoader;
-    private string textureLoader;
-
+    private Texture2D textureLoader;
     // Use this for initialization
     void Start()
     {        
@@ -27,13 +26,15 @@ public class ButtonManagerContinent : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                buttonNameLoader = hit.collider.gameObject.GetComponent<ButtonContinent>().ButtonName;
-                sceneLoader = hit.collider.gameObject.GetComponent<ButtonContinent>().SceneLoad;
-                textureLoader = hit.collider.gameObject.GetComponent<ButtonContinent>().TextureTiles;
-                if (hit.collider.gameObject.name.ToLower().Contains(buttonNameLoader))
+                buttonNameLoader = hit.collider.gameObject.GetComponent<ButtonDungeon>().ButtonName;
+                sceneLoader = hit.collider.gameObject.GetComponent<ButtonDungeon>().SceneLoad;
+                textureLoader = hit.collider.gameObject.GetComponent<ButtonDungeon>().textureTiles;
+                if (hit.collider.gameObject.tag.ToLower().Contains(buttonNameLoader))
                 {
-                    TextureSingleton.Instance().TextureTiles = textureLoader;
+                    TextureSingleton.Instance().TextureTiles = textureLoader.name;
                     Application.LoadLevel(sceneLoader);                    
+                    Debug.Log(textureLoader.name);
+                    Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
                 }
             }
         }
