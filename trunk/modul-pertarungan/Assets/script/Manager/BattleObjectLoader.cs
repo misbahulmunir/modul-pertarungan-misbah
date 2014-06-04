@@ -23,9 +23,12 @@ namespace ModulPertarungan
 
         public void LoadBackground()
         {
-            factory=new BackgroundFactory();
-            factory.InstantiateObject();
-            factory.CreateBackground(TextureSingleton.Instance().TextureTiles);
+            if (GameManager.Instance().GameMode != "pvp")
+            {
+                factory = new BackgroundFactory();
+                factory.InstantiateObject();
+                factory.CreateBackground(TextureSingleton.Instance().TextureTiles);
+            }
         }
         public void LoadPlayer()
         {

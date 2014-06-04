@@ -6,8 +6,9 @@ using System.Text;
 namespace ModulPertarungan
 {
     public class Invoker
-    {   
+    {
         private readonly Queue<Command> _commandList = new Queue<Command>();
+    
         public void RunCommand()
         {
             while (_commandList.Count > 0)
