@@ -40,9 +40,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/HouseEditor.unity
   - enabled: 1
-    path: Assets/Scene/ContinentDungeon.unity
+    path: Assets/Scene/Dungeon.unity
   - enabled: 1
-    path: Assets/Scene/MapDungeon.unity
+    path: Assets/Scene/QuestMap.unity
   - enabled: 1
     path: Assets/Scene/PVPRecord.unity
   - enabled: 1
