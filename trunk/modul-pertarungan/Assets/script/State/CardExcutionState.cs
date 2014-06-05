@@ -18,7 +18,7 @@ namespace ModulPertarungan
 
         public override void Action()
         {
-           
+            GameManager.Instance().CurrentPawn.GetComponent<Animator>().SetBool("IsAttack", true);
             if (GameManager.Instance().GameMode == "pvp")
             {
                 bool succses = false;
