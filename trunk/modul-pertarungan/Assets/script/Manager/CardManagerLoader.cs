@@ -74,6 +74,7 @@ namespace ModulPertarungan
                         //Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
                     }
                 }
+                IntegrationTest.Pass(this.gameObject);
             }
             catch
             {

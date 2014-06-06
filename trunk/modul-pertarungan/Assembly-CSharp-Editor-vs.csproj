@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\DungeonEditor.cs" />
+     <Compile Include="Assets\Editor\NewTestUnit.cs" />
      <Compile Include="Assets\Facebook\Editor\FacebookPostprocess.cs" />
      <Compile Include="Assets\Facebook\Editor\FacebookSettingsEditor.cs" />
      <Compile Include="Assets\Facebook\Editor\android\FacebookAndroidUtil.cs" />
