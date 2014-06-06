@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: C
+  m_Name: D
   serializedVersion: 2
   m_AnimatorParameters:
   - m_Name: IsAttack
@@ -32,27 +32,27 @@ Transition:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
-  m_SrcState: {fileID: 110230000}
+  m_SrcState: {fileID: 110234665}
   m_DstState: {fileID: 110200000}
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: IsAttack
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
   m_Solo: 0
   m_Mute: 0
---- !u!1101 &110169711
+--- !u!1101 &110181969
 Transition:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: 
   m_SrcState: {fileID: 110200000}
-  m_DstState: {fileID: 110230000}
-  m_TransitionDuration: .25
+  m_DstState: {fileID: 110234665}
+  m_TransitionDuration: 1
   m_TransitionOffset: 0
   m_Conditions:
   - m_ConditionMode: 2
@@ -67,28 +67,28 @@ State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: AttackAnimationRankC
-  m_Speed: 2
+  m_Name: AttackAnimationRankD
+  m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
-  - {fileID: 7400000, guid: 5a98352cb0969b64e84ccc923df8ce95, type: 2}
+  - {fileID: 7400000, guid: 68dc67d3bc49f2441a4bce8d66bae23e, type: 2}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: 50, y: 50, z: 0}
+  m_Position: {x: 48, y: 48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
---- !u!1102 &110230000
+--- !u!1102 &110234665
 State:
   m_ObjectHideFlags: 3
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: New State
+  m_Name: IddleState
   m_Speed: 1
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 0}
   m_ParentStateMachine: {fileID: 110700000}
-  m_Position: {x: -216, y: 48, z: 0}
+  m_Position: {x: -264, y: 48, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -102,18 +102,18 @@ StateMachine:
   m_DefaultState: {fileID: 110200000}
   m_States:
   - {fileID: 110200000}
-  - {fileID: 110230000}
+  - {fileID: 110234665}
   m_ChildStateMachine: []
   m_ChildStateMachinePosition: []
   m_OrderedTransitions:
     data:
-      first: {fileID: 110230000}
+      first: {fileID: 110234665}
       second:
       - {fileID: 110100000}
     data:
       first: {fileID: 110200000}
       second:
-      - {fileID: 110169711}
+      - {fileID: 110181969}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

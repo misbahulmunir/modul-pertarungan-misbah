@@ -276,7 +276,7 @@ GameObject:
   - 114: {fileID: 1173107112}
   - 65: {fileID: 1173107111}
   m_Layer: 8
-  m_Name: Sorcerer
+  m_Name: Magician
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -525,7 +525,7 @@ GameObject:
   - 114: {fileID: 1481109501}
   - 65: {fileID: 1481109500}
   m_Layer: 8
-  m_Name: Sorcerer
+  m_Name: Warlock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,7 +714,7 @@ GameObject:
   - 114: {fileID: 1522711734}
   - 65: {fileID: 1522711733}
   m_Layer: 8
-  m_Name: Sorcerer
+  m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -799,7 +799,7 @@ GameObject:
   - 114: {fileID: 1683433851}
   - 65: {fileID: 1683433850}
   m_Layer: 8
-  m_Name: Sorcerer
+  m_Name: GrandMagus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
