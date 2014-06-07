@@ -81,7 +81,7 @@ namespace ModulPertarungan
             {
                 foreach (string t in (this.Character as Player).DeckList)
                 {
-                    Cards.Add((GameObject) Resources.Load(t, typeof (GameObject)));
+                    Cards.Add((GameObject) Resources.Load("RealCard/"+t, typeof (GameObject)));
                 }
             }
 
