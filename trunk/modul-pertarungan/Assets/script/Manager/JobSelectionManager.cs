@@ -20,8 +20,8 @@ namespace ModulPertarungan
         public GameObject inputPanel;
         public GameObject inputPanelPosisition;
         private string SelectedObject;
-        public UILabel playerName;
-        public UILabel email;
+        public UIInput playerName;
+        public UIInput email;
         public GameObject inputPanelPosisitionStart;
         void Start()
         {
