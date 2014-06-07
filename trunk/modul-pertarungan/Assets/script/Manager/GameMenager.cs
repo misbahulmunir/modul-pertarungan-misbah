@@ -8,6 +8,13 @@ namespace ModulPertarungan
         private BattleState battleState;
         private GameObject currentEnemy;
         private string playerId;
+        private string friendName;
+
+        public string FriendName
+        {
+            get { return friendName; }
+            set { friendName = value; }
+        }
 
         public string PlayerId
         {
