@@ -24,5 +24,10 @@ namespace CardWarlockSaga
             GameManager.Instance().PlayerId = Input.GetComponent<UIInput>().value;
             Application.LoadLevel("Loading");
         }
+
+        public void Register()
+        {
+            Application.LoadLevel("JobSelection");
+        }
     }
 }
