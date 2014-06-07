@@ -1,4 +1,5 @@
-﻿using Holoville.HOTween;
+﻿using System;
+using Holoville.HOTween;
 using UnityEngine;
 
 namespace ModulPertarungan
@@ -26,33 +27,39 @@ namespace ModulPertarungan
         }
 
         public void SelectMagician()
-        {  TweenObjectOut();
-           characterImagePanel.mainTexture = characterImage;
-           TweenObjectIn();
+        {
+            CreateDescription("Magician","");
         }
 
         public void SelectWarlock()
         {
-            TweenObjectOut();
-            characterImagePanel.mainTexture = characterImage;
-            TweenObjectIn();
+            CreateDescription("Warlock", "");
+
         }
 
         public void SelectWizard()
         {
-
+            CreateDescription("Wizard", "");
         }
 
         public void SelectSorcerer()
         {
-
+            CreateDescription("Sorcerer", "");
         }
 
         public void SelectGrandMagus()
         {
-
+            CreateDescription("GrandMagus", "");
         }
 
+        public void CreateDescription(String jobName, string description)
+        {
+            TweenObjectOut();
+            characterImagePanel.mainTexture = characterImage;
+            this.jobName.text = jobName;
+            this.description.text = description;
+            TweenObjectIn();
+        }
         public void TweenObjectIn()
         {
             var parms= new TweenParms();
