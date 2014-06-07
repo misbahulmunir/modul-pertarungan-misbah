@@ -34,7 +34,7 @@ public class FriendClickManager : MonoBehaviour {
     void DownloadXML()
     {
         WebServiceSingleton.GetInstance().ProcessRequest("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text);
-        WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text);
+        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text));
     }
 
     void SearchByNickname()
@@ -54,7 +54,7 @@ public class FriendClickManager : MonoBehaviour {
                 object obj = deserializer.Deserialize(textReader);
                 players = (PartialProfileFromService)obj;
                 friendSearchResultLabel.GetComponent<UILabel>().text = "Nickname: " + players.Name + "\nJob: " + players.Job + "\nRank: " + players.Rank + "\nLevel: " + players.Level;
-                textReader.Close();
+                textReader.Dispose();
                 Debug.Log("bisa");
             }
             catch (Exception e)

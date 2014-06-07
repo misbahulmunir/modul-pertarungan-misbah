@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  functionName: 
+  functionName: ConfirmNameAndEmail
   trigger: 0
   includeChildren: 0
 --- !u!65 &96774977
@@ -320,9 +320,9 @@ MonoBehaviour:
   descriptionPanel: {fileID: 348255983}
   inputPanel: {fileID: 0}
   inputPanelPosisition: {fileID: 0}
-  playerName: {fileID: 0}
-  email: {fileID: 0}
-  inputPanelPosisitionStart: {fileID: 0}
+  playerName: {fileID: 355304717}
+  email: {fileID: 1267953611}
+  inputPanelPosisitionStart: {fileID: 159300520}
 --- !u!1001 &129105416
 Prefab:
   m_ObjectHideFlags: 0
@@ -416,7 +416,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 4cd1021d85e61ae4ba3390480edc6c86, type: 2}
       propertyPath: functionName
-      value: ConfirmJob
+      value: ConfirmPlayerJob
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 4cd1021d85e61ae4ba3390480edc6c86, type: 2}
+      propertyPath: includeChildren
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cd1021d85e61ae4ba3390480edc6c86, type: 2}
@@ -494,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  functionName: ConfirmJob
+  functionName: ConfirmPlayerJob
   trigger: 0
   includeChildren: 0
 --- !u!65 &167217874
@@ -1093,7 +1097,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 524285029}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: 74, z: 0}
+  m_LocalPosition: {x: 4, y: 77.1982422, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 348255984}
@@ -1449,6 +1453,10 @@ Prefab:
       propertyPath: aspectRatio
       value: 22
       objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 4cd1021d85e61ae4ba3390480edc6c86, type: 2}
+      propertyPath: functionName
+      value: ConfirmNameAndEmail
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cd1021d85e61ae4ba3390480edc6c86, type: 2}
   m_RootGameObject: {fileID: 96774974}
@@ -1725,11 +1733,11 @@ MonoBehaviour:
   descriptionPanePositionStart: {fileID: 830727843}
   picturePanel: {fileID: 1406141034}
   descriptionPanel: {fileID: 348255983}
-  inputPanel: {fileID: 0}
-  inputPanelPosisition: {fileID: 0}
+  inputPanel: {fileID: 2086142726}
+  inputPanelPosisition: {fileID: 1874004201}
   playerName: {fileID: 0}
   email: {fileID: 0}
-  inputPanelPosisitionStart: {fileID: 0}
+  inputPanelPosisitionStart: {fileID: 159300520}
 --- !u!1 &1196516687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,11 +2355,11 @@ MonoBehaviour:
   descriptionPanePositionStart: {fileID: 830727843}
   picturePanel: {fileID: 1406141034}
   descriptionPanel: {fileID: 348255983}
-  inputPanel: {fileID: 0}
-  inputPanelPosisition: {fileID: 0}
+  inputPanel: {fileID: 2086142726}
+  inputPanelPosisition: {fileID: 1874004201}
   playerName: {fileID: 0}
   email: {fileID: 0}
-  inputPanelPosisitionStart: {fileID: 0}
+  inputPanelPosisitionStart: {fileID: 159300520}
 --- !u!1 &1505163969
 GameObject:
   m_ObjectHideFlags: 0
@@ -2580,11 +2588,11 @@ MonoBehaviour:
   descriptionPanePositionStart: {fileID: 830727843}
   picturePanel: {fileID: 1406141034}
   descriptionPanel: {fileID: 348255983}
-  inputPanel: {fileID: 0}
-  inputPanelPosisition: {fileID: 0}
+  inputPanel: {fileID: 2086142726}
+  inputPanelPosisition: {fileID: 1874004201}
   playerName: {fileID: 0}
   email: {fileID: 0}
-  inputPanelPosisitionStart: {fileID: 0}
+  inputPanelPosisitionStart: {fileID: 159300520}
 --- !u!1 &1683433848
 GameObject:
   m_ObjectHideFlags: 0
@@ -2708,11 +2716,11 @@ MonoBehaviour:
   descriptionPanePositionStart: {fileID: 830727843}
   picturePanel: {fileID: 1406141034}
   descriptionPanel: {fileID: 348255983}
-  inputPanel: {fileID: 0}
-  inputPanelPosisition: {fileID: 0}
+  inputPanel: {fileID: 2086142726}
+  inputPanelPosisition: {fileID: 1874004201}
   playerName: {fileID: 0}
   email: {fileID: 0}
-  inputPanelPosisitionStart: {fileID: 0}
+  inputPanelPosisitionStart: {fileID: 159300520}
 --- !u!1 &1711316475
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,8 +3318,8 @@ MonoBehaviour:
   descriptionPanePositionStart: {fileID: 830727843}
   picturePanel: {fileID: 1406141034}
   descriptionPanel: {fileID: 348255983}
-  inputPanel: {fileID: 0}
-  inputPanelPosisition: {fileID: 0}
+  inputPanel: {fileID: 2086142726}
+  inputPanelPosisition: {fileID: 1874004201}
   playerName: {fileID: 0}
   email: {fileID: 0}
-  inputPanelPosisitionStart: {fileID: 0}
+  inputPanelPosisitionStart: {fileID: 159300520}
