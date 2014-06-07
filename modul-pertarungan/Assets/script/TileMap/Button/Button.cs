@@ -5,7 +5,8 @@ public class Button : MonoBehaviour
 {
 
     private string sceneLoad;
-    private string buttonName;
+    private string buttonTag;
+    private int buttonID;
 
     public string SceneLoad
     {
@@ -13,9 +14,15 @@ public class Button : MonoBehaviour
         set { sceneLoad = value; }
     }
 
-    public string ButtonName
+    public string ButtonTag
     {
-        get { return buttonName; }
-        set { buttonName = value; }
+        get { return buttonTag; }
+        set { buttonTag = value; }
+    }
+
+    public int ButtonID
+    {
+        get { return buttonID; }
+        set { buttonID = value; }
     }
 }

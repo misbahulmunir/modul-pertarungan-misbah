@@ -7,7 +7,7 @@ using System.Collections.Generic;
 [RequireComponent(typeof(MeshRenderer))]
 [RequireComponent(typeof(MeshCollider))]
 
-public class TileMap : MonoBehaviour
+public class TileMapManual : MonoBehaviour
 {
 
     private int size_x = 34; //ukuran grid [size_x X size_y]
@@ -15,23 +15,25 @@ public class TileMap : MonoBehaviour
     private float tileSize = 1.0f; //ukuran tile
 
     private Texture2D texTiles; //texture tile
- 
 
     private int tileRes = 32; // resolusi tile 
     private int posX = 5; //posisi awal pulau
     private int posY = 5; //posisi awal pulau
-    private int[,] dun_node;
 
     public int landSize = 30;// ukuran pulau
     public int landNum = 5; //jumlah pulau
 
-    public List<GameObject> butID;
-    public GameObject butObj; 
- 
+    private List<GameObject> butID;
+
+    public List<GameObject> ButID
+    {
+        get { return butID; }
+    }
+
     // Use this for initialization
     void Start()
     {
-                
+
     }
 
     void Awake()
@@ -61,7 +63,7 @@ public class TileMap : MonoBehaviour
     private void BuildTexture()
     {
         Map map = new Map(size_x, size_y, posX, posY, landSize, landNum);//fungsi generate map    
-        string tile ="Map/TextureMap/"+TextureSingleton.Instance().TextureTiles;
+        string tile = "Map/TextureMap/" + TextureSingleton.Instance().TextureTiles;
         Debug.Log(tile);
         texTiles = Resources.Load(tile) as Texture2D;
 
@@ -80,6 +82,8 @@ public class TileMap : MonoBehaviour
             }
         }
 
+        if (texture == null)
+            Debug.Log("he");
         texture.filterMode = FilterMode.Point; // filter mode --> point
         texture.wrapMode = TextureWrapMode.Clamp; // wrap mode --> clamp
         texture.Apply(); //menampilkan texture pada layar
@@ -87,39 +91,18 @@ public class TileMap : MonoBehaviour
         MeshRenderer mesh_renderer = GetComponent<MeshRenderer>(); //init mesh render
         mesh_renderer.sharedMaterials[0].mainTexture = texture; //set texture pada mesh
 
-        dun_node = new int[size_x, size_y];
+        int[,] dun_node = new int[size_x, size_y];
         dun_node = map.GetButtonPos();
-        int count = 0;
-        for (int i = 0; i < size_x; i++)
-        {
-            for (int j = 0; j < size_y; j++)
-            {
-                if (dun_node[i, j] == 1)
-                {                    
-                    GameObject button = (GameObject)Instantiate(butObj, new Vector3(i, j, 0), Quaternion.identity);
-                    
-                    if (TextureSingleton.Instance().QuestActive[count] == true)
-                    {
-                        button.renderer.material.color = Color.green;
-                    }
-                    else
-                    {
-                        button.renderer.material.color = Color.red;
-                    }
-                    if (TextureSingleton.Instance().QuestCleared[count] == true)
-                    {
-                        button.name = "Button_" + count + "_clear";
-                    }
-                    else
-                    {
-                        button.name = "Button_" + count + "_unclear";
-                    }
-                    butID.Add(button);
-                    count++;
-                }
-            }
-        }
-        
+        //for (int i = 0; i < size_x; i++)
+        //{
+        //    for (int j = 0; j < size_y; j++)
+        //    {
+        //        if (dun_node[i, j] == 1)
+        //        {
+        //            butID.Add((GameObject)Instantiate(butObj, new Vector3(i, j, 0), Quaternion.identity));
+        //        }
+        //    }
+        //}
         //Debug.Log ("Done Texture!");
     }//menampilkan texture
 

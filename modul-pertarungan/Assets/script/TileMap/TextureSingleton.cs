@@ -16,6 +16,28 @@ namespace ModulPertarungan
             get { return textureTiles; }
             set { textureTiles = value; }
         }
+        private bool[] questActive;
+
+        public bool[] QuestActive
+        {
+            get { return questActive; }
+            set { questActive = value; }
+        }
+        private bool[] questCleared;
+
+        public bool[] QuestCleared
+        {
+            get { return questCleared; }
+            set { questCleared = value; }
+        }
+
+        private string idButton;
+
+        public string IdButton
+        {
+            get { return idButton; }
+            set { idButton = value; }
+        }
 
         public TextureSingleton()
         {

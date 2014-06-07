@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 namespace ModulPertarungan
 {
-
     public class ScoreScript : MonoBehaviour
     {
         public GameObject Statuslabel;
@@ -11,6 +11,9 @@ namespace ModulPertarungan
         public GameObject ExpLabel;
         public List<GameObject>label;
         private int score = 0;
+        private bool[] checkQuestActive;
+        private bool[] checkQuestCleared;
+
         // Use this for initialization
         void Start()
         {
@@ -58,7 +61,13 @@ namespace ModulPertarungan
             }
             if (Input.GetMouseButtonDown(0))
             {
-                Application.LoadLevel("BeforeBattle");
+                string[] split = TextureSingleton.Instance().IdButton.Split('_');
+                int id = Int32.Parse(split[1]);
+                TextureSingleton.Instance().QuestActive[id + 1] = true;
+                TextureSingleton.Instance().QuestCleared[id] = true;
+                checkQuestActive = TextureSingleton.Instance().QuestActive;
+                checkQuestCleared = TextureSingleton.Instance().QuestCleared;
+                Application.LoadLevel("Dungeon");
             }
           
         }

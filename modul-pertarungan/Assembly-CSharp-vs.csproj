@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -425,6 +425,7 @@
      <Compile Include="Assets\script\TileMap\Button\ButtonCancelQuest.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonDungeon.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonGoQuest.cs" />
+     <Compile Include="Assets\script\TileMap\Button\ButtonHome.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonManagerContinent.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonManagerMap.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonMap.cs" />
@@ -433,6 +434,7 @@
      <Compile Include="Assets\script\TileMap\MapLoader.cs" />
      <Compile Include="Assets\script\TileMap\TextureSingleton.cs" />
      <Compile Include="Assets\script\TileMap\TileMap.cs" />
+     <Compile Include="Assets\script\TileMap\TileMapManual.cs" />
      <Compile Include="Assets\script\visitor\VisitEarthElement.cs" />
      <Compile Include="Assets\script\visitor\VisitFireElement.cs" />
      <Compile Include="Assets\script\visitor\VisitThunderElement.cs" />

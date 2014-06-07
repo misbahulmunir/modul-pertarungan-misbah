@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class MapLoader : MonoBehaviour 
 {
-    public TileMap tilemap;
+    public GameObject tilemap;    
 
 	// Use this for initialization
-	void Start () 
+    void Start()
     {
-        Instantiate(tilemap);        
-	}
-	
+        Debug.Log("maploader");
+        //tilemap = Instantiate(tilemap) as GameObject;
+        tilemap.name = "Quest Map";
+    }
 	// Update is called once per frame
 	void Update ()
     {
