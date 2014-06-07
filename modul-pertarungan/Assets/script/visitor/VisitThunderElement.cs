@@ -16,7 +16,7 @@ namespace ModulPertarungan
             {
                 var character = (DamageReceiver)visitableObject;
                 var value = Random.Range(1, 3);
-                if (damageGiver is EarthCard)
+                if (damageGiver is WindCard)
                 {
                     if (GameManager.Instance().GameMode == "pvp")
                     {

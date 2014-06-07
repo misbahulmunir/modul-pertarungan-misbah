@@ -11,13 +11,13 @@ public class NewTestUnit
     [Test]
     public void DamageReceiverFireTest()
     {
-        Sorcerer sorcerer= new Sorcerer();
+        var sorcerer= new Sorcerer();
         sorcerer.MaxHealth = 200;
         sorcerer.CurrentHealth = 200;
         sorcerer.HandCapacity = 2;
         sorcerer.MaxSoulPoints = 30;
         sorcerer.CurrentSoulPoints = 20;
-        WarlockAction action = new WarlockAction();
+        var action = new WarlockAction();
         action.Character = sorcerer;
         action.ReceiveDamage(action.Character, new WindCard(), 100);
         Assert.LessOrEqual(action.Character.CurrentHealth,150);
@@ -25,6 +25,22 @@ public class NewTestUnit
         Assert.LessOrEqual(action.Character.CurrentHealth,100);
       
 
+    }
+
+    public void DamageReceiverWaterTest()
+    {
+        var sorcerer = new Sorcerer();
+        sorcerer.MaxHealth = 200;
+        sorcerer.CurrentHealth = 200;
+        sorcerer.HandCapacity = 2;
+        sorcerer.MaxSoulPoints = 30;
+        sorcerer.CurrentSoulPoints = 20;
+        var action = new WarlockAction();
+        action.Character = sorcerer;
+        action.ReceiveDamage(action.Character, new WindCard(), 100);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 150);
+        action.ReceiveDamage(action.Character, new WaterCard(), 50);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 100);
     }
 
     [Test]

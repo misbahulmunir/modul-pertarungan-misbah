@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 using Holoville.HOTween;
 using UnityEngine;
 
@@ -16,6 +17,12 @@ namespace ModulPertarungan
         public GameObject descriptionPanePositionStart;
         public GameObject picturePanel;
         public GameObject descriptionPanel;
+        public GameObject inputPanel;
+        public GameObject inputPanelPosisition;
+        private string SelectedObject;
+        public UILabel playerName;
+        public UILabel email;
+        public GameObject inputPanelPosisitionStart;
         void Start()
         {
 
@@ -52,28 +59,39 @@ namespace ModulPertarungan
             CreateDescription("GrandMagus", "");
         }
 
+        public void ConfirmPlayerJob()
+        {
+            TweenObjectOut();
+            TweenObjectIn(inputPanel, inputPanelPosisition);
+        }
+
+        public void ConfirmNameAndEmail()
+        {
+            
+        }
         public void CreateDescription(String jobName, string description)
         {
             TweenObjectOut();
             characterImagePanel.mainTexture = characterImage;
             this.jobName.text = jobName;
             this.description.text = description;
-            TweenObjectIn();
+            TweenObjectIn(picturePanel, picturePanelPosition);
+            TweenObjectIn(descriptionPanel,descriptionPanePosition);
         }
-        public void TweenObjectIn()
+        public void TweenObjectIn(GameObject from, GameObject to)
         {
             var parms= new TweenParms();
-            parms.Prop("position", picturePanelPosition.transform.position);
-            HOTween.To(picturePanel.transform, 1f, parms);
-            parms = new TweenParms();
-            parms.Prop("position", descriptionPanePosition.transform.position);
-            HOTween.To(descriptionPanel.transform, 1f, parms);
+            parms.Prop("position", to.transform.position);
+            HOTween.To(from.transform, 1f, parms);
         }
+      
 
         public void TweenObjectOut()
         {
             descriptionPanel.transform.position = descriptionPanePositionStart.transform.position;
             picturePanel.transform.position = picturePanelPositionStart.transform.position;
+            inputPanel.transform.position = inputPanelPosisitionStart.transform.position;
+
         }
     }
 }

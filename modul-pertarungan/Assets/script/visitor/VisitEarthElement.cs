@@ -15,7 +15,7 @@ namespace ModulPertarungan
                 var character = (DamageReceiver)visitableObject;
                 Debug.Log(character.Name);
                 var value = Random.Range(1, 3);
-                if (damageGiver is WindCard)
+                if (damageGiver is FireCard)
                 {
                     if (GameManager.Instance().GameMode == "pvp")
                     {
@@ -27,7 +27,7 @@ namespace ModulPertarungan
                     }
 
                 }
-                else if (damageGiver is ThunderCard)
+                else if (damageGiver is WindCard)
                 {
                     damage /= value;
                 }

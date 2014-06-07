@@ -27,7 +27,7 @@ namespace ModulPertarungan
                         damage *= value;
                     }
                 }
-                else if(damageGiver is WindCard)
+                else if(damageGiver is EarthCard)
                 {
                     damage /= value;
                 }
