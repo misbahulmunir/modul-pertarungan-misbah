@@ -141,6 +141,7 @@ namespace ModulPertarungan
             urlDictionary.Add("update_building", "http://cws.yowanda.com/ClientController/3/building/update_building");
             urlDictionary.Add("ignore_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/ignore-friend");
             urlDictionary.Add("remove_friend", "http://cws.yowanda.com/ClientController/2/player/remove_friend");
+            urlDictionary.Add("register", "http://cws.yowanda.com/ClientController/3/player/register");
         }
 
         private void InitPathDictionary()

@@ -56,7 +56,7 @@ namespace ModulPertarungan
 
         public void SelectGrandMagus()
         {
-            CreateDescription("GrandMagus", "");
+            CreateDescription("Grand Magus", "");
         }
 
         public void ConfirmPlayerJob()
@@ -67,8 +67,12 @@ namespace ModulPertarungan
 
         public void ConfirmNameAndEmail()
         {
-            
+            var encoded_mail = System.Text.Encoding.UTF8.GetBytes(email.value);
+            WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
+            Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+            //Debug.Log(jobName.text);
         }
+
         public void CreateDescription(String jobName, string description)
         {
             TweenObjectOut();
@@ -91,7 +95,6 @@ namespace ModulPertarungan
             descriptionPanel.transform.position = descriptionPanePositionStart.transform.position;
             picturePanel.transform.position = picturePanelPositionStart.transform.position;
             inputPanel.transform.position = inputPanelPosisitionStart.transform.position;
-
         }
     }
 }
