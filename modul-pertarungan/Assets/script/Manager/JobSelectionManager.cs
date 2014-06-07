@@ -69,10 +69,12 @@ namespace ModulPertarungan
         {
             var encoded_mail = System.Text.Encoding.UTF8.GetBytes(email.value);
             WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
+            Debug.Log(jobName.text);
+            Debug.Log(playerName.value);
+            Debug.Log(System.Convert.ToBase64String(encoded_mail));
             Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
             GameManager.Instance().PlayerId = playerName.value;
             Application.LoadLevel("Loading");
-            //Debug.Log(jobName.text);
         }
 
         public void CreateDescription(String jobName, string description)

@@ -51,9 +51,9 @@ namespace ModulPertarungan
             }
             catch
             {
-                responseFromServer = urlTarget;//"-3|Error reading stream";
+                responseFromServer = "-3|Error reading stream";
             }
-            //Debug.Log(responseFromServer);
+            Debug.Log(methodName);
             string[] response = responseFromServer.Split('|');
             queryResult = int.Parse(response[0]);
             queryInfo = response[1];
@@ -117,6 +117,7 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_player_ranking", "http://cws.yowanda.com/files/player_rank");
             fileLocationDictionary.Add("get_friend_request", "http://cws.yowanda.com/files/friend_request_of_");
             fileLocationDictionary.Add("get_partial_profile", "http://cws.yowanda.com/files/partial_profile_of_");
+            fileLocationDictionary.Add("get_messages", "http://cws.yowanda.com/files/messages_of_");
         }
 
         private void InitUrlDictionary()
@@ -142,6 +143,8 @@ namespace ModulPertarungan
             urlDictionary.Add("ignore_friend_request", "http://cws.yowanda.com/ClientController/3/request/do_request/ignore-friend");
             urlDictionary.Add("remove_friend", "http://cws.yowanda.com/ClientController/2/player/remove_friend");
             urlDictionary.Add("register", "http://cws.yowanda.com/ClientController/3/player/register");
+            urlDictionary.Add("send_message", "http://cws.yowanda.com/ClientController/3/message/send_message");
+            urlDictionary.Add("get_messages", "http://cws.yowanda.com/ClientController/1/message/get_messages");
         }
 
         private void InitPathDictionary()
@@ -158,6 +161,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_player_ranking", "player_rank");
             clientPathDictionary.Add("get_friend_request", "friend_request_of_");
             clientPathDictionary.Add("get_partial_profile", "partial_profile_of_");
+            clientPathDictionary.Add("get_messages", "messages_of_");
         }
 
         public void clearData(string path)
