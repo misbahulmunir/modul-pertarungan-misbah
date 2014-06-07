@@ -14,6 +14,7 @@ public class FriendClickManager : MonoBehaviour {
     public GameObject friendRequestActionButton;
     public GameObject friendlistPanel;
     public GameObject friendRemoveButton;
+    public GameObject friendVisitButton;
 
     public GameObject friendlistTab, viewFriendRequestTab, findFriendTab;
     int posY;
@@ -176,6 +177,8 @@ public class FriendClickManager : MonoBehaviour {
                     friendRequestLabel.GetComponent<UILabel>().text = player.Name + "   " + player.Job + "   Rank " + player.Rank + "   Level " + player.Level;
                     var objL = NGUITools.AddChild(friendlistPanel, friendRequestLabel);
                     objL.name = player.Name + "_label";
+                    var objV = NGUITools.AddChild(friendlistPanel, friendVisitButton);
+                    objV.name = player.Name + "_nvisit_button";
                     var objB = NGUITools.AddChild(friendlistPanel, friendRemoveButton);
                     objB.name = player.Name + "_remove_button";
                 }
@@ -193,6 +196,20 @@ public class FriendClickManager : MonoBehaviour {
         findFriendTab.SetActive(true);
         friendlistTab.SetActive(false);
         viewFriendRequestTab.SetActive(false);
+    }
+
+    void VisitFriend(object value)
+    {
+        nama = value as string;
+        Debug.Log("visit " + nama);
+        GameManager.Instance().FriendName = nama;
+        WebServiceSingleton.GetInstance().ProcessRequest("get_player_avatar", nama);
+        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_avatar", nama));
+        WebServiceSingleton.GetInstance().ProcessRequest("get_profile", nama);
+        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", nama));
+        WebServiceSingleton.GetInstance().ProcessRequest("get_player_deck", nama);
+        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_deck", nama));
+        Application.LoadLevel("FriendProfile");
     }
 
 }

@@ -28,7 +28,7 @@ public class AvatarAttachment : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        playerName = "zendra";
+        playerName = GameManager.Instance().PlayerId;
         _xmlDoc = new XmlDocument();
         avatarList = new List<string>();
         getDatabaseAvatar();

@@ -46,7 +46,6 @@ namespace ModulPertarungan
             DownloadXMLFile("get_player_ranking");
             DownloadXMLFile("get_friend_request");
 
-            WebServiceSingleton.GetInstance().isLoadingScreen = true;
             Application.LoadLevel("BeforeBattle");
         }
 
