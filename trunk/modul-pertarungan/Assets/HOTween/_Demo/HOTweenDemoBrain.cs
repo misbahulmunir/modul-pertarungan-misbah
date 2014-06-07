@@ -11,6 +11,7 @@ public class HOTweenDemoBrain : MonoBehaviour
     public Transform CubeTrans2;
     public Transform CubeTrans3;
     public string SampleString;
+    public string coba;
     public float SampleFloat = 0;
 
     // ===================================================================================
@@ -48,12 +49,12 @@ public class HOTweenDemoBrain : MonoBehaviour
 
         // Tween the sample string using full mode with parameters and without linebreaks.
         // The result will be shown using OnGUI
-        HOTween.To(this, 3, new TweenParms().Prop("SampleString", "Hello I'm a sample tweened string").Ease(EaseType.Linear).Loops(-1, LoopType.Yoyo));
-
+        //HOTween.To(this, 1f, new TweenParms().Prop("SampleString", "Hello I'm a sample tweened string").Ease(EaseType.Linear).Loops(-1, LoopType.Yoyo));
+        HOTween.To(this, 1f, new TweenParms().Prop("coba", "kalo bisa view agak kesamping, terus yang island full color (bukan border/sambungan sama laut, kalo dicontoh itu hijau semua) itu dikasih variasi").Ease(EaseType.Linear));
         // Tween the sample floating point number while creating TweenParms first,
         // and then assigning it to HOTween.
-        TweenParms tweenParms = new TweenParms().Prop("SampleFloat", 27.5f).Ease(EaseType.Linear).Loops(-1, LoopType.Yoyo);
-        HOTween.To(this, 3, tweenParms);
+        //TweenParms tweenParms = new TweenParms().Prop("SampleFloat", 27.5f).Ease(EaseType.Linear).Loops(-1, LoopType.Yoyo);
+        //HOTween.To(this, 3, tweenParms);
 
         // SEQUENCE CREATION
         // Here you'll see how to create a Sequence,
@@ -82,8 +83,9 @@ public class HOTweenDemoBrain : MonoBehaviour
     void OnGUI()
     {
         // Here we show the sample string and float being tweened
-        GUILayout.Label("String tween: " + SampleString);
-        GUILayout.Label("Float tween: " + SampleFloat);
+        //GUILayout.Label("String tween: " + SampleString);
+        //GUILayout.Label("Float tween: " + SampleFloat);
+        GUILayout.Label("Coba: " + coba);
     }
 
     // ===================================================================================

@@ -7,7 +7,7 @@ public class ButtonMap : Button
     void Start()
     {
         SceneLoad = "MapDungeon";
-        ButtonName = "mapbutton";
+        ButtonTag = "mapbutton";
     }
 
     // Update is called once per frame

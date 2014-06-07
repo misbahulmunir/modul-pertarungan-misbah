@@ -8,7 +8,7 @@ public class ButtonGoQuest : Button
 	void Start ()
     {
         SceneLoad = "Battle";
-        ButtonName = "goquestbutton";
+        ButtonTag = "gobutton";
 	}
 	
 	// Update is called once per frame

@@ -11,6 +11,9 @@ namespace ModulPertarungan
     {
 
         public List<GameObject> enemies;
+        private bool[] questActived;
+        private bool[] questCleared;
+
         void OnClick()
         {
             try
@@ -31,6 +34,11 @@ namespace ModulPertarungan
                 Debug.Log(e);
             }
               //Application.LoadLevel("Battle");
+
+            questActived = new bool[] { true, false, false, false, false, false, false, false };
+            questCleared = new bool[] { false, false, false, false, false, false, false, false };
+            TextureSingleton.Instance().QuestActive = questActived;
+            TextureSingleton.Instance().QuestCleared = questCleared;
             Application.LoadLevel("Dungeon");
         }
         void Start()
