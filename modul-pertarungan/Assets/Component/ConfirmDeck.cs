@@ -71,6 +71,7 @@ namespace ModulPertarungan
                         WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + param, id);
                         Debug.Log("response : " + WebServiceSingleton.GetInstance().responseFromServer);
                         Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_" + param, id));
+                        Debug.Log(WebServiceSingleton.GetInstance().isLoadingScreen);
                     }
                     catch
                     {
