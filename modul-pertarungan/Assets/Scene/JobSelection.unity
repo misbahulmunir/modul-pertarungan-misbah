@@ -814,8 +814,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 673562284}
   inputType: 0
-  keyboardType: 0
-  validation: 0
+  keyboardType: 6
+  validation: 4
   characterLimit: 0
   savedAs: 
   selectOnTab: {fileID: 0}
@@ -1867,7 +1867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 1711316477}
   inputType: 0
-  keyboardType: 0
+  keyboardType: 7
   validation: 0
   characterLimit: 0
   savedAs: 
@@ -2070,6 +2070,14 @@ Prefab:
     - target: {fileID: 100000, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}
       propertyPath: m_Name
       value: Input Name
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}
+      propertyPath: keyboardType
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}
+      propertyPath: validation
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}
@@ -3096,6 +3104,14 @@ Prefab:
     - target: {fileID: 100000, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}
       propertyPath: m_Name
       value: Input Email
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}
+      propertyPath: validation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}
+      propertyPath: keyboardType
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45edf347f9f51214dbfbab27b16fbf01, type: 2}

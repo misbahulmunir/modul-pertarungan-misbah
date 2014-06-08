@@ -19,15 +19,48 @@ public class NewTestUnit
         sorcerer.CurrentSoulPoints = 20;
         var action = new WarlockAction();
         action.Character = sorcerer;
-        action.ReceiveDamage(action.Character, new WindCard(), 100);
+        action.ReceiveDamage(action.Character, new EarthCard(), 100);
         Assert.LessOrEqual(action.Character.CurrentHealth,150);
         action.ReceiveDamage(action.Character, new WaterCard(), 50);
         Assert.LessOrEqual(action.Character.CurrentHealth,100);
       
 
     }
-
+   
+    [Test]
     public void DamageReceiverWaterTest()
+    {
+        var sorcerer = new Sorcerer();
+        sorcerer.MaxHealth = 200;
+        sorcerer.CurrentHealth = 200;
+        sorcerer.HandCapacity = 2;
+        sorcerer.MaxSoulPoints = 30;
+        sorcerer.CurrentSoulPoints = 20;
+        var action = new WarlockAction();
+        action.Character = sorcerer;
+        action.ReceiveDamage(action.Character, new FireCard(), 100);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 150);
+        action.ReceiveDamage(action.Character, new ThunderCard(), 50);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 100);
+    }
+    [Test]
+    public void DamageReceiverWindTest()
+    {
+        var sorcerer = new Sorcerer();
+        sorcerer.MaxHealth = 200;
+        sorcerer.CurrentHealth = 200;
+        sorcerer.HandCapacity = 2;
+        sorcerer.MaxSoulPoints = 30;
+        sorcerer.CurrentSoulPoints = 20;
+        var action = new WarlockAction();
+        action.Character = sorcerer;
+        action.ReceiveDamage(action.Character, new ThunderCard(), 100);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 150);
+        action.ReceiveDamage(action.Character, new EarthCard(), 50);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 100);
+    }
+    [Test]
+    public void DamageReceiverEarthTest()
     {
         var sorcerer = new Sorcerer();
         sorcerer.MaxHealth = 200;
@@ -39,10 +72,25 @@ public class NewTestUnit
         action.Character = sorcerer;
         action.ReceiveDamage(action.Character, new WindCard(), 100);
         Assert.LessOrEqual(action.Character.CurrentHealth, 150);
-        action.ReceiveDamage(action.Character, new WaterCard(), 50);
+        action.ReceiveDamage(action.Character,new FireCard(), 50);
         Assert.LessOrEqual(action.Character.CurrentHealth, 100);
     }
-
+    [Test]
+    public void DamageReceiverThunderTest()
+    {
+        var sorcerer = new Sorcerer();
+        sorcerer.MaxHealth = 200;
+        sorcerer.CurrentHealth = 200;
+        sorcerer.HandCapacity = 2;
+        sorcerer.MaxSoulPoints = 30;
+        sorcerer.CurrentSoulPoints = 20;
+        var action = new WarlockAction();
+        action.Character = sorcerer;
+        action.ReceiveDamage(action.Character, new WaterCard(), 100);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 150);
+        action.ReceiveDamage(action.Character, new WindCard(), 50);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 100);
+    }
     [Test]
     public void TestCardEffectProtocol()
     {   Sorcerer sorcerer= new Sorcerer();
@@ -61,6 +109,7 @@ public class NewTestUnit
         invoke.RunCommand();
         GameObject.DestroyImmediate(action);
     }
+
 
     [Test]
     public void TestEndPhaseProtocol()
@@ -88,5 +137,7 @@ public class NewTestUnit
         invoke.AddCommand(new EndPhaseCommand(new BattleStateManager()));
         GameObject.DestroyImmediate(action);
     }
+
+  
 
 }
