@@ -16,13 +16,22 @@ namespace ModulPertarungan
 
         public override void Action()
         {
+            int totalCards=0;
             foreach (GameObject obj in GameManager.Instance().Players)
             {
+                totalCards += obj.GetComponent<PlayerAction>().Deck.Card.Count +
+                              obj.GetComponent<PlayerAction>().CurrentHand.Count;
                 var emptyhand = obj.GetComponent<PlayerAction>().HandSize - obj.GetComponent<PlayerAction>().CurrentHand.Count();
                 for (int c = 0; c < emptyhand; c++)
                 {
                     obj.GetComponent<PlayerAction>().Draw();
                 }
+               
+            }
+            if (totalCards == 0)
+            {
+                BattleManager.Currentstate= new LoseState(BattleManager);
+                BattleManager.Currentstate.Action();
             }
             BattleManager.Currentstate = new ChangePlayerState(CurrentPlayer, BattleManager.objectLoader, BattleManager);
             BattleManager.Currentstate.Action();

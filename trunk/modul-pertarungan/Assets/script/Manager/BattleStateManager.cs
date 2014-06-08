@@ -97,17 +97,13 @@ namespace ModulPertarungan
 
             if (GameManager.Instance().Enemies.Count <= 0)
             {
-                GameManager.Instance().GameStatus = "win";
-                GameManager.Instance().PlayerExp = 100;
-                GameManager.Instance().PlayerGold = 100;
-                Application.LoadLevel("AfterBattle2");
-
-
+                this.currentstate= new WinState(this);
+                this.currentstate.Action();
             }
             else if (GameManager.Instance().Players.Count <= 0)
             {
-                GameManager.Instance().GameStatus = "lose";
-                Application.LoadLevel("AfterBattle2");
+                this.currentstate= new LoseState(this);
+                this.currentstate.Action();
             }
             if (GameManager.Instance().GameMode == "pvp")
             {
@@ -118,17 +114,16 @@ namespace ModulPertarungan
                 if (!serverMessage.Contains("Disconnected")) return;
                 if (GameManager.Instance().PlayerId.Equals(message[1]))
                 {
-                    GameManager.Instance().GameStatus = "lose";
-                    NetworkSingleton.Instance().ServerMessage = "";
+                   this.currentstate= new LoseState(this);
+                   this.currentstate.Action();
                 }
                 else
                 {
-                    GameManager.Instance().GameStatus = "win";
-                    GameManager.Instance().PlayerExp = 100;
-                    GameManager.Instance().PlayerGold = 100;
+                    this.currentstate= new WinState(this);
+                    this.currentstate.Action();
                     NetworkSingleton.Instance().ServerMessage = "";
                 }
-                Application.LoadLevel("AfterBattle2");
+               
 
             }
 
