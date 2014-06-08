@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400010}
   m_Layer: 8
-  m_Name: Message_Text_2
+  m_Name: Message_Text_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 114: {fileID: 11400014}
   m_Layer: 8
-  m_Name: Message_Title_2
+  m_Name: Message_Title_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 0f5e030a8cdc292438f880d3ec49ef64, type: 2}
-  mText: "From : mis\n \nmirana@yahoo.co.uk"
+  mText: "From : zendra\n \nMessage:\nhai tampan"
   mFontSize: 18
   mFontStyle: 0
   mAlignment: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: mirana@yahoo.co.uk
+  mText: test
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
