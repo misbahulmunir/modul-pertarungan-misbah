@@ -2,11 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using ModelModulPertarungan;
+
 namespace ModulPertarungan
 {
-    public class ThunderKingSlimeScript : ThunderEnemyAction
+    public class TreantScript : EarthEnemyAction
     {
-        private ThunderKingSlime thunderkingslime;
+        private Treant treant;
         // Use this for initialization
         public override void AttackAction()
         {
@@ -16,15 +17,15 @@ namespace ModulPertarungan
                 GameObject animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(player.transform.position.x, player.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.renderer.sortingLayerName = "foreground";
                 animation.particleEmitter.emit = true;
-                player.GetComponent<DamageReceiverAction>().ReceiveDamage(player.GetComponent<DamageReceiverAction>().Character, new ThunderCard(), 10);
+                player.GetComponent<DamageReceiverAction>().ReceiveDamage(player.GetComponent<DamageReceiverAction>().Character, new EarthCard(), 10);
 
             }
             GameManager.Instance().KillObj("player");
         }
         void Start()
         {
-            this.thunderkingslime = new ThunderKingSlime(200, 200, "thunderkingslime");
-            this.Character = thunderkingslime;
+            this.treant = new Treant(200, 200, "treant");
+            this.Character = treant;
         }
 
 
@@ -36,7 +37,7 @@ namespace ModulPertarungan
         public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
             base.ReceiveDamage(damageReceiver, damageGiver, damage);
-            if (this.thunderkingslime.CurrentHealth <= 0)
+            if (this.treant.CurrentHealth <= 0)
             {
                 Destroy(this.gameObject);
             }
