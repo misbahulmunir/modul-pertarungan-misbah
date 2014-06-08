@@ -24,7 +24,7 @@ public class ButtonManagerMap : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("Start");
+        //Debug.Log("Start");
         HOTween.Init(true, true, true); 
         butList = tilemap.GetComponent<TileMap>().butID;        
     }
@@ -60,20 +60,20 @@ public class ButtonManagerMap : MonoBehaviour
                             splitter = buttonName.Split('_');
                         }
                         int idButton = Int32.Parse(splitter[1]);
-                        Debug.Log(idButton);
+                        //Debug.Log(idButton);
                         if (TextureSingleton.Instance().QuestActive[idButton] == true)
                         {
-                            Debug.Log("Actived " + TextureSingleton.Instance().QuestActive[idButton]);
+                            //Debug.Log("Actived " + TextureSingleton.Instance().QuestActive[idButton]);
 
                             if (buttonTagLoader == "questbutton")
                             {
                                 HOTween.To(questObj, 1f, "position", new Vector3(17, 13, 0));
-                                Debug.Log("questbutton");
+                                //Debug.Log("questbutton");
                             }
                             else if (buttonTagLoader == "cancelbutton")
                             {
                                 HOTween.To(questObj, 1f, "position", new Vector3(17, 30, 0));
-                                Debug.Log("cancelbutton");
+                                //Debug.Log("cancelbutton");
                             }
                             else if (buttonTagLoader == "gobutton")
                             {

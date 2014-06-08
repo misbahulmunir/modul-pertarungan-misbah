@@ -313,6 +313,7 @@ public class Map
                                 if (check == true)
                                 {
                                     map_data[x, y] = val;
+                                    usedValue.Clear();
                                     break;
                                 }
                                 c--;
@@ -335,6 +336,7 @@ public class Map
                                 if (check == true)
                                 {
                                     map_data[x, y] = val;
+                                    usedValue.Clear();
                                     break;
                                 }
                                 c--;
@@ -368,6 +370,7 @@ public class Map
                             if (check == true)
                             {
                                 map_data[x, y] = val;
+                                usedValue.Clear();
                                 break;
                             }
                             c--;
@@ -402,6 +405,7 @@ public class Map
                             if (check == true)
                             {
                                 map_data[x, y] = val;
+                                usedValue.Clear();
                                 break;
                             }
                             c--;

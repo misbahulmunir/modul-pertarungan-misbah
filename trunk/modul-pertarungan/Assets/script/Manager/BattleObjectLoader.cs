@@ -189,7 +189,7 @@ namespace ModulPertarungan
                         factory.CreateEnemy("ThunderSlime", enemyPosition[0]);
                         factory.CreateEnemy("ThunderKingSlime", enemyPosition[1]);
                     }
-                    if (TextureSingleton.Instance().IdButton == "ButtonThunder_1")
+                    else if (TextureSingleton.Instance().IdButton == "ButtonThunder_1")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
@@ -213,7 +213,7 @@ namespace ModulPertarungan
                         factory.CreateEnemy("WindSlime", enemyPosition[0]);
                         factory.CreateEnemy("WindKingSlime", enemyPosition[1]);
                     }
-                    if (TextureSingleton.Instance().IdButton == "ButtonWind_0")
+                    else if (TextureSingleton.Instance().IdButton == "ButtonWind_0")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
