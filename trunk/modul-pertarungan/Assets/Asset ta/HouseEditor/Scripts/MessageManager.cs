@@ -39,8 +39,6 @@ public class MessageManager : MonoBehaviour {
     void TweenObjectOut(GameObject from, GameObject to)
     {
         from.transform.position = to.transform.position;
-        //picturePanel.transform.position = picturePanelPositionStart.transform.position;
-        //inputPanel.transform.position = inputPanelPosisitionStart.transform.position;
     }
 
     void OnClick()

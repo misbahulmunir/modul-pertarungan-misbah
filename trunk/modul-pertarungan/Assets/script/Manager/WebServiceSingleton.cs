@@ -53,7 +53,7 @@ namespace ModulPertarungan
             {
                 responseFromServer = "-3|Error reading stream";
             }
-            Debug.Log(methodName + " " + parameter);
+            Debug.Log(methodName + " " + parameter + responseFromServer);
             string[] response = responseFromServer.Split('|');
             queryResult = int.Parse(response[0]);
             queryInfo = response[1];

@@ -6,6 +6,7 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Xml;
+using Holoville.HOTween;
 
 public class FriendProfileManager : MonoBehaviour {
     
@@ -20,6 +21,12 @@ public class FriendProfileManager : MonoBehaviour {
     public GameObject friendLevelLabel;
     public GameObject friendCardGrid;
 
+    public GameObject messageContainer;
+    public GameObject messageContainerPosition;
+    public GameObject messageContainerStart;
+    public GameObject mailSubject;
+    public GameObject mailText;
+
 	// Use this for initialization
 	void Start () {
         viewFriendProfile(GameManager.Instance().FriendName); 
@@ -30,7 +37,7 @@ public class FriendProfileManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+        OnClick();
 	}
 
     void viewFriendProfile(string name)
@@ -100,5 +107,46 @@ public class FriendProfileManager : MonoBehaviour {
     void BackButton()
     {
         Application.LoadLevel("FriendManagementNew");
+    }
+
+    void TweenObjectIn(GameObject from, GameObject to)
+    {
+        var parms = new TweenParms();
+        parms.Prop("position", to.transform.position);
+        HOTween.To(from.transform, 1f, parms);
+    }
+
+
+    void TweenObjectOut(GameObject from, GameObject to)
+    {
+        from.transform.position = to.transform.position;
+    }
+
+    void OnClick()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        if (Input.GetMouseButtonUp(0))
+        {
+            if (hit.collider != null)
+            {
+                if (hit.collider.gameObject.name.ToLower().Contains("sendmail"))
+                {
+                    GameObject obj = hit.collider.gameObject as GameObject;
+                    Debug.Log(obj.name);
+                    TweenObjectIn(messageContainer, messageContainerPosition);
+                }
+            }
+        }
+    }
+
+    void SendMessage()
+    {
+        var encoded_subject = System.Text.Encoding.UTF8.GetBytes(mailSubject.GetComponent<UILabel>().text);
+        var encoded_text = System.Text.Encoding.UTF8.GetBytes(mailText.GetComponent<UILabel>().text);
+
+        WebServiceSingleton.GetInstance().ProcessRequest("send_message", GameManager.Instance().PlayerId + "-" + GameManager.Instance().FriendName + "|" + System.Convert.ToBase64String(encoded_subject) + "|" + System.Convert.ToBase64String(encoded_text));
+        Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+        //TweenObjectOut(messageContainer, messageContainerStart);
+        TweenObjectIn(messageContainer, messageContainerStart);
     }
 }
