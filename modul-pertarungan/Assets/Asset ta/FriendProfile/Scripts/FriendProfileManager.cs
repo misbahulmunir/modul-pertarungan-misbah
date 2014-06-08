@@ -57,7 +57,7 @@ public class FriendProfileManager : MonoBehaviour {
          }
     }
 
-    public void AddToGrid(GameObject grid, List<string> list)
+    void AddToGrid(GameObject grid, List<string> list)
     {
         foreach (string s in list)
         {
@@ -66,7 +66,7 @@ public class FriendProfileManager : MonoBehaviour {
         grid.GetComponent<UIGrid>().Reposition();
     }
 
-    public void LoadCardFromService(string method, GameObject grid)
+    void LoadCardFromService(string method, GameObject grid)
     {
         List<string> list = new List<string>();
         Boolean _isEmpty = false;
@@ -95,5 +95,10 @@ public class FriendProfileManager : MonoBehaviour {
         }
 
         if (!_isEmpty) AddToGrid(grid, list);
+    }
+
+    void BackButton()
+    {
+        Application.LoadLevel("FriendManagementNew");
     }
 }

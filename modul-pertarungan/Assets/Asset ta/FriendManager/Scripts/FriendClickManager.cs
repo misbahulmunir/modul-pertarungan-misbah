@@ -212,4 +212,8 @@ public class FriendClickManager : MonoBehaviour {
         Application.LoadLevel("FriendProfile");
     }
 
+    void BackButton()
+    {
+        Application.LoadLevel("HouseEditor");
+    }
 }
