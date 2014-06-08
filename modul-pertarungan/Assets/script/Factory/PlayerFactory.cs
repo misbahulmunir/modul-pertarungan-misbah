@@ -1,10 +1,12 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using ModelModulPertarungan;
 using System.Xml;
 using System.Xml.Serialization;
 using System.IO;
+using Object = UnityEngine.Object;
 
 namespace ModulPertarungan
 {
@@ -76,21 +78,33 @@ namespace ModulPertarungan
             character.DeckCostPoint = playerFromService.MaxDP;
             character.Rank = playerFromService.Rank;
             character.Job = playerFromService.Job;
-            textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
-            xmlFromServer = new XmlDocument();
-            xmlFromServer.Load(textReader);
-            nameNodes = xmlFromServer.GetElementsByTagName("Name");
-            quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
-            character.DeckList = new List<string>();
-
-            for (int i = 0; i < nameNodes.Count; i++)
+            try
             {
-                for (int j = 0; j < int.Parse(quantityNodes[i].InnerXml); j++)
+
+
+
+
+
+                textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
+                xmlFromServer = new XmlDocument();
+                xmlFromServer.Load(textReader);
+                nameNodes = xmlFromServer.GetElementsByTagName("Name");
+                quantityNodes = xmlFromServer.GetElementsByTagName("Quantity");
+                character.DeckList = new List<string>();
+
+                for (int i = 0; i < nameNodes.Count; i++)
                 {
-                    character.DeckList.Add(nameNodes[i].InnerXml);
+                    for (int j = 0; j < int.Parse(quantityNodes[i].InnerXml); j++)
+                    {
+                        character.DeckList.Add(nameNodes[i].InnerXml);
+                    }
                 }
+                textReader.Close();
             }
-            textReader.Close();
+            catch (Exception e)
+            {
+                Debug.Log("NoDeck");
+            }
             var obj = Object.Instantiate((GameObject)Resources.Load("Character/" + character.Job+"/"+"GameObject"+"/"+character.Rank, typeof(GameObject)), pawnsPosisition.transform.position, Quaternion.identity) as GameObject;
             if (obj != null)
             {
