@@ -20,8 +20,19 @@ namespace ModulPertarungan
                 {"EarthKingSlime", new EarthKingSlime(200,200, "earthkingslime")},
                 {"ThunderSlime", new ThunderSlime(200,200, "thunderslime")},
                 {"ThunderKingSlime", new ThunderKingSlime(200,200, "thunderkingslime")},
+                {"WaterSlime", new WaterSlime(200,200, "waterslime")},
+                {"WaterKingSlime", new WaterKingSlime(200,200, "waterkingslime")},
                 {"WindSlime", new WindSlime(200,200, "windslime")},
-                {"WindKingSlime", new WindKingSlime(200,200, "windkingslime")}
+                {"WindKingSlime", new WindKingSlime(200,200, "windkingslime")},
+                {"FireNymph", new FireNymph(200,200,"firenymph")},
+                {"EarthNymph", new EarthNymph(200,200,"earthnymph")},
+                {"ThunderNymph", new ThunderNymph(200,200,"thundernymph")},
+                {"WaterNymph", new WaterNymph(200,200,"waternymph")},
+                {"WindNymph", new WindNymph(200,200,"windnymph")},
+                {"Mandrake", new Mandrake(200,200, "mandrake")},
+                {"Mandragora", new Mandragora(200,200, "mandragora")},
+                {"Canotre", new Canotre(200,200, "canotre")},
+                {"Treant", new Treant(200,200, "treant")}
             };
         }
 

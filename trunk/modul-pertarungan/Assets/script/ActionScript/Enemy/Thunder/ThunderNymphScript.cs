@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using ModelModulPertarungan;
 namespace ModulPertarungan
 {
-    public class ThunderKingSlimeScript : ThunderEnemyAction
+    public class ThunderNymphScript : ThunderEnemyAction
     {
-        private ThunderKingSlime thunderkingslime;
+        private ThunderNymph thundernymph;
         // Use this for initialization
         public override void AttackAction()
         {
@@ -23,8 +23,8 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.thunderkingslime = new ThunderKingSlime(200, 200, "thunderkingslime");
-            this.Character = thunderkingslime;
+            this.thundernymph = new ThunderNymph(200, 200, "thundernymph");
+            this.Character = thundernymph;
         }
 
 
@@ -36,7 +36,7 @@ namespace ModulPertarungan
         public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
             base.ReceiveDamage(damageReceiver, damageGiver, damage);
-            if (this.thunderkingslime.CurrentHealth <= 0)
+            if (this.thundernymph.CurrentHealth <= 0)
             {
                 Destroy(this.gameObject);
             }
