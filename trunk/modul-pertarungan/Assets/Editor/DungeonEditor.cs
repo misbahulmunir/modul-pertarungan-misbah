@@ -37,39 +37,45 @@ public class DungeonEditor : EditorWindow
         home = Resources.Load("Map/Prefab/ButtonHome") as GameObject;
         if (GUILayout.Button("Add Background"))
         {
-            if (backgroundAdded == false)
+            if (GameObject.Find("Background") == null)
             {
-                background =(GameObject) Instantiate(background);
+                background = (GameObject)Instantiate(background);
                 background.name = "Background";
-                backgroundAdded = true;
             }
+            else
+            {
+                Debug.Log("Background Already Added");
+            }
+            
         }
         if (GUILayout.Button("Add Manager"))
         {
-            if (managerAdded == false)
+            if (GameObject.Find("ButtonManager") == null)
             {
-                manager = (GameObject) Instantiate(manager);
+                manager = (GameObject)Instantiate(manager);
                 manager.name = "ButtonManager";
-                managerAdded = true;
+            }
+            else
+            {
+                Debug.Log("Manager Already Added");
             }
         }
         if (GUILayout.Button("Add Home Button"))
         {
-            if (homeAdded == false)
+            if (GameObject.Find("ButtonHome") == null)
             {
                 home = (GameObject)Instantiate(home);
                 home.name = "ButtonHome";
-                homeAdded = true;
+            }
+            else
+            {
+                Debug.Log("Home Button Already Added");
             }
         }
         groupEnabled = EditorGUILayout.BeginToggleGroup("Add Object", groupEnabled);
-        string[] x = new string[] { "Add Button"};
+        string[] x = new string[] { "Add Elemental Button"};
         numToogle = GUILayout.SelectionGrid(numToogle, x, 1);
-        EditorGUILayout.EndToggleGroup();  
-       
-        GUILayout.Label("Earth Setting", EditorStyles.boldLabel);
-        //landSize = EditorGUILayout.IntField("Land Size", landSize);
-        //landNum = EditorGUILayout.IntField("Number Of Land", landNum); 
+        EditorGUILayout.EndToggleGroup();
     }
     void OnDestroy()
     {

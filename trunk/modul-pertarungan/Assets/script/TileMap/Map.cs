@@ -108,7 +108,7 @@ public class Map
         int val = Random.Range(min, max);
         if (usedValue.Contains(val))
         {
-            val = UniqueRandom(min, max);
+            val = Random.Range(min, max);
         }
         usedValue.Add(val);
         return val;
