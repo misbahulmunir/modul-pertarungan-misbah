@@ -366,8 +366,8 @@ Transform:
   - {fileID: 890772544}
   - {fileID: 1872172375}
   - {fileID: 618466872}
-  - {fileID: 1104558058}
   - {fileID: 1440833163}
+  - {fileID: 1104558058}
   - {fileID: 1737433191}
   - {fileID: 1688480171}
   - {fileID: 1699089327}
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 300
   mHeight: 100
@@ -2186,7 +2186,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 75
   mHeight: 75
@@ -2316,7 +2316,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: 
+  mText: username
   mFontSize: 30
   mFontStyle: 0
   mAlignment: 0
@@ -2780,6 +2780,10 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 471842389}
+    - target: {fileID: 11400010, guid: 70f343faa491ac744b205d5ff4019618, type: 2}
+      propertyPath: mText
+      value: username
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70f343faa491ac744b205d5ff4019618, type: 2}
   m_RootGameObject: {fileID: 1737433190}
@@ -3580,7 +3584,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 300
   mHeight: 100

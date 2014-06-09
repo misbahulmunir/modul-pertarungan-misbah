@@ -72,9 +72,18 @@ public class FriendClickManager : MonoBehaviour {
     void AddFriend()
     {
         //WebServiceSingleton.GetInstance().ProcessRequest("send_friend_request", GameManager.Instance().PlayerId + "|" + players.Name);
-        WebServiceSingleton.GetInstance().ProcessRequest("send_friend_request", GameManager.Instance().PlayerId + "|" + players.Name);
+
+        WebServiceSingleton.GetInstance().ProcessRequest("send_friend_request", GameManager.Instance().PlayerId + "|" + friendSearchInputLabel.GetComponent<UILabel>().text);
         Debug.Log(WebServiceSingleton.GetInstance().queryInfo);
-        friendSearchResultLabel.GetComponent<UILabel>().text += "\nStatus: " + WebServiceSingleton.GetInstance().queryInfo;
+        if (WebServiceSingleton.GetInstance().queryResult > 0)
+        {
+            friendSearchResultLabel.GetComponent<UILabel>().text += "\nStatus: " + WebServiceSingleton.GetInstance().queryInfo;
+        }
+        else
+        {
+            friendSearchResultLabel.GetComponent<UILabel>().text = "Player doesn't exist";
+
+        }
     }
 
     void RefreshGrid(GameObject gridObj)

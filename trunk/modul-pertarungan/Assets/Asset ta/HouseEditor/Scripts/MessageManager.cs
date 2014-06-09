@@ -53,6 +53,7 @@ public class MessageManager : MonoBehaviour {
                     GameObject obj = hit.collider.gameObject as GameObject;
                     Debug.Log(obj.name);
                     TweenObjectIn(messagePanel, messagePanelPosition);
+                    GameManager.Instance().UpdatePaused = true;
                 }
             }
         }
@@ -61,6 +62,7 @@ public class MessageManager : MonoBehaviour {
     void MessageTweenOut()
     {
         TweenObjectOut(messagePanel, messagePanelPositionStart);
+        GameManager.Instance().UpdatePaused = false;
     }
 
     void ViewMessage()
