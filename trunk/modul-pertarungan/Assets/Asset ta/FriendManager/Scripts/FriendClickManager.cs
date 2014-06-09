@@ -173,6 +173,7 @@ public class FriendClickManager : MonoBehaviour {
 
         RefreshGrid(friendlistPanel);
         WebServiceSingleton.GetInstance().ProcessRequest("get_friend_list", GameManager.Instance().PlayerId);
+        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_friend_list", GameManager.Instance().PlayerId));
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
             try
