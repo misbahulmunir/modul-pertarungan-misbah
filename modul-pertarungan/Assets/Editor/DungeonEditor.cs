@@ -66,6 +66,7 @@ public class DungeonEditor : EditorWindow
             {
                 home = (GameObject)Instantiate(home);
                 home.name = "ButtonHome";
+                
             }
             else
             {
