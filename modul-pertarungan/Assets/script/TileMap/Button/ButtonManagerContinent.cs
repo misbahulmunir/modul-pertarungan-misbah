@@ -10,8 +10,6 @@ public class ButtonManagerContinent : MonoBehaviour
     private string buttonTagLoader;
     private Texture2D textureLoader;
 
-    
-
     // Use this for initialization
     void Start()
     {

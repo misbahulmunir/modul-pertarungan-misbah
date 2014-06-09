@@ -82,9 +82,7 @@ namespace ModulPertarungan
             foreach (GameObject obj in DisplayedCards)
             {
                 Destroy(obj);    
-            }
-           
-           
+            }      
         }
 
         public void LoadEnemy()
