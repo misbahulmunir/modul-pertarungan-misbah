@@ -25,7 +25,7 @@ namespace ModulPertarungan
             backgroundPathList.TryGetValue(backgroundName, out bgpath);
             var bg = Object.Instantiate(Resources.Load(bgpath, typeof(GameObject)), Vector2.zero, Quaternion.identity) as GameObject;
             bg.transform.localScale= new Vector3(3f,3f,0f);
-            bg.GetComponent<SpriteRenderer>().sortingOrder = -1;
+            bg.GetComponent<SpriteRenderer>().sortingOrder =-1;
         }
     }
 }
