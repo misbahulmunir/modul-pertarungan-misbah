@@ -241,7 +241,9 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITexture.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
+     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <Compile Include="Assets\TestAnimationScript.cs" />
+     <Compile Include="Assets\TestParticle.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionComponent.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\AssertionException.cs" />
      <Compile Include="Assets\UnityTestTools\Assertions\Assertions.cs" />
@@ -339,6 +341,7 @@
      <Compile Include="Assets\script\CardAction\HealingWave50.cs" />
      <Compile Include="Assets\script\CardAction\NormalCard.cs" />
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
+     <Compile Include="Assets\script\CardAction\ThunderBolt.cs" />
      <Compile Include="Assets\script\CardAction\ThunderCard.cs" />
      <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
      <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />

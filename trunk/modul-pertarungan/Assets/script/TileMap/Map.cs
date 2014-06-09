@@ -287,7 +287,7 @@ public class Map
         int val = 0;
         int flag = 0;
         bool check;
-        int c = 100000;
+        int c = 10000;
         #region Left To Right Checking
         for (int y = 1; y < size_y - 1; y++)
         {
