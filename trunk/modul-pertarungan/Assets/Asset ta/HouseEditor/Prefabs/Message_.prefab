@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   m_Layer: 8
-  m_Name: Message_2
+  m_Name: Message_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

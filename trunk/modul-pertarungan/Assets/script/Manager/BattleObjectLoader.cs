@@ -107,6 +107,7 @@ namespace ModulPertarungan
                         factory.InstantiateObject();
                         factory.CreateEnemy("FireSlime", enemyPosition[0]);
                         factory.CreateEnemy("FireKingSlime", enemyPosition[1]);
+
                     }
                     else if (TextureSingleton.Instance().IdButton == "ButtonFire_1")
                     {
