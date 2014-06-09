@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ModulPertarungan;
 
 public class AltarManagement : MonoBehaviour {
 
@@ -28,7 +29,10 @@ public class AltarManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		OnClick ();
+        if (!GameManager.Instance().UpdatePaused)
+        {
+            OnClick();
+        }
 	}
 
 	void OnClick()

@@ -11,7 +11,10 @@ public class BuildingClickManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		OnClick ();
+        if (!GameManager.Instance().UpdatePaused)
+        {
+            OnClick();
+        }
 	}
 
 	Object menuList;
@@ -42,39 +45,12 @@ public class BuildingClickManagement : MonoBehaviour {
 					var subMenuList =  Instantiate(SubMenuHouse, currentPos, Quaternion.identity);
 					menuList = subMenuList;
 					clickedBuildingName = obj.name;
-				} else
-				if (hit.collider.gameObject.name.ToLower().Contains("colosseum"))
-				{
+                } else
+                if (hit.collider.gameObject.name.ToLower().Contains("colosseum"))
+                {
                     GameManager.Instance().GameMode = "pvp";
-					Application.LoadLevel("PVPlogin");
-				}
-//				if (hit.collider.gameObject.name.ToLower().Contains("altar_"))
-//				{
-//					GameObject obj = hit.collider.gameObject as GameObject;
-//					var currentPos = this.transform.position;
-//					var subMenuList =  Instantiate(SubMenuBuilding, currentPos, Quaternion.identity);
-//					menuList = subMenuList;
-//					clickedBuildingName = obj.name;
-//					Debug.Log(clickedBuildingName);
-//				} else
-//				if (hit.collider.gameObject.name.ToLower().Contains("mine_"))
-//				{
-//					GameObject obj = hit.collider.gameObject as GameObject;
-//					Debug.Log(obj.name);
-///					var currentPos = this.transform.position;
-//					var subMenuList =  Instantiate(SubMenuBuilding, currentPos, Quaternion.identity);
-//					menuList = subMenuList;
-//					clickedBuildingName = obj.name;
-//				} else
-//				if (hit.collider.gameObject.name.ToLower().Contains("yggdrasil_"))
-//				{
-//					GameObject obj = hit.collider.gameObject as GameObject;
-//					Debug.Log(obj.name);
-//					var currentPos = this.transform.position;
-//					var subMenuList =  Instantiate(SubMenuBuilding, currentPos, Quaternion.identity);
-//					menuList = subMenuList;
-//					clickedBuildingName = obj.name;
-//				} 
+                    Application.LoadLevel("PVPlogin");
+                }
 			} else Destroy(menuList);
 		}
 	}

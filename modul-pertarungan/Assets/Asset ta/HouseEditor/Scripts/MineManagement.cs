@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using ModulPertarungan;
 
 public class MineManagement : MonoBehaviour {
 
@@ -27,7 +28,10 @@ public class MineManagement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		OnClick ();
+        if (!GameManager.Instance().UpdatePaused)
+        {
+            OnClick();
+        }
 	}
 	
 	

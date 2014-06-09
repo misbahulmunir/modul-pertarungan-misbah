@@ -9,6 +9,13 @@ namespace ModulPertarungan
         private GameObject currentEnemy;
         private string playerId;
         private string friendName;
+        private bool updatePaused;
+
+        public bool UpdatePaused
+        {
+            get { return updatePaused; }
+            set { updatePaused = value; }
+        }
 
         public string FriendName
         {
