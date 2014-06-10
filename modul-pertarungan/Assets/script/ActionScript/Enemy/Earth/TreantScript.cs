@@ -36,13 +36,8 @@ namespace ModulPertarungan
         }
         public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
+            this.Enemy = treant;
             base.ReceiveDamage(damageReceiver, damageGiver, damage);
-            if (this.treant.CurrentHealth <= 0)
-            {
-                Destroy(this.gameObject);
-            }
-
-            Debug.Log(GameManager.Instance().Enemies.Count);
         }
     }
 }
