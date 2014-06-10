@@ -61,8 +61,8 @@ public class TileMap : MonoBehaviour
     private void BuildTexture()
     {
         Map map = new Map(size_x, size_y, posX, posY, landSize, landNum);//fungsi generate map    
-        string tile ="Map/TextureMap/"+TextureSingleton.Instance().TextureTiles;
-        //Debug.Log(tile);
+        string tile = "Map/TextureMap/" + TextureSingleton.Instance().TextureTiles;
+        Debug.Log(tile);
         texTiles = Resources.Load(tile) as Texture2D;
         int texWidth = size_x * tileRes; //ukuran texture
         int texHeight = size_y * tileRes;

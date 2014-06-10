@@ -101,19 +101,7 @@ public class Map
         rules.Add(16, rules16);
         rules.Add(17, rules17);
     }
-    #endregion
-    #region RandomGenerator
-    public int UniqueRandom(int min, int max)
-    {
-        int val = Random.Range(min, max);
-        if (usedValue.Contains(val))
-        {
-            val = Random.Range(min, max);
-        }
-        usedValue.Add(val);
-        return val;
-    }
-    #endregion
+    #endregion    
     #region GetTiling
     public int GetTileAt(int x, int y)
     {
@@ -287,7 +275,6 @@ public class Map
         int val = 0;
         int flag = 0;
         bool check;
-        int c = 10000;
         #region Left To Right Checking
         for (int y = 1; y < size_y - 1; y++)
         {
@@ -300,15 +287,13 @@ public class Map
                         if (map_data[x, y + 1] == 3 || map_data[x, y - 1] == 3)
                         {
                             usedValue = new List<int>();
-                            while (c > 0)
+                            posTop = map_data[x, y + 1];
+                            posBot = map_data[x, y - 1];
+                            posRight = map_data[x + 1, y];
+                            posLeft = map_data[x - 1, y];
+                            flag = 1;
+                            for (val = 4; val < 8; val++)
                             {
-                                posTop = map_data[x, y + 1];
-                                posBot = map_data[x, y - 1];
-                                posRight = map_data[x + 1, y];
-                                posLeft = map_data[x - 1, y];
-                                flag = 1;
-                                //val = Random.Range(4, 8);
-                                val = UniqueRandom(4, 8);
                                 check = CheckBorderRules(posRight, posBot, posLeft, posTop, val, flag);
                                 if (check == true)
                                 {
@@ -316,30 +301,27 @@ public class Map
                                     usedValue.Clear();
                                     break;
                                 }
-                                c--;
                             }
+
                         }
                         else
                         {
                             usedValue = new List<int>();
-                            while (c > 0)
+
+                            posTop = map_data[x, y + 1];
+                            posBot = map_data[x, y - 1];
+                            posRight = map_data[x + 1, y];
+                            posLeft = map_data[x - 1, y];
+                            flag = 1;
+                            for (val = 8; val < 12; val++)
                             {
-                                posTop = map_data[x, y + 1];
-                                posBot = map_data[x, y - 1];
-                                posRight = map_data[x + 1, y];
-                                posLeft = map_data[x - 1, y];
-                                flag = 1;
-                                //val = Random.Range(8, 12);
-                                val = UniqueRandom(8, 12);
                                 check = CheckBorderRules(posRight, posBot, posLeft, posTop, val, flag);
-                                //Debug.Log("b x: " + x + " y: " + y + " val " + val + " bool " + check + " top " + posTop + " right " + posRight + " left " + posLeft + " bot " + posBot);
                                 if (check == true)
                                 {
                                     map_data[x, y] = val;
                                     usedValue.Clear();
                                     break;
                                 }
-                                c--;
                             }
                         }
                     }
@@ -357,15 +339,14 @@ public class Map
                     if (map_data[x, y + 1] == 3 || map_data[x, y - 1] == 3)
                     {
                         usedValue = new List<int>();
-                        while (c > 0)
+
+                        posTop = map_data[x, y + 1];
+                        posBot = map_data[x, y - 1];
+                        posRight = map_data[x + 1, y];
+                        posLeft = map_data[x - 1, y];
+                        flag = 2;
+                        for (val = 4; val < 12; val++)
                         {
-                            posTop = map_data[x, y + 1];
-                            posBot = map_data[x, y - 1];
-                            posRight = map_data[x + 1, y];
-                            posLeft = map_data[x - 1, y];
-                            flag = 2;
-                            //val = Random.Range(4, 12);
-                            val = UniqueRandom(4, 12);
                             check = CheckBorderRules(posRight, posBot, posLeft, posTop, val, flag);
                             if (check == true)
                             {
@@ -373,8 +354,8 @@ public class Map
                                 usedValue.Clear();
                                 break;
                             }
-                            c--;
                         }
+
                     }
                 }
             }
@@ -392,15 +373,14 @@ public class Map
                     (map_data[x - 1, y] != 2 && map_data[x, y + 1] != 2) || (map_data[x - 1, y] != 2 && map_data[x, y - 1] != 2))
                     {
                         usedValue = new List<int>();
-                        while (c > 0)
+
+                        posTop = map_data[x, y + 1];
+                        posBot = map_data[x, y - 1];
+                        posRight = map_data[x + 1, y];
+                        posLeft = map_data[x - 1, y];
+                        flag = 3;
+                        for (val = 2; val < 18; val++)
                         {
-                            posTop = map_data[x, y + 1];
-                            posBot = map_data[x, y - 1];
-                            posRight = map_data[x + 1, y];
-                            posLeft = map_data[x - 1, y];
-                            flag = 3;
-                            //val = Random.Range(2, 18);
-                            val = UniqueRandom(2, 18);
                             check = CheckBorderRules(posRight, posBot, posLeft, posTop, val, flag);
                             if (check == true)
                             {
@@ -408,8 +388,8 @@ public class Map
                                 usedValue.Clear();
                                 break;
                             }
-                            c--;
                         }
+
                     }
 
                 }

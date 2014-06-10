@@ -39,7 +39,7 @@ namespace ModulPertarungan
             questCleared = new bool[] { false, false, false, false, false, false, false, false };
             TextureSingleton.Instance().QuestActive = questActived;
             TextureSingleton.Instance().QuestCleared = questCleared;
-            Application.LoadLevel("Dungeon");
+            Application.LoadLevel("Dungeon_0");
         }
         void Start()
         {

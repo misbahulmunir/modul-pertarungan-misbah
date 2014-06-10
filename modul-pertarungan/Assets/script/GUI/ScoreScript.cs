@@ -75,7 +75,7 @@ namespace ModulPertarungan
             }
             if (Input.GetMouseButtonDown(0))
             {
-                Application.LoadLevel("Dungeon");
+                Application.LoadLevel("Dungeon_0");
             }
           
         }
