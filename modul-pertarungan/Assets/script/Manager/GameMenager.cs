@@ -133,6 +133,7 @@ namespace ModulPertarungan
             set { currentEnemy = value; }
         }
 
+  
         //public bool PauseGame
         //{
         //    get { return pauseGame; }

@@ -5,14 +5,21 @@ using System.Text;
 using UnityEngine;
 namespace ModelModulPertarungan
 {
-    public abstract class Enemy:DamageReceiver
+    public abstract class Enemy : DamageReceiver
     {
         public Enemy(int MaxHealth, int CurrentHealth, string Name)
             : base(MaxHealth, CurrentHealth, Name)
         {
         }
 
-        public Enemy()
+        public Enemy(int MaxHealth, int CurrentHealth, string Name, int gold,int exp)
+            : this(MaxHealth, CurrentHealth, Name)
+        {
+            this.GoldForPlayer = gold;
+            this.ExpForPlayer = exp;
+        }
+
+    public Enemy()
         {
 
         }

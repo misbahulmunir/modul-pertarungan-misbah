@@ -15,8 +15,6 @@ namespace ModulPertarungan
         public override void Action()
         {
             GameManager.Instance().GameStatus = "win";
-            GameManager.Instance().PlayerExp = 100;
-            GameManager.Instance().PlayerGold = 100;
             Application.LoadLevel("AfterBattle2");
         }
     }
