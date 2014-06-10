@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Editor\DungeonEditor.cs" />
+     <Compile Include="Assets\Editor\ElementalEditor.cs" />
      <Compile Include="Assets\Editor\MapEditor.cs" />
      <Compile Include="Assets\Editor\NewTestUnit.cs" />
      <Compile Include="Assets\Editor\TexturePreview.cs" />

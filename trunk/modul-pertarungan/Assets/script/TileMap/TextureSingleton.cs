@@ -39,6 +39,14 @@ namespace ModulPertarungan
             set { idButton = value; }
         }
 
+        private int numQuest;
+
+        public int NumQuest
+        {
+            get { return numQuest; }
+            set { numQuest = value; }
+        }
+
         public TextureSingleton()
         {
 

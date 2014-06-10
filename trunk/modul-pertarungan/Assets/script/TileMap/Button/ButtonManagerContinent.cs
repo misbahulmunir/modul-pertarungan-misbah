@@ -36,7 +36,7 @@ public class ButtonManagerContinent : MonoBehaviour
                         TextureSingleton.Instance().TextureTiles = textureLoader.name;
                         TextureSingleton.Instance().IdButton = hit.collider.gameObject.name;
                         Application.LoadLevel(sceneLoader);
-                        //Debug.Log(textureLoader.name);
+                        Debug.Log(textureLoader.name);
                     }
                     else
                     {

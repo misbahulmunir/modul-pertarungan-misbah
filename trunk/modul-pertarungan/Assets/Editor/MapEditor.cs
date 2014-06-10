@@ -20,7 +20,7 @@ public class MapEditor : EditorWindow
     int tileRes = 32;
 
     // Add menu item named "My Window" to the Window menu
-    [MenuItem("Window/Map Editor")]
+    //[MenuItem("Window/Map Editor")]
     static void Init()
     {
         //Show existing window instance. If one doesn't exist, make one.

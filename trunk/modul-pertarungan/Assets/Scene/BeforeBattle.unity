@@ -349,7 +349,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 292
   mHeight: 62
@@ -554,7 +554,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 292
   mHeight: 62
@@ -638,7 +638,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: fdafba56cc363ab4ebd0576c8e691856, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e57c90513897d24498ddfa1684d5bf2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &269066675
 Transform:
@@ -647,8 +647,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 269066673}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0245456696, y: -.0363685489, z: 0}
-  m_LocalScale: {x: 3.34114909, y: 3.34114289, z: 1}
+  m_LocalPosition: {x: -.240730286, y: -.556310177, z: 0}
+  m_LocalScale: {x: 1.4879812, y: 1.48797536, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &327690794
@@ -846,7 +846,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 292
   mHeight: 62
@@ -1609,7 +1609,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 302
   mHeight: 66
@@ -1922,7 +1922,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 292
   mHeight: 62
@@ -2259,7 +2259,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
   mWidth: 292
   mHeight: 62
