@@ -36,13 +36,8 @@ namespace ModulPertarungan
         }
         public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
+            this.Enemy = mandrake;
             base.ReceiveDamage(damageReceiver, damageGiver, damage);
-            if (this.mandrake.CurrentHealth <= 0)
-            {
-                Destroy(this.gameObject);
-            }
-
-            Debug.Log(GameManager.Instance().Enemies.Count);
         }
     }
 }
