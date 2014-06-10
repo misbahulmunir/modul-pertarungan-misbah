@@ -11,6 +11,11 @@ namespace ModelModulPertarungan
             : base(MaxHealth, CurrentHealth, Name)
         {
         }
+        public ThunderMonster(int MaxHealth, int CurrentHealth, string Name, int gold, int exp)
+            : this(MaxHealth, CurrentHealth, Name)
+        {
+            
+        }
 
         public ThunderMonster()
         {

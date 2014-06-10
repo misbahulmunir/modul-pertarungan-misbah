@@ -38,14 +38,6 @@ namespace ModulPertarungan
            
             if (GameManager.Instance().GameStatus == "win")
             {
-                Statuslabel.GetComponent<UILabel>().text = "WIN";
-                if (score < GameManager.Instance().PlayerExp)
-                {
-                    score += 1;
-                    ExpLabel.GetComponent<UILabel>().text = score.ToString();
-                }
-                GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
-
                 if (GameManager.Instance().GameMode != "pvp")
                 {
 
@@ -55,7 +47,20 @@ namespace ModulPertarungan
                     TextureSingleton.Instance().QuestCleared[id] = true;
                     checkQuestActive = TextureSingleton.Instance().QuestActive;
                     checkQuestCleared = TextureSingleton.Instance().QuestCleared;
+                    if (score < GameManager.Instance().PlayerExp)
+                    {
+                        score += 1;
+                        ExpLabel.GetComponent<UILabel>().text = score.ToString();
+                    }
+                    else
+                    {
+                        ExpLabel.GetComponent<UILabel>().text = "0";
+
+                    }
+                    GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
                 }
+                Statuslabel.GetComponent<UILabel>().text = "WIN";
+      
             }
             else
             {

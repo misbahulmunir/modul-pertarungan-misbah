@@ -35,13 +35,9 @@ namespace ModulPertarungan
         }
         public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
+            this.Enemy = windkingslime;
             base.ReceiveDamage(damageReceiver, damageGiver, damage);
-            if (this.windkingslime.CurrentHealth <= 0)
-            {
-                Destroy(this.gameObject);
-            }
-
-            Debug.Log(GameManager.Instance().Enemies.Count);
+  
         }
     }
 }

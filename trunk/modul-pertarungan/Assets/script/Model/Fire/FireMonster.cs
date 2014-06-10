@@ -11,7 +11,11 @@ namespace ModelModulPertarungan
             : base(MaxHealth, CurrentHealth, Name)
         {
         }
-
+           public FireMonster(int MaxHealth, int CurrentHealth, string Name, int gold, int exp)
+            : this(MaxHealth, CurrentHealth, Name)
+        {
+            
+        }
         public FireMonster()
         {
 

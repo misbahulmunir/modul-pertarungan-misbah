@@ -35,13 +35,9 @@ namespace ModulPertarungan
         }
         public override void ReceiveDamage(DamageReceiver damageReceiver, CardsEffect damageGiver, int damage)
         {
+            this.Enemy = thunderslime;
             base.ReceiveDamage(damageReceiver, damageGiver, damage);
-            if (this.thunderslime.CurrentHealth <= 0)
-            {
-                Destroy(this.gameObject);
-            }
-
-            Debug.Log(GameManager.Instance().Enemies.Count);
+  
         }
     }
 }
