@@ -166,10 +166,7 @@ namespace ModulPertarungan
             {
                 instance.Players.RemoveAll(item => item.GetComponent<DamageReceiverAction>().Character.CurrentHealth <= 0);
             }
-            if (instance.CurrentEnemy == null&&instance.Enemies.Count>0)
-            {
-                instance.currentEnemy = Enemies[0];
-            }
+           
         }
         public void AddPlayer(GameObject obj)
         {
