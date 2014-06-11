@@ -10,6 +10,7 @@ namespace ModulPertarungan
     {
 
         public GameObject grid;
+        public MessageBoxScirpt messageBox;
         // Use this for initialization
         void Start()
         {
@@ -24,34 +25,46 @@ namespace ModulPertarungan
 
         private void ConfirmParty()
         {
-            GameManager.Instance().PartyId = new List<string>();
-
-            foreach (Transform T in grid.transform)
+            if (grid.transform.childCount == 3)
             {
-                if (T.GetComponent<Avatar>().PlayerName != GameManager.Instance().PlayerId)
-                {
-                    GameManager.Instance().PartyId.Add(T.GetComponent<Avatar>().PlayerName);
-                }
-            }
+                GameManager.Instance().PartyId = new List<string>();
 
-            foreach (string s in GameManager.Instance().PartyId)
+                foreach (Transform T in grid.transform)
+                {
+                    if (T.GetComponent<Avatar>().PlayerName != GameManager.Instance().PlayerId)
+                    {
+                        GameManager.Instance().PartyId.Add(T.GetComponent<Avatar>().PlayerName);
+                    }
+                }
+
+
+                foreach (string s in GameManager.Instance().PartyId)
+                {
+                    try
+                    {
+                        WebServiceSingleton.GetInstance().ProcessRequest("get_profile", s);
+                        //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+                        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_profile", s));
+
+                        WebServiceSingleton.GetInstance().ProcessRequest("get_player_deck", s);
+                        //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+                        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_deck", s));
+                    }
+                    catch
+                    {
+                        Debug.Log("Error Reading Player Data");
+                    }
+                }
+                Application.LoadLevel("BeforeBattle");
+            }
+            else
             {
-                try
-                {
-                    WebServiceSingleton.GetInstance().ProcessRequest("get_profile", s);
-                    //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                    Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_profile", s));
-
-                    WebServiceSingleton.GetInstance().ProcessRequest("get_player_deck", s);
-                    //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                    Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_deck", s));
-                }
-                catch
-                {
-                    Debug.Log("Error Reading Player Data");
-                }
+                var obj = new object[2];
+                obj[0] = "Notification";
+                obj[1] = "Maximum party capacity is 3 player";
+                messageBox.SendMessage("SetMessage", obj);
+                messageBox.SendMessage("ShowMessageBox");
             }
-            Application.LoadLevel("BeforeBattle");
         }
 
         void OnClick()

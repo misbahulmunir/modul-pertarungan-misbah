@@ -114,6 +114,7 @@
      <Compile Include="Assets\HOTween\_Demo\HOTweenDemoBrain.cs" />
      <Compile Include="Assets\InvokerLister.cs" />
      <Compile Include="Assets\ListBox\ListBox.cs" />
+     <Compile Include="Assets\MessageBoxScirpt.cs" />
      <Compile Include="Assets\NGUI\ButtonOk.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
      <Compile Include="Assets\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
@@ -343,6 +344,7 @@
      <Compile Include="Assets\script\CardAction\SplitFireCard.cs" />
      <Compile Include="Assets\script\CardAction\ThunderBolt.cs" />
      <Compile Include="Assets\script\CardAction\ThunderCard.cs" />
+     <Compile Include="Assets\script\CardAction\ThunderStorm.cs" />
      <Compile Include="Assets\script\CardAction\TidalWaveCard.cs" />
      <Compile Include="Assets\script\CardAction\TyphoonCard.cs" />
      <Compile Include="Assets\script\CardAction\WaterAttackAction.cs" />
