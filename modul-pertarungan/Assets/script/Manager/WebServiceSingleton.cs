@@ -118,6 +118,9 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_friend_request", "http://cws.yowanda.com/files/friend_request_of_");
             fileLocationDictionary.Add("get_partial_profile", "http://cws.yowanda.com/files/partial_profile_of_");
             fileLocationDictionary.Add("get_messages", "http://cws.yowanda.com/files/messages_of_");
+            fileLocationDictionary.Add("get_monster_list", "http://cws.yowanda.com/files/monster_of_");
+            fileLocationDictionary.Add("get_battle_list", "http://cws.yowanda.com/files/battle_list_of_");
+            fileLocationDictionary.Add("get_player_quest", "http://cws.yowanda.com/files/quest_of_");
         }
 
         private void InitUrlDictionary()
@@ -145,6 +148,9 @@ namespace ModulPertarungan
             urlDictionary.Add("register", "http://cws.yowanda.com/ClientController/3/player/register");
             urlDictionary.Add("send_message", "http://cws.yowanda.com/ClientController/3/message/send_message");
             urlDictionary.Add("get_messages", "http://cws.yowanda.com/ClientController/1/message/get_messages");
+            urlDictionary.Add("get_monster_list", "http://cws.yowanda.com/ClientController/1/monster_quest/get_monster_list");
+            urlDictionary.Add("get_battle_list", "http://cws.yowanda.com/ClientController/1/monster_quest/get_battle_list");
+            urlDictionary.Add("get_player_quest", "http://cws.yowanda.com/ClientController/1/monster_quest/get_player_quest");
         }
 
         private void InitPathDictionary()
@@ -162,6 +168,9 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_friend_request", "friend_request_of_");
             clientPathDictionary.Add("get_partial_profile", "partial_profile_of_");
             clientPathDictionary.Add("get_messages", "messages_of_");
+            clientPathDictionary.Add("get_monster_list", "monster_of");
+            clientPathDictionary.Add("get_battle_list", "battle_list_of");
+            clientPathDictionary.Add("get_player_quest", "quest_of");
         }
 
         public void clearData(string path)
