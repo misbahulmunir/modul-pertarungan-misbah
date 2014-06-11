@@ -16,10 +16,10 @@ namespace ModelModulPertarungan
         void Start()
         {
             this.CardName = "Split Fire";
-            this.CardCost = 2;
+            this.CardCost = 5;
             this.CardCode = " ";
-            this.CardEffect = " Deal 10 BoltDamage damage /n to single enemy";
-            this.DeckCost = 2;
+            this.CardEffect = " Deal 10 Thunder Damage s to single enemy";
+            this.DeckCost = 5;
 
         }
 
@@ -35,11 +35,13 @@ namespace ModelModulPertarungan
             {
                 GameObject obj;
                 obj = GameManager.Instance().GameMode == "pvp" ? TargetList[0] : TargetList.Find(GameManager.Instance().CurrentEnemy.Equals);
-                var animation = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                var animation = Instantiate(GameObject.Find("FlareCoreAutumn"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
+                animation.GetComponent<ParticleSystem>().Play();
+                Destroy(animation, animation.particleSystem.time);
                 if (animation != null)
                 {
                     animation.renderer.sortingLayerName = "foreground";
-                    animation.particleEmitter.emit = true;
+                   
                 }
                 obj.GetComponent<DamageReceiverAction>().ReceiveDamage(obj.GetComponent<DamageReceiverAction>().Character, this, 10);
 
