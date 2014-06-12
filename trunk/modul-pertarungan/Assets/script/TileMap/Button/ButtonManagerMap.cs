@@ -14,7 +14,8 @@ public class ButtonManagerMap : MonoBehaviour
     private string buttonTagLoader;
     private List<GameObject> butList;
     private string[] splitter;
-    private string buttonName;    
+    private string buttonName;
+    private bool enabler;
 
     void Awake()
     {
@@ -48,44 +49,51 @@ public class ButtonManagerMap : MonoBehaviour
                 
                 if (hit.collider.gameObject.tag.ToLower().Contains(buttonTagLoader))
                 {
+                    Debug.Log("Layer " + hit.collider.gameObject.layer);
                     if (buttonTagLoader == "homebutton")
                     {
                         Application.LoadLevel(sceneLoader);
                         Debug.Log("go home");
                     }
-                    else
+                    else if (buttonName.Contains("Button_"))
                     {
-                        if (buttonName.Contains("Button_"))
-                        {
-                            splitter = buttonName.Split('_');
-                        }
-                        int idButton = Int32.Parse(splitter[1]);
-                        //Debug.Log(idButton);
-                        if (TextureSingleton.Instance().QuestActive[idButton] == true)
-                        {
-                            //Debug.Log("Actived " + TextureSingleton.Instance().QuestActive[idButton]);
+                        splitter = buttonName.Split('_');
 
+                        int idButton = Int32.Parse(splitter[1]);
+                        if (TextureSingleton.Instance().QuestActive[idButton] == true && hit.collider.gameObject.layer.Equals(15))
+                        {
                             if (buttonTagLoader == "questbutton")
                             {
                                 HOTween.To(questObj, 1f, "position", new Vector3(17, 13, 0));
-                                //Debug.Log("questbutton");
-                            }
-                            else if (buttonTagLoader == "cancelbutton")
-                            {
-                                HOTween.To(questObj, 1f, "position", new Vector3(17, 30, 0));
-                                //Debug.Log("cancelbutton");
-                            }
-                            else if (buttonTagLoader == "gobutton")
-                            {
-                                Application.LoadLevel(sceneLoader);
-                                TextureSingleton.Instance().IdButton = TextureSingleton.Instance().IdButton + "_" + splitter[1];
-                                Debug.Log("loading screen");
-                                Debug.Log(TextureSingleton.Instance().IdButton);
+                                foreach (var b in butList)
+                                {
+                                    b.collider2D.enabled = false;
+                                }
+                                Debug.Log("questbutton");
                             }
                         }
                         else
                         {
                             Debug.Log("Not Actived yet");
+                        }
+                    }
+                    else if (hit.collider.gameObject.layer.Equals(29))
+                    {
+                        if (buttonTagLoader == "cancelbutton")
+                        {
+                            HOTween.To(questObj, 1f, "position", new Vector3(17, 30, 0));
+                            foreach (var b in butList)
+                            {
+                                b.collider2D.enabled = true;
+                            }
+                            Debug.Log("cancelbutton");
+                        }
+                        else if (buttonTagLoader == "gobutton")
+                        {
+                            Application.LoadLevel(sceneLoader);
+                            TextureSingleton.Instance().IdButton = TextureSingleton.Instance().IdButton + "_" + splitter[1];
+                            Debug.Log("loading screen");
+                            Debug.Log(TextureSingleton.Instance().IdButton);
                         }
                     }
                 }
