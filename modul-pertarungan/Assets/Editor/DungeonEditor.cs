@@ -107,8 +107,7 @@ public class DungeonEditor : EditorWindow
                 {                    
                     if (GameObject.Find("@Fire") == null)
                     {
-                        element = (GameObject)Instantiate(button, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
-                        Texture2D x = element.GetComponent<ButtonDungeon>().textureTiles;                        
+                        element = (GameObject)Instantiate(button, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);                       
                         element.name = "@Fire";
                     }
                     else
