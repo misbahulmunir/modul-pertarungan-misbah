@@ -34,8 +34,11 @@ namespace ModulPertarungan
             if (current != null&&opponentList!=null)
             {
                 var op= opponentList.Find(item => item.Name.Equals(current.value));
-                win.text = op.Win.ToString();
-                lose.text = op.Lose.ToString();
+                if (op != null)
+                {
+                    win.text = op.Win.ToString();
+                    lose.text = op.Lose.ToString();
+                }
             }
         }
 

@@ -122,7 +122,6 @@ D:\ta\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
-D:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
 D:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
 D:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
 D:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
@@ -203,3 +202,4 @@ C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debu
 C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
 C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
 D:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript.dll
+D:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb

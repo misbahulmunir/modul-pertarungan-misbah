@@ -12,7 +12,7 @@ namespace ModulPertarungan
             //NetworkSingleton.Instance().HostPlayer = "Boncu";
             //NetworkSingleton.Instance().JoinPlayer = "Misbah";
             GameManager.Instance().GameMode = "pvp";
-            Application.LoadLevel("PVPlogin");
+            Application.LoadLevel("PVPRecord");
         }
 
         // Use this for initialization

@@ -7,6 +7,7 @@ namespace ModulPertarungan
 
         public GameObject grid;
         public GameObject roomButton;
+        public MessageBoxScirpt messageBox;
         // Use this for initialization
         void Start()
         {
@@ -49,6 +50,15 @@ namespace ModulPertarungan
                 NetworkSingleton.Instance().ServerMessage = "";
                 Application.LoadLevel("WaitingRoom");
                
+            }
+            else if(serverMessage.Contains("Room full"))
+            {
+                NetworkSingleton.Instance().ServerMessage="";
+                var obj= new object[2];
+                obj[0]="Room full";
+                obj[1]=" Room is full";
+                messageBox.SendMessage("SetMessage", obj);
+                messageBox.SendMessage("ShowMessageBox");      
             }
             grid.GetComponent<UIGrid>().Reposition();
         }

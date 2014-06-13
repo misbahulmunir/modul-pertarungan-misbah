@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ModulPertarungan;
 using UnityEngine;
+using System.Collections;
 
 namespace ModelModulPertarungan
 {
@@ -31,22 +32,29 @@ namespace ModelModulPertarungan
 
         public override void Effect()
         {
+            StopCoroutine("ThunderBoltEffect");
+            StartCoroutine("ThunderBoltEffect");
+           
+        }
+        public IEnumerator ThunderBoltEffect()
+        {
             if (TargetList.Count > 0)
             {
                 GameObject obj;
                 obj = GameManager.Instance().GameMode == "pvp" ? TargetList[0] : TargetList.Find(GameManager.Instance().CurrentEnemy.Equals);
                 var animation = Instantiate(GameObject.Find("FlareCoreAutumn"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
                 animation.GetComponent<ParticleSystem>().Play();
-                Destroy(animation, animation.particleSystem.time);
+                Destroy(animation, animation.particleSystem.duration);
                 if (animation != null)
                 {
                     animation.renderer.sortingLayerName = "foreground";
-                   
+
                 }
                 obj.GetComponent<DamageReceiverAction>().ReceiveDamage(obj.GetComponent<DamageReceiverAction>().Character, this, 10);
 
             }
             GameManager.Instance().KillObj(Target);
+            yield return new WaitForSeconds(10);
         }
 	}
 }

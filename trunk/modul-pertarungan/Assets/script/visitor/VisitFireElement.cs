@@ -37,6 +37,7 @@ namespace ModulPertarungan
                 }
                 else
                 {
+                    Debug.Log("Sorcerer get damage" + damage);
                     character.CurrentHealth -= damage;
                 }
             }
