@@ -30,23 +30,7 @@ public class NewTestUnit
     [Test]
     public void DamageReceiverWaterTest()
     {
-        var sorcerer = new Sorcerer();
-        sorcerer.MaxHealth = 200;
-        sorcerer.CurrentHealth = 200;
-        sorcerer.HandCapacity = 2;
-        sorcerer.MaxSoulPoints = 30;
-        sorcerer.CurrentSoulPoints = 20;
-        var action = new WarlockAction();
-        action.Character = sorcerer;
-        action.ReceiveDamage(action.Character, new FireCard(), 100);
-        Assert.LessOrEqual(action.Character.CurrentHealth, 150);
-        action.ReceiveDamage(action.Character, new ThunderCard(), 50);
-        Assert.LessOrEqual(action.Character.CurrentHealth, 100);
-    }
-    [Test]
-    public void DamageReceiverWindTest()
-    {
-        var sorcerer = new Sorcerer();
+        var sorcerer = new Warlock();
         sorcerer.MaxHealth = 200;
         sorcerer.CurrentHealth = 200;
         sorcerer.HandCapacity = 2;
@@ -62,7 +46,7 @@ public class NewTestUnit
     [Test]
     public void DamageReceiverEarthTest()
     {
-        var sorcerer = new Sorcerer();
+        var sorcerer = new Magician();
         sorcerer.MaxHealth = 200;
         sorcerer.CurrentHealth = 200;
         sorcerer.HandCapacity = 2;
@@ -78,7 +62,7 @@ public class NewTestUnit
     [Test]
     public void DamageReceiverThunderTest()
     {
-        var sorcerer = new Sorcerer();
+        var sorcerer = new Wizard();
         sorcerer.MaxHealth = 200;
         sorcerer.CurrentHealth = 200;
         sorcerer.HandCapacity = 2;
@@ -92,8 +76,24 @@ public class NewTestUnit
         Assert.LessOrEqual(action.Character.CurrentHealth, 100);
     }
     [Test]
+    public void DamageReceiverWindTest()
+    {
+        var sorcerer = new GrandMagus();
+        sorcerer.MaxHealth = 200;
+        sorcerer.CurrentHealth = 200;
+        sorcerer.HandCapacity = 2;
+        sorcerer.MaxSoulPoints = 30;
+        sorcerer.CurrentSoulPoints = 20;
+        var action = new WarlockAction();
+        action.Character = sorcerer;
+        action.ReceiveDamage(action.Character, new ThunderCard(), 100);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 150);
+        action.ReceiveDamage(action.Character, new EarthCard(), 50);
+        Assert.LessOrEqual(action.Character.CurrentHealth, 100);
+    }
+    [Test]
     public void TestCardEffectProtocol()
-    {   Sorcerer sorcerer= new Sorcerer();
+    {   var sorcerer= new GrandMagus();
         sorcerer.MaxHealth = 200;
         sorcerer.CurrentHealth = 200;
         sorcerer.HandCapacity = 2;
