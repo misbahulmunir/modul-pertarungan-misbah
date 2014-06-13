@@ -35,9 +35,9 @@ public class BuildingClickManagement : MonoBehaviour {
 			if (hit.collider != null)
 			{
 				if (!hit.collider.gameObject.name.ToLower().Contains("buttonaddbuilding") && 
-				    !hit.collider.gameObject.name.ToLower().Contains("takeitems")) Destroy(menuList);
+				    !hit.collider.gameObject.name.ToLower().Contains("buttonmyprofile")) Destroy(menuList);
 
-				if (hit.collider.gameObject.name.ToLower().Contains("house_"))
+                if (hit.collider.gameObject.name.ToLower().Contains("house_") && !hit.collider.gameObject.name.ToLower().Contains("button"))
 				{
 					GameObject obj = hit.collider.gameObject as GameObject;
 					Debug.Log(obj.name);
