@@ -27,7 +27,7 @@ namespace ModelModulPertarungan
         // Update is called once per frame
         void Update()
         {
-
+            CheckIfCardCanBeCast();
         }
 
         public override void Effect()
