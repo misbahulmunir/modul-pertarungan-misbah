@@ -8,12 +8,12 @@ using System.Collections;
 
 namespace ModelModulPertarungan
 {
-	public class ThunderBolt:ThunderCard
-	{
-	    public void OnClick()
-	    {
-	        Click();
-	    }
+    public class ThunderBolt : ThunderCard
+    {
+        public void OnClick()
+        {
+            Click();
+        }
         void Start()
         {
             this.CardName = "Split Fire";
@@ -32,12 +32,6 @@ namespace ModelModulPertarungan
 
         public override void Effect()
         {
-            StopCoroutine("ThunderBoltEffect");
-            StartCoroutine("ThunderBoltEffect");
-           
-        }
-        public IEnumerator ThunderBoltEffect()
-        {
             if (TargetList.Count > 0)
             {
                 GameObject obj;
@@ -54,7 +48,7 @@ namespace ModelModulPertarungan
 
             }
             GameManager.Instance().KillObj(Target);
-            yield return new WaitForSeconds(10);
         }
-	}
+
+    }
 }

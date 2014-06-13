@@ -28,14 +28,9 @@ namespace ModulPertarungan
         }
         public override void Effect()
         {
-            
-         
-        }
-        public IEnumerator ThunderStormEffect()
-        {
             if (TargetList.Count > 0)
             {
-                
+
                 foreach (GameObject obj in TargetList)
                 {
                     var animation = Instantiate(GameObject.Find("FlareCoreAutumn"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
@@ -49,10 +44,11 @@ namespace ModulPertarungan
                     obj.GetComponent<DamageReceiverAction>().ReceiveDamage(obj.GetComponent<DamageReceiverAction>().Character, this, 50);
                 }
                 GameManager.Instance().KillObj(Target);
-                yield return new WaitForSeconds(10);
                 Debug.Log("ten Seconds After yeild");
-                
+
             }
+         
         }
+     
 	}
 }
