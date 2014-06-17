@@ -60,13 +60,8 @@ namespace ModulPertarungan
 
         public override void CreatePlayer(string id, GameObject pawnsPosisition)
         {
-
-           
-
-
             XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
             TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
-
             PlayerFromService playerFromService;
             playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
             instantiateObjectList.TryGetValue(playerFromService.Job, out character);
@@ -80,11 +75,6 @@ namespace ModulPertarungan
             character.Job = playerFromService.Job;
             try
             {
-
-
-
-
-
                 textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
                 xmlFromServer = new XmlDocument();
                 xmlFromServer.Load(textReader);

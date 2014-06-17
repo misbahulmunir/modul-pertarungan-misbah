@@ -144,11 +144,16 @@ namespace ModulPertarungan
         {
             // DrawCursor();
             //if (!GameManager.Instance().PauseGame)
-            //{
-                EndPlayerTurn();
-                SelectPawn();
-                SelectEnemy();
-                CheckWinorLose();
+                if (GameManager.Instance().GameMode != "pvp")
+                {
+                    SelectEnemy();
+                    SelectPawn();
+                }
+                if (GameManager.Instance().Enemies != null & GameManager.Instance().Players != null)
+                {
+                    CheckWinorLose();
+                    EndPlayerTurn();
+                }
                 GameManager.Instance().BattleState = currentstate;
             //}
 

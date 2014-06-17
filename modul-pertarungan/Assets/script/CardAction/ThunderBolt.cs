@@ -16,7 +16,7 @@ namespace ModelModulPertarungan
         }
         void Start()
         {
-            this.CardName = "Split Fire";
+            this.CardName = "Thunder Bolt";
             this.CardCost = 5;
             this.CardCode = " ";
             this.CardEffect = " Deal 10 Thunder Damage s to single enemy";
@@ -27,7 +27,7 @@ namespace ModelModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            CheckIfCardCanBeCast();
+          //  CheckIfCardCanBeCast();
         }
 
         public override void Effect()

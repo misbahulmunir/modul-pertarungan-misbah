@@ -8,9 +8,6 @@ namespace ModulPertarungan
 {
     public abstract class PlayerAction : DamageReceiverAction
     {
-      
-
-        
         private Deck deck;
         public Deck Deck
         {
@@ -84,7 +81,6 @@ namespace ModulPertarungan
                     Cards.Add((GameObject) Resources.Load("RealCard/"+t, typeof (GameObject)));
                 }
             }
-
         }
     }
 }

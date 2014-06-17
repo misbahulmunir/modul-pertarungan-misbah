@@ -17,6 +17,7 @@ namespace ModulPertarungan
                 Debug.Log("send succes");
             else
                 Debug.Log("send false");
+            GameManager.Instance().GameMode = "pvp";
         }
 
         // Update is called once per frame
