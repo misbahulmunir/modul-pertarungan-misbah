@@ -18,7 +18,7 @@ namespace ModulPertarungan
         private List<GameObject> DisplayedCards;
         private int currentPawnNumber;
         private AbstractFactory factory;
-        public List<GameObject> enemyPosition; 
+        public List<GameObject> enemyPosition;
         public GameObject enemyOnlinePosisiton;
 
         public void LoadBackground()
@@ -37,17 +37,17 @@ namespace ModulPertarungan
             factory.InstantiateObject();
             if (GameManager.Instance().GameMode == "pvp")
             {
-                factory.CreatePlayer(GameManager.Instance().PlayerId,pawnsPosisition[0]);
+                factory.CreatePlayer(GameManager.Instance().PlayerId, pawnsPosisition[0]);
             }
             else
             {
-                factory.CreatePlayer(GameManager.Instance().PlayerId,pawnsPosisition[0]);
+                factory.CreatePlayer(GameManager.Instance().PlayerId, pawnsPosisition[0]);
                 if (GameManager.Instance().PartyId != null)
-                { 
+                {
                     LoadParty();
                 }
             }
-           
+
         }
 
         public void LoadParty()
@@ -68,13 +68,13 @@ namespace ModulPertarungan
         {
             if (pawn != null)
             {
-                
+
                 foreach (GameObject t in pawn.GetComponent<PlayerAction>().CurrentHand)
                 {
-                    var obj = NGUITools.AddChild(grid,t);
+                    var obj = NGUITools.AddChild(grid, t);
                     DisplayedCards.Add(obj);
                 }
-               
+
             }
         }
 
@@ -82,8 +82,8 @@ namespace ModulPertarungan
         {
             foreach (GameObject obj in DisplayedCards)
             {
-                Destroy(obj);    
-            }      
+                Destroy(obj);
+            }
         }
 
         public void LoadEnemy()
@@ -99,7 +99,7 @@ namespace ModulPertarungan
                     enemyOnlinePosisiton);
             }
             else
-            { 
+            {
                 if (TextureSingleton.Instance().TextureTiles == "0_Lavaland")
                 {
                     if (TextureSingleton.Instance().IdButton == "@Fire_0")
@@ -229,21 +229,24 @@ namespace ModulPertarungan
                     }
                 }
             }
-            
+
         }
         void Awake()
-        {   LoadBackground();
+        {
+            LoadBackground();
             DisplayedCards = new List<GameObject>();
             Screen.orientation = ScreenOrientation.LandscapeLeft;
             LoadEnemy();
             LoadPlayer();
+           
+
         }
         void Start()
         {
 
             //if (GameManager.Instance().GameMode == "pvp")
             //{
-              //GameManager.Instance().PauseGame = false;
+            //GameManager.Instance().PauseGame = false;
             //}
             //else
             //{
@@ -258,6 +261,6 @@ namespace ModulPertarungan
             //State Pattern untuk battle
         }
 
-       
+
     }
 }

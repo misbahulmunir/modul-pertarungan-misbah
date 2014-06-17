@@ -50,15 +50,7 @@ namespace ModulPertarungan
 	        {
 	            damageReceiver.AcceptVisitor(visit,damageGiver,damage);
 	        }
-	        //if ((character.CurrentHealth - damage)<=0)
-	        //{
-	        //    character.CurrentHealth = 0;
-	        //}
-	        //else
-	        //{
-	        //    character.CurrentHealth -= damage;
-	        //}
-
+	     
 	    }
 	}
 }

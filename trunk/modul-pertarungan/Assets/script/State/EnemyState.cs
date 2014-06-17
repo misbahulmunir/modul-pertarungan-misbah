@@ -7,8 +7,6 @@ namespace ModulPertarungan
 {
     public class EnemyState : BattleState
     {
-
-
         public EnemyState(List<GameObject> Players, List<GameObject> Enemy, BattleStateManager BattleManager)
             : base(Players, Enemy, BattleManager)
         {

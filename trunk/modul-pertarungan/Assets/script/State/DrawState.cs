@@ -7,11 +7,9 @@ namespace ModulPertarungan
 {
     public class DrawState : BattleState
     {
-
         public DrawState(GameObject CurrentPlayer, GameObject Objectloader, BattleStateManager BattleManager)
             : base(CurrentPlayer, Objectloader, BattleManager)
         {
-
         }
 
         public override void Action()

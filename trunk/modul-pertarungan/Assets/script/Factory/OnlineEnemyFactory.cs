@@ -30,7 +30,7 @@ namespace ModulPertarungan
         {
             _instantiateObjectList = new Dictionary<string, Player>
             {
-               {"Warlock", new Warlock()},
+                {"Warlock", new Warlock()},
                 {"Sorcerer", new Sorcerer()},
                 {"Magician", new Magician()},
                 {"Grand Magus", new GrandMagus()},
@@ -41,7 +41,6 @@ namespace ModulPertarungan
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
             TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
-
             PlayerFromService playerFromService;
             playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
             _instantiateObjectList.TryGetValue(playerFromService.Job, out character);
