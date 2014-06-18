@@ -25,6 +25,7 @@ namespace ModulPertarungan
                 NetworkSingleton.instance = null;
                 GameManager.Instance().GameMode = "";
             }
+            ShowWinOrLose();
             GameManager.Instance().Enemies = null;
             GameManager.Instance().CurrentEnemy = null;
             GameManager.Instance().Players = null;
@@ -35,12 +36,18 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-           
+            if (Input.GetMouseButtonDown(0))
+            {
+                Application.LoadLevel("Dungeon_0");
+            }
+        }
+        public void ShowWinOrLose()
+        {
+
             if (GameManager.Instance().GameStatus == "win")
             {
                 if (GameManager.Instance().GameMode != "pvp")
                 {
-
                     string[] split = TextureSingleton.Instance().IdButton.Split('_');
                     int id = Int32.Parse(split[1]);
                     TextureSingleton.Instance().QuestActive[id + 1] = true;
@@ -60,11 +67,11 @@ namespace ModulPertarungan
                     GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
                 }
                 Statuslabel.GetComponent<UILabel>().text = "WIN";
-      
+
             }
             else
             {
-                
+
                 Statuslabel.GetComponent<UILabel>().text = "LOSE";
                 ExpLabel.GetComponent<UILabel>().text = "0";
                 GoldLabel.GetComponent<UILabel>().text = "0";
@@ -73,11 +80,7 @@ namespace ModulPertarungan
                     obj.active = false;
                 }
             }
-            if (Input.GetMouseButtonDown(0))
-            {
-                Application.LoadLevel("Dungeon_0");
-            }
-          
+           
         }
     }
 }

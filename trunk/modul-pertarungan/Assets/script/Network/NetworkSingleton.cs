@@ -106,7 +106,6 @@ namespace ModulPertarungan
             activity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
             {
                 playerClient = new AndroidJavaObject("com.its.warlocksaga.AndroidUnityListener", args);
-
             }));
         }
         public void Disconnect()
@@ -114,6 +113,4 @@ namespace ModulPertarungan
             PlayerClient.Call("CloseConnection");
         }
 	}
-
-    
 }

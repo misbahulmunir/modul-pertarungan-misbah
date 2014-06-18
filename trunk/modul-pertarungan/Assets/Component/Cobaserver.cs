@@ -10,7 +10,6 @@ namespace ModulPertarungan
         public string udpPort;
         public string protocol;
 
-
         void OnClick()
         {
             NetworkSingleton.Instance().Host = host.GetComponent<UIInput>().value;

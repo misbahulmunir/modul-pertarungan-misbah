@@ -10,9 +10,10 @@ namespace ModulPertarungan
         public GameObject roomName;
         private string rName;
 	    private string text;
+        public CreateRoom createRoom;
         void HostRoom()
         {
-            Application.LoadLevel("HostRoom");
+            createRoom.SendMessage("ShowHostMessage");
             
         }
 
