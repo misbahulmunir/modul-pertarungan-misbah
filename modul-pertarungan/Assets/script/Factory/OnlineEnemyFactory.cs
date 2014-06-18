@@ -39,6 +39,7 @@ namespace ModulPertarungan
         }
         public override void CreatePlayer(string id, GameObject pawnsPosisition)
         {
+            
             WebServiceSingleton.GetInstance().ProcessRequest("get_profile", id);
             WebServiceSingleton.GetInstance().DownloadFile("get_profile", id);
             XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));

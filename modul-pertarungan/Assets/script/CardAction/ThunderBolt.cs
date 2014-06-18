@@ -6,7 +6,7 @@ using ModulPertarungan;
 using UnityEngine;
 using System.Collections;
 
-namespace ModelModulPertarungan
+namespace ModulPertarungan
 {
     public class ThunderBolt : ThunderCard
     {
@@ -27,7 +27,7 @@ namespace ModelModulPertarungan
         // Update is called once per frame
         void Update()
         {
-          //  CheckIfCardCanBeCast();
+          
         }
 
         public override void Effect()
