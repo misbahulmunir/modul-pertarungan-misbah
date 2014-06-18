@@ -142,38 +142,54 @@ namespace ModulPertarungan
         // Update is called once per frame
         private void Update()
         {
-            // DrawCursor();
-            //if (!GameManager.Instance().PauseGame)
-                if (GameManager.Instance().GameMode != "pvp")
-                {
-                    SelectEnemy();
-                    SelectPawn();
-                }
-                if (GameManager.Instance().Enemies != null & GameManager.Instance().Players != null)
+
+
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                if (NetworkSingleton.Instance().IsFinished == "Finish")
                 {
                     CheckWinorLose();
                     EndPlayerTurn();
+                    GameManager.Instance().BattleState = currentstate;
                 }
+            }
+            else
+            {
+                SelectEnemy();
+                SelectPawn();
+                CheckWinorLose();
+                EndPlayerTurn();
                 GameManager.Instance().BattleState = currentstate;
-            //}
+            }
+                    
+            
 
         }
     
         void OnGUI()
         {
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                if (NetworkSingleton.Instance().IsFinished =="Finish")
+                    ShowGui();
+            }
+            else
+            {
+                ShowGui();
+            }
+        }
+        public void ShowGui()
+        {
             if (!(currentstate is CardExcutionState)) return;
             GameManager.Instance().CurrentPawn.GetComponent<Animator>().SetBool("IsAttack", false);
             GUI.Box(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 75, 100, 150), "Execute Effect");
-            if (GameManager.Instance().CurrentEnemy == null )
+            if (GameManager.Instance().CurrentEnemy == null)
             {
                 GameManager.Instance().CurrentEnemy = GameManager.Instance().Enemies[0];
             }
             if (GUI.Button(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 25, 100, 50), "Yes"))
             {
-
-              
                 currentstate.Action();
-                
             }
 
             if (!GUI.Button(new Rect((Screen.width / 2) - 50, ((Screen.height / 2) - 25) + 50, 100, 50), "No")) return;
