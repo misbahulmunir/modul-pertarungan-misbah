@@ -7,12 +7,16 @@ namespace ModelModulPertarungan
 {
 	public class Mandragora : EarthMonster
 	{
-         public Mandragora(int MaxHealth, int CurrentHealth, string MonsterName)
+        public Mandragora(int MaxHealth, int CurrentHealth, string MonsterName)
             : base(MaxHealth, CurrentHealth, MonsterName)
         {
 
         }
+        public Mandragora(int MaxHealth, int CurrentHealth, string MonsterName, int gold, int exp)
+            : base(MaxHealth, CurrentHealth, MonsterName)
+        {
 
+        }
         public Mandragora()
         {
 

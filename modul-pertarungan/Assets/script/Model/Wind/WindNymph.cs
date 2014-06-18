@@ -13,7 +13,11 @@ namespace ModelModulPertarungan
         {
 
         }
+        public WindNymph(int MaxHealth, int CurrentHealth, string MonsterName, int gold, int exp)
+            : base(MaxHealth, CurrentHealth, MonsterName)
+        {
 
+        }
         public WindNymph()
         {
 

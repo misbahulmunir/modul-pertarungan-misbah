@@ -50,11 +50,10 @@ public class ButtonManagerMap : MonoBehaviour
                 if (hit.collider.gameObject.tag.ToLower().Contains(buttonTagLoader))
                 {
                     Debug.Log("Layer " + hit.collider.gameObject.layer);
-                    if (buttonTagLoader == "homebutton")
+                    if (buttonTagLoader == "homebutton" || buttonTagLoader == "backbutton")
                     {
                         Application.LoadLevel(sceneLoader);
-                        Debug.Log("go home");
-                    }
+                    }                    
                     else if (buttonName.Contains("Button_"))
                     {
                         splitter = buttonName.Split('_');

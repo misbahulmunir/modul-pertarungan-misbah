@@ -10,6 +10,10 @@ namespace ModelModulPertarungan
             : base(MaxHealth, CurrentHealth, Name)
         {
         }
+        public WindKingSlime(int MaxHealth, int CurrentHealth, string Name, int gold, int exp)
+            : base(MaxHealth, CurrentHealth, Name)
+        {
+        }
         public WindKingSlime()
         {
         }
