@@ -10,7 +10,7 @@ namespace ModulPertarungan
         private void OnClick()
         {
             
-            Application.LoadLevel("BeforeBattle");
+            Application.LoadLevel("HouseEditor");
         }
 
         private void Start()

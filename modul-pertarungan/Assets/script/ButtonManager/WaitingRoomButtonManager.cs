@@ -17,7 +17,7 @@ namespace ModulPertarungan
         void GotoHome()
         {
             NetworkSingleton.Instance().Disconnect();
-            Application.LoadLevel("BeforeBattle");
+            Application.LoadLevel("HouseEditor");
         }
 
 	    private void Confirm()
