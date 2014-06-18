@@ -151,6 +151,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_monster_list", "http://cws.yowanda.com/ClientController/1/monster_quest/get_monster_list");
             urlDictionary.Add("get_battle_list", "http://cws.yowanda.com/ClientController/1/monster_quest/get_battle_list");
             urlDictionary.Add("get_player_quest", "http://cws.yowanda.com/ClientController/1/monster_quest/get_player_quest");
+            urlDictionary.Add("get_name_by_fb", "http://cws.yowanda.com/ClientController/1/player/get_name_by_fb");
         }
 
         private void InitPathDictionary()

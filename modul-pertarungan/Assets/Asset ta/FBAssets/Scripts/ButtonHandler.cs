@@ -33,7 +33,10 @@ public class ButtonHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (FB.IsLoggedIn && FH.responseText != null)
+        {
+            ChangeScene();
+        }
 	}
 
 	string splitTextName(string text)
@@ -64,36 +67,9 @@ public class ButtonHandler : MonoBehaviour {
 
 	void FBLogin()
 	{
-		if (FB.IsLoggedIn) 
-		{
-			FBID = splitTextName(FH.responseText);
-			label1.GetComponent<UILabel> ().text = FH.lastResponse;
-			//label.GetComponent<UILabel> ().text = headerText + splitTextName(FH.responseText);
-			FH.boolShow = false;
-			boolGetName = false;
-			WebServiceSingleton.GetInstance().ProcessRequest("get_profile", FBID);
-			Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-			if (WebServiceSingleton.GetInstance().queryResult>0)
-			{
-					string url = "http://cws.yowanda.com/files/" + "/player_profile_" + FBID + ".xml";
-					string path = Application.persistentDataPath + "/player_profile_" + FBID + ".xml";
-					result = WebServiceSingleton.GetInstance().DownloadFile(url, path);
-					Debug.Log (result);
-					TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + FBID + ".xml");
-					_xmlDoc.Load(textReader);
-					_nameNodes = _xmlDoc.GetElementsByTagName("Name");
-					Debug.Log(_nameNodes[0].InnerXml);
-			}
-			else
-			{
-					Debug.Log ("FB belum terdaftar");
-			}
-		} else 
-		{
-			FH.CallFBLogin ();
-			headerText = "Welcome, ";
-			label1.GetComponent<UILabel> ().text = "Call Login";
-		}
+	    FH.CallFBLogin ();
+		headerText = "Welcome, ";
+		//label1.GetComponent<UILabel> ().text = "Call Login";
 		Debug.Log ("FB Login");
 	}
 
@@ -115,6 +91,29 @@ public class ButtonHandler : MonoBehaviour {
 		label1.GetComponent<UILabel> ().text = "Call API";
 		Debug.Log ("FB Api");
 	}
+
+    void ChangeScene()
+    {
+        FBID = splitTextName(FH.responseText);
+        //label1.GetComponent<UILabel> ().text = FH.lastResponse;
+        //label.GetComponent<UILabel> ().text = headerText + splitTextName(FH.responseText);
+        FH.boolShow = false;
+        boolGetName = false;
+        Debug.Log(FH.lastResponse);
+        WebServiceSingleton.GetInstance().ProcessRequest("get_name_by_fb", FBID);
+        Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+        if (WebServiceSingleton.GetInstance().queryResult > 0)
+        {
+            GameManager.Instance().PlayerId = WebServiceSingleton.GetInstance().queryInfo;
+            Debug.Log(WebServiceSingleton.GetInstance().queryInfo);
+            Application.LoadLevel("Loading");
+        }
+        else
+        {
+            Debug.Log("FB belum terdaftar");
+            Application.LoadLevel("JobSelection");
+        }
+    }
 
 }
 }
