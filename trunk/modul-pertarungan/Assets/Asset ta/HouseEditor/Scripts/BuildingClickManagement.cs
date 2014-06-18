@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using ModulPertarungan;
-
+using System.Collections.Generic;
 
 public class BuildingClickManagement : MonoBehaviour {
-
+    public List<GameObject> enemies;
+    private bool[] questActived;
+    private bool[] questCleared;
 	// Use this for initialization
 	void Start () {
+        GameManager.Instance().GameMode = "";
 	}
 	
 	// Update is called once per frame
@@ -54,4 +57,12 @@ public class BuildingClickManagement : MonoBehaviour {
 			} else Destroy(menuList);
 		}
 	}
+    public void EnterDungeon()
+    {
+        questActived = new bool[] { true, false, false, false, false, false, false, false };
+        questCleared = new bool[] { false, false, false, false, false, false, false, false };
+        TextureSingleton.Instance().QuestActive = questActived;
+        TextureSingleton.Instance().QuestCleared = questCleared;
+        Application.LoadLevel("Dungeon_0");
+    }
 }

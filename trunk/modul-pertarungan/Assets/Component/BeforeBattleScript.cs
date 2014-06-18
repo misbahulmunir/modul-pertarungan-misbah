@@ -10,9 +10,7 @@ namespace ModulPertarungan
     public class BeforeBattleScript : MonoBehaviour
     {
 
-        public List<GameObject> enemies;
-        private bool[] questActived;
-        private bool[] questCleared;
+       
 
         void OnClick()
         {
@@ -35,16 +33,12 @@ namespace ModulPertarungan
             //}
               //Application.LoadLevel("Battle");
 
-            questActived = new bool[] { true, false, false, false, false, false, false, false };
-            questCleared = new bool[] { false, false, false, false, false, false, false, false };
-            TextureSingleton.Instance().QuestActive = questActived;
-            TextureSingleton.Instance().QuestCleared = questCleared;
-            Application.LoadLevel("Dungeon_0");
+            
         }
         void Start()
         {
-            GameManager.Instance().GameMode = "";
-            WebServiceSingleton.GetInstance().isLoadingScreen = false;
+            
+         
         }
 
         // Update is called once per frame

@@ -55,7 +55,7 @@ namespace ModulPertarungan
                         Debug.Log("Error Reading Player Data");
                     }
                 }
-                Application.LoadLevel("BeforeBattle");
+                Application.LoadLevel("HouseEditor");
             }
             else
             {

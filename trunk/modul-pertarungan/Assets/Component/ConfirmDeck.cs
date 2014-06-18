@@ -79,7 +79,7 @@ namespace ModulPertarungan
                     }
 
                 }
-                Application.LoadLevel("BeforeBattle");
+                Application.LoadLevel("HouseEditor");
             }
             else
             {
