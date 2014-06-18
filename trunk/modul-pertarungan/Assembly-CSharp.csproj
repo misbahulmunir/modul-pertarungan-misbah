@@ -300,10 +300,14 @@
      <Compile Include="Assets\script\ActionScript\Enemy\Earth\MandrakeScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Earth\TreantScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\EarthEnemyAction.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\Fire\BossThiefScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Fire\FireDragonScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Fire\FireKingSlimeScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Fire\FireNymphScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Fire\FireSlimeScript.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\Fire\KingThiefScript.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\Fire\SalamanderScript.cs" />
+     <Compile Include="Assets\script\ActionScript\Enemy\Fire\ThiefScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\FireEnemyAction.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Thunder\ThunderKingSlimeScript.cs" />
      <Compile Include="Assets\script\ActionScript\Enemy\Thunder\ThunderNymphScript.cs" />
@@ -531,6 +535,7 @@
      <Compile Include="Assets\script\State\PvpEnemyState.cs" />
      <Compile Include="Assets\script\State\WinState.cs" />
      <Compile Include="Assets\script\TileMap\Button\Button.cs" />
+     <Compile Include="Assets\script\TileMap\Button\ButtonBack.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonCancelQuest.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonDungeon.cs" />
      <Compile Include="Assets\script\TileMap\Button\ButtonGoQuest.cs" />

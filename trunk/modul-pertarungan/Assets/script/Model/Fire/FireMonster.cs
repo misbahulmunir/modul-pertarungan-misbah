@@ -10,6 +10,7 @@ namespace ModelModulPertarungan
         public FireMonster(int MaxHealth, int CurrentHealth, string Name)
             : base(MaxHealth, CurrentHealth, Name)
         {
+
         }
            public FireMonster(int MaxHealth, int CurrentHealth, string Name, int gold, int exp)
             : base(MaxHealth, CurrentHealth, Name)

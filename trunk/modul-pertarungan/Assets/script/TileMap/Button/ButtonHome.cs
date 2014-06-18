@@ -6,7 +6,7 @@ public class ButtonHome : Button
 	// Use this for initialization
 	void Start () 
     {
-        SceneLoad = "BeforeBattle";
+        SceneLoad = "HouseEditor";
         ButtonTag = "homebutton";
 	}
 	

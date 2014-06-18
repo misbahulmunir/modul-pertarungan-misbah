@@ -47,6 +47,14 @@ namespace ModulPertarungan
             set { numQuest = value; }
         }
 
+        private string backScene;
+
+        public string BackScene
+        {
+            get { return backScene; }
+            set { backScene = value; }
+        }
+
         public TextureSingleton()
         {
 

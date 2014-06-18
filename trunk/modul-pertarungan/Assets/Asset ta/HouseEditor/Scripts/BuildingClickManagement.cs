@@ -63,6 +63,7 @@ public class BuildingClickManagement : MonoBehaviour {
         questCleared = new bool[] { false, false, false, false, false, false, false, false };
         TextureSingleton.Instance().QuestActive = questActived;
         TextureSingleton.Instance().QuestCleared = questCleared;
+        TextureSingleton.Instance().BackScene = Application.loadedLevelName;
         Application.LoadLevel("Dungeon_0");
     }
 }

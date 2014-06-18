@@ -9,6 +9,7 @@ public class DungeonEditor : EditorWindow
     GameObject button;
     GameObject manager;
     GameObject home;
+    GameObject back;
     GameObject element;
 
     bool groupEnabled;
@@ -34,6 +35,7 @@ public class DungeonEditor : EditorWindow
         button = Resources.Load("Map/Prefab/Button") as GameObject;
         manager = Resources.Load("Map/Prefab/ButtonManager") as GameObject;
         home = Resources.Load("Map/Prefab/ButtonHome") as GameObject;
+        back = Resources.Load("Map/Prefab/ButtonBack") as GameObject;
         if (GUILayout.Button("Add Background"))
         {
             if (GameObject.Find("xBackground") == null)
@@ -66,13 +68,26 @@ public class DungeonEditor : EditorWindow
             if (GameObject.Find("xHome") == null)
             {
                 home = (GameObject)Instantiate(home);
-                home.name = "xHome";
-                
+                home.name = "xHome";                
             }
             else
             {
                 Debug.Log("Home Button Already Added");
                 EditorUtility.DisplayDialog("Warning", "Home Button Already Added", "OK");
+            }
+        }
+        if (GUILayout.Button("Add Back Button"))
+        {
+            if (GameObject.Find("xBack") == null)
+            {
+                home = (GameObject)Instantiate(back);
+                home.name = "xBack";
+
+            }
+            else
+            {
+                Debug.Log("Back Button Already Added");
+                EditorUtility.DisplayDialog("Warning", "Back Button Already Added", "OK");
             }
         }
         groupEnabled = EditorGUILayout.BeginToggleGroup("Add Elemental Dungeon", groupEnabled);
