@@ -1073,6 +1073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1560737065}
+  deckPointCost: {fileID: 0}
+  playerDP: {fileID: 0}
 --- !u!1 &1304444693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,13 +1699,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5ab6a06f543ec241a9de50ad540183f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listcard:
-  - {fileID: 100000, guid: 0854511830effd64790663f4de9cde84, type: 2}
-  - {fileID: 100000, guid: c735173cac10fd048b8bee11ff86102d, type: 2}
-  - {fileID: 100000, guid: 2a8417fdabef07e42bbc995835e4ad23, type: 2}
-  - {fileID: 100000, guid: b204fd76009ef454e9d7f14f317e4211, type: 2}
-  - {fileID: 100000, guid: 31704ab26ad02b341835c17d6f372216, type: 2}
-  grid: {fileID: 1304444693}
+  deckGrid: {fileID: 0}
+  trunkGrid: {fileID: 0}
+  deckCountSize: {fileID: 0}
+  playerDeckPoint: {fileID: 0}
 --- !u!114 &2023610522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,3 +1717,4 @@ MonoBehaviour:
   cardName: {fileID: 684398152}
   cardCost: {fileID: 1615674852}
   cardEffect: {fileID: 1388393884}
+  deckCost: {fileID: 0}
