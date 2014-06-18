@@ -6,7 +6,23 @@ using UnityEngine;
 namespace ModulPertarungan
 {
 	public class NetworkSingleton
-	{
+    {
+
+        private string serverStatus;
+
+        public string ServerStatus
+        {
+            get { return serverStatus; }
+            set { serverStatus = value; }
+        }
+        private string isFinished;
+
+        public string IsFinished
+        {
+            get { return isFinished; }
+            set { isFinished = value; }
+        }
+
 	    private int chance;
 
         private string hostPlayer;

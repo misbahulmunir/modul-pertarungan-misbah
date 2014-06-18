@@ -68,6 +68,11 @@ namespace ModulPertarungan
                         textList.GetComponent<UITextList>().Add(message[1]);
                         NetworkSingleton.Instance().ServerMessage = "";
                     }
+                    else if (serverMessage.Contains("LoadFinish"))
+                    {
+                        NetworkSingleton.Instance().IsFinished = "Finish";
+                        NetworkSingleton.Instance().ServerMessage = "";
+                    }
                 }
                 catch (Exception e)
                 {

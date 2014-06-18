@@ -243,7 +243,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-
+            FinshihLoadObject();
             //if (GameManager.Instance().GameMode == "pvp")
             //{
             //GameManager.Instance().PauseGame = false;
@@ -260,7 +260,15 @@ namespace ModulPertarungan
             grid.GetComponent<UIGrid>().Reposition();
             //State Pattern untuk battle
         }
-
+        void FinshihLoadObject()
+        {
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                var succses = false;
+                succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "LoadFinish" +"-"+ NetworkSingleton.Instance().RoomName + "-" + GameManager.Instance().PlayerId);
+                Debug.Log(succses ? "send succes" : "send false");
+            }
+        }
 
     }
 }
