@@ -105,7 +105,7 @@ public class NewTestUnit
         GameManager.Instance().AddPlayer(action);
         GameManager.Instance().AddEnemy(action);
         Invoker invoke = new Invoker();
-        invoke.AddCommand(new CardExecuteCommand("SplitFire","enemy"));
+        invoke.AddCommand(new CardExecuteCommand("Thunder Storm", "enemy"));
         invoke.RunCommand();
         GameObject.DestroyImmediate(action);
     }

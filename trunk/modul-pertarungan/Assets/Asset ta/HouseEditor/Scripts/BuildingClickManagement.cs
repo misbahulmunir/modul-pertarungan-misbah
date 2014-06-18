@@ -10,6 +10,7 @@ public class BuildingClickManagement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         GameManager.Instance().GameMode = "";
+        WebServiceSingleton.GetInstance().isLoadingScreen = false;
 	}
 	
 	// Update is called once per frame

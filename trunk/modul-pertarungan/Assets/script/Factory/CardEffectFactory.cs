@@ -22,7 +22,11 @@ namespace ModulPertarungan
             card = new TidalWaveCard();
             CreateCardList.Add("Tidal Wave", card);
             card = new WaterAttackAction();
-            CreateCardList.Add("Water Attack", card);    
+            CreateCardList.Add("Water Attack", card);
+            card=  new ThunderStorm();
+            CreateCardList.Add("Thunder Storm",card);
+            card = new ThunderBolt();
+            CreateCardList.Add("Thunder Bolt", card);
         }
         
         public override void CreateCard(string objectName,string target)
