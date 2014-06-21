@@ -375,8 +375,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36}
-  m_LocalRotation: {x: .336706638, y: 0, z: 0, w: .941609681}
-  m_LocalPosition: {x: 0, y: 1.8911494, z: -2.58972359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -.253770947, z: -2.58972359}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -427,7 +427,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 45
+  field of view: 76
   orthographic: 0
   orthographic size: 100
   m_Depth: 0
@@ -534,7 +534,7 @@ MonoBehaviour:
     target: {fileID: 848388263}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .211764708}
   mPivot: 3
   mWidth: 532
   mHeight: 236
@@ -1161,6 +1161,56 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!1 &330329616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 330329618}
+  - 212: {fileID: 330329617}
+  m_Layer: 0
+  m_Name: Magic_2014_Background_Jace_Beleren
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &330329617
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 330329616}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 21300000, guid: 1500e4b44b04a1c499677d968cbdc492, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &330329618
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 330329616}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .109045804, y: -.160366535, z: 0}
+  m_LocalScale: {x: .346477926, y: .346477687, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &348679008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,7 +1765,7 @@ MonoBehaviour:
     target: {fileID: 1761466419}
     relative: 1
     absolute: -14
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .352941185}
   mPivot: 5
   mWidth: 296
   mHeight: 582
@@ -1880,7 +1930,7 @@ MonoBehaviour:
     target: {fileID: 61}
     relative: 1
     absolute: -14
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .31764707}
   mPivot: 3
   mWidth: 504
   mHeight: 208
@@ -2384,8 +2434,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -2472,8 +2522,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -3407,7 +3457,7 @@ MonoBehaviour:
     target: {fileID: 710038378}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .501960814}
   mPivot: 3
   mWidth: 324
   mHeight: 610

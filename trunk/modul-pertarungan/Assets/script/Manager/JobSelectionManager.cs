@@ -23,6 +23,7 @@ namespace ModulPertarungan
         public UIInput playerName;
         public UIInput email;
         public GameObject inputPanelPosisitionStart;
+        public MessageBoxScirpt msgBox;
         void Start()
         {
 
@@ -66,15 +67,25 @@ namespace ModulPertarungan
         }
 
         public void ConfirmNameAndEmail()
-        {  
-            var encoded_mail = System.Text.Encoding.UTF8.GetBytes(email.value);
-            WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
-            Debug.Log(jobName.text);
-            Debug.Log(playerName.value);
-            Debug.Log(System.Convert.ToBase64String(encoded_mail));
-            Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-            GameManager.Instance().PlayerId = playerName.value;
-            Application.LoadLevel("Loading");
+        {
+            if (email.value != null || playerName.value != null)
+            {
+                var encoded_mail = System.Text.Encoding.UTF8.GetBytes(email.value);
+                WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
+                Debug.Log(jobName.text);
+                Debug.Log(playerName.value);
+                Debug.Log(System.Convert.ToBase64String(encoded_mail));
+                Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+                GameManager.Instance().PlayerId = playerName.value;
+                Application.LoadLevel("Loading");
+            }
+            else
+            {
+                var obj =new object[2];
+                obj[0]="Notification";
+                obj[1] = "Email or Player Name Is Null";
+                msgBox.ShowMessageBox();
+            }
         }
 
         public void CreateDescription(String jobName, string description)
