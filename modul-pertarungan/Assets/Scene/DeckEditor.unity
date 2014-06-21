@@ -385,8 +385,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36}
-  m_LocalRotation: {x: .336706638, y: 0, z: 0, w: .941609681}
-  m_LocalPosition: {x: 0, y: 1.8911494, z: -2.58972359}
+  m_LocalRotation: {x: .313193589, y: 0, z: 0, w: .949689329}
+  m_LocalPosition: {x: .0289276615, y: 2.02012706, z: -2.28951883}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -544,7 +544,7 @@ MonoBehaviour:
     target: {fileID: 848388263}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .494117647}
   mPivot: 3
   mWidth: 637
   mHeight: 366
@@ -913,7 +913,7 @@ MonoBehaviour:
   mOverflow: 0
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
   mSpacingY: 0
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   mOverflow: 0
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
   mSpacingY: 0
@@ -1089,8 +1089,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -1098,6 +1098,56 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1 &224009611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 224009613}
+  - 212: {fileID: 224009612}
+  m_Layer: 0
+  m_Name: JaceBackground2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &224009612
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224009611}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 21300000, guid: 7b0450a3a2e8be444a18878703f6ee22, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &224009613
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 224009611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .141384482, y: -.00913310051, z: 0}
+  m_LocalScale: {x: .767356932, y: .83323884, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &306477862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1249,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0479041934
+  aspectRatio: .0473372787
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
@@ -1381,8 +1431,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -2105,8 +2155,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -2193,8 +2243,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -2411,8 +2461,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -2588,8 +2638,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -2635,6 +2685,10 @@ Prefab:
     - target: {fileID: 11400022, guid: cd37df5946e86884c95fa31e7349424b, type: 2}
       propertyPath: aspectRatio
       value: .0320000015
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400020, guid: cd37df5946e86884c95fa31e7349424b, type: 2}
+      propertyPath: mColor.a
+      value: .525490224
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd37df5946e86884c95fa31e7349424b, type: 2}
@@ -2912,7 +2966,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0509803928
+  aspectRatio: .0614657216
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Highlight - Shadowed
   mType: 1
@@ -3078,7 +3132,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0755813941
+  aspectRatio: .0614657216
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Highlight - Shadowed
   mType: 1
@@ -3174,7 +3228,7 @@ MonoBehaviour:
     target: {fileID: 710038378}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .525490224}
   mPivot: 3
   mWidth: 281
   mHeight: 532
@@ -3275,8 +3329,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -3552,8 +3606,8 @@ MonoBehaviour:
   mOverflow: 1
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
-  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
+  mGradientBottom: {r: 0, g: .860294104, b: 0, a: 1}
   mSpacingX: 0
   mSpacingY: 0
   mShrinkToFit: 0
@@ -3587,7 +3641,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1972828163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 426, y: 278, z: 0}
+  m_LocalPosition: {x: 426.000031, y: 293.763763, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 67}
@@ -3642,7 +3696,7 @@ MonoBehaviour:
     target: {fileID: 0}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .176470593}
   mPivot: 4
   mWidth: 264
   mHeight: 46
@@ -3927,7 +3981,7 @@ MonoBehaviour:
   mOverflow: 0
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
   mSpacingY: 0
@@ -4015,7 +4069,7 @@ MonoBehaviour:
   mOverflow: 0
   mMaterial: {fileID: 0}
   mApplyGradient: 1
-  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
   mGradientBottom: {r: .699999988, g: .699999988, b: .699999988, a: 1}
   mSpacingX: 0
   mSpacingY: 0
