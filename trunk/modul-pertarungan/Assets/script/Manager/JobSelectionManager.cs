@@ -70,6 +70,8 @@ namespace ModulPertarungan
         {
             if (email.value != null || playerName.value != null)
             {
+                Debug.Log(jobName.text);
+                Debug.Log(playerName.value);
                 var encoded_mail = System.Text.Encoding.UTF8.GetBytes(email.value);
                 WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "-" + GameManager.Instance().PlayerFBId + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
                 Debug.Log(jobName.text);

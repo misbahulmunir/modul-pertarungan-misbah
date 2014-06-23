@@ -14,6 +14,10 @@ namespace ModulPertarungan
 
         public override void Action()
         {
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                GameObject.Find("StatusLabel").GetComponent<UILabel>().text = "Your Turn";
+            }
             int totalCards=0;
             foreach (GameObject obj in GameManager.Instance().Players)
             {
