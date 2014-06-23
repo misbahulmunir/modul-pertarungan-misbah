@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using System.Xml;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace ModulPertarungan
 {
@@ -25,10 +26,42 @@ namespace ModulPertarungan
         {
             _xmlDoc = new XmlDocument();
             //Debug.Log(GameManager.Instance().PlayerId);
-            LoadCardFromService("trunk_of_", myTrunkGrid);
-            LoadCardFromService("trunk_of_", hisTrunkGrid);
-            LoadCardFromService("deck_of_", hisTradeGrid);
-            LoadCardFromService("deck_of_", myTradeGrid);
+            //LoadCardFromService("trunk_of_", myTrunkGrid);
+            //LoadCardFromService("trunk_of_", hisTrunkGrid);
+            //LoadCardFromService("deck_of_", hisTradeGrid);
+            //LoadCardFromService("deck_of_", myTradeGrid);
+
+            TradeRequest t = new TradeRequest();
+            t.RequestedPlayer = "fauzi";
+            t.SenderPlayer = "mis";
+            t.cards = new List<CardRequest>();
+
+            CardRequest c = new CardRequest();
+            c.Name = "Fire Card";
+            c.Quantity = 2;
+            t.cards.Add(c);
+
+            c.Name = "Water Card";
+            c.Quantity = 5;
+            t.cards.Add(c);
+
+            XmlSerializer serializer = new XmlSerializer(typeof(TradeRequest));
+            using (TextWriter writer = new StreamWriter(Application.persistentDataPath + "/trading_detail.xml"))
+            {
+                serializer.Serialize(writer, t);
+            }
+
+            try
+            {
+                string text = System.IO.File.ReadAllText(Application.persistentDataPath + "/trading_detail.xml");
+                var encoded_string = System.Text.Encoding.UTF8.GetBytes(text);
+                WebServiceSingleton.GetInstance().ProcessRequest("send_trade_request", System.Convert.ToBase64String(encoded_string));
+                //Debug.Log(text);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
         }
 
         void Update()
