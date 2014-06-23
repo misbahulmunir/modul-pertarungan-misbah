@@ -25,7 +25,7 @@ namespace ModulPertarungan
 
         private void ConfirmParty()
         {
-            if (grid.transform.childCount == 3)
+            if (grid.transform.childCount <= 3)
             {
                 GameManager.Instance().PartyId = new List<string>();
 
