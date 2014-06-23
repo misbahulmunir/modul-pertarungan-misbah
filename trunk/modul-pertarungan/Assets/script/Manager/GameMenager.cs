@@ -8,8 +8,15 @@ namespace ModulPertarungan
         private BattleState battleState;
         private GameObject currentEnemy;
         private string playerId;
+        private string playerFBId = "";
         private string friendName;
         private bool updatePaused;
+
+        public string PlayerFBId
+        {
+            get { return playerFBId; }
+            set { playerFBId = value; }
+        }
 
         public bool UpdatePaused
         {
