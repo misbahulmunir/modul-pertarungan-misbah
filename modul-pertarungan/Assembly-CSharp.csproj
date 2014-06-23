@@ -337,6 +337,8 @@
      <Compile Include="Assets\script\CardAction\CardEffect.cs" />
      <Compile Include="Assets\script\CardAction\Deck.cs" />
      <Compile Include="Assets\script\CardAction\EarthCard.cs" />
+     <Compile Include="Assets\script\CardAction\EarthFissure.cs" />
+     <Compile Include="Assets\script\CardAction\EarthQuake.cs" />
      <Compile Include="Assets\script\CardAction\FireCard.cs" />
      <Compile Include="Assets\script\CardAction\FireStorm.cs" />
      <Compile Include="Assets\script\CardAction\HealingCard.cs" />

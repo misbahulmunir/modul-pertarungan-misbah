@@ -23,5 +23,9 @@ namespace ModulPertarungan
         {
 
         }
+        public void BacktoLobby()
+        {
+            Application.LoadLevel("LobbyRoom");
+        }
     }
 }

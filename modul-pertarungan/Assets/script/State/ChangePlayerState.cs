@@ -14,6 +14,10 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+                GameObject.Find("StatusLabel").GetComponent<UILabel>().text = "Your Turn";
+            }
             BattleManager.endButton.SetActive(true);
             BattleManager.Cursor.renderer.enabled = true;
             this.ObjectLoader.GetComponent<BattleObjectLoader>().DestroyDisplayedCards();
