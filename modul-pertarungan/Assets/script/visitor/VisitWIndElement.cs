@@ -7,26 +7,26 @@ using Random = UnityEngine.Random;
 
 namespace ModulPertarungan
 {
-	public class VisitWIndElement:Visitor
-	{
+    public class VisitWIndElement : Visitor
+    {
         public override void ReceiveDamage(VisitableObject visitableObject, CardsEffect damageGiver, int damage)
         {
 
-            if (visitableObject is WindMonster|| visitableObject is GrandMagus)
+            if (visitableObject is WindMonster || visitableObject is GrandMagus)
             {
+                var value = 0;
                 var character = (DamageReceiver)visitableObject;
-                var value = Random.Range(1, 3);
-                if (damageGiver is EarthCard )
+                if (GameManager.Instance().GameMode == "pvp")
                 {
-                    if (GameManager.Instance().GameMode == "pvp")
-                    {
-                        damage *= NetworkSingleton.Instance().Chance;
-                    }
-                    else
-                    {
-                        damage *= value;
-                    };
-
+                    value = NetworkSingleton.Instance().Chance;
+                }
+                else
+                {
+                    value = Random.Range(1, 3);
+                }
+                if (damageGiver is EarthCard)
+                {
+                    damage *= value;
                 }
                 else if (damageGiver is ThunderCard)
                 {
@@ -42,5 +42,5 @@ namespace ModulPertarungan
                 }
             }
         }
-	}
+    }
 }

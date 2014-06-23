@@ -23,14 +23,14 @@ namespace ModulPertarungan
                 succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
                 Debug.Log(succses ? "send succes" : "send false");
                 NetworkSingleton.instance = null;
-                GameManager.Instance().GameMode = "";
+               
             }
             ShowWinOrLose();
             GameManager.Instance().Enemies = null;
             GameManager.Instance().CurrentEnemy = null;
             GameManager.Instance().Players = null;
             GameManager.Instance().CurrentPawn = null;
-            GameManager.Instance().GameMode = "";
+            
         }
 
         // Update is called once per frame
@@ -38,7 +38,14 @@ namespace ModulPertarungan
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Application.LoadLevel("Dungeon_0");
+                if (GameManager.Instance().GameMode == "pvp")
+                {
+                    Application.LoadLevel("HouseEditor");
+                }
+                else
+                {
+                    Application.LoadLevel("Dungeon_0");
+                }
             }
         }
         public void ShowWinOrLose()

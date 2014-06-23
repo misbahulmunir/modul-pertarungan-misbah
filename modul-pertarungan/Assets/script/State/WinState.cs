@@ -14,6 +14,10 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
+            if (GameManager.Instance().GameMode == "pvp")
+            {
+
+            }
             GameManager.Instance().GameStatus = "win";
             Application.LoadLevel("AfterBattle2");
         }

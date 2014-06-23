@@ -13,19 +13,20 @@ namespace ModulPertarungan
         {
             if (visitableObject is FireMonster|| visitableObject is Sorcerer)
             {
+                var value=0;
                 var character = (DamageReceiver)visitableObject;
                 Debug.Log(character.Name);
-                var value = Random.Range(1, 3);
+                if (GameManager.Instance().GameMode == "pvp")
+                {
+                    value = NetworkSingleton.Instance().Chance;
+                }
+                else
+                {
+                    value = Random.Range(1, 3);
+                }
                 if (damageGiver is WaterCard)
                 {
-                    if (GameManager.Instance().GameMode == "pvp")
-                    {
-                        damage *= NetworkSingleton.Instance().Chance;
-                    }
-                    else
-                    {
                         damage *= value;
-                    }
                 }
                 else if(damageGiver is EarthCard)
                 {
