@@ -102,6 +102,7 @@ public class ButtonHandler : MonoBehaviour {
         Debug.Log(FH.lastResponse);
         WebServiceSingleton.GetInstance().ProcessRequest("get_name_by_fb", FBID);
         Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+        GameManager.Instance().PlayerFBId = FBID;
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
             GameManager.Instance().PlayerId = WebServiceSingleton.GetInstance().queryInfo;

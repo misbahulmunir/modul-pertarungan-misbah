@@ -71,7 +71,7 @@ namespace ModulPertarungan
             if (email.value != null || playerName.value != null)
             {
                 var encoded_mail = System.Text.Encoding.UTF8.GetBytes(email.value);
-                WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
+                WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "-" + GameManager.Instance().PlayerFBId + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
                 Debug.Log(jobName.text);
                 Debug.Log(playerName.value);
                 Debug.Log(System.Convert.ToBase64String(encoded_mail));
