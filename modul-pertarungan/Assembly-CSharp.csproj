@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -390,24 +390,6 @@
      <Compile Include="Assets\script\Manager\PlayerEditorManager.cs" />
      <Compile Include="Assets\script\Manager\WaitingRoomManager.cs" />
      <Compile Include="Assets\script\Manager\WebServiceSingleton.cs" />
-     <Compile Include="Assets\script\Model From Service\Avatar\AvatarFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Avatar\AviFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Battle Rank\BattleRankFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Battle Rank\EnemyPlayerFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Building\BuildingFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Building\PlayerBuildingFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Friends\FriendListFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Messages\FriendMessage.cs" />
-     <Compile Include="Assets\script\Model From Service\Messages\MessagesFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Monster_and_Quest\BattleListFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Monster_and_Quest\MonstersFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Monster_and_Quest\QuestFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Monster_and_Quest\QuestListFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Player Profile\PlayerFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerRankingFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Player Ranking\PlayerStatsFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Request\PartialProfileFromService.cs" />
-     <Compile Include="Assets\script\Model From Service\Request\RequestFromService.cs" />
      <Compile Include="Assets\script\Model\DamageReceiver.cs" />
      <Compile Include="Assets\script\Model\Earth\Asmodeus.cs" />
      <Compile Include="Assets\script\Model\Earth\Bandit.cs" />
@@ -552,6 +534,26 @@
      <Compile Include="Assets\script\TileMap\TextureSingleton.cs" />
      <Compile Include="Assets\script\TileMap\TileMap.cs" />
      <Compile Include="Assets\script\TileMap\TileMapManual.cs" />
+     <Compile Include="Assets\script\Web Service Model\Avatar\AvatarFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Avatar\AviFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Battle Rank\BattleRankFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Battle Rank\EnemyPlayerFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Building\BuildingFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Building\PlayerBuildingFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Friends\FriendListFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Messages\FriendMessage.cs" />
+     <Compile Include="Assets\script\Web Service Model\Messages\MessagesFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\BattleListFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\MonstersFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\QuestFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\QuestListFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Player Profile\PlayerFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Player Ranking\PlayerRankingFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Player Ranking\PlayerStatsFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Request\PartialProfileFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Request\RequestFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Trading\CardRequest.cs" />
+     <Compile Include="Assets\script\Web Service Model\Trading\TradeRequest.cs" />
      <Compile Include="Assets\script\visitor\VisitEarthElement.cs" />
      <Compile Include="Assets\script\visitor\VisitFireElement.cs" />
      <Compile Include="Assets\script\visitor\VisitThunderElement.cs" />
