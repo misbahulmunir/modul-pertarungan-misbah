@@ -387,8 +387,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 36}
-  m_LocalRotation: {x: .313193589, y: 0, z: 0, w: .949689329}
-  m_LocalPosition: {x: .0289276615, y: 2.02012706, z: -2.28951883}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .0317540765, y: .495122641, z: -8.5801239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -547,7 +547,7 @@ MonoBehaviour:
     target: {fileID: 848388263}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .411764711}
   mPivot: 3
   mWidth: 637
   mHeight: 366
@@ -874,6 +874,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400020, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: mColor.a
+      value: .411764711
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
   m_RootGameObject: {fileID: 710038377}
@@ -1189,8 +1193,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 224009611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .141384482, y: -.00913310051, z: 0}
-  m_LocalScale: {x: .767356932, y: .83323884, z: 1}
+  m_LocalPosition: {x: .0827841759, y: .2395432, z: 0}
+  m_LocalScale: {x: 2.04657054, y: 2.22228003, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &306477862
@@ -2596,6 +2600,10 @@ Prefab:
       propertyPath: mColor.a
       value: .525490224
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
+      propertyPath: mColor.a
+      value: .411764711
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
   m_RootGameObject: {fileID: 848388262}
@@ -3134,7 +3142,7 @@ MonoBehaviour:
     target: {fileID: 710038378}
     relative: 1
     absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 1, g: 1, b: 1, a: .411764711}
   mPivot: 3
   mWidth: 281
   mHeight: 532
