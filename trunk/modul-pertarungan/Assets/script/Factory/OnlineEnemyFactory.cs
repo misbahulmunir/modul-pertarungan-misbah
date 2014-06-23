@@ -50,6 +50,7 @@ namespace ModulPertarungan
             character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
             character.MaxSoulPoints = playerFromService.MaxSP;
             character.Name = playerFromService.Name;
+            NetworkSingleton.Instance().EnemyName = playerFromService.Name; 
             character.Gold = playerFromService.Gold;
             character.Experience = playerFromService.XP;
             character.DeckCostPoint = playerFromService.MaxDP;

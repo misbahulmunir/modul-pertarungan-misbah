@@ -16,7 +16,7 @@ namespace ModulPertarungan
         {
             if (GameManager.Instance().GameMode == "pvp")
             {
-                WebServiceSingleton.GetInstance().ProcessRequest("send_battle_result", GameManager.Instance().PlayerId + "|" + GameManager.Instance().CurrentEnemy.GetComponent<PlayerAction>().Character.Name);
+                WebServiceSingleton.GetInstance().ProcessRequest("send_battle_result", GameManager.Instance().PlayerId + "|" +NetworkSingleton.Instance().EnemyName);
             }
             GameManager.Instance().GameStatus = "win";
             Application.LoadLevel("AfterBattle2");

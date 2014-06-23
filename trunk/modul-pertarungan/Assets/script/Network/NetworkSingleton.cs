@@ -9,7 +9,13 @@ namespace ModulPertarungan
     {
 
         private string serverStatus;
+        private string enemyName;
 
+        public string EnemyName
+        {
+            get { return enemyName; }
+            set { enemyName = value; }
+        }
         public string ServerStatus
         {
             get { return serverStatus; }
