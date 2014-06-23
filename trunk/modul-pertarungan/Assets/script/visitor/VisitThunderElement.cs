@@ -14,19 +14,19 @@ namespace ModulPertarungan
 
             if (visitableObject is ThunderMonster||visitableObject is Wizard)
             {
+                var value=0;
                 var character = (DamageReceiver)visitableObject;
-                var value = Random.Range(1, 3);
-                if (damageGiver is WindCard)
+                if (GameManager.Instance().GameMode == "pvp")
                 {
-                    if (GameManager.Instance().GameMode == "pvp")
-                    {
-                        damage *= NetworkSingleton.Instance().Chance;
-                    }
-                    else
-                    {
+                    value = NetworkSingleton.Instance().Chance;
+                }
+                else
+                {
+                    value = Random.Range(1, 3);
+                }
+                if (damageGiver is WindCard)
+                { 
                         damage *= value;
-                    }
-
                 }
                 else if (damageGiver is WaterCard)
                 {

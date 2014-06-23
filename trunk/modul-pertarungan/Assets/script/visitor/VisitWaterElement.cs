@@ -13,22 +13,23 @@ namespace ModulPertarungan
         {
             if (visitableObject is WaterMonster || visitableObject is Warlock)
             {
+                var value = 0;
                 var character = (DamageReceiver)visitableObject;
-                var value = Random.Range(1, 3);
+                if (GameManager.Instance().GameMode == "pvp")
+                {
+                    value = NetworkSingleton.Instance().Chance;
+                }
+                else
+                {
+                    value = Random.Range(1, 3);
+                }
                 if (damageGiver is ThunderCard)
                 {
-                    if (GameManager.Instance().GameMode == "pvp")
-                    {
-                        damage *= NetworkSingleton.Instance().Chance;
-                    }
-                    else
-                    {
                         damage *= value;
-                    }
                 }
                 else if(damageGiver is FireCard)
                 {
-                    damage /= value;
+                        damage /= value;
                 }
 
                 if ((character.CurrentHealth - damage) <= 0)

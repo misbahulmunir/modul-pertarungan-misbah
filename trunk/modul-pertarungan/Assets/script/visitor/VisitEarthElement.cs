@@ -14,18 +14,18 @@ namespace ModulPertarungan
                 
                 var character = (DamageReceiver)visitableObject;
                 Debug.Log(character.Name);
-                var value = Random.Range(1, 3);
+                var value=0;
+                if (GameManager.Instance().GameMode == "pvp")
+                {
+                    value = NetworkSingleton.Instance().Chance;
+                }
+                else
+                {
+                    value = Random.Range(1, 3);
+                }
                 if (damageGiver is FireCard)
                 {
-                    if (GameManager.Instance().GameMode == "pvp")
-                    {
-                        damage *= NetworkSingleton.Instance().Chance;
-                    }
-                    else
-                    {
                         damage *= value;
-                    }
-
                 }
                 else if (damageGiver is WindCard)
                 {
