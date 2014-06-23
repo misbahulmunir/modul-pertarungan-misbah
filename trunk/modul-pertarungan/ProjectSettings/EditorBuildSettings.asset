@@ -51,3 +51,5 @@ EditorBuildSettings:
     path: Assets/Scene/JobSelection.unity
   - enabled: 1
     path: Assets/Scene/FriendProfile.unity
+  - enabled: 1
+    path: Assets/Scene/TradingScene.unity
