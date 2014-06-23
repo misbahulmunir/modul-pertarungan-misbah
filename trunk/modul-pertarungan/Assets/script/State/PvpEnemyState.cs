@@ -17,6 +17,7 @@ namespace ModulPertarungan
             try
             {
                 BattleManager.endButton.SetActive(false);
+                GameObject.Find("StatusLabel").GetComponent<UILabel>().text = "Enemy Turn";
             }
             catch (Exception e)
             {
