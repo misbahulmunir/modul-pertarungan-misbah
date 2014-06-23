@@ -135,6 +135,10 @@ public class FriendProfileManager : MonoBehaviour {
                     Debug.Log(obj.name);
                     TweenObjectIn(messageContainer, messageContainerPosition);
                 }
+                else if (hit.collider.gameObject.name.ToLower().Contains("trade"))
+                {
+                    Application.LoadLevel("TradingScene");
+                }
             }
         }
     }

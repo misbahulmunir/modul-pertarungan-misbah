@@ -21,47 +21,49 @@ namespace ModulPertarungan
         private XmlDocument _xmlDoc;
         private XmlNodeList _nameNodes;
         private XmlNodeList _quantityNodes;
+        private List<string> myTradeList;
+        private List<int> myTradeQuantity;
+        private List<string> hisTradeList;
+        private List<int> hisTradeQuantity;
 
         void Start()
         {
             _xmlDoc = new XmlDocument();
             //Debug.Log(GameManager.Instance().PlayerId);
-            //LoadCardFromService("trunk_of_", myTrunkGrid);
-            //LoadCardFromService("trunk_of_", hisTrunkGrid);
-            //LoadCardFromService("deck_of_", hisTradeGrid);
-            //LoadCardFromService("deck_of_", myTradeGrid);
+            LoadTrunk("trunk_of_", GameManager.Instance().PlayerId, myTrunkGrid);
+            LoadTrunk("trunk_of_", GameManager.Instance().FriendName, hisTrunkGrid);
 
-            TradeRequest t = new TradeRequest();
-            t.RequestedPlayer = "fauzi";
-            t.SenderPlayer = "mis";
-            t.cards = new List<CardRequest>();
+            //TradeRequest t = new TradeRequest();
+            //t.RequestedPlayer = "fauzi";
+            //t.SenderPlayer = "mis";
+            //t.cards = new List<CardRequest>();
 
-            CardRequest c = new CardRequest();
-            c.Name = "Fire Card";
-            c.Quantity = 2;
-            t.cards.Add(c);
+            //CardRequest c = new CardRequest();
+            //c.Name = "Fire Card";
+            //c.Quantity = 2;
+            //t.cards.Add(c);
 
-            c.Name = "Water Card";
-            c.Quantity = 5;
-            t.cards.Add(c);
+            //c.Name = "Water Card";
+            //c.Quantity = 5;
+            //t.cards.Add(c);
 
-            XmlSerializer serializer = new XmlSerializer(typeof(TradeRequest));
-            using (TextWriter writer = new StreamWriter(Application.persistentDataPath + "/trading_detail.xml"))
-            {
-                serializer.Serialize(writer, t);
-            }
+            //XmlSerializer serializer = new XmlSerializer(typeof(TradeRequest));
+            //using (TextWriter writer = new StreamWriter(Application.persistentDataPath + "/trading_detail.xml"))
+            //{
+            //    serializer.Serialize(writer, t);
+            //}
 
-            try
-            {
-                string text = System.IO.File.ReadAllText(Application.persistentDataPath + "/trading_detail.xml");
-                var encoded_string = System.Text.Encoding.UTF8.GetBytes(text);
-                WebServiceSingleton.GetInstance().ProcessRequest("send_trade_request", System.Convert.ToBase64String(encoded_string));
-                //Debug.Log(text);
-            }
-            catch (Exception e)
-            {
-                Debug.Log(e);
-            }
+            //try
+            //{
+            //    string text = System.IO.File.ReadAllText(Application.persistentDataPath + "/trading_detail.xml");
+            //    var encoded_string = System.Text.Encoding.UTF8.GetBytes(text);
+            //    WebServiceSingleton.GetInstance().ProcessRequest("send_trade_request", System.Convert.ToBase64String(encoded_string));
+            //    //Debug.Log(text);
+            //}
+            //catch (Exception e)
+            //{
+            //    Debug.Log(e);
+            //}
         }
 
         void Update()
@@ -77,14 +79,14 @@ namespace ModulPertarungan
             grid.GetComponent<UIGrid>().Reposition();
         }
 
-        public void LoadCardFromService(string method, GameObject grid)
+        public void LoadTrunk(string method, string name, GameObject grid)
         {
             List<string> list = new List<string>();
             Boolean _isEmpty = false;
             try
             {
                 //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
-                TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
+                TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + name + ".xml");
                 _xmlDoc.Load(textReader);
                 _nameNodes = _xmlDoc.GetElementsByTagName("Name");
                 _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");
@@ -105,6 +107,59 @@ namespace ModulPertarungan
             }
 
             if (!_isEmpty) AddToGrid(grid, list);
+        }
+
+        public void SendTradingRequest()
+        {
+            myTradeList = new List<string>();
+            myTradeQuantity = new List<int>();
+            hisTradeList = new List<string>();
+            hisTradeQuantity = new List<int>();
+            //MY CARD LIST FOR TRADING
+            foreach (Transform t in myTradeGrid.transform)
+            {
+                string s = t.name.Split('(')[0];
+
+
+                bool is_distinguish = true;
+                for (int i = 0; i < myTradeList.Count; i++)
+                {
+                    if (myTradeList[i] == s)
+                    {
+                        is_distinguish = false;
+                        myTradeQuantity[i]++;
+                        break;
+                    }
+                }
+                if (is_distinguish)
+                {
+                    myTradeList.Add(s);
+                    myTradeQuantity.Add(1);
+                }
+            }
+
+            //HIS CARD LIST FOR TRADING
+            foreach (Transform t in hisTradeGrid.transform)
+            {
+                string s = t.name.Split('(')[0];
+
+
+                bool is_distinguish = true;
+                for (int i = 0; i < hisTradeList.Count; i++)
+                {
+                    if (hisTradeList[i] == s)
+                    {
+                        is_distinguish = false;
+                        hisTradeQuantity[i]++;
+                        break;
+                    }
+                }
+                if (is_distinguish)
+                {
+                    hisTradeList.Add(s);
+                    hisTradeQuantity.Add(1);
+                }
+            }
         }
     }
 }
