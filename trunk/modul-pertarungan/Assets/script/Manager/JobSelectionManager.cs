@@ -26,7 +26,7 @@ namespace ModulPertarungan
         public MessageBoxScirpt msgBox;
         void Start()
         {
-
+            msgBox = GameObject.Find("MessageBox").GetComponent<MessageBoxScirpt>();
         }
 
         private void Update()
@@ -36,7 +36,7 @@ namespace ModulPertarungan
 
         public void SelectMagician()
         {
-            CreateDescription("Magician","");
+            CreateDescription("Magician", "");
         }
 
         public void SelectWarlock()
@@ -68,7 +68,7 @@ namespace ModulPertarungan
 
         public void ConfirmNameAndEmail()
         {
-            if (email.value != null || playerName.value != null)
+            if (email.value != "" && playerName.value != "")
             {
                 Debug.Log(jobName.text);
                 Debug.Log(playerName.value);
@@ -83,10 +83,11 @@ namespace ModulPertarungan
             }
             else
             {
-                var obj =new object[2];
-                obj[0]="Notification";
+                var obj = new object[2];
+                obj[0] = "Notification";
                 obj[1] = "Email or Player Name Is Null";
-                msgBox.ShowMessageBox();
+                msgBox.SendMessage("SetMessage", obj);
+                msgBox.SendMessage("ShowMessageBox");
             }
         }
 
@@ -97,15 +98,15 @@ namespace ModulPertarungan
             this.jobName.text = jobName;
             this.description.text = description;
             TweenObjectIn(picturePanel, picturePanelPosition);
-            TweenObjectIn(descriptionPanel,descriptionPanePosition);
+            TweenObjectIn(descriptionPanel, descriptionPanePosition);
         }
         public void TweenObjectIn(GameObject from, GameObject to)
         {
-            var parms= new TweenParms();
+            var parms = new TweenParms();
             parms.Prop("position", to.transform.position);
             HOTween.To(from.transform, 1f, parms);
         }
-      
+
 
         public void TweenObjectOut()
         {
