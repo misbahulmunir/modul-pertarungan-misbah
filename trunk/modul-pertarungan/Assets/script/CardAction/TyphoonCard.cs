@@ -30,6 +30,7 @@ namespace ModulPertarungan
         {
             if (TargetList.Count > 0)
             {
+                GameObject.Find("Wind").GetComponent<AudioSource>().Play();
                 foreach (GameObject obj in TargetList)
                 {
                     GameObject animation = Instantiate(GameObject.Find("Fluffy Smoke Large"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;

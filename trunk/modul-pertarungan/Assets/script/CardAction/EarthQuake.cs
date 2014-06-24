@@ -32,6 +32,7 @@ namespace ModulPertarungan
         {
             if (TargetList.Count > 0)
             {
+                GameObject.Find("Quake").GetComponent<AudioSource>().Play();
                 foreach (var obj in TargetList)
                 {
                     var o = Instantiate(GameObject.Find("Small explosion"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;

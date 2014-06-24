@@ -28,7 +28,8 @@ namespace ModulPertarungan
         public override void Effect()
         {
             if (TargetList.Count > 0)
-            {   Debug.Log(TargetList.Count);
+            {
+                GameObject.Find("Splash").GetComponent<AudioSource>().Play();
                 foreach (GameObject obj in TargetList)
                 {
                     var animation = Instantiate(GameObject.Find("WaterFall"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
