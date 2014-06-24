@@ -25,7 +25,10 @@ public class MessageManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        OnClick();
+        if (!GameManager.Instance().UpdatePaused)
+        {
+            OnClick();
+        }
 	}
 
     void TweenObjectIn(GameObject from, GameObject to)
