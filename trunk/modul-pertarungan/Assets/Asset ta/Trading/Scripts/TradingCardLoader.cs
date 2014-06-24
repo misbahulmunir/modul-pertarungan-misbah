@@ -32,38 +32,6 @@ namespace ModulPertarungan
             //Debug.Log(GameManager.Instance().PlayerId);
             LoadTrunk("trunk_of_", GameManager.Instance().PlayerId, myTrunkGrid);
             LoadTrunk("trunk_of_", GameManager.Instance().FriendName, hisTrunkGrid);
-
-            //TradeRequest t = new TradeRequest();
-            //t.RequestedPlayer = "fauzi";
-            //t.SenderPlayer = "mis";
-            //t.cards = new List<CardRequest>();
-
-            //CardRequest c = new CardRequest();
-            //c.Name = "Fire Card";
-            //c.Quantity = 2;
-            //t.cards.Add(c);
-
-            //c.Name = "Water Card";
-            //c.Quantity = 5;
-            //t.cards.Add(c);
-
-            //XmlSerializer serializer = new XmlSerializer(typeof(TradeRequest));
-            //using (TextWriter writer = new StreamWriter(Application.persistentDataPath + "/trading_detail.xml"))
-            //{
-            //    serializer.Serialize(writer, t);
-            //}
-
-            //try
-            //{
-            //    string text = System.IO.File.ReadAllText(Application.persistentDataPath + "/trading_detail.xml");
-            //    var encoded_string = System.Text.Encoding.UTF8.GetBytes(text);
-            //    WebServiceSingleton.GetInstance().ProcessRequest("send_trade_request", System.Convert.ToBase64String(encoded_string));
-            //    //Debug.Log(text);
-            //}
-            //catch (Exception e)
-            //{
-            //    Debug.Log(e);
-            //}
         }
 
         void Update()
@@ -159,6 +127,46 @@ namespace ModulPertarungan
                     hisTradeList.Add(s);
                     hisTradeQuantity.Add(1);
                 }
+            }
+
+            TradeRequest tradingRequest = new TradeRequest();
+            tradingRequest.RequestedPlayer = GameManager.Instance().FriendName;
+            tradingRequest.SenderPlayer = GameManager.Instance().PlayerId;
+            tradingRequest.senderCards = new List<CardRequest>();
+            tradingRequest.requestedCards = new List<CardRequest>();
+
+            for (int i = 0; i < myTradeList.Count; i++)
+            {
+                CardRequest c = new CardRequest();
+                c.Name = myTradeList[i];
+                c.Quantity = myTradeQuantity[i];
+                tradingRequest.senderCards.Add(c);
+            }
+
+            for (int i = 0; i < hisTradeList.Count; i++)
+            {
+                CardRequest c = new CardRequest();
+                c.Name = hisTradeList[i];
+                c.Quantity = hisTradeQuantity[i];
+                tradingRequest.requestedCards.Add(c);
+            }
+
+            XmlSerializer serializer = new XmlSerializer(typeof(TradeRequest));
+            using (TextWriter writer = new StreamWriter(Application.persistentDataPath + "/trading_detail.xml"))
+            {
+                serializer.Serialize(writer, tradingRequest);
+            }
+
+            try
+            {
+                string text = System.IO.File.ReadAllText(Application.persistentDataPath + "/trading_detail.xml");
+                var encoded_string = System.Text.Encoding.UTF8.GetBytes(text);
+                WebServiceSingleton.GetInstance().ProcessRequest("send_trade_request", System.Convert.ToBase64String(encoded_string));
+                Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
             }
         }
     }
