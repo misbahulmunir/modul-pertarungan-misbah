@@ -53,3 +53,5 @@ EditorBuildSettings:
     path: Assets/Scene/FriendProfile.unity
   - enabled: 1
     path: Assets/Scene/TradingScene.unity
+  - enabled: 1
+    path: Assets/Scene/TradingConfirmationScene.unity
