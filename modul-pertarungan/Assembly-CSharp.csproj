@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -553,7 +553,9 @@
      <Compile Include="Assets\script\Web Service Model\Request\PartialProfileFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Request\RequestFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Trading\CardRequest.cs" />
+     <Compile Include="Assets\script\Web Service Model\Trading\RequestSenderFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Trading\TradeRequest.cs" />
+     <Compile Include="Assets\script\Web Service Model\Trading\TradeRequestFromService.cs" />
      <Compile Include="Assets\script\visitor\VisitEarthElement.cs" />
      <Compile Include="Assets\script\visitor\VisitFireElement.cs" />
      <Compile Include="Assets\script\visitor\VisitThunderElement.cs" />

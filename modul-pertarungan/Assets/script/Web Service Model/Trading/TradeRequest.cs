@@ -9,6 +9,7 @@ namespace ModulPertarungan
 	{
         public string SenderPlayer { get; set; }
         public string RequestedPlayer { get; set; }
-        public List<CardRequest> cards { get; set; }
+        public List<CardRequest> senderCards { get; set; }
+        public List<CardRequest> requestedCards { get; set; }
 	}
 }

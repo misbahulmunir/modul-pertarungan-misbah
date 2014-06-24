@@ -85,8 +85,6 @@ J:\newta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\obj\Debug\ResolveAssemblyReference.cache
@@ -115,8 +113,6 @@ D:\ta\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 D:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 D:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
 D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.dll
 D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
 D:\[~~TA]\!!!New TA\modul-pertarungan\Temp\bin\Debug\IFacebook.dll
@@ -150,3 +146,7 @@ C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debu
 C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
 C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
 D:\ta\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\nunit.framework.dll

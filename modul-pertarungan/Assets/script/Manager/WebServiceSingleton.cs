@@ -53,7 +53,7 @@ namespace ModulPertarungan
             {
                 responseFromServer = "-3|Error reading stream";
             }
-            Debug.Log(methodName + " " + parameter + responseFromServer);
+            Debug.Log(methodName + " " /*+ parameter */+ responseFromServer);
             string[] response = responseFromServer.Split('|');
             queryResult = int.Parse(response[0]);
             queryInfo = response[1];
@@ -121,6 +121,7 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_monster_list", "http://cws.yowanda.com/files/monster_of_");
             fileLocationDictionary.Add("get_battle_list", "http://cws.yowanda.com/files/battle_list_of_");
             fileLocationDictionary.Add("get_player_quest", "http://cws.yowanda.com/files/quest_of_");
+            fileLocationDictionary.Add("get_trade_request_list", "http://cws.yowanda.com/files/trade_request_list_of_");
         }
 
         private void InitUrlDictionary()
@@ -153,7 +154,8 @@ namespace ModulPertarungan
             urlDictionary.Add("get_player_quest", "http://cws.yowanda.com/ClientController/1/monster_quest/get_player_quest");
             urlDictionary.Add("get_name_by_fb", "http://cws.yowanda.com/ClientController/1/player/get_name_by_fb");
 			urlDictionary.Add("send_battle_result", "http://cws.yowanda.com/ClientController/2/battle/send_battle_result");
-            urlDictionary.Add("send_trade_request", "http://localhost/MortalWorld/ClientController/1/request/send_trade_request");
+            urlDictionary.Add("send_trade_request", "http://cws.yowanda.com/ClientController/1/request/send_trade_request");
+            urlDictionary.Add("get_trade_request_list", "http://cws.yowanda.com/ClientController/1/request/get_trade_request_list");
         }
 
         private void InitPathDictionary()
@@ -174,6 +176,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_monster_list", "monster_of");
             clientPathDictionary.Add("get_battle_list", "battle_list_of");
             clientPathDictionary.Add("get_player_quest", "quest_of");
+            clientPathDictionary.Add("get_trade_request_list", "trade_request_list_of");
         }
 
         public void clearData(string path)
