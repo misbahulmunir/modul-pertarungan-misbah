@@ -168,6 +168,8 @@ namespace ModulPertarungan
             {
                 Debug.Log(e);
             }
+
+            Application.LoadLevel("HouseEditor");
         }
     }
 }
