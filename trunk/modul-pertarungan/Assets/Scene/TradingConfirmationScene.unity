@@ -849,7 +849,6 @@ GameObject:
   - 4: {fileID: 1015019535}
   - 114: {fileID: 1015019539}
   - 65: {fileID: 1015019538}
-  - 114: {fileID: 1015019537}
   - 114: {fileID: 1015019536}
   m_Layer: 8
   m_Name: HisTrade
@@ -886,19 +885,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollView: {fileID: 1299135897}
   draggablePanel: {fileID: 0}
---- !u!114 &1015019537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400010, guid: 85a3a114581aa1b449e4cb147beba89d,
-    type: 2}
-  m_PrefabInternal: {fileID: 1092236394}
-  m_GameObject: {fileID: 1015019534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33bc83ab81ec0c44976c6fb1d44e55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reparentTarget: {fileID: 566009972}
 --- !u!65 &1015019538
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -992,7 +978,8 @@ Prefab:
       propertyPath: aspectRatio
       value: .55400002
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400010, guid: 85a3a114581aa1b449e4cb147beba89d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 85a3a114581aa1b449e4cb147beba89d, type: 2}
   m_RootGameObject: {fileID: 1015019534}
   m_IsPrefabParent: 0
@@ -1735,7 +1722,8 @@ Prefab:
       propertyPath: m_Center.y
       value: -48.5757675
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400012, guid: 4a75c02c6b2ab2646bb6d5063672f084, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4a75c02c6b2ab2646bb6d5063672f084, type: 2}
   m_RootGameObject: {fileID: 2021943498}
   m_IsPrefabParent: 0
@@ -2382,7 +2370,6 @@ GameObject:
   - 4: {fileID: 2021943499}
   - 114: {fileID: 2021943503}
   - 65: {fileID: 2021943502}
-  - 114: {fileID: 2021943501}
   - 114: {fileID: 2021943500}
   m_Layer: 8
   m_Name: MyTrade
@@ -2419,19 +2406,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollView: {fileID: 380435991}
   draggablePanel: {fileID: 0}
---- !u!114 &2021943501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400012, guid: 4a75c02c6b2ab2646bb6d5063672f084,
-    type: 2}
-  m_PrefabInternal: {fileID: 1401506559}
-  m_GameObject: {fileID: 2021943498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c33bc83ab81ec0c44976c6fb1d44e55a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  reparentTarget: {fileID: 1404886106}
 --- !u!65 &2021943502
 BoxCollider:
   m_ObjectHideFlags: 0
