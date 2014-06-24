@@ -9,9 +9,10 @@ namespace ModulPertarungan
         // Use this for initializatio
         public GameObject deckCount;
         public GameObject playerName;
+        public UILabel enemyName;
         void Start()
         {
-
+            enemyName.text = NetworkSingleton.Instance().EnemyName;
         }
 
         // Update is called once per frame

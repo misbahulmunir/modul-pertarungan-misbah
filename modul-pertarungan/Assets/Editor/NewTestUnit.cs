@@ -90,6 +90,7 @@ public class NewTestUnit
         Assert.LessOrEqual(action.Character.CurrentHealth, 150);
         action.ReceiveDamage(action.Character, new EarthCard(), 50);
         Assert.LessOrEqual(action.Character.CurrentHealth, 100);
+       
     }
     [Test]
     public void TestCardEffectProtocol()
