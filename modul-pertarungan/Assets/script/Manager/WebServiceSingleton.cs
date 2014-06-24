@@ -122,6 +122,7 @@ namespace ModulPertarungan
             fileLocationDictionary.Add("get_battle_list", "http://cws.yowanda.com/files/battle_list_of_");
             fileLocationDictionary.Add("get_player_quest", "http://cws.yowanda.com/files/quest_of_");
             fileLocationDictionary.Add("get_trade_request_list", "http://cws.yowanda.com/files/trade_request_list_of_");
+            fileLocationDictionary.Add("get_card_request_list", "http://cws.yowanda.com/files/card_request_list_of_");
         }
 
         private void InitUrlDictionary()
@@ -156,6 +157,7 @@ namespace ModulPertarungan
 			urlDictionary.Add("send_battle_result", "http://cws.yowanda.com/ClientController/2/battle/send_battle_result");
             urlDictionary.Add("send_trade_request", "http://cws.yowanda.com/ClientController/1/request/send_trade_request");
             urlDictionary.Add("get_trade_request_list", "http://cws.yowanda.com/ClientController/1/request/get_trade_request_list");
+            urlDictionary.Add("get_card_request_list", "http://cws.yowanda.com/ClientController/2/request/get_card_request_list");
         }
 
         private void InitPathDictionary()
@@ -177,6 +179,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_battle_list", "battle_list_of");
             clientPathDictionary.Add("get_player_quest", "quest_of");
             clientPathDictionary.Add("get_trade_request_list", "trade_request_list_of_");
+            clientPathDictionary.Add("get_card_request_list", "card_request_list_of_");
         }
 
         public void clearData(string path)

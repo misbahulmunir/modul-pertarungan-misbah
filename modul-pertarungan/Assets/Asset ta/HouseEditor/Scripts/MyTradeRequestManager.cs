@@ -80,13 +80,21 @@ public class MyTradeRequestManager : MonoBehaviour {
 
     void ViewTradeRequestPanel()
     {
-        TweenObjectIn(tradeRequestPanel, messagePanelPosition);
-        GameManager.Instance().UpdatePaused = true;
+        if (!GameManager.Instance().UpdatePaused)
+        {
+            TweenObjectIn(tradeRequestPanel, messagePanelPosition);
+            GameManager.Instance().UpdatePaused = true;
+        }
     }
 
     void GoToTradeRequest(object value)
     {
         tradeID = value as string;
         Debug.Log(tradeID);
+        WebServiceSingleton.GetInstance().ProcessRequest("get_card_request_list", GameManager.Instance().PlayerId + "|" + tradeID);
+        if (WebServiceSingleton.GetInstance().queryResult > 0)
+        {
+            Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_card_request_list", GameManager.Instance().PlayerId));
+        }
     }
 }
