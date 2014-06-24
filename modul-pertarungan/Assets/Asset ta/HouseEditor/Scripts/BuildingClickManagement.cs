@@ -11,6 +11,7 @@ public class BuildingClickManagement : MonoBehaviour {
 	void Start () {
         GameManager.Instance().GameMode = "";
         WebServiceSingleton.GetInstance().isLoadingScreen = false;
+        GameManager.Instance().UpdatePaused = false;
 	}
 	
 	// Update is called once per frame

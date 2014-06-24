@@ -22,6 +22,6 @@ public class GoToRequest : MonoBehaviour {
         nama = gameObject.transform.name.Split('_');
 
         manager = GameObject.Find("MyTradeRequestManager");
-        manager.SendMessage(this.methodName, nama[1]);
+        manager.SendMessage(this.methodName, nama[0]);
     }
 }

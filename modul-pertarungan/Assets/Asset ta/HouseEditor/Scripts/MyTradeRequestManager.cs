@@ -62,8 +62,8 @@ public class MyTradeRequestManager : MonoBehaviour {
                 TradeRequestFromService tradeList = (TradeRequestFromService)obj;
                 foreach (var from in tradeList.players)
                 {
-                    newTradeRequest.name = "tradeFrom_" + from.Name + "_";
-                    viewTradeButton.name = "tradeID_" + from.ID + "_";
+                    newTradeRequest.name = from.ID + "_" + "tradeFrom_";
+                    viewTradeButton.name = from.ID + "_" + "tradeID_" ;
                     newTradeRequest.GetComponent<UILabel>().text = "trade request from : " + from.Name;
                     var newFromButton = NGUITools.AddChild(tradeRequestTable, viewTradeButton);
                     var newFrom = NGUITools.AddChild(tradeRequestTable, newTradeRequest);
@@ -90,11 +90,12 @@ public class MyTradeRequestManager : MonoBehaviour {
     void GoToTradeRequest(object value)
     {
         tradeID = value as string;
-        Debug.Log(tradeID);
+        GameManager.Instance().TradeID = tradeID;
         WebServiceSingleton.GetInstance().ProcessRequest("get_card_request_list", GameManager.Instance().PlayerId + "|" + tradeID);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
             Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_card_request_list", GameManager.Instance().PlayerId));
         }
+        Application.LoadLevel("TradingConfirmationScene");
     }
 }

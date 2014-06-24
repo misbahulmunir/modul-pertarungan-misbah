@@ -11,6 +11,13 @@ namespace ModulPertarungan
         private string playerFBId = "";
         private string friendName;
         private bool updatePaused;
+        private string tradeID;
+
+        public string TradeID
+        {
+            get { return tradeID; }
+            set { tradeID = value; }
+        }
 
         public string PlayerFBId
         {
