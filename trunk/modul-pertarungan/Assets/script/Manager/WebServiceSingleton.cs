@@ -176,7 +176,7 @@ namespace ModulPertarungan
             clientPathDictionary.Add("get_monster_list", "monster_of");
             clientPathDictionary.Add("get_battle_list", "battle_list_of");
             clientPathDictionary.Add("get_player_quest", "quest_of");
-            clientPathDictionary.Add("get_trade_request_list", "trade_request_list_of");
+            clientPathDictionary.Add("get_trade_request_list", "trade_request_list_of_");
         }
 
         public void clearData(string path)
