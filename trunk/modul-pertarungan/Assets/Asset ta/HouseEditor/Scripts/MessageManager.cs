@@ -25,10 +25,6 @@ public class MessageManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!GameManager.Instance().UpdatePaused)
-        {
-            OnClick();
-        }
 	}
 
     void TweenObjectIn(GameObject from, GameObject to)
@@ -44,21 +40,12 @@ public class MessageManager : MonoBehaviour {
         from.transform.position = to.transform.position;
     }
 
-    void OnClick()
+    void ViewMessagePanel()
     {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        if (Input.GetMouseButtonUp(0))
+        if (!GameManager.Instance().UpdatePaused)
         {
-            if (hit.collider != null)
-            {
-                if (hit.collider.gameObject.name.ToLower().Contains("mailicon"))
-                {
-                    GameObject obj = hit.collider.gameObject as GameObject;
-                    Debug.Log(obj.name);
-                    TweenObjectIn(messagePanel, messagePanelPosition);
-                    GameManager.Instance().UpdatePaused = true;
-                }
-            }
+            TweenObjectIn(messagePanel, messagePanelPosition);
+            GameManager.Instance().UpdatePaused = true;
         }
     }
 
