@@ -34,6 +34,7 @@ namespace ModulPertarungan
         {
             if (TargetList.Count > 0)
             {
+                GameObject.Find("Lightning").GetComponent<AudioSource>().Play();
                 GameObject obj;
                 obj = GameManager.Instance().GameMode == "pvp" ? TargetList[0] : TargetList.Find(GameManager.Instance().CurrentEnemy.Equals);
                 var animation = Instantiate(GameObject.Find("FlareCoreAutumn"), new Vector3(obj.transform.position.x, obj.transform.position.y, -10f), Quaternion.identity) as GameObject;
