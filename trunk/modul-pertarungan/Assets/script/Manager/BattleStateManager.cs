@@ -22,6 +22,7 @@ namespace ModulPertarungan
         public GameObject objectLoader;
         public GameObject Cursor;
         public GameObject endButton;
+        public GameObject enemyCursor;
 
         public void SelectPawn()
         {
@@ -45,8 +46,7 @@ namespace ModulPertarungan
                 hitObj = HitCollider();
                 if (hitObj != null && hitObj.GetComponent<EnemyAction>() != null)
                 {
-                    Cursor.transform.position = new Vector3(hitObj.rigidbody2D.transform.position.x, hitObj.rigidbody2D.transform.position.y + (hitObj.renderer.bounds.size.y/ 2), 0f);
-                    Debug.Log(hitObj.name);
+                  //  enemyCursor.transform.position = new Vector3(hitObj.rigidbody2D.transform.position.x, hitObj.rigidbody2D.transform.position.y + (hitObj.renderer.bounds.size.y/ 2), 0f);
                     GameManager.Instance().CurrentEnemy = hitObj;
                 }
             }
@@ -88,8 +88,14 @@ namespace ModulPertarungan
         {
             if (GameManager.Instance().CurrentPawn != null)
                 Cursor.transform.position = new Vector3(GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.x, GameManager.Instance().CurrentPawn.rigidbody2D.transform.position.y +
-                    (GameManager.Instance().CurrentPawn.gameObject.renderer.bounds.size.y / 2), 0f);
+                    (GameManager.Instance().CurrentPawn.transform.GetChild(0).renderer.bounds.size.y / 2), 0f);
 
+        }
+
+        public void DrawEnemyCursor()
+        {
+           
+            enemyCursor.transform.position = new Vector3(GameManager.Instance().CurrentEnemy.rigidbody2D.transform.position.x, GameManager.Instance().CurrentEnemy.rigidbody2D.transform.position.y + (GameManager.Instance().CurrentEnemy.renderer.bounds.size.y / 2), 0f);
         }
 
         public void CheckWinorLose()
@@ -159,6 +165,8 @@ namespace ModulPertarungan
                 SelectPawn();
                 CheckWinorLose();
                 EndPlayerTurn();
+                DrawEnemyCursor();
+                DrawCursor();
                 GameManager.Instance().BattleState = currentstate;
             }
                     
