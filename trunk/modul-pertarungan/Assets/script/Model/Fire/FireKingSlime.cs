@@ -14,7 +14,7 @@ namespace ModelModulPertarungan
 
         }
         public FireKingSlime(int MaxHealth, int CurrentHealth, string MonsterName, int gold, int exp)
-            : base(MaxHealth, CurrentHealth, MonsterName)
+            : base(MaxHealth, CurrentHealth, MonsterName, gold, exp)
         {
 
         }

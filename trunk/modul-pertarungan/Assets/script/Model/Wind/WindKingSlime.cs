@@ -11,7 +11,7 @@ namespace ModelModulPertarungan
         {
         }
         public WindKingSlime(int MaxHealth, int CurrentHealth, string Name, int gold, int exp)
-            : base(MaxHealth, CurrentHealth, Name)
+            : base(MaxHealth, CurrentHealth, Name, gold, exp)
         {
         }
         public WindKingSlime()

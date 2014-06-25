@@ -61,16 +61,7 @@ namespace ModulPertarungan
                     TextureSingleton.Instance().QuestCleared[id] = true;
                     checkQuestActive = TextureSingleton.Instance().QuestActive;
                     checkQuestCleared = TextureSingleton.Instance().QuestCleared;
-                    if (score < GameManager.Instance().PlayerExp)
-                    {
-                        score += 1;
-                        ExpLabel.GetComponent<UILabel>().text = score.ToString();
-                    }
-                    else
-                    {
-                        ExpLabel.GetComponent<UILabel>().text = "0";
-
-                    }
+                    ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
                     GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
                 }
                 Statuslabel.GetComponent<UILabel>().text = "WIN";

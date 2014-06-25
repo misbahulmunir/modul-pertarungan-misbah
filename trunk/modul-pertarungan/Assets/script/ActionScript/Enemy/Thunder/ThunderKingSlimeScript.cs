@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.thunderkingslime = new ThunderKingSlime(200, 200, "thunderkingslime");
+            this.thunderkingslime = new ThunderKingSlime(200, 200, "thunderkingslime", 200, 200);
             this.Character = thunderkingslime;
         }
 

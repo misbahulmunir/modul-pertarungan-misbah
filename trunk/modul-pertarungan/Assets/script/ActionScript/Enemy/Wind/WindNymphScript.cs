@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.windnymph = new WindNymph(200, 200, "windnymph");
+            this.windnymph = new WindNymph(200, 200, "windnymph", 200, 200);
             this.Character = windnymph;
         }
 

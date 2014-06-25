@@ -24,7 +24,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.earthnymph = new EarthNymph(200, 200, "earthnymph");
+            this.earthnymph = new EarthNymph(200, 200, "earthnymph", 200, 200);
             this.Character = earthnymph;
         }
 

@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.thief = new Thief(200, 200, "thief");
+            this.thief = new Thief(200, 200, "thief", 200, 200);
             this.Character = thief;
         }
 

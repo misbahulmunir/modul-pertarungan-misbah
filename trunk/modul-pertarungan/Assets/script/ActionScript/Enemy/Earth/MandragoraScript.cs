@@ -24,7 +24,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.mandragora = new Mandragora(200, 200, "mandragora");
+            this.mandragora = new Mandragora(200, 200, "mandragora", 200, 200);
             this.Character = mandragora;
         }
 

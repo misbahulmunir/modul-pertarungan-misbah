@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.pirate = new Pirate(200, 200, "pirate");
+            this.pirate = new Pirate(200, 200, "pirate", 200, 200);
             this.Character = pirate;
         }
 
