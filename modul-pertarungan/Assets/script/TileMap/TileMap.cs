@@ -13,17 +13,14 @@ public class TileMap : MonoBehaviour
     private int size_x = 34; //ukuran grid [size_x X size_y]
     private int size_y = 22;
     private float tileSize = 1.0f; //ukuran tile
-
     private Texture2D texTiles; //texture tile
- 
-
     private int tileRes = 32; // resolusi tile 
     private int posX = 5; //posisi awal pulau
     private int posY = 5; //posisi awal pulau
     private int[,] dun_node;
 
-    public int landSize = 30;// ukuran pulau
-    public int landNum = 5; //jumlah pulau
+    private int landSize = 30;// ukuran pulau
+    private int landNum = 5; //jumlah pulau
 
     public List<GameObject> butID;
     public GameObject butObj; 
@@ -40,7 +37,7 @@ public class TileMap : MonoBehaviour
         BuildMesh(); //membuat mesh
     }
 
-    Color[][] ChopUpTiles(Texture2D texTile) //memotong texture tile berdasarkan ukuran pixel
+    private Color[][] ChopUpTiles(Texture2D texTile) //memotong texture tile berdasarkan ukuran pixel
     {
         int numColumn = texTile.width / tileRes; //jumlah kolom dari tiles
         int numRows = texTile.height / tileRes; //jumlah row dari tiles

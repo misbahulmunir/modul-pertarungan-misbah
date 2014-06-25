@@ -5,21 +5,21 @@ using System.Collections.Generic;
 [ExecuteInEditMode]
 public class DungeonEditor : EditorWindow
 {
-    GameObject background;
-    GameObject button;
-    GameObject manager;
-    GameObject home;
-    GameObject back;
-    GameObject element;
+    private GameObject background;
+    private GameObject button;
+    private GameObject manager;
+    private GameObject home;
+    private GameObject back;
+    private GameObject element;
 
-    bool groupEnabled;
-   
-    int numToogle = 10;
-    Vector3 mousePos;
+    private bool groupEnabled;
+
+    private int numToogle = 10;
+    private Vector3 mousePos;
 
     // Add menu item named "My Window" to the Window menu
     [MenuItem("Window/Dungeon Editor")]
-    static void Init()
+    private static void Init()
     {
         //Show existing window instance. If one doesn't exist, make one.
         DungeonEditor window = (DungeonEditor)EditorWindow.GetWindow(typeof(DungeonEditor));
@@ -28,7 +28,7 @@ public class DungeonEditor : EditorWindow
         SceneView.onSceneGUIDelegate += window.OnSceneGUI;        
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         GUILayout.Label("Add Background", EditorStyles.boldLabel);
         background = Resources.Load("Map/Prefab/ContinentBg") as GameObject;
@@ -94,7 +94,7 @@ public class DungeonEditor : EditorWindow
             ee.position = new Rect(600, 100, 300, 300);
         }
     }
-    void OnDestroy()
+    private void OnDestroy()
     {
         numToogle = 10;
         groupEnabled = false;
