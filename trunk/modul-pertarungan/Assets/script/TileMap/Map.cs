@@ -9,24 +9,7 @@ public class Map
     private int[,] button_data;
     private Dictionary<int, int[,]> rules;
     private List<int> usedValue;
-    #region Rules
-    int[,] rules2;
-    int[,] rules3;
-    int[,] rules4;
-    int[,] rules5;
-    int[,] rules6;
-    int[,] rules7;
-    int[,] rules8;
-    int[,] rules9;
-    int[,] rules10;
-    int[,] rules11;
-    int[,] rules12;
-    int[,] rules13;
-    int[,] rules14;
-    int[,] rules15;
-    int[,] rules16;
-    int[,] rules17;
-    #endregion
+    
     #region Init
     public Map(int size_x, int size_y, int posx, int posy, int landSize, int landNum)
     {
@@ -61,45 +44,29 @@ public class Map
     }
     private void SetRules()
     {
-        rules = new Dictionary<int, int[,]>();
+        rules = new Dictionary<int, int[,]>()
+        {
+            {2, new int[3, 3] { { 0, 0, 0 }, { 0, 99, 0 }, { 0, 0, 0 } }},
+            {3, new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 1, 1, 1 } }},
 
-        rules2 = new int[3, 3] { { 0, 0, 0 }, { 0, 99, 0 }, { 0, 0, 0 } };
-        rules3 = new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 1, 1, 1 } };
+            {4, new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 1, 1, 0 } }},
+            {5, new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 0, 1, 1 } }},
+            {6, new int[3, 3] { { 0, 1, 1 }, { 1, 99, 1 }, { 1, 1, 1 } }},
+            {7, new int[3, 3] { { 1, 1, 0 }, { 1, 99, 1 }, { 1, 1, 1 } }},
 
-        rules4 = new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 1, 1, 0 } };
-        rules5 = new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 0, 1, 1 } };
-        rules6 = new int[3, 3] { { 0, 1, 1 }, { 1, 99, 1 }, { 1, 1, 1 } };
-        rules7 = new int[3, 3] { { 1, 1, 0 }, { 1, 99, 1 }, { 1, 1, 1 } };
+            {8, new int[3, 3] { { 1, 1, 0 }, { 1, 99, 0 }, { 1, 1, 0 } }},
+            {9, new int[3, 3] { { 0, 1, 1 }, { 0, 99, 1 }, { 0, 1, 1 } }},
+            {10, new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 0, 0, 0 } }},
+            {11, new int[3, 3] { { 0, 0, 0 }, { 1, 99, 1 }, { 1, 1, 1 } }},
 
-        rules8 = new int[3, 3] { { 1, 1, 0 }, { 1, 99, 0 }, { 1, 1, 0 } };
-        rules9 = new int[3, 3] { { 0, 1, 1 }, { 0, 99, 1 }, { 0, 1, 1 } };
-        rules10 = new int[3, 3] { { 1, 1, 1 }, { 1, 99, 1 }, { 0, 0, 0 } };
-        rules11 = new int[3, 3] { { 0, 0, 0 }, { 1, 99, 1 }, { 1, 1, 1 } };
+            {12, new int[3, 3] { { 0, 1, 1 }, { 0, 99, 1 }, { 0, 0, 0 } }},
+            {13, new int[3, 3] { { 1, 1, 0 }, { 1, 99, 0 }, { 0, 0, 0 } }},
+            {14, new int[3, 3] { { 0, 0, 0 }, { 0, 99, 1 }, { 0, 1, 1 } }},
+            {15, new int[3, 3] { { 0, 0, 0 }, { 1, 99, 0 }, { 1, 1, 0 } }},
 
-        rules12 = new int[3, 3] { { 0, 1, 1 }, { 0, 99, 1 }, { 0, 0, 0 } };
-        rules13 = new int[3, 3] { { 1, 1, 0 }, { 1, 99, 0 }, { 0, 0, 0 } };
-        rules14 = new int[3, 3] { { 0, 0, 0 }, { 0, 99, 1 }, { 0, 1, 1 } };
-        rules15 = new int[3, 3] { { 0, 0, 0 }, { 1, 99, 0 }, { 1, 1, 0 } };
-
-        rules16 = new int[3, 3] { { 1, 1, 0 }, { 1, 99, 1 }, { 0, 1, 1 } };
-        rules17 = new int[3, 3] { { 0, 1, 1 }, { 1, 99, 1 }, { 1, 1, 0 } };
-
-        rules.Add(2, rules2);
-        rules.Add(3, rules3);
-        rules.Add(4, rules4);
-        rules.Add(5, rules5);
-        rules.Add(6, rules6);
-        rules.Add(7, rules7);
-        rules.Add(8, rules8);
-        rules.Add(9, rules9);
-        rules.Add(10, rules10);
-        rules.Add(11, rules11);
-        rules.Add(12, rules12);
-        rules.Add(13, rules13);
-        rules.Add(14, rules14);
-        rules.Add(15, rules15);
-        rules.Add(16, rules16);
-        rules.Add(17, rules17);
+            {16, new int[3, 3] { { 1, 1, 0 }, { 1, 99, 1 }, { 0, 1, 1 } }},
+            {17, new int[3, 3] { { 0, 1, 1 }, { 1, 99, 1 }, { 1, 1, 0 } }},
+        };
     }
     #endregion    
     #region GetTiling

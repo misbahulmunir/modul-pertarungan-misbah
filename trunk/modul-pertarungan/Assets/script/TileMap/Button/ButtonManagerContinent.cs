@@ -40,6 +40,10 @@ public class ButtonManagerContinent : MonoBehaviour
                         Application.LoadLevel(sceneLoader);
                         Debug.Log(textureLoader.name);
                     }
+                    else if (Application.loadedLevelName == TextureSingleton.Instance().BackScene)
+                    {
+                        Application.LoadLevel("HouseEditor");
+                    }
                     else
                     {
                         Application.LoadLevel(sceneLoader);

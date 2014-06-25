@@ -12,24 +12,24 @@ public class ElementalEditor : ScriptableWizard
     private GameObject selectedObj;
     private string selectedName;
 
-    void OnEnable()
+    private void OnEnable()
     {
         textureChanger = Resources.Load("Greenland") as Texture2D;
         selectedObj = GameObject.FindWithTag("DungeonButton");
         selectedName = "";
     }
-    
-    void OnDestroy()
+
+    private void OnDestroy()
     {
         Debug.Log("destroy");
     }
 
-    void OnSelectionChange()
+    private void OnSelectionChange()
     {
         UpdateSelectionHelper();
     }
 
-    void OnWizardCreate()
+    private void OnWizardCreate()
     {
         if (Selection.objects == null)
             return;
@@ -55,7 +55,7 @@ public class ElementalEditor : ScriptableWizard
         }
     }
 
-    void UpdateSelectionHelper()
+    private void UpdateSelectionHelper()
     {
         helpString = "";
         errorString = "";
