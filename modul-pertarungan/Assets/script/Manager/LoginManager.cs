@@ -5,7 +5,7 @@ namespace CardWarlockSaga
 {
     public class LoginManager : MonoBehaviour
     {
-        public GameObject Input;
+        public UIInput userName;
         // Use this for initialization
         private void Start()
         {
@@ -20,9 +20,10 @@ namespace CardWarlockSaga
 
 
         public void ConfirmId()
-        {
-            GameManager.Instance().PlayerId = Input.GetComponent<UIInput>().value;
+        {   
+            GameManager.Instance().PlayerId = userName.GetComponent<UIInput>().value;
             Application.LoadLevel("Loading");
+           
         }
 
         public void Register()
