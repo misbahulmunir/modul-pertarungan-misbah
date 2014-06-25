@@ -24,7 +24,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.earthkingslime = new EarthKingSlime(200, 200, "earthkingslime");
+            this.earthkingslime = new EarthKingSlime(200, 200, "earthkingslime",200,200);
             this.Character = earthkingslime;
         }
 

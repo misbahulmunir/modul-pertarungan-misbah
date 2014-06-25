@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.windslime = new WindSlime(200, 200, "windslime");
+            this.windslime = new WindSlime(200, 200, "windslime", 200, 200);
             this.Character = windslime;
         }
 

@@ -26,9 +26,11 @@ namespace ModulPertarungan
             base.ReceiveDamage(damageReceiver, damageGiver, damage);
             if (this.enemy.CurrentHealth <= 0)
             {
-                Destroy(this.gameObject);
                 GameManager.Instance().PlayerGold += enemy.GoldForPlayer;
                 GameManager.Instance().PlayerExp += enemy.ExpForPlayer;
+                Debug.Log(GameManager.Instance().PlayerExp);
+                Destroy(this.gameObject);
+                
             }
             
             Debug.Log(GameManager.Instance().Enemies.Count);

@@ -24,7 +24,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.canotre = new Canotre(200, 200, "canotre");
+            this.canotre = new Canotre(200, 200, "canotre",200,200);
             this.Character = canotre;
         }
 

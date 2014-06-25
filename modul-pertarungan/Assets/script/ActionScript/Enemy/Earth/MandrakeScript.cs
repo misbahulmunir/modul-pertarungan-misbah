@@ -24,7 +24,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.mandrake = new Mandrake(200, 200, "mandrake");
+            this.mandrake = new Mandrake(200, 200, "mandrake", 200, 200);
             this.Character = mandrake;
         }
 

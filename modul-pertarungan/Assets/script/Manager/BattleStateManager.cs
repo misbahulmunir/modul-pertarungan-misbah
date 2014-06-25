@@ -154,7 +154,7 @@ namespace ModulPertarungan
         // Update is called once per frame
         private void Update()
         {
-
+           
 
             if (GameManager.Instance().GameMode == "pvp")
             {

@@ -17,6 +17,7 @@ namespace ModelModulPertarungan
         {
             this.GoldForPlayer = gold;
             this.ExpForPlayer = exp;
+
         }
 
     public Enemy()

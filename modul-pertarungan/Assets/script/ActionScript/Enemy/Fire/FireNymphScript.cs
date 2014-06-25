@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.firenymph = new FireNymph(200, 200, "firenymph");
+            this.firenymph = new FireNymph(200, 200, "firenymph", 200, 200);
             this.Character = firenymph;
         }
 

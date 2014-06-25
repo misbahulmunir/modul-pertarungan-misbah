@@ -13,7 +13,7 @@ namespace ModelModulPertarungan
 
         }
         public Treant(int MaxHealth, int CurrentHealth, string MonsterName, int gold, int exp)
-            : base(MaxHealth, CurrentHealth, MonsterName)
+            : base(MaxHealth, CurrentHealth, MonsterName, gold, exp)
         {
 
         }

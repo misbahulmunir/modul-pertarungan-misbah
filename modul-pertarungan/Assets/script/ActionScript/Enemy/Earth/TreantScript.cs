@@ -24,7 +24,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.treant = new Treant(200, 200, "treant");
+            this.treant = new Treant(200, 200, "treant", 200, 200);
             this.Character = treant;
         }
 

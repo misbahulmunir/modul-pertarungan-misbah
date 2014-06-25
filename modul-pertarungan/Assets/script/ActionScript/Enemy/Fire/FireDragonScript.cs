@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.firedragon= new FireDragon(200,200,"firedragon");
+            this.firedragon = new FireDragon(200, 200, "firedragon", 200, 200);
             this.Character = firedragon;
         }
 

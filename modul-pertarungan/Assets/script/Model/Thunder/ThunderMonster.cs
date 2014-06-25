@@ -13,7 +13,7 @@ namespace ModelModulPertarungan
 
         }
         public ThunderMonster(int MaxHealth, int CurrentHealth, string Name, int gold, int exp)
-            : base(MaxHealth, CurrentHealth, Name)
+            : base(MaxHealth, CurrentHealth, Name,  gold , exp)
         {
             
         }

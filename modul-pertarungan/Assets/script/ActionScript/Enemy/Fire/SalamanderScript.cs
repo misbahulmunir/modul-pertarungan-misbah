@@ -23,7 +23,7 @@ namespace ModulPertarungan
         }
         void Start()
         {
-            this.salamander = new Salamander(200, 200, "salamander");
+            this.salamander = new Salamander(200, 200, "salamander", 200, 200);
             this.Character = salamander;
         }
 
