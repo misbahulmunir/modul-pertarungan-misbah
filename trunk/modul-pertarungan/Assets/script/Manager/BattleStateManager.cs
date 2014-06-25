@@ -94,8 +94,14 @@ namespace ModulPertarungan
 
         public void DrawEnemyCursor()
         {
-           
-            enemyCursor.transform.position = new Vector3(GameManager.Instance().CurrentEnemy.rigidbody2D.transform.position.x, GameManager.Instance().CurrentEnemy.rigidbody2D.transform.position.y + (GameManager.Instance().CurrentEnemy.renderer.bounds.size.y / 2), 0f);
+            if (GameManager.Instance().CurrentEnemy == null)
+            {
+                GameManager.Instance().CurrentEnemy = GameManager.Instance().Enemies[0];
+            }
+            else
+            {
+                enemyCursor.transform.position = new Vector3(GameManager.Instance().CurrentEnemy.rigidbody2D.transform.position.x, GameManager.Instance().CurrentEnemy.rigidbody2D.transform.position.y + (GameManager.Instance().CurrentEnemy.renderer.bounds.size.y / 2), 0f);
+            }
         }
 
         public void CheckWinorLose()
