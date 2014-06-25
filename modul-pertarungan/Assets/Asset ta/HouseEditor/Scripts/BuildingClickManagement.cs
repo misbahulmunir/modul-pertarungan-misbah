@@ -68,4 +68,8 @@ public class BuildingClickManagement : MonoBehaviour {
         TextureSingleton.Instance().BackScene = Application.loadedLevelName;
         Application.LoadLevel("Dungeon_0");
     }
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
