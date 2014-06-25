@@ -22,7 +22,7 @@ public class BackButtonScript : MonoBehaviour {
 			{
 				if (hit.collider.gameObject.name.ToLower().Contains("backbutton"))
 				{
-					Application.LoadLevel("BeforeBattle");
+					Application.LoadLevel("HouseEditor");
 				}
 			}
 		}

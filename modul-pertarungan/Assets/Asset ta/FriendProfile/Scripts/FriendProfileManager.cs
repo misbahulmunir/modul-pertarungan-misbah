@@ -37,7 +37,7 @@ public class FriendProfileManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        OnClick();
+        
 	}
 
     void viewFriendProfile(string name)
@@ -122,27 +122,6 @@ public class FriendProfileManager : MonoBehaviour {
         from.transform.position = to.transform.position;
     }
 
-    void OnClick()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        if (Input.GetMouseButtonUp(0))
-        {
-            if (hit.collider != null)
-            {
-                if (hit.collider.gameObject.name.ToLower().Contains("sendmail"))
-                {
-                    GameObject obj = hit.collider.gameObject as GameObject;
-                    Debug.Log(obj.name);
-                    TweenObjectIn(messageContainer, messageContainerPosition);
-                }
-                else if (hit.collider.gameObject.name.ToLower().Contains("trade"))
-                {
-                    Application.LoadLevel("TradingScene");
-                }
-            }
-        }
-    }
-
     void SendMessage()
     {
         var encoded_subject = System.Text.Encoding.UTF8.GetBytes(mailSubject.GetComponent<UILabel>().text);
@@ -152,5 +131,22 @@ public class FriendProfileManager : MonoBehaviour {
         Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
         //TweenObjectOut(messageContainer, messageContainerStart);
         TweenObjectIn(messageContainer, messageContainerStart);
+    }
+
+    void CancelMessage()
+    {
+        TweenObjectIn(messageContainer, messageContainerStart);
+        mailSubject.GetComponent<UILabel>().text = "Subject";
+        mailText.GetComponent<UILabel>().text = "Text";
+    }
+
+    void ViewMailContainer()
+    {
+        TweenObjectIn(messageContainer, messageContainerPosition);
+    }
+
+    void GoToTrade()
+    {
+        Application.LoadLevel("TradingScene");
     }
 }

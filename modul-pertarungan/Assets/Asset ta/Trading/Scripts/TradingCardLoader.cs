@@ -171,5 +171,10 @@ namespace ModulPertarungan
 
             Application.LoadLevel("HouseEditor");
         }
+
+        void GoBack()
+        {
+            Application.LoadLevel("FriendProfile");
+        }
     }
 }
