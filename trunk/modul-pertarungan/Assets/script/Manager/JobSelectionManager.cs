@@ -18,6 +18,7 @@ namespace ModulPertarungan
         public GameObject picturePanel;
         public GameObject descriptionPanel;
         public GameObject inputPanel;
+        public UIInput passwordLabel;
         public GameObject inputPanelPosisition;
         private string SelectedObject;
         public UIInput playerName;
@@ -73,7 +74,7 @@ namespace ModulPertarungan
                 Debug.Log(jobName.text);
                 Debug.Log(playerName.value);
                 var encoded_mail = System.Text.Encoding.UTF8.GetBytes(email.value);
-                WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "-" + GameManager.Instance().PlayerFBId + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
+                WebServiceSingleton.GetInstance().ProcessRequest("register", playerName.value + "-" + passwordLabel.value+"-"+GameManager.Instance().PlayerFBId + "|" + jobName.text + "|" + System.Convert.ToBase64String(encoded_mail));
                 Debug.Log(jobName.text);
                 Debug.Log(playerName.value);
                 Debug.Log(System.Convert.ToBase64String(encoded_mail));
