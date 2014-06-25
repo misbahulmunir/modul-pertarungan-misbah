@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 using System.Collections;
+using System;
 
 [ExecuteInEditMode]
 public class ElementalEditor : ScriptableWizard
@@ -32,26 +33,46 @@ public class ElementalEditor : ScriptableWizard
     {
         if (Selection.objects == null)
             return;
-
-        selectedName = Selection.activeGameObject.name;
-        selectedObj = GameObject.Find(selectedName);
-        selectedObj.GetComponent<ButtonDungeon>().textureTiles = textureChanger;
-        EditorUtility.SetDirty(selectedObj);
-        Debug.Log("OK");
+        try
+        {
+            selectedName = Selection.activeGameObject.name;
+            selectedObj = GameObject.Find(selectedName);
+            Debug.Log(selectedName);
+            if (selectedName.Contains("@"))
+            {
+                selectedObj.GetComponent<ButtonDungeon>().textureTiles = textureChanger;
+            }
+            else if(selectedName == "xBackground")
+            {
+                selectedObj.GetComponent<SpriteRenderer>().sprite = Sprite.Create(textureChanger, new Rect(0, 0, textureChanger.width, textureChanger.height), new Vector2(0.5f,0.5f));
+            }
+            EditorUtility.SetDirty(selectedObj);
+            Debug.Log("OK");
+        }
+        catch (Exception e)
+        {
+            EditorUtility.DisplayDialog("Warning", e.ToString(), "OK");
+        }
     }
 
     void UpdateSelectionHelper()
     {
         helpString = "";
         errorString = "";
-
-        if (Selection.objects == null)
+        try
         {
-            errorString = "Object null";
+            if (Selection.objects == null)
+            {
+                errorString = "Object null";
+            }
+            else if (Selection.objects != null)
+            {
+                helpString = "Object Selected: " + Selection.activeGameObject.name;
+            }
         }
-        else if (Selection.objects != null)
+        catch (Exception e)
         {
-            helpString = "Object Selected: " + Selection.activeGameObject.name;
+            Debug.Log(e);
         }
     }
 }

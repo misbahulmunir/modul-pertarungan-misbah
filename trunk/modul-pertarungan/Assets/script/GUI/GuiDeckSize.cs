@@ -12,7 +12,10 @@ namespace ModulPertarungan
         public UILabel enemyName;
         void Start()
         {
-            enemyName.text = NetworkSingleton.Instance().EnemyName;
+            if(GameManager.Instance().GameMode == "pvp")
+            {
+                enemyName.text = NetworkSingleton.Instance().EnemyName;
+            }
         }
 
         // Update is called once per frame

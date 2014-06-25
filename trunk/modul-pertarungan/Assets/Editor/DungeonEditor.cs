@@ -48,10 +48,6 @@ public class DungeonEditor : EditorWindow
                 Debug.Log("Background Already Added");
                 EditorUtility.DisplayDialog("Warning", "Background Already Added", "OK");
             }
-            
-        }
-        if (GUILayout.Button("Add Manager"))
-        {
             if (GameObject.Find("xManager") == null)
             {
                 manager = (GameObject)Instantiate(manager);
@@ -63,7 +59,7 @@ public class DungeonEditor : EditorWindow
                 EditorUtility.DisplayDialog("Warning", "Manager Already Added", "OK");
             }
         }
-        if (GUILayout.Button("Add Home Button"))
+        if (GUILayout.Button("Add Home Button & Back Button"))
         {
             if (GameObject.Find("xHome") == null)
             {
@@ -75,9 +71,6 @@ public class DungeonEditor : EditorWindow
                 Debug.Log("Home Button Already Added");
                 EditorUtility.DisplayDialog("Warning", "Home Button Already Added", "OK");
             }
-        }
-        if (GUILayout.Button("Add Back Button"))
-        {
             if (GameObject.Find("xBack") == null)
             {
                 home = (GameObject)Instantiate(back);
@@ -89,7 +82,7 @@ public class DungeonEditor : EditorWindow
                 Debug.Log("Back Button Already Added");
                 EditorUtility.DisplayDialog("Warning", "Back Button Already Added", "OK");
             }
-        }
+        }       
         groupEnabled = EditorGUILayout.BeginToggleGroup("Add Elemental Dungeon", groupEnabled);
         string[] x = new string[] { "Fire", "Water","Earth","Thunder","Wind"};
         numToogle = GUILayout.SelectionGrid(numToogle, x, 1);        
@@ -97,7 +90,7 @@ public class DungeonEditor : EditorWindow
 
         if(GUILayout.Button("Edit Elemental Dungeon"))
         {
-            ElementalEditor ee = (ElementalEditor)ScriptableWizard.DisplayWizard("Elemental Editor", typeof(ElementalEditor), "OK");
+            ElementalEditor ee = (ElementalEditor)ScriptableWizard.DisplayWizard("Texture Editor", typeof(ElementalEditor), "OK");
             ee.position = new Rect(600, 100, 300, 300);
         }
     }
