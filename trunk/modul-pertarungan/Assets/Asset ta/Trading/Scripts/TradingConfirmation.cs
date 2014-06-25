@@ -97,4 +97,9 @@ public class TradingConfirmation : MonoBehaviour
         WebServiceSingleton.GetInstance().ProcessRequest("decline_trade_request", GameManager.Instance().TradeID);
         Application.LoadLevel("HouseEditor");
     }
+
+    void GoBack()
+    {
+        Application.LoadLevel("HouseEditor");
+    }
 }
