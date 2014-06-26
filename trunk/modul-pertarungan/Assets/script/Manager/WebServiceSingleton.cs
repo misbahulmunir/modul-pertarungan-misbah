@@ -95,6 +95,8 @@ namespace ModulPertarungan
                     webClient.DownloadFile(new Uri(fileLocation), pathOnClient);
                 }
                 downloadStatus = "Download Complete";
+               // IntegrationTest.Pass(new GameObject("Pass"));
+                
             }
             catch
             {

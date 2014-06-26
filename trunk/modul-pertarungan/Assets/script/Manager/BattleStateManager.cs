@@ -3,7 +3,6 @@ using System.Security.Cryptography;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
-
 namespace ModulPertarungan
 {
     public class BattleStateManager : MonoBehaviour
