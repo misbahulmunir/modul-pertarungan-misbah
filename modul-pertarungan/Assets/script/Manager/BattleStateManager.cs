@@ -196,17 +196,17 @@ namespace ModulPertarungan
         {
             if (!(currentstate is CardExcutionState)) return;
             GameManager.Instance().CurrentPawn.GetComponent<Animator>().SetBool("IsAttack", false);
-            GUI.Box(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 75, 100, 150), "Execute Effect");
+            GUI.Box(new Rect((Screen.width / 2) - 100, (Screen.height / 2) -125, 200, 250), "Execute Effect");
             if (GameManager.Instance().CurrentEnemy == null)
             {
                 GameManager.Instance().CurrentEnemy = GameManager.Instance().Enemies[0];
             }
-            if (GUI.Button(new Rect((Screen.width / 2) - 50, (Screen.height / 2) - 25, 100, 50), "Yes"))
+            if (GUI.Button(new Rect((Screen.width / 2) - 100, (Screen.height / 2) - 50, 200, 100), "Yes"))
             {
                 currentstate.Action();
             }
 
-            if (!GUI.Button(new Rect((Screen.width / 2) - 50, ((Screen.height / 2) - 25) + 50, 100, 50), "No")) return;
+            if (!GUI.Button(new Rect((Screen.width / 2) - 100, ((Screen.height / 2) - 50) + 100, 200, 100), "No")) return;
             var obj = GameManager.Instance().CurrentPawn;
             currentstate = new ChangePlayerState(obj, objectLoader, this);
             currentstate.Action();

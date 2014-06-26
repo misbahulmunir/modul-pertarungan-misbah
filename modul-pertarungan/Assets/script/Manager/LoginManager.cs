@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
-using  ModulPertarungan;
+using ModulPertarungan;
+using System.Threading;
 namespace CardWarlockSaga
 {
     public class LoginManager : MonoBehaviour
@@ -8,6 +9,7 @@ namespace CardWarlockSaga
         public UIInput userName;
         public UIInput password;
         public MessageBoxScirpt msgBox;
+        public GameObject loadingBox;
         // Use this for initialization
         private void Start()
         {
@@ -30,8 +32,10 @@ namespace CardWarlockSaga
         }
 
 
-        public void ConfirmId()
-        {   
+        void ConfirmId()
+        {
+            loadingBox.SetActive(true);
+            Thread.Sleep(100);
             GameManager.Instance().PlayerId = userName.value;
             GameManager.Instance().Password = password.value;
             WebServiceSingleton.GetInstance().ProcessRequest("login", userName.value + "|" + password.value);
@@ -41,14 +45,15 @@ namespace CardWarlockSaga
             }
             else
             {
-                var obj =new object[2];
+                var obj = new object[2];
                 obj[0] = "Notification";
                 obj[1] = WebServiceSingleton.GetInstance().queryInfo;
                 msgBox.SendMessage("SetMessage", obj);
-                msgBox.SendMessage("ShowMessageBox", obj);
+                msgBox.SendMessage("ShowMessageBox");
+                loadingBox.SetActive(false);
 
             }
-           
+            loadingBox.SetActive(false);
         }
 
         public void Register()
