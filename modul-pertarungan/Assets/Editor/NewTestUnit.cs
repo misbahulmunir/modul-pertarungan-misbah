@@ -23,7 +23,7 @@ public class NewTestUnit
         Assert.LessOrEqual(action.Character.CurrentHealth,150);
         action.ReceiveDamage(action.Character, new WaterCard(), 50);
         Assert.LessOrEqual(action.Character.CurrentHealth,100);
-      
+       
 
     }
    

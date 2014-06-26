@@ -7,11 +7,14 @@ public class BuildingClickManagement : MonoBehaviour {
     public List<GameObject> enemies;
     private bool[] questActived;
     private bool[] questCleared;
+    private ShopButtonManager tutorial;
 	// Use this for initialization
 	void Start () {
         GameManager.Instance().GameMode = "";
         WebServiceSingleton.GetInstance().isLoadingScreen = false;
         GameManager.Instance().UpdatePaused = false;
+        tutorial = GameObject.Find("Tutorial Box").GetComponent<ShopButtonManager>();
+        tutorial.SendMessage("ShowShop");
 	}
 	
 	// Update is called once per frame
