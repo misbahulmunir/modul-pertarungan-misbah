@@ -11,7 +11,16 @@ namespace CardWarlockSaga
         // Use this for initialization
         private void Start()
         {
-
+            WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
+            if (WebServiceSingleton.GetInstance().queryResult <= 0)
+            {
+                msgBox = GameObject.Find("MessageBox").GetComponent<MessageBoxScirpt>();
+                var obj = new object[2];
+                obj[0] = "Notification";
+                obj[1] = "Unable to connect to server";
+                msgBox.SendMessage("SetMessage", obj);
+                msgBox.SendMessage("ShowMessageBox", obj);
+            }
         }
 
         // Update is called once per frame
