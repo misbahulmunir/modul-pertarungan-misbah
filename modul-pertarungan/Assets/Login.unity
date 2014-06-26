@@ -2577,6 +2577,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1814368290}
+  - 114: {fileID: 1814368291}
   m_Layer: 0
   m_Name: LoginManager
   m_TagString: Untagged
@@ -2595,6 +2596,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1814368291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1814368289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4acafe24a5544d8597245b0418d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 0}
+  password: {fileID: 0}
+  msgBox: {fileID: 875036595}
 --- !u!1 &2044644197
 GameObject:
   m_ObjectHideFlags: 0
