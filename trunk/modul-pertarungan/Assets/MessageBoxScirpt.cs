@@ -21,14 +21,11 @@ public class MessageBoxScirpt : MonoBehaviour
 
     public void ShowMessageBox()
     {
-        StartCoroutine(show());
-    }
-     public   IEnumerator show()
-    {
         var parms = new TweenParms();
         parms.Prop("position", new Vector3(0f, 0f, 1f));
-        yield return StartCoroutine(HOTween.To(this.transform, 0f, parms).WaitForCompletion());
+        HOTween.To(this.transform, 0f, parms);
     }
+
     public void CloseMessageBox()
     {
         var parms = new TweenParms();

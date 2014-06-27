@@ -44,7 +44,7 @@ namespace ModulPertarungan
                 }
                 else
                 {
-                    Application.LoadLevel("Dungeon_0");
+                    Application.LoadLevel("HouseEditor");
                 }
             }
         }
@@ -55,14 +55,14 @@ namespace ModulPertarungan
             {
                 if (GameManager.Instance().GameMode != "pvp")
                 {
-                    string[] split = TextureSingleton.Instance().IdButton.Split('_');
-                    int id = Int32.Parse(split[1]);
-                    TextureSingleton.Instance().QuestActive[id + 1] = true;
-                    TextureSingleton.Instance().QuestCleared[id] = true;
-                    checkQuestActive = TextureSingleton.Instance().QuestActive;
-                    checkQuestCleared = TextureSingleton.Instance().QuestCleared;
-                    ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
-                    GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
+                    //string[] split = TextureSingleton.Instance().IdButton.Split('_');
+                    //int id = Int32.Parse(split[1]);
+                    //TextureSingleton.Instance().QuestActive[id + 1] = true;
+                    //TextureSingleton.Instance().QuestCleared[id] = true;
+                    //checkQuestActive = TextureSingleton.Instance().QuestActive;
+                    //checkQuestCleared = TextureSingleton.Instance().QuestCleared;
+                    //ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
+                    //GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
                 }
                 Statuslabel.GetComponent<UILabel>().text = "WIN";
 

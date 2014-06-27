@@ -22,12 +22,14 @@ public class ShopButtonManager : MonoBehaviour {
         var parms = new TweenParms();
         parms.Prop("position", new Vector3(0f,0.5f,0f));
         HOTween.To(this.transform, 1f, parms);
+        GameManager.Instance().UpdatePaused = true;
     }
     void CloseShop()
     {
         var parms = new TweenParms();
         parms.Prop("position", startPosisiton);
         HOTween.To(this.transform, 1f, parms);
+        GameManager.Instance().UpdatePaused = false;
     }
 
 }
