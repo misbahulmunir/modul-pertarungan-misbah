@@ -56,6 +56,10 @@ namespace ModulPertarungan
                 {
                     t.GetComponent<UILabel>().text = this.Rank;
                 }
+                else if (t.gameObject.name == "Level")
+                {
+                    t.GetComponent<UILabel>().text = this.level;
+                }
             }
         }
 
