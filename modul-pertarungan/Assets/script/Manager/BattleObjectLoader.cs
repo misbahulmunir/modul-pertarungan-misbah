@@ -28,7 +28,6 @@ namespace ModulPertarungan
                 factory = new BackgroundFactory();
                 factory.InstantiateObject();
                 factory.CreateBackground(TextureSingleton.Instance().TextureTiles);
-                Debug.Log("Bg " + TextureSingleton.Instance().TextureTiles);
             }
         }
         public void LoadPlayer()
@@ -102,7 +101,8 @@ namespace ModulPertarungan
             {
                 if (TextureSingleton.Instance().TextureTiles == "0_Lavaland")
                 {
-                    if (TextureSingleton.Instance().IdButton == "@Fire_0")
+                    Debug.Log(TextureSingleton.Instance().IdButton);
+                    if (TextureSingleton.Instance().IdButton == "00_@Fire_0")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
@@ -110,7 +110,7 @@ namespace ModulPertarungan
                         factory.CreateEnemy("FireKingSlime", enemyPosition[1]);
 
                     }
-                    else if (TextureSingleton.Instance().IdButton == "@Fire_1")
+                    else if (TextureSingleton.Instance().IdButton == "00_@Fire_1")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
@@ -127,21 +127,21 @@ namespace ModulPertarungan
                 }
                 else if (TextureSingleton.Instance().TextureTiles == "0_Greenland")
                 {
-                    if (TextureSingleton.Instance().IdButton == "@Earth_0")
+                    if (TextureSingleton.Instance().IdButton == "00_@Earth_0")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
                         factory.CreateEnemy("EarthSlime", enemyPosition[0]);
                         factory.CreateEnemy("EarthKingSlime", enemyPosition[1]);
                     }
-                    else if (TextureSingleton.Instance().IdButton == "@Earth_1")
+                    else if (TextureSingleton.Instance().IdButton == "00_@Earth_1")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
                         factory.CreateEnemy("EarthNymph", enemyPosition[0]);
                         factory.CreateEnemy("EarthNymph", enemyPosition[1]);
                     }
-                    else if (TextureSingleton.Instance().IdButton == "@Earth_2")
+                    else if (TextureSingleton.Instance().IdButton == "00_@Earth_2")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
@@ -158,14 +158,14 @@ namespace ModulPertarungan
                 }
                 else if (TextureSingleton.Instance().TextureTiles == "0_Iceland")
                 {
-                    if (TextureSingleton.Instance().IdButton == "@Water_0")
+                    if (TextureSingleton.Instance().IdButton == "00_@Water_0")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
                         factory.CreateEnemy("WaterSlime", enemyPosition[0]);
                         factory.CreateEnemy("WaterKingSlime", enemyPosition[1]);
                     }
-                    else if (TextureSingleton.Instance().IdButton == "@Water_1")
+                    else if (TextureSingleton.Instance().IdButton == "00_@Water_1")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
@@ -182,14 +182,14 @@ namespace ModulPertarungan
                 }
                 else if (TextureSingleton.Instance().TextureTiles == "0_Wetland")
                 {
-                    if (TextureSingleton.Instance().IdButton == "@Thunder_0")
+                    if (TextureSingleton.Instance().IdButton == "00_@Thunder_0")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
                         factory.CreateEnemy("ThunderSlime", enemyPosition[0]);
                         factory.CreateEnemy("ThunderKingSlime", enemyPosition[1]);
                     }
-                    else if (TextureSingleton.Instance().IdButton == "@Thunder_1")
+                    else if (TextureSingleton.Instance().IdButton == "00_@Thunder_1")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
@@ -206,14 +206,14 @@ namespace ModulPertarungan
                 }
                 else if (TextureSingleton.Instance().TextureTiles == "0_Windyhill")
                 {
-                    if (TextureSingleton.Instance().IdButton == "@Wind_0")
+                    if (TextureSingleton.Instance().IdButton == "00_@Wind_0")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();
                         factory.CreateEnemy("WindSlime", enemyPosition[0]);
                         factory.CreateEnemy("WindKingSlime", enemyPosition[1]);
                     }
-                    else if (TextureSingleton.Instance().IdButton == "@Wind_1")
+                    else if (TextureSingleton.Instance().IdButton == "00_@Wind_1")
                     {
                         factory = new EnemyFactory();
                         factory.InstantiateObject();

@@ -7,7 +7,7 @@ public class ButtonDungeon : Button
     public Texture2D textureTiles;
     void Start()
     {
-        SceneLoad = "QuestMap";
+        SceneLoad = "";
         ButtonTag = "dungeonbutton";        
     }
 

@@ -11,6 +11,7 @@ public class DungeonEditor : EditorWindow
     private GameObject home;
     private GameObject back;
     private GameObject element;
+    private GameObject dungeonQuest;
 
     private bool groupEnabled;
 
@@ -36,6 +37,8 @@ public class DungeonEditor : EditorWindow
         manager = Resources.Load("Map/Prefab/ButtonManager") as GameObject;
         home = Resources.Load("Map/Prefab/ButtonHome") as GameObject;
         back = Resources.Load("Map/Prefab/ButtonBack") as GameObject;
+        dungeonQuest = Resources.Load("Map/Quest/Dungeon") as GameObject;
+
         if (GUILayout.Button("Add Background"))
         {
             if (GameObject.Find("xBackground") == null)
@@ -53,10 +56,10 @@ public class DungeonEditor : EditorWindow
                 manager = (GameObject)Instantiate(manager);
                 manager.name = "xManager";
             }
-            else
+            if (GameObject.Find("xDungeonQuest") == null)
             {
-                Debug.Log("Manager Already Added");
-                EditorUtility.DisplayDialog("Warning", "Manager Already Added", "OK");
+                dungeonQuest = (GameObject)Instantiate(dungeonQuest);
+                dungeonQuest.name = "xDungeonQuest";
             }
         }
         if (GUILayout.Button("Add Home Button & Back Button"))

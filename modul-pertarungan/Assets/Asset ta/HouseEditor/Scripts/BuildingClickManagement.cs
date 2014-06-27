@@ -7,6 +7,7 @@ public class BuildingClickManagement : MonoBehaviour {
     public List<GameObject> enemies;
     private bool[] questActived;
     private bool[] questCleared;
+    private Dictionary<string, bool> buttonElemental;
     private ShopButtonManager tutorial;
 	// Use this for initialization
 	void Start () {
@@ -66,10 +67,19 @@ public class BuildingClickManagement : MonoBehaviour {
     {
         questActived = new bool[] { true, false, false, false, false, false, false, false };
         questCleared = new bool[] { false, false, false, false, false, false, false, false };
+        buttonElemental = new Dictionary<string, bool>()
+        {
+            {"@Fire",true},
+            {"@Water",false},
+            {"@Earth",false},
+            {"@Thunder",false},
+            {"@Wind",false},
+        };
         TextureSingleton.Instance().QuestActive = questActived;
         TextureSingleton.Instance().QuestCleared = questCleared;
+        TextureSingleton.Instance().ElementButton = buttonElemental;
         TextureSingleton.Instance().BackScene = Application.loadedLevelName;
-        Application.LoadLevel("Dungeon_0");
+        Application.LoadLevel("Dungeon_00");
     }
     public void QuitGame()
     {
