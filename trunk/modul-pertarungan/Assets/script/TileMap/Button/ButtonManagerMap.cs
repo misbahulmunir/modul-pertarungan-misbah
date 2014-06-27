@@ -9,13 +9,14 @@ public class ButtonManagerMap : MonoBehaviour
 {
     public GameObject tilemap;
     public Transform questObj;
+    public GameObject labelPos;
 
     private string sceneLoader;
     private string buttonTagLoader;
     private List<GameObject> butList;
     private string[] splitter;
     private string buttonName;
-    private bool enabler;
+    private List<string> monsterName;
 
     void Awake()
     {
@@ -27,7 +28,11 @@ public class ButtonManagerMap : MonoBehaviour
     {
         //Debug.Log("Start");
         HOTween.Init(true, true, true); 
-        butList = tilemap.GetComponent<TileMap>().butID;        
+        butList = tilemap.GetComponent<TileMap>().butID;
+        monsterName = new List<string>();
+        monsterName.Add("Fire King Slime");
+        monsterName.Add("Fire Slime");
+        monsterName.Add("Fire Dragon");
     }
     // Update is called once per frame
     void Update()
@@ -35,8 +40,18 @@ public class ButtonManagerMap : MonoBehaviour
         OnClick();
     }
 
-   
-    void OnClick()
+    private void OnGUI()
+    {
+        Vector3 label = Camera.main.WorldToScreenPoint(labelPos.transform.position);
+        float y = 0;
+        foreach (var l in monsterName)
+        {
+            GUI.Label(new Rect(label.x, label.y + (y * 30), 100, 20), l);
+            y++;
+        }
+    }
+
+    private void OnClick()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
         if (Input.GetMouseButtonUp(0))
@@ -49,7 +64,6 @@ public class ButtonManagerMap : MonoBehaviour
                 
                 if (hit.collider.gameObject.tag.ToLower().Contains(buttonTagLoader))
                 {
-                    Debug.Log("Layer " + hit.collider.gameObject.layer);
                     if (buttonTagLoader == "homebutton" || buttonTagLoader == "backbutton")
                     {
                         Application.LoadLevel(sceneLoader);
@@ -63,12 +77,12 @@ public class ButtonManagerMap : MonoBehaviour
                         {
                             if (buttonTagLoader == "questbutton")
                             {
-                                HOTween.To(questObj, 1f, "position", new Vector3(17, 13, 0));
+                                TextureSingleton.Instance().IdButton = TextureSingleton.Instance().IdButton + "_" + splitter[1];
+                                HOTween.To(questObj, 1f, "position", new Vector3(17, 11, 0));
                                 foreach (var b in butList)
                                 {
                                     b.collider2D.enabled = false;
                                 }
-                                Debug.Log("questbutton");
                             }
                         }
                         else
@@ -85,20 +99,14 @@ public class ButtonManagerMap : MonoBehaviour
                             {
                                 b.collider2D.enabled = true;
                             }
-                            Debug.Log("cancelbutton");
                         }
                         else if (buttonTagLoader == "gobutton")
                         {
-                            Application.LoadLevel(sceneLoader);
-                            TextureSingleton.Instance().IdButton = TextureSingleton.Instance().IdButton + "_" + splitter[1];
-                            Debug.Log("loading screen");
+                            Application.LoadLevel(sceneLoader);                            
                             Debug.Log(TextureSingleton.Instance().IdButton);
                         }
                     }
-                }
-                
-                
-                
+                }       
             }
         }
 

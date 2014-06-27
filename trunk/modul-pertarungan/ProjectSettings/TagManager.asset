@@ -10,6 +10,7 @@ TagManager:
   - Tilemap
   - HomeButton
   - BackButton
+  - GoMap
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

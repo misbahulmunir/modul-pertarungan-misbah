@@ -55,6 +55,14 @@ namespace ModulPertarungan
             set { backScene = value; }
         }
 
+        private Dictionary<string, bool> elementButton;
+
+        public Dictionary<string, bool> ElementButton
+        {
+            get { return elementButton; }
+            set { elementButton = value; }
+        }
+
         public TextureSingleton()
         {
 

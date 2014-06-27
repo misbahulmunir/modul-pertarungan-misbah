@@ -126,8 +126,7 @@ public class Map
     #endregion
     #region Border Rules
     private bool CheckBorderRules(int right, int bot, int left, int top, int val, int flag)
-    {
-        //Debug.Log("top " + top + " bot " + bot + " right " + right + " left " + left); 
+    { 
         int[,] north = new int[3, 3];
         int[,] east = new int[3, 3];
         int[,] south = new int[3, 3];
@@ -157,7 +156,6 @@ public class Map
         {
             north = rules[top];
         }
-
         if (rules.ContainsKey(val))
         {
             compares = rules[val];
