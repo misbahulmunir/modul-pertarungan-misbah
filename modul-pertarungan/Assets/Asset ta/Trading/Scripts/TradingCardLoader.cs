@@ -49,6 +49,8 @@ namespace ModulPertarungan
 
         public void LoadTrunk(string method, string name, GameObject grid)
         {
+            WebServiceSingleton.GetInstance().ProcessRequest("get_player_trunk", name);
+            WebServiceSingleton.GetInstance().DownloadFile("get_player_trunk", name);
             List<string> list = new List<string>();
             Boolean _isEmpty = false;
             try

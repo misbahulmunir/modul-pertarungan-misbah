@@ -5,6 +5,7 @@ using ModulPertarungan;
 using System.Xml.Serialization;
 using System.IO;
 using System;
+using System.Collections.Generic;
 
 public class MessageManager : MonoBehaviour {
 
@@ -42,10 +43,20 @@ public class MessageManager : MonoBehaviour {
 
     void ViewMessagePanel()
     {
+        ViewMessage();
         if (!GameManager.Instance().UpdatePaused)
         {
             TweenObjectIn(messagePanel, messagePanelPosition);
             GameManager.Instance().UpdatePaused = true;
+        }
+    }
+
+    void ReloadGrid()
+    {
+        List<GameObject> messageChild = new List<GameObject>();
+        foreach (Transform mChild in messageTable.transform)
+        {
+           Destroy(mChild.gameObject);
         }
     }
 
@@ -57,6 +68,7 @@ public class MessageManager : MonoBehaviour {
 
     void ViewMessage()
     {
+        ReloadGrid();
         WebServiceSingleton.GetInstance().ProcessRequest("get_messages", GameManager.Instance().PlayerId);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {

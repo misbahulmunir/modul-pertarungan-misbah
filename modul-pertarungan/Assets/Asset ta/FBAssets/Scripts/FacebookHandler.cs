@@ -3,16 +3,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using ModulPertarungan;
 
-namespace ModulPertarungan
-{
 public class FacebookHandler : MonoBehaviour {
 
 	#region FB.Init
 	private bool isInit = false;
 	public string name;
 	public bool boolShow = false;
-	ButtonHandler BH;
+	FacebookButtonHandler BH;
 	
 	public void CallFBInit()
 	{
@@ -142,5 +141,4 @@ public class FacebookHandler : MonoBehaviour {
 	void Update () {
 	
 	}
-}
 }

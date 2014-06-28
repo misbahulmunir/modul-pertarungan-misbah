@@ -8,10 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
+using ModulPertarungan;
 
-namespace ModulPertarungan
-{
-public class ButtonHandler : MonoBehaviour {
+public class FacebookButtonHandler : MonoBehaviour {
 
 	FacebookHandler FH = new FacebookHandler();
 	public GameObject label;
@@ -116,5 +115,4 @@ public class ButtonHandler : MonoBehaviour {
         }
     }
 
-}
 }
