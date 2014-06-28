@@ -54,7 +54,7 @@
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\MenuClick.cs" />
      <Compile Include="Assets\Asset ta\AvatarCustomization\Scripts\MouthAttachment.cs" />
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\BackFBButtonScript.cs" />
-     <Compile Include="Assets\Asset ta\FBAssets\Scripts\ButtonHandler.cs" />
+     <Compile Include="Assets\Asset ta\FBAssets\Scripts\FacebookButtonHandler.cs" />
      <Compile Include="Assets\Asset ta\FBAssets\Scripts\FacebookHandler.cs" />
      <Compile Include="Assets\Asset ta\FriendManager\Scripts\AcceptFriendButton.cs" />
      <Compile Include="Assets\Asset ta\FriendManager\Scripts\FriendClickManager.cs" />

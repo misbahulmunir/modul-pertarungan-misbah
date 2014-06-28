@@ -42,7 +42,7 @@ public class FriendProfileManager : MonoBehaviour {
 
     void viewFriendProfile(string name)
     {
-         WebServiceSingleton.GetInstance().ProcessRequest("get_friend_list", GameManager.Instance().PlayerId);
+         WebServiceSingleton.GetInstance().ProcessRequest("get_partial_profile", GameManager.Instance().FriendName);
          if (WebServiceSingleton.GetInstance().queryResult > 0)
          {
              try
@@ -51,10 +51,10 @@ public class FriendProfileManager : MonoBehaviour {
                  textReader = new StreamReader(Application.persistentDataPath + "/partial_profile_of_" + name + ".xml");
                  object obj = deserializer.Deserialize(textReader);
                  player = (PartialProfileFromService)obj;
-                 friendNameLabel.GetComponent<GUIText>().text = player.Name;
-                 friendJobLabel.GetComponent<GUIText>().text = player.Job;
-                 friendRankLabel.GetComponent<GUIText>().text = player.Rank;
-                 friendLevelLabel.GetComponent<GUIText>().text = player.Level.ToString();
+                 friendNameLabel.GetComponent<UILabel>().text = player.Name;
+                 friendJobLabel.GetComponent<UILabel>().text = player.Job;
+                 friendRankLabel.GetComponent<UILabel>().text = player.Rank;
+                 friendLevelLabel.GetComponent<UILabel>().text = player.Level.ToString();
                  textReader.Close();
              }
              catch (Exception e)

@@ -5,6 +5,7 @@ using ModulPertarungan;
 using System.Xml.Serialization;
 using System.IO;
 using System;
+using System.Collections.Generic;
 
 public class MyTradeRequestManager : MonoBehaviour {
 
@@ -36,6 +37,14 @@ public class MyTradeRequestManager : MonoBehaviour {
         HOTween.To(from.transform, 1f, parms);
     }
 
+    void ReloadGrid()
+    {
+        List<GameObject> messageChild = new List<GameObject>();
+        foreach (Transform mChild in tradeRequestTable.transform)
+        {
+            Destroy(mChild.gameObject);
+        }
+    }
 
     void TweenObjectOut(GameObject from, GameObject to)
     {
@@ -50,6 +59,7 @@ public class MyTradeRequestManager : MonoBehaviour {
 
     void ViewTradeRequest()
     {
+        ReloadGrid();
         WebServiceSingleton.GetInstance().ProcessRequest("get_trade_request_list", GameManager.Instance().PlayerId);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
@@ -80,6 +90,7 @@ public class MyTradeRequestManager : MonoBehaviour {
 
     void ViewTradeRequestPanel()
     {
+        ViewTradeRequest();
         if (!GameManager.Instance().UpdatePaused)
         {
             TweenObjectIn(tradeRequestPanel, messagePanelPosition);

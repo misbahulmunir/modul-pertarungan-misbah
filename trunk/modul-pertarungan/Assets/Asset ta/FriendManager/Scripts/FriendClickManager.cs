@@ -100,7 +100,7 @@ public class FriendClickManager : MonoBehaviour {
         friendlistTab.SetActive(false);
         findFriendTab.SetActive(false);
         RefreshGrid(friendRequestPanel);
-        WebServiceSingleton.GetInstance().ProcessRequest("get_friend_request", GameManager.Instance().PlayerId);
+        ReloadFriendRequestXML();
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
             try
@@ -143,7 +143,6 @@ public class FriendClickManager : MonoBehaviour {
         nama = value as string;
         Debug.Log(nama);
         WebServiceSingleton.GetInstance().ProcessRequest("accept_friend_request", GameManager.Instance().PlayerId + "|" + nama);
-        ReloadFriendRequestXML();
         ViewFriendRequest();
     }
 
@@ -152,7 +151,6 @@ public class FriendClickManager : MonoBehaviour {
         nama = value as string;
         Debug.Log(nama);
         WebServiceSingleton.GetInstance().ProcessRequest("ignore_friend_request", GameManager.Instance().PlayerId + "|" + nama);
-        ReloadFriendRequestXML();
         ViewFriendRequest();
     }
 
@@ -161,7 +159,6 @@ public class FriendClickManager : MonoBehaviour {
         nama = value as string;
         Debug.Log(nama);
         WebServiceSingleton.GetInstance().ProcessRequest("remove_friend", GameManager.Instance().PlayerId + "|" + nama);
-        ReloadFriendlistXML();
         ViewFriendList();
     }
 
@@ -172,8 +169,7 @@ public class FriendClickManager : MonoBehaviour {
         findFriendTab.SetActive(false);
 
         RefreshGrid(friendlistPanel);
-        WebServiceSingleton.GetInstance().ProcessRequest("get_friend_list", GameManager.Instance().PlayerId);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_friend_list", GameManager.Instance().PlayerId));
+        ReloadFriendlistXML();
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
             try
