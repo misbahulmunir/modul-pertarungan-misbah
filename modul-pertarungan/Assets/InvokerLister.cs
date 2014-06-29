@@ -45,7 +45,7 @@ namespace ModulPertarungan
                     }
                     else if (serverMessage.Contains("EndTurn"))
                     {
-                        text.GetComponent<UILabel>().text = serverMessage;
+                        //text.GetComponent<UILabel>().text = serverMessage;
                         _invoke = new Invoker();
                         try
                         {
@@ -64,7 +64,7 @@ namespace ModulPertarungan
                     }
                     else if (serverMessage.Contains("Chat"))
                     {
-                        text.GetComponent<UILabel>().text = serverMessage;
+                       // text.GetComponent<UILabel>().text = serverMessage;
                         textList.GetComponent<UITextList>().Add(message[1]);
                         NetworkSingleton.Instance().ServerMessage = "";
                     }
