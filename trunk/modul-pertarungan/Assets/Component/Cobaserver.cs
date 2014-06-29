@@ -9,12 +9,12 @@ namespace ModulPertarungan
         public string tcpPort;
         public string udpPort;
         public string protocol;
+        public MessageBoxScirpt msgBox;
 
         void OnClick()
         {
             NetworkSingleton.Instance().Host = host.GetComponent<UIInput>().value;
-            NetworkSingleton.Instance().TcpPort = tcpPort;
-            NetworkSingleton.Instance().UdpPort = udpPort;
+          
             NetworkSingleton.Instance().Connect();
 
         }
@@ -22,18 +22,30 @@ namespace ModulPertarungan
 
         void Start()
         {
-
+            NetworkSingleton.Instance().TcpPort = tcpPort;
+            NetworkSingleton.Instance().UdpPort = udpPort;
+            StartCoroutine(chekclogin());
         }
         // Update is called once per frame
         private void Update()
         {
             if (NetworkSingleton.Instance().ServerMessage != null)
             {
+     
+         
                 if (NetworkSingleton.Instance().ServerMessage.Contains("Connected-to-server"))
                 {
                     Application.LoadLevel("LobbyRoom");
                     NetworkSingleton.Instance().ServerMessage = "";
                 }
+            }
+        }
+        IEnumerator chekclogin()
+        {
+            while (true)
+            {
+                NetworkSingleton.Instance().Connect();
+                yield return new WaitForSeconds(0.5f);
             }
         }
 
