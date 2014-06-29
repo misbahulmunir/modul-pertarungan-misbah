@@ -419,7 +419,6 @@ Transform:
   - {fileID: 1098544703}
   - {fileID: 1671242035}
   - {fileID: 671701405}
-  - {fileID: 1264863954}
   m_Father: {fileID: 216}
 --- !u!4 &114
 Transform:
@@ -486,7 +485,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 93}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.75662231, y: 3.19024658, z: 0}
+  m_LocalPosition: {x: -4.8870697, y: 3.19024658, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1982345634}
@@ -891,7 +890,7 @@ MonoBehaviour:
     absolute: 10
   mColor: {r: .410447776, g: .410447776, b: .410447776, a: 1}
   mPivot: 4
-  mWidth: 1172
+  mWidth: 980
   mHeight: 740
   mDepth: -2
   autoResizeBoxCollider: 0
@@ -1391,6 +1390,7 @@ GameObject:
   - 20: {fileID: 186624064}
   - 114: {fileID: 186624065}
   - 114: {fileID: 186624066}
+  - 81: {fileID: 186624067}
   m_Layer: 8
   m_Name: Camera
   m_TagString: Untagged
@@ -1484,6 +1484,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb38378e1c0c0ee439bb77258ea7eb9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!81 &186624067
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186624062}
+  m_Enabled: 1
 --- !u!1 &333174652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1833,6 +1840,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 847300254}
   - 114: {fileID: 847300255}
+  - 82: {fileID: 847300256}
   m_Layer: 8
   m_Name: Texture
   m_TagString: Untagged
@@ -1896,6 +1904,64 @@ MonoBehaviour:
   mTexture: {fileID: 2800000, guid: f5f33f5d285300349a0d148d9aa88f92, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
+--- !u!82 &847300256
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847300253}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 330404677d0bd6a4b88e461bafd983bf, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 200
+  MaxDistance: 1000
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: .497222215
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &872581194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2359,94 +2425,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1 &1264863953
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1264863954}
-  - 114: {fileID: 1264863955}
-  m_Layer: 8
-  m_Name: goldlabel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1264863954
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1264863953}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 402, y: 388, z: 0}
-  m_LocalScale: {x: 1.00007999, y: 1.00007999, z: 1.00007999}
-  m_Children: []
-  m_Father: {fileID: 113}
---- !u!114 &1264863955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1264863953}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  rightAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  bottomAnchor:
-    target: {fileID: 0}
-    relative: 0
-    absolute: 0
-  topAnchor:
-    target: {fileID: 0}
-    relative: 1
-    absolute: 0
-  mColor: {r: 1, g: 1, b: 1, a: 1}
-  mPivot: 4
-  mWidth: 214
-  mHeight: 46
-  mDepth: 13
-  autoResizeBoxCollider: 0
-  hideIfOffScreen: 0
-  keepAspectRatio: 0
-  aspectRatio: 4.652174
-  keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: 
-  mFontSize: 30
-  mFontStyle: 0
-  mAlignment: 1
-  mEncoding: 1
-  mMaxLineCount: 0
-  mEffectStyle: 0
-  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
-  mSymbols: 1
-  mEffectDistance: {x: 1, y: 1}
-  mOverflow: 0
-  mMaterial: {fileID: 0}
-  mApplyGradient: 1
-  mGradientTop: {r: 0, g: 0, b: 0, a: 1}
-  mGradientBottom: {r: 0, g: 0, b: 0, a: 1}
-  mSpacingX: 0
-  mSpacingY: 0
-  mShrinkToFit: 0
-  mMaxLineWidth: 0
-  mMaxLineHeight: 0
-  mLineWidth: 0
-  mMultiline: 1
 --- !u!1 &1378699488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,7 +2749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Statuslabel: {fileID: 96}
-  GoldLabel: {fileID: 1264863953}
+  GoldLabel: {fileID: 0}
   ExpLabel: {fileID: 1671242034}
   label:
   - {fileID: 100}
@@ -3356,7 +3334,7 @@ MonoBehaviour:
     absolute: -442
   mColor: {r: 0, g: 0, b: 0, a: .101960786}
   mPivot: 4
-  mWidth: 1172
+  mWidth: 980
   mHeight: 740
   mDepth: -1
   autoResizeBoxCollider: 0

@@ -29,6 +29,9 @@ namespace ModulPertarungan
             GameManager.Instance().Enemies = null;
             GameManager.Instance().CurrentEnemy = null;
             GameManager.Instance().Players = null;
+            GameManager.Instance().CurrentCard = null;
+            GameManager.Instance().CurrentPlayerDeckSize = 0;
+            GameManager.Instance().FriendName = null;
             GameManager.Instance().CurrentPawn = null;
             
         }

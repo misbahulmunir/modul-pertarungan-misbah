@@ -14,10 +14,10 @@ namespace ModulPertarungan
         }
         public override void Action()
         {
-            if (GameManager.Instance().GameMode == "pvp")
-            {
-                WebServiceSingleton.GetInstance().ProcessRequest("send_battle_result", GameManager.Instance().PlayerId + "|" +NetworkSingleton.Instance().EnemyName);
-            }
+            //if (GameManager.Instance().GameMode == "pvp")
+            //{
+            //    WebServiceSingleton.GetInstance().ProcessRequest("send_battle_result", GameManager.Instance().PlayerId + "|" +NetworkSingleton.Instance().EnemyName);
+            //}
             GameManager.Instance().GameStatus = "win";
             Application.LoadLevel("AfterBattle2");
         }
