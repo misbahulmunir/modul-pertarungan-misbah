@@ -646,6 +646,7 @@ MonoBehaviour:
   tcpPort: 9999
   udpPort: 9988
   protocol: 
+  msgBox: {fileID: 0}
 --- !u!65 &716209266
 BoxCollider:
   m_ObjectHideFlags: 0
