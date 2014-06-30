@@ -131,7 +131,7 @@ namespace ModulPertarungan
             }));
         }
         public void Disconnect()
-        {
+        {   
             PlayerClient.Call("CloseConnection");
         }
 	}

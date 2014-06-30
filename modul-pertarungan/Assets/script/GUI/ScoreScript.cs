@@ -25,13 +25,14 @@ namespace ModulPertarungan
                 NetworkSingleton.instance = null;
                
             }
-            ShowWinOrLose();
+           
             GameManager.Instance().Enemies = null;
             GameManager.Instance().CurrentEnemy = null;
             GameManager.Instance().Players = null;
             GameManager.Instance().CurrentCard = null;
             GameManager.Instance().CurrentPlayerDeckSize = 0;
             GameManager.Instance().FriendName = null;
+            GameManager.Instance().BattleState = null;
             GameManager.Instance().CurrentPawn = null;
             
         }
@@ -39,14 +40,12 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
+            ShowWinOrLose();
             if (Input.GetMouseButtonDown(0))
             {
                 if (GameManager.Instance().GameMode == "pvp")
                 {
-                    Application.LoadLevel("HouseEditor");
-                }
-                else
-                {
+                    GameManager.Instance().GameMode = "";
                     Application.LoadLevel("HouseEditor");
                 }
             }
@@ -74,11 +73,11 @@ namespace ModulPertarungan
             {
 
                 Statuslabel.GetComponent<UILabel>().text = "LOSE";
-                ExpLabel.GetComponent<UILabel>().text = "0";
-                GoldLabel.GetComponent<UILabel>().text = "0";
+                //ExpLabel.GetComponent<UILabel>().text = "0";
+                //GoldLabel.GetComponent<UILabel>().text = "0";
                 foreach (GameObject obj in label)
                 {
-                    obj.active = false;
+                    obj.SetActive(true);
                 }
             }
            

@@ -26,10 +26,10 @@ namespace ModulPertarungan
             loading.SetActive(true);
             button1.SetActive(false);
             button2.SetActive(false);
-            input.SetActive(false);
-            NetworkSingleton.Instance().Host = host.GetComponent<UIInput>().value;
-          
-           NetworkSingleton.Instance().Connect();
+           // input.SetActive(false);
+            NetworkSingleton.Instance().Host = "199.175.51.79";
+
+            StartCoroutine(chekclogin());
             t2 = Time.time;
             
 
@@ -41,7 +41,7 @@ namespace ModulPertarungan
            
             NetworkSingleton.Instance().TcpPort = tcpPort;
             NetworkSingleton.Instance().UdpPort = udpPort;
-           StartCoroutine(chekclogin());
+           
            
            
         }
@@ -79,7 +79,7 @@ namespace ModulPertarungan
                 flag2 = false;
                 button1.SetActive(true);
                 button2.SetActive(true);
-                input.SetActive(true);
+                //input.SetActive(true);
                 loading.SetActive(false);
             }
             //Debug.Log(t);
@@ -90,7 +90,7 @@ namespace ModulPertarungan
             {
                 
                 NetworkSingleton.Instance().Connect();
-                yield return new WaitForSeconds(0.5f);
+                yield return new WaitForSeconds(2f);
                
             }
         }
