@@ -11,6 +11,7 @@ public class GiftManager : MonoBehaviour {
     public GameObject failedLabel;
     public GameObject giftInfo;
     public GameObject codeInput;
+    public GameObject giftReceived;
     FacebookHandler FH = new FacebookHandler();
 
 	// Use this for initialization
@@ -58,17 +59,33 @@ public class GiftManager : MonoBehaviour {
     void RedeemCode()
     {
         failedLabel.GetComponent<UILabel>().text = "";
-        //WebServiceSingleton.GetInstance().ProcessRequest("claim_gift",pl
-
-        ShowGiftInfo();
+        WebServiceSingleton.GetInstance().ProcessRequest("claim_gift", GameManager.Instance().PlayerId + "|" + codeInput.GetComponent<UILabel>().text);
+        if (WebServiceSingleton.GetInstance().queryResult == 1)
+        {
+            failedLabel.GetComponent<UILabel>().text = "";
+            giftReceived.GetComponent<UILabel>().text = WebServiceSingleton.GetInstance().queryInfo;
+            ShowGiftInfo();
+        }
+        else
+        {
+            failedLabel.GetComponent<UILabel>().text = WebServiceSingleton.GetInstance().queryInfo;
+        }
     }
 
     void ShareGift()
     {
         failedLabel.GetComponent<UILabel>().text = "";
         WebServiceSingleton.GetInstance().ProcessRequest("share_gift", GameManager.Instance().PlayerId);
-        FH.FeedLink = "cws.yowanda.com/G?name=" + GameManager.Instance().PlayerId;
-        FH.CallFBFeed();
-        Debug.Log(FH.FeedLink);
+        if (WebServiceSingleton.GetInstance().queryResult == 1)
+        {
+            FH.FeedLink = "cws.yowanda.com/G?name=" + GameManager.Instance().PlayerId;
+            FH.FeedPicture = "http://cws.yowanda.com/images/img.png";
+            FH.feedLinkDescription = "A Gift from the Night!";
+            FH.CallFBFeed();
+        }
+        else
+        {
+            failedLabel.GetComponent<UILabel>().text = WebServiceSingleton.GetInstance().queryInfo;
+        }
     }
 }
