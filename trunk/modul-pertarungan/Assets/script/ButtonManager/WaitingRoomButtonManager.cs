@@ -16,7 +16,9 @@ namespace ModulPertarungan
 
         void GotoHome()
         {
+
             NetworkSingleton.Instance().Disconnect();
+            NetworkSingleton.instance = null;
             Application.LoadLevel("HouseEditor");
         }
 
