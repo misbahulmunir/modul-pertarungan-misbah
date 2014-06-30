@@ -10,42 +10,87 @@ namespace ModulPertarungan
         public string udpPort;
         public string protocol;
         public MessageBoxScirpt msgBox;
+        private float t;
+        float t2;
+        bool flag = false;
+        bool flag2 = false;
+        public GameObject loading;
+        public GameObject button1;
+        public GameObject button2;
+        public GameObject input;
 
-        void OnClick()
+        void TryConnect()
         {
+            flag = false;
+            flag2 = true;
+            loading.SetActive(true);
+            button1.SetActive(false);
+            button2.SetActive(false);
+            input.SetActive(false);
             NetworkSingleton.Instance().Host = host.GetComponent<UIInput>().value;
           
-            NetworkSingleton.Instance().Connect();
+           NetworkSingleton.Instance().Connect();
+            t2 = Time.time;
+            
 
         }
         // Use this for initialization
 
         void Start()
         {
+           
             NetworkSingleton.Instance().TcpPort = tcpPort;
             NetworkSingleton.Instance().UdpPort = udpPort;
-            StartCoroutine(chekclogin());
+           StartCoroutine(chekclogin());
+           
+           
         }
         // Update is called once per frame
         private void Update()
         {
+            
             if (NetworkSingleton.Instance().ServerMessage != null)
             {
-     
-         
                 if (NetworkSingleton.Instance().ServerMessage.Contains("Connected-to-server"))
                 {
                     Application.LoadLevel("LobbyRoom");
                     NetworkSingleton.Instance().ServerMessage = "";
+                    
                 }
             }
+            if (flag2 == true)
+            {
+                t += Time.deltaTime;
+            }
+            if (t > 20)
+            {
+                if (flag == false)
+                {
+                    var obj = new object[2];
+                    obj[0] = "Time is up";
+                    obj[1] = "connection failed cannot contact server";
+                    msgBox.SendMessage("SetMessage", obj);
+                    msgBox.SendMessage("ShowMessageBox");
+                    StopAllCoroutines();
+                    t = 0.0f;
+                }
+                flag = true;
+                flag2 = false;
+                button1.SetActive(true);
+                button2.SetActive(true);
+                input.SetActive(true);
+                loading.SetActive(false);
+            }
+            //Debug.Log(t);
         }
         IEnumerator chekclogin()
         {
             while (true)
             {
+                
                 NetworkSingleton.Instance().Connect();
                 yield return new WaitForSeconds(0.5f);
+               
             }
         }
 
