@@ -10,6 +10,7 @@ public class MineManagement : MonoBehaviour {
     public GameObject Mine;
     public GameObject MineExp;
     public GameObject gemQuantity;
+    public MessageBoxScirpt msgBox;
 
 	// Use this for initialization
 	void Start () {
@@ -55,19 +56,39 @@ public class MineManagement : MonoBehaviour {
 				else
 				if (hit.collider.gameObject.name.ToLower().Contains("mine_"))
 				{
-					quantity.TotalGem++;
-					myMine.ExpMine += 30;					
-					Debug.Log(myMine.ExpMine);
-					if(myMine.ExpMine>myMine.MaxMineExp) 
-					{
-						myMine.ExpMine = 0;
-						myMine.Level++;
-						myMine.MaxMineExp = myMine.Level * 100;
-					}
-					MineExp.GetComponent<GUIText>().text = "Level " + myMine.Level + "\n" + myMine.ExpMine + "/" + myMine.MaxMineExp;
-					gemQuantity.GetComponent<GUIText>().text = "x "+ quantity.TotalGem;
+                    if (myMine.ProductClaimed <= myMine.ProductMax)
+                    {
+                        quantity.TotalGem++;
+                        myMine.ExpMine += 30;
+                        Debug.Log(myMine.ExpMine);
+                        if (myMine.ExpMine > myMine.MaxMineExp)
+                        {
+                            myMine.ExpMine = 0;
+                            myMine.Level++;
+                            myMine.MaxMineExp = myMine.Level * 100;
+                            myMine.ProductMax++;
+                        }
+                        MineExp.GetComponent<GUIText>().text = "Level " + myMine.Level + "\n" + myMine.ExpMine + "/" + myMine.MaxMineExp;
+                        gemQuantity.GetComponent<GUIText>().text = "x " + quantity.TotalGem;
+                        myMine.ProductClaimed++;
+                        updateMineData();
+                    }
+                    else
+                    {
+                        var obj = new object[2];
+                        obj[0] = "Klaim Item Gagal";
+                        obj[1] = "Item yang akan diambil sudah mencapai maksimal";
+                        msgBox.SendMessage("SetMessage", obj);
+                        msgBox.SendMessage("ShowMessageBox");
+                    }
 				} 
+
 			}
 		}
 	}
+
+    private void updateMineData()
+    {
+        WebServiceSingleton.GetInstance().ProcessRequest("update_building", GameManager.Instance().PlayerId + "-Mine-Mine_|" + myMine.Level + "-" + myMine.MaxMineExp + "-" + myMine.ExpMine + "|" + myMine.ProductMax + "-" + myMine.ProductClaimed);
+    }
 }

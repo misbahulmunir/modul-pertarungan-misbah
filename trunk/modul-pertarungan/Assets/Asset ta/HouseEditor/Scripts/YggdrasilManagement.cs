@@ -10,6 +10,7 @@ public class YggdrasilManagement : MonoBehaviour {
     public GameObject Yggdrasil;
     public GameObject YggdrasilExp;
     public GameObject berryQuantity;
+    public MessageBoxScirpt msgBox;
 
 	// Use this for initialization
 	void Start () {
@@ -54,19 +55,38 @@ public class YggdrasilManagement : MonoBehaviour {
 				else
 				if (hit.collider.gameObject.name.ToLower().Contains("yggdrasil_"))
 				{
-					quantity.TotalBerry++;
-					myYgg.ExpYggdrasil += 30;					
-					Debug.Log(myYgg.ExpYggdrasil);
-					if(myYgg.ExpYggdrasil>myYgg.MaxYggdrasilExp) 
-					{
-						myYgg.ExpYggdrasil = 0;
-						myYgg.Level ++;
-						myYgg.MaxYggdrasilExp = myYgg.Level * 100;
-					}
-					YggdrasilExp.GetComponent<GUIText>().text = "Level " + myYgg.Level + "\n" + myYgg.ExpYggdrasil + "/" + myYgg.MaxYggdrasilExp;
-					berryQuantity.GetComponent<GUIText>().text = "x "+ quantity.TotalBerry;
+                    if (myYgg.ProductClaimed <= myYgg.ProductMax)
+                    {
+                        quantity.TotalBerry++;
+                        myYgg.ExpYggdrasil += 30;
+                        Debug.Log(myYgg.ExpYggdrasil);
+                        if (myYgg.ExpYggdrasil > myYgg.MaxYggdrasilExp)
+                        {
+                            myYgg.ExpYggdrasil = 0;
+                            myYgg.Level++;
+                            myYgg.MaxYggdrasilExp = myYgg.Level * 100;
+                            myYgg.ProductMax++;
+                        }
+                        YggdrasilExp.GetComponent<GUIText>().text = "Level " + myYgg.Level + "\n" + myYgg.ExpYggdrasil + "/" + myYgg.MaxYggdrasilExp;
+                        berryQuantity.GetComponent<GUIText>().text = "x " + quantity.TotalBerry;
+                        myYgg.ProductClaimed++;
+                        updateYggData();
+                    }
+                    else
+                    {
+                        var obj = new object[2];
+                        obj[0] = "Klaim Item Gagal";
+                        obj[1] = "Item yang akan diambil sudah mencapai maksimal";
+                        msgBox.SendMessage("SetMessage", obj);
+                        msgBox.SendMessage("ShowMessageBox");
+                    }
 				} 
 			}
 		}
 	}
+
+    private void updateYggData()
+    {
+        WebServiceSingleton.GetInstance().ProcessRequest("update_building", GameManager.Instance().PlayerId + "-Yggdrasil-Yggdrasil_|" + myYgg.Level + "-" + myYgg.MaxYggdrasilExp + "-" + myYgg.ExpYggdrasil + "|" + myYgg.ProductMax + "-" + myYgg.ProductClaimed);
+    }
 }
