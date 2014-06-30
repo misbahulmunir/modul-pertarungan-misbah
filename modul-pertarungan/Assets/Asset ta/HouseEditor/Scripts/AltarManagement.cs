@@ -10,6 +10,7 @@ public class AltarManagement : MonoBehaviour {
     public GameObject Altar;
     public GameObject AltarExp;
     public GameObject magicdustQuantity;
+    public MessageBoxScirpt msgBox;
 
 	// Use this for initialization
     void Start()
@@ -55,24 +56,38 @@ public class AltarManagement : MonoBehaviour {
 				else
 				if (hit.collider.gameObject.name.ToLower().Contains("altar_"))
 				{
-					quantity.TotalMagicDust++;
-					myAltar.ExpAltar += 30;					
-					Debug.Log(myAltar.ExpAltar);
-					if(myAltar.ExpAltar>myAltar.MaxAltarExp)
-					{
-						myAltar.ExpAltar = 0;
-						myAltar.Level++;
-						myAltar.MaxAltarExp = myAltar.Level * 100;
-					}
-					AltarExp.GetComponent<GUIText>().text = "Level " + myAltar.Level + "\n" + myAltar.ExpAltar + "/" + myAltar.MaxAltarExp;
-					magicdustQuantity.GetComponent<GUIText>().text = "x "+ quantity.TotalMagicDust;
+                    if (myAltar.ProductClaimed <= myAltar.ProductMax)
+                    {
+                        quantity.TotalMagicDust++;
+                        myAltar.ExpAltar += 30;
+                        Debug.Log(myAltar.ExpAltar);
+                        if (myAltar.ExpAltar > myAltar.MaxAltarExp)
+                        {
+                            myAltar.ExpAltar = 0;
+                            myAltar.Level++;
+                            myAltar.MaxAltarExp = myAltar.Level * 100;
+                            myAltar.ProductMax++;
+                        }
+                        AltarExp.GetComponent<GUIText>().text = "Level " + myAltar.Level + "\n" + myAltar.ExpAltar + "/" + myAltar.MaxAltarExp;
+                        magicdustQuantity.GetComponent<GUIText>().text = "x " + quantity.TotalMagicDust;
+                        myAltar.ProductClaimed++;
+                        updateAltarData();
+                    }
+                    else
+                    {
+                        var obj = new object[2];
+                        obj[0] = "Klaim Item Gagal";
+                        obj[1] = "Item yang akan diambil sudah mencapai maksimal";
+                        msgBox.SendMessage("SetMessage",obj);
+                        msgBox.SendMessage("ShowMessageBox");
+                    }
 				} 
 			}
 		}
 	}
 
-	private void getDatabaseAltar()
-	{
-		//haveAltar = haveAltar;
-	}
+    private void updateAltarData()
+    {
+        WebServiceSingleton.GetInstance().ProcessRequest("update_building",GameManager.Instance().PlayerId + "-Altar-Altar_|" + myAltar.Level + "-" + myAltar.MaxAltarExp + "-" + myAltar.ExpAltar + "|" + myAltar.ProductMax + "-" + myAltar.ProductClaimed);
+    }
 }

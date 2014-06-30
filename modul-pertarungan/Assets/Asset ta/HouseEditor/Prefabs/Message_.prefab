@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   m_Layer: 8
-  m_Name: Message_2
+  m_Name: Message_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 0f5e030a8cdc292438f880d3ec49ef64, type: 2}
-  mText: "From : agil\n \nMessage:\nText"
+  mText: "From : mis\n \nMessage:\nmirana@yahoo.co.uk"
   mFontSize: 18
   mFontStyle: 0
   mAlignment: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Subject
+  mText: mirana@yahoo.co.uk
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0

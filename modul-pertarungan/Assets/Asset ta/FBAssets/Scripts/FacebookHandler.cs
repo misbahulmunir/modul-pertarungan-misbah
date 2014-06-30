@@ -95,8 +95,14 @@ public class FacebookHandler : MonoBehaviour {
 	#region FB.Feed
 	
 	public string FeedToId = "";
-	public string FeedLink = "";
-	public string FeedLinkName = "";
+    private string feedLink = "";
+
+    public string FeedLink
+    {
+        get { return feedLink; }
+        set { feedLink = value; }
+    }
+	public string FeedLinkName = "Card Warlock Saga";
 	public string FeedLinkCaption = "Ayo Mainkan Card Warlock Saga!!!";
 	public string FeedLinkDescription = "Card Warlock Saga bagus lho.";
 	public string FeedPicture = "";
@@ -116,7 +122,7 @@ public class FacebookHandler : MonoBehaviour {
 		}
 		FB.Feed(
 			toId: FeedToId,
-			link: FeedLink,
+			link: feedLink,
 			linkName: FeedLinkName,
 			linkCaption: FeedLinkCaption,
 			linkDescription: FeedLinkDescription,

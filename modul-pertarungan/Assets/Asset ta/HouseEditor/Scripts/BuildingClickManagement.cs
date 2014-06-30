@@ -11,7 +11,8 @@ public class BuildingClickManagement : MonoBehaviour {
     private ShopButtonManager tutorial;
 	// Use this for initialization
 	void Start () {
-        GameManager.Instance().GameMode ="";
+        reloadHouse();
+        GameManager.Instance().GameMode = "";
         WebServiceSingleton.GetInstance().isLoadingScreen = false;
         GameManager.Instance().UpdatePaused = false;
         tutorial = GameObject.Find("Tutorial Box").GetComponent<ShopButtonManager>();
@@ -84,5 +85,11 @@ public class BuildingClickManagement : MonoBehaviour {
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    private void reloadHouse()
+    {
+        WebServiceSingleton.GetInstance().ProcessRequest("get_building",GameManager.Instance().PlayerId);
+        WebServiceSingleton.GetInstance().DownloadFile("get_building", GameManager.Instance().PlayerId);
     }
 }

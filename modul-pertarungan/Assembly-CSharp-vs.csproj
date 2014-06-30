@@ -67,6 +67,7 @@
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AddBuildingMenu.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AltarManagement.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\BuildingClickManagement.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\GiftManager.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\GoToRequest.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\MessageManager.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\MineManagement.cs" />
