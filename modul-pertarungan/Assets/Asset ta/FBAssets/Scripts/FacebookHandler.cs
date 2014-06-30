@@ -103,9 +103,15 @@ public class FacebookHandler : MonoBehaviour {
         set { feedLink = value; }
     }
 	public string FeedLinkName = "Card Warlock Saga";
-	public string FeedLinkCaption = "Ayo Mainkan Card Warlock Saga!!!";
-	public string FeedLinkDescription = "Card Warlock Saga bagus lho.";
-	public string FeedPicture = "";
+	public string feedLinkCaption = "Ayo Mainkan Card Warlock Saga!!!";
+	public string feedLinkDescription = "Card Warlock Saga bagus lho.";
+    private string feedPicture = "";
+
+    public string FeedPicture
+    {
+        get { return feedPicture; }
+        set { feedPicture = value; }
+    }
 	public string FeedMediaSource = "";
 	public string FeedActionName = "";
 	public string FeedActionLink = "";
@@ -124,9 +130,9 @@ public class FacebookHandler : MonoBehaviour {
 			toId: FeedToId,
 			link: feedLink,
 			linkName: FeedLinkName,
-			linkCaption: FeedLinkCaption,
-			linkDescription: FeedLinkDescription,
-			picture: FeedPicture,
+			linkCaption: feedLinkCaption,
+			linkDescription: feedLinkDescription,
+			picture: feedPicture,
 			mediaSource: FeedMediaSource,
 			actionName: FeedActionName,
 			actionLink: FeedActionLink,
