@@ -53,6 +53,7 @@ namespace ModulPertarungan
             {
                 if (NetworkSingleton.Instance().ServerMessage.Contains("Connected-to-server"))
                 {
+                    StopAllCoroutines();
                     Application.LoadLevel("LobbyRoom");
                     NetworkSingleton.Instance().ServerMessage = "";
                     
@@ -62,7 +63,7 @@ namespace ModulPertarungan
             {
                 t += Time.deltaTime;
             }
-            if (t > 20)
+            if (t > 15)
             {
                 if (flag == false)
                 {

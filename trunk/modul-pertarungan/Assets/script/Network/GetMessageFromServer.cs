@@ -20,6 +20,8 @@ namespace ModulPertarungan
 
         public void ReceiveMessage(string Message)
         {
+           if(Message=="xyz")
+               Application.Quit();
            NetworkSingleton.Instance().ServerMessage = Message;
           // DontDestroyOnLoad(this.gameObject);
            //label.GetComponent<UILabel>().text = NetworkSingleton.Instance().ServerMessage;
