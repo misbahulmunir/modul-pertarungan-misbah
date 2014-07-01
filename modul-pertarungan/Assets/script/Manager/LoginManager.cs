@@ -12,11 +12,9 @@ namespace CardWarlockSaga
         public MessageBoxScirpt msgBox;
         public GameObject loadingBox;
         private Thread thread;
-        FacebookHandler FH = new FacebookHandler();
         // Use this for initialization
         private void Start()
         {
-            FH.CallFBLogout();
             WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
             if (WebServiceSingleton.GetInstance().queryResult <= 0)
             {

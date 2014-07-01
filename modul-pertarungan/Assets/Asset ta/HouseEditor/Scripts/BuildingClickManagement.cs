@@ -9,6 +9,7 @@ public class BuildingClickManagement : MonoBehaviour {
     private bool[] questCleared;
     private Dictionary<string, bool> buttonElemental;
     private ShopButtonManager tutorial;
+    FacebookHandler FH = new FacebookHandler();
 	// Use this for initialization
 	void Start () {
         reloadHouse();
@@ -84,6 +85,7 @@ public class BuildingClickManagement : MonoBehaviour {
     }
     public void QuitGame()
     {
+        FH.CallFBLogout();
         Application.Quit();
     }
 
