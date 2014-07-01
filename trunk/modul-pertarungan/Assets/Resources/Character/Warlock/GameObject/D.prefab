@@ -211,12 +211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ff229978892c54096ba9f11e5ec05e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthForeground: {fileID: 0}
-  healthDamage: {fileID: 0}
+  healthForeground: {fileID: 2800000, guid: 1e950cd65bac1d44bba14ff3c0978ae9, type: 3}
+  healthDamage: {fileID: 2800000, guid: 7e765d33d0b453c47a82731752d0b5b8, type: 3}
   HUDSkin:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 0}
+      m_Background: {fileID: 2800000, guid: 9d25f83ad01d0224891a8d0e4f3befde, type: 3}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Hover:
       m_Background: {fileID: 0}

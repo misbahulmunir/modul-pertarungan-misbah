@@ -33,7 +33,7 @@ namespace ModulPertarungan
                     {
                         NetworkSingleton.Instance().Chance = Int32.Parse(message[3]);
                         //text.GetComponent<UILabel>().text = NetworkSingleton.Instance().ServerMessage;
-                        text.GetComponent<UILabel>().text = serverMessage;
+                       // text.GetComponent<UILabel>().text = serverMessage;
                         _invoke = new Invoker();
                         _cmd = message[1].ToLower().Equals(GameManager.Instance().PlayerId.ToLower())
                             ? new CardExecuteCommand(message[2], "enemy")

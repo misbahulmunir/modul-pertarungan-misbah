@@ -177,3 +177,4 @@ D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
 D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\HOTween.xml
 D:\dw\ta2\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
+D:\dw\ta2\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
