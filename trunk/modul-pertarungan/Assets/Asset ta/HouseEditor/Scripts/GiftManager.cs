@@ -10,7 +10,6 @@ public class GiftManager : MonoBehaviour {
     public GameObject giftPanel;
     public GameObject failedLabel;
     public GameObject giftInfo;
-    public GameObject codeInput;
     public GameObject giftReceived;
     FacebookHandler FH = new FacebookHandler();
 
@@ -32,6 +31,13 @@ public class GiftManager : MonoBehaviour {
         HOTween.To(giftPanel.transform, 1f, parms);
         startInfoPos = giftInfo.transform.position;
         GameManager.Instance().UpdatePaused = true;
+
+        WebServiceSingleton.GetInstance().ProcessRequest("get_gift_notif", GameManager.Instance().PlayerId);
+        if (WebServiceSingleton.GetInstance().queryResult == 1)
+        {
+            giftReceived.GetComponent<UILabel>().text = WebServiceSingleton.GetInstance().queryInfo;
+            ShowGiftInfo();
+        }
     }
     void CloseGiftPanel()
     {
@@ -54,22 +60,6 @@ public class GiftManager : MonoBehaviour {
         var parms = new TweenParms();
         parms.Prop("position", startInfoPos);
         HOTween.To(giftInfo.transform, 1f, parms);
-    }
-
-    void RedeemCode()
-    {
-        failedLabel.GetComponent<UILabel>().text = "";
-        WebServiceSingleton.GetInstance().ProcessRequest("claim_gift", GameManager.Instance().PlayerId + "|" + codeInput.GetComponent<UILabel>().text);
-        if (WebServiceSingleton.GetInstance().queryResult == 1)
-        {
-            failedLabel.GetComponent<UILabel>().text = "";
-            giftReceived.GetComponent<UILabel>().text = WebServiceSingleton.GetInstance().queryInfo;
-            ShowGiftInfo();
-        }
-        else
-        {
-            failedLabel.GetComponent<UILabel>().text = WebServiceSingleton.GetInstance().queryInfo;
-        }
     }
 
     void ShareGift()
