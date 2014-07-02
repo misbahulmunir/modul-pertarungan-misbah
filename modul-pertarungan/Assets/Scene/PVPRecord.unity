@@ -679,7 +679,7 @@ Transform:
   m_PrefabInternal: {fileID: 1682893322}
   m_GameObject: {fileID: 766262864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -603, y: 293, z: 0}
+  m_LocalPosition: {x: -603, y: 53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 918918605}
@@ -718,8 +718,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 330, y: 68, z: 0}
-  m_Center: {x: 165, y: 0, z: 0}
+  m_Size: {x: 465, y: 158, z: 0}
+  m_Center: {x: 232.5, y: 0, z: 0}
 --- !u!114 &766262868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,7 +735,7 @@ MonoBehaviour:
   atlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   bitmapFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
   trueTypeFont: {fileID: 0}
-  fontSize: 20
+  fontSize: 50
   fontStyle: 0
   backgroundSprite: Button
   highlightSprite: Button
@@ -790,13 +790,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 3
-  mWidth: 330
-  mHeight: 68
+  mWidth: 465
+  mHeight: 158
   mDepth: 10
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.85294104
+  aspectRatio: 2.94303799
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
@@ -872,18 +872,18 @@ MonoBehaviour:
     absolute: -4
   mColor: {r: .126865685, g: .126865685, b: .126865685, a: 1}
   mPivot: 3
-  mWidth: 314
-  mHeight: 60
+  mWidth: 449
+  mHeight: 150
   mDepth: 11
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 5.23333311
+  aspectRatio: 2.99333334
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
   mText: Enemy List
-  mFontSize: 30
+  mFontSize: 50
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -1187,7 +1187,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1222485309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0513032675, y: -.0268498659, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.98610938, y: 1.98610806, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1543,7 +1543,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 293
+      value: 53
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1567,27 +1567,27 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: m_Size.x
-      value: 330
+      value: 465
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: m_Center.x
-      value: 165
+      value: 232.5
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mWidth
-      value: 330
+      value: 465
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: aspectRatio
-      value: 4.85294104
+      value: 2.94303799
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: m_Size.y
-      value: 68
+      value: 158
       objectReference: {fileID: 0}
     - target: {fileID: 11400006, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mHeight
-      value: 68
+      value: 158
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: position
@@ -1599,15 +1599,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mWidth
-      value: 314
+      value: 449
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mHeight
-      value: 60
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: aspectRatio
-      value: 5.23333311
+      value: 2.99333334
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mText
@@ -1615,7 +1615,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mFontSize
-      value: 30
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: mSelectedItem
@@ -1628,6 +1628,10 @@ Prefab:
     - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
       propertyPath: onChange.Array.data[1].mMethodName
       value: NotifyManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}
+      propertyPath: fontSize
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 004eb8234dcbc3f4bb49009e57a6ed44, type: 2}

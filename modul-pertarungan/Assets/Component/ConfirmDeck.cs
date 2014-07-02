@@ -16,24 +16,22 @@ namespace ModulPertarungan
         private int totalDeckCost;
         private string id = GameManager.Instance().PlayerId;
         public MessageBoxScirpt msgBox;
-
-        public void OnClick()
-        { 
-            totalDeckCost = 0;
-            cardList = new List<string>();
-            cardQuantity = new List<int>();
-
+        public GameObject loadingBox;
+        private Vector3 loadingpos;
+        public IEnumerator Confirm()
+        {
+           
             int DPCost = int.Parse(deckPointCost.GetComponent<UILabel>().text);
             int DPLeft = int.Parse(playerDP.GetComponent<UILabel>().text);
 
-          
+
             foreach (Transform t in grid.transform)
             {
                 string s = t.name.Split('(')[0];
-                
+
 
                 bool is_distinguish = true;
-                for(int i=0;i<cardList.Count;i++)
+                for (int i = 0; i < cardList.Count; i++)
                 {
                     if (cardList[i] == s)
                     {
@@ -84,15 +82,35 @@ namespace ModulPertarungan
             }
             else
             {
-              
+                var obj = new object[2];
+                obj[0] = "Notification";
+                obj[1] = "Maximum dp exceed";
+                msgBox.SendMessage("SetMessage", obj[0]);
+                msgBox.SendMessage("ShowMessageBox");
             }
-              
+            //loadingBox.transform.position = loadingpos;
+            yield return new WaitForSeconds(0.5f);
+        }
+      
+        public void OnClick()
+        {
+            loadingBox.transform.position = new Vector3(0f, 0.5f, 0f);
+            Debug.Log(loadingBox.transform.position);
+            totalDeckCost = 0;
+            cardList = new List<string>();
+            cardQuantity = new List<int>();
+            StartCoroutine(Confirm());
+           // loadingBox.transform.position = loadingpos;
         }
     
        
         void Start()
         {
             totalDeckCost = 0;
+           /// loadingBox.transform.position = new Vector3(0f, 0.5f, 0f);
+            loadingpos = GameObject.Find("Loadingbox").transform.position;
+         //   loadingBox.transform.position = new Vector3(0f, 0f, 0f);
+
         }
 
         // Update is called once per frame
@@ -102,11 +120,7 @@ namespace ModulPertarungan
         }
         void instantiate()
         {
-            var obj= new object[2];
-            obj[0]="Notification";
-            obj[1]="Maximum dp exceed";
-            msgBox.SendMessage("SetMessage", obj[0]);
-            msgBox.SendMessage("ShowMessageBox");
+            
         }
     }
 }
