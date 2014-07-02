@@ -12,8 +12,9 @@ namespace CardWarlockSaga
         public MessageBoxScirpt msgBox;
         public GameObject loadingBox;
         private Thread thread;
+        private Vector3 loadingpos;
         // Use this for initialization
-        private void Start()
+        private void Awake()
         {
             WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
             if (WebServiceSingleton.GetInstance().queryResult <= 0)
@@ -24,8 +25,13 @@ namespace CardWarlockSaga
                 obj[1] = "Unable to connect to server";
                 msgBox.SendMessage("SetMessage", obj);
                 msgBox.SendMessage("ShowMessageBox", obj);
-                
+
             }
+        }
+        private void Start()
+        {
+
+            loadingpos = GameObject.Find("Loadingbox").transform.position;
         }
 
         // Update is called once per frame
@@ -38,27 +44,36 @@ namespace CardWarlockSaga
 
         void ConfirmId()
         {
-           
             GameManager.Instance().PlayerId = userName.value;
             GameManager.Instance().Password = password.value;
-            WebServiceSingleton.GetInstance().ProcessRequest("login", userName.value + "|" + password.value);
-            if (WebServiceSingleton.GetInstance().queryResult > 0)
-            {
-                Application.LoadLevel("Loading");
-            }
-            else
-            {
-                var obj = new object[2];
-                obj[0] = "Notification";
-                obj[1] = WebServiceSingleton.GetInstance().queryInfo;
-                msgBox.SendMessage("SetMessage", obj);
-                msgBox.SendMessage("ShowMessageBox");
-                loadingBox.SetActive(false);
-
-            }
-            loadingBox.SetActive(false);
+            loadingBox.transform.position = new Vector3(0f, 0f, 0f);
+           
+                StartCoroutine(Login());
+            
         }
+        public IEnumerator Login()
+        {
+           
+            WebServiceSingleton.GetInstance().ProcessRequest("login", userName.value + "|" + password.value);
 
+                if (WebServiceSingleton.GetInstance().queryResult > 0)
+                {
+                    Application.LoadLevel("Loading");
+                }
+                else
+                {
+                    var obj = new object[2];
+                    obj[0] = "Notification";
+                    obj[1] = WebServiceSingleton.GetInstance().queryInfo;
+                    msgBox.SendMessage("SetMessage", obj);
+                    msgBox.SendMessage("ShowMessageBox");
+                    loadingBox.transform.position = loadingpos;
+
+                }
+                
+                yield return new WaitForSeconds(0.5f);
+            
+        }
         public void Register()
         {
             Application.LoadLevel("JobSelection");
