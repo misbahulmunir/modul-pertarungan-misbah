@@ -67,6 +67,7 @@ namespace ModulPertarungan
             instantiateObjectList.TryGetValue(playerFromService.Job, out character);
             character.CurrentHealth = character.MaxHealth = playerFromService.MaxHP;
             character.MaxSoulPoints = playerFromService.MaxSP;
+            character.CurrentSoulPoints = playerFromService.MaxSP;
             character.Name = playerFromService.Name;
             character.Gold = playerFromService.Gold;
             character.Experience = playerFromService.XP;

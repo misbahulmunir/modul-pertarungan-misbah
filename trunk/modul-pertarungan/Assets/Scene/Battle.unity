@@ -2175,6 +2175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deckCount: {fileID: 632115820}
   playerName: {fileID: 1707718364}
+  currentSoulPoint: {fileID: 395231464}
   enemyName: {fileID: 0}
 --- !u!1 &1340579541
 GameObject:

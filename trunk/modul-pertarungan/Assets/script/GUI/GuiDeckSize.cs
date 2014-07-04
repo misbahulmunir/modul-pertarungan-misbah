@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using ModelModulPertarungan;
 namespace ModulPertarungan
 {
     public class GuiDeckSize : MonoBehaviour
@@ -9,6 +9,7 @@ namespace ModulPertarungan
         // Use this for initializatio
         public GameObject deckCount;
         public GameObject playerName;
+        public UILabel currentSoulPoint;
         public UILabel enemyName;
         void Start()
         {
@@ -25,6 +26,7 @@ namespace ModulPertarungan
             {
                 playerName.GetComponent<UILabel>().text = GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character.Name;
                 deckCount.GetComponent<UILabel>().text = GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count.ToString();
+                //currentSoulPoint.text = (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character as Player).CurrentSoulPoints.ToString();
             }
         }
     }

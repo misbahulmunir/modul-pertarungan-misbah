@@ -89,8 +89,8 @@ namespace ModulPertarungan
             {
                 if ((GameManager.Instance().CurrentPawn.GetComponent<DamageReceiverAction>().Character as Player).CurrentSoulPoints < this.CardCost)
                 {
-                    this.GetComponent<UI2DSprite>().color = new Color(10, 10, 10);
-                    this.GetComponent<BoxCollider2D>().enabled = false;
+                   // this.GetComponent<UI2DSprite>().color = new Color(10, 10, 10);
+                    //this.GetComponent<BoxCollider2D>().enabled = false;
                 }
                 else
                 {
