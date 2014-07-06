@@ -10,7 +10,7 @@ namespace ModulPertarungan
         public GUIStyle style;
         public GameObject effectLabel;
         public GameObject cardNameLabel;
-
+        public UILabel cardCost;
         // Use this for initialization
         void Start()
         {
@@ -23,6 +23,8 @@ namespace ModulPertarungan
             {
                 cardNameLabel.GetComponent<UILabel>().text = GameManager.Instance().CurrentCard.CardName;
                 effectLabel.GetComponent<UILabel>().text = GameManager.Instance().CurrentCard.CardEffect;
+                    cardCost.text = GameManager.Instance().CurrentCard.CardCost.ToString();
+               
             }
         }
     }

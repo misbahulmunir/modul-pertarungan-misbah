@@ -26,7 +26,7 @@ namespace ModulPertarungan
             {
                 playerName.GetComponent<UILabel>().text = GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character.Name;
                 deckCount.GetComponent<UILabel>().text = GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Deck.Card.Count.ToString();
-                //currentSoulPoint.text = (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character as Player).CurrentSoulPoints.ToString();
+                currentSoulPoint.text = (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character as Player).CurrentSoulPoints.ToString();
             }
         }
     }

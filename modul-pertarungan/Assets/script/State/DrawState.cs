@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using ModelModulPertarungan;
 namespace ModulPertarungan
 {
     public class DrawState : BattleState
@@ -28,6 +29,7 @@ namespace ModulPertarungan
                 {
                     obj.GetComponent<PlayerAction>().Draw();
                 }
+                (obj.GetComponent<PlayerAction>().Character as Player).CurrentSoulPoints = 50;
                
             }
             if (totalCards == 0)
@@ -35,6 +37,7 @@ namespace ModulPertarungan
                 BattleManager.Currentstate= new LoseState(BattleManager);
                 BattleManager.Currentstate.Action();
             }
+          
             BattleManager.Currentstate = new ChangePlayerState(CurrentPlayer, BattleManager.objectLoader, BattleManager);
             BattleManager.Currentstate.Action();
         }

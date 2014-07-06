@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using ModelModulPertarungan;
 namespace ModulPertarungan
 {
     public class BattleStateManager : MonoBehaviour
@@ -195,13 +196,17 @@ namespace ModulPertarungan
         {
             if (!(currentstate is CardExcutionState)) return;
             GameManager.Instance().CurrentPawn.GetComponent<Animator>().SetBool("IsAttack", false);
+           
             GUI.Box(new Rect((Screen.width / 2) - 100, (Screen.height / 2) -125, 200, 250), "Execute Effect");
             if (GameManager.Instance().CurrentEnemy == null)
-            {
+            {   
                 GameManager.Instance().CurrentEnemy = GameManager.Instance().Enemies[0];
             }
             if (GUI.Button(new Rect((Screen.width / 2) - 100, (Screen.height / 2) - 50, 200, 100), "Yes"))
             {
+                (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character as Player).CurrentSoulPoints -= GameManager.Instance().CurrentCard.CardCost;
+                if ((GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character as Player).CurrentSoulPoints < 0)
+                    (GameManager.Instance().CurrentPawn.GetComponent<PlayerAction>().Character as Player).CurrentSoulPoints = 0;
                 currentstate.Action();
             }
 

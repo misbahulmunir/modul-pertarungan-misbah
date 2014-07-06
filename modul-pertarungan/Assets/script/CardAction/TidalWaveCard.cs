@@ -22,7 +22,7 @@ namespace ModulPertarungan
         }
         void Update()
         {
-          
+            CheckIfCardCanBeCast();
            
         }
         public override void Effect()
