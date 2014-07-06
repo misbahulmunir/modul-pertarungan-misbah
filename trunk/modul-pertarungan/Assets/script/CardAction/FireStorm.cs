@@ -26,7 +26,7 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-
+            CheckIfCardCanBeCast();
         }
 
         public override void Effect()
@@ -45,6 +45,7 @@ namespace ModulPertarungan
                     obj.GetComponent<DamageReceiverAction>().ReceiveDamage(obj.GetComponent<DamageReceiverAction>().Character, this, 50);
                 }
                 GameManager.Instance().KillObj(Target);
+
             }
 
         }
