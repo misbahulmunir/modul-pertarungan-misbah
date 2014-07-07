@@ -27,6 +27,10 @@ namespace ModulPertarungan
             CreateCardList.Add("Thunder Storm",card);
             card = new ThunderBolt();
             CreateCardList.Add("Thunder Bolt", card);
+            card = new EarthFissure();
+            CreateCardList.Add("Earth Fissure", card);
+            card = new EarthQuake();
+            CreateCardList.Add("EarthQuake", card);
         }
         
         public override void CreateCard(string objectName,string target)
