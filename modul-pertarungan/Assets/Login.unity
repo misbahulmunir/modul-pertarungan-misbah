@@ -2517,6 +2517,7 @@ MonoBehaviour:
   label: {fileID: 0}
   label1: {fileID: 0}
   boolGetName: 0
+  loadingBox: {fileID: 445694020}
 --- !u!114 &1514900416
 MonoBehaviour:
   m_ObjectHideFlags: 0
