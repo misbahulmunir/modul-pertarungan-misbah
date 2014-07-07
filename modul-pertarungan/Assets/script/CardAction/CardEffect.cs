@@ -53,7 +53,15 @@ namespace ModulPertarungan
             get { return _targetList; }
             set { _targetList = value; }
         }
+        private bool canBeCast;
 
+        public bool CanBeCast
+        {
+            get { return canBeCast; }
+            set { canBeCast = value; }
+        }
+
+    
         public int DeckCost
         {
             get { return _deckCost; }
@@ -72,13 +80,15 @@ namespace ModulPertarungan
         {
             if (Application.loadedLevelName == "Battle" || Application.loadedLevelName == "OnlineBattle")
             {
-                if (!(GameManager.Instance().BattleState is PvpEnemyState))
+                if (canBeCast)
                 {
-                    GameManager.Instance().CurrentCard = this;
-                    var obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
-                    obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
+                    if (!(GameManager.Instance().BattleState is PvpEnemyState))
+                    {
+                        GameManager.Instance().CurrentCard = this;
+                        var obj = GameObject.Find("BattleStateManager").GetComponent<BattleStateManager>();
+                        obj.Currentstate = new CardExcutionState(GameManager.Instance().CurrentPawn, obj, this.gameObject);
+                    }
                 }
-
             }
             GameManager.Instance().CurrentCard = this;
         }
@@ -90,12 +100,13 @@ namespace ModulPertarungan
                 if ((GameManager.Instance().CurrentPawn.GetComponent<DamageReceiverAction>().Character as Player).CurrentSoulPoints < this.CardCost)
                 {
                    // this.GetComponent<UI2DSprite>().color = new Color(10, 10, 10);
-                   this.GetComponent<BoxCollider2D>().enabled = false;
+                    canBeCast = false;
+                  
                 }
                 else
                 {
-                    
-                    this.GetComponent<BoxCollider2D>().enabled = true;
+                    canBeCast = true;
+                    //this.GetComponent<BoxCollider2D>().enabled = true;
                 }
             }
         }
