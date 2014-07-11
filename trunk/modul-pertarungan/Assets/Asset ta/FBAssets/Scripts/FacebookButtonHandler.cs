@@ -35,10 +35,14 @@ public class FacebookButtonHandler : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (FB.IsLoggedIn && FH.responseText != null)
+        if (FH.LoginSuccess == true)
         {
             loadingBox.transform.position = new Vector3(0f, 0f, 0f);
+        }
+        if (FB.IsLoggedIn && FH.responseText != null)
+        {
             ChangeScene();
+            loadingBox.transform.position = startPos;
         }
 	}
 
@@ -106,7 +110,6 @@ public class FacebookButtonHandler : MonoBehaviour {
         WebServiceSingleton.GetInstance().ProcessRequest("get_name_by_fb", FBID);
         Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
         GameManager.Instance().PlayerFBId = FBID;
-        loadingBox.transform.position = startPos;
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
             GameManager.Instance().PlayerId = WebServiceSingleton.GetInstance().queryInfo;
