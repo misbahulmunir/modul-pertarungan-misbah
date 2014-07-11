@@ -32,7 +32,7 @@ public class FriendProfileManager : MonoBehaviour {
         viewFriendProfile(GameManager.Instance().FriendName); 
         _xmlDoc = new XmlDocument();
         //Debug.Log(GameManager.Instance().PlayerId);
-        LoadCardFromService("deck_of_", friendCardGrid);
+        LoadCardFromService("deck", friendCardGrid);
 	}
 	
 	// Update is called once per frame
@@ -75,33 +75,37 @@ public class FriendProfileManager : MonoBehaviour {
 
     void LoadCardFromService(string method, GameObject grid)
     {
-        List<string> list = new List<string>();
-        Boolean _isEmpty = false;
-        try
+        WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + method, GameManager.Instance().PlayerId);
+        if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
-            //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
-            TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + GameManager.Instance().FriendName + ".xml");
-            _xmlDoc.Load(textReader);
-            _nameNodes = _xmlDoc.GetElementsByTagName("Name");
-            _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");
-
-            //Debug.Log("Method Name : " + method);
-            for (int i = 0; i < _nameNodes.Count; i++)
+            List<string> list = new List<string>();
+            Boolean _isEmpty = false;
+            try
             {
-                for (int j = 0; j < int.Parse(_quantityNodes[i].InnerXml); j++)
-                {
-                    list.Add(_nameNodes[i].InnerXml);
-                    //Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
-                }
-            }
-            IntegrationTest.Pass(this.gameObject);
-        }
-        catch
-        {
-            _isEmpty = true;
-        }
+                //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
+                TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + GameManager.Instance().FriendName + ".xml");
+                _xmlDoc.Load(textReader);
+                _nameNodes = _xmlDoc.GetElementsByTagName("Name");
+                _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");
 
-        if (!_isEmpty) AddToGrid(grid, list);
+                //Debug.Log("Method Name : " + method);
+                for (int i = 0; i < _nameNodes.Count; i++)
+                {
+                    for (int j = 0; j < int.Parse(_quantityNodes[i].InnerXml); j++)
+                    {
+                        list.Add(_nameNodes[i].InnerXml);
+                        //Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
+                    }
+                }
+                IntegrationTest.Pass(this.gameObject);
+            }
+            catch
+            {
+                _isEmpty = true;
+            }
+
+            if (!_isEmpty) AddToGrid(grid, list);
+        }
     }
 
     void BackButton()

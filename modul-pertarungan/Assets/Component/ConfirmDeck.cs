@@ -85,7 +85,8 @@ namespace ModulPertarungan
                 var obj = new object[2];
                 obj[0] = "Notification";
                 obj[1] = "Maximum dp exceed";
-                msgBox.SendMessage("SetMessage", obj[0]);
+                loadingBox.transform.position = loadingpos;
+                msgBox.SendMessage("SetMessage", obj);
                 msgBox.SendMessage("ShowMessageBox");
             }
             //loadingBox.transform.position = loadingpos;
