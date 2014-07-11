@@ -235,11 +235,11 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 450
   mHeight: 300
-  mDepth: 9
+  mDepth: 15
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.52830172
+  aspectRatio: 1.5
   mRect:
     serializedVersion: 2
     x: 0
@@ -476,7 +476,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mDepth
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mWidth
@@ -488,11 +488,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mDepth
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mText
       value: Subject
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
+      propertyPath: aspectRatio
+      value: 4.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
@@ -770,7 +774,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0320000015
+  aspectRatio: .0264900662
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
@@ -1044,11 +1048,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mDepth
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mDepth
-      value: 9
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
@@ -1319,7 +1323,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 200
   mHeight: 50
-  mDepth: 8
+  mDepth: 15
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -1452,7 +1456,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 450
   mHeight: 300
-  mDepth: 10
+  mDepth: 16
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -1847,7 +1851,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 450
   mHeight: 100
-  mDepth: 10
+  mDepth: 16
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -1936,7 +1940,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 192
   mHeight: 42
-  mDepth: 9
+  mDepth: 16
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -2142,11 +2146,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mDepth
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mDepth
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mText
@@ -2653,7 +2657,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 450
   mHeight: 100
-  mDepth: 9
+  mDepth: 15
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -3675,7 +3679,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 600
   mHeight: 750
-  mDepth: 7
+  mDepth: 14
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -3864,11 +3868,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mDepth
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mDepth
-      value: 9
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mWidth
@@ -3893,6 +3897,14 @@ Prefab:
     - target: {fileID: 11400004, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
       propertyPath: mText
       value: Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
+      propertyPath: mWidth
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
+      propertyPath: mHeight
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3ef6d7bed3c7f8d47a24307507eb6293, type: 2}
@@ -3998,7 +4010,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 200
   mHeight: 50
-  mDepth: 8
+  mDepth: 15
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -4268,7 +4280,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 192
   mHeight: 42
-  mDepth: 10
+  mDepth: 16
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -4441,7 +4453,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .0509803928
+  aspectRatio: .042345278
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Highlight - Shadowed
   mType: 1
@@ -4554,7 +4566,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 600
   mHeight: 750
-  mDepth: 6
+  mDepth: 14
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -4623,7 +4635,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .5281955
+  aspectRatio: .517295599
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Window
   mType: 1
@@ -4700,7 +4712,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .501984119
+  aspectRatio: .495065778
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Stripes 1
   mType: 2

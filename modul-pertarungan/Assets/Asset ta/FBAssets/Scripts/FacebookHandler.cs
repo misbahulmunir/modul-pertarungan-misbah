@@ -11,6 +11,13 @@ public class FacebookHandler : MonoBehaviour {
 	private bool isInit = false;
 	public string name;
 	public bool boolShow = false;
+    private bool loginSuccess = false;
+
+    public bool LoginSuccess
+    {
+        get { return loginSuccess; }
+        set { loginSuccess = value; }
+    }
 	FacebookButtonHandler BH;
 	
 	public void CallFBInit()
@@ -50,6 +57,7 @@ public class FacebookHandler : MonoBehaviour {
 		else
 		{
 			lastResponse = "Login was successful!";
+            loginSuccess = true;
 			//BH.boolGetName = true;
 			FB.API("/me?fields=id", Facebook.HttpMethod.GET, Callback);
 		}
