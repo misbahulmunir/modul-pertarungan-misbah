@@ -30,8 +30,8 @@ namespace ModulPertarungan
         {
             _xmlDoc = new XmlDocument();
             //Debug.Log(GameManager.Instance().PlayerId);
-            LoadTrunk("trunk_of_", GameManager.Instance().PlayerId, myTrunkGrid);
-            LoadTrunk("trunk_of_", GameManager.Instance().FriendName, hisTrunkGrid);
+            LoadTrunk("trunk", GameManager.Instance().PlayerId, myTrunkGrid);
+            LoadTrunk("trunk", GameManager.Instance().FriendName, hisTrunkGrid);
         }
 
         void Update()
@@ -51,32 +51,36 @@ namespace ModulPertarungan
         {
             WebServiceSingleton.GetInstance().ProcessRequest("get_player_trunk", name);
             WebServiceSingleton.GetInstance().DownloadFile("get_player_trunk", name);
-            List<string> list = new List<string>();
-            Boolean _isEmpty = false;
-            try
+            WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + method, name);
+            if (WebServiceSingleton.GetInstance().queryResult > 0)
             {
-                //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
-                TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + name + ".xml");
-                _xmlDoc.Load(textReader);
-                _nameNodes = _xmlDoc.GetElementsByTagName("Name");
-                _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");
-
-                //Debug.Log("Method Name : " + method);
-                for (int i = 0; i < _nameNodes.Count; i++)
+                List<string> list = new List<string>();
+                Boolean _isEmpty = false;
+                try
                 {
-                    for (int j = 0; j < int.Parse(_quantityNodes[i].InnerXml); j++)
+                    //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
+                    TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + name + ".xml");
+                    _xmlDoc.Load(textReader);
+                    _nameNodes = _xmlDoc.GetElementsByTagName("Name");
+                    _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");
+
+                    //Debug.Log("Method Name : " + method);
+                    for (int i = 0; i < _nameNodes.Count; i++)
                     {
-                        list.Add(_nameNodes[i].InnerXml);
-                        //Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
+                        for (int j = 0; j < int.Parse(_quantityNodes[i].InnerXml); j++)
+                        {
+                            list.Add(_nameNodes[i].InnerXml);
+                            //Debug.Log("Card Name : " + _nameNodes[i].InnerXml);
+                        }
                     }
                 }
-            }
-            catch
-            {
-                _isEmpty = true;
-            }
+                catch
+                {
+                    _isEmpty = true;
+                }
 
-            if (!_isEmpty) AddToGrid(grid, list);
+                if (!_isEmpty) AddToGrid(grid, list);
+            }
         }
 
         public void SendTradingRequest()
