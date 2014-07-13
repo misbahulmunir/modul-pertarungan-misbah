@@ -732,7 +732,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3007
+  startingRenderQueue: 3011
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 455.499756, y: -209.000427, z: 604, w: 340}
@@ -773,7 +773,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3007
+  startingRenderQueue: 3011
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 0, w: 0}
@@ -880,6 +880,34 @@ Prefab:
       propertyPath: mColor.a
       value: .411764711
       objectReference: {fileID: 0}
+    - target: {fileID: 6500002, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: m_Size.x
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500004, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: m_Size.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500004, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: m_Size.y
+      value: 491.833344
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500004, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: m_Center.y
+      value: -2.44999695
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: aspectRatio
+      value: .123999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400014, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: aspectRatio
+      value: .141176477
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
+      propertyPath: mWidth
+      value: 62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 777009ba5a592c1408e122d422d85b9f, type: 2}
   m_RootGameObject: {fileID: 710038377}
@@ -950,7 +978,7 @@ MonoBehaviour:
   aspectRatio: 1.78947365
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: Maximum Deck Cost
   mFontSize: 30
   mFontStyle: 0
@@ -1038,7 +1066,7 @@ MonoBehaviour:
   aspectRatio: 1.94594598
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: Curent Deck Cost
   mFontSize: 30
   mFontStyle: 0
@@ -1215,7 +1243,7 @@ MonoBehaviour:
   aspectRatio: 4.7954545
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 
   mFontSize: 40
   mFontStyle: 0
@@ -1646,7 +1674,7 @@ MonoBehaviour:
   aspectRatio: 4.7954545
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 
   mFontSize: 40
   mFontStyle: 0
@@ -2335,7 +2363,7 @@ MonoBehaviour:
   aspectRatio: 4.7954545
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 
   mFontSize: 40
   mFontStyle: 0
@@ -2423,8 +2451,8 @@ MonoBehaviour:
   aspectRatio: 4.7954545
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Deck Cost
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
+  mText: 'Deck Cost:'
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 1
@@ -2717,9 +2745,9 @@ MonoBehaviour:
   aspectRatio: 4.7954545
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 'Card Name:'
-  mFontSize: 40
+  mFontSize: 50
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
@@ -2894,9 +2922,9 @@ MonoBehaviour:
   aspectRatio: 4.96341467
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 
-  mFontSize: 20
+  mFontSize: 50
   mFontStyle: 0
   mAlignment: 1
   mEncoding: 1
@@ -2905,7 +2933,7 @@ MonoBehaviour:
   mEffectColor: {r: 0, g: 0, b: 0, a: 1}
   mSymbols: 1
   mEffectDistance: {x: 1, y: 1}
-  mOverflow: 1
+  mOverflow: 0
   mMaterial: {fileID: 0}
   mApplyGradient: 1
   mGradientTop: {r: 0, g: .860294104, b: 0, a: 1}
@@ -2954,7 +2982,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400010, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
       propertyPath: aspectRatio
-      value: .0479041934
+      value: .185628742
       objectReference: {fileID: 0}
     - target: {fileID: 11400020, guid: cd37df5946e86884c95fa31e7349424b, type: 2}
       propertyPath: mColor.a
@@ -2963,6 +2991,30 @@ Prefab:
     - target: {fileID: 11400004, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
       propertyPath: mColor.a
       value: .411764711
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
+      propertyPath: m_Size.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
+      propertyPath: m_Size.y
+      value: 10.0000019
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
+      propertyPath: m_Center.y
+      value: -34.3636436
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500004, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
+      propertyPath: m_Size.x
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
+      propertyPath: mWidth
+      value: 62
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400022, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
+      propertyPath: aspectRatio
+      value: .209302321
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fc18d4885a0790a46aa4fe6a0112e663, type: 2}
@@ -3205,7 +3257,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3007
+  startingRenderQueue: 3011
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 123.500229, y: -209.000015, z: 247.999969, w: 506.000031}
@@ -3641,8 +3693,8 @@ MonoBehaviour:
   aspectRatio: 4.7954545
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Card Effect:138
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
+  mText: 'Card Effect:'
   mFontSize: 40
   mFontStyle: 0
   mAlignment: 1
@@ -4203,7 +4255,7 @@ MonoBehaviour:
   aspectRatio: 4.7954545
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 'Card Cost:'
   mFontSize: 40
   mFontStyle: 0
@@ -4443,7 +4495,7 @@ MonoBehaviour:
   aspectRatio: 5.7391305
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 
   mFontSize: 20
   mFontStyle: 0
@@ -4658,7 +4710,7 @@ MonoBehaviour:
   aspectRatio: 1.78947365
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 
   mFontSize: 30
   mFontStyle: 0
@@ -4746,7 +4798,7 @@ MonoBehaviour:
   aspectRatio: 1.78947365
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
-  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mFont: {fileID: 11400000, guid: bc3ce1932cb4d4c42aaac03e47daab40, type: 2}
   mText: 
   mFontSize: 30
   mFontStyle: 0
