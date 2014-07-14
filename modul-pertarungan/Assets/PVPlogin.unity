@@ -163,6 +163,56 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1898898431}
+--- !u!1 &73112261
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 73112263}
+  - 212: {fileID: 73112262}
+  m_Layer: 0
+  m_Name: Colloseum_by_PionierUK
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &73112262
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73112261}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 21300000, guid: d73a52eb0afca30419b57dcb67f3f854, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!4 &73112263
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 73112261}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.00172924995, y: -.0580461025, z: 0}
+  m_LocalScale: {x: 1.74545443, y: 1.74545622, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &109141719
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,56 +978,6 @@ MonoBehaviour:
   mTexture: {fileID: 2800000, guid: 35c1fc50317148145b4952fef27ddcf1, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
---- !u!1 &705193812
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 705193814}
-  - 212: {fileID: 705193813}
-  m_Layer: 0
-  m_Name: LoginScreen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!212 &705193813
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 705193812}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 2f702cb302accc846a32883d016c31f0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!4 &705193814
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 705193812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0142253637, y: -.09247756, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
 --- !u!1 &716209264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1023,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 276, y: 72, z: 0}
+  m_Size: {x: 456, y: 176, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &716209267
 MonoBehaviour:
@@ -1078,13 +1078,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 276
-  mHeight: 72
+  mWidth: 456
+  mHeight: 176
   mDepth: 4
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.83333325
+  aspectRatio: 2.590909
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
@@ -1105,7 +1105,7 @@ Transform:
   m_PrefabInternal: {fileID: 1075050121}
   m_GameObject: {fileID: 716209264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -161, z: 0}
+  m_LocalPosition: {x: 0, y: -25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1627944909}
@@ -1296,7 +1296,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -244
+      value: -246
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1317,6 +1317,42 @@ Prefab:
     - target: {fileID: 400000, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: m_Size.x
+      value: 452
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: m_Size.y
+      value: 178
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: mWidth
+      value: 452
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: mHeight
+      value: 178
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: aspectRatio
+      value: 2.53932595
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: mWidth
+      value: 444
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: mHeight
+      value: 170
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: aspectRatio
+      value: 2.61176467
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400006, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
+      propertyPath: mFontSize
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e96fced7635ea7347ac23952f8d18771, type: 2}
@@ -1349,7 +1385,7 @@ Transform:
   m_PrefabInternal: {fileID: 1306441264}
   m_GameObject: {fileID: 1344540071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -244, z: 0}
+  m_LocalPosition: {x: 0, y: -246, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1357167584}
@@ -1377,7 +1413,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 276, y: 72, z: 0}
+  m_Size: {x: 452, y: 178, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1344540075
 MonoBehaviour:
@@ -1432,13 +1468,13 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 276
-  mHeight: 72
+  mWidth: 452
+  mHeight: 178
   mDepth: 4
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.83333325
+  aspectRatio: 2.53932595
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Button
   mType: 1
@@ -1509,18 +1545,18 @@ MonoBehaviour:
     absolute: -4
   mColor: {r: 0, g: 0, b: 0, a: .737254918}
   mPivot: 4
-  mWidth: 268
-  mHeight: 64
+  mWidth: 444
+  mHeight: 170
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.1875
+  aspectRatio: 2.61176467
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
   mText: Back
-  mFontSize: 20
+  mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -1748,7 +1784,7 @@ Transform:
   m_PrefabInternal: {fileID: 1075050121}
   m_GameObject: {fileID: 1627944908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 716209269}
@@ -1767,11 +1803,11 @@ MonoBehaviour:
   leftAnchor:
     target: {fileID: 716209269}
     relative: 0
-    absolute: 4
+    absolute: 0
   rightAnchor:
     target: {fileID: 716209269}
     relative: 1
-    absolute: -4
+    absolute: 0
   bottomAnchor:
     target: {fileID: 716209269}
     relative: 0
@@ -1779,21 +1815,21 @@ MonoBehaviour:
   topAnchor:
     target: {fileID: 716209269}
     relative: 1
-    absolute: -4
+    absolute: 0
   mColor: {r: 0, g: 0, b: 0, a: .737254918}
   mPivot: 4
-  mWidth: 268
-  mHeight: 64
+  mWidth: 456
+  mHeight: 172
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.1875
+  aspectRatio: 2.65116286
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Login
-  mFontSize: 20
+  mText: Enter
+  mFontSize: 40
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
