@@ -10,6 +10,6 @@ public class TestAnimationScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        animation.Play();
+        this.GetComponent<Animator>().SetBool("IsAttack", true);
 	}
 }

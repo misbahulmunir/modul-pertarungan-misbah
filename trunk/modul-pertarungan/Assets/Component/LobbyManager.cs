@@ -46,20 +46,28 @@ namespace ModulPertarungan
                 NetworkSingleton.Instance().ServerMessage = "";
                
             }
+            else if (serverMessage.Contains("no room alvaible"))
+            {
+                //foreach (Transform t in grid.transform)
+                //{
+                //    Destroy(t.gameObject);
+                //}
+                //NetworkSingleton.Instance().ServerMessage = "";
+            }
             else if (serverMessage.Contains("JoinedRoom"))
             {
                 NetworkSingleton.Instance().ServerMessage = "";
                 Application.LoadLevel("WaitingRoom");
-               
+
             }
-            else if(serverMessage.Contains("Room full"))
+            else if (serverMessage.Contains("Room full"))
             {
-                NetworkSingleton.Instance().ServerMessage="";
-                var obj= new object[2];
-                obj[0]="Room full";
-                obj[1]=" Room is full";
+                NetworkSingleton.Instance().ServerMessage = "";
+                var obj = new object[2];
+                obj[0] = "Room full";
+                obj[1] = " Room is full";
                 messageBox.SendMessage("SetMessage", obj);
-                messageBox.SendMessage("ShowMessageBox");      
+                messageBox.SendMessage("ShowMessageBox");
             }
             grid.GetComponent<UIGrid>().Reposition();
         }

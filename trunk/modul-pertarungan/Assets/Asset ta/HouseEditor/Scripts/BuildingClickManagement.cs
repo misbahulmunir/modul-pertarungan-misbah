@@ -84,7 +84,7 @@ public class BuildingClickManagement : MonoBehaviour {
         Application.LoadLevel("Dungeon_00");
     }
     public void QuitGame()
-    {
+    { if(FB.IsLoggedIn)
         FH.CallFBLogout();
         Application.Quit();
     }

@@ -116,24 +116,24 @@ namespace ModulPertarungan
                 if (percentage <= 50 && percentage >= 25)
                 {
 
-                    HUDSkin.normal.textColor = Color.yellow;
+                    HUDSkin.normal.textColor = Color.white;
                     HUDSkin.fontStyle = FontStyle.BoldAndItalic;
-                    HUDSkin.fontSize = 16;
+                    HUDSkin.fontSize = 20;
                     GUI.Label(new Rect(posX, posY, 100, 50), (int)(previousHealth) + "/" + maxHP.ToString(), HUDSkin);
 
                 }
                 else if (percentage < 25)
                 {
-                    HUDSkin.normal.textColor = Color.red;
+                    HUDSkin.normal.textColor = Color.white;
                     HUDSkin.fontStyle = FontStyle.BoldAndItalic;
-                    HUDSkin.fontSize = 16;
+                    HUDSkin.fontSize = 20;
                     GUI.Label(new Rect(posX, posY, 100, 50), (int)(previousHealth) + "/" + maxHP.ToString(), HUDSkin);
                 }
                 else
                 {
                     HUDSkin.normal.textColor = Color.white;
                     HUDSkin.fontStyle = FontStyle.BoldAndItalic;
-                    HUDSkin.fontSize = 16;
+                    HUDSkin.fontSize = 20;
                     GUI.Label(new Rect(posX, posY, 100, 50), (int)(previousHealth) + "/" + maxHP.ToString(), HUDSkin);
                 }
 
