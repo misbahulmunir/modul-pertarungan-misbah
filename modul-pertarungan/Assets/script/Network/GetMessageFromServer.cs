@@ -12,7 +12,7 @@ namespace ModulPertarungan
 
         void Update()
         {
-            if (pesan == "putus")
+            if (pesan=="putus")
             {
                 Application.Quit();
             }
