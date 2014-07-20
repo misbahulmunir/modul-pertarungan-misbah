@@ -101,4 +101,8 @@ public class MessageManager : MonoBehaviour {
             }
         }
     }
+
+    void DeleteMessage()
+    {
+    }
 }

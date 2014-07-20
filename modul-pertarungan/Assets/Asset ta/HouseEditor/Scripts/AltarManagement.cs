@@ -6,6 +6,7 @@ public class AltarManagement : MonoBehaviour {
 
     ModelAltar myAltar;
     QuantityManagement quantity;
+    FacebookHandler FH = new FacebookHandler();
     bool haveAltar = false;
     public GameObject Altar;
     public GameObject AltarExp;
@@ -67,6 +68,11 @@ public class AltarManagement : MonoBehaviour {
                             myAltar.Level++;
                             myAltar.MaxAltarExp = myAltar.Level * 100;
                             myAltar.ProductMax++;
+
+                            FH.FeedLink = "cws.yowanda.com/G?name=" + GameManager.Instance().PlayerId;
+                            FH.FeedPicture = "http://cws.yowanda.com/images/img.png";
+                            FH.feedLinkDescription = "Hei, sekarang Altar ku level " + myAltar.Level + " lho!";
+                            FH.CallFBFeed();
                         }
                         AltarExp.GetComponent<GUIText>().text = "Level " + myAltar.Level + "\n" + myAltar.ExpAltar + "/" + myAltar.MaxAltarExp;
                         magicdustQuantity.GetComponent<GUIText>().text = "x " + quantity.TotalMagicDust;

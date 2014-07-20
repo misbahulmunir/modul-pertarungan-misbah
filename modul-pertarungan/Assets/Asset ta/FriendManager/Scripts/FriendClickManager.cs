@@ -56,7 +56,6 @@ public class FriendClickManager : MonoBehaviour {
                 players = (PartialProfileFromService)obj;
                 friendSearchResultLabel.GetComponent<UILabel>().text = "Nickname: " + players.Name + "\nJob: " + players.Job + "\nRank: " + players.Rank + "\nLevel: " + players.Level;
                 textReader.Dispose();
-                Debug.Log("bisa");
             }
             catch (Exception e)
             {
@@ -71,18 +70,16 @@ public class FriendClickManager : MonoBehaviour {
 
     void AddFriend()
     {
-        //WebServiceSingleton.GetInstance().ProcessRequest("send_friend_request", GameManager.Instance().PlayerId + "|" + players.Name);
-
-        WebServiceSingleton.GetInstance().ProcessRequest("send_friend_request", GameManager.Instance().PlayerId + "|" + friendSearchInputLabel.GetComponent<UILabel>().text);
-        Debug.Log(WebServiceSingleton.GetInstance().queryInfo);
-        if (WebServiceSingleton.GetInstance().queryResult > 0)
+        WebServiceSingleton.GetInstance().ProcessRequest("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text);
+        if (WebServiceSingleton.GetInstance().queryResult < 0)
         {
-            friendSearchResultLabel.GetComponent<UILabel>().text += "\nStatus: " + WebServiceSingleton.GetInstance().queryInfo;
+            friendSearchResultLabel.GetComponent<UILabel>().text = "Player doesn't exist";
         }
         else
         {
-            friendSearchResultLabel.GetComponent<UILabel>().text = "Player doesn't exist";
-
+            WebServiceSingleton.GetInstance().ProcessRequest("send_friend_request", GameManager.Instance().PlayerId + "|" + friendSearchInputLabel.GetComponent<UILabel>().text);
+            Debug.Log(WebServiceSingleton.GetInstance().queryInfo);
+            friendSearchResultLabel.GetComponent<UILabel>().text += "\nStatus: " + WebServiceSingleton.GetInstance().queryInfo;
         }
     }
 
