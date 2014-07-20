@@ -6,6 +6,7 @@ public class MineManagement : MonoBehaviour {
 
     ModelMine myMine = new ModelMine();
     QuantityManagement quantity = new QuantityManagement();
+    FacebookHandler FH = new FacebookHandler();
     bool haveMine;
     public GameObject Mine;
     public GameObject MineExp;
@@ -67,6 +68,11 @@ public class MineManagement : MonoBehaviour {
                             myMine.Level++;
                             myMine.MaxMineExp = myMine.Level * 100;
                             myMine.ProductMax++;
+
+                            FH.FeedLink = "cws.yowanda.com/G?name=" + GameManager.Instance().PlayerId;
+                            FH.FeedPicture = "http://cws.yowanda.com/images/img.png";
+                            FH.feedLinkDescription = "Hei, sekarang Mine ku level " + myMine.Level + " lho!";
+                            FH.CallFBFeed();
                         }
                         MineExp.GetComponent<GUIText>().text = "Level " + myMine.Level + "\n" + myMine.ExpMine + "/" + myMine.MaxMineExp;
                         gemQuantity.GetComponent<GUIText>().text = "x " + quantity.TotalGem;

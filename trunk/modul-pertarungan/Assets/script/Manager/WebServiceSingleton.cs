@@ -167,6 +167,7 @@ namespace ModulPertarungan
             urlDictionary.Add("share_gift", "http://cws.yowanda.com/ClientController/1/request/share_gift");
             urlDictionary.Add("claim_gift", "http://cws.yowanda.com/ClientController/2/request/claim_gift");
             urlDictionary.Add("get_gift_notif", "http://cws.yowanda.com/ClientController/1/request/get_gift_notif");
+            urlDictionary.Add("delete_message", "http://cws.yowanda.com/service/3/message/delete_message");
         }
 
         private void InitPathDictionary()

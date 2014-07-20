@@ -6,6 +6,7 @@ public class YggdrasilManagement : MonoBehaviour {
 
     ModelYggdrasil myYgg = new ModelYggdrasil();
     QuantityManagement quantity = new QuantityManagement();
+    FacebookHandler FH = new FacebookHandler();
     bool haveYggdrasil = false;
     public GameObject Yggdrasil;
     public GameObject YggdrasilExp;
@@ -66,6 +67,11 @@ public class YggdrasilManagement : MonoBehaviour {
                             myYgg.Level++;
                             myYgg.MaxYggdrasilExp = myYgg.Level * 100;
                             myYgg.ProductMax++;
+
+                            FH.FeedLink = "cws.yowanda.com/G?name=" + GameManager.Instance().PlayerId;
+                            FH.FeedPicture = "http://cws.yowanda.com/images/img.png";
+                            FH.feedLinkDescription = "Hei, sekarang Yggdrasil ku level " + myYgg.Level + " lho!";
+                            FH.CallFBFeed();
                         }
                         YggdrasilExp.GetComponent<GUIText>().text = "Level " + myYgg.Level + "\n" + myYgg.ExpYggdrasil + "/" + myYgg.MaxYggdrasilExp;
                         berryQuantity.GetComponent<GUIText>().text = "x " + quantity.TotalBerry;
