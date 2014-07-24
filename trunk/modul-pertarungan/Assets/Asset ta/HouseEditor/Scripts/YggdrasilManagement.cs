@@ -12,6 +12,7 @@ public class YggdrasilManagement : MonoBehaviour {
     public GameObject YggdrasilExp;
     public GameObject berryQuantity;
     public MessageBoxScirpt msgBox;
+    public GameObject subMenuDestroyer;
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +45,9 @@ public class YggdrasilManagement : MonoBehaviour {
 			if (hit.collider != null)
 			{
 				if (hit.collider.gameObject.name.ToLower().Contains("addyggdrasil") && haveYggdrasil == false)
-				{
+                {
+                    subMenuDestroyer = GameObject.Find("SubMenuAddBuilding(Clone)");
+                    Destroy(subMenuDestroyer);
 					GameObject obj = hit.collider.gameObject as GameObject;
 					Debug.Log(obj.name);
 					var currentPos = this.transform.position;

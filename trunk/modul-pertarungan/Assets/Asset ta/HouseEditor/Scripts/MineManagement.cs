@@ -12,6 +12,7 @@ public class MineManagement : MonoBehaviour {
     public GameObject MineExp;
     public GameObject gemQuantity;
     public MessageBoxScirpt msgBox;
+    public GameObject subMenuDestroyer;
 
 	// Use this for initialization
 	void Start () {
@@ -45,7 +46,9 @@ public class MineManagement : MonoBehaviour {
 			if (hit.collider != null)
 			{
 				if (hit.collider.gameObject.name.ToLower().Contains("addmine") && haveMine == false)
-				{
+                {
+                    subMenuDestroyer = GameObject.Find("SubMenuAddBuilding(Clone)");
+                    Destroy(subMenuDestroyer);
 					GameObject obj = hit.collider.gameObject as GameObject;
 					Debug.Log(obj.name);
 					var currentPos = this.transform.position;
