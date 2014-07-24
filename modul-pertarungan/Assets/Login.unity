@@ -1770,11 +1770,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_Size.x
-      value: 330
+      value: 326
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_Size.y
-      value: 90
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mWidth
@@ -1827,6 +1827,14 @@ Prefab:
     - target: {fileID: 11400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mDepth
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
+      propertyPath: m_Center.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
+      propertyPath: m_Center.y
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
@@ -1902,7 +1910,7 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
-  mTexture: {fileID: 2800000, guid: f5f33f5d285300349a0d148d9aa88f92, type: 3}
+  mTexture: {fileID: 2800000, guid: 8cb85545b629e9543a0409ef5588faf4, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
 --- !u!1 &1001545532
@@ -2005,6 +2013,8 @@ GameObject:
   - 114: {fileID: 1104950374}
   - 114: {fileID: 1104950373}
   - 65: {fileID: 1104950372}
+  - 114: {fileID: 1104950377}
+  - 114: {fileID: 1104950376}
   - 114: {fileID: 1104950371}
   - 114: {fileID: 1104950375}
   m_Layer: 8
@@ -2052,8 +2062,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 332, y: 90, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 328, y: 83, z: 0}
+  m_Center: {x: 1, y: .5, z: 0}
 --- !u!114 &1104950373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2114,8 +2124,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 3.68888879
-  mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
-  mSpriteName: Button
+  mAtlas: {fileID: 11400000, guid: aae88aaa564ed2948944e9d55bd49e6c, type: 2}
+  mSpriteName: 300 x 920 finalize
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -2142,6 +2152,38 @@ MonoBehaviour:
   functionName: ConfirmId
   trigger: 0
   includeChildren: 0
+--- !u!114 &1104950376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: 7c3a28b051e872b448d4808cfcf9199c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1294856095}
+  m_GameObject: {fileID: 1104950369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78290a544588b4c498b0dad2fdc39598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: ConfirmId
+  trigger: 0
+  includeChildren: 0
+--- !u!114 &1104950377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 7c3a28b051e872b448d4808cfcf9199c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1294856095}
+  m_GameObject: {fileID: 1104950369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4acafe24a5544d8597245b0418d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 0}
+  password: {fileID: 0}
+  msgBox: {fileID: 0}
+  loadingBox: {fileID: 0}
 --- !u!1 &1131112548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,11 +2310,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_Size.x
-      value: 332
+      value: 328
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_Size.y
-      value: 90
+      value: 83
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mWidth
@@ -2313,6 +2355,14 @@ Prefab:
     - target: {fileID: 11400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mDepth
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
+      propertyPath: m_Center.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
+      propertyPath: m_Center.y
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
@@ -2747,6 +2797,8 @@ GameObject:
   - 114: {fileID: 1698100568}
   - 114: {fileID: 1698100567}
   - 65: {fileID: 1698100566}
+  - 114: {fileID: 1698100570}
+  - 114: {fileID: 1698100569}
   - 114: {fileID: 1698100565}
   - 114: {fileID: 1698100564}
   m_Layer: 8
@@ -2809,8 +2861,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 330, y: 90, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 326, y: 83, z: 0}
+  m_Center: {x: 1, y: .5, z: 0}
 --- !u!114 &1698100567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2871,8 +2923,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 3.66666675
-  mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
-  mSpriteName: Button
+  mAtlas: {fileID: 11400000, guid: aae88aaa564ed2948944e9d55bd49e6c, type: 2}
+  mSpriteName: 300 x 920 finalize
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -2884,6 +2936,38 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &1698100569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: 7c3a28b051e872b448d4808cfcf9199c,
+    type: 2}
+  m_PrefabInternal: {fileID: 912089494}
+  m_GameObject: {fileID: 1698100562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78290a544588b4c498b0dad2fdc39598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: ConfirmId
+  trigger: 0
+  includeChildren: 0
+--- !u!114 &1698100570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 7c3a28b051e872b448d4808cfcf9199c,
+    type: 2}
+  m_PrefabInternal: {fileID: 912089494}
+  m_GameObject: {fileID: 1698100562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4acafe24a5544d8597245b0418d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 0}
+  password: {fileID: 0}
+  msgBox: {fileID: 0}
+  loadingBox: {fileID: 0}
 --- !u!1 &1814368289
 GameObject:
   m_ObjectHideFlags: 0

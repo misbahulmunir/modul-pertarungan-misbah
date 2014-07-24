@@ -12,6 +12,7 @@ public class AltarManagement : MonoBehaviour {
     public GameObject AltarExp;
     public GameObject magicdustQuantity;
     public MessageBoxScirpt msgBox;
+    public GameObject subMenuDestroyer;
 
 	// Use this for initialization
     void Start()
@@ -46,6 +47,8 @@ public class AltarManagement : MonoBehaviour {
 			{
 				if (hit.collider.gameObject.name.ToLower().Contains("addaltar") && haveAltar == false)
 				{
+                    subMenuDestroyer = GameObject.Find("SubMenuAddBuilding(Clone)");
+                    Destroy(subMenuDestroyer);
 					GameObject obj = hit.collider.gameObject as GameObject;
 					Debug.Log(obj.name);
 					var currentPos = this.transform.position;

@@ -775,7 +775,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3006
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 402.999756, y: -209.000427, z: 499, w: 210}
@@ -816,7 +816,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3006
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 0, w: 0}
@@ -894,6 +894,8 @@ GameObject:
   - 114: {fileID: 167967492}
   - 114: {fileID: 167967491}
   - 65: {fileID: 167967490}
+  - 114: {fileID: 167967496}
+  - 114: {fileID: 167967495}
   - 114: {fileID: 167967494}
   - 114: {fileID: 167967493}
   m_Layer: 8
@@ -926,8 +928,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 340, y: 92, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 336, y: 85, z: 0}
+  m_Center: {x: 1, y: .5, z: 0}
 --- !u!114 &167967491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,13 +985,13 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 340
   mHeight: 92
-  mDepth: 4
+  mDepth: 10
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 3.69565225
-  mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
-  mSpriteName: Button
+  mAtlas: {fileID: 11400000, guid: aae88aaa564ed2948944e9d55bd49e6c, type: 2}
+  mSpriteName: 300 x 920 finalize
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -1029,6 +1031,38 @@ MonoBehaviour:
   functionName: ConfirmParty
   trigger: 0
   includeChildren: 0
+--- !u!114 &167967495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400008, guid: 7c3a28b051e872b448d4808cfcf9199c,
+    type: 2}
+  m_PrefabInternal: {fileID: 259100628}
+  m_GameObject: {fileID: 167967488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78290a544588b4c498b0dad2fdc39598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: ConfirmId
+  trigger: 0
+  includeChildren: 0
+--- !u!114 &167967496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400006, guid: 7c3a28b051e872b448d4808cfcf9199c,
+    type: 2}
+  m_PrefabInternal: {fileID: 259100628}
+  m_GameObject: {fileID: 167967488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4acafe24a5544d8597245b0418d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 0}
+  password: {fileID: 0}
+  msgBox: {fileID: 0}
+  loadingBox: {fileID: 0}
 --- !u!1001 &259100628
 Prefab:
   m_ObjectHideFlags: 0
@@ -1066,11 +1100,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_Size.x
-      value: 340
+      value: 336
       objectReference: {fileID: 0}
     - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: m_Size.y
-      value: 92
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mWidth
@@ -1099,6 +1133,14 @@ Prefab:
     - target: {fileID: 11400002, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
       propertyPath: mText
       value: Party Confirmation
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
+      propertyPath: m_Center.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
+      propertyPath: m_Center.y
+      value: .5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c3a28b051e872b448d4808cfcf9199c, type: 2}
@@ -1905,7 +1947,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 332
   mHeight: 84
-  mDepth: 5
+  mDepth: 13
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
@@ -2928,7 +2970,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3006
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 145.000214, y: -209.000015, z: 291, w: 584}

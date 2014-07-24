@@ -195,7 +195,7 @@ public class AvatarAttachment : MonoBehaviour {
                 }
                 else if (hit.collider.gameObject.name.ToLower().Contains("backbutton"))
                 {
-                    Application.LoadLevel("BeforeBattle");
+                    Application.LoadLevel("HouseEditor");
                 }
                 else if (hit.collider.gameObject.name.ToLower().Contains("savebutton"))
                 {

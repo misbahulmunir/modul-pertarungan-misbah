@@ -27,6 +27,8 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400008}
   m_Layer: 8
   m_Name: Control - Simple Button
   m_TagString: Untagged
@@ -52,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -309.607849, y: -182, z: 0}
+  m_LocalPosition: {x: -151, y: -29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -67,8 +69,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 200, y: 50, z: 0}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 327, y: 86, z: 0}
+  m_Center: {x: -.5, y: 1, z: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,17 +122,17 @@ MonoBehaviour:
     absolute: -4
   mColor: {r: 0, g: 0, b: 0, a: .737254918}
   mPivot: 4
-  mWidth: 192
-  mHeight: 42
-  mDepth: 5
+  mWidth: 324
+  mHeight: 82
+  mDepth: 13
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4.57142878
+  aspectRatio: 3.95121956
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Send
+  mText: 'Play '
   mFontSize: 30
   mFontStyle: 0
   mAlignment: 0
@@ -181,15 +183,15 @@ MonoBehaviour:
     absolute: 0
   mColor: {r: .897058845, g: .897058845, b: .897058845, a: 1}
   mPivot: 4
-  mWidth: 200
-  mHeight: 50
-  mDepth: 4
+  mWidth: 332
+  mHeight: 90
+  mDepth: 10
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 4
-  mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
-  mSpriteName: Button
+  aspectRatio: 3.68888879
+  mAtlas: {fileID: 11400000, guid: aae88aaa564ed2948944e9d55bd49e6c, type: 2}
+  mSpriteName: 300 x 920 finalize
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -201,6 +203,36 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b4acafe24a5544d8597245b0418d1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userName: {fileID: 0}
+  password: {fileID: 0}
+  msgBox: {fileID: 0}
+  loadingBox: {fileID: 0}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78290a544588b4c498b0dad2fdc39598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  functionName: ConfirmId
+  trigger: 0
+  includeChildren: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
