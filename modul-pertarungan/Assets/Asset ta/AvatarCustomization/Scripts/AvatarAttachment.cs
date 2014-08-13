@@ -11,10 +11,11 @@ using System.Xml.Serialization;
 public class AvatarAttachment : MonoBehaviour {
 
 	string hairType, eyesType, mouthType;
-    public GameObject hairStyle1, hairStyle2, hairStyle3;
+    public GameObject hairStyle1, hairStyle2, hairStyle3, hairStyle4;
+    public GameObject hairBack1, hairBack2, hairBack3, hairBack4;
     public GameObject eyeStyle1, eyeStyle2, eyeStyle3;
     public GameObject mouthStyle1, mouthStyle2, mouthStyle3;
-    UnityEngine.Object hChild, mChild, eChild;
+    UnityEngine.Object hChild, mChild, eChild, hbChild;
     string playerName = "";
     private XmlDocument _xmlDoc;
     private XmlNodeList _nameNodes;
@@ -84,30 +85,55 @@ public class AvatarAttachment : MonoBehaviour {
     void AttachHair(string hairStyleChosen)
     {
         Destroy(hChild);
+        Destroy(hbChild);
         var currentPos = this.transform.position;
         if (hairStyleChosen == "menurambut1")
         {
             var hairStyle = Instantiate(hairStyle1, currentPos, Quaternion.identity);
             hChild = hairStyle;
+            var backPos = currentPos;
+            backPos.z = 2;
+            var hairBack = Instantiate(hairBack1, backPos, Quaternion.identity);
+            hbChild = hairBack;
             avatarList[0] = "rambut1";
             Debug.Log("hairstyle1");
         }
         else
-            if (hairStyleChosen == "menurambut2")
-            {
-                var hairStyle = Instantiate(hairStyle2, currentPos, Quaternion.identity);
-                hChild = hairStyle;
-                avatarList[0] = "rambut2";
-                Debug.Log("hairstyle2");
-            }
-            else
-                if (hairStyleChosen == "menurambut3")
-                {
-                    var hairStyle = Instantiate(hairStyle3, currentPos, Quaternion.identity);
-                    hChild = hairStyle;
-                    avatarList[0] = "rambut3";
-                    Debug.Log("hairstyle3");
-                }
+        if (hairStyleChosen == "menurambut2")
+        {
+            var hairStyle = Instantiate(hairStyle2, currentPos, Quaternion.identity);
+            hChild = hairStyle;
+            var backPos = currentPos;
+            backPos.z = 2;
+            var hairBack = Instantiate(hairBack2, backPos, Quaternion.identity);
+            hbChild = hairBack;
+            avatarList[0] = "rambut2";
+            Debug.Log("hairstyle2");
+        }
+        else
+        if (hairStyleChosen == "menurambut3")
+        {
+            var hairStyle = Instantiate(hairStyle3, currentPos, Quaternion.identity);
+            hChild = hairStyle;
+            var backPos = currentPos;
+            backPos.z = 2;
+            var hairBack = Instantiate(hairBack3, backPos, Quaternion.identity);
+            hbChild = hairBack;
+            avatarList[0] = "rambut3";
+            Debug.Log("hairstyle3");
+        }
+        else
+        if (hairStyleChosen == "menurambut4")
+        {
+            var hairStyle = Instantiate(hairStyle4, currentPos, Quaternion.identity);
+            hChild = hairStyle;
+            var backPos = currentPos;
+            backPos.z = 2;
+            var hairBack = Instantiate(hairBack4, backPos, Quaternion.identity);
+            hbChild = hairBack;
+            avatarList[0] = "rambut4";
+            Debug.Log("hairstyle4");
+        }
     }
 
     void AttachEye(string eyeStyleChosen)
