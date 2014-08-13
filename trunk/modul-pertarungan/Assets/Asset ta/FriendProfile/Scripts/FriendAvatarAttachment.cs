@@ -12,11 +12,12 @@ public class FriendAvatarAttachment : MonoBehaviour
 {
 
     string hairType, eyesType, mouthType;
-    public GameObject friendHairStyle1, friendHairStyle2, friendHairStyle3;
+    public GameObject friendHairStyle1, friendHairStyle2, friendHairStyle3, friendHairStyle4;
+    public GameObject friendHairBack1, friendHairBack2, friendHairBack3, friendHairBack4;
     public GameObject friendEyeStyle1, friendEyeStyle2, friendEyeStyle3;
     public GameObject friendMouthStyle1, friendMouthStyle2, friendMouthStyle3;
     public GameObject friendNameLabel;
-    UnityEngine.Object hChild, mChild, eChild;
+    UnityEngine.Object hChild, mChild, eChild, hbChild;
     string friendName = "";
     private XmlDocument _xmlDoc;
     private XmlNodeList _nameNodes;
@@ -89,11 +90,16 @@ public class FriendAvatarAttachment : MonoBehaviour
     void AttachHair(string hairStyleChosen)
     {
         Destroy(hChild);
+        Destroy(hbChild);
         var currentPos = this.transform.position;
         if (hairStyleChosen == "menurambut1")
         {
             var hairStyle = Instantiate(friendHairStyle1, currentPos, Quaternion.identity);
             hChild = hairStyle;
+            var backPos = currentPos;
+            backPos.z = 2;
+            var hairBack = Instantiate(friendHairBack1, backPos, Quaternion.identity);
+            hbChild = hairBack;
             avatarList[0] = "rambut1";
             Debug.Log("hairstyle1");
         }
@@ -102,6 +108,10 @@ public class FriendAvatarAttachment : MonoBehaviour
             {
                 var hairStyle = Instantiate(friendHairStyle2, currentPos, Quaternion.identity);
                 hChild = hairStyle;
+                var backPos = currentPos;
+                backPos.z = 2;
+                var hairBack = Instantiate(friendHairBack2, backPos, Quaternion.identity);
+                hbChild = hairBack;
                 avatarList[0] = "rambut2";
                 Debug.Log("hairstyle2");
             }
@@ -110,9 +120,25 @@ public class FriendAvatarAttachment : MonoBehaviour
                 {
                     var hairStyle = Instantiate(friendHairStyle3, currentPos, Quaternion.identity);
                     hChild = hairStyle;
+                    var backPos = currentPos;
+                    backPos.z = 2;
+                    var hairBack = Instantiate(friendHairBack3, backPos, Quaternion.identity);
+                    hbChild = hairBack;
                     avatarList[0] = "rambut3";
                     Debug.Log("hairstyle3");
                 }
+                else
+                    if (hairStyleChosen == "menurambut4")
+                    {
+                        var hairStyle = Instantiate(friendHairStyle4, currentPos, Quaternion.identity);
+                        hChild = hairStyle;
+                        var backPos = currentPos;
+                        backPos.z = 2;
+                        var hairBack = Instantiate(friendHairBack4, backPos, Quaternion.identity);
+                        hbChild = hairBack;
+                        avatarList[0] = "rambut4";
+                        Debug.Log("hairstyle4");
+                    }
     }
 
     void AttachEye(string eyeStyleChosen)
