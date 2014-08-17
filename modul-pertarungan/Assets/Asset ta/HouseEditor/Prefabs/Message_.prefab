@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 400002}
   - 114: {fileID: 11400010}
   m_Layer: 8
-  m_Name: Message_Text_3
+  m_Name: Message_Text_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400004}
   m_Layer: 8
-  m_Name: Message_3
+  m_Name: Message_
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,7 +78,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 114: {fileID: 11400014}
   m_Layer: 8
-  m_Name: Message_Title_3
+  m_Name: Message_Title_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 0f5e030a8cdc292438f880d3ec49ef64, type: 2}
-  mText: "From : dayum\n \nMessage:\nhalo"
+  mText: "From : zendra\n \nMessage:\nhoi tampan"
   mFontSize: 18
   mFontStyle: 0
   mAlignment: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: hai zendra
+  mText: hoi
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
