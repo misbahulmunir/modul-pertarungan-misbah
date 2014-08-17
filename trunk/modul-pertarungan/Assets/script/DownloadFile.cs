@@ -35,16 +35,16 @@ namespace ModulPertarungan
 
             WebServiceSingleton.GetInstance().isLoadingScreen = true;
 
-            DownloadXMLFile("get_profile");
-            DownloadXMLFile("get_player_deck");
-            DownloadXMLFile("get_player_trunk");
-            DownloadXMLFile("get_friend_list");
-            DownloadXMLFile("get_list_avatar");
-            DownloadXMLFile("get_player_avatar");
-            DownloadXMLFile("get_building");
-            DownloadXMLFile("get_battle_rank");
-            DownloadXMLFile("get_player_ranking");
-            DownloadXMLFile("get_friend_request");
+            //DownloadXMLFile("get_profile");
+            //DownloadXMLFile("get_player_deck");
+            //DownloadXMLFile("get_player_trunk");
+            //DownloadXMLFile("get_friend_list");
+            //DownloadXMLFile("get_list_avatar");
+            //DownloadXMLFile("get_player_avatar");
+            //DownloadXMLFile("get_building");
+            //DownloadXMLFile("get_battle_rank");
+            //DownloadXMLFile("get_player_ranking");
+            //DownloadXMLFile("get_friend_request");
 
             Application.LoadLevel("HouseEditor");
         }
