@@ -75,7 +75,7 @@ public class MyTradeRequestManager : MonoBehaviour {
                 {
                     newTradeRequest.name = from.ID + "_" + "tradeFrom_";
                     viewTradeButton.name = from.ID + "_" + "tradeID_" ;
-                    newTradeRequest.GetComponent<UILabel>().text = "trade request from : " + from.Name;
+                    newTradeRequest.GetComponent<UILabel>().text = "from : " + from.Name;
                     var newFromButton = NGUITools.AddChild(tradeRequestTable, viewTradeButton);
                     var newFrom = NGUITools.AddChild(tradeRequestTable, newTradeRequest);
                 }

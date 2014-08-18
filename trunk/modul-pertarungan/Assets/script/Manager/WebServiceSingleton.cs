@@ -183,6 +183,7 @@ namespace ModulPertarungan
             urlDictionary.Add("buy_card", "http://199.175.51.79:8001/buy_card");
             urlDictionary.Add("sell_card", "http://199.175.51.79:8001/sell_card");
             urlDictionary.Add("calculate_data", "http://199.175.51.79:8001/calculate_data");
+            urlDictionary.Add("get_map_status", "http://199.175.51.79:8001/get_map_status");
         }
 
         private void InitPathDictionary()
