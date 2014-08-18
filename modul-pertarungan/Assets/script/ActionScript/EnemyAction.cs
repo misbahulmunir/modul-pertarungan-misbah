@@ -28,7 +28,7 @@ namespace ModulPertarungan
             {
                 GameManager.Instance().PlayerGold += enemy.GoldForPlayer;
                 GameManager.Instance().PlayerExp += enemy.ExpForPlayer;
-                Debug.Log(GameManager.Instance().PlayerExp);
+              //  Debug.Log(GameManager.Instance().PlayerExp);
                 Destroy(this.gameObject);
                 
             }

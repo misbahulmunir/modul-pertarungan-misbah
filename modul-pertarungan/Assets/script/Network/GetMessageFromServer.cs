@@ -14,7 +14,8 @@ namespace ModulPertarungan
         {
             if (pesan=="putus")
             {
-                Application.Quit();
+                Application.LoadLevel("Login");
+
             }
         }
 

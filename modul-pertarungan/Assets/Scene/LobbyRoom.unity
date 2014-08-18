@@ -886,6 +886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: {fileID: 1590126721}
   createRoom: {fileID: 0}
+  msgbox: {fileID: 312839473}
 --- !u!65 &66515130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1742,6 +1743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: {fileID: 0}
   createRoom: {fileID: 414192732}
+  msgbox: {fileID: 0}
 --- !u!1 &414192730
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3373,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa9dd95c2adcf72499913de7b1363196, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textbox1: {fileID: 0}
+  textbox2: {fileID: 0}
+  msgbox: {fileID: 0}
 --- !u!65 &1197859090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3769,6 +3774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: {fileID: 0}
   createRoom: {fileID: 0}
+  msgbox: {fileID: 0}
 --- !u!114 &1465800782
 MonoBehaviour:
   m_ObjectHideFlags: 0
