@@ -9,11 +9,12 @@ namespace ModulPertarungan
         public GameObject Statuslabel;
         public GameObject GoldLabel;
         public GameObject ExpLabel;
+        public UILabel ServiceMessage;
         public List<GameObject>label;
         private int score = 0;
         private bool[] checkQuestActive;
         private bool[] checkQuestCleared;
-
+        
         // Use this for initialization
         void Start()
         {
@@ -23,9 +24,12 @@ namespace ModulPertarungan
                 succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "GameEnd-" + NetworkSingleton.Instance().RoomName);
                 Debug.Log(succses ? "send succes" : "send false");
                 NetworkSingleton.instance = null;
-               
+
             }
-           
+            else
+            {
+                ShowWinOrLose();
+            }
             GameManager.Instance().Enemies = null;
             GameManager.Instance().CurrentEnemy = null;
             GameManager.Instance().Players = null;
@@ -40,7 +44,7 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            ShowWinOrLose();
+            
             if (Input.GetMouseButtonDown(0))
             {
                     GameManager.Instance().GameMode = "";
@@ -54,12 +58,14 @@ namespace ModulPertarungan
             {
                 if (GameManager.Instance().GameMode != "pvp")
                 {
-                    //string[] split = TextureSingleton.Instance().IdButton.Split('_');
+                    string[] split = TextureSingleton.Instance().IdButton.Split('_');
                     //int id = Int32.Parse(split[1]);
                     //TextureSingleton.Instance().QuestActive[id + 1] = true;
                     //TextureSingleton.Instance().QuestCleared[id] = true;
                     //checkQuestActive = TextureSingleton.Instance().QuestActive;
                     //checkQuestCleared = TextureSingleton.Instance().QuestCleared;
+                    WebServiceSingleton.GetInstance().ProcessRequest("calculate_data", GameManager.Instance().PlayerId + "|" + GameManager.Instance().PlayerExp + "|" + GameManager.Instance().PlayerGold);
+                    ServiceMessage.text = WebServiceSingleton.GetInstance().queryInfo;
                     ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
                     GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
                 }
