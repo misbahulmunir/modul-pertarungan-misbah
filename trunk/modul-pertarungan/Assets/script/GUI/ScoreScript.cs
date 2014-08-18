@@ -60,8 +60,8 @@ namespace ModulPertarungan
                     //TextureSingleton.Instance().QuestCleared[id] = true;
                     //checkQuestActive = TextureSingleton.Instance().QuestActive;
                     //checkQuestCleared = TextureSingleton.Instance().QuestCleared;
-                   // ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
-                   // GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
+                    ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
+                    GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
                 }
                 Statuslabel.GetComponent<UILabel>().text = "WIN";
 
@@ -70,8 +70,8 @@ namespace ModulPertarungan
             {
 
                 Statuslabel.GetComponent<UILabel>().text = "LOSE";
-                //ExpLabel.GetComponent<UILabel>().text = "0";
-                //GoldLabel.GetComponent<UILabel>().text = "0";
+                ExpLabel.GetComponent<UILabel>().text = "0";
+                GoldLabel.GetComponent<UILabel>().text = "0";
                 //foreach (GameObject obj in label)
                 //{
                 //    obj.SetActive(true);

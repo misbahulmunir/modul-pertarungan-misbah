@@ -14,15 +14,17 @@ namespace ModulPertarungan
         {
             UILabel rName = roomName;
             bool succses = false;
-            String protocol = "CreateRoom-" + rName.text + "-" + GameManager.Instance().PlayerId;
+            string toserver = rName.text.Replace("-",String.Empty);
+            String protocol = "CreateRoom-" + toserver + "-" + GameManager.Instance().PlayerId;
             succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", protocol);
             if (succses)
                 Debug.Log("send succes");
             else
                 Debug.Log("send false");
-            NetworkSingleton.Instance().RoomName = rName.text;
-            Application.LoadLevel("WaitingRoom");
+            NetworkSingleton.Instance().RoomName =toserver;
+        //    Application.LoadLevel("WaitingRoom");
         }
+    
         void ShowHostMessage()
         {
             var parms = new TweenParms();
@@ -42,6 +44,11 @@ namespace ModulPertarungan
 
         void Update()
         {
+            if (NetworkSingleton.Instance().ServerMessage.Contains("created succesfully"))
+            {
+                NetworkSingleton.Instance().ServerMessage = "";
+                Application.LoadLevel("WaitingRoom");
+            }
         }
     }
 }

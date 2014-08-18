@@ -11,6 +11,7 @@ namespace ModulPertarungan
         private string rName;
 	    private string text;
         public CreateRoom createRoom;
+        public MessageBoxScirpt msgbox;
         void HostRoom()
         {
             createRoom.SendMessage("ShowHostMessage");
@@ -18,7 +19,16 @@ namespace ModulPertarungan
         }
 
         void JoinRoom()
-        {   rName = roomName.GetComponent<UILabel>().text;
+        {
+            if (roomName.GetComponent<UILabel>().text == string.Empty)
+            {
+                object[] obj = new object[2];
+                obj[0] = "Cannot Join Room";
+                obj[1] = "Room  is empty";
+                msgbox.SendMessage("SetMessage", obj);
+                msgbox.SendMessage("ShowMessageBox");
+            }
+            rName = roomName.GetComponent<UILabel>().text;
             NetworkSingleton.Instance().RoomName = rName;
             bool succses = false;
             succses = NetworkSingleton.Instance().PlayerClient.Call<bool>("sendMessage", "JoinRoom-" + rName +"-"+GameManager.Instance().PlayerId);
@@ -26,6 +36,7 @@ namespace ModulPertarungan
                 Debug.Log("send succes");
             else
                 Debug.Log("send false");
+
             
         }
 
