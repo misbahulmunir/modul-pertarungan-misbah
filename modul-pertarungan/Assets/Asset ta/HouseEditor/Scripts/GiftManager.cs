@@ -68,8 +68,8 @@ public class GiftManager : MonoBehaviour {
         WebServiceSingleton.GetInstance().ProcessRequest("share_gift", GameManager.Instance().PlayerId);
         if (WebServiceSingleton.GetInstance().queryResult == 1)
         {
-            FH.FeedLink = "cws.yowanda.com/G?name=" + GameManager.Instance().PlayerId;
-            FH.FeedPicture = "http://cws.yowanda.com/images/img.png";
+            FH.FeedLink = "http://199.175.51.79:8001/gift?name=" + GameManager.Instance().PlayerId;
+            FH.FeedPicture = "http://199.175.51.79:8001/images/img.png";
             FH.feedLinkDescription = "A Gift from the Night!";
             FH.CallFBFeed();
         }
