@@ -179,6 +179,9 @@ namespace ModulPertarungan
             urlDictionary.Add("claim_gift", "http://199.175.51.79:8001/claim_gift");
             urlDictionary.Add("get_gift_notif", "http://199.175.51.79:8001/get_gift_notif");
             urlDictionary.Add("delete_message", "http://199.175.51.79:8001/delete_message");
+            urlDictionary.Add("get_shop_cards", "http://199.175.51.79:8001/get_shop_cards");
+            urlDictionary.Add("buy_card", "http://199.175.51.79:8001/buy_card");
+            urlDictionary.Add("sell_card", "http://199.175.51.79:8001/sell_card");
         }
 
         private void InitPathDictionary()
