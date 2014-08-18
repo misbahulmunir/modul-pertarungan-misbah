@@ -45,10 +45,12 @@ public class AvatarAttachment : MonoBehaviour {
 
     void getDatabaseAvatar()
     {
+        WebServiceSingleton.GetInstance().ProcessRequest("get_player_avatar", playerName);
         try
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(AvatarFromService));
-            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_avatar_of_" + GameManager.Instance().PlayerId + ".xml");
+            //TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_avatar_of_" + GameManager.Instance().PlayerId + ".xml");
+            TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             object obj = deserializer.Deserialize(textReader);
             var avi = (AvatarFromService)obj;
             foreach (var s in avi.aviDetail)
@@ -228,7 +230,7 @@ public class AvatarAttachment : MonoBehaviour {
                     WebServiceSingleton.GetInstance().ProcessRequest("edit_avatar", playerName + "|" + avatarList[0] + "-" + avatarList[1] + "-" + avatarList[2]);
                     Debug.Log(WebServiceSingleton.GetInstance().queryInfo);
                     WebServiceSingleton.GetInstance().ProcessRequest("get_player_avatar", playerName);
-                    Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_avatar", playerName));
+                    //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_avatar", playerName));
                 }
             }
         }

@@ -24,12 +24,11 @@ namespace ModulPertarungan
             //Debug.Log(GameManager.Instance().PlayerId);
             LoadCardFromService("deck", deckGrid);
             LoadCardFromService("trunk", trunkGrid);
-            
+            ShowPlayerDP();
         }
 
         void Update()
-        {
-            ShowPlayerDP();
+        {           
             CheckDeckCountSize();
         }
 
@@ -63,7 +62,8 @@ namespace ModulPertarungan
                 try
                 {
                     //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
-                    TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + GameManager.Instance().PlayerId + ".xml");
+                    //TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + GameManager.Instance().PlayerId + ".xml");
+                    TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                     _xmlDoc.Load(textReader);
                     _nameNodes = _xmlDoc.GetElementsByTagName("Name");
                     _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");
@@ -90,7 +90,9 @@ namespace ModulPertarungan
 
         public void ShowPlayerDP()
         {
-            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + GameManager.Instance().PlayerId + ".xml");
+            WebServiceSingleton.GetInstance().ProcessRequest("get_profile", GameManager.Instance().PlayerId);
+            //TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + GameManager.Instance().PlayerId + ".xml");
+            TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             _xmlDoc.Load(textReader);
             _nameNodes = _xmlDoc.GetElementsByTagName("MaxDP");
             playerDeckPoint.GetComponent<UILabel>().text = _nameNodes[0].InnerXml;

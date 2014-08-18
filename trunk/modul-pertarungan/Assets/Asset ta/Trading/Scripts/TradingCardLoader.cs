@@ -49,8 +49,8 @@ namespace ModulPertarungan
 
         public void LoadTrunk(string method, string name, GameObject grid)
         {
-            WebServiceSingleton.GetInstance().ProcessRequest("get_player_trunk", name);
-            WebServiceSingleton.GetInstance().DownloadFile("get_player_trunk", name);
+            //WebServiceSingleton.GetInstance().ProcessRequest("get_player_trunk", name);
+            //WebServiceSingleton.GetInstance().DownloadFile("get_player_trunk", name);
             WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + method, name);
             if (WebServiceSingleton.GetInstance().queryResult > 0)
             {
@@ -59,7 +59,8 @@ namespace ModulPertarungan
                 try
                 {
                     //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
-                    TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + name + ".xml");
+                    //TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + name + ".xml");
+                    TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                     _xmlDoc.Load(textReader);
                     _nameNodes = _xmlDoc.GetElementsByTagName("Name");
                     _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");

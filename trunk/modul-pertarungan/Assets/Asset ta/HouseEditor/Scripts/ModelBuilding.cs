@@ -61,10 +61,12 @@ public class ModelBuilding{
 
     public void getDatabaseBuilding()
     {
+        WebServiceSingleton.GetInstance().ProcessRequest("get_building", GameManager.Instance().PlayerId);
         try
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(PlayerBuildingFromService));
-            TextReader textReader = new StreamReader(Application.persistentDataPath + "/building_of_" + GameManager.Instance().PlayerId + ".xml");
+            //TextReader textReader = new StreamReader(Application.persistentDataPath + "/building_of_" + GameManager.Instance().PlayerId + ".xml");
+            TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             object obj = deserializer.Deserialize(textReader);
             building = (PlayerBuildingFromService)obj;
             textReader.Close();

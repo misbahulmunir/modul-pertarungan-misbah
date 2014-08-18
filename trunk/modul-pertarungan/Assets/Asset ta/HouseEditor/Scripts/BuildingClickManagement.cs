@@ -92,6 +92,6 @@ public class BuildingClickManagement : MonoBehaviour {
     private void reloadHouse()
     {
         WebServiceSingleton.GetInstance().ProcessRequest("get_building",GameManager.Instance().PlayerId);
-        WebServiceSingleton.GetInstance().DownloadFile("get_building", GameManager.Instance().PlayerId);
+        //WebServiceSingleton.GetInstance().DownloadFile("get_building", GameManager.Instance().PlayerId);
     }
 }

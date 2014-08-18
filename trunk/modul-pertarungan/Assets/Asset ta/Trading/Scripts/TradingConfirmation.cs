@@ -49,8 +49,10 @@ public class TradingConfirmation : MonoBehaviour
         Boolean _isEmpty = false;
         try
         {
+            WebServiceSingleton.GetInstance().ProcessRequest("get_card_request_list", GameManager.Instance().PlayerId + "|" + GameManager.Instance().TradeID);
             XmlSerializer deserializer = new XmlSerializer(typeof(CardRequestFromService));
-            textReader = new StreamReader(Application.persistentDataPath + "/card_request_list_of_" + GameManager.Instance().PlayerId + ".xml");
+            //textReader = new StreamReader(Application.persistentDataPath + "/card_request_list_of_" + GameManager.Instance().PlayerId + ".xml");
+            textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             object obj = deserializer.Deserialize(textReader);
             CardRequestFromService cardReqList = (CardRequestFromService)obj;
             foreach (var _card in cardReqList.requestedCards)
@@ -88,7 +90,7 @@ public class TradingConfirmation : MonoBehaviour
     public void AcceptTradeRequest()
     {
         WebServiceSingleton.GetInstance().ProcessRequest("accept_trade_request", GameManager.Instance().TradeID);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_trunk", GameManager.Instance().PlayerId));
+        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_trunk", GameManager.Instance().PlayerId));
         Application.LoadLevel("HouseEditor");
     }
 

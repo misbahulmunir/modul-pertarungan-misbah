@@ -63,11 +63,12 @@ public class MyTradeRequestManager : MonoBehaviour {
         WebServiceSingleton.GetInstance().ProcessRequest("get_trade_request_list", GameManager.Instance().PlayerId);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
-            Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_trade_request_list", GameManager.Instance().PlayerId));
+            //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_trade_request_list", GameManager.Instance().PlayerId));
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(TradeRequestFromService));
-                textReader = new StreamReader(Application.persistentDataPath + "/trade_request_list_of_" + GameManager.Instance().PlayerId + ".xml");
+                //textReader = new StreamReader(Application.persistentDataPath + "/trade_request_list_of_" + GameManager.Instance().PlayerId + ".xml");
+                textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 object obj = deserializer.Deserialize(textReader);
                 TradeRequestFromService tradeList = (TradeRequestFromService)obj;
                 foreach (var from in tradeList.players)
@@ -105,7 +106,7 @@ public class MyTradeRequestManager : MonoBehaviour {
         WebServiceSingleton.GetInstance().ProcessRequest("get_card_request_list", GameManager.Instance().PlayerId + "|" + tradeID);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
-            Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_card_request_list", GameManager.Instance().PlayerId));
+            //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_card_request_list", GameManager.Instance().PlayerId));
         }
         Application.LoadLevel("TradingConfirmationScene");
     }

@@ -35,7 +35,7 @@ public class FriendClickManager : MonoBehaviour {
     void DownloadXML()
     {
         WebServiceSingleton.GetInstance().ProcessRequest("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text));
+        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text));
     }
 
     void SearchByNickname()
@@ -46,12 +46,13 @@ public class FriendClickManager : MonoBehaviour {
         //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
-            DownloadXML();
+            //DownloadXML();
             //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", friendSearchInputLabel.GetComponent<UILabel>().text));
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(PartialProfileFromService));
-                textReader = new StreamReader(Application.persistentDataPath + "/partial_profile_of_" + friendSearchInputLabel.GetComponent<UILabel>().text + ".xml");
+                //textReader = new StreamReader(Application.persistentDataPath + "/partial_profile_of_" + friendSearchInputLabel.GetComponent<UILabel>().text + ".xml");
+                textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 object obj = deserializer.Deserialize(textReader);
                 players = (PartialProfileFromService)obj;
                 friendSearchResultLabel.GetComponent<UILabel>().text = "Nickname: " + players.Name + "\nJob: " + players.Job + "\nRank: " + players.Rank + "\nLevel: " + players.Level;
@@ -103,7 +104,8 @@ public class FriendClickManager : MonoBehaviour {
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(RequestFromService));
-                textReader = new StreamReader(Application.persistentDataPath + "/friend_request_of_" + GameManager.Instance().PlayerId + ".xml");
+                //textReader = new StreamReader(Application.persistentDataPath + "/friend_request_of_" + GameManager.Instance().PlayerId + ".xml");
+                textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 object obj = deserializer.Deserialize(textReader);
                 RequestFromService friendRequest = (RequestFromService)obj;
                 foreach (var player in friendRequest.players)
@@ -126,13 +128,13 @@ public class FriendClickManager : MonoBehaviour {
     void ReloadFriendRequestXML()
     {
         WebServiceSingleton.GetInstance().ProcessRequest("get_friend_request", GameManager.Instance().PlayerId);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_friend_request", GameManager.Instance().PlayerId));
+        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_friend_request", GameManager.Instance().PlayerId));
     }
 
     void ReloadFriendlistXML()
     {
         WebServiceSingleton.GetInstance().ProcessRequest("get_friend_list", GameManager.Instance().PlayerId);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_friend_list", GameManager.Instance().PlayerId));
+        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_friend_list", GameManager.Instance().PlayerId));
     }
 
     void AcceptFriendRequest(object value)
@@ -172,7 +174,8 @@ public class FriendClickManager : MonoBehaviour {
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(FriendListFromService));
-                textReader = new StreamReader(Application.persistentDataPath + "/friends_of_" + GameManager.Instance().PlayerId + ".xml");
+                //textReader = new StreamReader(Application.persistentDataPath + "/friends_of_" + GameManager.Instance().PlayerId + ".xml");
+                textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 object obj = deserializer.Deserialize(textReader);
                 FriendListFromService friendlist = (FriendListFromService)obj;
                 foreach (var player in friendlist.players)
@@ -206,12 +209,12 @@ public class FriendClickManager : MonoBehaviour {
         nama = value as string;
         Debug.Log("visit " + nama);
         GameManager.Instance().FriendName = nama;
-        WebServiceSingleton.GetInstance().ProcessRequest("get_player_avatar", nama);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_avatar", nama));
-        WebServiceSingleton.GetInstance().ProcessRequest("get_profile", nama);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", nama));
-        WebServiceSingleton.GetInstance().ProcessRequest("get_player_deck", nama);
-        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_deck", nama));
+        //WebServiceSingleton.GetInstance().ProcessRequest("get_player_avatar", nama);
+        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_avatar", nama));
+        //WebServiceSingleton.GetInstance().ProcessRequest("get_profile", nama);
+        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_partial_profile", nama));
+        //WebServiceSingleton.GetInstance().ProcessRequest("get_player_deck", nama);
+        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_deck", nama));
         Application.LoadLevel("FriendProfile");
     }
 
