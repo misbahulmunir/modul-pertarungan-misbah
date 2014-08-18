@@ -249,6 +249,8 @@
      <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
      <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
      <Compile Include="Assets\ShopButtonManager.cs" />
+     <Compile Include="Assets\ShopCardClick.cs" />
+     <Compile Include="Assets\ShopManagerScript.cs" />
      <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
      <Compile Include="Assets\TestAnimationScript.cs" />
      <Compile Include="Assets\TestParticle.cs" />
@@ -365,6 +367,7 @@
      <Compile Include="Assets\script\CardAction\WaterCard.cs" />
      <Compile Include="Assets\script\CardAction\WindCard.cs" />
      <Compile Include="Assets\script\CardAction\WindStorm.cs" />
+     <Compile Include="Assets\script\CardClick.cs" />
      <Compile Include="Assets\script\Command\CardExcuteEffectPerformer.cs" />
      <Compile Include="Assets\script\Command\CardExecuteCommand.cs" />
      <Compile Include="Assets\script\Command\Command.cs" />
