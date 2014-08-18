@@ -67,7 +67,9 @@
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AddBuildingMenu.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\AltarManagement.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\BuildingClickManagement.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\DungeonListManager.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\GiftManager.cs" />
+     <Compile Include="Assets\Asset ta\HouseEditor\Scripts\GoToDungeonScript.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\GoToRequest.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\MessageManager.cs" />
      <Compile Include="Assets\Asset ta\HouseEditor\Scripts\MineManagement.cs" />
@@ -550,6 +552,8 @@
      <Compile Include="Assets\script\Web Service Model\Building\BuildingFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Building\PlayerBuildingFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Friends\FriendListFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Map_and_Dungeon\MapStatus.cs" />
+     <Compile Include="Assets\script\Web Service Model\Map_and_Dungeon\MapStatusFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Messages\FriendMessage.cs" />
      <Compile Include="Assets\script\Web Service Model\Messages\MessagesFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\BattleListFromService.cs" />
