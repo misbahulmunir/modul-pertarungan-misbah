@@ -43,7 +43,8 @@ namespace ModulPertarungan
             WebServiceSingleton.GetInstance().ProcessRequest("get_profile", id);
             //WebServiceSingleton.GetInstance().DownloadFile("get_profile", id);
             XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
-            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
+            //TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
+            TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             PlayerFromService playerFromService;
             playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
             _instantiateObjectList.TryGetValue(playerFromService.Job, out character);

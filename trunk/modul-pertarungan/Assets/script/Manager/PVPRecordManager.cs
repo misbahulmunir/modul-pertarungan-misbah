@@ -44,14 +44,16 @@ namespace ModulPertarungan
 
         public void GetOpponentsName()
         {
-            WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
+            //WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
             //WebServiceSingleton.GetInstance().DownloadFile("get_player_ranking", "");
             WebServiceSingleton.GetInstance().ProcessRequest("get_battle_rank", GameManager.Instance().PlayerId);
             //WebServiceSingleton.GetInstance().DownloadFile("get_battle_rank", GameManager.Instance().PlayerId);
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(BattleRankFromService));
-                TextReader textReader = new StreamReader(Application.persistentDataPath + "/battle_rank_of_" + GameManager.Instance().PlayerId + ".xml");
+                //TextReader textReader = new StreamReader(Application.persistentDataPath + "/battle_rank_of_" + GameManager.Instance().PlayerId + ".xml");
+                TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
+                //object obj = deserializer.Deserialize(textReader);
                 object obj = deserializer.Deserialize(textReader);
                 var  Opponents = (BattleRankFromService)obj;
                 textReader.Close();
@@ -72,10 +74,12 @@ namespace ModulPertarungan
 
         public void GenerateRooster()
         {
+            WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(PlayerRankingFromService));
-                TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_rank.xml");
+                //TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_rank.xml");
+                TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 object obj = deserializer.Deserialize(textReader);
                 var Opponents = (PlayerRankingFromService)obj;
                 textReader.Close();

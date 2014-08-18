@@ -60,8 +60,10 @@ namespace ModulPertarungan
 
         public override void CreatePlayer(string id, GameObject pawnsPosisition)
         {
+            WebServiceSingleton.GetInstance().ProcessRequest("get_profile", id);
             XmlSerializer deserializer = new XmlSerializer(typeof(PlayerFromService));
-            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
+            //TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_profile_" + id + ".xml");
+            TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             PlayerFromService playerFromService;
             playerFromService = (PlayerFromService)deserializer.Deserialize(textReader);
             instantiateObjectList.TryGetValue(playerFromService.Job, out character);
@@ -76,7 +78,9 @@ namespace ModulPertarungan
             character.Job = playerFromService.Job;
             try
             {
-                textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
+                WebServiceSingleton.GetInstance().ProcessRequest("get_player_deck", id);
+                //textReader = new StreamReader(Application.persistentDataPath + "/deck_of_" + id + ".xml");
+                textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 xmlFromServer = new XmlDocument();
                 xmlFromServer.Load(textReader);
                 nameNodes = xmlFromServer.GetElementsByTagName("Name");

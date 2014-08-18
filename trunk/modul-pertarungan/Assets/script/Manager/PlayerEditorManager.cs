@@ -49,7 +49,8 @@ namespace ModulPertarungan
                 try
                 {
                     XmlSerializer deserializer = new XmlSerializer(typeof(FriendListFromService));
-                    textReader = new StreamReader(Application.persistentDataPath + "/friends_of_" + GameManager.Instance().PlayerId + ".xml");
+                    //textReader = new StreamReader(Application.persistentDataPath + "/friends_of_" + GameManager.Instance().PlayerId + ".xml");
+                    textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                     object obj = deserializer.Deserialize(textReader);
                     FriendListFromService friendlist = (FriendListFromService)obj;
                     foreach (var player in friendlist.players)
