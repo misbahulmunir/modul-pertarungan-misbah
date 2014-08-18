@@ -67,9 +67,9 @@ namespace ModulPertarungan
                         if (i == 1) param = "deck";
                         else param = "trunk";
                         WebClient webClient = new WebClient();
-                        WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + param, id);
-                        Debug.Log("response : " + WebServiceSingleton.GetInstance().responseFromServer);
-                        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_" + param, id));
+                        //WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + param, id);
+                        //Debug.Log("response : " + WebServiceSingleton.GetInstance().responseFromServer);
+                        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_" + param, id));
                         Debug.Log(WebServiceSingleton.GetInstance().isLoadingScreen);
                     }
                     catch

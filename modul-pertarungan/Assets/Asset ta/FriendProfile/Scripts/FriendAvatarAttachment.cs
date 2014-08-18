@@ -50,10 +50,12 @@ public class FriendAvatarAttachment : MonoBehaviour
 
     void getDatabaseAvatar()
     {
+        WebServiceSingleton.GetInstance().ProcessRequest("get_player_avatar", friendName);
         try
         {
             XmlSerializer deserializer = new XmlSerializer(typeof(AvatarFromService));
-            TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_avatar_of_" + friendName + ".xml");
+            //TextReader textReader = new StreamReader(Application.persistentDataPath + "/player_avatar_of_" + friendName + ".xml");
+            TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             object obj = deserializer.Deserialize(textReader);
             var avi = (AvatarFromService)obj;
             foreach (var s in avi.aviDetail)

@@ -44,11 +44,11 @@ namespace ModulPertarungan
                     {
                         WebServiceSingleton.GetInstance().ProcessRequest("get_profile", s);
                         //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_profile", s));
+                        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_profile", s));
 
                         WebServiceSingleton.GetInstance().ProcessRequest("get_player_deck", s);
                         //Debug.Log(WebServiceSingleton.GetInstance().responseFromServer);
-                        Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_deck", s));
+                        //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_player_deck", s));
                     }
                     catch
                     {

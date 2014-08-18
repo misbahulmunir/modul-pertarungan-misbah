@@ -72,11 +72,12 @@ public class MessageManager : MonoBehaviour {
         WebServiceSingleton.GetInstance().ProcessRequest("get_messages", GameManager.Instance().PlayerId);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
-            Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_messages", GameManager.Instance().PlayerId));
+            //Debug.Log(WebServiceSingleton.GetInstance().DownloadFile("get_messages", GameManager.Instance().PlayerId));
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(MessagesFromService));
-                textReader = new StreamReader(Application.persistentDataPath + "/messages_of_" + GameManager.Instance().PlayerId + ".xml");
+                //textReader = new StreamReader(Application.persistentDataPath + "/messages_of_" + GameManager.Instance().PlayerId + ".xml");
+                textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 object obj = deserializer.Deserialize(textReader);
                 MessagesFromService messagesList = (MessagesFromService)obj;
                 int i = 1;

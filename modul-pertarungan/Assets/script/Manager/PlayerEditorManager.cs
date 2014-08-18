@@ -43,7 +43,7 @@ namespace ModulPertarungan
         public void GetAvatarList(string id)
         {
             WebServiceSingleton.GetInstance().ProcessRequest("get_friend_list", GameManager.Instance().PlayerId);
-            WebServiceSingleton.GetInstance().DownloadFile("get_friend_list", GameManager.Instance().PlayerId);
+            //WebServiceSingleton.GetInstance().DownloadFile("get_friend_list", GameManager.Instance().PlayerId);
             if (WebServiceSingleton.GetInstance().queryResult > 0)
             {
                 try

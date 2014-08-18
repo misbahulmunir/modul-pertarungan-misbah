@@ -364,9 +364,9 @@ Transform:
   m_LocalScale: {x: .00277777785, y: .00277777785, z: .00277777785}
   m_Children:
   - {fileID: 890772544}
+  - {fileID: 1440833163}
   - {fileID: 1872172375}
   - {fileID: 618466872}
-  - {fileID: 1440833163}
   - {fileID: 1737433191}
   - {fileID: 1688480171}
   - {fileID: 1699089327}
@@ -1796,6 +1796,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.00007999
       objectReference: {fileID: 0}
+    - target: {fileID: 11400010, guid: 3fb3c7baa9b629342bac0bc267e65cf8, type: 2}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 471842389}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3fb3c7baa9b629342bac0bc267e65cf8, type: 2}
   m_RootGameObject: {fileID: 1419425457}
@@ -2123,7 +2127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   methodName: ViewFriendRequest
-  manager: {fileID: 0}
+  manager: {fileID: 471842389}
 --- !u!65 &1419425460
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3029,8 +3033,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 146, y: 33, z: 0}
-  m_Center: {x: 1, y: .5, z: 0}
+  m_Size: {x: 145, y: 36, z: 0}
+  m_Center: {x: -.5, y: 1, z: 0}
 --- !u!114 &1695977759
 MonoBehaviour:
   m_ObjectHideFlags: 0

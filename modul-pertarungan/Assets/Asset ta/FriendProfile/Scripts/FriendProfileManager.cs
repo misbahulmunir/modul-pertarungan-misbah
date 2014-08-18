@@ -48,7 +48,8 @@ public class FriendProfileManager : MonoBehaviour {
              try
              {
                  XmlSerializer deserializer = new XmlSerializer(typeof(PartialProfileFromService));
-                 textReader = new StreamReader(Application.persistentDataPath + "/partial_profile_of_" + name + ".xml");
+                 //textReader = new StreamReader(Application.persistentDataPath + "/partial_profile_of_" + name + ".xml");
+                 textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                  object obj = deserializer.Deserialize(textReader);
                  player = (PartialProfileFromService)obj;
                  friendNameLabel.GetComponent<UILabel>().text = player.Name;
@@ -75,7 +76,7 @@ public class FriendProfileManager : MonoBehaviour {
 
     void LoadCardFromService(string method, GameObject grid)
     {
-        WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + method, GameManager.Instance().PlayerId);
+        WebServiceSingleton.GetInstance().ProcessRequest("get_player_" + method, GameManager.Instance().FriendName);
         if (WebServiceSingleton.GetInstance().queryResult > 0)
         {
             List<string> list = new List<string>();
@@ -83,7 +84,8 @@ public class FriendProfileManager : MonoBehaviour {
             try
             {
                 //Debug.Log(Application.persistentDataPath + "/" + method + GameManager.Instance().PlayerId + ".xml");
-                TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + GameManager.Instance().FriendName + ".xml");
+                //TextReader textReader = new StreamReader(Application.persistentDataPath + "/" + method + "_of_" + GameManager.Instance().FriendName + ".xml");
+                TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
                 _xmlDoc.Load(textReader);
                 _nameNodes = _xmlDoc.GetElementsByTagName("Name");
                 _quantityNodes = _xmlDoc.GetElementsByTagName("Quantity");

@@ -54,7 +54,7 @@ namespace ModulPertarungan
                 responseFromServer = "-3|Error reading stream";
             }
             //Debug.Log(methodName + " " /*+ parameter */+ responseFromServer);
-
+            Debug.Log(methodName);
             try
             {
                 string[] response = responseFromServer.Split('|');
@@ -67,6 +67,7 @@ namespace ModulPertarungan
                 queryInfo = responseFromServer;
             }
             Debug.Log("query result : " + queryInfo);
+            Debug.Log(parameter);
         }
 
         public string DownloadFile(string methodName, string parameter)

@@ -45,9 +45,9 @@ namespace ModulPertarungan
         public void GetOpponentsName()
         {
             WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
-            WebServiceSingleton.GetInstance().DownloadFile("get_player_ranking", "");
+            //WebServiceSingleton.GetInstance().DownloadFile("get_player_ranking", "");
             WebServiceSingleton.GetInstance().ProcessRequest("get_battle_rank", GameManager.Instance().PlayerId);
-            WebServiceSingleton.GetInstance().DownloadFile("get_battle_rank", GameManager.Instance().PlayerId);
+            //WebServiceSingleton.GetInstance().DownloadFile("get_battle_rank", GameManager.Instance().PlayerId);
             try
             {
                 XmlSerializer deserializer = new XmlSerializer(typeof(BattleRankFromService));
