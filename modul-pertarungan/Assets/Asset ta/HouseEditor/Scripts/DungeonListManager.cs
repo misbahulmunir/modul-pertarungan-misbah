@@ -14,7 +14,7 @@ public class DungeonListManager : MonoBehaviour {
     public GameObject newDungeon;
     public GameObject newFalseDungeon;
     public GameObject dungeonListTable;
-    string dungeonName;
+    string dungeonName;    
 
     TextReader textReader;
     TradeRequestFromService myTradeRequest;
@@ -103,10 +103,5 @@ public class DungeonListManager : MonoBehaviour {
             TweenObjectIn(dungeonListPanel, messagePanelPosition);
             GameManager.Instance().UpdatePaused = true;
         }
-    }
-
-    void GoToDungeon()
-    {
-        Application.LoadLevel(gameObject.transform.name);
     }
 }

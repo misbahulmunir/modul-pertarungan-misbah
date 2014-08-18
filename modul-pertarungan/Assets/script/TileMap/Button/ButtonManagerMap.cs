@@ -67,7 +67,8 @@ public class ButtonManagerMap : MonoBehaviour
                     if (buttonTagLoader == "homebutton" || buttonTagLoader == "backbutton")
                     {
                         Application.LoadLevel(sceneLoader);
-                    }                    
+                        TextureSingleton.Instance().BackScene = "HouseEditor";
+                    }
                     else if (buttonName.Contains("Button_"))
                     {
                         splitter = buttonName.Split('_');
