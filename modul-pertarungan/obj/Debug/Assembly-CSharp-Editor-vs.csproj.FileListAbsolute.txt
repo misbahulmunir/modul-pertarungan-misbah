@@ -195,13 +195,8 @@ C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debu
 C:\Users\Chank\Documents\SVN\modul-pertarungan-misbah\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.pdb
 D:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-UnityScript.dll
 D:\ta\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.Android.Extensions.dll
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.BB10.Extensions.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.Graphs.dll
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.iOS.Extensions.dll
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.Metro.Extensions.dll
-C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.WP8.Extensions.dll
 C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.dll
 D:\ta2\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor-vs.csprojResolveAssemblyReference.cache
 D:\ta2\modul-pertarungan\obj\Debug\Assembly-CSharp-Editor.dll
@@ -257,3 +252,5 @@ D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\Unity.DataContract.dll
 D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\HOTween.xml
 D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEditor.UI.dll
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.UI.dll

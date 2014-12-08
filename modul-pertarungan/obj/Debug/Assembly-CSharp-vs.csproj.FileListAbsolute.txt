@@ -178,3 +178,4 @@ D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\ICSharpCode.NRefactory.dll
 D:\dw\ta2\modul-pertarungan\Temp\bin\Debug\HOTween.xml
 D:\dw\ta2\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb
 D:\dw\ta2\modul-pertarungan\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\u6\Monster Hunter\Card Warlock Saga\modul-pertarungan\Temp\bin\Debug\UnityEngine.UI.dll
