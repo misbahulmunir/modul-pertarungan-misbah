@@ -141,8 +141,8 @@ namespace ModulPertarungan
         private void InitUrlDictionary()
         {
             urlDictionary = new Dictionary<string, string>();
-            urlDictionary.Add("get_profile", "http://199.175.51.79:8001/get_profile");
-            urlDictionary.Add("get_friend_list", "http://199.175.51.79:8001/get_friend_list");
+            urlDictionary.Add("get_profile", "http://cws.yowanda.com/get_profile");
+            urlDictionary.Add("get_friend_list", "http://cws.yowanda.com/get_friend_list");
             urlDictionary.Add("get_player_deck", "http://199.175.51.79:8001/get_player_deck");
             urlDictionary.Add("get_player_trunk", "http://199.175.51.79:8001/get_player_trunk");
             urlDictionary.Add("clear_deck", "http://199.175.51.79:8001/clear_deck");
@@ -151,7 +151,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_player_avatar", "http://199.175.51.79:8001/get_player_avatar");
             urlDictionary.Add("get_building", "http://199.175.51.79:8001/get_building");
             urlDictionary.Add("get_battle_rank", "http://199.175.51.79:8001/show_battle_rank");
-            urlDictionary.Add("get_player_ranking", "http://199.175.51.79:8001/show_player_ranking");
+            urlDictionary.Add("get_player_ranking", "http://cws.yowanda.com/show_player_ranking");
             urlDictionary.Add("get_friend_request", "http://199.175.51.79:8001/get_request_list/friend");
             urlDictionary.Add("get_partial_profile", "http://199.175.51.79:8001/get_partial_profile");
             urlDictionary.Add("send_friend_request", "http://199.175.51.79:8001/do_request/send-friend");
@@ -173,7 +173,7 @@ namespace ModulPertarungan
             urlDictionary.Add("get_card_request_list", "http://199.175.51.79:8001/get_card_request_list");
             urlDictionary.Add("decline_trade_request", "http://199.175.51.79:8001/decline_trade_request");
             urlDictionary.Add("accept_trade_request", "http://199.175.51.79:8001/accept_trade_request");
-            urlDictionary.Add("login", "http://199.175.51.79:8001/login");
+            urlDictionary.Add("login", "http://cws.yowanda.com/login");
             urlDictionary.Add("get_gift", "http://199.175.51.79:8001/get_gift");
             urlDictionary.Add("share_gift", "http://199.175.51.79:8001/share_gift");
             urlDictionary.Add("claim_gift", "http://199.175.51.79:8001/claim_gift");
