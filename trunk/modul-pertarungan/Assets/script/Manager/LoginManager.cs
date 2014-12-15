@@ -16,7 +16,7 @@ namespace CardWarlockSaga
         // Use this for initialization
         private void Awake()
         {
-            WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "player");
+            WebServiceSingleton.GetInstance().ProcessRequest("get_player_ranking", "");
             if (WebServiceSingleton.GetInstance().queryResult <= 0)
             {
                 msgBox = GameObject.Find("MessageBox").GetComponent<MessageBoxScirpt>();

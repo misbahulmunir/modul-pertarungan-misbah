@@ -154,20 +154,20 @@ namespace ModulPertarungan
             urlDictionary.Add("get_player_ranking", "http://cws.yowanda.com/show_player_ranking");
             urlDictionary.Add("get_friend_request", "http://cws.yowanda.com/get_friend_request");
             urlDictionary.Add("get_partial_profile", "http://cws.yowanda.com/get_partial_profile");
-            urlDictionary.Add("send_friend_request", "http://199.175.51.79:8001/do_request/send-friend");
-            urlDictionary.Add("accept_friend_request", "http://199.175.51.79:8001/do_request/accept-friend");
-            urlDictionary.Add("edit_avatar", "http://199.175.51.79:8001/edit_avatar");
-            urlDictionary.Add("update_building", "http://199.175.51.79:8001/update_building");
-            urlDictionary.Add("ignore_friend_request", "http://199.175.51.79:8001/do_request/ignore-friend");
-            urlDictionary.Add("remove_friend", "http://199.175.51.79:8001/remove_friend");
-            urlDictionary.Add("register", "http://199.175.51.79:8001/register");
-            urlDictionary.Add("send_message", "http://199.175.51.79:8001/send_message");
-            urlDictionary.Add("get_messages", "http://199.175.51.79:8001/get_messages");
+            urlDictionary.Add("send_friend_request", "http://cws.yowanda.com/send_friend_request");
+            urlDictionary.Add("accept_friend_request", "http://cws.yowanda.com/accept_friend_request");
+            urlDictionary.Add("edit_avatar", "http://cws.yowanda.com/edit_avatar");
+            urlDictionary.Add("update_building", "http://cws.yowanda.com/update_building");
+            urlDictionary.Add("ignore_friend_request", "http://cws.yowanda.com/ignore_friend_request");
+            urlDictionary.Add("remove_friend", "http://cws.yowanda.com/remove_friend");
+            urlDictionary.Add("register", "http://cws.yowanda.com/register");
+            urlDictionary.Add("send_message", "http://cws.yowanda.com/send_message");
+            urlDictionary.Add("get_messages", "http://cws.yowanda.com/get_messages");
             urlDictionary.Add("get_monster_list", "http://cws.yowanda.com/get_monster_list");
             urlDictionary.Add("get_battle_list", "http://cws.yowanda.com/get_battle_list");
             urlDictionary.Add("get_player_quest", "http://cws.yowanda.com/get_player_quest");
-            urlDictionary.Add("get_name_by_fb", "http://199.175.51.79:8001/get_name_by_fb");
-            urlDictionary.Add("send_battle_result", "http://199.175.51.79:8001/send_battle_result");
+            urlDictionary.Add("get_name_by_fb", "http://cws.yowanda.com/get_name_by_fb");
+            urlDictionary.Add("send_battle_result", "http://cws.yowanda.com/send_battle_result");
             urlDictionary.Add("send_trade_request", "http://199.175.51.79:8001/send_trade_request");
             urlDictionary.Add("get_trade_request_list", "http://199.175.51.79:8001/get_trade_request_list");
             urlDictionary.Add("get_card_request_list", "http://199.175.51.79:8001/get_card_request_list");
@@ -178,11 +178,11 @@ namespace ModulPertarungan
             urlDictionary.Add("share_gift", "http://199.175.51.79:8001/share_gift");
             urlDictionary.Add("claim_gift", "http://199.175.51.79:8001/claim_gift");
             urlDictionary.Add("get_gift_notif", "http://199.175.51.79:8001/get_gift_notif");
-            urlDictionary.Add("delete_message", "http://199.175.51.79:8001/delete_message");
-            urlDictionary.Add("get_shop_cards", "http://199.175.51.79:8001/get_shop_cards");
-            urlDictionary.Add("buy_card", "http://199.175.51.79:8001/buy_card");
-            urlDictionary.Add("sell_card", "http://199.175.51.79:8001/sell_card");
-            urlDictionary.Add("calculate_data", "http://199.175.51.79:8001/calculate_data");
+            urlDictionary.Add("delete_message", "http://cws.yowanda.com/delete_message");
+            urlDictionary.Add("get_shop_cards", "http://cws.yowanda.com/get_shop_cards");
+            urlDictionary.Add("buy_card", "http://cws.yowanda.com/buy_card");
+            urlDictionary.Add("sell_card", "http://cws.yowanda.com/sell_card");
+            urlDictionary.Add("calculate_data", "http://cws.yowanda.com/calculate_data");
             urlDictionary.Add("get_map_status", "http://cws.yowanda.com/get_map_status");
         }
 
