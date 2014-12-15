@@ -143,17 +143,17 @@ namespace ModulPertarungan
             urlDictionary = new Dictionary<string, string>();
             urlDictionary.Add("get_profile", "http://cws.yowanda.com/get_profile");
             urlDictionary.Add("get_friend_list", "http://cws.yowanda.com/get_friend_list");
-            urlDictionary.Add("get_player_deck", "http://199.175.51.79:8001/get_player_deck");
-            urlDictionary.Add("get_player_trunk", "http://199.175.51.79:8001/get_player_trunk");
-            urlDictionary.Add("clear_deck", "http://199.175.51.79:8001/clear_deck");
-            urlDictionary.Add("insert_to_deck", "http://199.175.51.79:8001/insert_to_deck");
-            urlDictionary.Add("get_list_avatar", "http://199.175.51.79:8001/get_list_avatar");
-            urlDictionary.Add("get_player_avatar", "http://199.175.51.79:8001/get_player_avatar");
-            urlDictionary.Add("get_building", "http://199.175.51.79:8001/get_building");
-            urlDictionary.Add("get_battle_rank", "http://199.175.51.79:8001/show_battle_rank");
+            urlDictionary.Add("get_player_deck", "http://cws.yowanda.com/get_player_deck");
+            urlDictionary.Add("get_player_trunk", "http://cws.yowanda.com/get_player_trunk");
+            urlDictionary.Add("clear_deck", "http://cws.yowanda.com/clear_deck");
+            urlDictionary.Add("insert_to_deck", "http://cws.yowanda.com/insert_to_deck");
+            urlDictionary.Add("get_list_avatar", "http://cws.yowanda.com/get_list_avatar");
+            urlDictionary.Add("get_player_avatar", "http://cws.yowanda.com/get_player_avatar");
+            urlDictionary.Add("get_building", "http://cws.yowanda.com/get_building");
+            urlDictionary.Add("get_battle_rank", "http://cws.yowanda.com/show_battle_rank");
             urlDictionary.Add("get_player_ranking", "http://cws.yowanda.com/show_player_ranking");
-            urlDictionary.Add("get_friend_request", "http://199.175.51.79:8001/get_request_list/friend");
-            urlDictionary.Add("get_partial_profile", "http://199.175.51.79:8001/get_partial_profile");
+            urlDictionary.Add("get_friend_request", "http://cws.yowanda.com/get_friend_request");
+            urlDictionary.Add("get_partial_profile", "http://cws.yowanda.com/get_partial_profile");
             urlDictionary.Add("send_friend_request", "http://199.175.51.79:8001/do_request/send-friend");
             urlDictionary.Add("accept_friend_request", "http://199.175.51.79:8001/do_request/accept-friend");
             urlDictionary.Add("edit_avatar", "http://199.175.51.79:8001/edit_avatar");
@@ -163,9 +163,9 @@ namespace ModulPertarungan
             urlDictionary.Add("register", "http://199.175.51.79:8001/register");
             urlDictionary.Add("send_message", "http://199.175.51.79:8001/send_message");
             urlDictionary.Add("get_messages", "http://199.175.51.79:8001/get_messages");
-            urlDictionary.Add("get_monster_list", "http://199.175.51.79:8001/get_monster_list");
-            urlDictionary.Add("get_battle_list", "http://199.175.51.79:8001/get_battle_list");
-            urlDictionary.Add("get_player_quest", "http://199.175.51.79:8001/get_player_quest");
+            urlDictionary.Add("get_monster_list", "http://cws.yowanda.com/get_monster_list");
+            urlDictionary.Add("get_battle_list", "http://cws.yowanda.com/get_battle_list");
+            urlDictionary.Add("get_player_quest", "http://cws.yowanda.com/get_player_quest");
             urlDictionary.Add("get_name_by_fb", "http://199.175.51.79:8001/get_name_by_fb");
             urlDictionary.Add("send_battle_result", "http://199.175.51.79:8001/send_battle_result");
             urlDictionary.Add("send_trade_request", "http://199.175.51.79:8001/send_trade_request");
@@ -183,7 +183,7 @@ namespace ModulPertarungan
             urlDictionary.Add("buy_card", "http://199.175.51.79:8001/buy_card");
             urlDictionary.Add("sell_card", "http://199.175.51.79:8001/sell_card");
             urlDictionary.Add("calculate_data", "http://199.175.51.79:8001/calculate_data");
-            urlDictionary.Add("get_map_status", "http://199.175.51.79:8001/get_map_status");
+            urlDictionary.Add("get_map_status", "http://cws.yowanda.com/get_map_status");
         }
 
         private void InitPathDictionary()
