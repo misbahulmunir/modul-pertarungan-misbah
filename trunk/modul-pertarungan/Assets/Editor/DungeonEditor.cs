@@ -130,7 +130,7 @@ public class DungeonEditor : EditorWindow
                     {
                         element = (GameObject)Instantiate(buttonFire, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);                       
                         element.name = "@Fire";
-                        element.renderer.material.color = Color.black;
+                        element.tag = "DungeonButton";
                     }
                     else
                     {
@@ -144,7 +144,7 @@ public class DungeonEditor : EditorWindow
                     {
                         element = (GameObject)Instantiate(buttonWater, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Water";
-                        element.renderer.material.color = Color.black;
+                        element.tag = "DungeonButton";
                     }
                     else
                     {
@@ -158,7 +158,7 @@ public class DungeonEditor : EditorWindow
                     {
                         element = (GameObject)Instantiate(buttonEarth, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Earth";
-                        element.renderer.material.color = Color.black;
+                        element.tag = "DungeonButton";
                     }
                     else
                     {
@@ -172,7 +172,7 @@ public class DungeonEditor : EditorWindow
                     {
                         element = (GameObject)Instantiate(buttonThunder, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Thunder";
-                        element.renderer.material.color = Color.black;
+                        element.tag = "DungeonButton";
                     }
                     else
                     {
@@ -186,7 +186,7 @@ public class DungeonEditor : EditorWindow
                     {
                         element = (GameObject)Instantiate(buttonWind, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Wind";
-                        element.renderer.material.color = Color.black;
+                        element.tag = "DungeonButton";
                     }
                     else
                     {
