@@ -16,16 +16,17 @@ namespace ModulPertarungan
             get { return textureTiles; }
             set { textureTiles = value; }
         }
-        private bool[] questActive;
+        private List<bool> questActive;
 
-        public bool[] QuestActive
+        public List<bool> QuestActive
         {
             get { return questActive; }
             set { questActive = value; }
         }
-        private bool[] questCleared;
+        
+        private List<bool> questCleared;
 
-        public bool[] QuestCleared
+        public List<bool> QuestCleared
         {
             get { return questCleared; }
             set { questCleared = value; }

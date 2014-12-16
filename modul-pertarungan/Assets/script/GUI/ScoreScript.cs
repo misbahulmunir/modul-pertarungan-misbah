@@ -12,8 +12,8 @@ namespace ModulPertarungan
         public UILabel ServiceMessage;
         public List<GameObject>label;
         private int score = 0;
-        private bool[] checkQuestActive;
-        private bool[] checkQuestCleared;
+        //private bool[] checkQuestActive;
+        //private bool[] checkQuestCleared;
         
         // Use this for initialization
         void Start()
@@ -61,10 +61,10 @@ namespace ModulPertarungan
                     string[] split = TextureSingleton.Instance().IdButton.Split('_');
                     int id = Int32.Parse(split[2]);
                     Debug.Log("Batman " + id);
-                    TextureSingleton.Instance().QuestActive[id + 1] = true;
-                    TextureSingleton.Instance().QuestCleared[id] = true;
-                    checkQuestActive = TextureSingleton.Instance().QuestActive;
-                    checkQuestCleared = TextureSingleton.Instance().QuestCleared;
+                    //TextureSingleton.Instance().QuestActive[id + 1] = true;
+                    //TextureSingleton.Instance().QuestCleared[id] = true;
+                    //checkQuestActive = TextureSingleton.Instance().QuestActive;
+                    //checkQuestCleared = TextureSingleton.Instance().QuestCleared;
                     WebServiceSingleton.GetInstance().ProcessRequest("calculate_data", GameManager.Instance().PlayerId + "|" + GameManager.Instance().PlayerExp + "|" + GameManager.Instance().PlayerGold);
                     ServiceMessage.text = WebServiceSingleton.GetInstance().queryInfo;
                     ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
