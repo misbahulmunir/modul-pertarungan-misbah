@@ -3,6 +3,9 @@ using Holoville.HOTween;
 using ModulPertarungan;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System;
+using System.IO;
 
 public class ButtonManagerContinent : MonoBehaviour
 {
@@ -15,6 +18,12 @@ public class ButtonManagerContinent : MonoBehaviour
 
     private GameObject[] buttonElement;
     private string [] dungeonCode;
+    private string playerName = "";
+
+    private List<bool> questActived;
+    private List<bool> questCleared;
+    private List<string> qId;
+
     // Use this for initialization
     void Awake()
     {
@@ -24,6 +33,7 @@ public class ButtonManagerContinent : MonoBehaviour
     {
         buttonElement = GameObject.FindGameObjectsWithTag("DungeonButton");
         dungeonCode = Application.loadedLevelName.Split('_');
+        playerName = GameManager.Instance().PlayerId;
     }
     // Update is called once per frame
     void Update()
@@ -33,15 +43,18 @@ public class ButtonManagerContinent : MonoBehaviour
 
     private void CheckActivedDungeon()
     {
+        
         foreach (var x in TextureSingleton.Instance().ElementButton)
         {
+            Debug.Log(x.Key + "|" + x.Value);
+            string[] xKey = x.Key.Split('_');
             if (x.Value == true)
             {
-                GameObject.Find(x.Key).renderer.material.color = Color.white;
+                GameObject.Find(xKey[1]).renderer.material.color = Color.white;
             }
             else
             {
-                GameObject.Find(x.Key).renderer.material.color = Color.black;
+                GameObject.Find(xKey[1]).renderer.material.color = Color.black;
             }
         }
     }
@@ -67,14 +80,14 @@ public class ButtonManagerContinent : MonoBehaviour
                     {
                         Debug.Log("this > " +hit.collider.gameObject.name);
                         //Debug.Log(TextureSingleton.Instance().ElementButton["@Fire"]);
-                        if (TextureSingleton.Instance().ElementButton[hit.collider.gameObject.name] == true)
+                        if (TextureSingleton.Instance().ElementButton[dungeonCode[1] + "_" + hit.collider.gameObject.name] == true)
                         {
                             if (buttonTagLoader == "dungeonbutton")
                             {
                                 textureLoader = hit.collider.gameObject.GetComponent<ButtonDungeon>().textureTiles;
                                 TextureSingleton.Instance().TextureTiles = textureLoader.name;
                                 TextureSingleton.Instance().IdButton = dungeonCode[1] + "_" + hit.collider.gameObject.name;
-                                HOTween.To(dungeonQuest, 1f, "position", new Vector3(0, 0.6f, 0));                                
+                                HOTween.To(dungeonQuest, 1f, "position", new Vector3(0, 0.6f, 0));
                                 for (int i = 0; i < 5; i++)
                                 {
                                     buttonElement[i].collider2D.enabled = false;
@@ -100,6 +113,7 @@ public class ButtonManagerContinent : MonoBehaviour
                         else if (buttonTagLoader == "gomap")
                         {                            
                             TextureSingleton.Instance().BackScene = Application.loadedLevelName;
+                            QuestMapActivate();
                             Debug.Log(Application.loadedLevelName);
                             Application.LoadLevel(sceneLoader);
                             Debug.Log(textureLoader.name);
@@ -112,6 +126,33 @@ public class ButtonManagerContinent : MonoBehaviour
                 }
             }
         }
-        
+    }
+    private void QuestMapActivate()
+    {
+        Debug.Log(">> " + TextureSingleton.Instance().IdButton);
+        string idBut = TextureSingleton.Instance().IdButton;
+        WebServiceSingleton.GetInstance().ProcessRequest("get_player_quest", playerName + "|" + idBut);
+        try
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(QuestListFromService));
+            TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
+            object obj = deserializer.Deserialize(textReader);
+            var quelis = (QuestListFromService)obj;
+            foreach (var q in quelis.quest)
+            {
+                Debug.Log(q.ID + "|" + q.IsActive + "|" + q.IsClear);
+                //qId.Add(q.ID);
+                //questActived.Add(q.IsActive);
+                //questCleared.Add(q.IsClear);
+                //Debug.Log(q.ID + "|" + questActived + "|" + questCleared);
+            }
+            //TextureSingleton.Instance().QuestActive = questActived;
+            //TextureSingleton.Instance().QuestCleared = questCleared;
+            textReader.Close();
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
     }
 }
