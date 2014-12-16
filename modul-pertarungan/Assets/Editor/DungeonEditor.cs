@@ -7,6 +7,11 @@ public class DungeonEditor : EditorWindow
 {
     private GameObject background;
     private GameObject button;
+    private GameObject buttonFire;
+    private GameObject buttonWater;
+    private GameObject buttonEarth;
+    private GameObject buttonThunder;
+    private GameObject buttonWind;
     private GameObject manager;
     private GameObject home;
     private GameObject back;
@@ -34,6 +39,11 @@ public class DungeonEditor : EditorWindow
         GUILayout.Label("Add Background", EditorStyles.boldLabel);
         background = Resources.Load("Map/Prefab/ContinentBg") as GameObject;
         button = Resources.Load("Map/Prefab/Button") as GameObject;
+        buttonFire = Resources.Load("Map/Prefab/ButtonFire") as GameObject;
+        buttonWater = Resources.Load("Map/Prefab/ButtonWater") as GameObject;
+        buttonEarth = Resources.Load("Map/Prefab/ButtonEarth") as GameObject;
+        buttonThunder = Resources.Load("Map/Prefab/ButtonThunder") as GameObject;
+        buttonWind = Resources.Load("Map/Prefab/ButtonWind") as GameObject;
         manager = Resources.Load("Map/Prefab/ButtonManager") as GameObject;
         home = Resources.Load("Map/Prefab/ButtonHome") as GameObject;
         back = Resources.Load("Map/Prefab/ButtonBack") as GameObject;
@@ -118,8 +128,9 @@ public class DungeonEditor : EditorWindow
                 {                    
                     if (GameObject.Find("@Fire") == null)
                     {
-                        element = (GameObject)Instantiate(button, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);                       
+                        element = (GameObject)Instantiate(buttonFire, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);                       
                         element.name = "@Fire";
+                        element.renderer.material.color = Color.black;
                     }
                     else
                     {
@@ -131,8 +142,9 @@ public class DungeonEditor : EditorWindow
                 {
                     if (GameObject.Find("@Water") == null)
                     {
-                        element = (GameObject)Instantiate(button, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
+                        element = (GameObject)Instantiate(buttonWater, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Water";
+                        element.renderer.material.color = Color.black;
                     }
                     else
                     {
@@ -144,8 +156,9 @@ public class DungeonEditor : EditorWindow
                 {
                     if (GameObject.Find("@Earth") == null)
                     {
-                        element = (GameObject)Instantiate(button, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
+                        element = (GameObject)Instantiate(buttonEarth, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Earth";
+                        element.renderer.material.color = Color.black;
                     }
                     else
                     {
@@ -157,8 +170,9 @@ public class DungeonEditor : EditorWindow
                 {
                     if (GameObject.Find("@Thunder") == null)
                     {
-                        element = (GameObject)Instantiate(button, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
+                        element = (GameObject)Instantiate(buttonThunder, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Thunder";
+                        element.renderer.material.color = Color.black;
                     }
                     else
                     {
@@ -170,8 +184,9 @@ public class DungeonEditor : EditorWindow
                 {
                     if (GameObject.Find("@Wind") == null)
                     {
-                        element = (GameObject)Instantiate(button, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
+                        element = (GameObject)Instantiate(buttonWind, new Vector3(mousePos.x, mousePos.y, 10), Quaternion.identity);
                         element.name = "@Wind";
+                        element.renderer.material.color = Color.black;
                     }
                     else
                     {
