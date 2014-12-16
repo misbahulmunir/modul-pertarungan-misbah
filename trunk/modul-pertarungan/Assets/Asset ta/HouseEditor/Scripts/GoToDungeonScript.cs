@@ -22,6 +22,7 @@ public class GoToDungeonScript : MonoBehaviour {
     void OnClick()
     {
         splitName = gameObject.transform.name.Split('(');
+        WebServiceSingleton.GetInstance().ProcessRequest("get_battle_list", splitName.ToString());
         questActived = new bool[] { true, false, false, false, false, false, false, false };
         questCleared = new bool[] { false, false, false, false, false, false, false, false };
         buttonElemental = new Dictionary<string, bool>()
@@ -36,6 +37,7 @@ public class GoToDungeonScript : MonoBehaviour {
         TextureSingleton.Instance().QuestCleared = questCleared;
         TextureSingleton.Instance().ElementButton = buttonElemental;
         TextureSingleton.Instance().BackScene = Application.loadedLevelName;
+        Debug.Log("BATMAN");
         Application.LoadLevel(splitName[0]);
     }
 }

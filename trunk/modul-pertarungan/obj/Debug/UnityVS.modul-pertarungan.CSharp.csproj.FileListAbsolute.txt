@@ -1,0 +1,14 @@
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\Assembly-CSharp.dll
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\Assembly-CSharp.pdb
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\HOTween.dll
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\IFacebook.dll
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\UnityEditor.dll
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\UnityEngine.dll
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\UnityEngine.UI.dll
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\UnityEngine.xml
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\UnityEditor.xml
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\UnityEngine.UI.xml
+D:\~TA\CWS\modul-pertarungan\Temp\UnityVS_bin\Debug\HOTween.xml
+D:\~TA\CWS\modul-pertarungan\obj\Debug\UnityVS.modul-pertarungan.CSharp.csprojResolveAssemblyReference.cache
+D:\~TA\CWS\modul-pertarungan\obj\Debug\Assembly-CSharp.dll
+D:\~TA\CWS\modul-pertarungan\obj\Debug\Assembly-CSharp.pdb

@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -288,43 +288,52 @@
      <None Include="Assets\Plugins\Android\facebook\res\values-xhdpi\dimens.xml" />
      <None Include="Assets\XMLFiles\trunk_of_agil.xml" />
  <Reference Include="Assembly-UnityScript">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="IFacebook">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
  </Reference>
  <Reference Include="HOTween">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/HOTween/Plugins/HOTween.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/HOTween/Plugins/HOTween.dll</HintPath>
  </Reference>
  <Reference Include="HOTweenV1_Editor">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/HOTween/Plugins/Editor/HOTweenV1_Editor.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/HOTween/Plugins/Editor/HOTweenV1_Editor.dll</HintPath>
  </Reference>
  <Reference Include="NSubstitute">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NSubstitute/NSubstitute.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil.Mdb">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.Mdb.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/Mono.Cecil.Mdb.dll</HintPath>
  </Reference>
  <Reference Include="nunit.core">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.dll</HintPath>
  </Reference>
  <Reference Include="nunit.core.interfaces">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.interfaces.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.core.interfaces.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Users/u6/Monster Hunter/Card Warlock Saga/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.framework.dll</HintPath>
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityTestTools/UnitTesting/Editor/NUnit/Libs/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
+ </Reference>
+ <Reference Include="SyntaxTree.VisualStudio.Unity.Messaging">
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityVS/Editor/SyntaxTree.VisualStudio.Unity.Messaging.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityVS.VersionSpecific">
+ <HintPath>D:/~TA/CWS/modul-pertarungan/Assets/UnityVS/Editor/UnityVS.VersionSpecific.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

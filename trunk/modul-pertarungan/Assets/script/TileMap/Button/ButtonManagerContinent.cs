@@ -49,7 +49,7 @@ public class ButtonManagerContinent : MonoBehaviour
                     else if (buttonTagLoader == "dungeonbutton")
                     {
                         Debug.Log("this > " +hit.collider.gameObject.name);
-                        Debug.Log(TextureSingleton.Instance().ElementButton["@Fire"]);
+                        //Debug.Log(TextureSingleton.Instance().ElementButton["@Fire"]);
                         if (TextureSingleton.Instance().ElementButton[hit.collider.gameObject.name] == true)
                         {
                             if (buttonTagLoader == "dungeonbutton")
