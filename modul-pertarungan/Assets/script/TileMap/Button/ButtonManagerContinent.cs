@@ -18,7 +18,7 @@ public class ButtonManagerContinent : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        
+        CheckActivedDungeon();
     }
     void Start()
     {
@@ -30,6 +30,22 @@ public class ButtonManagerContinent : MonoBehaviour
     {
         OnClick();        
     }
+
+    private void CheckActivedDungeon()
+    {
+        foreach (var x in TextureSingleton.Instance().ElementButton)
+        {
+            if (x.Value == true)
+            {
+                GameObject.Find(x.Key).renderer.material.color = Color.white;
+            }
+            else
+            {
+                GameObject.Find(x.Key).renderer.material.color = Color.black;
+            }
+        }
+    }
+
     private void OnClick()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -37,6 +53,7 @@ public class ButtonManagerContinent : MonoBehaviour
         {
             if (hit.collider != null)
             {
+                Debug.Log(hit.collider.gameObject.layer);
                 buttonTagLoader = hit.collider.gameObject.GetComponent<Button>().ButtonTag;
                 sceneLoader = hit.collider.gameObject.GetComponent<Button>().SceneLoad;
                 if (hit.collider.gameObject.tag.ToLower().Contains(buttonTagLoader))

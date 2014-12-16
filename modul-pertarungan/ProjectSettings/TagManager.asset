@@ -17,7 +17,7 @@ TagManager:
   Builtin Layer 2: Ignore Raycast
   Builtin Layer 3: 
   Builtin Layer 4: Water
-  Builtin Layer 5: 
+  Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: monster
@@ -41,7 +41,7 @@ TagManager:
   User Layer 26: 
   User Layer 27: 
   User Layer 28: 
-  User Layer 29: UI
+  User Layer 29: QuestButton
   User Layer 30: 
   User Layer 31: Foreground
   m_SortingLayers:
