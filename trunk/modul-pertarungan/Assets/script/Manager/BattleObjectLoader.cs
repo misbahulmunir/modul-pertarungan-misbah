@@ -4,6 +4,8 @@ using System.Collections;
 using ModelModulPertarungan;
 using System.Net;
 using System;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace ModulPertarungan
 {
@@ -20,6 +22,8 @@ namespace ModulPertarungan
         private AbstractFactory factory;
         public List<GameObject> enemyPosition;
         public GameObject enemyOnlinePosisiton;
+
+        private List<string> enemyList;
 
         public void LoadBackground()
         {
@@ -99,137 +103,170 @@ namespace ModulPertarungan
             }
             else
             {
-                if (TextureSingleton.Instance().TextureTiles == "0_Lavaland")
+                string idBut = TextureSingleton.Instance().IdButton;
+                WebServiceSingleton.GetInstance().ProcessRequest("get_monster_list", idBut);
+                try
                 {
-                    Debug.Log(TextureSingleton.Instance().IdButton);
-                    if (TextureSingleton.Instance().IdButton == "00_@Fire_0")
+                    XmlSerializer deserializer = new XmlSerializer(typeof(MonsterListFromService));
+                    TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
+                    object obj = deserializer.Deserialize(textReader);
+                    var monlis = (MonsterListFromService)obj;
+                    enemyList = new List<string>();
+                    foreach (var mo in monlis.quest)
                     {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("FireSlime", enemyPosition[0]);
-                        factory.CreateEnemy("FireKingSlime", enemyPosition[1]);
+                        for (int i = 0; i < mo.Quantity; i++)
+                        { 
+                            enemyList.Add(mo.Name); 
+                        }
 
+                        Debug.Log(enemyList);
                     }
-                    else if (TextureSingleton.Instance().IdButton == "00_@Fire_1")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("FireNymph", enemyPosition[0]);
-                        factory.CreateEnemy("FireNymph", enemyPosition[1]);
-                    }
-                    else
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("FireDragon", enemyPosition[0]);
-                        factory.CreateEnemy("FireDragon", enemyPosition[1]);
-                    }
+                    textReader.Close();
                 }
-                else if (TextureSingleton.Instance().TextureTiles == "0_Greenland")
+                catch (Exception e)
                 {
-                    if (TextureSingleton.Instance().IdButton == "00_@Earth_0")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("EarthSlime", enemyPosition[0]);
-                        factory.CreateEnemy("EarthKingSlime", enemyPosition[1]);
-                    }
-                    else if (TextureSingleton.Instance().IdButton == "00_@Earth_1")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("EarthNymph", enemyPosition[0]);
-                        factory.CreateEnemy("EarthNymph", enemyPosition[1]);
-                    }
-                    else if (TextureSingleton.Instance().IdButton == "00_@Earth_2")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("Mandrake", enemyPosition[0]);
-                        factory.CreateEnemy("Mandragora", enemyPosition[1]);
-                    }
-                    else
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("Canotre", enemyPosition[0]);
-                        factory.CreateEnemy("Treant", enemyPosition[1]);
-                    }
+                    Debug.Log(e);
                 }
-                else if (TextureSingleton.Instance().TextureTiles == "0_Iceland")
-                {
-                    if (TextureSingleton.Instance().IdButton == "00_@Water_0")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("WaterSlime", enemyPosition[0]);
-                        factory.CreateEnemy("WaterKingSlime", enemyPosition[1]);
-                    }
-                    else if (TextureSingleton.Instance().IdButton == "00_@Water_1")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("WaterNymph", enemyPosition[0]);
-                        factory.CreateEnemy("WaterNymph", enemyPosition[1]);
-                    }
-                    else
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("WaterKingSlime", enemyPosition[0]);
-                        factory.CreateEnemy("WaterKingSlime", enemyPosition[1]);
-                    }
-                }
-                else if (TextureSingleton.Instance().TextureTiles == "0_Wetland")
-                {
-                    if (TextureSingleton.Instance().IdButton == "00_@Thunder_0")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("ThunderSlime", enemyPosition[0]);
-                        factory.CreateEnemy("ThunderKingSlime", enemyPosition[1]);
-                    }
-                    else if (TextureSingleton.Instance().IdButton == "00_@Thunder_1")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("ThunderNymph", enemyPosition[0]);
-                        factory.CreateEnemy("ThunderNymph", enemyPosition[1]);
-                    }
-                    else
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("ThunderKingSlime", enemyPosition[0]);
-                        factory.CreateEnemy("ThunderKingSlime", enemyPosition[1]);
-                    }
-                }
-                else if (TextureSingleton.Instance().TextureTiles == "0_Windyhill")
-                {
-                    if (TextureSingleton.Instance().IdButton == "00_@Wind_0")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("WindSlime", enemyPosition[0]);
-                        factory.CreateEnemy("WindKingSlime", enemyPosition[1]);
-                    }
-                    else if (TextureSingleton.Instance().IdButton == "00_@Wind_1")
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("WindNymph", enemyPosition[0]);
-                        factory.CreateEnemy("WindNymph", enemyPosition[1]);
-                    }
-                    else
-                    {
-                        factory = new EnemyFactory();
-                        factory.InstantiateObject();
-                        factory.CreateEnemy("WindKingSlime", enemyPosition[0]);
-                        factory.CreateEnemy("WindKingSlime", enemyPosition[1]);
-                    }
-                }
+
+                factory = new EnemyFactory();
+                factory.InstantiateObject();
+                factory.CreateEnemy(enemyList[0], enemyPosition[0]);
+                factory.CreateEnemy(enemyList[1], enemyPosition[1]);
+
+                #region
+
+                //if (TextureSingleton.Instance().TextureTiles == "0_Lavaland")
+                //{
+                //    Debug.Log(TextureSingleton.Instance().IdButton);
+                //    if (TextureSingleton.Instance().IdButton == "00_@Fire_0")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("FireSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("FireKingSlime", enemyPosition[1]);
+
+                //    }
+                //    else if (TextureSingleton.Instance().IdButton == "00_@Fire_1")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("FireNymph", enemyPosition[0]);
+                //        factory.CreateEnemy("FireNymph", enemyPosition[1]);
+                //    }
+                //    else
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("FireDragon", enemyPosition[0]);
+                //        factory.CreateEnemy("FireDragon", enemyPosition[1]);
+                //    }
+                //}
+                //else if (TextureSingleton.Instance().TextureTiles == "0_Greenland")
+                //{
+                //    if (TextureSingleton.Instance().IdButton == "00_@Earth_0")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("EarthSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("EarthKingSlime", enemyPosition[1]);
+                //    }
+                //    else if (TextureSingleton.Instance().IdButton == "00_@Earth_1")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("EarthNymph", enemyPosition[0]);
+                //        factory.CreateEnemy("EarthNymph", enemyPosition[1]);
+                //    }
+                //    else if (TextureSingleton.Instance().IdButton == "00_@Earth_2")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("Mandrake", enemyPosition[0]);
+                //        factory.CreateEnemy("Mandragora", enemyPosition[1]);
+                //    }
+                //    else
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("Canotre", enemyPosition[0]);
+                //        factory.CreateEnemy("Treant", enemyPosition[1]);
+                //    }
+                //}
+                //else if (TextureSingleton.Instance().TextureTiles == "0_Iceland")
+                //{
+                //    if (TextureSingleton.Instance().IdButton == "00_@Water_0")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("WaterSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("WaterKingSlime", enemyPosition[1]);
+                //    }
+                //    else if (TextureSingleton.Instance().IdButton == "00_@Water_1")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("WaterNymph", enemyPosition[0]);
+                //        factory.CreateEnemy("WaterNymph", enemyPosition[1]);
+                //    }
+                //    else
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("WaterKingSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("WaterKingSlime", enemyPosition[1]);
+                //    }
+                //}
+                //else if (TextureSingleton.Instance().TextureTiles == "0_Wetland")
+                //{
+                //    if (TextureSingleton.Instance().IdButton == "00_@Thunder_0")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("ThunderSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("ThunderKingSlime", enemyPosition[1]);
+                //    }
+                //    else if (TextureSingleton.Instance().IdButton == "00_@Thunder_1")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("ThunderNymph", enemyPosition[0]);
+                //        factory.CreateEnemy("ThunderNymph", enemyPosition[1]);
+                //    }
+                //    else
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("ThunderKingSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("ThunderKingSlime", enemyPosition[1]);
+                //    }
+                //}
+                //else if (TextureSingleton.Instance().TextureTiles == "0_Windyhill")
+                //{
+                //    if (TextureSingleton.Instance().IdButton == "00_@Wind_0")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("WindSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("WindKingSlime", enemyPosition[1]);
+                //    }
+                //    else if (TextureSingleton.Instance().IdButton == "00_@Wind_1")
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("WindNymph", enemyPosition[0]);
+                //        factory.CreateEnemy("WindNymph", enemyPosition[1]);
+                //    }
+                //    else
+                //    {
+                //        factory = new EnemyFactory();
+                //        factory.InstantiateObject();
+                //        factory.CreateEnemy("WindKingSlime", enemyPosition[0]);
+                //        factory.CreateEnemy("WindKingSlime", enemyPosition[1]);
+                //    }
+                //}
+                #endregion
             }
-
+               
         }
         void Awake()
         {
@@ -269,6 +306,5 @@ namespace ModulPertarungan
                 Debug.Log(succses ? "send succes" : "send false");
             }
         }
-
     }
 }

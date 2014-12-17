@@ -53,7 +53,7 @@ namespace ModulPertarungan
         }
         public void ShowWinOrLose()
         {
-
+            Debug.Log("haha " + TextureSingleton.Instance().IdButton);
             if (GameManager.Instance().GameStatus == "win")
             {
                 if (GameManager.Instance().GameMode != "pvp")
@@ -65,10 +65,55 @@ namespace ModulPertarungan
                     //TextureSingleton.Instance().QuestCleared[id] = true;
                     //checkQuestActive = TextureSingleton.Instance().QuestActive;
                     //checkQuestCleared = TextureSingleton.Instance().QuestCleared;
-                    WebServiceSingleton.GetInstance().ProcessRequest("calculate_data", GameManager.Instance().PlayerId + "|" + GameManager.Instance().PlayerExp + "|" + GameManager.Instance().PlayerGold);
-                    ServiceMessage.text = WebServiceSingleton.GetInstance().queryInfo;
-                    ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
-                    GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
+                    try
+                    {
+                        string nextQuest = "";
+                        if ((id + 1) == TextureSingleton.Instance().IdQuest.Count)
+                        {
+                            if (split[1] == "@Fire")
+                            {
+                                nextQuest = split[0] + "Earth_0";
+                            }
+                            else if (split[1] == "@Earth")
+                            {
+                                nextQuest = split[0] + "Water_0";
+                            }
+                            else if (split[1] == "@Water")
+                            {
+                                nextQuest = split[0] + "Thunder_0";
+                            }
+                            else if (split[1] == "@Thunder")
+                            {
+                                nextQuest = split[0] + "Wind_0";
+                            }
+                            else if (split[1] == "@Wind")
+                            {
+                                int nextDun = Int32.Parse(split[0]) + 1;
+                                nextQuest = "Dungeon_" + nextDun;
+                            }
+                            else
+                            {
+                                nextQuest = "";
+                            }
+                        }
+                        else
+                        {
+                            int nextQ = id + 1;
+                            nextQuest = split[0] + "_" + split[1] + "_" + nextQ;
+                        }
+                        Debug.Log("update >>" + GameManager.Instance().PlayerId + "|" + TextureSingleton.Instance().IdButton + "|" + nextQuest);
+                        WebServiceSingleton.GetInstance().ProcessRequest("update_player_quest", GameManager.Instance().PlayerId + "|" + TextureSingleton.Instance().IdButton + "|" + nextQuest);
+                        WebServiceSingleton.GetInstance().ProcessRequest("calculate_data", GameManager.Instance().PlayerId + "|" + GameManager.Instance().PlayerExp + "|" + GameManager.Instance().PlayerGold);
+                        ServiceMessage.text = WebServiceSingleton.GetInstance().queryInfo;
+                        ExpLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerExp.ToString();
+                        GoldLabel.GetComponent<UILabel>().text = GameManager.Instance().PlayerGold.ToString();
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.Log(e);
+                    }
+                    
+
                 }
                 Statuslabel.GetComponent<UILabel>().text = "WIN";
 
