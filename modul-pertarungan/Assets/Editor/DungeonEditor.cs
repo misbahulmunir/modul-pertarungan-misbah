@@ -55,6 +55,7 @@ public class DungeonEditor : EditorWindow
             {
                 background = (GameObject)Instantiate(background);
                 background.name = "xBackground";
+                GameObject.FindGameObjectWithTag("MainCamera").camera.orthographicSize = 5.6f;
             }
             else
             {

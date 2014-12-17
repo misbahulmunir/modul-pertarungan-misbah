@@ -267,6 +267,7 @@
     <Compile Include="Assets\NGUI\Scripts\UI\UITooltip.cs" />
     <Compile Include="Assets\NGUI\Scripts\UI\UIViewport.cs" />
     <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\BattleFromService.cs" />
+    <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\MonsterListFromService.cs" />
     <Compile Include="Assets\ShopButtonManager.cs" />
     <Compile Include="Assets\ShopCardClick.cs" />
     <Compile Include="Assets\ShopManagerScript.cs" />

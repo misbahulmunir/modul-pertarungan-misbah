@@ -7,14 +7,14 @@ using System;
 public class ElementalEditor : ScriptableWizard
 {
     [SerializeField]
-    public Texture2D textureChanger;
+    public Sprite textureChanger;
 
     private GameObject selectedObj;
     private string selectedName;
 
     private void OnEnable()
     {
-        textureChanger = Resources.Load("Greenland") as Texture2D;
+        //textureChanger = Resources.Load("ButtonEarth1") as SpriteRenderer;
         selectedObj = GameObject.FindWithTag("DungeonButton");
         selectedName = "";
     }
@@ -40,11 +40,10 @@ public class ElementalEditor : ScriptableWizard
             Debug.Log(selectedName);
             if (selectedName.Contains("@"))
             {
-                selectedObj.GetComponent<ButtonDungeon>().textureTiles = textureChanger;
-            }
-            else if(selectedName == "xBackground")
-            {
-                selectedObj.GetComponent<SpriteRenderer>().sprite = Sprite.Create(textureChanger, new Rect(0, 0, textureChanger.width, textureChanger.height), new Vector2(0.5f,0.5f));
+                DestroyImmediate(selectedObj.GetComponent<PolygonCollider2D>());
+                selectedObj.GetComponent<SpriteRenderer>().sprite = textureChanger;
+                selectedObj.AddComponent<PolygonCollider2D>();
+                selectedObj.GetComponent<PolygonCollider2D>().isTrigger = true;
             }
             EditorUtility.SetDirty(selectedObj);
             Debug.Log("OK");

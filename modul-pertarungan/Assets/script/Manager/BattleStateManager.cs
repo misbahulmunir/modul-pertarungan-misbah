@@ -143,6 +143,8 @@ namespace ModulPertarungan
         }
         void Start()
         {
+            Debug.Log(TextureSingleton.Instance().IdButton);
+            
             // currentstate = new FirstHandState(GameMenager.Instance().CurrentPawn);
             if (GameManager.Instance().GameMode == "pvp")
             {

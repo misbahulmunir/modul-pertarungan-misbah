@@ -8,5 +8,6 @@ namespace ModulPertarungan
 	public class MonstersFromService
 	{
         public string Name { get; set; }
+        public int Quantity { get; set; }
 	}
 }

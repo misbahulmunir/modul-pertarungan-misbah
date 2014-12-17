@@ -47,8 +47,7 @@ public class GoToDungeonScript : MonoBehaviour {
 
         TextureSingleton.Instance().ElementButton = buttonElemental;
         TextureSingleton.Instance().BackScene = Application.loadedLevelName;
-        Debug.Log("BATMAN");
-        
+        TextureSingleton.Instance().DungeonName = splitName[0];
         Application.LoadLevel(splitName[0]);
     }
 }

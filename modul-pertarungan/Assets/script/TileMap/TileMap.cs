@@ -20,7 +20,7 @@ public class TileMap : MonoBehaviour
     private int[,] dun_node;
 
     private int landSize = 30;// ukuran pulau
-    private int landNum = 5; //jumlah pulau
+    private int landNum; //jumlah pulau
 
     public List<GameObject> butID;
     public GameObject butObj; 
@@ -28,11 +28,13 @@ public class TileMap : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-                
+        
     }
 
     void Awake()
     {
+        Debug.Log("Land Number > " + TextureSingleton.Instance().IdQuest.Count);
+        landNum = TextureSingleton.Instance().IdQuest.Count;
         butID = new List<GameObject>();
         BuildMesh(); //membuat mesh
     }

@@ -184,6 +184,7 @@ namespace ModulPertarungan
             urlDictionary.Add("sell_card", "http://cws.yowanda.com/sell_card");
             urlDictionary.Add("calculate_data", "http://cws.yowanda.com/calculate_data");
             urlDictionary.Add("get_map_status", "http://cws.yowanda.com/get_map_status");
+            urlDictionary.Add("update_player_quest", "http://cws.yowanda.com/update_player_quest");
         }
 
         private void InitPathDictionary()

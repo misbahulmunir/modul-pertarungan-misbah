@@ -6,9 +6,16 @@ using UnityEngine;
 
 namespace ModulPertarungan
 {
-	public class TextureSingleton
-	{
-        
+    public class TextureSingleton
+    {
+        private string dungeonName;
+
+        public string DungeonName
+        {
+            get { return dungeonName; }
+            set { dungeonName = value; }
+        }
+
         private string textureTiles;
 
         public string TextureTiles
@@ -16,6 +23,15 @@ namespace ModulPertarungan
             get { return textureTiles; }
             set { textureTiles = value; }
         }
+
+        private List<string> idQuest;
+
+        public List<string> IdQuest
+        {
+            get { return idQuest; }
+            set { idQuest = value; }
+        }
+
         private List<bool> questActive;
 
         public List<bool> QuestActive
@@ -23,7 +39,7 @@ namespace ModulPertarungan
             get { return questActive; }
             set { questActive = value; }
         }
-        
+
         private List<bool> questCleared;
 
         public List<bool> QuestCleared
@@ -77,5 +93,5 @@ namespace ModulPertarungan
             }
             return _instanceTexture;
         }
-	}
+    }
 }

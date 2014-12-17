@@ -558,6 +558,7 @@
      <Compile Include="Assets\script\Web Service Model\Messages\MessagesFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\BattleFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\BattleListFromService.cs" />
+     <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\MonsterListFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\MonstersFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\QuestFromService.cs" />
      <Compile Include="Assets\script\Web Service Model\Monster_and_Quest\QuestListFromService.cs" />

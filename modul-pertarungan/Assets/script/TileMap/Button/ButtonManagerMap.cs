@@ -16,7 +16,6 @@ public class ButtonManagerMap : MonoBehaviour
     private List<GameObject> butList;
     private string[] splitter;
     private string buttonName;
-    private List<string> monsterName;
 
     void Awake()
     {
@@ -29,26 +28,12 @@ public class ButtonManagerMap : MonoBehaviour
         //Debug.Log("Start");
         HOTween.Init(true, true, true); 
         butList = tilemap.GetComponent<TileMap>().butID;
-        monsterName = new List<string>();
-        monsterName.Add("Fire King Slime");
-        monsterName.Add("Fire Slime");
-        monsterName.Add("Fire Dragon");
+
     }
     // Update is called once per frame
     void Update()
     {
         OnClick();
-    }
-
-    private void OnGUI()
-    {
-        Vector3 label = Camera.main.WorldToScreenPoint(labelPos.transform.position);
-        float y = 0;
-        foreach (var l in monsterName)
-        {
-            GUI.Label(new Rect(label.x, label.y + (y * 30), 100, 20), l);
-            y++;
-        }
     }
 
     private void OnClick()

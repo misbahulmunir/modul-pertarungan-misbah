@@ -46,7 +46,6 @@ public class ButtonManagerContinent : MonoBehaviour
         
         foreach (var x in TextureSingleton.Instance().ElementButton)
         {
-            Debug.Log(x.Key + "|" + x.Value);
             string[] xKey = x.Key.Split('_');
             if (x.Value == true)
             {
@@ -66,7 +65,6 @@ public class ButtonManagerContinent : MonoBehaviour
         {
             if (hit.collider != null)
             {
-                Debug.Log(hit.collider.gameObject.layer);
                 buttonTagLoader = hit.collider.gameObject.GetComponent<Button>().ButtonTag;
                 sceneLoader = hit.collider.gameObject.GetComponent<Button>().SceneLoad;
                 if (hit.collider.gameObject.tag.ToLower().Contains(buttonTagLoader))
@@ -78,8 +76,6 @@ public class ButtonManagerContinent : MonoBehaviour
                     } 
                     else if (buttonTagLoader == "dungeonbutton")
                     {
-                        Debug.Log("this > " +hit.collider.gameObject.name);
-                        //Debug.Log(TextureSingleton.Instance().ElementButton["@Fire"]);
                         if (TextureSingleton.Instance().ElementButton[dungeonCode[1] + "_" + hit.collider.gameObject.name] == true)
                         {
                             if (buttonTagLoader == "dungeonbutton")
@@ -129,7 +125,6 @@ public class ButtonManagerContinent : MonoBehaviour
     }
     private void QuestMapActivate()
     {
-        Debug.Log(">> " + TextureSingleton.Instance().IdButton);
         string idBut = TextureSingleton.Instance().IdButton;
         WebServiceSingleton.GetInstance().ProcessRequest("get_player_quest", playerName + "|" + idBut);
         try
@@ -138,16 +133,19 @@ public class ButtonManagerContinent : MonoBehaviour
             TextReader textReader = new StringReader(WebServiceSingleton.GetInstance().queryInfo);
             object obj = deserializer.Deserialize(textReader);
             var quelis = (QuestListFromService)obj;
+            qId = new List<string>();
+            questActived = new List<bool>();
+            questCleared = new List<bool>();
             foreach (var q in quelis.quest)
             {
                 Debug.Log(q.ID + "|" + q.IsActive + "|" + q.IsClear);
-                //qId.Add(q.ID);
-                //questActived.Add(q.IsActive);
-                //questCleared.Add(q.IsClear);
-                //Debug.Log(q.ID + "|" + questActived + "|" + questCleared);
+                qId.Add(q.ID);
+                questActived.Add(q.IsActive);
+                questCleared.Add(q.IsClear);
             }
-            //TextureSingleton.Instance().QuestActive = questActived;
-            //TextureSingleton.Instance().QuestCleared = questCleared;
+            TextureSingleton.Instance().IdQuest = qId;
+            TextureSingleton.Instance().QuestActive = questActived;
+            TextureSingleton.Instance().QuestCleared = questCleared;
             textReader.Close();
         }
         catch (Exception e)
