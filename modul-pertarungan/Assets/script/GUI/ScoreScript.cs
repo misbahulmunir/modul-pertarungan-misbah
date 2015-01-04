@@ -44,12 +44,9 @@ namespace ModulPertarungan
         // Update is called once per frame
         void Update()
         {
-            
-            if (Input.GetMouseButtonDown(0))
-            {
-                    GameManager.Instance().GameMode = "";
-                    Application.LoadLevel("HouseEditor");
-            }
+            if (!Input.GetMouseButtonDown(0)) return;
+            GameManager.Instance().GameMode = "";
+            Application.LoadLevel("HouseEditor");
         }
         public void ShowWinOrLose()
         {
@@ -61,39 +58,32 @@ namespace ModulPertarungan
                     string[] split = TextureSingleton.Instance().IdButton.Split('_');
                     int id = Int32.Parse(split[2]);
                     Debug.Log("Batman " + id);
-                    //TextureSingleton.Instance().QuestActive[id + 1] = true;
-                    //TextureSingleton.Instance().QuestCleared[id] = true;
-                    //checkQuestActive = TextureSingleton.Instance().QuestActive;
-                    //checkQuestCleared = TextureSingleton.Instance().QuestCleared;
                     try
                     {
                         string nextQuest = "";
                         if ((id + 1) == TextureSingleton.Instance().IdQuest.Count)
                         {
-                            if (split[1] == "@Fire")
+                            switch (split[1])
                             {
-                                nextQuest = split[0] + "Earth_0";
-                            }
-                            else if (split[1] == "@Earth")
-                            {
-                                nextQuest = split[0] + "Water_0";
-                            }
-                            else if (split[1] == "@Water")
-                            {
-                                nextQuest = split[0] + "Thunder_0";
-                            }
-                            else if (split[1] == "@Thunder")
-                            {
-                                nextQuest = split[0] + "Wind_0";
-                            }
-                            else if (split[1] == "@Wind")
-                            {
-                                int nextDun = Int32.Parse(split[0]) + 1;
-                                nextQuest = "Dungeon_" + nextDun;
-                            }
-                            else
-                            {
-                                nextQuest = "";
+                                case "@Fire":
+                                    nextQuest = split[0] + "_@Earth_0";
+                                    break;
+                                case "@Earth":
+                                    nextQuest = split[0] + "_@Water_0";
+                                    break;
+                                case "@Water":
+                                    nextQuest = split[0] + "_@Thunder_0";
+                                    break;
+                                case "@Thunder":
+                                    nextQuest = split[0] + "_@Wind_0";
+                                    break;
+                                case "@Wind":
+                                    int nextDun = Int32.Parse(split[0]) + 1;
+                                    nextQuest = "Dungeon_" + nextDun;
+                                    break;
+                                default:
+                                    nextQuest = "";
+                                    break;
                             }
                         }
                         else
@@ -124,10 +114,6 @@ namespace ModulPertarungan
                 Statuslabel.GetComponent<UILabel>().text = "LOSE";
                 ExpLabel.GetComponent<UILabel>().text = "0";
                 GoldLabel.GetComponent<UILabel>().text = "0";
-                //foreach (GameObject obj in label)
-                //{
-                //    obj.SetActive(true);
-                //}
             }
            
         }
