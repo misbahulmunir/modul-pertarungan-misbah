@@ -30,7 +30,6 @@ public class DungeonEditor : EditorWindow
         //Show existing window instance. If one doesn't exist, make one.
         DungeonEditor window = (DungeonEditor)EditorWindow.GetWindow(typeof(DungeonEditor));
         window.position = new Rect(100, 100, 400, 400);
-
         SceneView.onSceneGUIDelegate += window.OnSceneGUI;        
     }
 
@@ -200,6 +199,7 @@ public class DungeonEditor : EditorWindow
         else
         {
             numToogle = 10;
+            Tools.current= Tool.Rect;
         }
     }
 }
