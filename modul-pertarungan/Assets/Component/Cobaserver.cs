@@ -27,7 +27,7 @@ namespace ModulPertarungan
             button1.SetActive(false);
             button2.SetActive(false);
            // input.SetActive(false);
-            NetworkSingleton.Instance().Host = "107.150.6.172";
+            NetworkSingleton.Instance().Host = "192.168.1.173";
 
             StartCoroutine(chekclogin());
             t2 = Time.time;

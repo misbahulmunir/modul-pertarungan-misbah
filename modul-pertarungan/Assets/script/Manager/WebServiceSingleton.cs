@@ -54,18 +54,42 @@ namespace ModulPertarungan
                 responseFromServer = "-3|Error reading stream";
             }
             //Debug.Log(methodName + " " /*+ parameter */+ responseFromServer);
-            Debug.Log(methodName);
+            ////
             try
             {
-                string[] response = responseFromServer.Split('|');
-                queryResult = int.Parse(response[0]);
-                queryInfo = response[1];
+                TextReader textReader = new StringReader(responseFromServer);
+                XmlDocument xmlFromServer = new XmlDocument();
+                xmlFromServer.Load(textReader);
+                XmlNodeList result = xmlFromServer.GetElementsByTagName("QueryResult");
+                XmlNodeList info = xmlFromServer.GetElementsByTagName("QueryInfo");
+
+                queryResult = int.Parse(result[0].InnerXml);
+                queryInfo = info[0].InnerXml;
+
+                textReader.Close();
             }
             catch
             {
-                queryResult = 2;
-                queryInfo = responseFromServer;
+                if (responseFromServer != "-3|Error reading stream")
+                {
+                    queryResult = 2;
+                    queryInfo = responseFromServer;
+                }
             }
+            ////
+            Debug.Log(methodName);
+
+            //try
+            //{
+            //    string[] response = responseFromServer.Split('|');
+            //    queryResult = int.Parse(response[0]);
+            //    queryInfo = response[1];
+            //}
+            //catch
+            //{
+            //    queryResult = 2;
+            //    queryInfo = responseFromServer;
+            //}
             Debug.Log("query result : " + queryInfo);
             Debug.Log(parameter);
         }
@@ -169,10 +193,10 @@ namespace ModulPertarungan
             urlDictionary.Add("get_name_by_fb", "http://cws.yowanda.com/get_name_by_fb");
             urlDictionary.Add("send_battle_result", "http://cws.yowanda.com/send_battle_result");
             urlDictionary.Add("send_trade_request", "http://cws.yowanda.com/send_trade_request");
-            urlDictionary.Add("get_trade_request_list", "http://199.175.51.79:8001/get_trade_request_list");
-            urlDictionary.Add("get_card_request_list", "http://199.175.51.79:8001/get_card_request_list");
-            urlDictionary.Add("decline_trade_request", "http://199.175.51.79:8001/decline_trade_request");
-            urlDictionary.Add("accept_trade_request", "http://199.175.51.79:8001/accept_trade_request");
+            urlDictionary.Add("get_trade_request_list", "http://cws.yowanda.com/get_trade_request_list");
+            urlDictionary.Add("get_card_request_list", "http://cws.yowanda.com/get_card_request_list");
+            urlDictionary.Add("decline_trade_request", "http://cws.yowanda.com/decline_trade_request");
+            urlDictionary.Add("accept_trade_request", "http://cws.yowanda.com/accept_trade_request");
             urlDictionary.Add("login", "http://cws.yowanda.com/login");
             urlDictionary.Add("get_gift", "http://199.175.51.79:8001/get_gift");
             urlDictionary.Add("share_gift", "http://199.175.51.79:8001/share_gift");
